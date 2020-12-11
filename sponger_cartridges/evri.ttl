@@ -1,0 +1,944 @@
+@prefix schema:  <http://schema.org/> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix cvocab:  <http://open-services.net/ns/core#> .
+@prefix cc:      <http://creativecommons.org/ns#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix oplevri: <http://www.openlinksw.com/schemas/evri#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix wdrs:    <http://www.w3.org/2007/05/powder-s#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xhv:    <http://www.w3.org/1999/xhtml/vocab#> .
+
+<http://www.openlinksw.com/schemas/evri#>
+  a owl:Ontology ;
+  schema:name "OpenLink Evri Ontology" ;
+  schema:comment """Ontology that defines entity and relation types used to describe Evri.
+  Examples include areas, currency codes, frequencies etc."""@en  ;
+  schema:creator <http://www.openlinksw.com/#this>  ;
+  schema:dateCreated "2013-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  schema:dateModified "2015-04-22T13:38:00-05:00"^^xsd:dateTime ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  wdrs:describedby <http://www.openlinksw.com/schemas/evri> ;
+  owl:imports <http://www.w3.org/1999/02/22-rdf-syntax-ns#> , <http://purl.org/dc/terms/> ;
+  owl:versionInfo "1.0.0"^^xsd:string ;
+  <http://open.vocab.org/terms/defines>
+    oplevri:anthem  ,
+    oplevri:area  ,
+    oplevri:hasAreaRank  ,
+    oplevri:hasAreaTotalKM  ,
+    oplevri:hasAreaWaterPercent  ,
+    oplevri:hasBirthDate  ,
+    oplevri:hasBirthPlace  ,
+    oplevri:hasCallingCode  ,
+    oplevri:capital  ,
+    oplevri:child  ,
+    oplevri:circulation  ,
+    oplevri:citizenship  ,
+    oplevri:hasCompanyIndustry  ,
+    oplevri:hasCompanySubsidiary  ,
+    oplevri:hasCountryCodeTopLevelDomain  ,
+    oplevri:currency  ,
+    oplevri:hasCurrencyCode  ,
+    oplevri:demonym  ,
+    oplevri:drivesOnSide  ,
+    oplevri:editor  ,
+    oplevri:hasEthnicGroup  ,
+    oplevri:firstDate  ,
+    oplevri:founded  ,
+    oplevri:founder  ,
+    oplevri:frequency  ,
+    oplevri:gdpNominalPerCapita  ,
+    oplevri:gdpNominalTotal  ,
+    oplevri:gdpPerCapita  ,
+    oplevri:gdpPerCapitaNum  ,
+    oplevri:giniCoefficient  ,
+    oplevri:governmentType  ,
+    oplevri:headquarter  ,
+    oplevri:holdsOffice  ,
+    oplevri:humanDevelopmentIndex  ,
+    oplevri:humanDevelopmentIndexRank  ,
+    oplevri:keyPerson  ,
+    oplevri:language  ,
+    oplevri:largestCity  ,
+    oplevri:latitudeDegree  ,
+    oplevri:latitudeMinute  ,
+    oplevri:latitudeNs  ,
+    oplevri:legislature  ,
+    oplevri:legislatureLowerHouse  ,
+    oplevri:legislatureUpperHouse  ,
+    oplevri:location  ,
+    oplevri:locationRegion  ,
+    oplevri:longitudeDegree  ,
+    oplevri:longitudeEW  ,
+    oplevri:longitudeMinute  ,
+    oplevri:motto  ,
+    oplevri:name  ,
+    oplevri:nameLocal  ,
+    oplevri:nationality  ,
+    oplevri:numberEmployee  ,
+    oplevri:occupation  ,
+    oplevri:organizationType  ,
+    oplevri:owner  ,
+    oplevri:politicalParty  ,
+    oplevri:populationCensus  ,
+    oplevri:populationDensityKM  ,
+    oplevri:populationDensityRank  ,
+    oplevri:populationDensitySQMI  ,
+    oplevri:populationRank  ,
+    oplevri:populationTotal  ,
+    oplevri:precededBy  ,
+    oplevri:primeMinister  ,
+    oplevri:productsProduced  ,
+    oplevri:publisher  ,
+    oplevri:religion  ,
+    oplevri:residence  ,
+    oplevri:sourceURL  ,
+    oplevri:sovereignty  ,
+    oplevri:spouse  ,
+    oplevri:termStart  ,
+    oplevri:timeZone  ,
+    oplevri:universityAttended  ,
+    oplevri:website  ,
+    oplevri:wikipediaInboundPageCount  ,
+    oplevri:wikipediaNormalizedName  ,
+    oplevri:wikipediaParagraph  ;
+  schema:about
+    oplevri:anthem  ,
+    oplevri:area  ,
+    oplevri:hasAreaRank  ,
+    oplevri:hasAreaTotalKM  ,
+    oplevri:hasAreaWaterPercent  ,
+    oplevri:hasBirthDate  ,
+    oplevri:hasBirthPlace  ,
+    oplevri:hasCallingCode  ,
+    oplevri:capital  ,
+    oplevri:child  ,
+    oplevri:circulation  ,
+    oplevri:citizenship  ,
+    oplevri:hasCompanyIndustry  ,
+    oplevri:hasCompanySubsidiary  ,
+    oplevri:hasCountryCodeTopLevelDomain  ,
+    oplevri:currency  ,
+    oplevri:hasCurrencyCode  ,
+    oplevri:demonym  ,
+    oplevri:drivesOnSide  ,
+    oplevri:editor  ,
+    oplevri:hasEthnicGroup  ,
+    oplevri:firstDate  ,
+    oplevri:founded  ,
+    oplevri:founder  ,
+    oplevri:frequency  ,
+    oplevri:gdpNominalPerCapita  ,
+    oplevri:gdpNominalTotal  ,
+    oplevri:gdpPerCapita  ,
+    oplevri:gdpPerCapitaNum  ,
+    oplevri:giniCoefficient  ,
+    oplevri:governmentType  ,
+    oplevri:headquarter  ,
+    oplevri:holdsOffice  ,
+    oplevri:humanDevelopmentIndex  ,
+    oplevri:humanDevelopmentIndexRank  ,
+    oplevri:keyPerson  ,
+    oplevri:language  ,
+    oplevri:largestCity  ,
+    oplevri:latitudeDegree  ,
+    oplevri:latitudeMinute  ,
+    oplevri:latitudeNs  ,
+    oplevri:legislature  ,
+    oplevri:legislatureLowerHouse  ,
+    oplevri:legislatureUpperHouse  ,
+    oplevri:location  ,
+    oplevri:locationRegion  ,
+    oplevri:longitudeDegree  ,
+    oplevri:longitudeEW  ,
+    oplevri:longitudeMinute  ,
+    oplevri:motto  ,
+    oplevri:name  ,
+    oplevri:nameLocal  ,
+    oplevri:nationality  ,
+    oplevri:numberEmployee  ,
+    oplevri:occupation  ,
+    oplevri:organizationType  ,
+    oplevri:owner  ,
+    oplevri:politicalParty  ,
+    oplevri:populationCensus  ,
+    oplevri:populationDensityKM  ,
+    oplevri:populationDensityRank  ,
+    oplevri:populationDensitySQMI  ,
+    oplevri:populationRank  ,
+    oplevri:populationTotal  ,
+    oplevri:precededBy  ,
+    oplevri:primeMinister  ,
+    oplevri:productsProduced  ,
+    oplevri:publisher  ,
+    oplevri:religion  ,
+    oplevri:residence  ,
+    oplevri:sourceURL  ,
+    oplevri:sovereignty  ,
+    oplevri:spouse  ,
+    oplevri:termStart  ,
+    oplevri:timeZone  ,
+    oplevri:universityAttended  ,
+    oplevri:website  ,
+    oplevri:wikipediaInboundPageCount  ,
+    oplevri:wikipediaNormalizedName  ,
+    oplevri:wikipediaParagraph  .
+
+<http://www.openlinksw.com/DAV/data/turtle/cartridge_ontologies/evri.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink Evri Ontology Description Document (Turtle)" ;
+  cc:License <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for Evri"""@en  ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/evri#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/evri> ;
+  xhv:describes <http://www.openlinksw.com/schemas/evri#> ;
+  schema:about <http://www.openlinksw.com/schemas/evri#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/evri#> .
+
+<http://www.openlinksw.com/data/turtle/cartridge_ontologies/evri.ttl>
+  a foaf:Document  ;
+  schema:name "OpenLink Evri Ontology Description Document (Turtle)" ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/>  ;
+  schema:creator <http://www.openlinksw.com/#this>  ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for Evri"""@en  ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/evri#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/evri> ;
+  xhv:describes <http://www.openlinksw.com/schemas/evri#> ;
+  schema:about <http://www.openlinksw.com/schemas/evri#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/evri#> .
+
+<http://www.openlinksw.com/schemas/evri>
+  a foaf:Document ;
+  schema:name """OpenLink Evri Ontology Description Document"""^^xsd:string ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a document that uses Linked Data oriented content to describe OpenLink Evri Ontology."""@en  ;
+  dcterms:subject <http://www.openlinksw.com/schemas/evri#> ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/evri#> ;
+  foaf:topic
+    oplevri:anthem  ,
+    oplevri:area  ,
+    oplevri:hasAreaRank  ,
+    oplevri:hasAreaTotalKM  ,
+    oplevri:hasAreaWaterPercent  ,
+    oplevri:hasBirthDate  ,
+    oplevri:hasBirthPlace  ,
+    oplevri:hasCallingCode  ,
+    oplevri:capital  ,
+    oplevri:child  ,
+    oplevri:circulation  ,
+    oplevri:citizenship  ,
+    oplevri:hasCompanyIndustry  ,
+    oplevri:hasCompanySubsidiary  ,
+    oplevri:hasCountryCodeTopLevelDomain  ,
+    oplevri:currency  ,
+    oplevri:hasCurrencyCode  ,
+    oplevri:demonym  ,
+    oplevri:drivesOnSide  ,
+    oplevri:editor  ,
+    oplevri:hasEthnicGroup  ,
+    oplevri:firstDate  ,
+    oplevri:founded  ,
+    oplevri:founder  ,
+    oplevri:frequency  ,
+    oplevri:gdpNominalPerCapita  ,
+    oplevri:gdpNominalTotal  ,
+    oplevri:gdpPerCapita  ,
+    oplevri:gdpPerCapitaNum  ,
+    oplevri:giniCoefficient  ,
+    oplevri:governmentType  ,
+    oplevri:headquarter  ,
+    oplevri:holdsOffice  ,
+    oplevri:humanDevelopmentIndex  ,
+    oplevri:humanDevelopmentIndexRank  ,
+    oplevri:keyPerson  ,
+    oplevri:language  ,
+    oplevri:largestCity  ,
+    oplevri:latitudeDegree  ,
+    oplevri:latitudeMinute  ,
+    oplevri:latitudeNs  ,
+    oplevri:legislature  ,
+    oplevri:legislatureLowerHouse  ,
+    oplevri:legislatureUpperHouse  ,
+    oplevri:location  ,
+    oplevri:locationRegion  ,
+    oplevri:longitudeDegree  ,
+    oplevri:longitudeEW  ,
+    oplevri:longitudeMinute  ,
+    oplevri:motto  ,
+    oplevri:name  ,
+    oplevri:nameLocal  ,
+    oplevri:nationality  ,
+    oplevri:numberEmployee  ,
+    oplevri:occupation  ,
+    oplevri:organizationType  ,
+    oplevri:owner  ,
+    oplevri:politicalParty  ,
+    oplevri:populationCensus  ,
+    oplevri:populationDensityKM  ,
+    oplevri:populationDensityRank  ,
+    oplevri:populationDensitySQMI  ,
+    oplevri:populationRank  ,
+    oplevri:populationTotal  ,
+    oplevri:precededBy  ,
+    oplevri:primeMinister  ,
+    oplevri:productsProduced  ,
+    oplevri:publisher  ,
+    oplevri:religion  ,
+    oplevri:residence  ,
+    oplevri:sourceURL  ,
+    oplevri:sovereignty  ,
+    oplevri:spouse  ,
+    oplevri:termStart  ,
+    oplevri:timeZone  ,
+    oplevri:universityAttended  ,
+    oplevri:website  ,
+    oplevri:wikipediaInboundPageCount  ,
+    oplevri:wikipediaNormalizedName  ,
+    oplevri:wikipediaParagraph  .
+
+
+oplevri:anthem a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Anthem"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "anthem" ;
+     skos:altLabel "anthem" ;
+     rdfs:range xsd:string .
+
+oplevri:area a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Area"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "area" ;
+     skos:altLabel "area" ;
+     rdfs:range xsd:string .
+
+oplevri:hasAreaRank a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Area Rank"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "hasAreaRank" ;
+     skos:altLabel "area rank" ;
+     rdfs:range xsd:string .
+
+oplevri:hasAreaTotalKM a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Total Area (km)"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "hasAreaTotalKM" ;
+     skos:altLabel "total area (km)" ;
+     rdfs:range xsd:string .
+
+oplevri:hasAreaWaterPercent a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Water Area (%)"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "hasAreaWaterPercent" ;
+     skos:altLabel "water area (%)" ;
+     rdfs:range xsd:string .
+
+oplevri:hasBirthDate a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Birth Date"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "hasBirthDate" ;
+     skos:altLabel "birth date" ;
+     rdfs:range xsd:string .
+
+oplevri:hasBirthPlace a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Birthplace"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "hasBirthPlace" ;
+     skos:altLabel "birth place" ;
+     rdfs:range xsd:string .
+
+oplevri:hasCallingCode a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Country Calling Code"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "hasCallingCode" ;
+     skos:altLabel "country calling code" ;
+     rdfs:range xsd:string .
+
+oplevri:capital a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Capital"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "capital" ;
+     skos:altLabel "capital" ;
+     rdfs:range xsd:string .
+
+oplevri:child a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Children"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "child" ;
+     skos:altLabel "child" ;
+     rdfs:range xsd:string .
+
+oplevri:circulation a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Circulation"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "circulation" ;
+     skos:altLabel "circulation" ;
+     rdfs:range xsd:string .
+
+oplevri:citizenship a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Citizenship"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "citizenship" ;
+     skos:altLabel "citizenship" ;
+     rdfs:range xsd:string .
+
+oplevri:hasCompanyIndustry a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Industry"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "hasCompanyIndustry" ;
+     skos:altLabel "company industry" ;
+     rdfs:range xsd:string .
+
+oplevri:hasCompanySubsidiary a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Subsidiaries"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "hasCompanySubsidiary" ;
+     skos:altLabel "company subsidiary" ;
+     rdfs:range xsd:string .
+
+oplevri:hasCountryCodeTopLevelDomain a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """ccTLD"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "hasCountryCodeTopLevelDomain" ;
+     skos:altLabel "country code top level domain" ;
+     rdfs:range xsd:string .
+
+oplevri:currency a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Currency"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "currency" ;
+     skos:altLabel "currency" ;
+     rdfs:range xsd:string .
+
+oplevri:hasCurrencyCode a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Currency (code)"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "hasCurrencyCode" ;
+     skos:altLabel "currency (code)" ;
+     rdfs:range xsd:string .
+
+oplevri:demonym a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Demonym"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "demonym" ;
+     skos:altLabel "demonym" ;
+     rdfs:range xsd:string .
+
+oplevri:drivesOnSide a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Drives On"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "drivesOnSide" ;
+     skos:altLabel "drives on side" ;
+     rdfs:range xsd:string .
+
+oplevri:editor a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Editor"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "editor" ;
+     skos:altLabel "editor" ;
+     rdfs:range xsd:string .
+
+oplevri:hasEthnicGroup a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Ethnic groups"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "hasEthnicGroup" ;
+     skos:altLabel "ethnic groups" ;
+     rdfs:range xsd:string .
+
+oplevri:firstDate a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """First"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "firstDate" ;
+     skos:altLabel "first date" ;
+     rdfs:range xsd:string .
+
+oplevri:founded a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Founded"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "founded" ;
+     skos:altLabel "founded" ;
+     rdfs:range xsd:string .
+
+oplevri:founder a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Founder"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "founder" ;
+     skos:altLabel "founder" ;
+     rdfs:range xsd:string .
+
+oplevri:frequency a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Frequency"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "frequency" ;
+     skos:altLabel "frequency" ;
+     rdfs:range xsd:string .
+
+oplevri:gdpNominalPerCapita a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """GDP (nominal per capita)"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "gdpNominalPerCapita" ;
+     skos:altLabel "gdp (nominal per capita)" ;
+     rdfs:range xsd:string .
+
+oplevri:gdpNominalTotal a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """GDP (nominal)"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "gdpNominalTotal" ;
+     skos:altLabel "gdp (nominal)" ;
+     rdfs:range xsd:string .
+
+oplevri:gdpPerCapita a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """GDP (per capita PPP)"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "gdpPerCapita" ;
+     skos:altLabel "gdp (per capita)" ;
+     rdfs:range xsd:string .
+
+oplevri:gdpPerCapitaNum a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """GDP (per capita PPP)"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "gdpPerCapitaNum" ;
+     skos:altLabel "gdp (per capita num)" ;
+     rdfs:range xsd:string .
+
+oplevri:giniCoefficient a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Gini"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "giniCoefficient" ;
+     skos:altLabel "gini coefficient" ;
+     rdfs:range xsd:string .
+
+oplevri:governmentType a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Government type"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "governmentType" ;
+     skos:altLabel "government type" ;
+     rdfs:range xsd:string .
+
+oplevri:headquarter a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Headquarters"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "headquarter" ;
+     skos:altLabel "headquarter" ;
+     rdfs:range xsd:string .
+
+oplevri:holdsOffice a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Office"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "holdsOffice" ;
+     skos:altLabel "office" ;
+     rdfs:range xsd:string .
+
+oplevri:humanDevelopmentIndex a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """HDI"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "humanDevelopmentIndex" ;
+     skos:altLabel "human development index" ;
+     rdfs:range xsd:string .
+
+oplevri:humanDevelopmentIndexRank a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """HDI Rank"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "humanDevelopmentIndexRank" ;
+     skos:altLabel "human development index rank" ;
+     rdfs:range xsd:string .
+
+oplevri:keyPerson a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Key People"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "keyPerson" ;
+     skos:altLabel "key people" ;
+     rdfs:range xsd:string .
+
+oplevri:language a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Language"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "language" ;
+     skos:altLabel "language" ;
+     rdfs:range xsd:string .
+
+oplevri:largestCity a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Largest City"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "largestCity" ;
+     skos:altLabel "largest city" ;
+     rdfs:range xsd:string .
+
+oplevri:latitudeDegree a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Latitude (Degrees)"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "latitudeDegree" ;
+     skos:altLabel "latitude (degrees)" ;
+     rdfs:range xsd:string .
+
+oplevri:latitudeMinute a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Latitude (Minutes)"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "latitudeMinute" ;
+     skos:altLabel "latitude (minutes)" ;
+     rdfs:range xsd:string .
+
+oplevri:latitudeNs a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Latitude"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "latitudeNs" ;
+     skos:altLabel "latitude" ;
+     rdfs:range xsd:string .
+
+oplevri:legislature a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Legislature"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "legislature" ;
+     skos:altLabel "legislature" ;
+     rdfs:range xsd:string .
+
+oplevri:legislatureLowerHouse a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Lower House"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "legislatureLowerHouse" ;
+     skos:altLabel "legislature lower house" ;
+     rdfs:range xsd:string .
+
+oplevri:legislatureUpperHouse a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Upper House"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "legislatureUpperHouse" ;
+     skos:altLabel "legislature upper house" ;
+     rdfs:range xsd:string .
+
+oplevri:location a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Location"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "location" ;
+     skos:altLabel "location" ;
+     rdfs:range xsd:string .
+
+oplevri:locationRegion a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Region"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "locationRegion" ;
+     skos:altLabel "location region" ;
+     rdfs:range xsd:string .
+
+oplevri:longitudeDegree a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Longitude (Degrees)"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "longitudeDegree" ;
+     skos:altLabel "longitude (degrees)" ;
+     rdfs:range xsd:string .
+
+oplevri:longitudeEW a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Longitude"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "longitudeEW" ;
+     skos:altLabel "longitude" ;
+     rdfs:range xsd:string .
+
+oplevri:longitudeMinute a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Longitude (Minutes)"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "longitudeMinute" ;
+     skos:altLabel "longitude (minutes)" ;
+     rdfs:range xsd:string .
+
+oplevri:motto a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Motto"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "motto" ;
+     skos:altLabel "motto" ;
+     rdfs:range xsd:string .
+
+oplevri:name a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Name"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "name" ;
+     skos:altLabel "name" ;
+     rdfs:range xsd:string .
+
+oplevri:nameLocal a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Local Name"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "nameLocal" ;
+     skos:altLabel "local name" ;
+     rdfs:range xsd:string .
+
+oplevri:nationality a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Nationality"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "nationality" ;
+     skos:altLabel "nationality" ;
+     rdfs:range xsd:string .
+
+oplevri:numberEmployee a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """No. of Employees"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "numberEmployee" ;
+     skos:altLabel "no. of employees" ;
+     rdfs:range xsd:string .
+
+oplevri:occupation a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Occupation"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "occupation" ;
+     skos:altLabel "occupation" ;
+     rdfs:range xsd:string .
+
+oplevri:organizationType a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Type"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "organizationType" ;
+     skos:altLabel "organization type" ;
+     rdfs:range xsd:string .
+
+oplevri:owner a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Owned by"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "owner" ;
+     skos:altLabel "owner" ;
+     rdfs:range xsd:string .
+
+oplevri:politicalParty a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Political party"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "politicalParty" ;
+     skos:altLabel "political party" ;
+     rdfs:range xsd:string .
+
+oplevri:populationCensus a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Population (census)"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "populationCensus" ;
+     skos:altLabel "population (census)" ;
+     rdfs:range xsd:string .
+
+oplevri:populationDensityKM a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Population Density (sq km)"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "populationDensityKM" ;
+     skos:altLabel "population density (sq km)" ;
+     rdfs:range xsd:string .
+
+oplevri:populationDensityRank a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Population Density Rank"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "populationDensityRank" ;
+     skos:altLabel "population density rank" ;
+     rdfs:range xsd:string .
+
+oplevri:populationDensitySQMI a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Population Density (sq mi)"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "populationDensitySQMI" ;
+     skos:altLabel "population density (sq mi)" ;
+     rdfs:range xsd:string .
+
+oplevri:populationRank a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Population Rank"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "populationRank" ;
+     skos:altLabel "population rank" ;
+     rdfs:range xsd:string .
+
+oplevri:populationTotal a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Total Population"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "populationTotal" ;
+     skos:altLabel "population total" ;
+     rdfs:range xsd:string .
+
+oplevri:precededBy a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Preceded By"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "precededBy" ;
+     skos:altLabel "preceded by" ;
+     rdfs:range xsd:string .
+
+oplevri:primeMinister a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Prime Minister"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "primeMinister" ;
+     skos:altLabel "prime minister" ;
+     rdfs:range xsd:string .
+
+oplevri:productsProduced a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Products"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "productsProduced" ;
+     skos:altLabel "products produced" ;
+     rdfs:range xsd:string .
+
+oplevri:publisher a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Published By"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "publisher" ;
+     skos:altLabel "publisher" ;
+     rdfs:range xsd:string .
+
+oplevri:religion a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Religion"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "religion" ;
+     skos:altLabel "religion" ;
+     rdfs:range xsd:string .
+
+oplevri:residence a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Residence"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "residence" ;
+     skos:altLabel "residence" ;
+     rdfs:range xsd:string .
+
+oplevri:sourceURL a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Entity url for a particular source"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "sourceURL" ;
+     skos:altLabel "source url" ;
+     rdfs:range xsd:string .
+
+oplevri:sovereignty a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Sovereignty"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "sovereignty" ;
+     skos:altLabel "sovereignty" ;
+     rdfs:range xsd:string .
+
+oplevri:spouse a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Spouse"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "spouse" ;
+     skos:altLabel "spouse" ;
+     rdfs:range xsd:string .
+
+oplevri:termStart a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Start"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "termStart" ;
+     skos:altLabel "term start" ;
+     rdfs:range xsd:string .
+
+oplevri:timeZone a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Time Zone"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "timeZone" ;
+     skos:altLabel "time zone" ;
+     rdfs:range xsd:string .
+
+oplevri:universityAttended a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """University Attended"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "universityAttended" ;
+     skos:altLabel "university attended" ;
+     rdfs:range xsd:string .
+
+oplevri:website a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Website"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "website" ;
+     skos:altLabel "website" ;
+     rdfs:range xsd:string .
+
+oplevri:wikipediaInboundPageCount a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Wikipedia inbound page count"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "wikipediaInboundPageCount" ;
+     skos:altLabel "wikipedia inbound page count" ;
+     rdfs:range xsd:string .
+
+oplevri:wikipediaNormalizedName a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Name"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "wikipediaNormalizedName" ;
+     skos:altLabel "wikipedia normalized name" ;
+     rdfs:range xsd:string .
+
+oplevri:wikipediaParagraph a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Wikipedia Paragraph"""@en  ;
+     rdfs:domain oplevri:ItemType ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/evri#> ;
+     rdfs:label "wikipediaParagraph" ;
+     skos:altLabel "wikipedia paragraph" ;
+     rdfs:range xsd:string .

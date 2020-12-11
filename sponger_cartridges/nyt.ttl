@@ -1,0 +1,154 @@
+#
+# An OpenLink ontology for New York Times
+#
+# See:
+# http://developer.nytimes.com/docs/read/The_Semantic_API
+#
+
+@prefix schema:  <http://schema.org/> .
+@prefix cvocab:  <http://open-services.net/ns/core#> .
+@prefix bibo:    <http://purl.org/ontology/bibo/> .
+@prefix cc:      <http://creativecommons.org/ns#> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix wdrs:    <http://www.w3.org/2007/05/powder-s#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix xhv:    <http://www.w3.org/1999/xhtml/vocab#> .
+
+@prefix oplnyt: <http://www.openlinksw.com/schemas/nyt#> .
+
+<http://www.openlinksw.com/schemas/nyt#>
+  a owl:Ontology ;
+  schema:name "OpenLink New York Times Ontology" ;
+  schema:comment """Ontology that defines entity and relation types used to describe New York Times.
+  Examples include concept types, related articles, topics etc."""@en ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:dateCreated "2013-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  schema:dateModified "2015-04-22T13:38:00-05:00"^^xsd:dateTime ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  wdrs:describedby <http://www.openlinksw.com/schemas/nyt> ;
+  owl:versionInfo "1.0.0"^^xsd:string ;
+  owl:imports <http://www.w3.org/1999/02/22-rdf-syntax-ns#> , <http://purl.org/dc/terms/> ;
+  <http://open.vocab.org/terms/defines>
+    oplnyt:conceptType ,
+    oplnyt:fee ,
+    oplnyt:isTimesTag ,
+    oplnyt:relatedArticle ,
+    oplnyt:fullArticle ,
+    oplnyt:topicPage ;
+  schema:about
+    oplnyt:conceptType ,
+    oplnyt:fee ,
+    oplnyt:isTimesTag ,
+    oplnyt:relatedArticle ,
+    oplnyt:fullArticle ,
+    oplnyt:topicPage .
+
+<http://www.openlinksw.com/DAV/data/turtle/cartridge_ontologies/nyt.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink New York Times Ontology Description Document (Turtle)" ;
+  cc:License <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for New York Times"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/nyt#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/nyt> ;
+  xhv:describes <http://www.openlinksw.com/schemas/nyt#> ;
+  schema:about <http://www.openlinksw.com/schemas/nyt#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/nyt#> .
+
+<http://www.openlinksw.com/data/turtle/cartridge_ontologies/nyt.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink New York Times Ontology Description Document (Turtle)" ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for New York Times"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/nyt#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/nyt> ;
+  xhv:describes <http://www.openlinksw.com/schemas/nyt#> ;
+  schema:about <http://www.openlinksw.com/schemas/nyt#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/nyt#> .
+
+<http://www.openlinksw.com/schemas/nyt>
+  a foaf:Document ;
+  schema:name """OpenLink New York Times Ontology Description Document"""^^xsd:string ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a document that uses Linked Data oriented content to describe OpenLink New York Times Ontology."""@en ;
+  dcterms:subject <http://www.openlinksw.com/schemas/nyt#> ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/nyt#> ;
+  foaf:topic
+    oplnyt:conceptType ,
+    oplnyt:fee ,
+    oplnyt:isTimesTag ,
+    oplnyt:relatedArticle ,
+    oplnyt:fullArticle ,
+    oplnyt:topicPage .
+
+
+# ---------------------------------------------------------------------------
+# NYT classes
+#
+
+# ---------------------------------------------------------------------------
+# NYT properties
+#
+
+oplnyt:conceptType
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/nyt#> ;
+    rdfs:label "conceptType" ;
+    skos:altLabel "nyt concept type" ;
+    rdfs:comment """A concept type from the New York Times controlled vocabulary"""@en  ;
+    rdfs:domain skos:Concept ;
+    rdfs:range xsd:string .
+
+oplnyt:fee
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/nyt#> ;
+    rdfs:label "fee" ;
+    skos:altLabel "nyt fee" ;
+    rdfs:comment """Indicates whether users must pay a fee to retrieve the full article"""@en  ;
+    rdfs:domain bibo:Document ;
+    rdfs:range xsd:boolean .
+
+oplnyt:isTimesTag
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/nyt#> ;
+    rdfs:label "isTimesTag" ;
+    skos:altLabel "is nyt tag" ;
+    rdfs:comment """True if a concept is returned by the TimesTags API"""@en  ;
+    rdfs:domain skos:Concept ;
+    rdfs:range xsd:boolean .
+
+oplnyt:relatedArticle
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/nyt#> ;
+    rdfs:label "relatedArticle" ;
+    skos:altLabel "nyt related article" ;
+    rdfs:comment """A summary of a NYT article related to a NYT concept/topic tag"""@en  ;
+    rdfs:domain skos:Concept ;
+    rdfs:range bibo:Document .
+
+oplnyt:fullArticle
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/nyt#> ;
+    rdfs:label "fullArticle" ;
+    skos:altLabel "nyt full article" ;
+    rdfs:comment """A link to a full NYT article related to a NYT concept/topic tag"""@en  ;
+    rdfs:domain skos:Concept ;
+    rdfs:range rdfs:Resource .
+
+oplnyt:topicPage
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/nyt#> ;
+    rdfs:label "topicPage" ;
+    skos:altLabel "nyt topic page" ;
+    rdfs:comment """A NYT topic page associated with a NYT concept/topic tag"""@en  ;
+    rdfs:domain skos:Concept ;
+    rdfs:range rdfs:Resource .
+

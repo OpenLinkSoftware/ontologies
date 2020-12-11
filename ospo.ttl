@@ -1,0 +1,407 @@
+@prefix schema:  <http://schema.org/> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix xhv:     <http://www.w3.org/1999/xhtml/vocab#> .
+@prefix cvocab:  <http://open-services.net/ns/core#> .
+@prefix bibo:    <http://purl.org/ontology/bibo/> .
+@prefix cc:      <http://creativecommons.org/ns#> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix gr:      <http://purl.org/goodrelations/v1#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix umbelrc: <http://umbel.org/umbel/rc/> .
+@prefix vcard:   <http://www.w3.org/2006/vcard/ns#> .
+@prefix wdrs:    <http://www.w3.org/2007/05/powder-s#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix ospo:    <http://www.openlinksw.com/ontology/ospo#> .
+@prefix oplli:   <http://www.openlinksw.com/schemas/linkedin#> .
+
+
+<http://www.openlinksw.com/ontology/ospo#>
+  a owl:Ontology ;
+  rdfs:label "OpenLink Skills and Proficiency Ontology" ;
+  rdfs:comment """Ontology that defines entity and relation types used to describe skills & proficiency."""@en;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  owl:imports <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ,
+              <http://purl.org/dc/terms/> ,
+              <http://www.openlinksw.com/schemas/linkedin#> ,
+              <http://www.openlinksw.com/schemas/reification#> ,
+              <http://xmlns.com/foaf/0.1/> ;
+  wdrs:describedby <http://www.openlinksw.com/ontology/ospo> ;
+  dcterms:created "2014-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  dcterms:modified "2015-03-20T13:38:00-05:00"^^xsd:dateTime ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  owl:versionInfo "1.0.0"^^xsd:string ;
+  <http://open.vocab.org/terms/defines>
+             ospo:SPARQLProficiency ,
+             ospo:SQLProficiency ,
+             ospo:RDFProficiency ,
+             ospo:Person ,
+             ospo:Proficiency ,
+             ospo:SkillProficiencyLevel ,
+             ospo:hasSkillProficiency ,
+             ospo:hasSkillProficiencyLevel ,
+             ospo:isSkillProficiencyLevelOf ,
+             ospo:hasSkill ,
+             ospo:hasProficiencyType ,
+             ospo:Expert ,
+             ospo:Advanced ,
+             ospo:Beginner ,
+             ospo:ProficiencyScaleBAE ,
+             ospo:ProficiencyScale10 ,
+             ospo:SPARQLQueryLanguageSkill ,
+             ospo:SQLQueryLanguageSkill ,
+             ospo:RDFQueryLanguageSkill ,
+             ospo:SPARQLQueryLanguage ,
+             ospo:SQLQueryLanguage ,
+             ospo:RDFQueryLanguage ,
+             ospo:1 ,
+             ospo:2 ,
+             ospo:3 ,
+             ospo:4 ,
+             ospo:5 ,
+             ospo:6 ,
+             ospo:7 ,
+             ospo:8 ,
+             ospo:9 ,
+             ospo:10 ;
+  schema:about
+             ospo:SPARQLProficiency ,
+             ospo:SQLProficiency ,
+             ospo:RDFProficiency ,
+             ospo:Person ,
+             ospo:Proficiency ,
+             ospo:SkillProficiencyLevel ,
+             ospo:hasSkillProficiency ,
+             ospo:hasSkillProficiencyLevel ,
+             ospo:isSkillProficiencyLevelOf ,
+             ospo:hasSkill ,
+             ospo:hasProficiencyType ,
+             ospo:Expert ,
+             ospo:Advanced ,
+             ospo:Beginner ,
+             ospo:ProficiencyScaleBAE ,
+             ospo:ProficiencyScale10 ,
+             ospo:SPARQLQueryLanguageSkill ,
+             ospo:SQLQueryLanguageSkill ,
+             ospo:RDFQueryLanguageSkill ,
+             ospo:SPARQLQueryLanguage ,
+             ospo:SQLQueryLanguage ,
+             ospo:RDFQueryLanguage ,
+             ospo:1 ,
+             ospo:2 ,
+             ospo:3 ,
+             ospo:4 ,
+             ospo:5 ,
+             ospo:6 ,
+             ospo:7 ,
+             ospo:8 ,
+             ospo:9 ,
+             ospo:10 .
+
+
+# Example:
+# :JohnSmith  a ospo:Person ;
+#   rdfs:label "John Smith";
+#   ospo:hasSkill ospo:SPARQLProficiency , ospo:RDFProficiency, ospo:SQLProficiency ;
+#   wdrs:describedby  <> .
+
+<http://www.openlinksw.com/DAV/data/turtle/ospo.ttl>
+  a foaf:Document , schema:TechArticle ;
+  rdfs:label "OpenLink Skills and Proficiency Ontology Description Document (Turtle)" ;
+  cc:License <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  rdfs:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for Skills & Proficiency"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/ontology/ospo#> ;
+  dcterms:created "2014-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  dcterms:modified "2015-03-20T13:38:00-05:00"^^xsd:dateTime ;
+  xhv:canonical <http://www.openlinksw.com/ontology/ospo> ;
+  xhv:describes <http://www.openlinksw.com/ontology/ospo#> ;
+  schema:about <http://www.openlinksw.com/ontology/ospo#> ;
+  dcterms:subject <http://www.openlinksw.com/ontology/ospo#> .
+
+<http://www.openlinksw.com/data/turtle/ospo.ttl>
+  a foaf:Document , schema:TechArticle ;
+  rdfs:label "OpenLink Skills and Proficiency Ontology Description Document (Turtle)" ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  rdfs:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for Skills & Proficiency"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/ontology/ospo#> ;
+  dcterms:created "2014-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  dcterms:modified "2015-03-20T13:38:00-05:00"^^xsd:dateTime ;
+  xhv:canonical <http://www.openlinksw.com/ontology/ospo> ;
+  xhv:describes <http://www.openlinksw.com/ontology/ospo#> ;
+  schema:about <http://www.openlinksw.com/ontology/ospo#> ;
+  dcterms:subject <http://www.openlinksw.com/ontology/ospo#> .
+
+<http://www.openlinksw.com/ontology/ospo>
+  a foaf:Document , schema:TechArticle ;
+  rdfs:label """OpenLink Skills and Proficiency Ontology Description Document"""^^xsd:string ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  rdfs:comment """This is a document that uses Linked Data oriented content to describe OpenLink Skills and Proficiency Ontology."""@en ;
+  dcterms:subject <http://www.openlinksw.com/ontology/ospo#> ;
+  dcterms:created "2014-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  dcterms:modified "2015-03-20T13:38:00-05:00"^^xsd:dateTime ;
+  foaf:primaryTopic <http://www.openlinksw.com/ontology/ospo#> ;
+  foaf:topic ospo:SPARQLProficiency ,
+             ospo:SQLProficiency ,
+             ospo:RDFProficiency ,
+             ospo:Person ,
+             ospo:hasSkillProficiency ,
+             ospo:hasSkillProficiencyLevel ,
+             ospo:isSkillProficiencyLevelOf ,
+             ospo:hasProficiencyType ,
+             ospo:hasSkill ,
+             ospo:Expert ,
+             ospo:Advanced ,
+             ospo:Beginner ,
+             ospo:Proficiency ,
+             ospo:SkillProficiencyLevel ,
+             ospo:ProficiencyScaleBAE ,
+             ospo:ProficiencyScale10 ,
+             ospo:SPARQLQueryLanguageSkill ,
+             ospo:SQLQueryLanguageSkill ,
+             ospo:RDFQueryLanguageSkill ,
+             ospo:SPARQLQueryLanguage ,
+             ospo:SQLQueryLanguage ,
+             ospo:RDFQueryLanguage ,
+             ospo:1 ,
+             ospo:2 ,
+             ospo:3 ,
+             ospo:4 ,
+             ospo:5 ,
+             ospo:6 ,
+             ospo:7 ,
+             ospo:8 ,
+             ospo:9 ,
+             ospo:10 .
+
+
+# <-------------- SPO Classes --------------> #
+
+ospo:Person
+    a owl:Class ;
+    rdfs:label "Proficient Person";
+    rdfs:subClassOf foaf:Person ;
+    rdfs:subClassOf [ a owl:Restriction ;
+                      owl:allValuesFrom ospo:Proficiency ;
+                      owl:onProperty ospo:hasSkill ] ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/ospo#> .
+
+ospo:Proficiency
+    a owl:Class ;
+    rdfs:label "Proficiency" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:someValuesFrom ospo:ProficiencyScaleBAE , ospo:ProficiencyScale10 ;
+            owl:onProperty ospo:hasProficiencyType ] ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/ospo#> .
+
+ospo:SkillProficiencyLevel
+    a owl:Class ;
+    rdfs:label "Proficiency Skill Level" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:someValuesFrom ospo:SPARQLQueryLanguage , ospo:SQLQueryLanguage , ospo:RDFQueryLanguage  ;
+            owl:onProperty ospo:isSkillProficiencyLevelOf ] ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/ospo#> .
+
+
+ospo:ProficiencyScaleBAE a owl:Class ;
+    rdfs:label "ProficiencyScaleBEA" ;
+    skos:altLabel "Beginner, Advanced, or Expert Proficiency" ;
+    rdfs:comment """Proficiency score based on one of the following levels: Beginner, Advanced, or Expert."""@en ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:oneOf ( ospo:Advanced ospo:Expert ospo:Beginner ) ] ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/ospo#> .
+
+ospo:ProficiencyScale10 a owl:Class ;
+    rdfs:label "ProficiencyScale10" ;
+    skos:altLabel "Proficiency Scale 1 to 10" ;
+    rdfs:comment """Proficiency score based on a 1 to 10 scale."""@en ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:oneOf ( ospo:1 ospo:2T ospo:3 ospo:4 ospo:5 ospo:6 ospo:7 ospo:8 ospo:9 ospo:10) ] ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/ospo#> .
+
+
+# [] a owl:AllDifferent ;
+#     owl:distinctMembers ( ospo:Advanced ospo:Expert ospo:Beginner ) ;
+#
+# [] a owl:AllDifferent ;
+#     owl:distinctMembers ( ospo:1 ospo:2T ospo:3 ospo:4 ospo:5 ospo:6 ospo:7 ospo:8 ospo:9 ospo:10 ) ;
+#     rdfs:isDefinedBy <http://www.openlinksw.com/ontology/ospo#> .
+#
+
+# <-------------- SkillProficiencyLevel Classes ------------------>
+ospo:SPARQLQueryLanguage
+    a oplli:SkillProficiencyLevel ;
+    rdfs:label "SPARQL Query Language Level";
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/ospo#> .
+
+ospo:SQLQueryLanguage
+    a oplli:SkillProficiencyLevel ;
+    rdfs:label "SQL Query Language Level";
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/ospo#> .
+
+ospo:RDFQueryLanguage
+    a oplli:SkillProficiencyLevel ;
+    rdfs:label "RDF Language Level";
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/ospo#> .
+
+# <-------------- Skill Classes ------------------>
+ospo:SPARQLQueryLanguageSkill
+    a oplli:Skill ;
+    rdfs:label "SPARQL Query Language Skill";
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/ospo#> .
+
+ospo:SQLQueryLanguageSkill
+    a oplli:Skill ;
+    rdfs:label "SQL Query Language Skill";
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/ospo#> .
+
+ospo:RDFQueryLanguageSkill
+    a oplli:Skill ;
+    rdfs:label "RDF Language Skill";
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/ospo#> .
+
+# <-------------- Proficiency Classes ------------------>
+ospo:SPARQLProficiency
+    a ospo:Proficiency ;
+    rdfs:label "SPARQL Query Language Proficiency";
+    ospo:isSkillProficiencyLevelOf ospo:SPARQLQueryLanguageSkill ;
+    ospo:hasProficiencyType ospo:Advanced  , ospo:Beginner, ospo:Expert ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/ospo#> .
+
+ospo:SQLProficiency
+    a ospo:Proficiency ;
+    rdfs:label "SQL Proficiency";
+    ospo:hasProficiencyType ospo:Advanced  , ospo:Beginner, ospo:Expert ;
+    ospo:isSkillProficiencyLevelOf ospo:SQLQueryLanguageSkill ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/ospo#> .
+
+ospo:RDFProficiency
+    a ospo:Proficiency ;
+    rdfs:label "RDF Proficiency";
+    ospo:hasProficiencyType ospo:Advanced  , ospo:Beginner, ospo:Expert ;
+    ospo:isSkillProficiencyLevelOf ospo:RDFQueryLanguageSkill ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/ospo#> .
+
+
+# <-------------- ProficiencyScaleBAE Classes ------------------>
+ospo:Expert
+    a ospo:ProficiencyScaleBAE ;
+    rdfs:label "Expert" ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/ospo#> .
+
+ospo:Advanced
+    a ospo:ProficiencyScaleBAE ;
+    rdfs:label "Advanced" ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/ospo#> .
+
+ospo:Beginner
+    a ospo:ProficiencyScaleBAE ;
+    rdfs:label "Beginner" ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/ospo#> .
+
+
+# <-------------- ProficiencyScale10 Classes ------------------>
+
+ospo:1
+    a ospo:ProficiencyScale10 ;
+    rdfs:label "1 of 10 Scale" ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/ospo#> .
+
+ospo:2
+    a ospo:ProficiencyScale10 ;
+    rdfs:label "2 of 10 Scale" ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/ospo#> .
+
+ospo:3
+    a ospo:ProficiencyScale10 ;
+    rdfs:label "3 of 10 Scale" ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/ospo#> .
+
+ospo:4
+    a ospo:ProficiencyScale10 ;
+    rdfs:label "4 of 10 Scale" ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/ospo#> .
+
+ospo:5
+    a ospo:ProficiencyScale10 ;
+    rdfs:label "5 of 10 Scale" ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/ospo#> .
+
+ospo:6
+    a ospo:ProficiencyScale10 ;
+    rdfs:label "6 of 10 Scale" ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/ospo#> .
+
+ospo:7
+    a ospo:ProficiencyScale10 ;
+    rdfs:label "7 of 10 Scale" ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/ospo#> .
+
+ospo:8
+    a ospo:ProficiencyScale10 ;
+    rdfs:label "8 of 10 Scale" ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/ospo#> .
+
+ospo:9
+    a ospo:ProficiencyScale10 ;
+    rdfs:label "9 of 10 Scale" ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/ospo#> .
+
+ospo:10
+    a ospo:ProficiencyScale10 ;
+    rdfs:label "10 of 10 Scale" ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/ospo#> .
+
+
+# <-------------- SPO Properties --------------> #
+
+ospo:hasSkill
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/ospo#> ;
+    owl:equivalentProperty oplli:skill ;
+    skos:altLabel "skill" ;
+    rdfs:label "hasSkill" ;
+    rdfs:comment "Relation that associates a Person with a Skill."@en ;
+    rdfs:domain oplli:Person ;
+    rdfs:range oplli:Skill .
+
+ospo:hasSkillProficiency
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:label "hasSkillProficiency" ;
+    rdfs:comment """Relation that associates a Skill with a Proficiency"""@en ;
+    rdfs:domain oplli:Skill ;
+    rdfs:range ospo:Proficiency ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/ospo#> .
+
+ospo:hasSkillProficiencyLevel
+    a rdf:Property, owl:FunctionalProperty, owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/ospo#> ;
+    rdfs:label "hasSkillProficiencyLevel" ;
+    rdfs:comment "Relation that associates a Skill with a Skill Level."@en ;
+    owl:inverseOf ospo:isSkillProficiencyLevelOf ;
+    rdfs:domain oplli:Skill ;
+    rdfs:range ospo:SkillProficiencyLevel .
+
+ospo:isSkillProficiencyLevelOf
+    a rdf:Property, owl:FunctionalProperty, owl:ObjectProperty ;
+    rdfs:label "isSkillProficiencyLevelOf" ;
+    rdfs:comment "Relation that associates a Proficiency Level with a Skill e.g., SPARQL Query Language"@en ;
+    owl:inverseOf ospo:hasSkillProficiencyLevel ;
+    rdfs:domain ospo:SkillProficiencyLevel;
+    rdfs:range oplli:Skill ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/ospo#> .
+
+ospo:hasProficiencyType
+    a rdf:Property, owl:FunctionalProperty, owl:ObjectProperty ;
+    skos:altLabel "has proficiency type" ;
+    rdfs:label "hasProficiencyType" ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/ospo#> ;
+    rdfs:domain ospo:SkillProficiencyLevel ;
+    rdfs:range
+        ospo:ProficiencyScaleBAE,
+        ospo:ProficiencyScale10 .

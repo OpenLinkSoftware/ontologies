@@ -1,0 +1,338 @@
+@prefix schema:  <http://schema.org/> .
+@prefix skos:      <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:   <http://purl.org/dc/terms/> .
+@prefix cvocab:    <http://open-services.net/ns/core#> .
+@prefix cc:        <http://creativecommons.org/ns#> .
+@prefix foaf:      <http://xmlns.com/foaf/0.1/> .
+@prefix gr:        <http://purl.org/goodrelations/v1#> .
+@prefix owl:       <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix wdrs:      <http://www.w3.org/2007/05/powder-s#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix oplmarvel: <http://www.openlinksw.com/schemas/marvel#> .
+@prefix xhv:    <http://www.w3.org/1999/xhtml/vocab#> .
+
+<http://www.openlinksw.com/schemas/marvel#>
+  a owl:Ontology ;
+  schema:name "OpenLink Marvel Ontology" ;
+  schema:comment """Ontology that defines entity and relation types used to describe Marvel.
+  Examples include formats, issue numbers, page counts etc."""@en ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:dateCreated "2013-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  schema:dateModified "2015-04-22T13:38:00-05:00"^^xsd:dateTime ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  wdrs:describedby <http://www.openlinksw.com/schemas/marvel> ;
+  owl:versionInfo "1.0.0"^^xsd:string ;
+  owl:imports <http://www.w3.org/1999/02/22-rdf-syntax-ns#> , <http://purl.org/dc/terms/> , <http://purl.org/goodrelations/v1> ;
+  <http://open.vocab.org/terms/defines>
+    oplmarvel:id ,
+    oplmarvel:digitalId ,
+    oplmarvel:issueNumber ,
+    oplmarvel:upc ,
+    oplmarvel:diamondCode ,
+    oplmarvel:issn ,
+    oplmarvel:format ,
+    oplmarvel:pageCount ,
+    oplmarvel:textObject ,
+    oplmarvel:type ,
+    oplmarvel:onsaleDate ,
+    oplmarvel:focDate ,
+    oplmarvel:unlimitedDate ,
+    oplmarvel:digitalPurchaseDate ,
+    oplmarvel:role ,
+    oplmarvel:suffix ,
+    oplmarvel:rating ,
+    oplmarvel:character ,
+    oplmarvel:story ,
+    oplmarvel:event ,
+    oplmarvel:comics ,
+    oplmarvel:series ;
+  schema:about
+    oplmarvel:id ,
+    oplmarvel:digitalId ,
+    oplmarvel:issueNumber ,
+    oplmarvel:upc ,
+    oplmarvel:diamondCode ,
+    oplmarvel:issn ,
+    oplmarvel:format ,
+    oplmarvel:pageCount ,
+    oplmarvel:textObject ,
+    oplmarvel:type ,
+    oplmarvel:onsaleDate ,
+    oplmarvel:focDate ,
+    oplmarvel:unlimitedDate ,
+    oplmarvel:digitalPurchaseDate ,
+    oplmarvel:role ,
+    oplmarvel:suffix ,
+    oplmarvel:rating ,
+    oplmarvel:character ,
+    oplmarvel:story ,
+    oplmarvel:event ,
+    oplmarvel:comics ,
+    oplmarvel:series .
+
+<http://www.openlinksw.com/DAV/data/turtle/cartridge_ontologies/marvel.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink Marvel Ontology Description Document (Turtle)" ;
+  cc:License <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for Marvel"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/marvel#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/marvel> ;
+  xhv:describes <http://www.openlinksw.com/schemas/marvel#> ;
+  schema:about <http://www.openlinksw.com/schemas/marvel#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/marvel#> .
+
+<http://www.openlinksw.com/data/turtle/cartridge_ontologies/marvel.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink Marvel Ontology Description Document (Turtle)" ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for Marvel"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/marvel#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/marvel> ;
+  xhv:describes <http://www.openlinksw.com/schemas/marvel#> ;
+  schema:about <http://www.openlinksw.com/schemas/marvel#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/marvel#> .
+
+<http://www.openlinksw.com/schemas/marvel>
+  a foaf:Document ;
+  schema:name """OpenLink Marvel Ontology Description Document"""^^xsd:string ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a document that uses Linked Data oriented content to describe OpenLink Marvel Ontology."""@en ;
+  dcterms:subject <http://www.openlinksw.com/schemas/marvel#> ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/marvel#> ;
+  foaf:topic
+    oplmarvel:id ,
+    oplmarvel:digitalId ,
+    oplmarvel:issueNumber ,
+    oplmarvel:upc ,
+    oplmarvel:diamondCode ,
+    oplmarvel:issn ,
+    oplmarvel:format ,
+    oplmarvel:pageCount ,
+    oplmarvel:textObject ,
+    oplmarvel:type ,
+    oplmarvel:onsaleDate ,
+    oplmarvel:focDate ,
+    oplmarvel:unlimitedDate ,
+    oplmarvel:digitalPurchaseDate ,
+    oplmarvel:role ,
+    oplmarvel:suffix ,
+    oplmarvel:rating ,
+    oplmarvel:character ,
+    oplmarvel:story ,
+    oplmarvel:event ,
+    oplmarvel:comics ,
+    oplmarvel:series .
+
+
+oplmarvel:id
+  	a owl:DatatypeProperty , rdf:Property ;
+  	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/marvel#> ;
+    rdfs:label "id" ;
+    skos:altLabel "marvel id" ;
+  	rdfs:domain owl:Thing ;
+  	rdfs:range xsd:integer .
+
+oplmarvel:digitalId
+	  a owl:DatatypeProperty , rdf:Property ;
+	  rdfs:isDefinedBy <http://www.openlinksw.com/schemas/marvel#> ;
+    rdfs:label "digitalId" ;
+    skos:altLabel "marvel digital id" ;
+	  rdfs:domain owl:Thing ;
+	  rdfs:range xsd:integer .
+
+oplmarvel:issueNumber
+	  a owl:DatatypeProperty , rdf:Property ;
+	  rdfs:isDefinedBy <http://www.openlinksw.com/schemas/marvel#> ;
+    rdfs:label "issueNumber" ;
+    skos:altLabel "marvel issue number" ;
+	  rdfs:domain owl:Thing ;
+	  rdfs:range xsd:integer .
+
+oplmarvel:upc
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/marvel#> ;
+    rdfs:label "upc" ;
+    skos:altLabel "unique product identifier" ;
+    rdfs:comment """Unique Product Identifier"""@en ;
+    rdfs:domain owl:Thing ;
+    rdfs:range xsd:string .
+
+oplmarvel:diamondCode
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/marvel#> ;
+    rdfs:label "diamondCode" ;
+    skos:altLabel "diamond code" ;
+    rdfs:comment """DiamondCode Identifier"""@en ;
+    rdfs:domain owl:Thing ;
+    rdfs:range xsd:string .
+
+oplmarvel:issn
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/marvel#> ;
+    rdfs:label "issn" ;
+    skos:altLabel "issn identifier" ;
+    rdfs:comment """issn Identifier"""@en ;
+    rdfs:domain owl:Thing ;
+    rdfs:range xsd:string .
+
+
+oplmarvel:format
+	  a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/marvel#> ;
+    rdfs:label "format" ;
+    skos:altLabel "format" ;
+    rdfs:comment """format"""@en ;
+    rdfs:domain owl:Thing ;
+    rdfs:range xsd:string .
+
+oplmarvel:pageCount
+	  a owl:DatatypeProperty , rdf:Property ;
+	  rdfs:isDefinedBy <http://www.openlinksw.com/schemas/marvel#> ;
+    rdfs:label "pageCount" ;
+    skos:altLabel "page count" ;
+	  rdfs:domain owl:Thing ;
+	  rdfs:range xsd:integer .
+
+oplmarvel:textObject
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/marvel#> ;
+    rdfs:label "textObject" ;
+    skos:altLabel "text object" ;
+    rdfs:comment """The text object"""@en ;
+    rdfs:domain owl:Thing ;
+    rdfs:range owl:Class .
+
+oplmarvel:type
+	a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/marvel#> ;
+    rdfs:label "type" ;
+    skos:altLabel "type" ;
+    rdfs:comment """type"""@en ;
+    rdfs:domain owl:Thing ;
+    rdfs:range xsd:string .
+
+oplmarvel:onsaleDate
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/marvel#> ;
+    rdfs:label "onsaleDate" ;
+    skos:altLabel "on sale date" ;
+    rdfs:comment """Date the product was sold"""@en ;
+    rdfs:domain owl:Thing ;
+    rdfs:range xsd:date .
+
+oplmarvel:focDate
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/marvel#> ;
+    rdfs:label "focDate" ;
+    skos:altLabel "foc date" ;
+    rdfs:comment """FOC Date"""@en ;
+    rdfs:domain owl:Thing ;
+    rdfs:range xsd:date .
+
+oplmarvel:unlimitedDate
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/marvel#> ;
+    rdfs:label "unlimitedDate" ;
+    skos:altLabel "unlimited date" ;
+    rdfs:comment """Unlimited Date"""@en ;
+    rdfs:domain owl:Thing ;
+    rdfs:range xsd:date .
+
+oplmarvel:digitalPurchaseDate
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/marvel#> ;
+    rdfs:label "digitalPurchaseDate" ;
+    skos:altLabel "digital purchase date" ;
+    rdfs:comment """Digital Purchase Date"""@en ;
+    rdfs:domain owl:Thing ;
+    rdfs:range xsd:date .
+
+oplmarvel:role
+	  a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/marvel#> ;
+    rdfs:label "role" ;
+    skos:altLabel "role" ;
+    rdfs:comment """role"""@en ;
+    rdfs:domain owl:Thing ;
+    rdfs:range xsd:string .
+
+oplmarvel:suffix
+	  a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/marvel#> ;
+    rdfs:label "suffix" ;
+    skos:altLabel "suffix" ;
+    rdfs:comment """suffix"""@en ;
+    rdfs:domain owl:Thing ;
+    rdfs:range xsd:string .
+
+oplmarvel:rating
+	  a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/marvel#> ;
+    rdfs:label "rating" ;
+    skos:altLabel "rating" ;
+    rdfs:comment """rating"""@en ;
+    rdfs:domain owl:Thing ;
+    rdfs:range xsd:string .
+
+oplmarvel:character
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/marvel#> ;
+    rdfs:label "character" ;
+    skos:altLabel "character" ;
+    rdfs:comment """character"""@en ;
+    rdfs:domain owl:Thing ;
+    rdfs:range owl:Class .
+
+oplmarvel:story
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/marvel#> ;
+    rdfs:label "story" ;
+    skos:altLabel "story" ;
+    rdfs:comment """story"""@en ;
+    rdfs:domain owl:Thing ;
+    rdfs:range owl:Class .
+
+oplmarvel:event
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/marvel#> ;
+    rdfs:label "event" ;
+    skos:altLabel "event" ;
+    rdfs:comment """Event"""@en ;
+    rdfs:domain owl:Thing ;
+    rdfs:range owl:Class .
+
+oplmarvel:comics
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/marvel#> ;
+    rdfs:label "comics" ;
+    skos:altLabel "comics" ;
+    rdfs:comment """comics"""@en ;
+    rdfs:domain owl:Thing ;
+    rdfs:range owl:Class .
+
+oplmarvel:series
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/marvel#> ;
+    rdfs:label "series" ;
+    skos:altLabel "series" ;
+    rdfs:comment """series"""@en ;
+    rdfs:domain owl:Thing ;
+    rdfs:range owl:Class .
+

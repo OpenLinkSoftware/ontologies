@@ -1,0 +1,1704 @@
+@prefix schema:  <http://schema.org/> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix cvocab:  <http://open-services.net/ns/core#> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sioc:    <http://rdfs.org/sioc/ns#> .
+@prefix vcard:   <http://www.w3.org/2006/vcard/ns#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix bibo:    <http://purl.org/ontology/bibo/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xhv:     <http://www.w3.org/1999/xhtml/vocab#> .
+@prefix dbpedia: <http://dbpedia.org/ontology/> .
+@prefix wdrs:    <http://www.w3.org/2007/05/powder-s#> .
+@prefix cc:      <http://creativecommons.org/ns#> .
+
+@prefix oplgp: <http://www.openlinksw.com/schemas/googleplus#> .
+
+<http://www.openlinksw.com/schemas/googleplus#>
+  a owl:Ontology ;
+  schema:name "OpenLink Google+ Ontology" ;
+  schema:comment """Ontology that defines entity and relation types used to describe Google+.
+  Examples include activities, comments, emails etc."""@en ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:dateCreated "2013-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  schema:dateModified "2015-04-22T13:38:00-05:00"^^xsd:dateTime ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  wdrs:describedby <http://www.openlinksw.com/schemas/googleplus> ;
+  owl:versionInfo "1.0.0"^^xsd:string ;
+  owl:imports <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ,
+              <http://purl.org/dc/terms/> ,
+              <http://www.w3.org/ns/activitystreams#> ,
+              <http://www.w3.org/ns/prov#> ;
+  <http://open.vocab.org/terms/defines>
+    oplgp:Object ,
+    oplgp:Person ,
+    oplgp:Activity ,
+    oplgp:Comment ,
+    oplgp:Email ,
+    oplgp:Name ,
+    oplgp:Organization ,
+    oplgp:PlaceLived ,
+    oplgp:Url ,
+    oplgp:Access ,
+    oplgp:AccessItem ,
+    oplgp:ActivityObject ,
+    oplgp:Actor ,
+    oplgp:Attachment ,
+    oplgp:EmbeddableLink ,
+    oplgp:FullImage ,
+    oplgp:PreviewImage ,
+    oplgp:InReplyTo ,
+    oplgp:id ,
+    oplgp:published ,
+    oplgp:updated ,
+    oplgp:access ,
+    oplgp:actor ,
+    oplgp:address ,
+    oplgp:annotation ,
+    oplgp:crosspostSource ,
+    oplgp:geocode ,
+    oplgp:activityObject ,
+    oplgp:placeId ,
+    oplgp:placeName ,
+    oplgp:providerTitle ,
+    oplgp:radius ,
+    oplgp:activityTitle ,
+    oplgp:activityURL ,
+    oplgp:verb ,
+    oplgp:hasComment ,
+    oplgp:aboutMe ,
+    oplgp:associatedWith ,
+    oplgp:currentLocation ,
+    oplgp:dateOfBirth ,
+    oplgp:displayName ,
+    oplgp:email ,
+    oplgp:gender ,
+    oplgp:hasApp ,
+    oplgp:profileImage ,
+    oplgp:speaksLanguage ,
+    oplgp:name ,
+    oplgp:nickname ,
+    oplgp:placeLived ,
+    oplgp:relationshipStatus ,
+    oplgp:tagline ,
+    oplgp:profileURL ,
+    oplgp:sharedURL ,
+    oplgp:performedActivity ,
+    oplgp:primaryEmail ,
+    oplgp:emailType ,
+    oplgp:emailValue ,
+    oplgp:familyName ,
+    oplgp:formatted ,
+    oplgp:givenName ,
+    oplgp:honorificPrefix ,
+    oplgp:honorificSuffix ,
+    oplgp:middleName ,
+    oplgp:department ,
+    oplgp:role ,
+    oplgp:endDate ,
+    oplgp:location ,
+    oplgp:organizationName ,
+    oplgp:primaryOrganization ,
+    oplgp:startDate ,
+    oplgp:title ,
+    oplgp:organizationType ,
+    oplgp:primaryResidence ,
+    oplgp:residenceLocation ,
+    oplgp:primaryURL ,
+    oplgp:urlType ,
+    oplgp:urlValue ,
+    oplgp:accessDescription ,
+    oplgp:accessItem ,
+    oplgp:accessKind ,
+    oplgp:accessItemType ,
+    oplgp:objectActor ,
+    oplgp:attachment ,
+    oplgp:htmlContent ,
+    oplgp:activityObjectType ,
+    oplgp:originalContent ,
+    oplgp:plusonersTotal ,
+    oplgp:repliesTotal ,
+    oplgp:resharersTotal ,
+    oplgp:objectURL ,
+    oplgp:actorDisplayName ,
+    oplgp:actorProfileImage ,
+    oplgp:actorProfileURL ,
+    oplgp:content ,
+    oplgp:attachmentDisplayName ,
+    oplgp:embed ,
+    oplgp:fullImage ,
+    oplgp:previewImage ,
+    oplgp:attachmentMediaType ,
+    oplgp:attachmentURL ,
+    oplgp:embedMediaType ,
+    oplgp:embedURL ,
+    oplgp:fullImageHeight ,
+    oplgp:fullImageMediaType ,
+    oplgp:fullImageURL ,
+    oplgp:fullImageWidth ,
+    oplgp:previewImageHeight ,
+    oplgp:previewImageMediaType ,
+    oplgp:previewImageURL ,
+    oplgp:previewImageWidth ,
+    oplgp:commentActor ,
+    oplgp:inReplyToObject ,
+    oplgp:inReplyTo ,
+    oplgp:commentSelfLink ,
+    oplgp:commentVerb ,
+    oplgp:commentContent ,
+    oplgp:inReplyToURL ,
+    oplgp:activityRepliedToId ;
+  schema:about
+    oplgp:Object ,
+    oplgp:Person ,
+    oplgp:Activity ,
+    oplgp:Comment ,
+    oplgp:Email ,
+    oplgp:Name ,
+    oplgp:Organization ,
+    oplgp:PlaceLived ,
+    oplgp:Url ,
+    oplgp:Access ,
+    oplgp:AccessItem ,
+    oplgp:ActivityObject ,
+    oplgp:Actor ,
+    oplgp:Attachment ,
+    oplgp:EmbeddableLink ,
+    oplgp:FullImage ,
+    oplgp:PreviewImage ,
+    oplgp:InReplyTo ,
+    oplgp:id ,
+    oplgp:published ,
+    oplgp:updated ,
+    oplgp:access ,
+    oplgp:actor ,
+    oplgp:address ,
+    oplgp:annotation ,
+    oplgp:crosspostSource ,
+    oplgp:geocode ,
+    oplgp:activityObject ,
+    oplgp:placeId ,
+    oplgp:placeName ,
+    oplgp:providerTitle ,
+    oplgp:radius ,
+    oplgp:activityTitle ,
+    oplgp:activityURL ,
+    oplgp:verb ,
+    oplgp:hasComment ,
+    oplgp:aboutMe ,
+    oplgp:associatedWith ,
+    oplgp:currentLocation ,
+    oplgp:dateOfBirth ,
+    oplgp:displayName ,
+    oplgp:email ,
+    oplgp:gender ,
+    oplgp:hasApp ,
+    oplgp:profileImage ,
+    oplgp:speaksLanguage ,
+    oplgp:name ,
+    oplgp:nickname ,
+    oplgp:placeLived ,
+    oplgp:relationshipStatus ,
+    oplgp:tagline ,
+    oplgp:profileURL ,
+    oplgp:sharedURL ,
+    oplgp:performedActivity ,
+    oplgp:primaryEmail ,
+    oplgp:emailType ,
+    oplgp:emailValue ,
+    oplgp:familyName ,
+    oplgp:formatted ,
+    oplgp:givenName ,
+    oplgp:honorificPrefix ,
+    oplgp:honorificSuffix ,
+    oplgp:middleName ,
+    oplgp:department ,
+    oplgp:role ,
+    oplgp:endDate ,
+    oplgp:location ,
+    oplgp:organizationName ,
+    oplgp:primaryOrganization ,
+    oplgp:startDate ,
+    oplgp:title ,
+    oplgp:organizationType ,
+    oplgp:primaryResidence ,
+    oplgp:residenceLocation ,
+    oplgp:primaryURL ,
+    oplgp:urlType ,
+    oplgp:urlValue ,
+    oplgp:accessDescription ,
+    oplgp:accessItem ,
+    oplgp:accessKind ,
+    oplgp:accessItemType ,
+    oplgp:objectActor ,
+    oplgp:attachment ,
+    oplgp:htmlContent ,
+    oplgp:activityObjectType ,
+    oplgp:originalContent ,
+    oplgp:plusonersTotal ,
+    oplgp:repliesTotal ,
+    oplgp:resharersTotal ,
+    oplgp:objectURL ,
+    oplgp:actorDisplayName ,
+    oplgp:actorProfileImage ,
+    oplgp:actorProfileURL ,
+    oplgp:content ,
+    oplgp:attachmentDisplayName ,
+    oplgp:embed ,
+    oplgp:fullImage ,
+    oplgp:previewImage ,
+    oplgp:attachmentMediaType ,
+    oplgp:attachmentURL ,
+    oplgp:embedMediaType ,
+    oplgp:embedURL ,
+    oplgp:fullImageHeight ,
+    oplgp:fullImageMediaType ,
+    oplgp:fullImageURL ,
+    oplgp:fullImageWidth ,
+    oplgp:previewImageHeight ,
+    oplgp:previewImageMediaType ,
+    oplgp:previewImageURL ,
+    oplgp:previewImageWidth ,
+    oplgp:commentActor ,
+    oplgp:inReplyToObject ,
+    oplgp:inReplyTo ,
+    oplgp:commentSelfLink ,
+    oplgp:commentVerb ,
+    oplgp:commentContent ,
+    oplgp:inReplyToURL ,
+    oplgp:activityRepliedToId .
+
+
+<http://www.openlinksw.com/DAV/data/turtle/cartridge_ontologies/googleplus.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink Google+ Ontology Description Document (Turtle)" ;
+  cc:License <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for Google+"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/googleplus#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/googleplus> ;
+  xhv:describes <http://www.openlinksw.com/schemas/googleplus#> ;
+  schema:about <http://www.openlinksw.com/schemas/googleplus#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/googleplus#> .
+
+<http://www.openlinksw.com/data/turtle/cartridge_ontologies/googleplus.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink Google+ Ontology Description Document (Turtle)" ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for Google+"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/googleplus#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/googleplus> ;
+  xhv:describes <http://www.openlinksw.com/schemas/googleplus#> ;
+  schema:about <http://www.openlinksw.com/schemas/googleplus#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/googleplus#> .
+
+<http://www.openlinksw.com/schemas/googleplus>
+  a foaf:Document ;
+  schema:name """OpenLink Google+ Ontology Description Document"""^^xsd:string ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a document that uses Linked Data oriented content to describe OpenLink Google+ Ontology."""@en ;
+  dcterms:subject <http://www.openlinksw.com/schemas/googleplus#> ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/googleplus#> ;
+  foaf:topic
+    oplgp:Object ,
+    oplgp:Person ,
+    oplgp:Activity ,
+    oplgp:Comment ,
+    oplgp:Email ,
+    oplgp:Name ,
+    oplgp:Organization ,
+    oplgp:PlaceLived ,
+    oplgp:Url ,
+    oplgp:Access ,
+    oplgp:AccessItem ,
+    oplgp:ActivityObject ,
+    oplgp:Actor ,
+    oplgp:Attachment ,
+    oplgp:EmbeddableLink ,
+    oplgp:FullImage ,
+    oplgp:PreviewImage ,
+    oplgp:InReplyTo ,
+    oplgp:id ,
+    oplgp:published ,
+    oplgp:updated ,
+    oplgp:access ,
+    oplgp:actor ,
+    oplgp:address ,
+    oplgp:annotation ,
+    oplgp:crosspostSource ,
+    oplgp:geocode ,
+    oplgp:activityObject ,
+    oplgp:placeId ,
+    oplgp:placeName ,
+    oplgp:providerTitle ,
+    oplgp:radius ,
+    oplgp:activityTitle ,
+    oplgp:activityURL ,
+    oplgp:verb ,
+    oplgp:hasComment ,
+    oplgp:aboutMe ,
+    oplgp:associatedWith ,
+    oplgp:currentLocation ,
+    oplgp:dateOfBirth ,
+    oplgp:displayName ,
+    oplgp:email ,
+    oplgp:gender ,
+    oplgp:hasApp ,
+    oplgp:profileImage ,
+    oplgp:speaksLanguage ,
+    oplgp:name ,
+    oplgp:nickname ,
+    oplgp:placeLived ,
+    oplgp:relationshipStatus ,
+    oplgp:tagline ,
+    oplgp:profileURL ,
+    oplgp:sharedURL ,
+    oplgp:performedActivity ,
+    oplgp:primaryEmail ,
+    oplgp:emailType ,
+    oplgp:emailValue ,
+    oplgp:familyName ,
+    oplgp:formatted ,
+    oplgp:givenName ,
+    oplgp:honorificPrefix ,
+    oplgp:honorificSuffix ,
+    oplgp:middleName ,
+    oplgp:department ,
+    oplgp:role ,
+    oplgp:endDate ,
+    oplgp:location ,
+    oplgp:organizationName ,
+    oplgp:primaryOrganization ,
+    oplgp:startDate ,
+    oplgp:title ,
+    oplgp:organizationType ,
+    oplgp:primaryResidence ,
+    oplgp:residenceLocation ,
+    oplgp:primaryURL ,
+    oplgp:urlType ,
+    oplgp:urlValue ,
+    oplgp:accessDescription ,
+    oplgp:accessItem ,
+    oplgp:accessKind ,
+    oplgp:accessItemType ,
+    oplgp:objectActor ,
+    oplgp:attachment ,
+    oplgp:htmlContent ,
+    oplgp:activityObjectType ,
+    oplgp:originalContent ,
+    oplgp:plusonersTotal ,
+    oplgp:repliesTotal ,
+    oplgp:resharersTotal ,
+    oplgp:objectURL ,
+    oplgp:actorDisplayName ,
+    oplgp:actorProfileImage ,
+    oplgp:actorProfileURL ,
+    oplgp:content ,
+    oplgp:attachmentDisplayName ,
+    oplgp:embed ,
+    oplgp:fullImage ,
+    oplgp:previewImage ,
+    oplgp:attachmentMediaType ,
+    oplgp:attachmentURL ,
+    oplgp:embedMediaType ,
+    oplgp:embedURL ,
+    oplgp:fullImageHeight ,
+    oplgp:fullImageMediaType ,
+    oplgp:fullImageURL ,
+    oplgp:fullImageWidth ,
+    oplgp:previewImageHeight ,
+    oplgp:previewImageMediaType ,
+    oplgp:previewImageURL ,
+    oplgp:previewImageWidth ,
+    oplgp:commentActor ,
+    oplgp:inReplyToObject ,
+    oplgp:inReplyTo ,
+    oplgp:commentSelfLink ,
+    oplgp:commentVerb ,
+    oplgp:commentContent ,
+    oplgp:inReplyToURL ,
+    oplgp:activityRepliedToId .
+
+# ---------------------------------------------------------------------------
+# Google+ classes
+#
+
+oplgp:Object
+    a owl:Class;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    rdfs:label "Google+ object" ;
+    rdfs:comment "A base class representing all Google+ objects"@en .
+
+oplgp:Person
+    a owl:Class ;
+    rdfs:subClassOf oplgp:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    rdfs:label "Person" ;
+    rdfs:comment "A Google+ user"@en .
+
+oplgp:Activity
+    a owl:Class ;
+    rdfs:subClassOf oplgp:Object ,
+                    <http://www.w3.org/ns/activitystreams#Activity>,
+                    <http://www.w3.org/ns/prov#Activity> ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    rdfs:label "Activity" ;
+    rdfs:comment "A Google+ activity"@en .
+
+oplgp:Comment
+    a owl:Class ;
+    rdfs:subClassOf oplgp:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    rdfs:label "Comment" ;
+    rdfs:comment "A Google+ comment"@en .
+
+# ---------------------------------------------------------------------------
+# All the following classes describe properties of the Person class
+
+oplgp:Email
+    a owl:Class ;
+    rdfs:subClassOf oplgp:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    rdfs:label "Email" ;
+    rdfs:comment "An email address of a Google+ user"@en .
+
+oplgp:Name
+    a owl:Class ;
+    rdfs:subClassOf oplgp:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    rdfs:label "Name" ;
+    rdfs:comment """An object representing the individual components of a person's name"""@en .
+
+oplgp:Organization
+    a owl:Class ;
+    rdfs:subClassOf oplgp:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    rdfs:label "Organization" ;
+    rdfs:comment "An organization with which a Google+ user is or has been associated"@en .
+
+oplgp:PlaceLived
+    a owl:Class ;
+    rdfs:subClassOf oplgp:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    rdfs:label "PlaceLived" ;
+    rdfs:comment "A place where a Google+ user has lived"@en .
+
+oplgp:Url
+    a owl:Class ;
+    rdfs:subClassOf oplgp:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    rdfs:label "Url" ;
+    rdfs:comment "A URL for a Google+ user"@en .
+
+# ---------------------------------------------------------------------------
+# All the following classes describe properties of the Activity class
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/activities:
+# access
+oplgp:Access
+    a owl:Class ;
+    rdfs:subClassOf oplgp:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    rdfs:label "Access" ;
+    rdfs:comment "Identifies who has access to see a Google+ Activity"@en .
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/activities:
+# access.items[]
+oplgp:AccessItem
+    a owl:Class ;
+    rdfs:subClassOf oplgp:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    rdfs:label "AccessItem" ;
+    rdfs:comment "An access entry"@en .
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/activities:
+# object
+oplgp:ActivityObject
+    a owl:Class ;
+    rdfs:subClassOf oplgp:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    rdfs:label "ActivityObject" ;
+    rdfs:comment "The object of an activity"@en .
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/activities:
+# actor
+oplgp:Actor
+    a owl:Class ;
+    rdfs:subClassOf oplgp:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    rdfs:label "Actor" ;
+    rdfs:comment "The person who performed a Google+ Activity"@en .
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/activities:
+# object.attachments[]
+oplgp:Attachment
+    a owl:Class ;
+    rdfs:subClassOf oplgp:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    rdfs:label "Attachment" ;
+    rdfs:comment "A media object attached to an Activity"@en .
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/activities:
+# object.attachments[].embed
+oplgp:EmbeddableLink
+    a owl:Class ;
+    rdfs:subClassOf oplgp:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    rdfs:label "EmbeddableLink" ;
+    rdfs:comment "An embeddable link to a attached video"@en .
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/activities:
+# object.attachments[].fullImage
+oplgp:FullImage
+    a owl:Class ;
+    rdfs:subClassOf oplgp:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    rdfs:label "FullImage" ;
+    rdfs:comment "A full image photo attachment"@en .
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/activities:
+# object.attachments[].image
+oplgp:PreviewImage
+    a owl:Class ;
+    rdfs:subClassOf oplgp:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    rdfs:label "PreviewImage" ;
+    rdfs:comment "A preview image for a photo or video attachment"@en .
+
+# ---------------------------------------------------------------------------
+# All the following classes describe properties of the Comment class
+
+oplgp:InReplyTo
+    a owl:Class ;
+    rdfs:subClassOf oplgp:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    rdfs:label "InReplyTo" ;
+    rdfs:comment "A description of the Activity a Comment replied to"@en .
+
+# ---------------------------------------------------------------------------
+# Google+  properties
+#
+
+# -----------------
+# Object properties
+#
+oplgp:id
+    a owl:DatatypeProperty , rdf:Property ;
+    a owl:InverseFunctionalProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    rdfs:label "id" ;
+    skos:altLabel "id" ;
+    rdfs:comment "A Google+ Person, Activity, AccessItem, ActivityObject, Actor, Attachment or Comment ID"@en ;
+    rdfs:domain oplgp:Object ;
+    rdfs:range xsd:string .
+
+# Equivalent property name listed on
+#   https://developers.google.com/+/api/latest/activities:
+#   https://developers.google.com/+/api/latest/comments:
+# published
+oplgp:published
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    rdfs:label "published" ;
+    skos:altLabel "published" ;
+    rdfs:comment "The time at which an activity or comment was initially published"@en ;
+    rdfs:domain oplgp:Object ;
+    rdfs:range xsd:dateTime .
+
+# Equivalent property name listed on
+#   https://developers.google.com/+/api/latest/activities:
+#   https://developers.google.com/+/api/latest/comments:
+# updated
+oplgp:updated
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    rdfs:label "updated" ;
+    skos:altLabel "updated" ;
+    rdfs:comment "The time at which an activity or comment was last updated"@en ;
+    rdfs:domain oplgp:Object ;
+    rdfs:range xsd:dateTime .
+
+# -------------------
+# Activity properties
+#
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/activities:
+# access
+oplgp:access
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    rdfs:label "access" ;
+    skos:altLabel "access" ;
+    rdfs:comment "Identifies who has access to see an activity"@en ;
+    rdfs:domain oplgp:Activity ;
+    rdfs:range oplgp:Access .
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/activities:
+# actor
+oplgp:actor
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    rdfs:label "actor" ;
+    skos:altLabel "actor" ;
+    rdfs:comment "The person who performed this activity"@en ;
+    rdfs:domain oplgp:Activity ;
+    rdfs:range oplgp:Actor .
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/activities:
+# address
+oplgp:address
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    rdfs:label "address" ;
+    skos:altLabel "address" ;
+    rdfs:comment "Street address where this activity occurred"@en ;
+    rdfs:domain oplgp:Activity ;
+    rdfs:range xsd:string .
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/activities:
+# annotation
+oplgp:annotation
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    rdfs:label "annotation" ;
+    skos:altLabel "annotation" ;
+    rdfs:comment "Additional content added by the person who shared this activity, applicable only when resharing an activity"@en ;
+    rdfs:domain oplgp:Activity ;
+    rdfs:range xsd:string .
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/activities:
+# crosspostSource
+oplgp:crosspostSource
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    rdfs:label "crosspostSource" ;
+    skos:altLabel "crosspost source" ;
+    rdfs:comment "If this activity is a crosspost from another system, this property specifies the ID of the original activity"@en ;
+    rdfs:domain oplgp:Activity ;
+    rdfs:range xsd:string .
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/activities:
+# geocode
+oplgp:geocode
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    rdfs:label "geocode" ;
+    skos:altLabel "geocode" ;
+    rdfs:comment "Latitude and longitude where an activity occurred. Format is latitude followed by longitude, space separated"@en ;
+    rdfs:domain oplgp:Activity ;
+    rdfs:range xsd:string .
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/activities:
+# object
+oplgp:activityObject
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    rdfs:label "activityObject" ;
+    skos:altLabel "activity object" ;
+    rdfs:comment "The object of an activity"@en ;
+    rdfs:domain oplgp:Activity ;
+    rdfs:range oplgp:ActivityObject .
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/activities:
+# placeId
+oplgp:placeId
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    rdfs:label "placeId" ;
+    skos:altLabel "place id" ;
+    rdfs:comment "ID of the place where an activity occurred"@en ;
+    rdfs:domain oplgp:Activity ;
+    rdfs:range xsd:string .
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/activities:
+# placeName
+oplgp:placeName
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    rdfs:label "placeName" ;
+    skos:altLabel "place name" ;
+    rdfs:comment "Name of the place where an activity occurred"@en ;
+    rdfs:domain oplgp:Activity ;
+    rdfs:range xsd:string .
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/activities:
+# provider.title
+oplgp:providerTitle
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    rdfs:label "providerTitle" ;
+    skos:altLabel "provider title" ;
+    rdfs:comment "Name of the service provider that initially published an activity"@en ;
+    rdfs:domain oplgp:Activity ;
+    rdfs:range xsd:string .
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/activities:
+# radius
+oplgp:radius
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "radius" ;
+    rdfs:label "radius" ;
+    rdfs:comment """Radius, in metres, of the region where this activity occurred, centered at the latitude and
+	longitude identified by geocode"""@en ;
+    rdfs:domain oplgp:Activity ;
+    rdfs:range xsd:string .
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/activities:
+# title
+oplgp:activityTitle
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "activity title" ;
+    rdfs:label "activityTitle" ;
+    rdfs:comment "The title of an activity"@en ;
+    rdfs:domain oplgp:Activity ;
+    rdfs:range xsd:string .
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/activities:
+# url
+oplgp:activityURL
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "activity url" ;
+    rdfs:label "activityURL" ;
+    rdfs:comment "The URL associated with the activity"@en ;
+    rdfs:domain oplgp:Activity ;
+    rdfs:range rdfs:Resource .
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/activities:
+# verb
+oplgp:verb
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "verb" ;
+    rdfs:label "verb" ;
+    rdfs:comment """An activity's verb, indicating what action was performed e.g.
+	'post' - Publish content to the stream.
+	'checkin' - Check in to a location.
+	'share' - Re-share an activity.
+	"""@en ;
+    rdfs:domain oplgp:Activity ;
+    rdfs:range xsd:string .
+
+oplgp:hasComment
+  a owl:ObjectProperty , rdf:Property ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+  skos:altLabel "comment" ;
+  rdfs:label "hasComment" ;
+  rdfs:comment "A comment in reply to an activity"@en ;
+  rdfs:domain oplgp:Activity ;
+  rdfs:range oplgp:Comment .
+
+# -----------------
+# Person properties
+#
+oplgp:aboutMe
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "about me" ;
+    rdfs:label "aboutMe" ;
+    rdfs:comment "A short biography for this person"@en ;
+    rdfs:domain oplgp:Person ;
+    rdfs:range xsd:string .
+
+oplgp:associatedWith
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "associated with" ;
+    rdfs:label "associatedWith" ;
+    rdfs:comment "An organization with which this person is or has been associated"@en ;
+    rdfs:domain oplgp:Person ;
+    rdfs:range oplgp:Organization .
+
+oplgp:currentLocation
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "current location" ;
+    rdfs:label "currentLocation" ;
+    rdfs:comment "The current location for this person"@en ;
+    rdfs:domain oplgp:Person ;
+    rdfs:range xsd:string .
+
+oplgp:dateOfBirth
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "birthday" ;
+    rdfs:label "dateOfBirth" ;
+    rdfs:comment "The person's date of birth"@en ;
+    rdfs:domain oplgp:Person ;
+    rdfs:range xsd:date .
+
+oplgp:displayName
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "display name" ;
+    rdfs:label "displayName" ;
+    rdfs:comment "The name of this person, suitable for display"@en ;
+    rdfs:domain oplgp:Person;
+    rdfs:range xsd:string .
+
+oplgp:email
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "email" ;
+    rdfs:label "email" ;
+    rdfs:comment "An email address of a Google+ user"@en ;
+    rdfs:domain oplgp:Person ;
+    rdfs:range oplgp:Email .
+
+oplgp:gender
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "gender" ;
+    rdfs:label "gender" ;
+    rdfs:comment """The person's gender. Possible values are: 'male', 'female', 'other'"""@en ;
+    rdfs:domain oplgp:Person;
+    rdfs:range xsd:string .
+
+oplgp:hasApp
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "application" ;
+    rdfs:label "hasApp" ;
+    rdfs:comment """If true, indicates that the person has installed the app
+        that is making the request and has chosen to expose this install state
+        to the caller. A value of false indicates that the install state
+        cannot be determined (it is either not installed or the person has
+        chosen to keep this information private).
+        """@en ;
+    rdfs:domain oplgp:Person;
+    rdfs:range xsd:boolean .
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/people:
+# image.url
+oplgp:profileImage
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "profile image" ;
+    rdfs:label "profileImage" ;
+    rdfs:comment """The URL of an person's profile photo"""@en ;
+    rdfs:domain oplgp:Person ;
+    rdfs:range rdfs:Resource .
+
+oplgp:speaksLanguage
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "speaks language" ;
+    rdfs:label "speaksLanguage" ;
+    rdfs:comment "A language spoken by this person"@en ;
+    rdfs:domain oplgp:Person;
+    rdfs:range xsd:string .
+
+oplgp:name
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "name" ;
+    rdfs:label "name" ;
+    rdfs:comment """An object representing the individual components of a person's name"""@en ;
+    rdfs:domain oplgp:Person ;
+    rdfs:range oplgp:Name .
+
+oplgp:nickname
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "nickname" ;
+    rdfs:label "nickname" ;
+    rdfs:comment "The nickname of a person"@en ;
+    rdfs:domain oplgp:Person;
+    rdfs:range xsd:string .
+
+oplgp:placeLived
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "place lived" ;
+    rdfs:label "placeLived" ;
+    rdfs:comment "A place where a person has lived"@en ;
+    rdfs:domain oplgp:Person ;
+    rdfs:range oplgp:PlaceLived .
+
+oplgp:relationshipStatus
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "relationship status" ;
+    rdfs:label "relationshipStatus" ;
+    rdfs:comment "The person's relationship status"@en ;
+    rdfs:domain oplgp:Person;
+    rdfs:range xsd:string .
+
+oplgp:tagline
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "tagline" ;
+    rdfs:label "tagline" ;
+    rdfs:comment "The brief description (tagline) of a person"@en ;
+    rdfs:domain oplgp:Person;
+    rdfs:range xsd:string .
+
+oplgp:profileURL
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "profile url" ;
+    rdfs:label "profileURL" ;
+    rdfs:comment """The URL of a person's Google+ profile"""@en ;
+    rdfs:domain oplgp:Person;
+    rdfs:range rdfs:Resource .
+
+oplgp:sharedURL
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "shared url" ;
+    rdfs:label "sharedURL" ;
+    rdfs:comment """A URL associated with and shared via a person's Google+ profile"""@en ;
+    rdfs:domain oplgp:Person;
+    rdfs:range rdfs:Resource .
+
+oplgp:performedActivity
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "performed activity" ;
+    rdfs:label "performedActivity" ;
+    rdfs:comment """A Google+ activity in the user's activities collection"""@en ;
+    rdfs:domain oplgp:Person ;
+    rdfs:range oplgp:Activity .
+
+# ---------------------------------------------------------------------------
+# All the following properties belong to classes which are themselves
+# properties of the Person class
+
+# ----------------
+# Email properties
+#
+oplgp:primaryEmail
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "primary email" ;
+    rdfs:label "primaryEmail" ;
+    rdfs:comment """If true, indicates this email address is the person's primary one"""@en ;
+    rdfs:domain oplgp:Email ;
+    rdfs:range xsd:boolean .
+
+oplgp:emailType
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "email address type" ;
+    rdfs:label "emailType" ;
+    rdfs:comment """The type of email address. Possible values are:
+        'home' - Home email address
+        'work' - Work email address
+        'other' - Other
+        """@en ;
+    rdfs:domain oplgp:Email ;
+    rdfs:range xsd:string .
+
+oplgp:emailValue
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "email value" ;
+    rdfs:label "emailValue" ;
+    rdfs:comment "The actual email address"@en ;
+    rdfs:domain oplgp:Email ;
+    rdfs:range xsd:string .
+
+# ---------------
+# Name properties
+#
+oplgp:familyName
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "family name" ;
+    rdfs:label "familyName" ;
+    rdfs:comment "The family name (last name) of a person"@en ;
+    rdfs:domain oplgp:Name ;
+    rdfs:range xsd:string .
+
+oplgp:formatted
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "formatted" ;
+    rdfs:label "formatted" ;
+    rdfs:comment "The full name of a person, including middle names, suffixes etc."@en ;
+    rdfs:domain oplgp:Name ;
+    rdfs:range xsd:string .
+
+oplgp:givenName
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "given name" ;
+    rdfs:label "givenName" ;
+    rdfs:comment "The given name (first name) of a person"@en ;
+    rdfs:domain oplgp:Name ;
+    rdfs:range xsd:string .
+
+oplgp:honorificPrefix
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "honorific prefix" ;
+    rdfs:label "honorificPrefix" ;
+    rdfs:comment """The honorific prefix (such as 'Dr' or 'Mrs') for a person"""@en ;
+    rdfs:domain oplgp:Name ;
+    rdfs:range xsd:string .
+
+oplgp:honorificSuffix
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "honorific suffix" ;
+    rdfs:label "honorificSuffix" ;
+    rdfs:comment """The honorific suffix (such as 'Jr') for a person"""@en ;
+    rdfs:domain oplgp:Name ;
+    rdfs:range xsd:string .
+
+oplgp:middleName
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "middle name" ;
+    rdfs:label "middleName" ;
+    rdfs:comment "The middle name of a person"@en ;
+    rdfs:domain oplgp:Name ;
+    rdfs:range xsd:string .
+
+# -----------------------
+# Organization properties
+#
+oplgp:department
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "department" ;
+    rdfs:label "department" ;
+    rdfs:comment "The department within the organization"@en ;
+    rdfs:domain oplgp:Organization ;
+    rdfs:range xsd:string .
+
+oplgp:role
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "role" ;
+    rdfs:label "description" ;
+    rdfs:comment """A short description of the person's role in the organization"""@en ;
+    rdfs:domain oplgp:Organization ;
+    rdfs:range xsd:string .
+
+oplgp:endDate
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "end date" ;
+    rdfs:label "endDate" ;
+    rdfs:comment "The date the person left the organization"@en ;
+    rdfs:domain oplgp:Organization ;
+    rdfs:range xsd:date .
+
+oplgp:location
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "location" ;
+    rdfs:label "location" ;
+    rdfs:comment "The location of the organization"@en ;
+    rdfs:domain oplgp:Organization ;
+    rdfs:range xsd:string .
+
+oplgp:organizationName
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "organization name" ;
+    rdfs:label "organizationName" ;
+    rdfs:comment "The name of the organization"@en ;
+    rdfs:domain oplgp:Organization ;
+    rdfs:range xsd:string .
+
+oplgp:primaryOrganization
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "primary organization" ;
+    rdfs:label "primaryOrganization" ;
+    rdfs:comment """If true, indicates this organization is the person's
+        primary one (typically indicated as current one).
+        """@en ;
+    rdfs:domain oplgp:Organization ;
+    rdfs:range xsd:boolean .
+
+oplgp:startDate
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "start date" ;
+    rdfs:label "startDate" ;
+    rdfs:comment "The date the person joined the organization"@en ;
+    rdfs:domain oplgp:Organization ;
+    rdfs:range xsd:date .
+
+oplgp:title
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "title" ;
+    rdfs:label "title" ;
+    rdfs:comment """The person's job title or role within the organization"""@en ;
+    rdfs:domain oplgp:Organization ;
+    rdfs:range xsd:string .
+
+oplgp:organizationType
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "organization type" ;
+    rdfs:label "organizationType" ;
+    rdfs:comment """The type of organization, e.g. 'job', 'school'"""@en ;
+    rdfs:domain oplgp:Organization ;
+    rdfs:range xsd:string .
+
+# ---------------------
+# PlaceLived properties
+#
+oplgp:primaryResidence
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "primary residence" ;
+    rdfs:label "primaryResidence" ;
+    rdfs:comment """If true, this place of residence is a person's primary residence"""@en ;
+    rdfs:domain oplgp:PlaceLived ;
+    rdfs:range xsd:boolean .
+
+oplgp:residenceLocation
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "residence location" ;
+    rdfs:label "residenceLocation" ;
+    rdfs:comment "A place where a person has lived"@en ;
+    rdfs:domain oplgp:PlaceLived ;
+    rdfs:range xsd:string .
+
+# --------------
+# Url properties
+#
+oplgp:primaryURL
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "primary url" ;
+    rdfs:label "primaryURL" ;
+    rdfs:comment """If true, this URL is a person's primary URL"""@en ;
+    rdfs:domain oplgp:Url ;
+    rdfs:range xsd:boolean .
+
+oplgp:urlType
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "url type" ;
+    rdfs:label "urlType" ;
+    rdfs:comment """The type of this Google+ profile URL -
+        'home', 'work', 'blog', 'profile', 'other'
+        """@en ;
+    rdfs:domain oplgp:Url ;
+    rdfs:range xsd:string .
+
+oplgp:urlValue
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "url value" ;
+    rdfs:label "urlValue" ;
+    rdfs:comment "The URL value"@en ;
+    rdfs:domain oplgp:Url ;
+    rdfs:range rdfs:Resource .
+
+# ---------------------------------------------------------------------------
+# All the following properties belong to classes which are themselves
+# properties of the Activity class
+
+# ----------------
+# Access properties
+#
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/activities:
+# access.description
+oplgp:accessDescription
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "access description" ;
+    rdfs:label "accessDescription" ;
+    rdfs:comment "Description of the access granted, suitable for display"@en ;
+    rdfs:domain oplgp:Access ;
+    rdfs:range xsd:string .
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/activities:
+# access.items[]
+oplgp:accessItem
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "access item" ;
+    rdfs:label "accessItem" ;
+    rdfs:comment "An access entry"@en ;
+    rdfs:domain oplgp:Access ;
+    rdfs:range oplgp:AccessItem .
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/activities:
+# access.kind
+oplgp:accessKind
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "access kind" ;
+    rdfs:label "accessKind" ;
+    rdfs:comment "Access kind"@en ;
+    rdfs:domain oplgp:Access ;
+    rdfs:range xsd:string .
+
+# ---------------------
+# AccessItem properties
+#
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/activities:
+# access.items[].type
+oplgp:accessItemType
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "access item type" ;
+    rdfs:label "accessItemType" ;
+    rdfs:comment "The type of entry describing to whom access is granted"@en ;
+    rdfs:domain oplgp:Access ;
+    rdfs:range xsd:string .
+
+# ---------------------
+# ActivityObject properties
+#
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/activities:
+# object.actor
+oplgp:objectActor
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "object actor" ;
+    rdfs:label "objectActor" ;
+    rdfs:comment """If an activity's object is itself another activity (for example, when a person reshares an activity),
+	this property specifies the original activity's actor.
+	"""@en ;
+    rdfs:domain oplgp:ActivityObject ;
+    rdfs:range oplgp:Actor .
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/activities:
+# object.attachments[]
+oplgp:attachment
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "attachment" ;
+    rdfs:label "attachment" ;
+    rdfs:comment "A media object attached to an activity"@en ;
+    rdfs:domain oplgp:ActivityObject ;
+    rdfs:range oplgp:Attachment .
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/activities:
+# object.content
+oplgp:htmlContent
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "html content" ;
+    rdfs:label "htmlContent" ;
+    rdfs:comment "The HTML-formatted content, suitable for display"@en ;
+    rdfs:domain oplgp:ActivityObject ;
+    rdfs:range xsd:string .
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/activities:
+# object.objectType
+oplgp:activityObjectType
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "activity object type" ;
+    rdfs:label "activityObjectType" ;
+    rdfs:comment """The type of the activity object. e.g.
+	'note' - Textual content.
+	'activity' - A Google+ activity.
+	"""@en ;
+    rdfs:domain oplgp:ActivityObject ;
+    rdfs:range xsd:string .
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/activities:
+# object.originalContent
+oplgp:originalContent
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "original content" ;
+    rdfs:label "originalContent" ;
+    rdfs:comment "The content (text) as provided by the author, stored without any HTML formatting"@en ;
+    rdfs:domain oplgp:ActivityObject ;
+    rdfs:range xsd:string .
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/activities:
+# object.plusoners.totalItems
+oplgp:plusonersTotal
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "plusoners total" ;
+    rdfs:label "plusonersTotal" ;
+    rdfs:comment """Total number of people who +1'd this activity"""@en ;
+    rdfs:domain oplgp:ActivityObject ;
+    rdfs:range xsd:integer .
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/activities:
+# object.replies.totalItems
+oplgp:repliesTotal
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "replies total" ;
+    rdfs:label "repliesTotal" ;
+    rdfs:comment "Total number of comments on this activity"@en ;
+    rdfs:domain oplgp:ActivityObject ;
+    rdfs:range xsd:integer .
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/activities:
+# object.resharers.totalItems
+oplgp:resharersTotal
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "resharers total" ;
+    rdfs:label "resharersTotal" ;
+    rdfs:comment "Total number of people who reshared this activity"@en ;
+    rdfs:domain oplgp:ActivityObject ;
+    rdfs:range xsd:integer .
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/activities:
+# object.url
+oplgp:objectURL
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "activity object URL" ;
+    rdfs:label "objectURL" ;
+    rdfs:comment "The URL associated with the activity object"@en ;
+    rdfs:domain oplgp:ActivityObject ;
+    rdfs:range rdfs:Resource .
+
+# ---------------------
+# Actor properties
+#
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/activities:
+# actor.displayName, object.actor.displayName
+oplgp:actorDisplayName
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "actor display name" ;
+    rdfs:label "actorDisplayName" ;
+    rdfs:comment "The name of the actor, suitable for display"@en ;
+    rdfs:domain oplgp:Actor ;
+    rdfs:range xsd:string .
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/activities:
+# actor.image.url, object.actor.image.url
+oplgp:actorProfileImage
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "actor profile image" ;
+    rdfs:label "actorProfileImage" ;
+    rdfs:comment """The URL of an actor's profile photo"""@en ;
+    rdfs:domain oplgp:Actor ;
+    rdfs:range rdfs:Resource .
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/activities:
+# actor.url, object.actor.url
+oplgp:actorProfileURL
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "actor profile URL" ;
+    rdfs:label "actorProfileURL" ;
+    rdfs:comment """The URL of an actor's Google+ profile"""@en ;
+    rdfs:domain oplgp:Actor ;
+    rdfs:range rdfs:Resource .
+
+# ---------------------
+# Attachment properties
+#
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/activities:
+# object.attachments[].content
+oplgp:content
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "content" ;
+    rdfs:label "content" ;
+    rdfs:comment "If the attachment is an article, this property contains a snippet of text from the article"@en ;
+    rdfs:domain oplgp:Attachment ;
+    rdfs:range xsd:string .
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/activities:
+# object.attachments[].displayName
+oplgp:attachmentDisplayName
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "attachment display name" ;
+    rdfs:label "attachmentDisplayName" ;
+    rdfs:comment "The title of the attachment (such as a photo caption or an article title)"@en ;
+    rdfs:domain oplgp:Attachment ;
+    rdfs:range xsd:string .
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/activities:
+# object.attachments[].embed
+oplgp:embed
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "embeddable link" ;
+    rdfs:label "embed" ;
+    rdfs:comment "If the attachment is a video, the embeddable link"@en ;
+    rdfs:domain oplgp:Attachment ;
+    rdfs:range oplgp:EmbeddableLink .
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/activities:
+# object.attachments[].fullImage
+oplgp:fullImage
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "full image" ;
+    rdfs:label "fullImage" ;
+    rdfs:comment "The full image for photo attachments"@en ;
+    rdfs:domain oplgp:Attachment ;
+    rdfs:range oplgp:FullImage .
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/activities:
+# object.attachments[].image
+oplgp:previewImage
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "preview image" ;
+    rdfs:label "previewImage" ;
+    rdfs:comment "The preview image for photos or videos"@en ;
+    rdfs:domain oplgp:Attachment ;
+    rdfs:range oplgp:PreviewImage .
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/activities:
+# object.attachments[].objectType
+oplgp:attachmentMediaType
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "attachment media type" ;
+    rdfs:label "attachmentMediaType" ;
+    rdfs:comment """The type of media object. e.g. 'photo', 'video', 'article'"""@en ;
+    rdfs:domain oplgp:Attachment ;
+    rdfs:range xsd:string .
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/activities:
+# object.attachments[].url
+oplgp:attachmentURL
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "attachment url" ;
+    rdfs:label "attachmentURL" ;
+    rdfs:comment "URL of the attachment"@en ;
+    rdfs:domain oplgp:Attachment ;
+    rdfs:range rdfs:Resource .
+
+# ---------------------
+# EmbeddableLink properties
+#
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/activities:
+# object.attachments[].embed.type
+oplgp:embedMediaType
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "embed media type" ;
+    rdfs:label "embedMediaType" ;
+    rdfs:comment "Media type of the link"@en ;
+    rdfs:domain oplgp:EmbeddableLink ;
+    rdfs:range xsd:string .
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/activities:
+# object.attachments[].embed.url
+oplgp:embedURL
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "embed URL" ;
+    rdfs:label "embedURL" ;
+    rdfs:comment "URL of embeddable link"@en ;
+    rdfs:domain oplgp:EmbeddableLink ;
+    rdfs:range rdfs:Resource .
+
+# ---------------------
+# FullImage properties
+#
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/activities:
+# object.attachments[].fullImage.height
+oplgp:fullImageHeight
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "full image height" ;
+    rdfs:label "fullImageHeight" ;
+    rdfs:comment "The height, in pixels, of the linked image"@en ;
+    rdfs:domain oplgp:FullImage ;
+    rdfs:range xsd:integer .
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/activities:
+# object.attachments[].fullImage.type
+oplgp:fullImageMediaType
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "full image media type" ;
+    rdfs:label "fullImageMediaType" ;
+    rdfs:comment "Media type of the image"@en ;
+    rdfs:domain oplgp:FullImage ;
+    rdfs:range xsd:string .
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/activities:
+# object.attachments[].fullImage.url
+oplgp:fullImageURL
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "full image URL" ;
+    rdfs:label "fullImageURL" ;
+    rdfs:comment "URL of the linked image"@en ;
+    rdfs:domain oplgp:FullImage ;
+    rdfs:range rdfs:Resource .
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/activities:
+# object.attachments[].fullImage.width
+oplgp:fullImageWidth
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "full image width" ;
+    rdfs:label "fullImageWidth" ;
+    rdfs:comment "The width, in pixels, of the linked image"@en ;
+    rdfs:domain oplgp:FullImage ;
+    rdfs:range xsd:integer .
+
+# ---------------------
+# PreviewImage properties
+#
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/activities:
+# object.attachments[].image.height
+oplgp:previewImageHeight
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "preview image height" ;
+    rdfs:label "previewImageHeight" ;
+    rdfs:comment "The height, in pixels, of the linked image"@en ;
+    rdfs:domain oplgp:PreviewImage ;
+    rdfs:range xsd:integer .
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/activities:
+# object.attachments[].image.type
+oplgp:previewImageMediaType
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "preview image media type" ;
+    rdfs:label "previewImageMediaType" ;
+    rdfs:comment "Media type of the image"@en ;
+    rdfs:domain oplgp:PreviewImage ;
+    rdfs:range xsd:string .
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/activities:
+# object.attachments[].image.url
+oplgp:previewImageURL
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "preview image URL" ;
+    rdfs:label "previewImageURL" ;
+    rdfs:comment "URL of the linked image"@en ;
+    rdfs:domain oplgp:PreviewImage ;
+    rdfs:range rdfs:Resource .
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/activities:
+# object.attachments[].image.width
+oplgp:previewImageWidth
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "preview image width" ;
+    rdfs:label "previewImageWidth" ;
+    rdfs:comment "The width, in pixels, of the linked image"@en ;
+    rdfs:domain oplgp:PreviewImage ;
+    rdfs:range xsd:integer .
+
+# ---------------------
+# Comment properties
+#
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/comments:
+# actor
+oplgp:commentActor
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "comment actor" ;
+    rdfs:label "commentActor" ;
+    rdfs:comment "The person who posted this comment"@en ;
+    rdfs:domain oplgp:Comment ;
+    rdfs:range oplgp:Actor .
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/comments:
+# inReplyTo
+oplgp:inReplyToObject
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "in reply to object" ;
+    rdfs:label "inReplyToObject" ;
+    rdfs:comment "An object describing the activity this comment replied to"@en ;
+    rdfs:domain oplgp:Comment ;
+    rdfs:range oplgp:InReplyTo .
+
+oplgp:inReplyTo
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "in reply to" ;
+    rdfs:label "inReplyTo" ;
+    rdfs:comment "The Activity to which a reply applies"@en ;
+    rdfs:domain oplgp:Comment ;
+    rdfs:range oplgp:ActivityObject .
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/comments:
+# selfLink
+oplgp:commentSelfLink
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "comment self link" ;
+    rdfs:label "commentSelfLink" ;
+    rdfs:comment "Link to a Comment resource"@en ;
+    rdfs:domain oplgp:Comment ;
+    rdfs:range rdfs:Resource .
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/comments:
+# verb
+oplgp:commentVerb
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "comment verb" ;
+    rdfs:label "commentVerb" ;
+    rdfs:comment """An comment's verb, indicating what action was performed e.g.
+	'post' - Publish content to the stream.
+	"""@en ;
+    rdfs:domain oplgp:Comment ;
+    rdfs:range xsd:string .
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/comments:
+# object.content
+oplgp:commentContent
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "comment content" ;
+    rdfs:label "commentContent" ;
+    rdfs:comment "The content of a comment"@en ;
+    rdfs:domain oplgp:Comment ;
+    rdfs:range xsd:string .
+
+# ---------------------
+# InReplyTo properties
+#
+
+# Equivalent property name listed on https://developers.google.com/+/api/latest/comments:
+# inReplyTo[].url
+oplgp:inReplyToURL
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "in reply to url" ;
+    rdfs:label "inReplyToURL" ;
+    rdfs:comment "URL of the Activity to which a reply applies"@en ;
+    rdfs:domain oplgp:InReplyTo ;
+    rdfs:range rdfs:Resource .
+
+oplgp:activityRepliedToId
+    a owl:DatatypeProperty , rdf:Property ;
+    a owl:InverseFunctionalProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/googleplus#> ;
+    skos:altLabel "id of activity replied to" ;
+    rdfs:label "activityRepliedToId" ;
+    rdfs:comment "ID of the Activity replied to"@en ;
+    rdfs:domain oplgp:InReplyTo ;
+    rdfs:range xsd:string .
+

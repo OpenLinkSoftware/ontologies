@@ -1,0 +1,492 @@
+@prefix schema:    <http://schema.org/> .
+@prefix cvocab:    <http://open-services.net/ns/core#> .
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix gr:        <http://purl.org/goodrelations/v1#> .
+@prefix sioc:      <http://rdfs.org/sioc/ns#> .
+@prefix owl:       <http://www.w3.org/2002/07/owl#> .
+@prefix siocs:     <http://rdfs.org/sioc/services#> .
+@prefix skos:      <http://www.w3.org/2004/02/skos/core#> .
+@prefix wdrs:      <http://www.w3.org/2007/05/powder-s#> .
+@prefix foaf:      <http://xmlns.com/foaf/0.1/> .
+@prefix xhv:       <http://www.w3.org/1999/xhtml/vocab#> .
+@prefix acl:       <http://www.w3.org/ns/auth/acl#> .
+@prefix opllog:    <http://www.openlinksw.com/ontology/logging#> .
+@prefix cc:        <http://creativecommons.org/ns#> .
+@prefix dcterms:   <http://purl.org/dc/terms/> .
+
+opllog:
+  a owl:Ontology ;
+  rdfs:label """OpenLink Logging Ontology"""^^xsd:string ;
+  rdfs:comment """Ontology that defines entity and relation types used to describe log messages, errors and log/error handlers."""@en ;
+  wdrs:describedby <http://www.openlinksw.com/ontology/logging> ;
+  dcterms:created "2014-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  dcterms:modified "2015-03-20T13:38:00-05:00"^^xsd:dateTime ;
+  owl:versionInfo "1.1.0"^^xsd:string ;
+  owl:imports <http://xmlns.com/foaf/0.1/> ,
+              <http://www.w3.org/2002/07/owl#> ,
+              <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ,
+              <http://purl.org/dc/terms/> ;
+  <http://open.vocab.org/terms/defines>
+    opllog:Error ,
+    opllog:LogEntry ,
+    opllog:InfoMessage ,
+    opllog:DebugMessage ,
+    opllog:HttpContextError ,
+    opllog:LogHandler ,
+    opllog:LogPattern ,
+    opllog:LogAction ,
+    opllog:EmailLogAction ,
+    opllog:ReplacementErrorAction ,
+    opllog:GraphStorageAction ,
+    opllog:VirtuosoLogSystemAction ,
+    opllog:VirtuosoDebugAction ,
+    opllog:LogFileAction ,
+    opllog:hasTriggeringApplication ,
+    opllog:hasAffectedUser ,
+    opllog:hasErrorCode ,
+    opllog:hasLogMessage ,
+    opllog:hasErrorCodePattern ,
+    opllog:hasLogMessagePattern ,
+    opllog:matchesLogEntryType ,
+    opllog:hasOwningApplication ,
+    opllog:hasLogPattern ,
+    opllog:hasLogAction ,
+    opllog:hasEmailRecipient ,
+    opllog:hasEmailSender ,
+    opllog:hasReplacementErrorCode ,
+    opllog:hasReplacementErrorMessageParamsPattern ,
+    opllog:hasReplacementErrorMessage ,
+    opllog:hasStorageGraph ,
+    opllog:hasResourceNamespace ,
+    opllog:hasRequestedUrl ,
+    opllog:hasTimestamp ,
+    opllog:hasPriorityLevel ,
+    opllog:hasEntrySeparator  ,
+    opllog:hasContext ;
+  schema:about
+    opllog:Error ,
+    opllog:LogEntry ,
+    opllog:InfoMessage ,
+    opllog:DebugMessage ,
+    opllog:HttpContextError ,
+    opllog:LogHandler ,
+    opllog:LogPattern ,
+    opllog:LogAction ,
+    opllog:EmailLogAction ,
+    opllog:ReplacementErrorAction ,
+    opllog:GraphStorageAction ,
+    opllog:VirtuosoLogSystemAction ,
+    opllog:VirtuosoDebugAction ,
+    opllog:LogFileAction ,
+    opllog:hasTriggeringApplication ,
+    opllog:hasAffectedUser ,
+    opllog:hasErrorCode ,
+    opllog:hasLogMessage ,
+    opllog:hasErrorCodePattern ,
+    opllog:hasLogMessagePattern ,
+    opllog:matchesLogEntryType ,
+    opllog:hasOwningApplication ,
+    opllog:hasLogPattern ,
+    opllog:hasLogAction ,
+    opllog:hasEmailRecipient ,
+    opllog:hasEmailSender ,
+    opllog:hasReplacementErrorCode ,
+    opllog:hasReplacementErrorMessageParamsPattern ,
+    opllog:hasReplacementErrorMessage ,
+    opllog:hasStorageGraph ,
+    opllog:hasResourceNamespace ,
+    opllog:hasRequestedUrl ,
+    opllog:hasTimestamp ,
+    opllog:hasPriorityLevel ,
+    opllog:hasEntrySeparator  ,
+    opllog:hasContext .
+
+<http://www.openlinksw.com/DAV/data/turtle/logging.ttl>
+  a foaf:Document , schema:TechArticle ;
+  rdfs:label "OpenLink Logging Ontology Description Document (Turtle)" ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  rdfs:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for Logging and Errors."""@en ;
+  foaf:primaryTopic opllog: ;
+  xhv:canonical <http://www.openlinksw.com/ontology/logging> ;
+  dcterms:created "2014-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  dcterms:modified "2015-03-20T13:38:00-05:00"^^xsd:dateTime ;
+  xhv:describes <http://www.openlinksw.com/ontology/logging#> ;
+  schema:about <http://www.openlinksw.com/ontology/logging#> ;
+  dcterms:subject <http://www.openlinksw.com/ontology/logging#> .
+
+<http://www.openlinksw.com/data/turtle/logging.ttl>
+  a foaf:Document , schema:TechArticle ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  rdfs:label "OpenLink Logging Ontology Description Document (Turtle)" ;
+  rdfs:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for Logging and Errors."""@en ;
+  foaf:primaryTopic opllog: ;
+  xhv:canonical <http://www.openlinksw.com/ontology/logging> ;
+  dcterms:created "2014-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  dcterms:modified "2015-03-20T13:38:00-05:00"^^xsd:dateTime ;
+  xhv:describes <http://www.openlinksw.com/ontology/logging#> ;
+  schema:about <http://www.openlinksw.com/ontology/logging#> ;
+  dcterms:subject <http://www.openlinksw.com/ontology/logging#> .
+
+<http://www.openlinksw.com/ontology/logging>
+  a foaf:Document , schema:TechArticle ;
+  rdfs:label """OpenLink Logging Ontology Description Document"""^^xsd:string ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  rdfs:comment """This is a document that uses Linked Data oriented content to describe OpenLink Logging Ontology."""@en ;
+  dcterms:subject <http://www.openlinksw.com/ontology/logging#> ;
+  dcterms:created "2014-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  dcterms:modified "2015-03-20T13:38:00-05:00"^^xsd:dateTime ;
+  foaf:primaryTopic <http://www.openlinksw.com/ontology/logging#> ;
+  foaf:topic opllog:Error ,
+    opllog:LogEntry ,
+    opllog:InfoMessage ,
+    opllog:DebugMessage ,
+    opllog:HttpContextError ,
+    opllog:LogHandler ,
+    opllog:LogPattern ,
+    opllog:LogAction ,
+    opllog:EmailLogAction ,
+    opllog:ReplacementErrorAction ,
+    opllog:GraphStorageAction ,
+    opllog:VirtuosoLogSystemAction ,
+    opllog:VirtuosoDebugAction ,
+    opllog:LogFileAction ,
+    opllog:hasTriggeringApplication ,
+    opllog:hasAffectedUser ,
+    opllog:hasErrorCode ,
+    opllog:hasLogMessage ,
+    opllog:hasErrorCodePattern ,
+    opllog:hasLogMessagePattern ,
+    opllog:matchesLogEntryType ,
+    opllog:hasOwningApplication ,
+    opllog:hasLogPattern ,
+    opllog:hasLogAction ,
+    opllog:hasEmailRecipient ,
+    opllog:hasEmailSender ,
+    opllog:hasReplacementErrorCode ,
+    opllog:hasReplacementErrorMessageParamsPattern ,
+    opllog:hasReplacementErrorMessage ,
+    opllog:hasStorageGraph ,
+    opllog:hasResourceNamespace ,
+    opllog:hasRequestedUrl ,
+    opllog:hasTimestamp ,
+    opllog:hasPriorityLevel ,
+    opllog:hasEntrySeparator ,
+    opllog:hasContext .
+
+
+# #########################################
+# Classes
+# #########################################
+
+opllog:LogEntry a owl:Class ;
+  skos:altLabel "Log Entry" ;
+  rdfs:label "LogEntry" ;
+  rdfs:comment "The base class for all log entry types: info, debug, and error."@en ;
+  rdfs:isDefinedBy opllog: .
+
+opllog:Error a owl:Class ;
+  rdfs:subClassOf opllog:LogEntry ;
+  skos:altLabel "Error" ;
+  rdfs:label "Error" ;
+  rdfs:comment "An error produced by an application and typically thrown in a signal."@en ;
+  rdfs:isDefinedBy opllog: .
+
+opllog:InfoMessage a owl:Class ;
+  rdfs:subClassOf opllog:LogEntry ;
+  skos:altLabel "Info Message" ;
+  rdfs:label "InfoMessage" ;
+  rdfs:comment "An info message created by an application."@en ;
+  rdfs:isDefinedBy opllog: .
+
+opllog:DebugMessage a owl:Class ;
+  rdfs:subClassOf opllog:LogEntry ;
+  skos:altLabel "Debug Message" ;
+  rdfs:label "DebugMessage" ;
+  rdfs:comment "A debug message created by an application."@en ;
+  rdfs:isDefinedBy opllog: .
+
+opllog:HttpContextError a owl:Class ;
+  skos:altLabel "HTTP Context Error" ;
+  rdfs:label "HttpContextError" ;
+  rdfs:comment "An error which has been thrown in an http context."@en ;
+  rdfs:subClassOf opllog:Error ;
+  rdfs:isDefinedBy opllog: .
+
+opllog:LogHandler a owl:Class ;
+  skos:altLabel "Log Handler" ;
+  rdfs:label "LogHandler" ;
+  rdfs:comment """A Log Handler describes a way how a log message or error should be handled. Entries
+    are trapped via a LogPattern and then handled according to a set of LogActions. A LogHandler without
+    a LogPattern will match all incoming messages and errors."""@en ;
+  rdfs:isDefinedBy opllog: .
+
+opllog:LogPattern a owl:Class ;
+  skos:altLabel "Log Pattern" ;
+  rdfs:label "LogPattern" ;
+  rdfs:comment """A Log Pattern describes a set of log entries via conditions on an error's
+    state and/or the log message. It can be used to trap signals/messages for Log Handlers."""@en ;
+  rdfs:isDefinedBy opllog: .
+
+opllog:LogAction a owl:Class ;
+  skos:altLabel "Log Action" ;
+  rdfs:label "LogAction" ;
+  rdfs:comment """A Log Action defines how a log entry is handled after being trapped.
+    Log Action is an abstract class which means that it has no instances.
+    Instances are only created from its sub-classes."""@en ;
+  rdfs:isDefinedBy opllog: .
+
+opllog:EmailLogAction a owl:Class ;
+  skos:altLabel "Email Log Action" ;
+  rdfs:label "EmailLogAction" ;
+  rdfs:comment """An Log Error Action will send details of the error to a set of specified
+    email addresses."""@en ;
+  rdfs:subClassOf opllog:LogAction ;
+  rdfs:isDefinedBy opllog: .
+
+opllog:ReplacementErrorAction a owl:Class ;
+  skos:altLabel "Replacement Error Action" ;
+  rdfs:label "ReplacementErrorAction" ;
+  rdfs:comment """A Replacement Error Action will trigger a replacement error for the trapped error.
+    This is useful for user-facing UIs which do not want to expose internal details but simply
+    show a generic error message telling the user that the problem will be taken care of."""@en ;
+  rdfs:subClassOf opllog:LogAction ;
+  rdfs:isDefinedBy opllog: .
+
+opllog:GraphStorageAction a owl:Class ;
+  skos:altLabel "Graph Storage Action" ;
+  rdfs:label "GraphStorageAction" ;
+  rdfs:comment """A Graph Storage Log Action will store the entry in a named graph for logging
+    purposes."""@en ;
+  rdfs:subClassOf opllog:LogAction ;
+  rdfs:isDefinedBy opllog: .
+
+opllog:VirtuosoLogSystemAction a owl:Class ;
+  skos:altLabel "Virtuoso Log System Action" ;
+  rdfs:label "VirtuosoLogSystemAction" ;
+  rdfs:comment """A Virtuoso Log System action does use the internal Virtuoso logging to create
+    a log message."""@en ;
+  rdfs:subClassOf opllog:LogAction ;
+  rdfs:isDefinedBy opllog: .
+
+opllog:VirtuosoDebugAction a owl:Class ;
+  skos:altLabel "Virtuoso Debug Action" ;
+  rdfs:label "VirtuosoDebugAction" ;
+  rdfs:comment """A Virtuoso Debug action does use dbg_printf to create
+    a debugging message."""@en ;
+  rdfs:subClassOf opllog:LogAction ;
+  rdfs:isDefinedBy opllog: .
+
+opllog:LogFileAction a owl:Class ;
+  skos:altLabel "Log File Action" ;
+  rdfs:label "LogFileAction" ;
+  rdfs:comment """A log file action does write into a given log file."""@en ;
+  rdfs:subClassOf opllog:LogAction ;
+  rdfs:isDefinedBy opllog: .
+
+# #########################################
+# Properties
+# #########################################
+
+opllog:hasTriggeringApplication a owl:ObjectProperty, rdf:Property ;
+  skos:altLabel "Triggering Application" ;
+  rdfs:label "hasTriggeringApplication" ;
+  rdfs:comment """The application that triggered the error. This is matched to the owning application
+    of an Error Handler."""@en ;
+  rdfs:domain opllog:LogEntry ;
+  rdfs:range rdfs:Resource ;
+  rdfs:isDefinedBy opllog: .
+
+opllog:hasAffectedUser a owl:ObjectProperty, rdf:Property ;
+  skos:altLabel "Affected User" ;
+  rdfs:label "hasAffectedUser" ;
+  rdfs:comment """The optional user who was affected by the error. This is typically connected to the
+    authentication system of the application."""@en ;
+  rdfs:domain opllog:LogEntry ;
+  rdfs:range foaf:Agent ;
+  rdfs:isDefinedBy opllog: .
+
+opllog:hasErrorCode a owl:DatatypeProperty, rdf:Property ;
+  skos:altLabel "Error Code" ;
+  rdfs:label "hasErrorCode" ;
+  rdfs:comment """The Error Code. Typically a short internal machine-readable identifier for the error type."""@en ;
+  rdfs:domain opllog:Error ;
+  rdfs:range xsd:string ;
+  rdfs:isDefinedBy opllog: .
+
+opllog:hasLogMessage a owl:DatatypeProperty, rdf:Property ;
+  skos:altLabel "Log Message" ;
+  rdfs:label "hasLogMessage" ;
+  rdfs:comment """The Log Message. Typically a human-readable description of the log entry."""@en ;
+  rdfs:domain opllog:LogEntry ;
+  rdfs:range xsd:string ;
+  rdfs:isDefinedBy opllog: .
+
+opllog:hasErrorCodePattern a owl:DatatypeProperty, rdf:Property ;
+  skos:altLabel "Error Code Pattern" ;
+  rdfs:label "hasErrorCodePattern" ;
+  rdfs:comment """A regular expression to match error codes that should be handled by the owning ErrorHandler."""@en ;
+  rdfs:domain opllog:LogPattern ;
+  rdfs:range xsd:string ;
+  rdfs:isDefinedBy opllog: .
+
+opllog:hasLogMessagePattern a owl:DatatypeProperty, rdf:Property ;
+  skos:altLabel "Log Message Pattern" ;
+  rdfs:label "hasLogMessagePattern" ;
+  rdfs:comment """A regular expression to match log messages that should be handled by the owning ErrorHandler."""@en ;
+  rdfs:domain opllog:LogPattern ;
+  rdfs:range xsd:string ;
+  rdfs:isDefinedBy opllog: .
+
+opllog:matchesLogEntryType a owl:DatatypeProperty , rdf:Property ;
+  skos:altLabel "Matches Log Entry Type" ;
+  rdfs:label "matchesLogEntryType" ;
+  rdfs:comment """Defines which types of log entries a pattern should match. Omitting means to match any type.
+    The range of this property is rdfs:Class but in practice only sub-classes of LogEntry should be used."""@en ;
+  rdfs:domain opllog:LogPattern ;
+  rdfs:range rdfs:Class ;
+  rdfs:isDefinedBy opllog: .
+
+opllog:hasOwningApplication a owl:ObjectProperty, rdf:Property ;
+  skos:altLabel "Owning Application" ;
+  rdfs:label "hasOwningApplication" ;
+  rdfs:comment """The application that a log handler belongs to. Only log entries from this application should
+    be handled via the actions defined in the handler."""@en ;
+  rdfs:domain opllog:LogHandler ;
+  rdfs:range rdfs:Resource ;
+  rdfs:isDefinedBy opllog: .
+
+opllog:hasLogPattern a owl:ObjectProperty, rdf:Property ;
+  skos:altLabel "Has Log Pattern" ;
+  rdfs:label "hasLogPattern" ;
+  rdfs:comment """An error handler can have a set of error patterns which are used to trap the errors the handler
+    should handle."""@en ;
+  rdfs:domain opllog:LogHandler ;
+  rdfs:range opllog:LogPattern ;
+  rdfs:isDefinedBy opllog: .
+
+opllog:hasLogAction a owl:ObjectProperty, rdf:Property ;
+  skos:altLabel "Has Log Action" ;
+  rdfs:label "hasLogAction" ;
+  rdfs:comment """A log handler can have a set of log actions which describe what the handler should do with
+    trapped errors and messages."""@en ;
+  rdfs:domain opllog:LogHandler ;
+  rdfs:range opllog:LogAction ;
+  rdfs:isDefinedBy opllog: .
+
+opllog:hasEmailRecipient a owl:ObjectProperty, rdf:Property ;
+  skos:altLabel "Email Recipient" ;
+  rdfs:label "hasEmailRecipient" ;
+  rdfs:comment """An email address the email error action should send the error to. This is a mailto: URI."""@en ;
+  rdfs:domain opllog:EmailLogAction ;
+  rdfs:range rdfs:Resource ;
+  rdfs:isDefinedBy opllog: .
+
+opllog:hasEmailSender a owl:ObjectProperty, rdf:Property ;
+  skos:altLabel "Email Sender" ;
+  rdfs:label "hasEmailSender" ;
+  rdfs:comment """An optional email address the error notification emails should be sent from. This is a mailto: URI."""@en ;
+  rdfs:domain opllog:EmailLogAction ;
+  rdfs:range rdfs:Resource ;
+  rdfs:isDefinedBy opllog: .
+
+opllog:hasReplacementErrorCode a owl:DatatypeProperty, rdf:Property ;
+  skos:altLabel "Replacement Error Code" ;
+  rdfs:label "hasReplacementErrorCode" ;
+  rdfs:comment """The error code the replacement error should contain."""@en ;
+  rdfs:domain opllog:ReplacementErrorAction ;
+  rdfs:range xsd:string ;
+  rdfs:isDefinedBy opllog: .
+
+opllog:hasReplacementErrorMessage a owl:DatatypeProperty, rdf:Property ;
+  skos:altLabel "Replacement Error Message" ;
+  rdfs:label "hasReplacementErrorMessage" ;
+  rdfs:comment """The error message the replacement error should contain. The replacement error
+    message can contain parameter markers @1, @2 ... (not necessarily contiguous) to be replaced by subexpression matches
+    returned by a regex identified by the hasReplacementErrorMessageParamsPattern property."""@en ;
+  rdfs:domain opllog:ReplacementErrorAction ;
+  rdfs:range xsd:string ;
+  rdfs:isDefinedBy opllog: .
+
+opllog:hasReplacementErrorMessageParamsPattern a owl:DatatypeProperty, rdf:Property ;
+  skos:altLabel "Replacement Error Message Params Pattern" ;
+  rdfs:label "hasReplacementErrorMessageParamsPattern" ;
+  rdfs:comment """A regular expression returning portions of the original error message as
+    subexpression matches to be inserted into the replacement error message in place of
+    parameter markers"""@en ;
+  rdfs:domain opllog:ReplacementErrorAction ;
+  rdfs:range xsd:string ;
+  rdfs:isDefinedBy opllog: .
+
+opllog:hasStorageGraph a owl:ObjectProperty, rdf:Property ;
+  skos:altLabel "Storage Graph" ;
+  rdfs:label "hasStorageGraph" ;
+  rdfs:comment """The named graph into which the errors should be logged."""@en ;
+  rdfs:domain opllog:GraphStorageAction ;
+  rdfs:range rdfs:Resource ;
+  rdfs:isDefinedBy opllog: .
+
+opllog:hasResourceNamespace a owl:DatatypeProperty, rdf:Property ;
+  skos:altLabel "Resource Namespace" ;
+  rdfs:label "hasResourceNamespace" ;
+  rdfs:comment """When logging errors into a named graph new error resource URIs will be generated using this namespace."""@en ;
+  rdfs:domain opllog:GraphStorageAction ;
+  rdfs:range xsd:string ;
+  rdfs:isDefinedBy opllog: .
+
+opllog:hasRequestedUrl a owl:ObjectProperty, rdf:Property ;
+  skos:altLabel "Requested URL" ;
+  rdfs:label "hasRequestedUrl" ;
+  rdfs:comment """The requested URL of the HTTP context in which the error was thrown."""@en ;
+  rdfs:domain opllog:HttpContextError ;
+  rdfs:range rdfs:Resource ;
+  rdfs:isDefinedBy opllog: .
+
+opllog:hasTimestamp a owl:DatatypeProperty, rdf:Property ;
+  skos:altLabel "Time stamp" ;
+  rdfs:label "hasTimestamp" ;
+  rdfs:comment """The time an error was raised."""@en ;
+  rdfs:domain opllog:LogEntry ;
+  rdfs:range xsd:dateTime ;
+  rdfs:subPropertyOf dcterms:date ;
+  rdfs:isDefinedBy opllog: .
+
+opllog:hasPriorityLevel a owl:DatatypeProperty, rdf:Property ;
+  skos:altLabel "Priority Level" ;
+  rdfs:label "hasPriorityLevel" ;
+  rdfs:comment """Log handlers are executed in order of their priority. A handler with a higher priority is evaluated
+    first. By default a handler has a priority level of 0. The priority level is mostly useful for handlers that have a
+    ReplacementErrorAction because only one replacement signal can be produced."""@en ;
+  rdfs:domain opllog:LogHandler ;
+  rdfs:range xsd:integer ;
+  rdfs:isDefinedBy opllog: .
+
+opllog:hasLogFilePath a owl:DatatypeProperty, rdf:Property ;
+  skos:altLabel "Log File Path" ;
+  rdfs:label "hasLogFilePath" ;
+  rdfs:comment """The path of the file (typically relative to the Virtuoso instance directory) into which the errors
+    should be logged."""@en ;
+  rdfs:domain opllog:LogFileAction ;
+  rdfs:range xsd:string ;
+  rdfs:isDefinedBy opllog: .
+
+opllog:hasEntrySeparator a owl:DatatypeProperty, rdf:Property ;
+  skos:altLabel "Log Entry Separator" ;
+  rdfs:label "hasEntrySeparator" ;
+  rdfs:comment """An optional string which will be written between each log file entry."""@en ;
+  rdfs:domain opllog:LogFileAction ;
+  rdfs:range xsd:string ;
+  rdfs:isDefinedBy opllog: .
+
+opllog:hasContext a owl:DatatypeProperty, rdf:Property ;
+  skos:altLabel "Contextual Information" ;
+  rdfs:label "hasContext" ;
+  rdfs:comment """Additional information relating to the circumstances that triggered the log message."""@en ;
+  rdfs:domain opllog:LogEntry ;
+  rdfs:range rdfs:Resource ;
+  rdfs:isDefinedBy opllog: .

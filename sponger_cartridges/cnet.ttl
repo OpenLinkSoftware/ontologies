@@ -1,0 +1,492 @@
+@prefix schema:  <http://schema.org/> .
+@prefix xhv:    <http://www.w3.org/1999/xhtml/vocab#> .
+@prefix skos:   <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix cvocab: <http://open-services.net/ns/core#> .
+@prefix cc:     <http://creativecommons.org/ns#> .
+@prefix foaf:   <http://xmlns.com/foaf/0.1/> .
+@prefix gr:     <http://purl.org/goodrelations/v1#> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix wdrs:   <http://www.w3.org/2007/05/powder-s#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix oplcn: <http://www.openlinksw.com/schemas/cnet#> .
+
+<http://www.openlinksw.com/schemas/cnet#>
+  a owl:Ontology ;
+  schema:name "OpenLink CNET Ontology" ;
+  schema:comment """Ontology that defines entity and relation types used to describe CNET.
+  Examples include editors, licenses, releases, products etc."""@en ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  wdrs:describedby <http://www.openlinksw.com/schemas/cnet> ;
+  schema:dateCreated "2013-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  schema:dateModified "2015-04-22T13:38:00-05:00"^^xsd:dateTime ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  owl:versionInfo "1.0.0"^^xsd:string ;
+  owl:imports <http://www.w3.org/1999/02/22-rdf-syntax-ns#> , <http://purl.org/dc/terms/> , <http://purl.org/goodrelations/v1> ;
+  <http://open.vocab.org/terms/defines>
+    oplcn:SoftwareProduct ,
+    oplcn:TechProduct ,
+    oplcn:sku ,
+    oplcn:cdsSKU ,
+    oplcn:image ,
+    oplcn:cnetShopperCatalogEntry ,
+    oplcn:cnetReview ,
+    oplcn:specification ,
+    oplcn:editorsChoice ,
+    oplcn:editorsStarRating ,
+    oplcn:goodPoints ,
+    oplcn:badPoints ,
+    oplcn:bottomLine ,
+    oplcn:userStarRating ,
+    oplcn:publisherSite ,
+    oplcn:license ,
+    oplcn:betaRelease ,
+    oplcn:shortDescription ,
+    oplcn:newFeatures ,
+    oplcn:platform ,
+    oplcn:operatingSystem ,
+    oplcn:editorsNote ,
+    oplcn:weeklyDownloads ,
+    oplcn:totalDownloads ,
+    oplcn:fileSize ,
+    oplcn:dateReleased ,
+    oplcn:limitations ,
+    oplcn:productDownloadURL ,
+    oplcn:description ,
+    oplcn:version ,
+    oplcn:editorsRating ,
+    oplcn:userRating ;
+  schema:about
+    oplcn:SoftwareProduct ,
+    oplcn:TechProduct ,
+    oplcn:sku ,
+    oplcn:cdsSKU ,
+    oplcn:image ,
+    oplcn:cnetShopperCatalogEntry ,
+    oplcn:cnetReview ,
+    oplcn:specification ,
+    oplcn:editorsChoice ,
+    oplcn:editorsStarRating ,
+    oplcn:goodPoints ,
+    oplcn:badPoints ,
+    oplcn:bottomLine ,
+    oplcn:userStarRating ,
+    oplcn:publisherSite ,
+    oplcn:license ,
+    oplcn:betaRelease ,
+    oplcn:shortDescription ,
+    oplcn:newFeatures ,
+    oplcn:platform ,
+    oplcn:operatingSystem ,
+    oplcn:editorsNote ,
+    oplcn:weeklyDownloads ,
+    oplcn:totalDownloads ,
+    oplcn:fileSize ,
+    oplcn:dateReleased ,
+    oplcn:limitations ,
+    oplcn:productDownloadURL ,
+    oplcn:description ,
+    oplcn:version ,
+    oplcn:editorsRating ,
+    oplcn:userRating .
+
+<http://www.openlinksw.com/DAV/data/turtle/cartridge_ontologies/cnet.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink CNET Ontology Description Document (Turtle)" ;
+  cc:License <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for CNET"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/cnet#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/cnet> ;
+  xhv:describes <http://www.openlinksw.com/schemas/cnet#> ;
+  schema:about <http://www.openlinksw.com/schemas/cnet#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/cnet#> .
+
+<http://www.openlinksw.com/data/turtle/cartridge_ontologies/cnet.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink CNET Ontology Description Document (Turtle)" ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for CNET"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/cnet#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/cnet> ;
+  xhv:describes <http://www.openlinksw.com/schemas/cnet#> ;
+  schema:about <http://www.openlinksw.com/schemas/cnet#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/cnet#> .
+
+<http://www.openlinksw.com/schemas/cnet>
+  a foaf:Document ;
+  schema:name """OpenLink CNET Ontology Description Document"""^^xsd:string ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a document that uses Linked Data oriented content to describe OpenLink CNET Ontology."""@en ;
+  dcterms:subject <http://www.openlinksw.com/schemas/cnet#> ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/cnet#> ;
+  foaf:topic
+    oplcn:SoftwareProduct ,
+    oplcn:TechProduct ,
+    oplcn:sku ,
+    oplcn:cdsSKU ,
+    oplcn:image ,
+    oplcn:cnetShopperCatalogEntry ,
+    oplcn:cnetReview ,
+    oplcn:specification ,
+    oplcn:editorsChoice ,
+    oplcn:editorsStarRating ,
+    oplcn:goodPoints ,
+    oplcn:badPoints ,
+    oplcn:bottomLine ,
+    oplcn:userStarRating ,
+    oplcn:publisherSite ,
+    oplcn:license ,
+    oplcn:betaRelease ,
+    oplcn:shortDescription ,
+    oplcn:newFeatures ,
+    oplcn:platform ,
+    oplcn:operatingSystem ,
+    oplcn:editorsNote ,
+    oplcn:weeklyDownloads ,
+    oplcn:totalDownloads ,
+    oplcn:fileSize ,
+    oplcn:dateReleased ,
+    oplcn:limitations ,
+    oplcn:productDownloadURL ,
+    oplcn:description ,
+    oplcn:version ,
+    oplcn:editorsRating ,
+    oplcn:userRating .
+
+
+#
+# gr:Product specialization
+#
+
+oplcn:SoftwareProduct
+    a owl:Class ;
+    rdfs:subClassOf gr:ProductOrService ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cnet#> ;
+    rdfs:label "SoftwareProduct" ;
+    rdfs:comment """A specialization of the GoodRelations ProductOrService class for describing CNET software products"""@en .
+
+oplcn:TechProduct
+    a owl:Class ;
+    rdfs:subClassOf gr:ProductOrService ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cnet#> ;
+    rdfs:label "TechProduct" ;
+    rdfs:comment """A specialization of the GoodRelations ProductOrService class for describing CNET tech products"""@en .
+
+#
+# TechProduct properties
+#
+
+oplcn:sku
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cnet#> ;
+    rdfs:label "sku" ;
+    skos:altLabel "sku" ;
+    rdfs:comment """Stock Keeping Unit number. CNET's Unique Product Identifier"""@en ;
+    rdfs:domain oplcn:TechProduct ;
+    rdfs:range xsd:string .
+
+oplcn:cdsSKU
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cnet#> ;
+    rdfs:label "cdssku" ;
+    skos:altLabel "cds sku" ;
+    rdfs:comment """cdsSKU"""@en ;
+    rdfs:domain oplcn:TechProduct ;
+    rdfs:range xsd:string .
+
+oplcn:image
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cnet#> ;
+    rdfs:label "image" ;
+    skos:altLabel "image" ;
+    rdfs:comment """Image of item"""@en ;
+    rdfs:domain oplcn:TechProduct ;
+    rdfs:range xsd:string .
+
+oplcn:cnetShopperCatalogEntry
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:quantitativeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cnet#> ;
+    rdfs:label "cnetShopperCatalogEntry" ;
+    skos:altLabel "cnet shopper catalog entry" ;
+    rdfs:comment """URL of product description on CNET Shopper site"""@en ;
+    rdfs:domain oplcn:TechProduct ;
+    rdfs:range xsd:anyURI .
+
+oplcn:cnetReview
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:quantitativeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cnet#> ;
+    rdfs:label "cnetReview" ;
+    skos:altLabel "cnet review" ;
+    rdfs:comment """URL of product review on CNET Reviews site"""@en ;
+    rdfs:domain oplcn:TechProduct ;
+    rdfs:range xsd:anyURI .
+
+oplcn:specification
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:quantitativeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cnet#> ;
+    rdfs:label "specification" ;
+    skos:altLabel "specification" ;
+    rdfs:comment """product specification"""@en ;
+    rdfs:domain oplcn:TechProduct ;
+    rdfs:range xsd:string .
+
+oplcn:editorsChoice
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cnet#> ;
+    rdfs:label "editorsChoice" ;
+    skos:altLabel "editor's choice" ;
+    rdfs:comment """Is this product the Editor's choice?"""@en ;
+    rdfs:domain oplcn:TechProduct ;
+    rdfs:range xsd:boolean .
+
+oplcn:editorsStarRating
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:quantitativeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cnet#> ;
+    rdfs:label "editorsStarRating" ;
+    skos:altLabel "editors star rating" ;
+    rdfs:comment """Editor's star rating"""@en ;
+    rdfs:domain oplcn:TechProduct ;
+    rdfs:range xsd:string .
+
+oplcn:goodPoints
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:quantitativeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cnet#> ;
+    rdfs:label "goodPoints" ;
+    skos:altLabel "good points" ;
+    rdfs:comment """The product's good points"""@en ;
+    rdfs:domain oplcn:TechProduct ;
+    rdfs:range xsd:string .
+
+oplcn:badPoints
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:quantitativeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cnet#> ;
+    rdfs:label "badPoints" ;
+    skos:altLabel "bad points" ;
+    rdfs:comment """The product's bad points"""@en ;
+    rdfs:domain oplcn:TechProduct ;
+    rdfs:range xsd:string .
+
+oplcn:bottomLine
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:quantitativeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cnet#> ;
+    rdfs:label "bottomLine" ;
+    skos:altLabel "bottom line" ;
+    rdfs:comment """The overall judgement on the product"""@en ;
+    rdfs:domain oplcn:TechProduct ;
+    rdfs:range xsd:string .
+
+oplcn:userStarRating
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:quantitativeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cnet#> ;
+    rdfs:label "userStarRating" ;
+    skos:altLabel "user star rating" ;
+    rdfs:comment """User star rating"""@en ;
+    rdfs:domain oplcn:TechProduct ;
+    rdfs:range xsd:string .
+
+#
+# SoftwareProduct properties
+#
+
+oplcn:publisherSite
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:quantitativeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cnet#> ;
+    rdfs:label "publisherSite" ;
+    skos:altLabel "publisher's site" ;
+    rdfs:comment """URL of software publisher's site"""@en ;
+    rdfs:domain oplcn:SoftwareProduct ;
+    rdfs:range xsd:anyURI .
+
+oplcn:license
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:quantitativeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cnet#> ;
+    rdfs:label "license" ;
+    skos:altLabel "license type" ;
+    rdfs:comment """The type of license associated with the software"""@en ;
+    rdfs:domain oplcn:SoftwareProduct ;
+    rdfs:range xsd:string .
+
+oplcn:betaRelease
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cnet#> ;
+    rdfs:label "betaRelease" ;
+    skos:altLabel "beta release" ;
+    rdfs:comment """Is this a beta release?"""@en ;
+    rdfs:domain oplcn:SoftwareProduct ;
+    rdfs:range xsd:boolean .
+
+oplcn:shortDescription
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:quantitativeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cnet#> ;
+    rdfs:label "shortDescription" ;
+    skos:altLabel "short description" ;
+    rdfs:comment """Short description of the product"""@en ;
+    rdfs:domain oplcn:SoftwareProduct ;
+    rdfs:range xsd:string .
+
+oplcn:newFeatures
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:quantitativeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cnet#> ;
+    rdfs:label "newFeatures" ;
+    skos:altLabel "new features" ;
+    rdfs:comment """New features"""@en ;
+    rdfs:domain oplcn:SoftwareProduct ;
+    rdfs:range xsd:string .
+
+oplcn:platform
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:quantitativeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cnet#> ;
+    rdfs:label "platform" ;
+    skos:altLabel "platform" ;
+    rdfs:comment """Computer platform this software is for"""@en ;
+    rdfs:domain oplcn:SoftwareProduct ;
+    rdfs:range xsd:string .
+
+oplcn:operatingSystem
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:quantitativeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cnet#> ;
+    rdfs:label "operatingSystem" ;
+    skos:altLabel "operating system" ;
+    rdfs:comment """Supported operating system versions"""@en ;
+    rdfs:domain oplcn:SoftwareProduct ;
+    rdfs:range xsd:string .
+
+oplcn:editorsNote
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:quantitativeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cnet#> ;
+    rdfs:label "editorsNote" ;
+    skos:altLabel "editor's note" ;
+    rdfs:comment """Editor's note"""@en ;
+    rdfs:domain oplcn:SoftwareProduct ;
+    rdfs:range xsd:string .
+
+oplcn:weeklyDownloads
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:quantitativeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cnet#> ;
+    rdfs:label "weeklyDownloads" ;
+    skos:altLabel "weekly downloads" ;
+    rdfs:comment """Weekly downlaods"""@en ;
+    rdfs:domain oplcn:SoftwareProduct ;
+    rdfs:range xsd:string .
+
+oplcn:totalDownloads
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:quantitativeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cnet#> ;
+    rdfs:label "totalDownloads" ;
+    skos:altLabel "total downloads" ;
+    rdfs:comment """Total downlaods"""@en ;
+    rdfs:domain oplcn:SoftwareProduct ;
+    rdfs:range xsd:string .
+
+oplcn:fileSize
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:quantitativeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cnet#> ;
+    rdfs:label "fileSize" ;
+    skos:altLabel "file size" ;
+    rdfs:comment """File size (bytes)"""@en ;
+    rdfs:domain oplcn:SoftwareProduct ;
+    rdfs:range xsd:string .
+
+oplcn:dateReleased
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:quantitativeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cnet#> ;
+    rdfs:label "dateReleased" ;
+    skos:altLabel "date released" ;
+    rdfs:comment """Date this product version was released"""@en ;
+    rdfs:domain oplcn:SoftwareProduct ;
+    rdfs:range xsd:datetime .
+
+oplcn:limitations
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:quantitativeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cnet#> ;
+    rdfs:label "limitations" ;
+    skos:altLabel "limitations" ;
+    rdfs:comment """Known limitations of the product"""@en ;
+    rdfs:domain oplcn:SoftwareProduct ;
+    rdfs:range xsd:string .
+
+oplcn:productDownloadURL
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:quantitativeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cnet#> ;
+    rdfs:label "productDownloadURL" ;
+    skos:altLabel "download URL" ;
+    rdfs:comment """Download URL"""@en ;
+    rdfs:domain oplcn:SoftwareProduct ;
+    rdfs:range xsd:anyURI .
+
+oplcn:description
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:quantitativeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cnet#> ;
+    rdfs:label "description" ;
+    skos:altLabel "description" ;
+    rdfs:comment """Product description"""@en ;
+    rdfs:domain oplcn:SoftwareProduct ;
+    rdfs:range xsd:string .
+
+oplcn:version
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:quantitativeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cnet#> ;
+    rdfs:label "version" ;
+    skos:altLabel "version" ;
+    rdfs:comment """Product version"""@en ;
+    rdfs:domain oplcn:SoftwareProduct ;
+    rdfs:range xsd:string .
+
+#
+# Common TechProduct / SoftwareProduct properties
+#
+
+oplcn:editorsRating
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:quantitativeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cnet#> ;
+    rdfs:label "editorsRating" ;
+    skos:altLabel "editor's rating" ;
+    rdfs:comment """Editor's rating"""@en ;
+    rdfs:domain oplcn:SoftwareProduct, oplcn:TechProduct ;
+    rdfs:range xsd:string .
+
+oplcn:userRating
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:quantitativeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cnet#> ;
+    rdfs:label "userRating" ;
+    skos:altLabel "user rating" ;
+    rdfs:comment """User rating"""@en ;
+    rdfs:domain oplcn:SoftwareProduct, oplcn:TechProduct ;
+    rdfs:range xsd:string .
+

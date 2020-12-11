@@ -1,0 +1,463 @@
+## See :
+## http://lod.openlinksw.com/describe/?url=http%3A%2F%2Fsw.opencyc.org%2Fconcept%2FMx4rwL1whZwpEbGdrcN5Y29ycA&graph=http%3A%2F%2Fws.nju.edu.cn%2Fnjvr%2F
+## Marketing from OpenCyc: http://sw.opencyc.org/concept/Mx4rwL1whZwpEbGdrcN5Y29ycA
+## Advertising: http://sw.opencyc.org/concept/Mx4rwQr8FJwpEbGdrcN5Y29ycA
+
+@prefix schema:  <http://schema.org/> .
+@prefix cvocab:  <http://open-services.net/ns/core#> .
+@prefix sioc:    <http://rdfs.org/sioc/ns#> .
+@prefix oplweb:  <http://www.openlinksw.com/schemas/oplweb#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix gr:      <http://purl.org/goodrelations/v1#> .
+@prefix siocs:   <http://rdfs.org/sioc/services#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix wdrs:    <http://www.w3.org/2007/05/powder-s#> .
+@prefix prodont: <http://www.productontology.org/id/> .
+@prefix xhv:     <http://www.w3.org/1999/xhtml/vocab#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ecrm:    <http://www.openlinksw.com/ontology/ecrm#> .
+@prefix oplfea:  <http://www.openlinksw.com/ontology/features#> .
+@prefix oplbenefit: <http://www.openlinksw.com/ontology/benefits#> . 
+@prefix oplpro:  <http://www.openlinksw.com/ontology/products#> .
+@prefix oplsof:  <http://www.openlinksw.com/ontology/software#> .
+@prefix oplmch:  <http://www.openlinksw.com/ontology/machines#> .
+@prefix opllic:  <http://www.openlinksw.com/ontology/licenses#> .
+@prefix opl:     <http://www.openlinksw.com/schema/attribution#> .
+@prefix cc:      <http://creativecommons.org/ns#> .
+@prefix schema:  <http://schema.org/> .
+@prefix oplmark:   <http://www.openlinksw.com/ontology/market#> .
+@prefix oplstocks: <http://www.openlinksw.com/schemas/stocks#> .
+@prefix dbpedia: <http://dbpedia.org/resource/> .
+
+<http://www.openlinksw.com/ontology/market#> a owl:Ontology ;
+  rdfs:label """OpenLink Market Segment Ontology"""^^xsd:string ;
+  rdfs:comment """Ontology that defines entity and relation types used to describe entities, entity types, and relationship types
+  that aid human and machine comprehensible descriptions of market segments.
+  Examples include segments, seller and buyer entities etc."""@en ;
+  wdrs:describedby <http://www.openlinksw.com/ontology/market> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  dcterms:created "2014-08-18T13:00:00-05:00"^^xsd:dateTime ;
+  dcterms:modified "2019-03-21T18:38:00-05:00"^^xsd:dateTime ;
+  owl:versionInfo "1.0.0"^^xsd:string  ;
+  owl:imports <http://purl.org/goodrelations/v1>  ,
+              <http://xmlns.com/foaf/0.1/> ,
+              <http://www.openlinksw.com/ontology/licenses#> ,
+              <http://www.w3.org/2002/07/owl#> ,
+              <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ,
+              <http://purl.org/dc/terms/> ,
+              <http://www.openlinksw.com/ontology/ecrm#>  ;
+  rdfs:label "OpenLink Market Segment Ontology" ;
+  <http://open.vocab.org/terms/defines>
+       oplmark:MarketSegment,
+       <http://sw.opencyc.org/concept/Mx4rvVi84ZwpEbGdrcN5Y29ycA>,
+	 	   oplmark:MarketSellerEntity,
+	 	   oplmark:MarketBuyerEntity,
+	 	   oplmark:seller ,
+	 	   oplmark:buyer ,
+	 	   oplmark:needs,
+	 	   oplmark:wants,
+	 	   oplmark:owns,
+	 	   oplmark:hasMarketSegmentFocus,
+		   oplmark:marketSize,
+		   oplmark:marketSizeValue,
+		   oplmark:marketSizeValueCurrencyCode,
+		   oplmark:marketSizeValueScale,
+		   oplmark:MarketSizeSpecification,
+		   oplmark:IndustrySector,
+		   oplmark:industrySegmentFocus,
+		   oplmark:IndustryProductionEntity ,
+		   oplmark:hasMarketCapCurrencyCode ,
+		   oplmark:hasGrowthRate,
+           oplmark:hasMarketCapValueScale ;
+     schema:about
+       	   oplmark:MarketSegment,
+       	   <http://sw.opencyc.org/concept/Mx4rvVi84ZwpEbGdrcN5Y29ycA>,
+	 	   oplmark:MarketSellerEntity,
+	 	   oplmark:MarketBuyerEntity,
+	 	   oplmark:seller ,
+	 	   oplmark:buyer ,
+	 	   oplmark:needs,
+	 	   oplmark:wants,
+	 	   oplmark:owns,
+	 	   oplmark:hasMarketSegmentFocus,
+		   oplmark:marketSize,
+		   oplmark:marketSizeValue,
+		   oplmark:marketSizeValueCurrencyCode,
+		   oplmark:marketSizeValueScale,
+		   oplmark:MarketSizeSpecification,
+		   oplmark:IndustrySector,
+		   oplmark:industrySegmentFocus,
+		   oplmark:IndustryProductionEntity ,
+		   oplmark:hasGrowthRate,
+		   oplmark:hasMarketCapCurrencyCode ,
+       oplmark:hasMarketCapValueScale .
+
+<http://open.vocab.org/terms/defines> owl:inverseOf <http://www.w3.org/2007/05/powder-s#describedby> .
+
+<http://www.openlinksw.com/DAV/data/turtle/market.ttl>
+  a foaf:Document , schema:TechArticle ;
+  rdfs:label """OpenLink Market Segment Ontology Description Document (Turtle)"""^^xsd:string ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  rdfs:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for Market Segment."""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/ontology/market#> ;
+  dcterms:created "2014-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  dcterms:modified "2019-03-21T18:38:00-05:00"^^xsd:dateTime ;
+  xhv:canonical <http://www.openlinksw.com/ontology/market> ;
+  xhv:describes <http://www.openlinksw.com/ontology/market#> ;
+  schema:about <http://www.openlinksw.com/ontology/market#> ;
+  dcterms:subject <http://www.openlinksw.com/ontology/market#> .
+
+<http://www.openlinksw.com/data/turtle/market.ttl>
+   a foaf:Document,
+     schema:WebPage;
+   rdfs:label """OpenLink Market Segment Ontology Description Document (Turtle)"""^^xsd:string ;
+   rdfs:comment """Entity & Relaitonship Types that aid the process of
+				describing a market segment in a form that's
+				comprehensible to both humans and machines.
+				"""@en ;
+   schema:creator <http://kingsley.idehen.net/dataspace/person/kidehen#this> ;
+   dcterms:created "2014-08-18T13:00:00-05:00"^^xsd:dateTime ;
+   dcterms:modified "2019-03-21T18:38:00-05:00"^^xsd:dateTime ;
+   cc:license <http://creativecommons.org/licenses/by/4.0/deed.en_US> ;
+   cc:attributionName "OpenLink Software" ;
+   cc:attributionURL <http://www.openlinksw.com/dataspace/organization/openlink#this> ;
+   foaf:primaryTopic <http://www.openlinksw.com/ontology/market#> ;
+   xhv:canonical <http://www.openlinksw.com/ontology/market> ;
+   xhv:describes <http://www.openlinksw.com/ontology/market#> ;
+   schema:about <http://www.openlinksw.com/ontology/market#> ;
+   dcterms:subject <http://www.openlinksw.com/ontology/market#> .
+
+<http://www.openlinksw.com/ontology/market>
+  a foaf:Document , schema:TechArticle ;
+  rdfs:label """OpenLink Market Segment Ontology Description Document"""^^xsd:string ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  dcterms:created "2014-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  dcterms:modified "2019-03-21T18:38:00-05:00"^^xsd:dateTime ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  rdfs:comment """This is a document that uses Linked Data oriented content to describe OpenLink Market Segment Ontology."""@en ;
+  dcterms:subject <http://www.openlinksw.com/ontology/market#> ;
+  foaf:primaryTopic <http://www.openlinksw.com/ontology/market#> ;
+  foaf:topic
+       oplmark:MarketSegment,
+       <http://sw.opencyc.org/concept/Mx4rvVi84ZwpEbGdrcN5Y29ycA>,
+	 	   oplmark:MarketSellerEntity,
+	 	   oplmark:MarketBuyerEntity,
+	 	   oplmark:seller ,
+	 	   oplmark:buyer ,
+	 	   oplmark:needs,
+	 	   oplmark:wants,
+	 	   oplmark:hasMarketSegmentFocus,
+		   oplmark:marketSize,
+		   oplmark:marketSizeValue,
+		   oplmark:marketSizeValueCurrencyCode,
+		   oplmark:marketSizeValueScale,
+		   oplmark:MarketSizeSpecification,
+		   oplmark:IndustrySector,
+		   oplmark:industrySegmentFocus,
+		   oplmark:IndustryProductionEntity ,
+		   oplmark:hasMarketCapCurrencyCode ,
+		   oplmark:hasGrowthRate,
+       oplmark:hasMarketCapValueScale .
+
+
+# <-------------- Market Classes --------------> #
+
+oplmark:IndustrySector  a owl:Class  ;
+  owl:equivalentClass <http://sw.opencyc.org/concept/Mx4rvxQhVpwpEbGdrcN5Y29ycA> ;
+  rdfs:label "IndustrySector" ;
+  skos:altLabel "Industry Sector" ;
+  schema:name "Industry Sector" ;
+  rdfs:comment """Classifier for goods and services production focus."""@en .
+
+oplmark:MarketSegment a owl:Class ;
+  owl:equivalentClass <http://sw.opencyc.org/concept/Mx4rvVi84ZwpEbGdrcN5Y29ycA> ;
+  rdfs:label "MarketSegment" ;
+  skos:altLabel "Market Segment" ;
+  schema:name "Market Segment" ;
+  rdfs:comment """A market segment."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/market#>  .
+
+  oplmark:MarketSegmentIaaS rdfs:subClassOf oplmark:MarketSegment ;
+    rdfs:label "Infrastructure as-a-Service (IaaS)" ;
+    skos:altLabel "IaaS" ;
+    schema:name "Infrastructure as-a-Service (IaaS)" ;
+	schema:image <https://s3.amazonaws.com/ceblog/wp-content/uploads/2018/06/20124711/saas-conversion-funnel-15.png>,
+	 			 <http://cloudonmove.com/wp-content/uploads/2017/07/Cloud-service-models-e1500291137271.png> ;
+    rdfs:comment """Critical computing infrastructure deployed to the cloud 
+  				for exploitation by on- and off-premise software projects and solutions.
+  			 """@en ;
+    skos:related dbpedia:Platform_as_a_service, dbpedia:Software_as_a_service, dbpedia:Cloud_computing ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/market#>  .
+	
+oplmark:MarketSegmentPaaS rdfs:subClassOf oplmark:MarketSegment ;
+  rdfs:label "Infrastructure as-a-Service (PaaS)" ;
+  skos:altLabel "PaaS" ;
+  schema:name "Platform as-a-Service (PaaS)" ;
+  schema:image <http://cloudonmove.com/wp-content/uploads/2017/07/Cloud-service-models-e1500291137271.png> ;
+  rdfs:comment """Application Development Services packaged as a suite and deployed to the cloud 
+				  for exploitation by on- and off-premise software projects and solutions.
+			 """@en ;
+  skos:related dbpedia:Platform_as_a_service, dbpedia:Software_as_a_service, dbpedia:Cloud_computing ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/market#>  .
+	
+  oplmark:MarketSegmentSaaS rdfs:subClassOf oplmark:MarketSegment ;
+    rdfs:label "Software as-a-Service (SaaS)" ;
+    skos:altLabel "SaaS" ;
+    schema:name "Software as-a-Service (SaaS)" ;
+	schema:image <https://s3.amazonaws.com/ceblog/wp-content/uploads/2018/06/20124711/saas-conversion-funnel-15.png> ;
+    rdfs:comment """Category of Application Software (e.g., CRM, HR, ERP etc.) deployed to the cloud 
+  				for exploitation by on- and off-premise software projects and solutions.
+  			 """@en ;
+    skos:related dbpedia:Software_as_a_service, dbpedia:Cloud_computing ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/market#>  .
+	 
+  oplmark:MarketSegmentIPaaS rdfs:subClassOf oplmark:MarketSegment ;
+    rdfs:label "Integration Platform as-a-Service (IPaaS)" ;
+    skos:altLabel "IPaaS" ;
+    schema:name "Integration Platform as-a-Service (IPaaS)" ;
+	schema:image <https://boomi.com/wp-content/uploads/2016/12/Boomi-iPaaS-schematic.png> ;
+    rdfs:comment """Category of software functioning as a Middleware Suite covering 
+					services, applications, and data integration deployed to the cloud 
+					for exploitation by on- and off-premise software projects and solutions.
+				 """@en ;
+	skos:related <https://www.gartner.com/it-glossary/information-platform-as-a-service-ipaas/#class>, 
+				dbpedia:Cloud_computing ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/market#>  .
+
+oplmark:MarketSegmentDaaS rdfs:subClassOf oplmark:MarketSegment ;
+  rdfs:label "Data as-a-Service (DaaS)" ;
+  skos:altLabel "DaaS" ;
+  schema:name "Data as-a-Service (DaaS)" ;
+  schema:image <http://www.corporate360.us/images/1uy.jpg> ;
+  rdfs:comment """Category of software functioning as a Data Space Collective deployed to the cloud 
+				for exploitation by on- and off-premise software projects and solutions.
+			 """@en ;
+  skos:related dbpedia:Data_as_a_service, dbpedia:Cloud_computing ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/market#>  .
+  
+  oplmark:MarketSegmentDBaaS rdfs:subClassOf oplmark:MarketSegment ;
+    rdfs:label "Database as-a-Service (DBaaS)" ;
+    skos:altLabel "DBaaS" ;
+    schema:name "Database as-a-Service (DaaS)" ;
+	schema:image <https://www.researchgate.net/profile/Luis_Bastiao_Silva/publication/260374716/figure/fig5/AS:613853259919385@1523365430811/Database-as-a-Service.png> ;
+    rdfs:comment """Category of software functioning as a Database Management System (DBMS) deployed to the cloud 
+					for exploitation by on- and off-premise software projects and solutions.
+				 """@en ;
+	skos:related dbpedia:Data_as_a_service, dbpedia:Cloud_database, dbpedia:Cloud_computing ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/market#>  .
+
+<http://sw.opencyc.org/concept/Mx4rvVi84ZwpEbGdrcN5Y29ycA> a owl:Class ;
+  rdfs:label "Market Category" ;
+  schema:name "Market Category" ;
+  rdfs:comment """OpenCyc market categorization class."""@en .
+
+oplmark:IndustryProductionEntity a owl:Class ;
+  rdfs:label "IndustryProductionEntity" ;
+  skos:altLabel "Industry Production" ;
+  schema:name "Industry Production Entity" ;
+  rdfs:comment """Producer of goods and services targeting a specific industry sector."""@en ;
+  rdfs:subClassOf gr:BusinessEntity;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/market#>  .
+
+oplmark:MarketSellerEntity a owl:Class ;
+  rdfs:label "MarketSellerEntity" ;
+  skos:altLabel "Market Seller" ;
+  schema:name "Market Seller Entity" ;
+  rdfs:comment """Organization or Person that sells products/services targeting a specific market"""@en ;
+  rdfs:subClassOf gr:BusinessEntity;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/market#>  .
+
+oplmark:MarketBuyerEntity a owl:Class ;
+  rdfs:label "MarketSellerEntity" ;
+  schema:name "Market Buyer Entity" ;
+  skos:altLabel "Market Buyer Entity" ;
+  rdfs:comment """Organization or Person that seeks, wants, or needs products/services targeting a specific market"""@en ;
+  rdfs:subClassOf gr:BusinessEntity ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/market#>  .
+
+oplmark:MarketSizeSpecification a owl:Class ;
+  rdfs:label "MarketSizeSpecification" ;
+  skos:altLabel "Market Size" ;
+  schema:name "Market Size Specification" ;
+  owl:equivalentClass <https://twitter.com/hashtag/MarketSizeSpecification#this> ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/market#>  .
+
+<https://twitter.com/hashtag/MarketSizeSpecification#this> a owl:Class ;
+  rdfs:label "MarketSizeSpecification" ;
+  schema:name "MarketSizeSpecification" ;
+  rdfs:comment """Twitter Market Size Specification. This class was defined
+  via a Tweet, using Nanotation."""@en ;
+  wdrs:describedby <> .
+
+
+# <-------------- Market Properties --------------> #
+
+oplmark:needs a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "needs" ;
+  schema:name "needs" ;
+  skos:altLabel "needs" ;
+  rdfs:comment """Relationship property that associates an Agent with something it needs, but doesn't necessarily want,
+                  and isn't necessarily seeking. Hence the super property relation in regards to schema:seeks."""@en ;
+  schema:domainIncludes schema:Organization,
+                        ecrm:Company,
+                        foaf:Organization,
+                        schema:Person,
+                        foaf:Person,
+                        oplmark:MarketBuyerEntity,
+                        gr:BusinessEntity ;
+  rdfs:domain oplmark:MarketBuyerEntity ;
+  rdfs:range oplbenefit:Benefit ;
+  rdfs:subPropertyOf schema:seeks ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/market#>  .
+
+oplmark:wants a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "wants" ;
+  schema:name "wants" ;
+  skos:altLabel "wants" ;
+  rdfs:comment """Relationship property that associates an Agent with something it wants, but doesn't necessarily need,
+                  and isn't necessarily seeking. Hence the super property relation in regards to schema:seeks."""@en ;
+  rdfs:domain oplmark:MarketBuyerEntity ;
+  rdfs:range oplbenefit:Benefit ;
+  rdfs:subPropertyOf schema:seeks ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/market#>  .
+
+oplmark:owns a rdf:Property, owl:ObjectProperty, owl:TransitiveProperty ;
+  rdfs:subPropertyOf gr:owns;
+  rdfs:label "owns" ;
+  schema:name "owns" ;
+  skos:altLabel "owns" ;
+  rdfs:comment """The subject of this relationship type possesses verifiable ownership rights over the relationship subject. Naturally, this kind of relationship type is transitive."""@en ;
+  rdfs:domain foaf:Agent ;
+  rdfs:range owl:Thing ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/market#>  .
+
+oplmark:hasMarketSegmentFocus a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "hasMarketSegmentFocus" ;
+  skos:altLabel "market segment focus" ;
+  schema:name "Market Segment Focus" ;
+  rdfs:comment """Focal point of a specific segment (part) of a market."""@en ;
+  rdfs:domain oplmark:MarketSellerEntity,
+              oplmark:MarketBuyerEntity ;
+  schema:domainIncludes
+              schema:Product,
+              gr:BusinessEntity ;
+  rdfs:range oplmark:MarketSegment ;
+  owl:equivalentProperty <https://twitter.com/hashtag/marketFocus#this> ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/market#>  .
+
+schema:Product owl:disjointWith gr:BusinessEntity .
+
+<https://twitter.com/hashtag/marketFocus#this> a rdf:Property ;
+  rdfs:label "marketFocus" ;
+  schema:name "Market Focus" ;
+  rdfs:comment """Relation for associating various entity types with a market segment of focus. This relation was defined
+  via a Tweet, using Nanotation."""@en ;
+  wdrs:describedby <> .
+
+oplmark:marketSize a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "marketSize" ;
+  skos:altLabel "market segment size" ;
+  schema:name "Market Segment Size" ;
+  rdfs:domain
+     <http://sw.opencyc.org/concept/Mx4rvVi84ZwpEbGdrcN5Y29ycA>,
+     oplmark:MarketSegment ;
+  rdfs:range  oplmark:MarketSizeSpecification ;
+  owl:equivalentProperty <https://twitter.com/hashtag/marketSize#this> ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/market#>  .
+
+<https://twitter.com/hashtag/marketSize#this>  a rdf:Property ;
+  rdfs:label "marketSize" ;
+  schema:name "Market Size" ;
+  rdfs:comment """Relation for associating various entity types with a market segment of size. This relation was defined
+  via a Tweet, using Nanotation."""@en ;
+  wdrs:describedby <> .
+
+
+oplmark:marketSizeValue a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "marketSizeValue" ;
+  skos:altLabel "market size value" ;
+  schema:name "Market Size value" ;
+  rdfs:comment """Market Size Numeric Value"""@en ;
+  rdfs:domain oplmark:MarketSizeSpecification  ;
+  rdfs:range xsd:decimal ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/market#>  .
+
+oplmark:marketSizeValueCurrencyCode a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "marketSizeValueCurrencyCode" ;
+  skos:altLabel "market size value currency code" ;
+  schema:name "Market Size value currency code" ;
+  rdfs:comment """Market Size Numeric Value Currency Code e.g., USD."""@en ;
+  rdfs:domain oplmark:MarketSizeSpecification  ;
+  rdfs:range xsd:string ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/market#>  .
+
+oplmark:marketSizeValueScale a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "marketSizeValueScale" ;
+  skos:altLabel "market size value scale" ;
+  schema:name "Market Size value scale" ;
+  rdfs:comment """Market Size Numeric Value Scale e.g., Million, Billion, Trillion."""@en ;
+  rdfs:domain oplmark:MarketSizeSpecification  ;
+  rdfs:range xsd:string ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/market#>  .
+
+oplmark:industrySegmentFocus a rdfs:Property, owl:ObjectProperty ;
+  rdfs:label "industrySegmentFocus" ;
+  skos:altLabel "industry segment focus" ;
+  schema:name "Industry Segment Focus" ;
+  rdfs:comment """Relationship property (predicate) that associates an producer of goods and services with an industry sector"""@en ;
+  rdfs:range oplmark:IndustrySector ;
+  rdfs:domain oplmark:IndustryProductionEntity .
+
+oplmark:seller a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "seller" ;
+  skos:altLabel "seller" ;
+  schema:name "seller" ;
+  rdfs:comment """Market Seller"""@en ;
+  rdfs:domain oplmark:MarketSegment  ;
+  rdfs:range oplmark:MarketSellerEntity ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/market#>  .
+
+oplmark:buyer a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "buyer" ;
+  skos:altLabel "buyer" ;
+  schema:name "buyer" ;
+  rdfs:comment """Market Buyer"""@en ;
+  rdfs:domain oplmark:MarketSegment  ;
+  rdfs:range oplmark:MarketBuyerEntity ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/market#>  .
+
+oplmark:hasMarketCapCurrencyCode
+   a rdf:Property, owl:DatatypeProperty ;
+   rdfs:label "hasMarketCapCurrencyCode" ;
+   skos:altLabel "market cap currency code" ;
+   schema:name "Market Cap Currency code" ;
+   rdfs:isDefinedBy <http://www.openlinksw.com/schemas/stocks#> ;
+   rdfs:comment """Associates a Market Capitalization Specification with a currency code"""@en ;
+   rdfs:domain oplstocks:MarketCapSpecification ;
+   rdfs:range xsd:decimal .
+
+oplmark:hasGrowthRate
+  a rdf:Property, owl:DatatypeProperty ;
+  rdfs:label "hasGrowthRate" ;
+  skos:altLabel "CAGR" ;
+  schema:name "Compound Annual Growth Rate" ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/market#>  ;
+  rdfs:comment """Estimated Annual Growth Rate"""@en ;
+  rdfs:domain oplmark:MarketSizeSpecification  ;
+  rdfs:range xsd:decimal .
+	  
+oplmark:hasMarketCapValueScale
+   a rdf:Property, owl:DatatypeProperty;
+   rdfs:label "hasMarketCapValueScale";
+   skos:altLabel "market cap value scale" ;
+   schema:name "Market Cap value scale" ;
+   rdfs:isDefinedBy <http://www.openlinksw.com/schemas/stocks#> ;
+   rdfs:comment """Associates a Market Capitalization Specification with a value scale e.g., Millions, Billions etc."""@en ;
+   rdfs:domain oplstocks:MarketCapSpecification ;
+   rdfs:range xsd:decimal .
+

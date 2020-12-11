@@ -1,0 +1,199 @@
+@prefix schema:  <http://schema.org/> .
+@prefix cvocab:  <http://open-services.net/ns/core#> .
+@prefix sioc:    <http://rdfs.org/sioc/ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix oplattr: <http://www.openlinksw.com/schema/attribution#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix wdrs:    <http://www.w3.org/2007/05/powder-s#> .
+@prefix cc:      <http://creativecommons.org/ns#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix oplbase: <http://www.openlinksw.com/schemas/oplbase#> .
+@prefix oplcert: <http://www.openlinksw.com/schemas/cert#> .
+@prefix xhv:    <http://www.w3.org/1999/xhtml/vocab#> .
+
+<http://www.openlinksw.com/schema/attribution#>
+  a owl:Ontology ;
+  schema:name "OpenLink ontology for Sponger transformation attribution" ;
+  schema:comment """Ontology that defines entity and relation types used to describe Sponger transformation attribution.
+  Examples include name entities, transfomration errors, data sources etc."""@en ;
+  wdrs:describedby <http://www.openlinksw.com/schema/attribution> ;
+  schema:dateCreated "2013-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  schema:dateModified "2015-04-22T13:38:00-05:00"^^xsd:dateTime ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  owl:imports <http://www.w3.org/1999/02/22-rdf-syntax-ns#> , <http://purl.org/dc/terms/> , <http://www.openlinksw.com/schema/reification#> ;
+  owl:versionInfo "1.0.0"^^xsd:string ;
+  <http://open.vocab.org/terms/defines>
+      oplattr:DataSource ,
+      oplattr:NamedEntity ,
+      oplattr:TransformationError ,
+      oplattr:TransformationErrors ,
+      oplattr:entityType ,
+      oplattr:errorText ,
+      oplattr:hasError ,
+      oplattr:hasErrors ,
+      oplattr:hasNamespacePrefix ,
+      oplattr:isDescribedUsing ,
+      oplattr:mentions  ;
+  schema:about
+      oplattr:DataSource ,
+      oplattr:NamedEntity ,
+      oplattr:TransformationError ,
+      oplattr:TransformationErrors ,
+      oplattr:entityType ,
+      oplattr:errorText ,
+      oplattr:hasError ,
+      oplattr:hasErrors ,
+      oplattr:hasNamespacePrefix ,
+      oplattr:isDescribedUsing ,
+      oplattr:mentions  .
+
+<http://open.vocab.org/terms/defines> owl:inverseOf <http://www.w3.org/2007/05/powder-s#describedby> .
+
+<http://www.openlinksw.com/DAV/data/turtle/cartridge_ontologies/attribution.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink Attribution Ontology Description Document (Turtle)" ;
+  cc:License <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for Sponger transformation attribution"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schema/attribution#> ;
+  xhv:canonical <http://www.openlinksw.com/schema/attribution> ;
+  xhv:describes <http://www.openlinksw.com/schema/attribution#> ;
+  schema:about <http://www.openlinksw.com/schema/attribution#> ;
+  dcterms:subject <http://www.openlinksw.com/schema/attribution#> .
+
+<http://www.openlinksw.com/data/turtle/cartridge_ontologies/attribution.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink Attribution Ontology Description Document (Turtle)" ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for Sponger transformation attribution"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schema/attribution#> ;
+  xhv:canonical <http://www.openlinksw.com/schema/attribution> ;
+  xhv:describes <http://www.openlinksw.com/schema/attribution#> ;
+  schema:about <http://www.openlinksw.com/schema/attribution#> ;
+  dcterms:subject <http://www.openlinksw.com/schema/attribution#> .
+
+<http://www.openlinksw.com/schema/attribution>
+  a foaf:Document ;
+  schema:name """OpenLink Attribution Ontology Description Document"""^^xsd:string ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a document that uses Linked Data oriented content to describe OpenLink Attribution Ontology."""@en ;
+  dcterms:subject <http://www.openlinksw.com/schema/attribution#> ;
+  foaf:primaryTopic <http://www.openlinksw.com/schema/attribution#> ;
+  foaf:topic
+      oplattr:DataSource ,
+      oplattr:NamedEntity ,
+      oplattr:TransformationError ,
+      oplattr:TransformationErrors ,
+      oplattr:entityType ,
+      oplattr:errorText ,
+      oplattr:hasError ,
+      oplattr:hasErrors ,
+      oplattr:hasNamespacePrefix ,
+      oplattr:isDescribedUsing ,
+      oplattr:mentions .
+
+
+# <-------------- Attribution Classes --------------> #
+
+oplattr:DataSource a owl:Class ;
+     rdfs:comment """The data source used for transformation"""@en ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schema/attribution#> ;
+     rdfs:label "Data Source" .
+
+oplattr:NamedEntity a owl:Class ;
+     rdfs:comment """A named entity identified by a Sponger NLP cartridge"""@en ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schema/attribution#> ;
+     rdfs:label "NamedEntity" .
+
+oplattr:TransformationError a owl:Class ;
+     rdfs:comment """A separate error from a given sponger cartridge"""@en ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schema/attribution#> ;
+     rdfs:label "TransformationError" .
+
+oplattr:TransformationErrors a owl:Class ;
+     rdfs:comment """Collection of errors generated during transformation if any"""@en ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schema/attribution#> ;
+     rdfs:label "TransformationErrors" .
+
+
+# <-------------- Attribution Properties --------------> #
+
+oplattr:entityType a owl:AnnotationProperty , owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """The type or ontological category of a named entity"""@en ;
+     rdfs:domain oplattr:NamedEntity ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schema/attribution#> ;
+     rdfs:label "entityType" ;
+     skos:altLabel "entity type";
+     rdfs:range owl:Thing ;
+     owl:equivalentProperty rdf:type .
+
+oplattr:errorText a owl:AnnotationProperty , owl:DatatypeProperty, rdf:Property ;
+     rdfs:comment """The description of error"""@en ;
+     rdfs:domain oplattr:TransformationError ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schema/attribution#> ;
+     rdfs:label "errorText" ;
+     skos:altLabel "error text";
+     rdfs:range xsd:string .
+
+oplattr:hasError a owl:AnnotationProperty , owl:ObjectProperty, rdf:Property ;
+     rdfs:comment """A separate error"""@en ;
+     rdfs:domain oplattr:TransformationErrors ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schema/attribution#> ;
+     rdfs:label "hasError" ;
+     skos:altLabel "has error";
+     rdfs:range oplattr:TransformationError .
+
+oplattr:hasErrors a owl:AnnotationProperty , rdf:Property , owl:ObjectProperty ;
+     rdfs:comment """The errors, if any"""@en ;
+     rdfs:domain owl:Thing ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schema/attribution#> ;
+     rdfs:label "hasErrors" ;
+     skos:altLabel "has errors";
+     rdfs:range oplattr:TransformationErrors .
+
+oplattr:hasNamespacePrefix a owl:AnnotationProperty , rdf:Property , owl:DatatypeProperty ;
+     rdfs:comment """The prefix for given source ontology URI"""@en ;
+     rdfs:domain oplattr:DataSource ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schema/attribution#> ;
+     rdfs:label "hasNamespacePrefix" ;
+     skos:altLabel "has namespace prefix";
+     rdfs:range xsd:string .
+
+oplattr:isDescribedUsing a owl:AnnotationProperty , owl:ObjectProperty , rdf:Property ;
+     rdfs:comment """The source ontology URI which is used for transformation"""@en ;
+     rdfs:domain oplattr:DataSource ;
+     rdfs:comment """Relationship property that associates an RDF document with one or more vocabularies (or ontologies) that define the terms used to construct its RDF statements."""@en ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schema/attribution#> ;
+     rdfs:label "isDescribedUsing" ;
+     skos:altLabel "is described using";
+     rdfs:range owl:Thing .
+
+oplattr:mentions a owl:AnnotationProperty , owl:ObjectProperty , rdf:Property ;
+     rdfs:comment """A named entity mentioned in the source data"""@en ;
+     rdfs:domain oplattr:DataSource ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schema/attribution#> ;
+     rdfs:label "mentions" ;
+     skos:altLabel "mentions";
+     owl:equivalentProperty dcterms:references , schema:mentions ;
+     rdfs:range oplattr:NamedEntity .
+
+
+oplattr:ht a owl:AnnotationProperty , rdf:Property , owl:ObjectProperty ;
+     owl:equivalentProperty <https://www.facebook.com/hashtag/ht#this> ,
+                            <https://plus.google.com/+BarbaraStarr/posts/aTSzKncezpp#ht> ;
+     rdfs:label "ht" ;
+     skos:altLabel "h/t"^^xsd:string ;
+     skos:altLabel "Hat Tip"^^xsd:string ;
+     rdfs:comment """Digital slang for acknowledgement. Typical label for Hat Tip relationship type [relation]."""@en ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schema/attribution#> ;
+     rdfs:domain owl:Thing ;
+     rdfs:range foaf:Person, foaf:Agent .
+
+
+

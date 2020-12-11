@@ -1,0 +1,97 @@
+@prefix schema:  <http://schema.org/> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix cvocab:  <http://open-services.net/ns/core#> .
+@prefix cc:      <http://creativecommons.org/ns#> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix void:    <http://rdfs.org/ns/void#> .
+@prefix wdrs:    <http://www.w3.org/2007/05/powder-s#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix xhv:    <http://www.w3.org/1999/xhtml/vocab#> .
+
+@prefix opltable: <http://www.openlinksw.com/schemas/opltable#> .
+
+<http://www.openlinksw.com/schemas/opltable#>
+  a owl:Ontology ;
+  schema:name "OpenLink Tabular Data Ontology" ;
+  schema:comment """Ontology that defines entity and relation types used to describe tabular data.
+  Examples include tables, rows etc."""@en ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:dateCreated "2013-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  schema:dateModified "2015-04-22T13:38:00-05:00"^^xsd:dateTime ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  wdrs:describedby <http://www.openlinksw.com/schemas/opltable> ;
+  owl:versionInfo "1.0.0"^^xsd:string ;
+  owl:imports <http://www.w3.org/1999/02/22-rdf-syntax-ns#> , <http://purl.org/dc/terms/> ;
+  <http://open.vocab.org/terms/defines>
+    opltable:Table ,
+    opltable:Row ,
+    opltable:Cell ;
+  schema:about
+    opltable:Table ,
+    opltable:Row ,
+    opltable:Cell .
+
+<http://www.openlinksw.com/DAV/data/turtle/cartridge_ontologies/table.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink Tabular Data Ontology Description Document (Turtle)" ;
+  cc:License <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for tabular data (CSV, HTML tables)"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/opltable#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/opltable> ;
+  xhv:describes <http://www.openlinksw.com/schemas/opltable#> ;
+  schema:about <http://www.openlinksw.com/schemas/opltable#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/opltable#> .
+
+<http://www.openlinksw.com/data/turtle/cartridge_ontologies/table.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink Tabular Data Ontology Description Document (Turtle)" ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for tabular data (CSV, HTML tables)"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/opltable#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/opltable> ;
+  xhv:describes <http://www.openlinksw.com/schemas/opltable#> ;
+  schema:about <http://www.openlinksw.com/schemas/opltable#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/opltable#> .
+
+<http://www.openlinksw.com/schemas/opltable>
+  a foaf:Document ;
+  schema:name """OpenLink Tabular Data Ontology Description Document"""^^xsd:string ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a document that uses Linked Data oriented content to describe OpenLink Tabular Data Ontology."""@en ;
+  dcterms:subject <http://www.openlinksw.com/schemas/opltable#> ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/opltable#> ;
+  foaf:topic
+    opltable:Table ,
+    opltable:Row ,
+    opltable:Cell .
+
+opltable:Table
+    a rdfs:Class ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opltable#> ;
+    rdfs:label "Table" ;
+    rdfs:comment """A Table container"""@en  ;
+    rdfs:range opltable:Row ;
+    rdfs:subClassOf void:Dataset .
+
+opltable:Row
+    a rdfs:Class ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opltable#> ;
+    rdfs:label "Row" ;
+    rdfs:comment """A row from a tabular data source"""@en  ;
+    rdfs:range opltable:Cell .
+
+opltable:Cell
+    a rdfs:Class ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opltable#> ;
+    rdfs:label "Cell" ;
+    rdfs:comment """A cell in a tabular data source"""@en  .
+
+

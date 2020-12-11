@@ -1,0 +1,723 @@
+@prefix cvocab:  <http://open-services.net/ns/core#> .
+@prefix sioc:    <http://rdfs.org/sioc/ns#> .
+@prefix oplweb:  <http://www.openlinksw.com/schemas/oplweb#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix gr:      <http://purl.org/goodrelations/v1#> .
+@prefix siocs:   <http://rdfs.org/sioc/services#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix wdrs:    <http://www.w3.org/2007/05/powder-s#> .
+@prefix prodont: <http://www.productontology.org/id/> .
+@prefix xhv:     <http://www.w3.org/1999/xhtml/vocab#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix oplben:  <http://www.openlinksw.com/ontology/benefits#> .
+@prefix oplfea:  <http://www.openlinksw.com/ontology/features#> .
+@prefix oplpro:  <http://www.openlinksw.com/ontology/products#> .
+@prefix oplsof:  <http://www.openlinksw.com/ontology/software#> .
+@prefix opllic:  <http://www.openlinksw.com/ontology/licenses#> .
+@prefix oplmch:  <http://www.openlinksw.com/ontology/machines#> .
+@prefix cc:      <http://creativecommons.org/ns#> .
+@prefix schema:  <http://schema.org/> .
+
+<http://www.openlinksw.com/ontology/products#> a owl:Ontology ;
+  rdfs:label """Software Applications, Products, and Services Ontology"""^^xsd:string ;
+  rdfs:comment """Ontology of terms for describing Offers, Software Applications, Products, and Services"""@en ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  wdrs:describedby <http://www.openlinksw.com/ontology/products> ;
+  dcterms:created "2014-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  dcterms:modified "2020-10-01T11:38:00-05:00"^^xsd:dateTime ;
+  owl:versionInfo "1.0.1"^^xsd:string ;
+  owl:imports <http://purl.org/goodrelations/v1> ,
+              <http://www.openlinksw.com/ontology/licenses#> ,
+              <http://www.w3.org/2002/07/owl#> ,
+              <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ,
+              <http://purl.org/dc/terms/> ;
+  <http://open.vocab.org/terms/defines>
+      oplpro:Product ,
+      oplpro:ProductCategory ,
+      oplpro:ProductCategoryFeature ,
+      oplpro:ProductFormatCategory ,
+      oplpro:ProductFormat ,
+      oplpro:ProductFormatFeature ,
+      oplpro:ProductFamily ,
+      oplpro:hasRelease ,
+      oplpro:hasFormat ,
+      oplpro:hasCategory ,
+      oplpro:isCategoryOf ,
+      oplpro:hasFamily ,
+      oplpro:isFamilyOf ,
+      oplpro:ProductRelease ,
+      oplpro:isReleaseOf ,
+      oplpro:upgradeOf ,
+      oplpro:version ,
+      oplpro:productFamilyCode ,
+      oplpro:versionText ,
+      oplpro:hasProduct ,
+      oplpro:hasProductFormatCode ,
+      oplpro:productReleaseUpwardCompatible ,
+      oplpro:productReleaseDownwardCompatible ,
+      oplpro:hasPurchaseInShopURL ,
+      oplpro:productReleaseSupported ,
+			oplpro:SingleTier ,
+			oplpro:MultiTier ,
+			oplpro:RowStore ,
+			oplpro:ColumnStore ,
+			oplpro:Single ,
+			oplpro:Cluster ,
+			oplpro:ODBC ,
+      oplpro:JDBC ,
+      oplpro:DOTNET ,
+      oplpro:OLEDB ,
+      oplpro:jdbcDriver ,
+      oplpro:odbcDriver ;
+  schema:about
+      oplpro:Product ,
+      oplpro:ProductCategory ,
+      oplpro:ProductCategoryFeature ,
+      oplpro:ProductFormatCategory ,
+      oplpro:ProductFormat ,
+      oplpro:ProductFormatFeature ,
+      oplpro:ProductFamily ,
+      oplpro:hasRelease ,
+      oplpro:hasFormat ,
+      oplpro:hasCategory ,
+      oplpro:isCategoryOf ,
+      oplpro:hasFamily ,
+      oplpro:isFamilyOf ,
+      oplpro:ProductRelease ,
+      oplpro:isReleaseOf ,
+      oplpro:upgradeOf ,
+      oplpro:version ,
+      oplpro:productFamilyCode ,
+      oplpro:versionText ,
+      oplpro:hasProduct ,
+      oplpro:hasProductFormatCode ,
+      oplpro:productReleaseUpwardCompatible ,
+      oplpro:productReleaseDownwardCompatible ,
+      oplpro:hasPurchaseInShopURL ,
+      oplpro:productReleaseSupported ,
+			oplpro:SingleTier ,
+			oplpro:MultiTier ,
+			oplpro:RowStore ,
+			oplpro:ColumnStore ,
+			oplpro:Single ,
+			oplpro:Cluster ,
+			oplpro:ODBC ,
+      oplpro:JDBC ,
+      oplpro:DOTNET ,
+      oplpro:OLEDB ,
+      oplpro:jdbcDriver ,
+      oplpro:odbcDriver .
+
+<http://open.vocab.org/terms/defines> owl:inverseOf <http://www.w3.org/2007/05/powder-s#describedby> .
+
+<http://www.openlinksw.com/DAV/data/turtle/products.ttl>
+  a foaf:Document , schema:TechArticle ;
+  rdfs:label "Software Applications, Products, and Services Ontology Description Document (Turtle)" ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  rdfs:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for Applications, Products and Services"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/ontology/products#> ;
+  xhv:canonical <http://www.openlinksw.com/ontology/products> ;
+  dcterms:created "2014-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  dcterms:modified "2020-10-01T11:38:00-05:00"^^xsd:dateTime ;
+  xhv:describes <http://www.openlinksw.com/ontology/products#> ;
+  schema:about <http://www.openlinksw.com/ontology/products#> ;
+  dcterms:subject <http://www.openlinksw.com/ontology/products#> .
+
+<http://www.openlinksw.com/data/turtle/products.ttl>
+  a foaf:Document , schema:TechArticle ;
+  rdfs:label "Software Applications, Products, and Services Ontology Description Document (Turtle)" ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  rdfs:comment """This is a turtle document that uses Linked Data oriented content to describe Software Applications, Products, and Services Ontology."""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/ontology/products#> ;
+  dcterms:created "2014-05-18T13:00:00-05:00"^^xsd:dateTime ;
+   dcterms:modified "2020-10-01T11:38:00-05:00"^^xsd:dateTime ;
+  xhv:canonical <http://www.openlinksw.com/ontology/products> ;
+  xhv:describes <http://www.openlinksw.com/ontology/products#> ;
+  schema:about <http://www.openlinksw.com/ontology/products#> ;
+  dcterms:subject <http://www.openlinksw.com/ontology/products#> .
+
+<http://www.openlinksw.com/ontology/products>
+  a foaf:Document , schema:TechArticle ;
+  rdfs:label """Software Applications, Products, and Services Ontology Description Document"""^^xsd:string ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  rdfs:comment """This is a document that uses Linked Data oriented content to describe Software Applications, Products, and Services Ontology."""@en ;
+  dcterms:subject <http://www.openlinksw.com/ontology/products#> ;
+  dcterms:created "2014-05-18T13:00:00-05:00"^^xsd:dateTime ;
+   dcterms:modified "2020-10-01T11:38:00-05:00"^^xsd:dateTime ;
+  foaf:primaryTopic <http://www.openlinksw.com/ontology/products#> ;
+  foaf:topic
+      oplpro:Product ,
+      oplpro:ProductCategory ,
+      oplpro:ProductCategoryFeature ,
+      oplpro:ProductFormatCategory ,
+      oplpro:ProductFormat ,
+      oplpro:ProductFormatFeature ,
+      oplpro:ProductFamily ,
+      oplpro:hasRelease ,
+      oplpro:hasFormat ,
+      oplpro:hasCategory ,
+      oplpro:isCategoryOf ,
+      oplpro:hasFamily ,
+      oplpro:isFamilyOf ,
+      oplpro:ProductRelease ,
+      oplpro:isReleaseOf ,
+      oplpro:upgradeOf ,
+      oplpro:version ,
+      oplpro:versionText ,
+      oplpro:hasProduct ,
+      oplpro:hasProductFormatCode ,
+      oplpro:productReleaseUpwardCompatible ,
+      oplpro:productReleaseDownwardCompatible ,
+      oplpro:hasPurchaseInShopURL ,
+      oplpro:productReleaseSupported ,
+			oplpro:SingleTier ,
+			oplpro:MultiTier ,
+			oplpro:RowStore ,
+			oplpro:ColumnStore ,
+			oplpro:Single ,
+			oplpro:Cluster ,
+			oplpro:ODBC ,
+      oplpro:JDBC ,
+      oplpro:DOTNET ,
+      oplpro:OLEDB ,
+      oplpro:jdbcDriver ,
+      oplpro:odbcDriver .
+
+
+<http://www.openlinksw.com/data/turtle/products.ttl>
+  rdfs:seeAlso <http://virtuoso.openlinksw.com/offers/> ,
+               <http://uda.openlinksw.com/offers/> ,
+               <http://www.openlinksw.com/data/turtle/shop.ttl> ,
+               <http://www.openlinksw.com/data/turtle/offers.ttl> ,
+               <http://www.openlinksw.com/data/turtle/contracts.ttl> ,
+               <http://www.openlinksw.com/data/turtle/features.ttl> ,
+               <http://www.openlinksw.com/data/turtle/vendors.ttl> ,
+               <http://www.openlinksw.com/data/turtle/software.ttl> ,
+               <http://www.openlinksw.com/data/turtle/machines.ttl> ,
+               <http://www.openlinksw.com/data/turtle/purchases.ttl> ,
+               <http://www.openlinksw.com/data/turtle/payments.ttl> ,
+               <http://www.openlinksw.com/data/turtle/licenses.ttl> .
+
+
+# <-------------- Products --------------> #
+
+# <-------------- Products Classes --------------> #
+
+oplpro:ProductOfferCategory
+         rdfs:subClassOf schema:CategoryCode ;
+         rdfs:label "Product Offer Category"^^xsd:string ;
+         rdfs:isDefinedBy <http://www.openlinksw.com/ontology/products#> ;
+         owl:disjointWith oplmch:ProcessorFamily ,
+                          oplsof:OperatingSystem ,
+                          oplsof:OpsysFamily ,
+                          oplsof:DbmsFamily .
+
+oplpro:Product a owl:Class ;
+         owl:equivalentClass oplsof:ApplicationProgram, schema:SoftwareApplication ;
+         rdfs:subClassOf <http://sw.opencyc.org/concept/Mx4rvcUMxZwpEbGdrcN5Y29ycA> ;
+         rdfs:label "Product"^^xsd:string ;
+         rdfs:isDefinedBy <http://www.openlinksw.com/ontology/products#> ;
+         owl:disjointWith oplmch:ProcessorFamily ,
+                          oplsof:OperatingSystem ,
+                          oplsof:OpsysFamily ,
+                          oplsof:DbmsFamily .
+
+<http://sw.opencyc.org/concept/Mx4rvcUMxZwpEbGdrcN5Y29ycA>  a owl:Class ;
+         rdfs:label "Software" ;
+         rdfs:comment "Software entity type as described by OpenCyc upper ontology." ;
+         rdfs:isDescribedBy <http://www.openlinksw.com/ontology/products#> .
+
+oplpro:ProductCategory a owl:Class ;
+                owl:equivalentClass <http://www.openlinksw.com/schemas/oplweb#ProductCategory> ;
+                rdfs:label "Category - Applications, Products, and Services"^^xsd:string ;
+                rdfs:comment """Used to categorize Software Applications, Products [e.g., Licenses], Services, etc.)"""@en ;
+                rdfs:isDefinedBy <http://www.openlinksw.com/ontology/products#> .
+
+oplpro:ProductCategoryFeature a owl:Class ;
+                rdfs:subClassOf oplpro:ProductFamily , oplpro:Product , <http://www.openlinksw.com/schemas/oplweb#ProductCategoryFeature> ;
+                rdfs:label "Product Category Feature"^^xsd:string ;
+                rdfs:isDefinedBy <http://www.openlinksw.com/ontology/products#> .
+
+oplpro:ProductFormatCategory a owl:Class ;
+                rdfs:subClassOf oplpro:ProductFamily,
+                                oplpro:ProductCategory,
+                                oplpro:ProductFormat ,
+                                <http://www.openlinksw.com/schemas/oplweb#ProductFormatCategory> ;
+                rdfs:label "Product Format Category"^^xsd:string ;
+                rdfs:isDefinedBy <http://www.openlinksw.com/ontology/products#> .
+
+oplpro:ProductFormat a owl:Class ;
+                rdfs:subClassOf <http://www.openlinksw.com/schemas/oplweb#ProductFormat> ;
+                rdfs:label "Product Format"^^xsd:string ;
+                skos:prefLabel "Product Architecture" ;
+                rdfs:comment """Architecture oriented technology applications, products, and services categorization e.g., Single-Tier, Multi-Tier, Enterprise.""" ;
+                rdfs:isDefinedBy <http://www.openlinksw.com/ontology/products#> .
+
+oplpro:ProductFormatFeature a owl:Class ;
+                rdfs:subClassOf <http://www.openlinksw.com/schemas/oplweb#ProductFormatFeature> ;
+                rdfs:label "Product Format Feature"^^xsd:string ;
+                rdfs:isDefinedBy <http://www.openlinksw.com/ontology/products#> .
+
+# rdfs:subClassOf gr:ProductOrService, <http://www.openlinksw.com/schemas/oplweb#ProductFamily> ;
+
+
+oplpro:ProductFamily a owl:Class ;
+               rdfs:subClassOf foaf:Group ;
+               rdfs:label "Product Family"^^xsd:string ;
+               rdfs:comment """Group to which Products & Services belong. For instance, OpenLink ODBC, JDBC, ADO.NET,
+                                OLE-DB, and XMLA Drivers belong to the Universal Data Access Drivers (UDA) product family.
+                                Likewise, Virtuoso Universal Server Open Source and Commercial editions belong to the
+                                Virtuoso product family. """@en ;
+               owl:disjointWith gr:ProductOrService ;
+               rdfs:isDefinedBy <http://www.openlinksw.com/ontology/products#> .
+
+
+# <-------------- Products Properties --------------> #
+
+oplpro:hasRelease
+      a owl:ObjectProperty, owl:TransitiveProperty, rdf:Property ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/products#> ;
+      rdfs:label "hasRelease"^^xsd:string ;
+      skos:altLabel "Release"^^xsd:string ;
+      rdfs:domain oplpro:Product ;
+      rdfs:range oplpro:ProductRelease .
+
+oplpro:hasFormat a owl:ObjectProperty, rdf:Property ;
+          rdfs:isDefinedBy <http://www.openlinksw.com/ontology/products#> ;
+          rdfs:label "hasFormat"^^xsd:string ;
+          skos:altLabel "Product Format"^^xsd:string ;
+          rdfs:subPropertyOf <http://www.openlinksw.com/schemas/oplweb#hasFormat> ;
+          rdfs:domain oplpro:ProductFormatCategory ,
+                      oplpro:ProductCategory ,
+                      oplpro:ProductFormatFeature ;
+          schema:domainIncludes
+                      oplpro:Product ,
+                      oplmch:ProcessorFamily ,
+                      oplsof:OpsysFamily ,
+                      oplsof:DbmsFamily ;
+          rdfs:range oplpro:ProductFormat .
+
+oplmch:ProcessorFamily owl:disjointWith oplsof:OpsysFamily ,
+                                        oplsof:DbmsFamily .
+
+oplsof:DbmsFamily owl:disjointWith oplsof:OpsysFamily .
+
+oplpro:isCategoryOf a owl:ObjectProperty, rdf:Property ;
+            rdfs:isDefinedBy <http://www.openlinksw.com/ontology/products#> ;
+            rdfs:label "isCategoryOf"^^xsd:string ;
+            skos:altLabel "Is Category Of"^^xsd:string ;
+            rdfs:subPropertyOf <http://www.openlinksw.com/schemas/oplweb#hasCategory> ;
+            rdfs:domain oplpro:ProductFormat ,
+                        oplpro:ProductFormatCategory ,
+                        oplpro:ProductFormatFeature ,
+                        oplfea:ProductFeature ,
+                        oplfea:ProductFeatureCategory ;
+            schema:rangeIncludes
+                        oplpro:Product ,
+                        oplben:ProductBenefit ,
+                        oplsof:DbmsFamily ,
+                        oplsof:OpsysFamily ,
+                        oplsof:Component ;
+            owl:inverseOf oplpro:hasCategory ;
+            rdfs:range
+                        oplpro:ProductCategory ,
+                        oplfea:ProductCategoryFeature ,
+                        oplfea:ProductFeatureCategory ,
+                        oplfea:ProductFamilyFeature .
+
+oplsof:Component owl:disjointWith oplben:ProductBenefit ,
+                                  oplsof:DbmsFamily ,
+                                  oplsof:OpsysFamily ,
+                                  oplsof:Component .
+oplben:ProductBenefit owl:disjointWith oplsof:DbmsFamily ,
+                                       oplsof:OpsysFamily ,
+                                       oplsof:Component .
+
+
+oplpro:hasCategory a owl:ObjectProperty, rdf:Property ;
+            rdfs:isDefinedBy <http://www.openlinksw.com/ontology/products#> ;
+            rdfs:label "hasCategory"^^xsd:string ;
+            skos:altLabel "Category"^^xsd:string ;
+            rdfs:subPropertyOf schema:category ;
+            rdfs:domain oplpro:ProductFormat ,
+                        oplpro:ProductFormatCategory ,
+                        oplpro:ProductFormatFeature ,
+                        oplfea:ProductFamilyFeature ,
+                        oplfea:ProductFeature ,
+                        schema:Offer ;
+            schema:domainIncludes
+                        oplpro:Product ,
+                        oplben:ProductBenefit ,
+                        oplsof:DbmsFamily ,
+                        oplsof:OpsysFamily ,
+                        oplsof:Component ,
+                        schema:Offer ;
+            owl:inverseOf oplpro:isCategoryOf ;
+            rdfs:range
+                        oplpro:ProductCategory ,
+                        oplfea:ProductCategoryFeature ,
+                        oplfea:ProductFeatureCategory ,
+                        oplpro:ProductOfferCategory .
+
+oplpro:hasFamily a owl:ObjectProperty, rdf:Property ;
+            rdfs:isDefinedBy <http://www.openlinksw.com/ontology/products#> ;
+            rdfs:label "hasFamily"^^xsd:string ;
+            skos:altLabel "Has Product Family"^^xsd:string ;
+            rdfs:subPropertyOf foaf:member ;
+            owl:equivalentProperty <http://www.openlinksw.com/schemas/oplweb#hasProductFamily> ;
+            schema:domainIncludes
+                        oplpro:Product ,
+                        oplfea:ProductFeature ,
+                        oplfea:ProductFamilyFeature,
+                        oplben:ProductBenefit ,
+                        oplsof:OpsysFamily ,
+                        oplmch:ProcessorFamily ,
+                        oplmch:Processor ,
+                        oplsof:DbmsFamily ;
+            rdfs:range oplpro:ProductFamily .
+
+oplpro:isFamilyOf a owl:ObjectProperty, rdf:Property ;
+            rdfs:isDefinedBy <http://www.openlinksw.com/ontology/products#> ;
+            rdfs:label "isFamilyOf"^^xsd:string ;
+            rdfs:subPropertyOf foaf:member ;
+            skos:altLabel "Is Family Of"^^xsd:string ;
+            rdfs:comment """Associates Product Family with a Product, Product Feature etc."""@en ;
+            rdfs:domain oplpro:ProductFamily ,
+                        oplfea:ProductFeature ,
+                        oplfea:ProductFamilyFeature ;
+            schema:rangeIncludes
+                        oplpro:Product ,
+                        oplben:ProductBenefit ,
+                        oplsof:OpsysFamily ,
+                        oplmch:ProcessorFamily ,
+                        oplmch:Processor .
+
+oplpro:hasProduct a owl:ObjectProperty, rdf:Property ;
+            rdfs:isDefinedBy <http://www.openlinksw.com/ontology/products#> ;
+            rdfs:label "hasProduct"^^xsd:string ;
+            skos:altLabel "Has Product"^^xsd:string ;
+            rdfs:subPropertyOf <http://www.openlinksw.com/schemas/oplweb#hasProduct> , <http://www.openlinksw.com/schemas/oplweb#hasProducts>;
+            rdfs:domain oplsof:OpsysFamily ,
+                        oplsof:DbmsEngine ,
+                        oplsof:DbmsFamily ;
+            schema:domainIncludes
+                        oplpro:ProductFormat ,
+                        oplmch:Processor ;
+            rdfs:range oplpro:Product .
+
+oplpro:ProductFormat owl:disjointWith oplmch:Processor .
+
+oplpro:hasProductFormatCode a owl:ObjectProperty, rdf:Property ;
+            rdfs:isDefinedBy <http://www.openlinksw.com/ontology/products#> ;
+            rdfs:label "hasProductFormatCode"^^xsd:string ;
+            skos:altLabel "Has Product Format Code"^^xsd:string ;
+            rdfs:subPropertyOf <http://www.openlinksw.com/schemas/oplweb#ProductFormatCode> ;
+            schema:domainIncludes
+                        oplpro:ProductFormat ,
+                        oplpro:ProductFormatCategory ;
+            rdfs:range xsd:string .
+
+# opllic:isCategoryOf a owl:ObjectProperty, rdf:Property ;
+#             rdfs:isDefinedBy <http://www.openlinksw.com/ontology/products#> ;
+#             rdfs:label "Is Category Of"^^xsd:string ;
+#             rdfs:domain oplpro:ProductCategory ;
+#             owl:inverseOf oplpro:hasCategory ;
+#             schema:rangeIncludes
+#                        oplpro:Product ,
+#                        oplfea:ProductFeature ,
+#                        oplben:ProductBenefit .
+#
+
+# <-------------- Products Releases --------------> #
+
+# <-------------- Products Releases Classes --------------> #
+
+oplpro:ProductRelease a owl:Class ;
+                rdfs:subClassOf oplpro:Product ;
+                rdfs:label "Product Release"^^xsd:string ;
+                rdfs:isDefinedBy <http://www.openlinksw.com/ontology/products#> .
+
+# <-------------- Products Releases Properties --------------> #
+
+oplpro:upgradeOf
+      a owl:ObjectProperty, rdf:Property , owl:TransitiveProperty ;
+      rdfs:label "upgradeOf"^^xsd:string ;
+      skos:altLabel "Upgrade Of"^^xsd:string ;
+      rdfs:comment """Relation that indicates one product release is an upgrade of another."""@en ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/products#> ;
+      rdfs:domain oplpro:ProductRelease  ;
+      rdfs:range oplpro:ProductRelease .
+
+oplpro:isReleaseOf
+      a owl:ObjectProperty, rdf:Property ;
+      rdfs:label "isReleaseOf"^^xsd:string ;
+      skos:altLabel "Is Release Of"^^xsd:string ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/products#> ;
+      owl:inverseOf oplpro:hasRelease ;
+      rdfs:domain oplpro:ProductRelease  ;
+      owl:equivalentProperty <http://purl.org/dc/terms/isVersionOf> ;
+      rdfs:range oplpro:Product .
+
+oplpro:versionText a owl:ObjectProperty, rdf:Property ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/products#> ;
+      rdfs:label "releaseVersionText"^^xsd:string ;
+      skos:altLabel "Release Version"^^xsd:string ;
+      rdfs:domain oplpro:ProductRelease ;
+      rdfs:range xsd:string .
+
+oplpro:version a owl:ObjectProperty, rdf:Property ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/products#> ;
+      rdfs:subPropertyOf <http://www.openlinksw.com/schemas/oplweb#ProductReleaseProductReleaseId> ;
+      rdfs:label "versionNumber"^^xsd:string ;
+      skos:altLabel "Version Number"^^xsd:string ;
+      owl:equivalentProprty <http://purl.org/dc/terms/hasVersion> ;
+      rdfs:domain oplpro:ProductRelease ;
+      rdfs:range xsd:decimal .
+
+oplpro:productFamilyCode a owl:DatatypeProperty, rdf:Property ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/products#> ;
+      skos:altLabel "Product Family Code" ;
+      rdfs:label "productFamilyCode" ;
+      rdfs:domain oplpro:ProductFamily ;
+      rdfs:range xsd:string .
+
+# fix me: software ontology has the same 2 propertes re. Upward and Downwart Compatible.
+# Should be moved on higher level ( common ) ontology
+
+oplpro:productReleaseUpwardCompatible a owl:ObjectProperty, rdf:Property ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/products#> ;
+      rdfs:subPropertyOf <http://www.openlinksw.com/schemas/oplweb#ProductReleaseUpwardCompatible> ;
+      rdfs:comment """Product Release Upward Compatible"""@en ;
+      rdfs:label "productReleaseUpwardCompatible"^^xsd:string ;
+      skos:altLabel "Product Release Upward Compatible"^^xsd:string ;
+      rdfs:domain oplpro:ProductRelease ;
+      rdfs:range xsd:string .
+
+oplpro:productReleaseDownwardCompatible a owl:ObjectProperty, rdf:Property ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/products#> ;
+      rdfs:subPropertyOf <http://www.openlinksw.com/schemas/oplweb#ProductReleaseDownwardCompatible> ;
+      rdfs:comment """Product Release Downward Compatible"""@en ;
+      rdfs:label "productReleaseDownwardCompatible"^^xsd:string ;
+      skos:altLabel "Product Release Downward Compatible"^^xsd:string ;
+      rdfs:domain oplpro:ProductRelease ;
+      rdfs:range xsd:string .
+
+oplpro:hasPurchaseInShopURL a owl:ObjectProperty, rdf:Property ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/products#> ;
+      rdfs:subPropertyOf <http://www.openlinksw.com/schemas/oplweb#PurchaseInShop> ;
+      rdfs:comment """Product Release Purchase URL"""@en ;
+      rdfs:label "hasPurchaseInShopURL"^^xsd:string ;
+      skos:altLabel "Purchase In Shop URL"^^xsd:string ;
+      rdfs:domain oplpro:ProductRelease ;
+      rdfs:range xsd:string .
+
+oplpro:productReleaseSupported a owl:ObjectProperty, rdf:Property ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/products#> ;
+      rdfs:subPropertyOf <http://www.openlinksw.com/schemas/oplweb#ProductReleaseSupported> ;
+      rdfs:comment """Product Release support indicator"""@en ;
+      rdfs:label "productReleaseSupported"^^xsd:string ;
+      skos:altLabel "Product Release Supported"^^xsd:string ;
+      rdfs:domain oplpro:ProductRelease ;
+      rdfs:range xsd:string .
+
+oplpro:SingleTier a <http://data.openlinksw.com/oplweb/product_format/st#this> ;
+          rdfs:isDefinedBy <http://www.openlinksw.com/ontology/products#> ;
+          rdfs:label "Single-Tier Architecture"^^xsd:string .
+
+oplpro:MultiTier a <http://data.openlinksw.com/oplweb/product_format/mt#this> ;
+          rdfs:isDefinedBy <http://www.openlinksw.com/ontology/products#> ;
+          rdfs:label "Multi-Tier Architecture"^^xsd:string .
+
+oplpro:RowStore a <http://data.openlinksw.com/oplweb/product_format/rs#this>  ;
+          rdfs:isDefinedBy <http://www.openlinksw.com/ontology/products#> ;
+          rdfs:label "Row Store"^^xsd:string .
+
+oplpro:ColumnStore a <http://data.openlinksw.com/oplweb/product_format/ct#this>  ;
+             rdfs:isDefinedBy <http://www.openlinksw.com/ontology/products#> ;
+             rdfs:label "Column Store"^^xsd:string .
+
+oplpro:Single a <http://data.openlinksw.com/oplweb/product_category/single#this> ;
+        rdfs:isDefinedBy <http://www.openlinksw.com/ontology/products#> ;
+        rdfs:label "Single"^^xsd:string .
+
+oplpro:Cluster a <http://data.openlinksw.com/oplweb/product_category/cluster#this> ;
+         rdfs:isDefinedBy <http://www.openlinksw.com/ontology/products#> ;
+         rdfs:label "Cluster"^^xsd:string .
+
+oplpro:ODBC a <http://data.openlinksw.com/oplweb/product_category/odbc#this> ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/products#> ;
+      rdfs:label "ODBC"^^xsd:string .
+
+oplpro:JDBC a <http://data.openlinksw.com/oplweb/product_category/jdbc#this> ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/products#> ;
+      rdfs:label "JDBC"^^xsd:string .
+
+oplpro:DOTNET a <http://data.openlinksw.com/oplweb/product_category/dotnet#this> ;
+        rdfs:isDefinedBy <http://www.openlinksw.com/ontology/products#> ;
+        rdfs:label "DOT.NET"^^xsd:string .
+
+oplpro:OLEDB a <http://data.openlinksw.com/oplweb/product_category/oledb#this> ;
+       rdfs:isDefinedBy <http://www.openlinksw.com/ontology/products#> ;
+       rdfs:label "OLEDB"^^xsd:string .
+
+
+## Sub-Class Cross References ##
+# prodont:Virtuoso_Universal_Server a owl:Class ;
+#                                   rdfs:label "Virtuoso Universal Server"^^xsd:string ;
+#                                   rdfs:subClassOf prodont:Middleware ;
+#                                   rdfs:subClassOf prodont:Relational_database_management_system ;
+#                                   rdfs:subClassOf prodont:Application_server ;
+#                                   rdfs:subClassOf prodont:Content_management .
+
+prodont:Relational_database_management_system a owl:Class ;
+                                              rdfs:label "Relational database management system"^^xsd:string ;
+                                              rdfs:subClassOf prodont:Database .
+
+prodont:Web_Server a owl:Class ;
+                   rdfs:label "Web Server"^^xsd:string ;
+                   owl:equivalenClass prodont:Web_server .
+
+prodont:Application_server a owl:Class ;
+                           rdfs:label "Web Application Server"^^xsd:string ;
+                           rdfs:subClassOf prodont:Middleware .
+
+prodont:Middleware a owl:Class ;
+                   rdfs:label "Middleware"^^xsd:string .
+
+prodont:Database a owl:Class ;
+                 rdfs:label "Database"^^xsd:string .
+
+prodont:Content_management a owl:Class ;
+                           rdfs:label "Content Management Platform"^^xsd:string .
+
+
+<http://rdf.data-vocabulary.org/#Product>    owl:equivalentClass <http://purl.org/NET/googlevocab#Product> .
+
+prodont:Cloud_computing a owl:Class ;
+                        rdfs:label "Cloud computing"^^xsd:string .
+
+prodont:Data_as_a_Service a owl:Class ;
+                          rdfs:label "Data as a service"^^xsd:string ;
+                          rdfs:subClassOf prodont:Cloud_computing .
+
+
+prodont:Software_as_a_service a owl:Class ;
+                              rdfs:label "Software as a service"^^xsd:string ;
+                              rdfs:subClassOf prodont:Cloud_computing .
+
+
+
+# prodont:Triplestore a owl:Class ;
+#                     rdfs:label "Triplestore"^^xsd:string ;
+#                     rdfs:subClassOf prodont:Database .
+#
+#prodont:Master_data_management a owl:Class ;
+#                               rdfs:label "Master data management"^^xsd:string ;
+#                               rdfs:subClassOf prodont:Middleware .
+#
+#prodont:NoSQL a owl:Class ;
+#              rdfs:label "NoSQL"^^xsd:string ;
+#              rdfs:subClassOf prodont:Database .
+#
+#prodont:Graph_database a owl:Class ;
+#                       rdfs:label "Graph database"^^xsd:string ;
+#                       rdfs:subClassOf prodont:Database .
+
+prodont:Enterprise_service_bus a owl:Class ;
+                               rdfs:label "Enterprise service bus"^^xsd:string ;
+                               rdfs:subClassOf prodont:Middleware .
+
+
+prodont:Collaborative_software a owl:Class ;
+                               rdfs:label "Collaborative software"^^xsd:string ;
+                               owl:equivalenClass prodont:Enterprise_Collaboration_Systems .
+
+#prodont:Enterprise_Collaboration_Systems a owl:Class ;
+#                                         rdfs:label "Enterprise Collaboration Systems"^^xsd:string ;
+#                                         owl:equivalenClass prodont:Collaborative_software .
+
+prodont:JDBC_Driver a owl:Class ;
+                    rdfs:label "JDBC driver"^^xsd:string ;
+                    owl:equivalenClass prodont:JDBC_driver .
+
+prodont:JDBC_driver a owl:Class ;
+                    rdfs:label "JDBC driver"^^xsd:string ;
+                    rdfs:subClassOf prodont:Middleware .
+
+
+prodont:ODBC_driver a owl:Class ;
+                    rdfs:label "ODBC driver"^^xsd:string ;
+                    rdfs:subClassOf prodont:Middleware .
+
+prodont:ODBC_Driver a owl:Class ;
+                    rdfs:label "ODBC driver"^^xsd:string ;
+                    owl:equivalenClass prodont:ODBC_driver .
+
+prodont:OLE_DB_provider a owl:Class ;
+                        rdfs:label "OLE DB provider"^^xsd:string ;
+                        rdfs:subClassOf prodont:Middleware .
+
+prodont:ADO_NET_provider a owl:Class ;
+                         rdfs:label "ADO.NET provider"^^xsd:string ;
+                         owl:equivalenClass prodont:ADO_NET_data_provider .
+
+prodont:ADO_NET_data_provider a owl:Class ;
+                              rdfs:label "ADO.NET provider"^^xsd:string ;
+                              rdfs:subClassOf prodont:Middleware .
+
+
+prodont:OpenLink_ODBC_Drivers a owl:Class ;
+                              rdfs:label "OpenLink ODBC Drivers"^^xsd:string ;
+                              rdfs:subClassOf prodont:ODBC_driver .
+
+
+## oplpro:UDA a oplpro:ProductFamily , <http://data.openlinksw.com/oplweb/product_family/uda#this> ;
+#oplpro:UDA a oplpro:ProductFamily ;
+#          rdfs:isDefinedBy <http://www.openlinksw.com/ontology/products#> ;
+#          dcterms:description """Universal Data Access Drivers - High-performance data access drivers for ODBC, JDBC, ADO.NET, and OLE DB that provide transparent access to enterprise databases."""@en ;
+#          rdfs:label "UDA (ODBC, JDBC, ADO.NET, OLE-DB, XMLA)"^^xsd:string .
+
+## oplpro:Virtuoso a oplpro:ProductFamily , <http://data.openlinksw.com/oplweb/product_family/virtuoso#this> ;
+#oplpro:Virtuoso a oplpro:ProductFamily ;
+#          rdfs:isDefinedBy <http://www.openlinksw.com/ontology/products#> ;
+#          dcterms:description """A Web-scalable platform for Creation, Deployment, and General exploitation of the Linked Data meme across Public and Private networks."""@en ;
+#          rdfs:label "Virtuoso"^^xsd:string .
+
+
+oplpro:jdbcDriver a oplpro:Product ,
+        schema:ProductModel,
+        schema:CreativeWork ,
+        schema:SoftwareApplication ,
+        <http://sw.opencyc.org/concept/Mx4rvcUMxZwpEbGdrcN5Y29ycA> ;
+    schema:applicationCategory schema:BusinessApplication ;
+    schema:name "JDBC Driver Product"^^xsd:string ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/products#> ;
+    schema:comment """JDBC Product Category (Class)"""@en ;
+    wdrs:describedby <>  .
+
+oplpro:odbcDriver a oplpro:Product ,
+        schema:ProductModel,
+        schema:CreativeWork ,
+        schema:SoftwareApplication ,
+        <http://sw.opencyc.org/concept/Mx4rvcUMxZwpEbGdrcN5Y29ycA> ;
+    schema:applicationCategory schema:BusinessApplication ;
+    schema:name "ODBC Driver Product"^^xsd:string ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/products#> ;
+    schema:comment """ODBC Product Category (Class)"""@en ;
+    wdrs:describedby <>  .
+
+
+xhv:related owl:equivalentProperty rdfs:seeAlso .
+
+foaf:primaryTopic owl:inverseOf xhv:describedby , wdrs:describedby .
+
+wdrs:describedby owl:equivalentProperty xhv:describedby .
+
+rdfs:subClassOf a owl:TransitiveProperty .

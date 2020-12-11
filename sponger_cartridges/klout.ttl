@@ -1,0 +1,255 @@
+#
+# An OpenLink ontology for Klout
+#
+# See:
+# http://developer.klout.com/iodocs (Klout API resources)
+#
+
+@prefix schema:  <http://schema.org/> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix cvocab:  <http://open-services.net/ns/core#> .
+@prefix cc:      <http://creativecommons.org/ns#> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix opltw:   <http://www.openlinksw.com/schemas/twitter#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sioct:   <http://rdfs.org/sioc/types#> .
+@prefix wdrs:    <http://www.w3.org/2007/05/powder-s#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix xhv:    <http://www.w3.org/1999/xhtml/vocab#> .
+
+@prefix oplklout: <http://www.openlinksw.com/schemas/klout#> .
+
+<http://www.openlinksw.com/schemas/klout#>
+  a owl:Ontology ;
+  schema:name "OpenLink Klout Ontology" ;
+  schema:comment """Ontology that defines entity and relation types used to describe Klout.
+  Examples include users, net scores, topics etc."""@en ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  wdrs:describedby <http://www.openlinksw.com/schemas/klout> ;
+  schema:dateCreated "2013-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  schema:dateModified "2015-04-22T13:38:00-05:00"^^xsd:dateTime ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  owl:versionInfo "1.0.0"^^xsd:string ;
+  owl:imports <http://www.w3.org/1999/02/22-rdf-syntax-ns#> , <http://purl.org/dc/terms/> ;
+  <http://open.vocab.org/terms/defines>
+    oplklout:User ,
+    oplklout:hasKlout ,
+    oplklout:amplification ,
+    oplklout:class ,
+    oplklout:delta1d ,
+    oplklout:delta5d ,
+    oplklout:description ,
+    oplklout:influencedBy ,
+    oplklout:influences ,
+    oplklout:netscore ,
+    oplklout:scoreSlope ,
+    oplklout:topic ,
+    oplklout:twitterProfileURI ,
+    oplklout:trueReach ;
+  schema:about
+    oplklout:User ,
+    oplklout:hasKlout ,
+    oplklout:amplification ,
+    oplklout:class ,
+    oplklout:delta1d ,
+    oplklout:delta5d ,
+    oplklout:description ,
+    oplklout:influencedBy ,
+    oplklout:influences ,
+    oplklout:netscore ,
+    oplklout:scoreSlope ,
+    oplklout:topic ,
+    oplklout:twitterProfileURI ,
+    oplklout:trueReach .
+
+<http://www.openlinksw.com/DAV/data/turtle/cartridge_ontologies/klout.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink Klout Ontology Description Document (Turtle)" ;
+  cc:License <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for Klout"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/klout#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/klout> ;
+  xhv:describes <http://www.openlinksw.com/schemas/klout#> ;
+  schema:about <http://www.openlinksw.com/schemas/klout#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/klout#> .
+
+<http://www.openlinksw.com/data/turtle/cartridge_ontologies/klout.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink Klout Ontology Description Document (Turtle)" ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for Klout"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/klout#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/klout> ;
+  xhv:describes <http://www.openlinksw.com/schemas/klout#> ;
+  schema:about <http://www.openlinksw.com/schemas/klout#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/klout#> .
+
+<http://www.openlinksw.com/schemas/klout>
+  a foaf:Document ;
+  schema:name """OpenLink Klout Ontology Description Document"""^^xsd:string ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a document that uses Linked Data oriented content to describe OpenLink Klout Ontology."""@en ;
+  dcterms:subject <http://www.openlinksw.com/schemas/klout#> ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/klout#> ;
+  foaf:topic
+    oplklout:User ,
+    oplklout:hasKlout ,
+    oplklout:amplification ,
+    oplklout:class ,
+    oplklout:delta1d ,
+    oplklout:delta5d ,
+    oplklout:description ,
+    oplklout:influencedBy ,
+    oplklout:influences ,
+    oplklout:netscore ,
+    oplklout:scoreSlope ,
+    oplklout:topic ,
+    oplklout:twitterProfileURI ,
+    oplklout:trueReach .
+
+
+
+
+# ---------------------------------------------------------------------------
+# Klout classes
+#
+
+oplklout:User
+    a owl:Class ;
+    rdfs:subClassOf opltw:User ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/klout#> ;
+    rdfs:label "Klout user" ;
+    rdfs:comment """A Klout (twitter) user"""@en .
+
+
+# ---------------------------------------------------------------------------
+# Klout properties
+#
+
+oplklout:hasKlout
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/klout#> ;
+    rdfs:label "hasKlout" ;
+    skos:altLabel "klout" ;
+    rdfs:comment """A user's Klout score"""@en ;
+    rdfs:domain oplklout:User ;
+    rdfs:range xsd:float .
+
+oplklout:amplification
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/klout#> ;
+    rdfs:label "amplification" ;
+    skos:altLabel "amplification" ;
+    rdfs:comment """Klout Amplification"""@en ;
+    rdfs:domain oplklout:User ;
+    rdfs:range xsd:float .
+
+oplklout:class
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/klout#> ;
+    rdfs:label "class" ;
+    skos:altLabel "class" ;
+    rdfs:comment """Klout user class"""@en ;
+    rdfs:domain oplklout:User ;
+    rdfs:range xsd:float .
+
+oplklout:delta1d
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/klout#> ;
+    rdfs:label "delta1d" ;
+    skos:altLabel "delta-1d" ;
+    rdfs:comment """Klout score 1-day change"""@en ;
+    rdfs:domain oplklout:User ;
+    rdfs:range xsd:float .
+
+oplklout:delta5d
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/klout#> ;
+    rdfs:label "delta5d" ;
+    skos:altLabel "delta-5d" ;
+    rdfs:comment """Klout score 5-day change"""@en ;
+    rdfs:domain oplklout:User ;
+    rdfs:range xsd:float .
+
+oplklout:description
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/klout#> ;
+    rdfs:label "description" ;
+    skos:altLabel "description" ;
+    rdfs:comment """Klout's description of a user"""@en ;
+    rdfs:domain oplklout:User ;
+    rdfs:range xsd:string .
+
+oplklout:influencedBy
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/klout#> ;
+    rdfs:label "influencedBy" ;
+    skos:altLabel "influenced by" ;
+    rdfs:comment """Klout users who influence the current user"""@en ;
+    rdfs:domain oplklout:User ;
+    rdfs:range xsd:anyURI .
+
+oplklout:influences
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/klout#> ;
+    rdfs:label "influences" ;
+    skos:altLabel "influences" ;
+    rdfs:comment """Other Klout users influenced by the current user"""@en ;
+    rdfs:domain oplklout:User ;
+    rdfs:range xsd:anyURI .
+
+oplklout:netscore
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/klout#> ;
+    rdfs:label "netscore" ;
+    skos:altLabel "netscore" ;
+    rdfs:comment """A Klout user's Network score"""@en ;
+    rdfs:domain oplklout:User ;
+    rdfs:range xsd:float .
+
+oplklout:scoreSlope
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/klout#> ;
+    rdfs:label "scoreSlope" ;
+    skos:altLabel "score slope" ;
+    rdfs:comment """A user's Klout score-slope"""@en ;
+    rdfs:domain oplklout:User ;
+    rdfs:range xsd:float .
+
+oplklout:topic
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/klout#> ;
+    rdfs:label "topic" ;
+    skos:altLabel "topic" ;
+    rdfs:comment """Topic about which a Klout user posts"""@en ;
+    rdfs:domain oplklout:User ;
+    rdfs:subPropertyOf foaf:topic_interest ;
+    rdfs:range xsd:string .
+
+oplklout:twitterProfileURI
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/klout#> ;
+    rdfs:label "twitterProfileURI" ;
+    skos:altLabel "twitter profile" ;
+    rdfs:comment """Klout user's equivalent Twitter profile URI"""@en ;
+    rdfs:domain oplklout:User ;
+    rdfs:subPropertyOf foaf:homepage ;
+    rdfs:range xsd:anyURI .
+
+oplklout:trueReach
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/klout#> ;
+    rdfs:label "trueReach" ;
+    skos:altLabel "true reach" ;
+    rdfs:comment """Measure of a user's Klout True Reach"""@en ;
+    rdfs:domain oplklout:User ;
+    rdfs:range xsd:float .
+
+

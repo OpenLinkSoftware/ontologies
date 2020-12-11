@@ -1,0 +1,1779 @@
+
+#
+# An OpenLink ontology for Facebook Graph API
+#
+# See http://developers.facebook.com/docs/reference/api/
+#
+@prefix schema:  <http://schema.org/> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix cvocab:  <http://open-services.net/ns/core#> .
+@prefix cc:      <http://creativecommons.org/ns#> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix like:    <http://ontologi.es/like#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix og:      <http://ogp.me/ns#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix wdrs:    <http://www.w3.org/2007/05/powder-s#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix xhv:    <http://www.w3.org/1999/xhtml/vocab#> .
+
+@prefix oplog: <http://www.openlinksw.com/schemas/opengraph#> .
+
+<http://www.openlinksw.com/schemas/opengraph#>
+  a owl:Ontology ;
+  schema:name "OpenLink Facebook Graph API Ontology" ;
+  schema:comment """Ontology that defines entity and relation types used to describe Facebook Graph API.
+  Examples include comments, photos, messages etc."""@en ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:dateCreated "2013-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  schema:dateModified "2015-04-22T13:38:00-05:00"^^xsd:dateTime ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  wdrs:describedby <http://www.openlinksw.com/schemas/opengraph> ;
+  owl:versionInfo "1.0.0"^^xsd:string ;
+  owl:imports <http://www.w3.org/1999/02/22-rdf-syntax-ns#> , <http://purl.org/dc/terms/> ;
+  <http://open.vocab.org/terms/defines>
+    oplog:Album ,
+    oplog:Application ,
+    oplog:Checkin ,
+    oplog:Comment ,
+    oplog:Event ,
+    oplog:FriendList ,
+    oplog:Group ,
+    oplog:Insights ,
+    oplog:Link ,
+    oplog:Message ,
+    oplog:Note ,
+    oplog:Page ,
+    oplog:Photo ,
+    oplog:Picture ,
+    oplog:Post ,
+    oplog:Review ,
+    oplog:StatusMessage ,
+    oplog:Subscription ,
+    oplog:Thread ,
+    oplog:User ,
+    oplog:Video ,
+    oplog:Object ,
+    oplog:Account ,
+    oplog:Activity ,
+    oplog:Book ,
+    oplog:Game ,
+    oplog:Image ,
+    oplog:Interest ,
+    oplog:Movie ,
+    oplog:Music ,
+    oplog:TvProgramme ,
+    oplog:hasComment ,
+    oplog:hasPicture ,
+    oplog:picture ,
+    oplog:likedBy ,
+    oplog:hasPhoto ,
+    oplog:hasFeed ,
+    oplog:hasPost ,
+    oplog:taggedBy ,
+    oplog:photos ,
+    oplog:hasMember ,
+    oplog:hasFriend ,
+    oplog:hasAccount ,
+    oplog:accounts ,
+    oplog:albumType ,
+    oplog:hasCategory ,
+    oplog:count ,
+    oplog:coverPhoto ,
+    oplog:description ,
+    oplog:from ,
+    oplog:height ,
+    oplog:id ,
+    oplog:link ,
+    oplog:locale ,
+    oplog:message ,
+    oplog:name ,
+    oplog:position ,
+    oplog:privacy ,
+    oplog:thirdPartyID ,
+    oplog:to ,
+    oplog:uri ,
+    oplog:publicProfileURL ,
+    oplog:username ,
+    oplog:verified ,
+    oplog:width ,
+    oplog:hasAlbum ,
+    oplog:albums ,
+    oplog:hasInterest ,
+    oplog:interests ,
+    oplog:likesActivity ,
+    oplog:activities ,
+    oplog:likesBook ,
+    oplog:likesGame ,
+    oplog:likesMovie ,
+    oplog:movies ,
+    oplog:likesMusic ,
+    oplog:music ,
+    oplog:likesTvProgramme ,
+    oplog:posted ,
+    oplog:hasVariant ,
+    oplog:address ,
+    oplog:bio ,
+    oplog:birthday ,
+    oplog:books ,
+    oplog:checkins ,
+    oplog:education ,
+    oplog:email ,
+    oplog:events ,
+    oplog:family ,
+    oplog:events ,
+    oplog:feed ,
+    oplog:firstName ,
+    oplog:friendlists ,
+    oplog:friendrequests ,
+    oplog:friends ,
+    oplog:games ,
+    oplog:middleName ,
+    oplog:lastName ,
+    oplog:gender ,
+    oplog:groups ,
+    oplog:home ,
+    oplog:hometown ,
+    oplog:inbox ,
+    oplog:outbox ,
+    oplog:inspirationalPeople ,
+    oplog:installed ,
+    oplog:interestedIn ,
+    oplog:isEmployee ,
+    oplog:languages ,
+    oplog:likes ,
+    oplog:links ,
+    oplog:location ,
+    oplog:meetingFor ,
+    oplog:mobilePhone ,
+    oplog:mutualfriends ,
+    oplog:notes ,
+    oplog:notifications ,
+    oplog:payments ,
+    oplog:permissions ,
+    oplog:political ,
+    oplog:posts ,
+    oplog:quotes ,
+    oplog:relationshipStatus ,
+    oplog:religion ,
+    oplog:scores ,
+    oplog:significantOther ,
+    oplog:sports ,
+    oplog:statuses ,
+    oplog:tagged ,
+    oplog:television ,
+    oplog:timezone ,
+    oplog:trust ,
+    oplog:updatedTime ,
+    oplog:updates ,
+    oplog:videoUploadLimits ,
+    oplog:videos ,
+    oplog:website ,
+    oplog:work ;
+  schema:about
+    oplog:Album ,
+    oplog:Application ,
+    oplog:Checkin ,
+    oplog:Comment ,
+    oplog:Event ,
+    oplog:FriendList ,
+    oplog:Group ,
+    oplog:Insights ,
+    oplog:Link ,
+    oplog:Message ,
+    oplog:Note ,
+    oplog:Page ,
+    oplog:Photo ,
+    oplog:Picture ,
+    oplog:Post ,
+    oplog:Review ,
+    oplog:StatusMessage ,
+    oplog:Subscription ,
+    oplog:Thread ,
+    oplog:User ,
+    oplog:Video ,
+    oplog:Object ,
+    oplog:Account ,
+    oplog:Activity ,
+    oplog:Book ,
+    oplog:Game ,
+    oplog:Image ,
+    oplog:Interest ,
+    oplog:Movie ,
+    oplog:Music ,
+    oplog:TvProgramme ,
+    oplog:hasComment ,
+    oplog:hasPicture ,
+    oplog:picture ,
+    oplog:likedBy ,
+    oplog:hasPhoto ,
+    oplog:hasFeed ,
+    oplog:hasPost ,
+    oplog:taggedBy ,
+    oplog:photos ,
+    oplog:hasMember ,
+    oplog:hasFriend ,
+    oplog:hasAccount ,
+    oplog:accounts ,
+    oplog:albumType ,
+    oplog:hasCategory ,
+    oplog:count ,
+    oplog:coverPhoto ,
+    oplog:description ,
+    oplog:from ,
+    oplog:height ,
+    oplog:id ,
+    oplog:link ,
+    oplog:locale ,
+    oplog:message ,
+    oplog:name ,
+    oplog:position ,
+    oplog:privacy ,
+    oplog:thirdPartyID ,
+    oplog:to ,
+    oplog:uri ,
+    oplog:publicProfileURL ,
+    oplog:username ,
+    oplog:verified ,
+    oplog:width ,
+    oplog:hasAlbum ,
+    oplog:albums ,
+    oplog:hasInterest ,
+    oplog:interests ,
+    oplog:likesActivity ,
+    oplog:activities ,
+    oplog:likesBook ,
+    oplog:likesGame ,
+    oplog:likesMovie ,
+    oplog:movies ,
+    oplog:likesMusic ,
+    oplog:music ,
+    oplog:likesTvProgramme ,
+    oplog:posted ,
+    oplog:hasVariant ,
+    oplog:address ,
+    oplog:bio ,
+    oplog:birthday ,
+    oplog:books ,
+    oplog:checkins ,
+    oplog:education ,
+    oplog:email ,
+    oplog:events ,
+    oplog:family ,
+    oplog:events ,
+    oplog:feed ,
+    oplog:firstName ,
+    oplog:friendlists ,
+    oplog:friendrequests ,
+    oplog:friends ,
+    oplog:games ,
+    oplog:middleName ,
+    oplog:lastName ,
+    oplog:gender ,
+    oplog:groups ,
+    oplog:home ,
+    oplog:hometown ,
+    oplog:inbox ,
+    oplog:outbox ,
+    oplog:inspirationalPeople ,
+    oplog:installed ,
+    oplog:interestedIn ,
+    oplog:isEmployee ,
+    oplog:languages ,
+    oplog:likes ,
+    oplog:links ,
+    oplog:location ,
+    oplog:meetingFor ,
+    oplog:mobilePhone ,
+    oplog:mutualfriends ,
+    oplog:notes ,
+    oplog:notifications ,
+    oplog:payments ,
+    oplog:permissions ,
+    oplog:political ,
+    oplog:posts ,
+    oplog:quotes ,
+    oplog:relationshipStatus ,
+    oplog:religion ,
+    oplog:scores ,
+    oplog:significantOther ,
+    oplog:sports ,
+    oplog:statuses ,
+    oplog:tagged ,
+    oplog:television ,
+    oplog:timezone ,
+    oplog:trust ,
+    oplog:updatedTime ,
+    oplog:updates ,
+    oplog:videoUploadLimits ,
+    oplog:videos ,
+    oplog:website ,
+    oplog:work .
+
+<http://www.openlinksw.com/DAV/data/turtle/cartridge_ontologies/opengraph.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink Facebook Graph API Ontology Description Document (Turtle)" ;
+  cc:License <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for Facebook Graph API"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/opengraph#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/opengraph> ;
+  xhv:describes <http://www.openlinksw.com/schemas/opengraph#> ;
+  schema:about <http://www.openlinksw.com/schemas/opengraph#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/opengraph#> .
+
+<http://www.openlinksw.com/data/turtle/cartridge_ontologies/opengraph.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink Facebook Graph API Ontology Description Document (Turtle)" ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for Facebook Graph API"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/opengraph#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/opengraph> ;
+  xhv:describes <http://www.openlinksw.com/schemas/opengraph#> ;
+  schema:about <http://www.openlinksw.com/schemas/opengraph#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/opengraph#> .
+
+<http://www.openlinksw.com/schemas/opengraph>
+  a foaf:Document ;
+  schema:name """OpenLink Facebook Graph API Ontology Description Document"""^^xsd:string ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a document that uses Linked Data oriented content to describe OpenLink Facebook Graph API Ontology."""@en ;
+  dcterms:subject <http://www.openlinksw.com/schemas/opengraph#> ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/opengraph#> ;
+  foaf:topic
+    oplog:Album ,
+    oplog:Application ,
+    oplog:Checkin ,
+    oplog:Comment ,
+    oplog:Event ,
+    oplog:FriendList ,
+    oplog:Group ,
+    oplog:Insights ,
+    oplog:Link ,
+    oplog:Message ,
+    oplog:Note ,
+    oplog:Page ,
+    oplog:Photo ,
+    oplog:Picture ,
+    oplog:Post ,
+    oplog:Review ,
+    oplog:StatusMessage ,
+    oplog:Subscription ,
+    oplog:Thread ,
+    oplog:User ,
+    oplog:Video ,
+    oplog:Object ,
+    oplog:Account ,
+    oplog:Activity ,
+    oplog:Book ,
+    oplog:Game ,
+    oplog:Image ,
+    oplog:Interest ,
+    oplog:Movie ,
+    oplog:Music ,
+    oplog:TvProgramme ,
+    oplog:hasComment ,
+    oplog:hasPicture ,
+    oplog:picture ,
+    oplog:likedBy ,
+    oplog:hasPhoto ,
+    oplog:hasFeed ,
+    oplog:hasPost ,
+    oplog:taggedBy ,
+    oplog:photos ,
+    oplog:hasMember ,
+    oplog:hasFriend ,
+    oplog:hasAccount ,
+    oplog:accounts ,
+    oplog:albumType ,
+    oplog:hasCategory ,
+    oplog:count ,
+    oplog:coverPhoto ,
+    oplog:description ,
+    oplog:from ,
+    oplog:height ,
+    oplog:id ,
+    oplog:link ,
+    oplog:locale ,
+    oplog:message ,
+    oplog:name ,
+    oplog:position ,
+    oplog:privacy ,
+    oplog:thirdPartyID ,
+    oplog:to ,
+    oplog:uri ,
+    oplog:publicProfileURL ,
+    oplog:username ,
+    oplog:verified ,
+    oplog:width ,
+    oplog:hasAlbum ,
+    oplog:albums ,
+    oplog:hasInterest ,
+    oplog:interests ,
+    oplog:likesActivity ,
+    oplog:activities ,
+    oplog:likesBook ,
+    oplog:likesGame ,
+    oplog:likesMovie ,
+    oplog:movies ,
+    oplog:likesMusic ,
+    oplog:music ,
+    oplog:likesTvProgramme ,
+    oplog:posted ,
+    oplog:hasVariant ,
+    oplog:address ,
+    oplog:bio ,
+    oplog:birthday ,
+    oplog:books ,
+    oplog:checkins ,
+    oplog:education ,
+    oplog:email ,
+    oplog:events ,
+    oplog:family ,
+    oplog:events ,
+    oplog:feed ,
+    oplog:firstName ,
+    oplog:friendlists ,
+    oplog:friendrequests ,
+    oplog:friends ,
+    oplog:games ,
+    oplog:middleName ,
+    oplog:lastName ,
+    oplog:gender ,
+    oplog:groups ,
+    oplog:home ,
+    oplog:hometown ,
+    oplog:inbox ,
+    oplog:outbox ,
+    oplog:inspirationalPeople ,
+    oplog:installed ,
+    oplog:interestedIn ,
+    oplog:isEmployee ,
+    oplog:languages ,
+    oplog:likes ,
+    oplog:links ,
+    oplog:location ,
+    oplog:meetingFor ,
+    oplog:mobilePhone ,
+    oplog:mutualfriends ,
+    oplog:notes ,
+    oplog:notifications ,
+    oplog:payments ,
+    oplog:permissions ,
+    oplog:political ,
+    oplog:posts ,
+    oplog:quotes ,
+    oplog:relationshipStatus ,
+    oplog:religion ,
+    oplog:scores ,
+    oplog:significantOther ,
+    oplog:sports ,
+    oplog:statuses ,
+    oplog:tagged ,
+    oplog:television ,
+    oplog:timezone ,
+    oplog:trust ,
+    oplog:updatedTime ,
+    oplog:updates ,
+    oplog:videoUploadLimits ,
+    oplog:videos ,
+    oplog:website ,
+    oplog:work .
+
+
+
+# ---------------------------------------------------------------------------
+# Open Graph / Parrot classes
+#
+
+oplog:Album
+    a owl:Class ;
+    rdfs:subClassOf oplog:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "Album" ;
+    rdfs:comment """An Facebook photo album"""@en  .
+
+oplog:Application
+    a owl:Class ;
+    rdfs:subClassOf oplog:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "Application" ;
+    rdfs:comment """An application registered on Facebook Platform"""@en  .
+
+oplog:Checkin
+    a owl:Class ;
+    rdfs:subClassOf oplog:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "Checkin" ;
+    rdfs:comment """An Facebook checkin"""@en  .
+
+oplog:Comment
+    a owl:Class ;
+    rdfs:subClassOf oplog:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "Comment" ;
+    rdfs:comment """A comment on a Graph API object"""@en  .
+
+oplog:Event
+    a owl:Class ;
+    rdfs:subClassOf oplog:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "Event" ;
+    rdfs:comment """Specifies information about an event, including the location, event name, and which invitees plan to attend"""@en  .
+
+oplog:FriendList
+    a owl:Class ;
+    rdfs:subClassOf oplog:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "FriendList" ;
+    rdfs:comment """A Facebook friend list"""@en  .
+
+oplog:Group
+    a owl:Class ;
+    rdfs:subClassOf oplog:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "Group" ;
+    rdfs:comment """A Facebook group"""@en  .
+
+oplog:Insights
+    a owl:Class ;
+    rdfs:subClassOf oplog:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "Insights" ;
+    rdfs:comment """Statistics about applications, pages, and domains."""@en  .
+
+oplog:Link
+    a owl:Class ;
+    rdfs:subClassOf oplog:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "Link" ;
+    rdfs:comment """A link shared on a user's wall"""@en  .
+
+oplog:Message
+    a owl:Class ;
+    rdfs:subClassOf oplog:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "Message" ;
+    rdfs:comment """An individual message in the new Facebook messaging system"""@en  .
+
+oplog:Note
+    a owl:Class ;
+    rdfs:subClassOf oplog:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "Note" ;
+    rdfs:comment """A Facebook note"""@en  .
+
+oplog:Page
+    a owl:Class ;
+    rdfs:subClassOf oplog:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "Page" ;
+    rdfs:comment """A Facebook Page"""@en  .
+
+oplog:Photo
+    a owl:Class ;
+    rdfs:subClassOf oplog:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "Photo" ;
+    rdfs:comment """An individual photo within an album"""@en  .
+
+oplog:Picture
+    a owl:Class ;
+    rdfs:subClassOf oplog:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "Picture" ;
+    rdfs:comment """Picture"""@en  .
+
+oplog:Post
+    a owl:Class ;
+    rdfs:subClassOf oplog:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "Post" ;
+    rdfs:comment """An individual entry in a profile's feed"""@en  .
+
+oplog:Review
+    a owl:Class ;
+    rdfs:subClassOf oplog:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "Review" ;
+    rdfs:comment """A review for an application"""@en  .
+
+oplog:StatusMessage
+    a owl:Class ;
+    rdfs:subClassOf oplog:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "StatusMessage" ;
+    rdfs:comment """A status message on a user's wall"""@en  .
+
+oplog:Subscription
+    a owl:Class ;
+    rdfs:subClassOf oplog:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "Subscription" ;
+    rdfs:comment """A subscription to an application to get real-time updates for an Graph object type"""@en  .
+
+oplog:Thread
+    a owl:Class ;
+    rdfs:subClassOf oplog:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "Thread" ;
+    rdfs:comment """A message thread in the Facebook messaging system"""@en  .
+
+oplog:User
+    a owl:Class ;
+    rdfs:subClassOf oplog:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "User" ;
+    rdfs:comment """A Facebook user profile"""@en  .
+
+oplog:Video
+    a owl:Class ;
+    rdfs:subClassOf oplog:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "Video" ;
+    rdfs:comment """An individual video"""@en  .
+
+# ---------------------------------------------------------------------------
+# OpenLink classes for Open Graph
+#
+# These classes are not defined by Open Graph in http://developers.facebook.com/docs/reference/api
+# but are used in OpenLink's RDF representation of Open Graph data
+#
+
+oplog:Object
+    a owl:Class;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "Open Graph object" ;
+    rdfs:comment """A base class representing all Open Graph objects"""@en  .
+
+oplog:Account
+    a owl:Class;
+    rdfs:subClassOf oplog:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "Account" ;
+    rdfs:comment """A class representing an account listed in a user's profile"""@en  .
+
+oplog:Activity
+    a owl:Class;
+    rdfs:subClassOf oplog:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "Activity" ;
+    rdfs:comment """A class representing an activity listed in a user's profile"""@en  .
+
+oplog:Book
+    a owl:Class;
+    rdfs:subClassOf oplog:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "Book" ;
+    rdfs:comment """A class representing a book listed in a user's profile"""@en  .
+
+oplog:Game
+    a owl:Class;
+    rdfs:subClassOf oplog:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "Game" ;
+    rdfs:comment """A class representing a game listed in a user's profile"""@en  .
+
+oplog:Image
+    a owl:Class;
+    rdfs:subClassOf oplog:Photo ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "Image" ;
+    rdfs:comment """A class representing a variant of a Photo"""@en  .
+
+oplog:Interest
+    a owl:Class;
+    rdfs:subClassOf oplog:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "Interest" ;
+    rdfs:comment """A class representing an interest listed in a user's profile"""@en  .
+
+oplog:Movie
+    a owl:Class;
+    rdfs:subClassOf oplog:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "Movie" ;
+    rdfs:comment """A class representing a movie listed in a user's profile"""@en  .
+
+oplog:Music
+    a owl:Class;
+    rdfs:subClassOf oplog:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "Music" ;
+    rdfs:comment """A class representing music listed in a user's profile"""@en  .
+
+oplog:TvProgramme
+    a owl:Class;
+    rdfs:subClassOf oplog:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "TV programme" ;
+    rdfs:comment """A class representing a TV programme listed in a user's profile"""@en  .
+
+# ---------------------------------------------------------------------------
+# Open Graph connections ( + Parrot )
+#
+
+#
+# Generic connections - common to several Open Graph objects
+#
+
+oplog:hasComment
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "hasComment" ;
+    skos:altLabel "comment" ;
+    rdfs:comment """A comment made on a Facebook object"""@en  ;
+    rdfs:domain oplog:Object ;
+    rdfs:range oplog:Comment .
+
+oplog:hasPicture
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "hasPicture" ;
+    skos:altLabel "picture" ;
+    rdfs:comment """A picture"""@en  ;
+    rdfs:domain oplog:Object ;
+    rdfs:range oplog:Picture .
+
+oplog:picture
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "picture" ;
+    skos:altLabel "picture" ;
+    rdfs:comment """The user's profile picture"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range oplog:Picture ;
+    owl:equivalentProperty oplog:hasPicture .
+
+oplog:likedBy
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "likedBy" ;
+    skos:altLabel "liked by" ;
+    rdfs:comment """the user that liked the Facebook object"""@en  ;
+    rdfs:domain oplog:Object ;
+    rdfs:range oplog:User .
+
+#
+# Album connections
+#
+
+oplog:hasPhoto
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "hasPhoto" ;
+    skos:altLabel "photo" ;
+    rdfs:comment """A photo contained in an album"""@en  ;
+    rdfs:domain oplog:Album ;
+    rdfs:range oplog:Photo .
+
+#
+# Application connections
+#
+
+oplog:hasFeed
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "hasFeed" ;
+    skos:altLabel "feed" ;
+    rdfs:comment """A post on an application's wall"""@en  ;
+    rdfs:domain oplog:Application ;
+    rdfs:range oplog:Post .
+
+oplog:hasPost
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "hasPost" ;
+    skos:altLabel "post" ;
+    rdfs:comment """An application's own post"""@en  ;
+    rdfs:domain oplog:Application ;
+    rdfs:range oplog:Post .
+
+oplog:taggedBy
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "taggedBy" ;
+    skos:altLabel "tagged by" ;
+    rdfs:comment """The photos, videos, and posts in which this application has been tagged"""@en  ;
+    rdfs:domain oplog:Application ;
+    rdfs:range oplog:Object .
+
+oplog:photos
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "photos" ;
+    skos:altLabel "photos" ;
+    rdfs:comment """Photos the user (or friend) is tagged in."""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range oplog:Photo  .
+
+#
+# FriendList connections
+#
+
+oplog:hasMember
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "hasMember" ;
+    skos:altLabel "member" ;
+    rdfs:comment """a user who is a member of this FriendList"""@en  ;
+    rdfs:domain oplog:FriendList ;
+    rdfs:range oplog:User .
+
+#
+# User connections
+#
+
+oplog:hasFriend
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "hasFriend" ;
+    skos:altLabel "friend" ;
+    rdfs:comment """A friend of the Facebook user"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range oplog:FriendList .
+
+oplog:hasFriendsCount
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "hasFriendsCount" ;
+    skos:altLabel "friends count" ;
+    rdfs:comment """The total number of friends that this person has on Facebook"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range xsd:integer .
+
+oplog:hasLikesCount
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "hasLikesCount" ;
+    skos:altLabel "likes count" ;
+    rdfs:comment """The total number of pages this person has liked"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range xsd:integer .
+
+oplog:hasMaxAge
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "hasMaxAge" ;
+    skos:altLabel "max age" ;
+    rdfs:comment """The user's age is less than this maximum"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range xsd:integer .
+
+oplog:hasMinAge
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "hasMinAge" ;
+    skos:altLabel "min age" ;
+    rdfs:comment """The user's age is greater than this minimum"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range xsd:integer .
+
+oplog:hasNameFormat
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "hasNameFormat" ;
+    skos:altLabel "name format" ;
+    rdfs:comment """The person's name formatted to correctly handle Chinese, Japanese or Korean ordering"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range xsd:string .
+
+oplog:hasAccount
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "hasAccount" ;
+    skos:altLabel "account" ;
+    rdfs:comment """A Facebook page owned by the user"""@en  ;
+    schema:domainIncludes
+       oplog:User ,
+       oplog:Page ;
+    rdfs:range oplog:Account .
+
+oplog:User owl:disjointWith oplog:Page .
+
+oplog:accounts
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "accounts" ;
+    skos:altLabel "accounts" ;
+    rdfs:comment """The Facebook apps and pages owned by the current user"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range oplog:Account ;
+    owl:equivalentProperty oplog:hasAccount .
+
+# ---------------------------------------------------------------------------
+# Open Graph properties ( + Parrot )
+#
+
+oplog:albumType
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "albumType" ;
+    skos:altLabel "album type" ;
+    rdfs:comment """The type of the album: profile, mobile, wall, normal or album"""@en  ;
+    rdfs:domain oplog:Album ;
+    rdfs:range xsd:string .
+
+oplog:hasCategory
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "hasCategory" ;
+    skos:altLabel "category" ;
+    rdfs:comment """The Page's category"""@en  ;
+    rdfs:domain oplog:Page ;
+    rdfs:range xsd:string .
+
+oplog:count
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "count" ;
+    skos:altLabel "count" ;
+    rdfs:comment """The number of photos in an album"""@en  ;
+    rdfs:domain oplog:Album ;
+    rdfs:range xsd:integer .
+
+oplog:coverPhoto
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "coverPhoto" ;
+    skos:altLabel "cover photo" ;
+    rdfs:comment """The album cover photo ID"""@en  ;
+    rdfs:domain oplog:Album ;
+    rdfs:range xsd:string .
+
+oplog:description
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "description" ;
+    skos:altLabel "description" ;
+    rdfs:comment """A brief description of an Open Graph object"""@en  ;
+    rdfs:domain oplog:Object ;
+    rdfs:range xsd:string .
+
+oplog:from
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "from" ;
+    skos:altLabel "from" ;
+    rdfs:comment """The Facebook user who made this post"""@en  ;
+    rdfs:domain oplog:Post ;
+    rdfs:range xsd:string .
+
+oplog:height
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "height" ;
+    skos:altLabel "height" ;
+    rdfs:comment """The height of a photo in pixels"""@en  ;
+    rdfs:domain oplog:Photo;
+    rdfs:range xsd:integer .
+
+oplog:id
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "id" ;
+    skos:altLabel "id" ;
+    rdfs:comment """A Facebook object ID"""@en  ;
+    rdfs:domain oplog:Object;
+    rdfs:range xsd:string .
+
+oplog:link
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "link" ;
+    skos:altLabel "link" ;
+    rdfs:comment """A link attached to a Post"""@en  ;
+    rdfs:domain oplog:Post ;
+    rdfs:range rdfs:Resource .
+
+oplog:locale
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "locale" ;
+    skos:altLabel "locale" ;
+    rdfs:comment """A user's locale expressed as an ISO language code and country code"""@en  ;
+    rdfs:domain oplog:Product ;
+    rdfs:range xsd:string .
+
+oplog:message
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "message" ;
+    skos:altLabel "message" ;
+    rdfs:comment """A message contained in a Post"""@en  ;
+    rdfs:domain oplog:Post ;
+    rdfs:range xsd:string .
+
+oplog:name
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "name" ;
+    skos:altLabel "name" ;
+    rdfs:comment """The user's full name"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range xsd:string .
+
+oplog:position
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "position" ;
+    skos:altLabel "position" ;
+    rdfs:comment """The position of a photo in an album"""@en  ;
+    rdfs:domain oplog:Photo ;
+    rdfs:range xsd:integer .
+
+oplog:privacy
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "privacy" ;
+    skos:altLabel "privacy" ;
+    rdfs:comment """The privacy setting of a group"""@en  ;
+    rdfs:domain oplog:Group ;
+    rdfs:range xsd:string .
+
+oplog:thirdPartyID
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "thirdPartyID" ;
+    skos:altLabel "third party id" ;
+    rdfs:comment """An anonymous but unique identifier for the user"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range xsd:string .
+
+oplog:to
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "to" ;
+    skos:altLabel "to" ;
+    rdfs:comment """A Facebook profile targeted in this post"""@en  ;
+    rdfs:domain oplog:Post ;
+    rdfs:range xsd:string .
+
+oplog:uri
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "uri" ;
+    skos:altLabel "uri" ;
+    rdfs:comment """A link to an OpenGraph resource"""@en  ;
+    rdfs:domain oplog:Object ;
+    rdfs:range rdfs:Resource .
+
+oplog:publicProfileURL
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "publicProfileURL" ;
+    skos:altLabel "facebook profile url" ;
+    rdfs:comment """URL to a Facebook user's home page"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range rdfs:Resource .
+
+oplog:username
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "username" ;
+    skos:altLabel "user name" ;
+    rdfs:comment """The user's Facebook username"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range xsd:string .
+
+oplog:verified
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "verified" ;
+    skos:altLabel "verified" ;
+    rdfs:comment """The user's account verification status, either 'true' or 'false' """@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range xsd:boolean .
+
+oplog:width
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "width" ;
+    skos:altLabel "width" ;
+    rdfs:comment """The width of a photo in pixels"""@en  ;
+    rdfs:domain oplog:Photo;
+    rdfs:range xsd:integer .
+
+# ---------------------------------------------------------------------------
+# OpenLink properties for Open Graph ( + Parrot )
+#
+# These classes are not defined by Open Graph in http://developers.facebook.com/docs/reference/api
+# but are used in OpenLink's RDF representation of Open Graph data
+#
+
+oplog:hasAlbum
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "hasAlbum" ;
+    skos:altLabel "album" ;
+    rdfs:comment """An album listed on a user's profile"""@en ;
+    rdfs:domain oplog:User ;
+    rdfs:range oplog:Album .
+
+oplog:albums
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "albums" ;
+    skos:altLabel "albums" ;
+    rdfs:comment """The photo albums this user has created."""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range oplog:Album ;
+    owl:equivalentProperty oplog:hasAlbum .
+
+oplog:hasInterest
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "hasInterest" ;
+    skos:altLabel "interest" ;
+    rdfs:comment """An interest listed on a user's profile"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range oplog:Interest .
+
+oplog:interests
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "interests" ;
+    skos:altLabel "interests" ;
+    rdfs:comment """The interests listed on the user's profile."""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range oplog:Interest ;
+    owl:equivalentProperty oplog:hasInterest .
+
+oplog:likesActivity
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "likesActivity" ;
+    skos:altLabel "likes activity" ;
+    rdfs:comment """An activity listed on a user's profile"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range oplog:Activity ;
+    rdfs:subPropertyOf like:likes .
+
+oplog:activities
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "activities" ;
+    skos:altLabel "activities" ;
+    rdfs:comment """The activities listed on the user's profile."""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range oplog:Activity ;
+    rdfs:subPropertyOf like:likes ;
+    owl:equivalentProperty oplog:likesActivity .
+
+oplog:likesBook
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "likesBook" ;
+    skos:altLabel "likes book" ;
+    rdfs:comment """A book listed on a user's profile"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range oplog:Book ;
+    rdfs:subPropertyOf like:likes .
+
+oplog:likesGame
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "likesGame" ;
+    skos:altLabel "likes game" ;
+    rdfs:comment """A game listed on a user's profile"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range oplog:Game ;
+    rdfs:subPropertyOf like:likes .
+
+oplog:likesMovie
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "likesMovie" ;
+    skos:altLabel "likes movie" ;
+    rdfs:comment """A movie listed on a user's profile"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range oplog:Movie ;
+    rdfs:subPropertyOf like:likes .
+
+oplog:movies
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "movies" ;
+    skos:altLabel "movies" ;
+    rdfs:comment """The movies listed on the user's profile."""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range oplog:Movie ;
+    owl:equivalentProperty oplog:likesMovie .
+
+oplog:likesMusic
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "likesMusic" ;
+    skos:altLabel "likes music" ;
+    rdfs:comment """Music listed on a user's profile"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range oplog:Music ;
+    rdfs:subPropertyOf like:likes .
+
+oplog:music
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "music" ;
+    skos:altLabel "music" ;
+    rdfs:comment """The music listed on the user's profile."""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range oplog:Music ;
+    owl:equivalentProperty oplog:likesMusic .
+
+oplog:likesTvProgramme
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "likesTvProgramme" ;
+    skos:altLabel "likes TV programme" ;
+    rdfs:comment """A TV programme listed on a user's profile"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range oplog:TVProgramme ;
+    rdfs:subPropertyOf like:likes .
+
+oplog:posted
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "posted" ;
+    skos:altLabel "posted" ;
+    rdfs:comment """A post by a Facebook user"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range oplog:Post .
+
+oplog:hasVariant
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "hasVariant" ;
+    skos:altLabel "variant" ;
+    rdfs:comment """A variant of a photo"""@en  ;
+    rdfs:domain oplog:Photo;
+    rdfs:range oplog:Image .
+
+oplog:address
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "address" ;
+    skos:altLabel "address" ;
+    rdfs:comment """User's address"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range xsd:string .
+
+oplog:bio
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "bio" ;
+    skos:altLabel "biography" ;
+    rdfs:comment """The user's biography"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range xsd:string .
+
+oplog:birthday
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "birthday" ;
+    skos:altLabel "birthday" ;
+    rdfs:comment """The user's birthday"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range xsd:date .
+
+oplog:books
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "books" ;
+    skos:altLabel "books" ;
+    rdfs:comment """The books listed on the user's profile"""@en  ;
+    rdfs:domain oplog:User;
+    rdfs:range oplog:Book .
+
+oplog:checkins
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "checkins" ;
+    skos:altLabel "checkins" ;
+    rdfs:comment """The places that the user has checked-into"""@en  ;
+    rdfs:domain oplog:User;
+    rdfs:range xsd:string .
+
+oplog:education
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "education" ;
+    skos:altLabel "education" ;
+    rdfs:comment """A list of the user's education history."""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range xsd:string .
+
+oplog:email
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "email" ;
+    skos:altLabel "email" ;
+    rdfs:comment """The proxied or contact email address granted by the user"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range xsd:string .
+
+oplog:events
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "events" ;
+    skos:altLabel "events" ;
+    rdfs:comment """The events this user is attending"""@en  ;
+    rdfs:domain oplog:User;
+    rdfs:range oplog:Event .
+
+oplog:family
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "family" ;
+    skos:altLabel "family" ;
+    rdfs:comment """The user's family relationships"""@en  ;
+    rdfs:domain oplog:User;
+    rdfs:range xsd:string .
+
+oplog:events
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "events" ;
+    skos:altLabel "events" ;
+    rdfs:comment """The events this user is attending"""@en  ;
+    rdfs:domain oplog:User;
+    rdfs:range oplog:Event .
+
+oplog:feed
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "feed" ;
+    skos:altLabel "feed" ;
+    rdfs:comment """The user's wall"""@en  ;
+    rdfs:domain oplog:User;
+    rdfs:range xsd:string .
+
+oplog:firstName
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "firstName" ;
+    skos:altLabel "first name" ;
+    rdfs:comment """The user's first name"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range xsd:string .
+
+oplog:friendlists
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "friendlists" ;
+    skos:altLabel "friend lists" ;
+    rdfs:comment """The user's friend lists"""@en  ;
+    rdfs:domain oplog:User;
+    rdfs:range oplog:FriendList .
+
+oplog:friendrequests
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "friendrequests" ;
+    skos:altLabel "friend requests" ;
+    rdfs:comment """The user's incoming friend requests"""@en  ;
+    rdfs:domain oplog:User;
+    rdfs:range xsd:string .
+
+oplog:friends
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "friends" ;
+    skos:altLabel "friends" ;
+    rdfs:comment """The user's friends"""@en  ;
+    rdfs:domain oplog:User;
+    rdfs:range  oplog:User .
+
+oplog:games
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "games" ;
+    skos:altLabel "games" ;
+    rdfs:comment """Games the user has added to the Arts and Entertainment section of their profile"""@en  ;
+    rdfs:domain oplog:User;
+    rdfs:range oplog:Game .
+
+oplog:middleName
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "middleName" ;
+    skos:altLabel "middle name" ;
+    rdfs:comment """The user's middle name"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range xsd:string .
+
+oplog:lastName
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "lastName" ;
+    skos:altLabel "last name" ;
+    rdfs:comment """The user's last name"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range xsd:string .
+
+oplog:gender
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "gender" ;
+    skos:altLabel "gender" ;
+    rdfs:comment """The user's gender"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range xsd:string .
+
+oplog:groups
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "groups" ;
+    skos:altLabel "groups" ;
+    rdfs:comment """The Groups that the user belongs to"""@en  ;
+    rdfs:domain oplog:User;
+    rdfs:range oplog:Group .
+
+oplog:home
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "home" ;
+    skos:altLabel "home" ;
+    rdfs:comment """The user's home"""@en  ;
+    rdfs:domain oplog:User;
+    rdfs:range xsd:string .
+
+oplog:hometown
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "hometown" ;
+    skos:altLabel "hometown" ;
+    rdfs:comment """The user's hometown"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range xsd:string .
+
+oplog:inbox
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "inbox" ;
+    skos:altLabel "inbox" ;
+    rdfs:comment """The [Threads](/docs/reference/api/thread/) in this user's inbox"""@en  ;
+    rdfs:domain oplog:User;
+    rdfs:range xsd:string .
+
+oplog:outbox
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "outbox" ;
+    skos:altLabel "outbox" ;
+    rdfs:comment """TThe messages in this user's outbox"""@en ;
+    rdfs:domain oplog:User;
+    rdfs:range xsd:string .
+
+oplog:inspirationalPeople
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "inspirationalPeople" ;
+    skos:altLabel "inspirational people" ;
+    rdfs:comment """Inspirational people"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range xsd:string .
+
+oplog:installed
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "installed" ;
+    skos:altLabel "installed" ;
+    rdfs:comment """installed"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range xsd:string .
+
+oplog:interestedIn
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "interestedIn" ;
+    skos:altLabel "interested in" ;
+    rdfs:comment """The genders the user is interested in"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range xsd:string .
+
+oplog:isEmployee
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "isEmployee" ;
+    skos:altLabel "is employee" ;
+    rdfs:comment """employee"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range xsd:string .
+
+oplog:languages
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "languages" ;
+    skos:altLabel "languages" ;
+    rdfs:comment """The user's languages"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range xsd:string .
+
+oplog:likes
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "likes" ;
+    skos:altLabel "likes" ;
+    rdfs:comment """All the pages this user has liked"""@en  ;
+    rdfs:domain oplog:User;
+    rdfs:range  oplog:Page;
+    rdfs:subPropertyOf like:likes .
+
+oplog:links
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "links" ;
+    skos:altLabel "links" ;
+    rdfs:comment """The user's posted links"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range oplog:Link .
+
+oplog:location
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "location" ;
+    skos:altLabel "location" ;
+    rdfs:comment """The user's current city"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range xsd:string .
+
+oplog:meetingFor
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "meetingFor" ;
+    skos:altLabel "meeting for" ;
+    rdfs:comment """meeting for"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range xsd:string .
+
+oplog:mobilePhone
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "mobilePhone" ;
+    skos:altLabel "mobile phone" ;
+    rdfs:comment """mobile phone"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range xsd:string .
+
+oplog:mutualfriends
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "mutualfriends" ;
+    skos:altLabel "mutual friends" ;
+    rdfs:comment """The mutual friends between two users"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range oplog:User .
+
+oplog:notes
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "notes" ;
+    skos:altLabel "notes" ;
+    rdfs:comment """The user's notes"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range oplog:Note .
+
+oplog:notifications
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "notifications" ;
+    skos:altLabel "notifications" ;
+    rdfs:comment """The user's notifications"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range oplog:Message .
+
+oplog:payments
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "payments" ;
+    skos:altLabel "payments" ;
+    rdfs:comment """The Facebook Credits orders the user placed with an application"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range xsd:string .
+
+oplog:permissions
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "permissions" ;
+    skos:altLabel "permissions" ;
+    rdfs:comment """The permissions that user has granted the application"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range xsd:string .
+
+oplog:political
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "political" ;
+    skos:altLabel "political" ;
+    rdfs:comment """The user's political view"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range xsd:string .
+
+oplog:posts
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "posts" ;
+    skos:altLabel "posts" ;
+    rdfs:comment """The user's own posts"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range oplog:Post .
+
+oplog:quotes
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "quotes" ;
+    skos:altLabel "quotes" ;
+    rdfs:comment """The user's favorite quotes"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range xsd:string .
+
+oplog:relationshipStatus
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "relationship status" ;
+    skos:altLabel "relationship status" ;
+    rdfs:comment """The user's relationship status: 'Single', 'In a relationship', 'Engaged', 'Married', 'It's complicated', 'In an open relationship', 'Widowed', 'Separated', 'Divorced', 'In a civil union', 'In a domestic partnership'. 'user relationships' or 'friends relationships'"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range xsd:string .
+
+oplog:religion
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "religion" ;
+    skos:altLabel "religion" ;
+    rdfs:comment """The user's religion"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range xsd:string .
+
+oplog:scores
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "scores" ;
+    skos:altLabel "scores" ;
+    rdfs:comment """The current [scores](/docs/score/) for the user in games"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range xsd:string .
+
+oplog:significantOther
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "significant other" ;
+    skos:altLabel "significant other" ;
+    rdfs:comment """The user's significant other"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range xsd:string .
+
+oplog:sports
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "sports" ;
+    skos:altLabel "sports" ;
+    rdfs:comment """The user's sports"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range xsd:string .
+
+oplog:statuses
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "statuses" ;
+    skos:altLabel "statuses" ;
+    rdfs:comment """The user's status updates"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range xsd:string .
+
+oplog:tagged
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "tagged" ;
+    skos:altLabel "tagged" ;
+    rdfs:comment """Posts the user is tagged in"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range oplog:Post .
+
+oplog:television
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "television" ;
+    skos:altLabel "television" ;
+    rdfs:comment """The television listed on the user's profile"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range oplog:TvProgramme .
+
+oplog:timezone
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "timezone" ;
+    skos:altLabel "time zone" ;
+    rdfs:comment """The user's timezone offset from UTC. Available only for the current user"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range xsd:string .
+
+oplog:trust
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "trust" ;
+    skos:altLabel "trust" ;
+    rdfs:comment """trust"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range xsd:string .
+
+oplog:updatedTime
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "updatedTime" ;
+    skos:altLabel "updated time" ;
+    rdfs:comment """The last time the user's profile was updated; changes to the 'languages', 'link', 'timezone', 'verified', 'interestedIn', 'favoriteAthletes', 'favoriteTeams', and 'videoUploadLimits' are not not reflected in this value. Requires 'accessToken'. 'string' containing an ISO-8601 datetime"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range xsd:date .
+
+oplog:updates
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "updates" ;
+    skos:altLabel "updates" ;
+    rdfs:comment """The updates in this user's inbox"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range xsd:string .
+
+oplog:videoUploadLimits
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "videoUploadLimits" ;
+    skos:altLabel "video upload limits" ;
+    rdfs:comment """The size of the video file and the length of the video that a user can upload; only returned if specifically requested via the 'fields' URL parameter"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range xsd:string .
+
+oplog:videos
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "videos" ;
+    skos:altLabel "videos" ;
+    rdfs:comment """The videos this user has been tagged in"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range oplog:Video .
+
+oplog:website
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "website" ;
+    skos:altLabel "web site" ;
+    rdfs:comment """The URL of the user's personal website"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range xsd:string .
+
+oplog:work
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/opengraph#> ;
+    rdfs:label "work" ;
+    skos:altLabel "work" ;
+    rdfs:comment """A list of the user's work history"""@en  ;
+    rdfs:domain oplog:User ;
+    rdfs:range xsd:string .
+

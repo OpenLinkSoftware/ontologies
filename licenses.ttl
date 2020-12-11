@@ -1,0 +1,1215 @@
+@prefix cvocab:    <http://open-services.net/ns/core#> .
+@prefix sioc:      <http://rdfs.org/sioc/ns#> .
+@prefix oplweb:    <http://www.openlinksw.com/schemas/oplweb#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:       <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix gr:        <http://purl.org/goodrelations/v1#> .
+@prefix siocs:     <http://rdfs.org/sioc/services#> .
+@prefix sioct:     <http://rdfs.org/sioc/types#> .
+@prefix foaf:      <http://xmlns.com/foaf/0.1/> .
+@prefix wdrs:      <http://www.w3.org/2007/05/powder-s#> .
+@prefix prodont:   <http://www.productontology.org/id/> .
+@prefix xhv:       <http://www.w3.org/1999/xhtml/vocab#> .
+@prefix skos:      <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:   <http://purl.org/dc/terms/> .
+@prefix opllic:    <http://www.openlinksw.com/ontology/licenses#> .
+@prefix oplcont:   <http://www.openlinksw.com/ontology/contracts#> .
+@prefix oplpro:    <http://www.openlinksw.com/ontology/products#> .
+@prefix oplsof:    <http://www.openlinksw.com/ontology/software#> .
+@prefix oplfea:    <http://www.openlinksw.com/ontology/features#> .
+@prefix cc:        <http://creativecommons.org/ns#> .
+@prefix acl:       <http://www.w3.org/ns/auth/acl#> .
+@prefix oplacl:    <http://www.openlinksw.com/ontology/acl#> .
+@prefix oplres:    <http://www.openlinksw.com/ontology/restrictions#> .
+@prefix oplwebsrv: <http://www.openlinksw.com/ontology/webservices#> .
+@prefix schema:    <http://schema.org/> .
+
+<http://www.openlinksw.com/ontology/licenses#>
+  a owl:Ontology ;
+  rdfs:label """OpenLink Product Licenses Ontology"""^^xsd:string ;
+  rdfs:comment """Ontology that defines entity and relation types used to describe product licenses.
+  Examples include sessions, users, cores etc."""@en ;
+  wdrs:describedby <http://www.openlinksw.com/ontology/licenses> ;
+  dcterms:created "2014-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  dcterms:modified "2015-03-20T13:38:00-05:00"^^xsd:dateTime ;
+  owl:versionInfo "1.2.0"^^xsd:string ;
+  owl:imports <http://purl.org/goodrelations/v1> ,
+              <http://www.w3.org/2002/07/owl#> ,
+              <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ,
+              <http://purl.org/dc/terms/> ,
+              <http://rdfs.org/sioc/services#> ,
+              <http://www.openlinksw.com/ontology/webservices#> ,
+              <http://www.openlinksw.com/ontology/software#> ;
+  <http://open.vocab.org/terms/defines>
+              opllic:hasSessions ,
+              opllic:hasMaximumUsers ,
+              opllic:hasMaximumProcessorCores ,
+              opllic:hasMaximumClientConnections ,
+              opllic:maxNetworkInstance ,
+			        opllic:hasBuyService ,
+			        opllic:hasProductLicense ,
+			        opllic:hasServiceProvider ,
+			        opllic:hasLicenseFileName ,
+			        opllic:ProductLicense ,
+			        opllic:ClientAccessLicense ,
+			        opllic:UDAMTLicenseBundle ,
+			        opllic:SubscriptionLicense ,
+			        opllic:RenewableMethod ,
+			        opllic:Automatic ,
+              opllic:Manual ,
+              opllic:ServerSubscriptionLicense ,
+              opllic:ClientSubscriptionLicense ,
+              opllic:hasRenewableMethod ,
+              opllic:renewalInterval ,
+			        opllic:productLicenseOf ,
+			        opllic:hasMaximumClusterNodes ,
+			        opllic:hasLicenseModule ,
+			        opllic:partOf ,
+              opllic:ExpiringLicense,
+              opllic:NonExpiringLicense ,
+              opllic:hasDuration ,
+              opllic:isDurationOf ,
+              opllic:durationYears ,
+              opllic:durationMonths ,
+              opllic:durationDays ,
+              opllic:serialNumberBroadcast ,
+              opllic:LicenseDuration ,
+              opllic:hasLicenseCode ,
+              opllic:ClientConnectionRestriction ,
+              opllic:hasClientConnectionRestriction ,
+              opllic:SqlClientConnectionRestriction ,
+              opllic:ClientApplicationRestriction ,
+              opllic:hasClientApplicationRestriction ,
+              opllic:ConnectivityProtocolRestriction ,
+              opllic:ConnectivityProtocolRestrictionHTTP ,
+              opllic:ConnectivityProtocolRestrictionWebDAV ,
+              opllic:ConnectivityProtocolRestrictionXMLA ,
+              opllic:ConnectivityProtocolRestrictionSQL ,
+              opllic:ConnectivityProtocolRestrictionJDBC ,
+              opllic:ConnectivityProtocolRestrictionOLEDB ,
+              opllic:hasRateLimit ,
+              opllic:hasMaxResultRowsLimit ,
+              opllic:hasContentSizeLimit ,
+              opllic:hasSparqlMode ,
+              opllic:hasACLRestrictionsEndpoint ,
+              opllic:hasACLRulesEndpoint ,
+              opllic:hasCertGeneratorEndpoint ,
+              opllic:hasDomain ,
+              opllic:hasClientNetworkNameRestriction ,
+              opllic:hasClientNetworkAddressRestriction ,
+              opllic:hasClientNetworkDomainNameRestriction ,
+              opllic:hasConnectivityProtocolRestriction ,
+              opllic:hasMaximumSQLClientConnections ,
+              opllic:hasMaximumHttpClientConnections ,
+              opllic:hasServer ,
+              opllic:VirtuosoServer ,
+              opllic:BuyService ,
+			        opllic:isBuyServiceOf ,
+			        opllic:uriTemplate ,
+              opllic:uriParameter ,
+			        opllic:uriQueryParameterName ,
+			        opllic:exampleValue,
+			        opllic:endpointURLString ,
+			        opllic:endpointURL ,
+			        opllic:Module ,
+			        opllic:isModuleOf ,
+			        opllic:hasModuleCode ,
+			        opllic:hasModule ,
+              opllic:SubscriptionFrequency ,
+              opllic:hasSubscriptionFrequency ,
+              opllic:isSubscriptionFrequencyOf ,
+              opllic:BundleItem ,
+              opllic:isBundleItemOf ,
+              opllic:RequestBrokerLicense ,
+              opllic:DatabaseAgentLicense ,
+              opllic:UDAMTLicense  ,
+              opllic:UDASTLicense ,
+              opllic:UDASTExpressLicense ,
+              opllic:UDASTLiteLicense ,
+              opllic:Virtuoso6License ,
+              opllic:Virtuoso7License ,
+              opllic:Virtuoso8License ,
+              opllic:hasAclRestriction ,
+              opllic:hasAclRule ,
+              opllic:CertificateBasedLicense ,
+              opllic:LicGenBasedLicense ;
+  schema:about
+              opllic:hasSessions ,
+              opllic:hasMaximumUsers ,
+              opllic:hasMaximumProcessorCores ,
+              opllic:hasMaximumClientConnections ,
+              opllic:maxNetworkInstance ,
+			        opllic:hasBuyService ,
+			        opllic:hasProductLicense ,
+			        opllic:hasServiceProvider ,
+			        opllic:hasLicenseFileName ,
+			        opllic:ProductLicense ,
+			        opllic:ClientAccessLicense ,
+			        opllic:UDAMTLicenseBundle ,
+			        opllic:SubscriptionLicense ,
+			        opllic:RenewableMethod ,
+			        opllic:Automatic ,
+              opllic:Manual ,
+              opllic:ServerSubscriptionLicense ,
+              opllic:ClientSubscriptionLicense ,
+              opllic:hasRenewableMethod ,
+              opllic:renewalInterval ,
+			        opllic:productLicenseOf ,
+			        opllic:hasMaximumClusterNodes ,
+			        opllic:hasLicenseModule ,
+			        opllic:partOf ,
+              opllic:ExpiringLicense,
+              opllic:NonExpiringLicense ,
+              opllic:hasDuration ,
+              opllic:isDurationOf ,
+              opllic:durationYears ,
+              opllic:durationMonths ,
+              opllic:durationDays ,
+              opllic:serialNumberBroadcast ,
+              opllic:LicenseDuration ,
+              opllic:hasLicenseCode ,
+              opllic:ClientConnectionRestriction ,
+              opllic:hasClientConnectionRestriction ,
+              opllic:SqlClientConnectionRestriction ,
+              opllic:ClientApplicationRestriction ,
+              opllic:hasClientApplicationRestriction ,
+              opllic:ConnectivityProtocolRestriction ,
+              opllic:ConnectivityProtocolRestrictionHTTP ,
+              opllic:ConnectivityProtocolRestrictionWebDAV ,
+              opllic:ConnectivityProtocolRestrictionXMLA ,
+              opllic:ConnectivityProtocolRestrictionSQL ,
+              opllic:ConnectivityProtocolRestrictionJDBC ,
+              opllic:ConnectivityProtocolRestrictionOLEDB ,
+              opllic:hasRateLimit ,
+              opllic:hasMaxResultRowsLimit ,
+              opllic:hasContentSizeLimit ,
+              opllic:hasSparqlMode ,
+              opllic:hasACLRestrictionsEndpoint ,
+              opllic:hasACLRulesEndpoint ,
+              opllic:hasCertGeneratorEndpoint ,
+              opllic:hasDomain ,
+              opllic:hasClientNetworkNameRestriction ,
+              opllic:hasClientNetworkAddressRestriction ,
+              opllic:hasClientNetworkDomainNameRestriction ,
+              opllic:hasConnectivityProtocolRestriction ,
+              opllic:hasMaximumSQLClientConnections ,
+              opllic:hasMaximumHttpClientConnections ,
+              opllic:hasServer ,
+              opllic:VirtuosoServer ,
+              opllic:BuyService ,
+			        opllic:isBuyServiceOf ,
+			        opllic:uriTemplate ,
+              opllic:uriParameter ,
+			        opllic:uriQueryParameterName ,
+			        opllic:exampleValue,
+			        opllic:endpointURLString ,
+			        opllic:endpointURL ,
+			        opllic:Module ,
+			        opllic:isModuleOf ,
+			        opllic:hasModuleCode ,
+			        opllic:hasModule ,
+              opllic:SubscriptionFrequency ,
+              opllic:hasSubscriptionFrequency ,
+              opllic:isSubscriptionFrequencyOf ,
+              opllic:BundleItem ,
+              opllic:isBundleItemOf ,
+              opllic:RequestBrokerLicense ,
+              opllic:DatabaseAgentLicense ,
+              opllic:UDAMTLicense  ,
+              opllic:UDASTLicense ,
+              opllic:UDASTExpressLicense ,
+              opllic:UDASTLiteLicense ,
+              opllic:Virtuoso6License ,
+              opllic:Virtuoso7License ,
+              opllic:Virtuoso8License ,
+              opllic:hasAclRestriction ,
+              opllic:hasAclRule ,
+              opllic:CertificateBasedLicense ,
+              opllic:LicGenBasedLicense .
+
+<http://open.vocab.org/terms/defines> owl:inverseOf <http://www.w3.org/2007/05/powder-s#describedby> .
+
+<http://www.openlinksw.com/DAV/data/turtle/licenses.ttl>
+  a foaf:Document , schema:TechArticle ;
+  rdfs:label """OpenLink Product Licensing Ontology Description Document (Turtle)"""^^xsd:string ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  rdfs:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for Licensing"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/ontology/licenses#> ;
+  xhv:canonical <http://www.openlinksw.com/ontology/licenses> ;
+  dcterms:created "2014-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  dcterms:modified "2015-03-20T13:38:00-05:00"^^xsd:dateTime ;
+  xhv:describes <http://www.openlinksw.com/ontology/licenses#> ;
+  schema:about <http://www.openlinksw.com/ontology/licenses#> ;
+  dcterms:subject <http://www.openlinksw.com/ontology/licenses#> .
+
+<http://www.openlinksw.com/data/turtle/licenses.ttl>
+  a foaf:Document , schema:TechArticle ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  rdfs:label """OpenLink Product Licensing Ontology Description Document (Turtle)"""^^xsd:string ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  rdfs:comment """This is a turtle document that uses Linked Data oriented content to describe OpenLink Product Licensing Ontology."""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/ontology/licenses#> ;
+  xhv:canonical <http://www.openlinksw.com/ontology/licenses> ;
+  xhv:describes <http://www.openlinksw.com/ontology/licenses#> ;
+  dcterms:created "2014-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  dcterms:modified "2015-03-20T13:38:00-05:00"^^xsd:dateTime ;
+  schema:about <http://www.openlinksw.com/ontology/licenses#> ;
+  dcterms:subject <http://www.openlinksw.com/ontology/licenses#> .
+
+<http://www.openlinksw.com/ontology/licenses>
+  a foaf:Document , schema:TechArticle ;
+  rdfs:label """OpenLink Product Licensing Ontology Description Document"""^^xsd:string ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  rdfs:comment """This is a document that uses Linked Data oriented content to describe OpenLink Product Licensing Ontology."""@en ;
+  dcterms:subject <http://www.openlinksw.com/ontology/licenses#> ;
+  dcterms:created "2014-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  dcterms:modified "2015-03-20T13:38:00-05:00"^^xsd:dateTime ;
+  foaf:primaryTopic <http://www.openlinksw.com/ontology/licenses#> ;
+  foaf:topic opllic:hasSessions ,
+              opllic:hasMaximumUsers ,
+              opllic:hasMaximumProcessorCores ,
+              opllic:hasMaximumClientConnections ,
+              opllic:maxNetworkInstance ,
+		      opllic:hasBuyService ,
+		      opllic:hasProductLicense ,
+		      opllic:hasServiceProvider ,
+		      opllic:hasLicenseFileName ,
+		      opllic:ProductLicense ,
+		      opllic:ClientAccessLicense ,
+		      opllic:UDAMTLicenseBundle ,
+		      opllic:SubscriptionLicense ,
+		      opllic:RenewableMethod  ,
+		      opllic:Automatic ,
+              opllic:Manual ,
+              opllic:ServerSubscriptionLicense ,
+              opllic:ClientSubscriptionLicense ,
+              opllic:hasRenewableMethod ,
+              opllic:renewalInterval ,
+			  opllic:productLicenseOf ,
+			  opllic:hasMaximumClusterNodes ,
+			  opllic:hasLicenseModule ,
+			  opllic:partOf ,
+              opllic:ExpiringLicense,
+              opllic:NonExpiringLicense ,
+              opllic:hasDuration ,
+              opllic:isDurationOf ,
+              opllic:durationYears ,
+              opllic:durationMonths ,
+              opllic:durationDays ,
+              opllic:serialNumberBroadcast ,
+              opllic:LicenseDuration ,
+              opllic:hasLicenseCode ,
+              opllic:ClientConnectionRestriction ,
+              opllic:hasClientConnectionRestriction ,
+              opllic:SqlClientConnectionRestriction ,
+              opllic:ClientApplicationRestriction ,
+              opllic:hasClientApplicationRestriction ,
+              opllic:ConnectivityProtocolRestriction ,
+              opllic:ConnectivityProtocolRestrictionHTTP ,
+              opllic:ConnectivityProtocolRestrictionWebDAV ,
+              opllic:ConnectivityProtocolRestrictionXMLA ,
+              opllic:ConnectivityProtocolRestrictionSQL ,
+              opllic:ConnectivityProtocolRestrictionJDBC ,
+              opllic:ConnectivityProtocolRestrictionOLEDB ,
+              opllic:hasRateLimit ,
+              opllic:hasMaxResultRowsLimit ,
+              opllic:hasContentSizeLimit ,
+              opllic:hasSparqlMode ,
+              opllic:hasACLRestrictionsEndpoint ,
+              opllic:hasACLRulesEndpoint ,
+              opllic:hasCertGeneratorEndpoint ,
+              opllic:hasDomain ,
+              opllic:hasClientNetworkNameRestriction ,
+              opllic:hasClientNetworkAddressRestriction ,
+              opllic:hasClientNetworkDomainNameRestriction ,
+              opllic:hasConnectivityProtocolRestriction ,
+              opllic:hasMaximumSQLClientConnections ,
+              opllic:hasMaximumHttpClientConnections ,
+              opllic:hasServer ,
+              opllic:VirtuosoServer ,
+              opllic:BuyService ,
+			  opllic:isBuyServiceOf ,
+			  opllic:uriTemplate ,
+              opllic:uriParameter ,
+			  opllic:uriQueryParameterName ,
+			  opllic:exampleValue,
+			  opllic:endpointURLString ,
+			  opllic:endpointURL ,
+			  opllic:Module ,
+			  opllic:hasModuleCode ,
+			  opllic:hasModule ,
+			  opllic:isModuleOf ,
+              opllic:SubscriptionFrequency ,
+              opllic:hasSubscriptionFrequency ,
+              opllic:isSubscriptionFrequencyOf ,
+              opllic:BundleItem ,
+              opllic:isBundleItemOf ,
+              opllic:RequestBrokerLicense ,
+              opllic:DatabaseAgentLicense ,
+              opllic:UDAMTLicense  ,
+              opllic:UDASTLicense ,
+              opllic:UDASTExpressLicense ,
+              opllic:UDASTLiteLicense ,
+              opllic:Virtuoso6License ,
+              opllic:Virtuoso7License ,
+              opllic:Virtuoso8License ,
+              opllic:hasAclRestriction ,
+              opllic:hasAclRule .
+
+<http://www.openlinksw.com/data/turtle/licenses.ttl>
+  rdfs:seeAlso <http://virtuoso.openlinksw.com/offers/> ,
+               <http://uda.openlinksw.com/offers/> ,
+               <http://www.openlinksw.com/data/turtle/shop.ttl> ,
+               <http://www.openlinksw.com/data/turtle/offers.ttl> ,
+               <http://www.openlinksw.com/data/turtle/contracts.ttl> ,
+               <http://www.openlinksw.com/data/turtle/products.ttl> ,
+               <http://www.openlinksw.com/data/turtle/software.ttl> ,
+               <http://www.openlinksw.com/data/turtle/machines.ttl> ,
+               <http://www.openlinksw.com/data/turtle/vendors.ttl> ,
+               <http://www.openlinksw.com/data/turtle/purchases.ttl> ,
+               <http://www.openlinksw.com/data/turtle/payments.ttl> ,
+               <http://www.openlinksw.com/data/turtle/features.ttl> .
+
+# <.> sioc:container_of <http://www.openlinksw.com/data/turtle/licenses.ttl> .
+# <http://www.openlinksw.com/data/turtle/licenses.ttl> sioc:has_container <.> .
+
+# <-------------- Licenses --------------> #
+
+# <-------------- Licenses Classes --------------> #
+
+opllic:ProductLicense a owl:Class ;
+      rdfs:label "Product License"^^xsd:string ;
+      owl:equivalentClass schema:Product ;
+      rdfs:subClassOf schema:Product , cc:License ;
+      rdfs:seeAlso <http://support.openlinksw.com/supportweb/Multi-TierLicensingModels> ,
+                   <http://support.openlinksw.com/supportweb/ProductLicensingGuide> ,
+                   <http://support.openlinksw.com/supportweb/LicenseTerminology> ,
+                   <http://support.openlinksw.com/supportweb/ApplyingLicenseFiles> ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> .
+
+opllic:ClientAccessLicense a owl:Class ;
+      rdfs:label "Client Access License"^^xsd:string ;
+      rdfs:seeAlso <http://support.openlinksw.com/supportweb/ProductLicensingGuide> ,
+                   <http://support.openlinksw.com/supportweb/LicenseTerminology> ,
+                   <http://support.openlinksw.com/supportweb/ApplyingLicenseFiles> ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:subClassOf opllic:ProductLicense .
+
+opllic:SubscriptionLicense a owl:Class ;
+      rdfs:subClassOf opllic:ProductLicense ;
+      rdfs:seeAlso <http://support.openlinksw.com/supportweb/Multi-TierLicensingModels> ,
+                   <http://support.openlinksw.com/supportweb/ProductLicensingGuide> ,
+                   <http://support.openlinksw.com/supportweb/LicenseTerminology> ,
+                   <http://support.openlinksw.com/supportweb/ApplyingLicenseFiles> ;
+      rdfs:label "Subscription License"^^xsd:string ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> .
+
+#      opllic:hasRenewableMethod [ a owl:Class;
+#                                   owl:oneOf (opllic:Automatic opllic:Manual ) ] .
+
+opllic:RenewableMethod a owl:Class ;
+  rdfs:label "Renewable Method"^^xsd:string ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> .
+
+#  is rdfs:subClassOf [ a owl:Class; owl:oneOf (opllic:Automatic opllic:Manual) ] .
+
+opllic:Automatic a owl:Class ;
+  rdfs:subClassOf opllic:RenewableMethod ;
+  rdfs:label "Automatic Renewable Method"^^xsd:string ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> .
+
+opllic:Manual a owl:Class ;
+  rdfs:subClassOf opllic:RenewableMethod ;
+  rdfs:label "Manual Renewable Method"^^xsd:string ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> .
+
+opllic:ServerSubscriptionLicense a owl:Class ;
+      rdfs:label "Server Subscription License"^^xsd:string ;
+      rdfs:seeAlso <http://support.openlinksw.com/supportweb/ProductLicensingGuide> ,
+                   <http://support.openlinksw.com/supportweb/LicenseTerminology> ,
+                   <http://support.openlinksw.com/supportweb/ApplyingLicenseFiles> ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:subClassOf opllic:ProductLicense , opllic:SubscriptionLicense .
+
+opllic:ClientSubscriptionLicense a owl:Class ;
+      rdfs:label "Client Subscription License"^^xsd:string ;
+      rdfs:seeAlso <http://support.openlinksw.com/supportweb/ProductLicensingGuide> ,
+                   <http://support.openlinksw.com/supportweb/LicenseTerminology> ,
+                   <http://support.openlinksw.com/supportweb/ApplyingLicenseFiles> ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:subClassOf opllic:ProductLicense , opllic:SubscriptionLicense .
+
+
+opllic:CertificateBasedLicense a owl:Class ;
+      rdfs:label "CertificateBasedLicense"^^xsd:string ;
+      skos:altLabel "Certtificate-Based License" ;
+      rdfs:comment """A license which will be represented by an X.509 certificate. This class should be used
+      as a marker-class in combination with other license types such as ClientAccessLicense."""@en ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:subClassOf opllic:ProductLicense .
+
+opllic:LicGenBasedLicense a owl:Class ;
+      rdfs:label "LicGenBasedLicense"^^xsd:string ;
+      skos:altLabel "LicGen-Based License" ;
+      rdfs:comment """A license which will be represented by an old-school license file as generated by the OpenLink License Generator.
+      This class should be used as a marker-class in combination with other license types."""@en ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:subClassOf opllic:ProductLicense .
+
+opllic:UDAMTLicenseBundle a owl:Class ;
+      rdfs:subClassOf opllic:ProductLicense ;
+      rdfs:label "UDA Multi-Tier License Bundle"^^xsd:string ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> .
+
+opllic:UDAMTLicense a owl:Class ;
+      rdfs:subClassOf opllic:ProductLicense ;
+      rdfs:label "UDA Multi-Tier License"^^xsd:string ;
+      rdfs:seeAlso <http://support.openlinksw.com/supportweb/Multi-TierLicensingModels> ,
+                   <http://support.openlinksw.com/supportweb/ProductLicensingGuide> ,
+                   <http://support.openlinksw.com/supportweb/LicenseTerminology> ,
+                   <http://support.openlinksw.com/supportweb/ApplyingLicenseFiles> ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> .
+
+
+opllic:UDASTLicense a owl:Class ;
+      rdfs:subClassOf opllic:ProductLicense ;
+      rdfs:label "UDA Single-Tier License"^^xsd:string ;
+      rdfs:seeAlso <http://support.openlinksw.com/supportweb/Multi-TierLicensingModels> ,
+                   <http://support.openlinksw.com/supportweb/ProductLicensingGuide> ,
+                   <http://support.openlinksw.com/supportweb/LicenseTerminology> ,
+                   <http://support.openlinksw.com/supportweb/ApplyingLicenseFiles> ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> .
+
+
+opllic:UDASTExpressLicense a owl:Class ;
+      rdfs:subClassOf opllic:ProductLicense ;
+      rdfs:label "UDA Single-Tier Expresss License"^^xsd:string ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> .
+
+opllic:UDASTLiteLicense a owl:Class ;
+      rdfs:subClassOf opllic:ProductLicense ;
+      rdfs:label "UDA Single-Tier Lite License"^^xsd:string ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> .
+
+opllic:Virtuoso6License a owl:Class ;
+      rdfs:subClassOf opllic:ProductLicense ;
+      rdfs:label "Virtuoso 6 License"^^xsd:string ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> .
+
+opllic:Virtuoso7License a owl:Class ;
+      rdfs:subClassOf opllic:ProductLicense ;
+      rdfs:label "Virtuoso 7 License"^^xsd:string ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> .
+
+opllic:Virtuoso8License a owl:Class ;
+      rdfs:subClassOf opllic:ProductLicense ;
+      rdfs:label "Virtuoso 8 License"^^xsd:string ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> .
+
+opllic:RequestBrokerLicense a owl:Class ;
+      rdfs:subClassOf opllic:ProductLicense ;
+      rdfs:label "UDA Multi-Tier Request Broker License"^^xsd:string ;
+      skos:altName """UDA Multi-Tier Request Broker License"""^^xsd:string ;
+      skos:altLabel """UDA Multi-Tier Request Broker License"""^^xsd:string ;
+      rdfs:seeAlso <http://support.openlinksw.com/supportweb/Multi-TierLicensingModels> ,
+                   <http://support.openlinksw.com/supportweb/ProductLicensingGuide> ,
+                   <http://support.openlinksw.com/supportweb/LicenseTerminology> ,
+                   <http://support.openlinksw.com/supportweb/ApplyingLicenseFiles> ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> .
+
+opllic:DatabaseAgentLicense a owl:Class ;
+      rdfs:subClassOf opllic:ProductLicense ;
+      rdfs:label "UDA Multi-Tier Database Agent License"^^xsd:string ;
+      rdfs:seeAlso <http://support.openlinksw.com/supportweb/Multi-TierLicensingModels> ,
+                   <http://support.openlinksw.com/supportweb/ProductLicensingGuide> ,
+                   <http://support.openlinksw.com/supportweb/LicenseTerminology> ,
+                   <http://support.openlinksw.com/supportweb/ApplyingLicenseFiles> ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> .
+
+opllic:ExpiringLicense a owl:Class ;
+      rdfs:label "Expiring License"^^xsd:string ;
+      rdfs:subClassOf opllic:ProductLicense ;
+      rdfs:seeAlso <http://support.openlinksw.com/supportweb/Multi-TierLicensingModels> ,
+                   <http://support.openlinksw.com/supportweb/ProductLicensingGuide> ,
+                   <http://support.openlinksw.com/supportweb/LicenseTerminology> ,
+                   <http://support.openlinksw.com/supportweb/ApplyingLicenseFiles> ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> .
+
+opllic:NonExpiringLicense a owl:Class ;
+      rdfs:label "Non Expiring License"^^xsd:string ;
+      rdfs:subClassOf opllic:ProductLicense ;
+      rdfs:seeAlso <http://support.openlinksw.com/supportweb/Multi-TierLicensingModels> ,
+                   <http://support.openlinksw.com/supportweb/ProductLicensingGuide> ,
+                   <http://support.openlinksw.com/supportweb/LicenseTerminology> ,
+                   <http://support.openlinksw.com/supportweb/ApplyingLicenseFiles> ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> .
+
+opllic:LicenseDuration a owl:Class ;
+      rdfs:label "License Duration"^^xsd:string ;
+      rdfs:comment """This class defines entities that provide product license duration data in at least one of the following units: days, months, or year"""@en ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> .
+
+
+# <-------------- Licenses Properties --------------> #
+opllic:hasServiceProvider
+      a owl:ObjectProperty, rdf:Property ;
+      rdfs:label "hasServiceProvider"^^xsd:string ;
+      skos:altLabel "Service Provider"^^xsd:string ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:domain opllic:ClientAccessLicense ;
+      rdfs:range sioct:WebService .
+
+opllic:hasProductLicense
+      a owl:ObjectProperty, rdf:Property ;
+      rdfs:label "hasProductLicense"^^xsd:string ;
+      skos:altLabel "Product License"^^xsd:string ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:subPropertyOf gr:quantitativeProductOrServiceProperty ;
+      rdfs:domain opllic:ProductLicense  ;
+      owl:inverseOf opllic:productLicenseOf ;
+      rdfs:range
+          oplpro:ProductRelease,
+          oplpro:Product .
+
+opllic:hasLicenseFileName
+      a owl:ObjectProperty, rdf:Property ;
+      rdfs:label "hasLicenseFileName"^^xsd:string ;
+      skos:altLabel "Product License File Name"^^xsd:string ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:domain opllic:ProductLicense ;
+      rdfs:range xsd:string .
+
+opllic:productLicenseOf
+      a owl:ObjectProperty, rdf:Property ;
+      rdfs:label "productLicenseOf"^^xsd:string ;
+      skos:altLabel "Product Model Of"^^xsd:string ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:comment """Relationship property that associates a Product (e.g., UDA or Virtuoso License) with an actual Product Module (Virtuoso or UDA -- ODBC, JDBC, ADO.NET, OLE-DB Driver Model for a given RDBMS)."""@en ;
+      rdfs:subPropertyOf schema:model, gr:quantitativeProductOrServiceProperty ;
+      rdfs:domain opllic:ProductLicense   ;
+      owl:inverseOf opllic:hasProductLicense ;
+      schema:rangeIncludes oplpro:Product, schema:SoftwareApplication, oplsof:ApplicationProgram,
+        <http://sw.opencyc.org/concept/Mx4rvcUMxZwpEbGdrcN5Y29ycA> .
+
+opllic:hasLicenseCode
+      a owl:DatatypeProperty, rdf:Property ;
+      rdfs:label "hasLicenseCode"^^xsd:string ;
+      skos:altLabel "License Code"^^xsd:string ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:domain opllic:ProductLicense ;
+      rdfs:range xsd:string .
+
+opllic:hasSessions
+      a owl:DatatypeProperty, rdf:Property ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:subPropertyOf gr:quantitativeProductOrServiceProperty ;
+      rdfs:label "hasSessions"^^xsd:string ;
+      skos:altLabel "Maximum Concurrent Database Sessions"^^xsd:string ;
+      rdfs:domain opllic:ProductLicense ;
+      rdfs:range xsd:integer .
+
+opllic:hasMaximumUsers
+      a owl:DatatypeProperty, rdf:Property ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:subPropertyOf gr:quantitativeProductOrServiceProperty ;
+      rdfs:label "hasMaximumUsers"^^xsd:string ;
+      skos:altLabel "Maximum Users"^^xsd:string ;
+      rdfs:domain opllic:ProductLicense ;
+      rdfs:range xsd:string .
+
+opllic:hasMaximumClientConnections
+      a owl:DatatypeProperty, rdf:Property ;
+      rdfs:label "hasMaximumClientConnections"^^xsd:string ;
+      skos:altLabel "Maximum Client Connections"^^xsd:string ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:domain opllic:ProductLicense ;
+      rdfs:range xsd:integer .
+
+opllic:hasMaximumProcessorCores
+      a owl:DatatypeProperty, rdf:Property ;
+      rdfs:label "hasMaximumProcessorCores"^^xsd:string ;
+      skos:altLabel "Maximum Processor Cores"^^xsd:string ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:subPropertyOf gr:quantitativeProductOrServiceProperty ;
+      rdfs:domain opllic:ProductLicense ;
+      rdfs:range xsd:integer .
+
+opllic:hasMaximumClusterNodes
+      a owl:DatatypeProperty, rdf:Property ;
+      rdfs:label "hasMaximumClusterNodes"^^xsd:string ;
+      skos:altLabel "Maximum Number of Cluster Nodes"^^xsd:string ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:subPropertyOf gr:quantitativeProductOrServiceProperty ;
+      rdfs:domain opllic:ProductLicense ;
+      rdfs:range xsd:integer .
+
+opllic:maxNetworkInstance
+      a owl:DatatypeProperty, rdf:Property ;
+      rdfs:label "maxNetworkInstance"^^xsd:string ;
+      skos:altLabel "Maximum Network Instance Licenses"^^xsd:string ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:subPropertyOf gr:quantitativeProductOrServiceProperty ;
+      schema:domainIncludes
+          opllic:ProductLicense ,
+          opllic:ClientApplicationRestriction ;
+      rdfs:range xsd:integer .
+
+opllic:ProductLicense owl:disjointWith opllic:ClientApplicationRestriction .
+
+
+# changed opllic:BuyService to oplwebsrv:WebService
+opllic:hasBuyService
+      a owl:ObjectProperty, rdf:Property ;
+      rdfs:label "hasBuyService"^^xsd:string ;
+      skos:altLabel "web service"^^xsd:string ;
+      rdfs:comment """This is the predicate/property that associates an OpenLink Web Service with an instance of purchased item."""@en ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:domain opllic:ProductLicense ;
+      rdfs:range oplwebsrv:WebService ;
+      rdfs:subPropertyOf oplwebsrv:hasWebService, siocs:has_service .
+
+opllic:hasLicenseModule
+      a owl:ObjectProperty, rdf:Property ;
+      rdfs:label "hasLicenseModule"^^xsd:string ;
+      skos:altLabel "License Module Unit"^^xsd:string ;
+      rdfs:comment """License Module Unit subcomponent."""@en ;
+      dcterms:description """The objects of this relation provide data used for calculating add-ons units to the main license."""@en ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:domain opllic:ProductLicense ;
+      rdfs:range opllic:Module ;
+      owl:inverseOf opllic:isModuleOf .
+
+opllic:partOf
+      a owl:ObjectProperty, rdf:Property ;
+      rdfs:label "partOf"^^xsd:string ;
+      skos:altLabel "Is Part Of"^^xsd:string ;
+      rdfs:comment """This is the predicate/property that associates a License with Offer."""@en ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:domain opllic:ProductLicense ;
+      rdfs:range gr:Offering .
+
+opllic:hasDuration
+      a owl:ObjectProperty, rdf:Property ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:label "hasDuration"^^xsd:string ;
+      skos:altLabel "Duration"^^xsd:string ;
+      rdfs:comment """Duration"""@en ;
+      schema:domainIncludes
+          opllic:ProductLicense,
+          oplcont:Contract ;
+      rdfs:range opllic:LicenseDuration .
+
+opllic:ProductLicense owl:disjointWith oplcont:Contract .
+
+opllic:isDurationOf
+      a owl:ObjectProperty, rdf:Property ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:label "isDurationOf"^^xsd:string ;
+      skos:altLabel "Is Duration Of"^^xsd:string ;
+      rdfs:comment """Is Duration Of"""@en ;
+      rdfs:domain opllic:LicenseDuration  ;
+      schema:rangeIncludes
+          opllic:ProductLicense ,
+          oplcont:Contract ,
+          opllic:ClientApplicationRestriction .
+
+opllic:ProductLicense owl:disjointWith oplcont:Contract ,
+                                       opllic:ClientApplicationRestriction .
+
+oplcont:Contract owl:disjointWith opllic:ClientApplicationRestriction .
+
+
+opllic:durationYears
+      a owl:DatatypeProperty, rdf:Property ;
+      rdfs:label "durationYears"^^xsd:string ;
+      skos:altLabel "License Duration (years)"^^xsd:string ;
+      rdfs:comment """Time from License Issue to License Expiration (years)"""@en ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:domain
+          opllic:LicenseDuration ,
+          opllic:SubscriptionFrequency ;
+      rdfs:range xsd:integer .
+
+opllic:durationMonths
+      a owl:DatatypeProperty, rdf:Property ;
+      rdfs:label "durationMonths"^^xsd:string ;
+      skos:altLabel "License Duration (months)"^^xsd:string ;
+      rdfs:comment """Time from License Issue to License Expiration (months)"""@en ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:domain
+          opllic:LicenseDuration ,
+          opllic:SubscriptionFrequency ;
+      rdfs:range xsd:integer .
+
+opllic:durationDays
+      a owl:DatatypeProperty, rdf:Property ;
+      rdfs:label "durationDays"^^xsd:string ;
+      skos:altLabel "License Duration (days)"^^xsd:string ;
+      rdfs:comment """Time from License Issue to License Expiration (days)"""@en ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:domain
+          opllic:LicenseDuration ,
+          opllic:SubscriptionFrequency ;
+      rdfs:range xsd:integer .
+
+opllic:serialNumberBroadcast
+      a owl:DatatypeProperty, rdf:Property ;
+      rdfs:label "serialNumberBroadcast"^^xsd:string ;
+      skos:altLabel "Serial Number Broadcast"^^xsd:string ;
+      rdfs:comment """Network License Enforcement"""@en ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:domain opllic:ProductLicense ;
+      rdfs:range xsd:boolean .
+
+opllic:hasServer
+      a owl:ObjectProperty, rdf:Property ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:label "hasServer"^^xsd:string ;
+      skos:altLabel "Server"^^xsd:string ;
+      rdfs:comment """A server description which defines the way a server can be connected to."""@en ;
+      rdfs:domain opllic:ClientConnectionRestriction  ;
+      rdfs:range opllic:VirtuosoServer .
+
+opllic:hasAclRestriction
+      a owl:ObjectProperty, rdf:Property ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:label "hasAclRestriction"^^xsd:string ;
+      skos:altLabel "ACL Restriction"^^xsd:string ;
+      rdfs:comment """A ClientConnectionRestriction has a set of Restriction resources which define the specific limits the
+        ClientApplicationRestriction comes with. All details except for the agent are specified including the application realm."""@en ;
+      rdfs:domain opllic:ClientConnectionRestriction  ;
+      rdfs:range oplres:Restriction .
+
+opllic:hasAclRule
+      a owl:ObjectProperty, rdf:Property ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:label "hasAclRule"^^xsd:string ;
+      skos:altLabel "ACL Rule"^^xsd:string ;
+      rdfs:comment """A ClientConnectionRestriction has a set of Authorization resources which define the permissions the
+        ClientApplicationRestriction comes with. All details except for the agent are specified including the application realm."""@en ;
+      rdfs:domain opllic:ClientConnectionRestriction  ;
+      rdfs:range acl:Authorization .
+
+# <-------------- Connections --------------> #
+
+# <-------------- Connections Classes --------------> #
+
+opllic:ClientApplicationRestriction
+      a owl:Class ;
+      rdfs:label "Client Application Restriction"^^xsd:string ;
+      skos:altLabel "Client Application Restriction"^^xsd:string ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> .
+
+opllic:ConnectivityProtocolRestriction
+      a owl:Class ;
+      rdfs:label "Connectivity Protocol Restriction"^^xsd:string ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> .
+
+	opllic:ConnectivityProtocolRestrictionHTTP
+      a owl:Class ;
+      rdfs:subClassOf opllic:ConnectivityProtocolRestriction ;
+      rdfs:label "HTTP Connectivity Protocol Restriction"^^xsd:string ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> .
+
+opllic:ConnectivityProtocolRestrictionWebDAV
+      a owl:Class ;
+      rdfs:subClassOf opllic:ConnectivityProtocolRestrictionHTTP ;
+      rdfs:label "WebDAV Connectivity Protocol Restriction"^^xsd:string ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> .
+
+opllic:ConnectivityProtocolRestrictionXMLA
+      a owl:Class ;
+      rdfs:subClassOf opllic:ConnectivityProtocolRestrictionHTTP ;
+      rdfs:label "XMLA Connectivity Protocol Restriction"^^xsd:string ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> .
+
+opllic:ConnectivityProtocolRestrictionSQL
+      a owl:Class ;
+      rdfs:subClassOf opllic:ConnectivityProtocolRestriction ;
+      rdfs:label "SQL Connectivity Protocol Restriction"^^xsd:string ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> .
+
+opllic:ConnectivityProtocolRestrictionJDBC
+      a owl:Class ;
+      rdfs:subClassOf opllic:ConnectivityProtocolRestrictionSQL ;
+      rdfs:label "JDBC Connectivity Protocol Restriction"^^xsd:string ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> .
+
+opllic:ConnectivityProtocolRestrictionOLEDB
+      a owl:Class ;
+      rdfs:subClassOf opllic:ConnectivityProtocolRestrictionSQL ;
+      rdfs:label "OLE DB Connectivity Protocol Restriction"^^xsd:string ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> .
+
+opllic:ClientConnectionRestriction
+      a owl:Class ;
+      rdfs:label "Client Connection Restriction"^^xsd:string ;
+      rdfs:comment "Client connection restriction which specifies the criteria of how a license allows a client to connect to a server."@en ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:subClassOf opllic:ClientConnectionRestriction .
+
+opllic:SqlClientConnectionRestriction
+      a owl:Class ;
+      rdfs:label "SQL Client Connection Restriction"^^xsd:string ;
+      rdfs:comment "A client connection restriction which specifies the criteria of how a license allows a client to connect to a server through a SQL (ODBC) connection."@en ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:subClassOf opllic:ClientConnectionRestriction .
+
+opllic:VirtuosoServer
+      a owl:Class ;
+      rdfs:label "Virtuoso Server" ;
+      rdfs:comment "A Virtuoso Server instance."@en ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> .
+
+# <-------------- Connections Properties --------------> #
+
+opllic:hasClientConnectionRestriction
+      a owl:ObjectProperty, rdf:Property ;
+      rdfs:label "hasClientConnectionRestriction"^^xsd:string ;
+      skos:altLabel "Client Connection Restriction"^^xsd:string ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:domain opllic:ClientAccessLicense ;
+      rdfs:range opllic:ClientConnectionRestriction .
+
+opllic:hasClientApplicationRestriction
+      a owl:ObjectProperty, rdf:Property ;
+      rdfs:label "hasClientApplicationRestriction"^^xsd:string ;
+      skos:altLabel "Client Application Restriction"^^xsd:string ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:domain opllic:ClientAccessLicense ;
+      rdfs:range opllic:ClientApplicationRestriction .
+
+opllic:hasConnectivityProtocolRestriction
+      a owl:ObjectProperty, rdf:Property ;
+      rdfs:label "hasConnectivityProtocolRestriction"^^xsd:string ;
+      skos:altLabel "Connectivity Protocol Restriction"^^xsd:string ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:domain opllic:ClientApplicationRestriction ;
+      rdfs:range opllic:ConnectivityProtocolRestriction .
+
+opllic:hasRateLimit
+      a owl:DatatypeProperty, rdf:Property ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:label "hasRateLimit"^^xsd:string ;
+      skos:altLabel "Rate Limit"^^xsd:string ;
+      rdfs:domain opllic:ClientConnectionRestriction ;
+      rdfs:range xsd:integer .
+
+opllic:hasMaxResultRowsLimit
+      a owl:DatatypeProperty, rdf:Property ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:label "hasMaxResultRowsLimit"^^xsd:string ;
+      skos:altLabel "Max Query Results Limit"^^xsd:string ;
+      rdfs:comment """Maximum Results in a Query Resultset (Solution). In the case of SPARQL DESCRIBE and CONSTRUCT, this is the maximum number of entity descriptions."""@en ;
+      rdfs:domain opllic:ClientConnectionRestriction ;
+      rdfs:range xsd:integer .
+
+opllic:hasContentSizeLimit
+      a owl:DatatypeProperty, rdf:Property ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:label "hasContentSizeLimit"^^xsd:string ;
+      skos:altLabel "Content Size Limit"^^xsd:string ;
+      rdfs:domain opllic:ClientConnectionRestriction ;
+      rdfs:range xsd:integer .
+
+opllic:hasSparqlAccessMode
+      a owl:ObjectProperty, rdf:Property ;
+      rdfs:label "hasSparqlAccessMode"^^xsd:string ;
+      skos:altLabel "SPARQL Access Mode"^^xsd:string ;
+      rdfs:comment "Defines the SPARQL access modes of a connection, i.e. the SPARQL rights a connection scope includes. Applicable access modes are acl:Read, acl:Write, and oplacl:Sponge."@en ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:domain opllic:ClientConnectionRestriction ;
+      rdfs:range acl:Access .
+
+opllic:hasDomain
+      a owl:DatatypeProperty, rdf:Property ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:label "hasDomain"^^xsd:string ;
+      skos:altLabel "Domain"^^xsd:string ;
+      rdfs:comment "The domain of a virtuoso server instance."@en ;
+      rdfs:domain opllic:VirtuosoServer ;
+      rdfs:range xsd:string .
+
+opllic:hasACLRestrictionsEndpoint
+      a owl:ObjectProperty, rdf:Property ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:label "hasACLRestrictionsEndpoint"^^xsd:string ;
+      skos:altLabel "ACL Restrictions API Endpoint"^^xsd:string ;
+      rdfs:comment "The API endpoint of a server which allows the creation of ACL resources. The endpoint needs to support WebID authentication and creation of new restriction resources by POSTing turtle resources."@en ;
+      rdfs:domain opllic:VirtuosoServer ;
+      rdfs:range rdfs:Resource .
+
+opllic:hasACLRulesEndpoint
+      a owl:ObjectProperty, rdf:Property ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:label "hasACLRulesEndpoint"^^xsd:string ;
+      skos:altLabel "ACL Rules API Endpoint"^^xsd:string ;
+      rdfs:comment "The API endpoint of a server which allows the creation of ACL rules. The endpoint needs to support WebID authentication and creation of new rules resources by POSTing turtle resources."@en ;
+      rdfs:domain opllic:VirtuosoServer ;
+      rdfs:range rdfs:Resource .
+
+opllic:hasCertGeneratorEndpoint
+      a owl:ObjectProperty, rdf:Property ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:label "hasCertGeneratorEndpoint"^^xsd:string ;
+      skos:altLabel "Certificate Generator Endpoint"^^xsd:string ;
+      rdfs:comment "The API endpoint of a server which allows the creation of X.509 certificates. The endpoint needs to support WebID authentication and creation of new certificate resources by POSTing."@en ;
+      rdfs:domain opllic:VirtuosoServer ;
+      rdfs:range rdfs:Resource .
+
+opllic:hasClientNetworkNameRestriction
+      a owl:DatatypeProperty, rdf:Property ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:label "hasClientNetworkNameRestriction"^^xsd:string ;
+      skos:altLabel "Client Network Name Restriction"^^xsd:string ;
+      rdfs:domain opllic:ClientApplicationRestriction ;
+      rdfs:range xsd:string .
+
+opllic:hasClientNetworkAddressRestriction
+      a owl:DatatypeProperty, rdf:Property ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:label "hasClientNetworkAddressRestriction"^^xsd:string ;
+      skos:altLabel "Client Network Address Restriction"^^xsd:string ;
+      rdfs:domain opllic:ClientApplicationRestriction ;
+      rdfs:range xsd:string .
+
+opllic:hasClientNetworkDomainNameRestriction
+      a owl:DatatypeProperty, rdf:Property ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:label "hasClientNetworkDomainNameRestriction"^^xsd:string ;
+      skos:altLabel "Client Network Domain Name Restriction"^^xsd:string ;
+      rdfs:domain opllic:ClientApplicationRestriction ;
+      rdfs:range xsd:string .
+
+opllic:hasMaximumSQLClientConnections
+      a owl:DatatypeProperty, rdf:Property ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:label "hasMaximumSQLClientConnections"^^xsd:string ;
+      skos:altLabel "Maximum SQL Client Connections"^^xsd:string ;
+      rdfs:domain opllic:ConnectivityProtocolRestriction ;
+      rdfs:range xsd:integer .
+
+opllic:hasMaximumHttpClientConnections
+      a owl:DatatypeProperty, rdf:Property ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:label "hasMaximumHttpClientConnections"^^xsd:string ;
+      skos:altLabel "Maximum HTTP Client Connections"^^xsd:string ;
+      rdfs:domain opllic:ConnectivityProtocolRestriction ;
+      rdfs:range xsd:integer .
+
+# <-------------- BuyService Endpoints--------------> #
+
+# <-------------- BuyService Endpoints Classes --------------> #
+
+# changed owl:Class to a oplwebsrv:WebService
+opllic:BuyService
+      a oplwebsrv:WebService ;
+      rdfs:label "BuyService";
+      rdfs:subClassOf siocs:Service ;
+      skos:altLabel "OpenLink Web Service" ;
+      rdfs:subClassOf <http://rdfs.org/sioc/services#Service> , oplwebsrv:WebService ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> .
+
+# <-------------- BuyService Endpoints Properties --------------> #
+
+# changed opllic:BuyService to oplwebsrv:WebService
+opllic:isBuyServiceOf
+      a owl:ObjectProperty, rdf:Property ;
+      rdfs:label "isBuyServiceOf"^^xsd:string ;
+      skos:altLabel "Is OpenLink Web Service Of"^^xsd:string ;
+      rdfs:comment """This is the predicate/property that associates an instance of purchased item with a Web Service."""@en ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:subClassOf oplwebsrv:isWebServiceOf ;
+      rdfs:domain oplwebsrv:WebService ;
+      rdfs:range opllic:ProductLicense .
+
+# changed opllic:BuyService to oplwebsrv:WebService
+opllic:uriTemplate a owl:DatatypeProperty, rdf:Property ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:subPropertyOf oplwebsrv:uriTemplate ;
+      rdfs:label "licensesUriTemplate"^^xsd:string ;
+      skos:altLabel "URI Template"^^xsd:string ;
+      rdfs:domain oplwebsrv:WebService ;
+      rdfs:range xsd:string .
+
+# changed opllic:BuyService to oplwebsrv:WebService
+opllic:uriParameter a owl:DatatypeProperty, rdf:Property ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:label "licensesUriParameter"^^xsd:string ;
+      skos:altLabel "URL Variable"^^xsd:string ;
+      #rdfs:subPropertyOf oplwebsrv:uriQueryParameterValue ;
+      rdfs:domain oplwebsrv:WebService ;
+      rdfs:range xsd:string .
+
+# changed opllic:BuyService to oplwebsrv:WebService
+opllic:uriQueryParameterName a owl:DatatypeProperty, rdf:Property ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:label "licensesUriQueryParameterName"^^xsd:string ;
+      skos:altLabel "URL Parameter Name"^^xsd:string ;
+      rdfs:subPropertyOf oplwebsrv:uriQueryParameterName ;
+      rdfs:domain oplwebsrv:WebService ;
+      rdfs:range xsd:string .
+
+# changed opllic:BuyService to oplwebsrv:WebService
+opllic:exampleValue a owl:DatatypeProperty, rdf:Property ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:label "licensesExampleValue"^^xsd:string ;
+      rdfs:subPropertyOf oplwebsrv:exampleValue ;
+      skos:altLabel "Example Value"^^xsd:string ;
+      rdfs:domain oplwebsrv:WebService ;
+      rdfs:range xsd:string .
+
+# changed opllic:BuyService to oplwebsrv:WebService
+opllic:endpointURLString a owl:DatatypeProperty, rdf:Property ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:label "licensesEndpointURLString"^^xsd:string ;
+      rdfs:subPropertyOf oplwebsrv:endpointURLString ;
+      skos:altLabel "Buy Service Endpoint URL String"^^xsd:string ;
+      rdfs:domain oplwebsrv:WebService ;
+      rdfs:range xsd:string .
+
+# changed opllic:BuyService to oplwebsrv:WebService
+opllic:endpointURL a owl:DatatypeProperty, rdf:Property ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:label "licensesEndpointURL"^^xsd:string ;
+      rdfs:subPropertyOf oplwebsrv:endpointURL ;
+      skos:altLabel "Buy Service Endpoint URL"^^xsd:string ;
+      rdfs:domain oplwebsrv:WebService ;
+      rdfs:range xsd:string .
+
+
+# <-------------- Modules --------------> #
+
+# <-------------- Modules Classes --------------> #
+
+opllic:Module a owl:Class ;
+      skos:altLabel "Component" ;
+      skos:altLabel "Application Component";
+      rdfs:label "Module"^^xsd:string ;
+      rdfs:comment """Application Component that has a variety of dependency relationships with Applications and Services.
+      These components may or may not be mapped to an actual License Module"""@en ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> .
+
+# <-------------- Modules Properties --------------> #
+
+opllic:isModuleOf a owl:ObjectProperty, rdf:Property ;
+      rdfs:label "isModuleOf"^^xsd:string ;
+      skos:altLabel "Is Module Of"^^xsd:string ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:domain opllic:Module ;
+      rdfs:range opllic:ProductLicense ;
+      owl:inverseOf opllic:hasLicenseModule .
+
+opllic:hasModuleCode a owl:DatatypeProperty, rdf:Property ;
+      rdfs:label "hasModuleCode"^^xsd:string ;
+      skos:altLabel "Module Code"^^xsd:string ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:domain opllic:Module ;
+      rdfs:range xsd:string .
+
+opllic:hasModule a owl:ObjectProperty, rdf:Property ;
+      rdfs:label "hasModule"^^xsd:string ;
+      skos:altLabel "Has Module"^^xsd:string ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:domain
+          oplpro:Product ,
+          gr:ProductOrServiceModel ;
+      rdfs:range opllic:Module .
+
+
+# <-------------- Subscription Classes --------------> #
+# opllic:Subscription a owl:Class ;
+#       rdfs:subClassOf opllic:ProductLicense ;
+#       rdfs:label "Subscription"^^xsd:string ;
+#       rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> .
+#
+
+opllic:SubscriptionFrequency a owl:Class ;
+      rdfs:label "Subscription Frequency"^^xsd:string ;
+      rdfs:comment """This class defines entities that provide product subscription duration data in at least one of the following units: days, months, or year"""@en ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> .
+
+# <-------------- Subscription Properties --------------> #
+opllic:hasRenewableMethod
+   a owl:ObjectProperty, rdf:Property ;
+   rdfs:label "hasRenewableMethod"^^xsd:string ;
+   skos:altLabel "subscription renewable method"^^xsd:string ;
+   rdfs:comment """This is the predicate/property that associates a Subscription License with Renewable Method."""@en ;
+   rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+   rdfs:domain opllic:SubscriptionLicense ;
+   rdfs:range opllic:Manual,  opllic:Automatic .
+
+opllic:renewalInterval
+   a owl:DatatypeProperty, rdf:Property ;
+   rdfs:label "renewalInterval"^^xsd:string ;
+   skos:altLabel "renewal interval"^^xsd:string ;
+   rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+   rdfs:domain opllic:LicenseDuration ;
+   rdfs:range xsd:integer .
+
+opllic:hasSubscriptionFrequency a owl:ObjectProperty, rdf:Property ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:label "hasSubscriptionFrequency"^^xsd:string ;
+      skos:altLabel "Subscription Frequency"^^xsd:string ;
+      rdfs:comment """Subscription Frequency"""@en ;
+      rdfs:domain
+          opllic:ProductLicense,
+          opllic:SubscriptionLicense ;
+      rdfs:range opllic:SubscriptionFrequency .
+
+opllic:isSubscriptionFrequencyOf a owl:ObjectProperty, rdf:Property ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:label "isSubscriptionFrequencyOf"^^xsd:string ;
+      skos:altLabel "Is Subscription Frequency Of"^^xsd:string ;
+      rdfs:comment """Is Subscription Frequency Of"""@en ;
+      rdfs:domain opllic:SubscriptionFrequency  ;
+      rdfs:range opllic:ProductLicense , opllic:SubscriptionLicense .
+
+
+# <-------------- Bundles --------------> #
+
+# <-------------- Bundles Classes --------------> #
+
+opllic:BundleItem a owl:Class ;
+      rdfs:label "Bundle Item"^^xsd:string ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> .
+
+# <-------------- Bundles Properties --------------> #
+
+opllic:isBundleItemOf a owl:ObjectProperty, rdf:Property ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+      rdfs:label "isBundleItemOf"^^xsd:string ;
+      skos:altLabel "Is Bundle Of"^^xsd:string ;
+      rdfs:comment """Is Bundle  Of"""@en ;
+      rdfs:domain opllic:BundleItem  ;
+      rdfs:range opllic:ProductLicense  .
+
+gr:ProductOrServicesSomeInstancesPlaceholder owl:equivalentClass gr:SomeItems .
+gr:ActualProductOrServiceInstance            owl:equivalentClass gr:Individual .
+
+
+<http://www.openlinksw.com/dataspace/organization/openlink#this> rdf:type oplweb:BusinessEntity ;
+                                                                 gr:legalName "OpenLink Software Inc."^^xsd:string .
+
+oplweb:BusinessEntity rdfs:isDefinedBy <http://www.openlinksw.com/ontology/licenses#> ;
+                      owl:equivalentClass gr:BusinessEntity .
+
+<http://virtuoso.openlinksw.com/offers/> xhv:related <http://uda.openlinksw.com/offers/> .
+
+<http://uda.openlinksw.com/offers/> xhv:related <http://virtuoso.openlinksw.com/offers/> .
+
+xhv:related owl:equivalentProperty rdfs:seeAlso .
+
+foaf:primaryTopic owl:inverseOf xhv:describedby ,
+                                wdrs:describedby .
+
+wdrs:describedby owl:equivalentProperty xhv:describedby .
+
+
+rdfs:subClassOf a owl:TransitiveProperty .
+

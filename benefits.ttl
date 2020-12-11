@@ -1,0 +1,226 @@
+@prefix schema:  <http://schema.org/> .
+@prefix cvocab:  <http://open-services.net/ns/core#> .
+@prefix sioc:    <http://rdfs.org/sioc/ns#> .
+@prefix oplweb:  <http://www.openlinksw.com/schemas/oplweb#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix gr:      <http://purl.org/goodrelations/v1#> .
+@prefix siocs:   <http://rdfs.org/sioc/services#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix wdrs:    <http://www.w3.org/2007/05/powder-s#> .
+@prefix prodont: <http://www.productontology.org/id/> .
+@prefix xhv:     <http://www.w3.org/1999/xhtml/vocab#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix oplfea:  <http://www.openlinksw.com/ontology/features#> .
+@prefix oplben:  <http://www.openlinksw.com/ontology/benefits#> .
+@prefix oplpro:  <http://www.openlinksw.com/ontology/products#> .
+@prefix opllic:  <http://www.openlinksw.com/ontology/licenses#> .
+@prefix opl:     <http://www.openlinksw.com/schema/attribution#> .
+@prefix cc:      <http://creativecommons.org/ns#> .
+
+<http://www.openlinksw.com/ontology/benefits#> a owl:Ontology ;
+  rdfs:label """OpenLink Benefits Ontology"""^^xsd:string ;
+  dcterms:title """OpenLink Benefits Ontology"""^^xsd:string ;
+  wdrs:describedby <http://www.openlinksw.com/ontology/benefits> ;
+  dcterms:created "2014-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  dcterms:modified "2019-08-06T13:38:00-05:00"^^xsd:dateTime ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  rdfs:comment """Ontology that defines entity and relation types used to describe benefits."""@en ;
+  owl:versionInfo "1.0.0"^^xsd:string ;
+  <http://open.vocab.org/terms/defines>
+      oplben:Benefit ,
+      oplben:ProductBenefit ,
+      oplben:LicenseOfferBenefit ,
+      oplben:GeneralManagementBenefit ,
+      oplben:TechnicalManagementBenefit ,
+      oplben:CompanyBenefit ,
+      oplben:ProductBenefitCategory ,
+      oplben:hasBenefit ,
+      oplben:isBenefitOf ,
+      oplben:interestOf ,
+      oplben:hasInterest ;
+  schema:about
+      oplben:Benefit ,
+      oplben:ProductBenefit ,
+      oplben:LicenseOfferBenefit ,
+      oplben:GeneralManagementBenefit ,
+      oplben:TechnicalManagementBenefit ,
+      oplben:CompanyBenefit ,
+      oplben:ProductBenefitCategory ,
+      oplben:hasBenefit ,
+      oplben:isBenefitOf ,
+      oplben:interestOf ,
+      oplben:hasInterest .
+
+<http://open.vocab.org/terms/defines> owl:inverseOf <http://www.w3.org/2007/05/powder-s#describedby> .
+
+<http://www.openlinksw.com/DAV/data/turtle/benefits.ttl>
+  a foaf:Document , schema:TechArticle ;
+  rdfs:label "OpenLink Benefits Ontology Description Document (Turtle)" ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  rdfs:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for Benefits."""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/ontology/benefits#> ;
+  dcterms:created "2014-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  dcterms:modified "2019-08-06T13:38:00-05:00"^^xsd:dateTime ;
+  xhv:canonical <http://www.openlinksw.com/ontology/benefits> ;
+  xhv:describes <http://www.openlinksw.com/ontology/benefits#> ;
+  schema:about <http://www.openlinksw.com/ontology/benefits#> ;
+  dcterms:subject <http://www.openlinksw.com/ontology/benefits#> .
+
+<http://www.openlinksw.com/data/turtle/benefits.ttl>
+  a foaf:Document , schema:TechArticle ;
+  rdfs:label "OpenLink Benefits Ontology Description Document (Turtle)" ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  rdfs:comment """This is a turtle document that uses Linked Data oriented content to describe OpenLink Product Benefits Ontology."""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/ontology/benefits#> ;
+  xhv:canonical <http://www.openlinksw.com/ontology/benefits> ;
+  dcterms:created "2014-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  dcterms:modified "2019-08-06T13:38:00-05:00"^^xsd:dateTime ;
+  xhv:describes <http://www.openlinksw.com/ontology/benefits#> ;
+  schema:about <http://www.openlinksw.com/ontology/benefits#> ;
+  dcterms:subject <http://www.openlinksw.com/ontology/benefits#> .
+
+<http://www.openlinksw.com/ontology/benefits>
+  a foaf:Document , schema:TechArticle ;
+  rdfs:label """OpenLink Benefits Ontology Description Document"""^^xsd:string ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  rdfs:comment """This is a document that uses Linked Data oriented content to describe OpenLink Benefits Ontology."""@en ;
+  dcterms:subject <http://www.openlinksw.com/ontology/benefits#> ;
+  dcterms:created "2014-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  dcterms:modified "2019-08-06T13:38:00-05:00"^^xsd:dateTime ;
+  foaf:primaryTopic <http://www.openlinksw.com/ontology/benefits#> ;
+  foaf:topic
+      oplben:Benefit ,
+      oplben:ProductBenefit ,
+      oplben:LicenseOfferBenefit ,
+      oplben:GeneralManagementBenefit ,
+      oplben:TechnicalManagementBenefit ,
+      oplben:CompanyBenefit ,
+      oplben:ProductBenefitCategory ,
+      oplben:hasBenefit ,
+      oplben:isBenefitOf ,
+      oplben:interestOf ,
+      oplben:hasInterest .
+
+<http://www.openlinksw.com/data/turtle/benefits.ttl>
+  rdfs:seeAlso <http://virtuoso.openlinksw.com/offers/> ,
+               <http://uda.openlinksw.com/offers/> ,
+               <http://www.openlinksw.com/data/turtle/shop.ttl> ,
+               <http://www.openlinksw.com/data/turtle/offers.ttl> ,
+               <http://www.openlinksw.com/data/turtle/contracts.ttl> ,
+               <http://www.openlinksw.com/data/turtle/products.ttl> ,
+               <http://www.openlinksw.com/data/turtle/vendors.ttl> ,
+               <http://www.openlinksw.com/data/turtle/features.ttl> ,
+               <http://www.openlinksw.com/data/turtle/software.ttl> ,
+               <http://www.openlinksw.com/data/turtle/machines.ttl> ,
+               <http://www.openlinksw.com/data/turtle/purchases.ttl> ,
+               <http://www.openlinksw.com/data/turtle/payments.ttl> ,
+               <http://www.openlinksw.com/data/turtle/licenses.ttl> .
+
+
+# <-------------- Product Benefits Classes --------------> #
+
+oplben:Benefit a owl:Class ;
+      rdfs:label "Benefit"^^xsd:string ;
+      skos:altLabel """Benefits"""@en ;
+      rdfs:comment """A benefit derived from exploiting a product feature"""@en ;
+      dcterms:description """Benefits derived from associated product features"""@en ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/benefits#> .
+
+oplben:ProductBenefit a owl:Class ;
+      rdfs:label "Product Benefit"^^xsd:string ;
+      skos:altLabel """Product Benefits"""@en ;
+      dcterms:description """Product Benefits derived from associated product features"""@en ;
+      rdfs:subClassOf oplben:Benefit ;
+      owl:equivalentClass <http://www.openlinksw.com/schemas/oplweb#ProductBenefit> ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/benefits#> .
+
+oplben:LicenseOfferBenefit a owl:Class ;
+      rdfs:label "License Offer Benefit"^^xsd:string ;
+      rdfs:subClassOf oplben:ProductBenefit , oplweb:ProductBenefit ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/benefits#> .
+
+oplben:GeneralManagementBenefit a owl:Class ;
+      rdfs:label "General Management Benefit"^^xsd:string ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/benefits#> ;
+      rdfs:subClassOf oplben:ProductBenefit .
+
+oplben:TechnicalManagementBenefit a owl:Class ;
+      rdfs:label "Technical Management Benefit"^^xsd:string ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/benefits#> ;
+      rdfs:subClassOf oplben:ProductBenefit .
+
+oplben:CompanyBenefit a owl:Class ;
+      rdfs:label "Company Benefit"^^xsd:string ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/benefits#> ;
+      rdfs:subClassOf oplben:Benefit .
+
+oplben:ProductBenefitCategory a owl:Class ;
+      rdfs:label "Product Benefit Category"^^xsd:string ;
+      rdfs:subClassOf oplfea:Category ;
+      rdfs:comment """A benefit scoped to a specific Category"""@en ;
+      owl:equivalentClass <http://www.openlinksw.com/schemas/oplweb#ProductBenefitCategory> ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/benefits#> .
+
+
+# <-------------- Products Benefits Properties --------------> #
+
+oplben:isBenefitOf a owl:ObjectProperty, rdf:Property ;
+      rdfs:label "isBenefitOf"^^xsd:string ;
+      skos:altLabel "Is Benefit Of"^^xsd:string ;
+      rdfs:comment """Is Benefit Of"""@en ;
+      dcterms:description """Is Benefit Of"""@en ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/benefits#> ;
+      rdfs:domain oplben:ProductBenefit ;
+      rdfs:range oplfea:ProductFeature ;
+      owl:inverseOf oplben:hasBenefit .
+
+oplben:hasBenefit a owl:ObjectProperty, rdf:Property ;
+      rdfs:label "hasBenefit"^^xsd:string ;
+      skos:altLabel "Benefit"^^xsd:string ;
+      rdfs:comment """Has Benefit."""@en ;
+      dcterms:description """Has Benefit."""@en ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/benefits#> ;
+      rdfs:domain oplpro:ProductFormatFeature , oplfea:ProductFeature ;
+      schema:domainIncludes
+           schema:Offer ,
+           opllic:ProductLicense ;
+      rdfs:range oplben:ProductBenefit ;
+      owl:inverseOf oplben:isBenefitOf .
+
+opllic:ProductLicense owl:disjointWith gr:Offering  .
+
+oplben:interestOf a owl:ObjectProperty, rdf:Property ;
+      rdfs:label "interestOf"^^xsd:string ;
+      skos:altLabel "Interest Of"^^xsd:string ;
+      rdfs:comment """The subject (a product benefit) of this relation is a benefit that is of interest to the relation's object (an Agent entity type)"""@en ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/benefits#> ;
+      rdfs:domain oplben:Benefit ;
+      rdfs:range foaf:Agent ;
+      owl:inverseOf oplben:hasInterest .
+
+oplben:hasInterest a owl:ObjectProperty, rdf:Property ;
+      rdfs:label "hasInterest"^^xsd:string ;
+      skos:altLabel "Interest"^^xsd:string ;
+      rdfs:comment """The object (a product benefit) of this relation is a benefit that is of interest to the relation's subject (an Agent entity type)"""@en ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/benefits#> ;
+      rdfs:domain foaf:Agent ;
+      rdfs:range oplben:Benefit ;
+      owl:inverseOf oplben:interestOf .
+
+
+xhv:related owl:equivalentProperty rdfs:seeAlso .
+
+foaf:primaryTopic owl:inverseOf xhv:describedby , wdrs:describedby .
+
+wdrs:describedby owl:equivalentProperty xhv:describedby .
+
+rdfs:subClassOf a owl:TransitiveProperty .
+
+

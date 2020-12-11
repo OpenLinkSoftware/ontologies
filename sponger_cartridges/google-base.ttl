@@ -1,0 +1,1419 @@
+#
+# An OpenLink ontology for specializing the ProductOrService class of the GoodRelations ontology
+# to handle item descriptions from the Google Base Web Service.
+#
+# Not all item types supported by Google Base are mapped to OWL here. In the main, those which are
+# amenable to mapping to GoodRelations are included, i.e. item types which have associated price
+# information.
+#
+# A list of available item types and their attributes is available from:
+# http://www.google.com/base/feeds/itemtypes/en_US
+#
+
+@prefix schema:  <http://schema.org/> .
+@prefix skos:   <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix cvocab: <http://open-services.net/ns/core#> .
+@prefix cc:     <http://creativecommons.org/ns#> .
+@prefix foaf:   <http://xmlns.com/foaf/0.1/> .
+@prefix gr:     <http://purl.org/goodrelations/v1#> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix wdrs:   <http://www.w3.org/2007/05/powder-s#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix xhv:    <http://www.w3.org/1999/xhtml/vocab#> .
+@prefix oplgb: <http://www.openlinksw.com/schemas/google-base#> .
+
+<http://www.openlinksw.com/schemas/google-base#>
+  a owl:Ontology ;
+  schema:name "OpenLink Google Base Ontology" ;
+  schema:comment """Ontology that defines entity and relation types used to describe Google Base.
+  Examples include locations, services, products, brands etc."""@en ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  wdrs:describedby <http://www.openlinksw.com/schemas/google-base> ;
+  schema:dateCreated "2013-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  schema:dateModified "2015-04-22T13:38:00-05:00"^^xsd:dateTime ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  owl:versionInfo "1.0.0"^^xsd:string ;
+  owl:imports <http://www.w3.org/1999/02/22-rdf-syntax-ns#> , <http://purl.org/dc/terms/> , <http://purl.org/goodrelations/v1> ;
+  <http://open.vocab.org/terms/defines>
+    oplgb:ItemType ,
+    oplgb:PricedItemType ,
+    oplgb:BusinessLocations ,
+    oplgb:Housing ,
+    oplgb:LocalProducts ,
+    oplgb:Products ,
+    oplgb:Services ,
+    oplgb:TravelPackages ,
+    oplgb:VacationRentals ,
+    oplgb:Vehicles ,
+    oplgb:id ,
+    oplgb:customerID ,
+    oplgb:expirationDate ,
+    oplgb:imageLink ,
+    oplgb:itemLanguage ,
+    oplgb:itemType ,
+    oplgb:targetCountry ,
+    oplgb:price ,
+    oplgb:weight ,
+    oplgb:mpn ,
+    oplgb:size ,
+    oplgb:brand ,
+    oplgb:productType ,
+    oplgb:condition ,
+    oplgb:color ,
+    oplgb:payment ,
+    oplgb:paymentNotes ,
+    oplgb:quantity ,
+    oplgb:bathrooms ,
+    oplgb:year ,
+    oplgb:model ,
+    oplgb:priceType ,
+    oplgb:location ,
+    oplgb:bedrooms ,
+    oplgb:agent ,
+    oplgb:area ,
+    oplgb:broker ,
+    oplgb:hoaDues ,
+    oplgb:listingType ,
+    oplgb:lotSize ,
+    oplgb:schoolDistrict ,
+    oplgb:style ,
+    oplgb:zoning ,
+    oplgb:feature ,
+    oplgb:propertyTaxes ,
+    oplgb:listingStatus ,
+    oplgb:mlsListingID ,
+    oplgb:school ,
+    oplgb:mlsName ,
+    oplgb:providerClass ,
+    oplgb:floorNumber ,
+    oplgb:videoLink ,
+    oplgb:leaseType ,
+    oplgb:latitude ,
+    oplgb:longitude ,
+    oplgb:priceFrequency ,
+    oplgb:agentEmail ,
+    oplgb:openHouseDateRange ,
+    oplgb:parking ,
+    oplgb:areaMin ,
+    oplgb:priceMin ,
+    oplgb:agentPhone ,
+    oplgb:financials ,
+    oplgb:areaContiguous ,
+    oplgb:serviceType ,
+    oplgb:make ,
+    oplgb:vehicleType ,
+    oplgb:mileage ,
+    oplgb:vin ,
+    oplgb:sleeps ,
+    oplgb:propertyType ,
+    oplgb:travelDateRange ,
+    oplgb:providerTelephoneNumber ,
+    oplgb:providerName ,
+    oplgb:toLocation ,
+    oplgb:travelDateRange ,
+    oplgb:fromLocation ,
+    oplgb:taxPercent ,
+    oplgb:taxRegion ,
+    oplgb:salePriceEffectiveDate ,
+    oplgb:salePrice ,
+    oplgb:webitemid ,
+    oplgb:subgroup ,
+    oplgb:group ,
+    oplgb:promotionalText ,
+    oplgb:gtin ,
+    oplgb:priceEffectiveDate ,
+    oplgb:itemid ,
+    oplgb:retailstoreid ,
+    oplgb:upc ,
+    oplgb:modelNumber ,
+    oplgb:author ,
+    oplgb:isbn ,
+    oplgb:publisher ,
+    oplgb:height ,
+    oplgb:width ,
+    oplgb:length ,
+    oplgb:productReviewCount ,
+    oplgb:productReview_average ,
+    oplgb:onlineOnly ,
+    oplgb:squareFeet ,
+    oplgb:shipping ;
+  schema:about
+    oplgb:ItemType ,
+    oplgb:PricedItemType ,
+    oplgb:BusinessLocations ,
+    oplgb:Housing ,
+    oplgb:LocalProducts ,
+    oplgb:Products ,
+    oplgb:Services ,
+    oplgb:TravelPackages ,
+    oplgb:VacationRentals ,
+    oplgb:Vehicles ,
+    oplgb:id ,
+    oplgb:customerID ,
+    oplgb:expirationDate ,
+    oplgb:imageLink ,
+    oplgb:itemLanguage ,
+    oplgb:itemType ,
+    oplgb:targetCountry ,
+    oplgb:price ,
+    oplgb:weight ,
+    oplgb:mpn ,
+    oplgb:size ,
+    oplgb:brand ,
+    oplgb:productType ,
+    oplgb:condition ,
+    oplgb:color ,
+    oplgb:payment ,
+    oplgb:paymentNotes ,
+    oplgb:quantity ,
+    oplgb:bathrooms ,
+    oplgb:year ,
+    oplgb:model ,
+    oplgb:priceType ,
+    oplgb:location ,
+    oplgb:bedrooms ,
+    oplgb:agent ,
+    oplgb:area ,
+    oplgb:broker ,
+    oplgb:hoaDues ,
+    oplgb:listingType ,
+    oplgb:lotSize ,
+    oplgb:schoolDistrict ,
+    oplgb:style ,
+    oplgb:zoning ,
+    oplgb:feature ,
+    oplgb:propertyTaxes ,
+    oplgb:listingStatus ,
+    oplgb:mlsListingID ,
+    oplgb:school ,
+    oplgb:mlsName ,
+    oplgb:providerClass ,
+    oplgb:floorNumber ,
+    oplgb:videoLink ,
+    oplgb:leaseType ,
+    oplgb:latitude ,
+    oplgb:longitude ,
+    oplgb:priceFrequency ,
+    oplgb:agentEmail ,
+    oplgb:openHouseDateRange ,
+    oplgb:parking ,
+    oplgb:areaMin ,
+    oplgb:priceMin ,
+    oplgb:agentPhone ,
+    oplgb:financials ,
+    oplgb:areaContiguous ,
+    oplgb:serviceType ,
+    oplgb:make ,
+    oplgb:vehicleType ,
+    oplgb:mileage ,
+    oplgb:vin ,
+    oplgb:sleeps ,
+    oplgb:propertyType ,
+    oplgb:travelDateRange ,
+    oplgb:providerTelephoneNumber ,
+    oplgb:providerName ,
+    oplgb:toLocation ,
+    oplgb:travelDateRange ,
+    oplgb:fromLocation ,
+    oplgb:taxPercent ,
+    oplgb:taxRegion ,
+    oplgb:salePriceEffectiveDate ,
+    oplgb:salePrice ,
+    oplgb:webitemid ,
+    oplgb:subgroup ,
+    oplgb:group ,
+    oplgb:promotionalText ,
+    oplgb:gtin ,
+    oplgb:priceEffectiveDate ,
+    oplgb:itemid ,
+    oplgb:retailstoreid ,
+    oplgb:upc ,
+    oplgb:modelNumber ,
+    oplgb:author ,
+    oplgb:isbn ,
+    oplgb:publisher ,
+    oplgb:height ,
+    oplgb:width ,
+    oplgb:length ,
+    oplgb:productReviewCount ,
+    oplgb:productReview_average ,
+    oplgb:onlineOnly ,
+    oplgb:squareFeet ,
+    oplgb:shipping .
+
+
+<http://www.openlinksw.com/DAV/data/turtle/cartridge_ontologies/google-base.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink Google Base Ontology Description Document (Turtle)" ;
+  cc:License <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for Google Base"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/google-base#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/google-base> ;
+  xhv:describes <http://www.openlinksw.com/schemas/google-base#> ;
+  schema:about <http://www.openlinksw.com/schemas/google-base#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/google-base#> .
+
+<http://www.openlinksw.com/data/turtle/cartridge_ontologies/google-base.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink Google Base Ontology Description Document (Turtle)" ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for Google Base"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/google-base#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/google-base> ;
+  xhv:describes <http://www.openlinksw.com/schemas/google-base#> ;
+  schema:about <http://www.openlinksw.com/schemas/google-base#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/google-base#> .
+
+<http://www.openlinksw.com/schemas/google-base>
+  a foaf:Document ;
+  schema:name """OpenLink Google Base Ontology Description Document"""^^xsd:string ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a document that uses Linked Data oriented content to describe OpenLink Google Base Ontology."""@en ;
+  dcterms:subject <http://www.openlinksw.com/schemas/google-base#> ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/google-base#> ;
+  foaf:topic
+    oplgb:ItemType ,
+    oplgb:PricedItemType ,
+    oplgb:BusinessLocations ,
+    oplgb:Housing ,
+    oplgb:LocalProducts ,
+    oplgb:Products ,
+    oplgb:Services ,
+    oplgb:TravelPackages ,
+    oplgb:VacationRentals ,
+    oplgb:Vehicles ,
+    oplgb:id ,
+    oplgb:customerID ,
+    oplgb:expirationDate ,
+    oplgb:imageLink ,
+    oplgb:itemLanguage ,
+    oplgb:itemType ,
+    oplgb:targetCountry ,
+    oplgb:price ,
+    oplgb:weight ,
+    oplgb:mpn ,
+    oplgb:size ,
+    oplgb:brand ,
+    oplgb:productType ,
+    oplgb:condition ,
+    oplgb:color ,
+    oplgb:payment ,
+    oplgb:paymentNotes ,
+    oplgb:quantity ,
+    oplgb:bathrooms ,
+    oplgb:year ,
+    oplgb:model ,
+    oplgb:priceType ,
+    oplgb:location ,
+    oplgb:bedrooms ,
+    oplgb:agent ,
+    oplgb:area ,
+    oplgb:broker ,
+    oplgb:hoaDues ,
+    oplgb:listingType ,
+    oplgb:lotSize ,
+    oplgb:schoolDistrict ,
+    oplgb:style ,
+    oplgb:zoning ,
+    oplgb:feature ,
+    oplgb:propertyTaxes ,
+    oplgb:listingStatus ,
+    oplgb:mlsListingID ,
+    oplgb:school ,
+    oplgb:mlsName ,
+    oplgb:providerClass ,
+    oplgb:floorNumber ,
+    oplgb:videoLink ,
+    oplgb:leaseType ,
+    oplgb:latitude ,
+    oplgb:longitude ,
+    oplgb:priceFrequency ,
+    oplgb:agentEmail ,
+    oplgb:openHouseDateRange ,
+    oplgb:parking ,
+    oplgb:areaMin ,
+    oplgb:priceMin ,
+    oplgb:agentPhone ,
+    oplgb:financials ,
+    oplgb:areaContiguous ,
+    oplgb:serviceType ,
+    oplgb:make ,
+    oplgb:vehicleType ,
+    oplgb:mileage ,
+    oplgb:vin ,
+    oplgb:sleeps ,
+    oplgb:propertyType ,
+    oplgb:travelDateRange ,
+    oplgb:providerTelephoneNumber ,
+    oplgb:providerName ,
+    oplgb:toLocation ,
+    oplgb:travelDateRange ,
+    oplgb:fromLocation ,
+    oplgb:taxPercent ,
+    oplgb:taxRegion ,
+    oplgb:salePriceEffectiveDate ,
+    oplgb:salePrice ,
+    oplgb:webitemid ,
+    oplgb:subgroup ,
+    oplgb:group ,
+    oplgb:promotionalText ,
+    oplgb:gtin ,
+    oplgb:priceEffectiveDate ,
+    oplgb:itemid ,
+    oplgb:retailstoreid ,
+    oplgb:upc ,
+    oplgb:modelNumber ,
+    oplgb:author ,
+    oplgb:isbn ,
+    oplgb:publisher ,
+    oplgb:height ,
+    oplgb:width ,
+    oplgb:length ,
+    oplgb:productReviewCount ,
+    oplgb:productReview_average ,
+    oplgb:onlineOnly ,
+    oplgb:squareFeet ,
+    oplgb:shipping .
+
+oplgb:ItemType
+    a owl:Class ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "ItemType" ;
+    rdfs:comment """Base class for all types of Google Base items"""@en .
+
+oplgb:PricedItemType
+    a owl:Class ;
+    rdfs:subClassOf oplgb:ItemType ;
+    rdfs:subClassOf gr:ProductOrService ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "PricedItemType" ;
+    rdfs:comment """An instance of PricedItemType represents both a Google Base item type which has a price and a GoodRelations product or service."""@en .
+
+oplgb:BusinessLocations
+    a owl:Class ;
+    rdfs:subClassOf oplgb:ItemType ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "Business Location" ;
+    rdfs:comment """Google Base item of type 'business locations'"""@en .
+
+oplgb:Housing
+    a owl:Class ;
+    rdfs:subClassOf oplgb:PricedItemType ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "Housing" ;
+    rdfs:comment """Google Base item of type 'housing'"""@en .
+
+oplgb:LocalProducts
+    a owl:Class ;
+    rdfs:subClassOf oplgb:PricedItemType ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "LocalProducts" ;
+    rdfs:comment """Google Base item of type 'local products'"""@en .
+
+oplgb:Products
+    a owl:Class ;
+    rdfs:subClassOf oplgb:PricedItemType ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "Products" ;
+    rdfs:comment """Google Base item of type 'products'"""@en .
+
+oplgb:Services
+    a owl:Class ;
+    rdfs:subClassOf oplgb:PricedItemType ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "Services" ;
+    rdfs:comment """Google Base item of type 'services'"""@en .
+
+oplgb:TravelPackages
+    a owl:Class ;
+    rdfs:subClassOf oplgb:PricedItemType ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "TravelPackages" ;
+    rdfs:comment """Google Base item of type 'travel packages'"""@en .
+
+oplgb:VacationRentals
+    a owl:Class ;
+    rdfs:subClassOf oplgb:PricedItemType ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "VacationRentals" ;
+    rdfs:comment """Google Base item of type 'vacation rentals'"""@en .
+
+oplgb:Vehicles
+    a owl:Class ;
+    rdfs:subClassOf oplgb:PricedItemType ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "VacationRentals" ;
+    rdfs:comment """Google Base item of type 'vehicles'"""@en .
+
+#
+# Universal attributes from g: namespace which apply to all item types
+#
+# See http://code.google.com/apis/base/docs/2.0/recommended-attrs.html
+# (Universal attributes from Atom namespace are not described here)
+#
+
+oplgb:id
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "id" ;
+    skos:altLabel "id" ;
+    rdfs:comment """ID"""@en ;
+    rdfs:domain oplgb:ItemType ;
+    rdfs:range xsd:string .
+
+oplgb:customerID
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "customerID" ;
+    skos:altLabel "customer id" ;
+    rdfs:comment """Identifier of the customer this item belongs to."""@en ;
+    rdfs:domain oplgb:ItemType ;
+    rdfs:range xsd:int .
+
+oplgb:expirationDate
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "expirationDate" ;
+    skos:altLabel "expiration date" ;
+    rdfs:comment """Date the item will expire."""@en ;
+    rdfs:domain oplgb:ItemType ;
+    rdfs:range xsd:dateTime .
+
+# This item attribute is mapped to foaf:depiction by OpenLink's Google Base Sponger Cartridge
+oplgb:imageLink
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "imageLink" ;
+    skos:altLabel "image link" ;
+    rdfs:comment """image link"""@en ;
+    rdfs:domain oplgb:ItemType ;
+    rdfs:range xsd:anyURI .
+
+oplgb:itemLanguage
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "itemLanguage" ;
+    skos:altLabel "item language" ;
+    rdfs:comment """Language the item description is written in. (ISO-639-1 two-letter code)"""@en ;
+    rdfs:domain oplgb:ItemType ;
+    rdfs:range xsd:string .
+
+oplgb:itemType
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "itemType" ;
+    skos:altLabel "item type" ;
+    rdfs:comment """Type of the item"""@en ;
+    rdfs:domain oplgb:ItemType ;
+    rdfs:range xsd:string .
+
+oplgb:targetCountry
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "targetCountry" ;
+    skos:altLabel "target country" ;
+    rdfs:comment """Country for which the item is intended. Default is US, which means that the item will appear on google.com, and not on google.co.uk for example. (ISO 3166-1-alpha-2 two-letter code)."""@en ;
+    rdfs:domain oplgb:ItemType ;
+    rdfs:range xsd:string .
+
+#
+# Attributes not defined as universal by Google Base, but common across some priced item types
+#
+# Defining multiple domains for identically named properties shared by item types has been
+# avoided, since an entity possessing such a property may be inferred as being an instance
+# of *all* the classes listed as domains.
+#
+# Renaming of Google Base attributes has also been avoided.
+# e.g. The creation of properties oplgb:vehicleModel and oplgb:housingModel for shared attribute g:model
+# because the XSLT stylesheet used by the Sponger's Google Base cartridge maps many properties in
+# the g: namespace to the oplgb: namespace simply by changing the namespace prefix, but leaving the
+# attribute local name unchanged.
+#
+
+oplgb:price
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "price" ;
+    skos:altLabel "price" ;
+    rdfs:comment """Price"""@en ;
+    rdfs:domain oplgb:PricedItemType ;
+    rdfs:range xsd:string .
+
+# Shared by LocalProducts, Products
+oplgb:weight
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "weight" ;
+    skos:altLabel "weight" ;
+    rdfs:comment """Weight"""@en ;
+    rdfs:domain oplgb:ItemType ;
+    rdfs:range xsd:string .
+
+# Shared by LocalProducts, Products
+oplgb:mpn
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "mpn" ;
+    skos:altLabel "mpn" ;
+    rdfs:comment """Manufacturer part number (MPN)"""@en ;
+    rdfs:domain oplgb:ItemType;
+    rdfs:range xsd:string .
+
+# Shared by LocalProducts, Products
+oplgb:size
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "size" ;
+    skos:altLabel "size" ;
+    rdfs:comment """Size"""@en ;
+    rdfs:domain oplgb:ItemType ;
+    rdfs:range xsd:string .
+
+# Shared by LocalProducts, Products
+oplgb:brand
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "brand" ;
+    skos:altLabel "brand" ;
+    rdfs:comment """Brand"""@en ;
+    rdfs:domain oplgb:ItemType ;
+    rdfs:range xsd:string .
+
+# Shared by LocalProducts, Products
+oplgb:productType
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "productType" ;
+    skos:altLabel "product type" ;
+    rdfs:comment """Product type"""@en ;
+    rdfs:domain oplgb:ItemType ;
+    rdfs:range xsd:string .
+
+# Shared by LocalProducts, Products, Vehicles
+oplgb:condition
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "condition" ;
+    skos:altLabel "condition" ;
+    rdfs:comment """Condition"""@en ;
+    rdfs:domain oplgb:ItemType ;
+    rdfs:range xsd:string .
+
+# Shared by LocalProducts, Products, Vehicles
+oplgb:color
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "color" ;
+    skos:altLabel "color" ;
+    rdfs:comment """Color"""@en ;
+    rdfs:domain oplgb:ItemType ;
+    rdfs:range xsd:string .
+
+# Shared by LocalProducts, Products, Vehicles
+oplgb:payment
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "payment" ;
+    skos:altLabel "payment" ;
+    rdfs:comment """Payment"""@en ;
+    rdfs:domain oplgb:ItemType ;
+    rdfs:range xsd:string .
+
+# Shared by LocalProducts, Products, Vehicles
+oplgb:paymentNotes
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "paymentNotes" ;
+    skos:altLabel "payment notes" ;
+    rdfs:comment """Payment notes"""@en ;
+    rdfs:domain oplgb:ItemType ;
+    rdfs:range xsd:string .
+
+# Shared by LocalProducts, Products, TravelPackages, Vehicles
+oplgb:quantity
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "quantity" ;
+    skos:altLabel "quantity" ;
+    rdfs:comment """Quantity"""@en ;
+    rdfs:domain oplgb:ItemType ;
+    rdfs:range xsd:int .
+
+# Shared by Housing, VacationRentals
+oplgb:bathrooms
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "bathrooms" ;
+    skos:altLabel "bathrooms" ;
+    rdfs:comment """No. of bathrooms"""@en ;
+    rdfs:domain oplgb:ItemType;
+    rdfs:range xsd:int .
+
+# Shared by Housing, Products, Vehicles
+oplgb:year
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "year" ;
+    skos:altLabel "year" ;
+    rdfs:comment """Year"""@en;
+    rdfs:domain oplgb:ItemType ;
+    rdfs:range xsd:int .
+
+# Shared by Housing, Vehicles
+oplgb:model
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "model" ;
+    skos:altLabel "model" ;
+    rdfs:comment """Model"""@en ;
+    rdfs:domain oplgb:ItemType ;
+    rdfs:range xsd:string .
+
+# Shared by Housing, LocalProducts, Products, TravelPackages, VacationRentals, Vehicles
+oplgb:priceType
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "priceType" ;
+    skos:altLabel "price type" ;
+    rdfs:comment """Price type"""@en ;
+    rdfs:domain oplgb:ItemType ;
+    rdfs:range xsd:string .
+
+# Shared by BusinessLocations, Housing, LocalProducts, Products, Services, TravelPackages, VacationRentals, Vehicles
+oplgb:location
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "location" ;
+    skos:altLabel "location" ;
+    rdfs:comment """Location"""@en ;
+    rdfs:domain oplgb:ItemType ;
+    rdfs:range xsd:string .
+
+# Shared by Housing, VacationRentals
+oplgb:bedrooms
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "bedrooms" ;
+    skos:altLabel "bedrooms" ;
+    rdfs:comment """No. of bedrooms"""@en ;
+    rdfs:domain oplgb:ItemType ;
+    rdfs:range xsd:int .
+
+#
+# Item-type-specific attributes
+#
+
+oplgb:agent
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "agent" ;
+    skos:altLabel "agent" ;
+    rdfs:comment """agent"""@en ;
+    rdfs:domain oplgb:Housing ;
+    rdfs:range xsd:string .
+
+oplgb:area
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "area" ;
+    skos:altLabel "area" ;
+    rdfs:comment """area"""@en ;
+    rdfs:domain oplgb:Housing ;
+    rdfs:range xsd:string .
+
+oplgb:broker
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "broker" ;
+    skos:altLabel "broker" ;
+    rdfs:comment """Broker"""@en ;
+    rdfs:domain oplgb:Housing ;
+    rdfs:range xsd:string .
+
+oplgb:hoaDues
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "hoaDues" ;
+    skos:altLabel "hoa dues" ;
+    rdfs:comment """HOA (Home Owners Association) dues"""@en ;
+    rdfs:domain oplgb:Housing ;
+    rdfs:range xsd:decimal .
+
+oplgb:listingType
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "listingType" ;
+    skos:altLabel "listing type" ;
+    rdfs:comment """Listing type"""@en ;
+    rdfs:domain oplgb:Housing ;
+    rdfs:range xsd:string .
+
+oplgb:lotSize
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "lotSize" ;
+    skos:altLabel "lot size" ;
+    rdfs:comment """Lot size"""@en ;
+    rdfs:domain oplgb:Housing ;
+    rdfs:range xsd:string .
+
+oplgb:schoolDistrict
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "schoolDistrict" ;
+    skos:altLabel "school district" ;
+    rdfs:comment """School district"""@en ;
+    rdfs:domain oplgb:Housing ;
+    rdfs:range xsd:string .
+
+oplgb:style
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "style" ;
+    skos:altLabel "style" ;
+    rdfs:comment """Style"""@en ;
+    rdfs:domain oplgb:Housing ;
+    rdfs:range xsd:string .
+
+oplgb:zoning
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "zoning" ;
+    skos:altLabel "zoning" ;
+    rdfs:comment """Zoning"""@en ;
+    rdfs:domain oplgb:Housing ;
+    rdfs:range xsd:string .
+
+oplgb:feature
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "feature" ;
+    skos:altLabel "feature" ;
+    rdfs:comment """Feature"""@en ;
+    rdfs:domain oplgb:Housing ;
+    rdfs:range xsd:string .
+
+oplgb:propertyTaxes
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "propertyTaxes" ;
+    skos:altLabel "property taxes" ;
+    rdfs:comment """Property taxes"""@en ;
+    rdfs:domain oplgb:Housing ;
+    rdfs:range xsd:decimal .
+
+oplgb:listingStatus
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "listingStatus" ;
+    skos:altLabel "listing status" ;
+    rdfs:comment """Listing status"""@en ;
+    rdfs:domain oplgb:Housing ;
+    rdfs:range xsd:string .
+
+oplgb:mlsListingID
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "mlsListingID" ;
+    skos:altLabel "mls listing id" ;
+    rdfs:comment """Multiple listing services (MLS) id"""@en ;
+    rdfs:domain oplgb:Housing ;
+    rdfs:range xsd:string .
+
+oplgb:school
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "school" ;
+    skos:altLabel "school" ;
+    rdfs:comment """School"""@en ;
+    rdfs:domain oplgb:Housing ;
+    rdfs:range xsd:string .
+
+oplgb:mlsName
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "mlsName" ;
+    skos:altLabel "mls name" ;
+    rdfs:comment """Multiple listing service (MLS) name"""@en ;
+    rdfs:domain oplgb:Housing ;
+    rdfs:range xsd:string .
+
+oplgb:providerClass
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "providerClass" ;
+    skos:altLabel "provider class" ;
+    rdfs:comment """Provider class"""@en ;
+    rdfs:domain oplgb:Housing ;
+    rdfs:range xsd:string .
+
+oplgb:floorNumber
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "floorNumber" ;
+    skos:altLabel "floor number" ;
+    rdfs:comment """Floor number"""@en ;
+    rdfs:domain oplgb:Housing ;
+    rdfs:range xsd:string .
+
+oplgb:videoLink
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "videoLink" ;
+    skos:altLabel "video link" ;
+    rdfs:comment """Video link"""@en ;
+    rdfs:domain oplgb:Housing ;
+    rdfs:range xsd:anyURI .
+
+oplgb:leaseType
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "leaseType" ;
+    skos:altLabel "lease type" ;
+    rdfs:comment """Lease type"""@en ;
+    rdfs:domain oplgb:Housing ;
+    rdfs:range xsd:string .
+
+oplgb:latitude
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "latitude" ;
+    skos:altLabel "latitude" ;
+    rdfs:comment """Latitude"""@en ;
+    rdfs:domain oplgb:Housing ;
+    rdfs:range xsd:string .
+
+oplgb:longitude
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "longitude" ;
+    skos:altLabel "longitude" ;
+    rdfs:comment """Longitude"""@en ;
+    rdfs:domain oplgb:Housing ;
+    rdfs:range xsd:string .
+
+oplgb:priceFrequency
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "priceFrequency" ;
+    skos:altLabel "price frequency" ;
+    rdfs:comment """Price frequency"""@en ;
+    rdfs:domain oplgb:Housing ;
+    rdfs:range xsd:string .
+
+oplgb:agentEmail
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "agentEmail" ;
+    skos:altLabel "agent email" ;
+    rdfs:comment """Agent's email address"""@en ;
+    rdfs:domain oplgb:Housing ;
+    rdfs:range xsd:string .
+
+oplgb:openHouseDateRange
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "openHouseDateRange" ;
+    skos:altLabel "open house date range" ;
+    rdfs:comment """open house date range"""@en ;
+    rdfs:domain oplgb:Housing ;
+    rdfs:range xsd:string .
+
+oplgb:parking
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "parking" ;
+    skos:altLabel "parking" ;
+    rdfs:comment """No. of parking spaces"""@en ;
+    rdfs:domain oplgb:Housing ;
+    rdfs:range xsd:int .
+
+oplgb:areaMin
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "areaMin" ;
+    skos:altLabel "minimum area" ;
+    rdfs:comment """Minimum area"""@en ;
+    rdfs:domain oplgb:Housing ;
+    rdfs:range xsd:string .
+
+oplgb:priceMin
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "priceMin" ;
+    skos:altLabel "minimum price" ;
+    rdfs:comment """Minimum price"""@en ;
+    rdfs:domain oplgb:Housing ;
+    rdfs:range xsd:decimal .
+
+oplgb:agentPhone
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "agentPhone" ;
+    skos:altLabel "agent phone" ;
+    rdfs:comment """Agent's phone no."""@en ;
+    rdfs:domain oplgb:Housing ;
+    rdfs:range xsd:string .
+
+oplgb:financials
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "financials" ;
+    skos:altLabel "financials" ;
+    rdfs:comment """Financials"""@en ;
+    rdfs:domain oplgb:Housing ;
+    rdfs:range xsd:string .
+
+oplgb:areaContiguous
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "areaContiguous" ;
+    skos:altLabel "area (contiguous)" ;
+    rdfs:comment """Contiguous area"""@en ;
+    rdfs:domain oplgb:Housing ;
+    rdfs:range xsd:string .
+
+oplgb:serviceType
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "serviceType" ;
+    skos:altLabel "service type" ;
+    rdfs:comment """Service type"""@en ;
+    rdfs:domain oplgb:Services ;
+    rdfs:range xsd:string .
+
+oplgb:make
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "make" ;
+    skos:altLabel "make" ;
+    rdfs:comment """Make"""@en ;
+    rdfs:domain oplgb:Vehicles ;
+    rdfs:range xsd:string .
+
+oplgb:vehicleType
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "vehicleType" ;
+    skos:altLabel "vehicle type" ;
+    rdfs:comment """Vehicle type"""@en ;
+    rdfs:domain oplgb:Vehicles ;
+    rdfs:range xsd:string .
+
+oplgb:mileage
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "mileage" ;
+    skos:altLabel "mileage" ;
+    rdfs:comment """Mileage"""@en ;
+    rdfs:domain oplgb:Vehicles ;
+    rdfs:range xsd:decimal .
+
+oplgb:vin
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "vin" ;
+    skos:altLabel "vehicle identification no." ;
+    rdfs:comment """Vehicle identification no. (VIN)"""@en ;
+    rdfs:domain oplgb:Vehicles ;
+    rdfs:range xsd:string .
+
+oplgb:sleeps
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "sleeps" ;
+    skos:altLabel "sleeps" ;
+    rdfs:comment """No. of people the accommodation can sleep"""@en ;
+    rdfs:domain oplgb:VacationRentals;
+    rdfs:range xsd:int .
+
+oplgb:propertyType
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "propertyType" ;
+    skos:altLabel "property type" ;
+    rdfs:comment """Property type"""@en ;
+    rdfs:domain oplgb:VacationRentals;
+    rdfs:range xsd:string .
+
+oplgb:travelDateRange
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "travelDateRange" ;
+    skos:altLabel "travel date range" ;
+    rdfs:comment """Travel date range"""@en ;
+    rdfs:domain oplgb:VacationRentals;
+    rdfs:range xsd:string .
+
+oplgb:providerTelephoneNumber
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "providerTelephoneNumber" ;
+    skos:altLabel "provider telephone number" ;
+    rdfs:comment """Provider telephone number"""@en ;
+    rdfs:domain oplgb:VacationRentals;
+    rdfs:range xsd:string .
+
+oplgb:providerName
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "providerName" ;
+    skos:altLabel "provider name" ;
+    rdfs:comment """Provider name"""@en ;
+    rdfs:domain oplgb:VacationRentals;
+    rdfs:range xsd:string .
+
+oplgb:toLocation
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "toLocation" ;
+    skos:altLabel "to location" ;
+    rdfs:comment """To location"""@en ;
+    rdfs:domain oplgb:TravelPackages ;
+    rdfs:range xsd:string .
+
+oplgb:travelDateRange
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "travelDateRange" ;
+    skos:altLabel "travel date range" ;
+    rdfs:comment """Travel date range"""@en ;
+    rdfs:domain oplgb:TravelPackages ;
+    rdfs:range xsd:string .
+
+oplgb:fromLocation
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "fromLocation" ;
+    skos:altLabel "from location" ;
+    rdfs:comment """From location"""@en ;
+    rdfs:domain oplgb:TravelPackages ;
+    rdfs:range xsd:string .
+
+oplgb:taxPercent
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "taxPercent" ;
+    skos:altLabel "tax percent" ;
+    rdfs:comment """Tax (percent)"""@en ;
+    rdfs:domain oplgb:LocalProducts ;
+    rdfs:range xsd:decimal .
+
+oplgb:taxRegion
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "taxRegion" ;
+    skos:altLabel "tax region" ;
+    rdfs:comment """Tax region"""@en ;
+    rdfs:domain oplgb:LocalProducts ;
+    rdfs:range xsd:string .
+
+oplgb:salePriceEffectiveDate
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "salePriceEffectiveDate" ;
+    skos:altLabel "sale price effective date" ;
+    rdfs:comment """Sale price effective date (range)"""@en ;
+    rdfs:domain oplgb:LocalProducts ;
+    rdfs:range xsd:string .
+
+oplgb:salePrice
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "salePrice" ;
+    skos:altLabel "sale price" ;
+    rdfs:comment """Sale price"""@en ;
+    rdfs:domain oplgb:LocalProducts ;
+    rdfs:range xsd:string .
+
+oplgb:webitemid
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "webitemid" ;
+    skos:altLabel "web item id" ;
+    rdfs:comment """Web item id"""@en ;
+    rdfs:domain oplgb:LocalProducts ;
+    rdfs:range xsd:string .
+
+oplgb:subgroup
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "subgroup" ;
+    skos:altLabel "subgroup" ;
+    rdfs:comment """Subgroup"""@en ;
+    rdfs:domain oplgb:LocalProducts ;
+    rdfs:range xsd:string .
+
+oplgb:group
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "group" ;
+    skos:altLabel "group" ;
+    rdfs:comment """Group"""@en ;
+    rdfs:domain oplgb:LocalProducts ;
+    rdfs:range xsd:string .
+
+oplgb:promotionalText
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "promotionalText" ;
+    skos:altLabel "promotional text" ;
+    rdfs:comment """Promotional text"""@en ;
+    rdfs:domain oplgb:LocalProducts ;
+    rdfs:range xsd:string .
+
+oplgb:gtin
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "gtin" ;
+    skos:altLabel "global trade item number" ;
+    rdfs:comment """Global trade item number (GTIN)"""@en ;
+    rdfs:domain oplgb:LocalProducts ;
+    rdfs:range xsd:string .
+
+oplgb:priceEffectiveDate
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "priceEffectiveDate" ;
+    skos:altLabel "price effective date" ;
+    rdfs:comment """Price effective date"""@en ;
+    rdfs:domain oplgb:LocalProducts ;
+    rdfs:range xsd:string .
+
+oplgb:itemid
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "itemid" ;
+    skos:altLabel "item id" ;
+    rdfs:comment """Item ID"""@en ;
+    rdfs:domain oplgb:LocalProducts ;
+    rdfs:range xsd:string .
+
+oplgb:retailstoreid
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "retailstoreid" ;
+    skos:altLabel "retail store id" ;
+    rdfs:comment """Retail store ID"""@en ;
+    rdfs:domain oplgb:LocalProducts ;
+    rdfs:range xsd:string .
+
+oplgb:upc
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "upc" ;
+    skos:altLabel "universal product code" ;
+    rdfs:comment """Universal product code (UPC)"""@en ;
+    rdfs:domain oplgb:Products ;
+    rdfs:range xsd:string .
+
+oplgb:modelNumber
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "modelNumber" ;
+    skos:altLabel "model number" ;
+    rdfs:comment """Model number"""@en ;
+    rdfs:domain oplgb:Products ;
+    rdfs:range xsd:string .
+
+oplgb:author
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "author" ;
+    skos:altLabel "author" ;
+    rdfs:comment """Author"""@en ;
+    rdfs:domain oplgb:Products ;
+    rdfs:range xsd:string .
+
+oplgb:isbn
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "isbn" ;
+    skos:altLabel "isbn" ;
+    rdfs:comment """ISBN"""@en ;
+    rdfs:domain oplgb:Products ;
+    rdfs:range xsd:string .
+
+oplgb:publisher
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "publisher" ;
+    skos:altLabel "publisher" ;
+    rdfs:comment """Publisher"""@en ;
+    rdfs:domain oplgb:Products ;
+    rdfs:range xsd:string .
+
+oplgb:height
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "height" ;
+    skos:altLabel "height" ;
+    rdfs:comment """Height"""@en ;
+    rdfs:domain oplgb:Product ;
+    rdfs:range xsd:string .
+
+oplgb:width
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "width" ;
+    skos:altLabel "width" ;
+    rdfs:comment """Width"""@en ;
+    rdfs:domain oplgb:Product ;
+    rdfs:range xsd:string .
+
+oplgb:length
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "length" ;
+    skos:altLabel "length" ;
+    rdfs:comment """Length"""@en ;
+    rdfs:domain oplgb:Product ;
+    rdfs:range xsd:string .
+
+oplgb:productReviewCount
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "productReviewCount" ;
+    skos:altLabel "product review count" ;
+    rdfs:comment """Product review count"""@en ;
+    rdfs:domain oplgb:Product ;
+    rdfs:range xsd:int .
+
+oplgb:productReview_average
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "productReview_average" ;
+    skos:altLabel "product review average" ;
+    rdfs:comment """Product review average"""@en ;
+    rdfs:domain oplgb:Product ;
+    rdfs:range xsd:decimal .
+
+oplgb:onlineOnly
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "onlineOnly" ;
+    skos:altLabel "online only" ;
+    rdfs:comment """Only available online?"""@en ;
+    rdfs:domain oplgb:Product ;
+    rdfs:range xsd:boolean .
+
+#
+# Attributes not returned by http://www.google.com/base/feeds/itemtypes/en_US
+# but which appear in item descriptions
+#
+oplgb:squareFeet
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "squareFeet" ;
+    skos:altLabel "square feet" ;
+    rdfs:comment """Square feet"""@en ;
+    rdfs:domain oplgb:Housing ;
+    rdfs:range xsd:string .
+
+oplgb:shipping
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/google-base#> ;
+    rdfs:label "shipping" ;
+    skos:altLabel "shipping cost" ;
+    rdfs:comment """Shipping cost"""@en ;
+    rdfs:domain oplgb:Products ;
+    rdfs:range xsd:string .
+

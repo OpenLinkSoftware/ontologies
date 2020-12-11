@@ -1,0 +1,420 @@
+@prefix schema:  <http://schema.org/> .
+@prefix cvocab:  <http://open-services.net/ns/core#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix cert:    <http://www.w3.org/ns/auth/cert#> .
+@prefix oplcert: <http://www.openlinksw.com/schemas/cert#> .
+@prefix oplacl:  <http://www.openlinksw.com/ontology/acl#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix wot:     <http://xmlns.com/wot/0.1/> .
+@prefix wdrs:    <http://www.w3.org/2007/05/powder-s#> .
+@prefix cc:      <http://creativecommons.org/ns#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xhv:     <http://www.w3.org/1999/xhtml/vocab#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix source:  <http://www.openlinksw.com/data/turtle/cert.ttl> .
+@prefix sourceDAV: <http://www.openlinksw.com/DAV/data/turtle/cert.ttl> .
+@prefix :          <http://www.openlinksw.com/data/turtle/general/GlossaryOfTerms.ttl#> .
+
+
+sourceDAV:
+  a schema:CreativeWork ;
+  schema:name """About Certificates and Related Items """^^xsd:string ;
+  schema:comment """Description of OpenLink Software Certificate Ontology and Related Items."""@en ;
+  schema:author <http://www.openlinksw.com/#this> ;
+  schema:dateCreated "2014-01-03T13:00:00-05:00"^^xsd:dateTime ;
+  schema:dateModified "2018-09-03T16:00:00-05:00"^^xsd:dateTime ;
+  xhv:license <http://creativecommons.org/licenses/by/4.0/deed.en_US> ;
+  cc:attributionName "OpenLink Software" ;
+  cc:attributionURL <http://www.openlinksw.com/dataspace/organization/openlink#this> ;
+  owl:sameAs source: .
+
+source:  
+  a schema:CreativeWork ;
+  schema:name """About Certificates and Related Items """^^xsd:string ;
+  schema:comment """Description of OpenLink Software Certificate Ontology and Related Items."""@en ;
+  schema:dateCreated "2014-01-03T13:00:00-05:00"^^xsd:dateTime ;
+  schema:dateModified "2018-09-03T16:00:00-05:00"^^xsd:dateTime ;
+  owl:sameAs sourceDAV: ;
+  schema:author <http://www.openlinksw.com/#this> ;
+  xhv:license <http://creativecommons.org/licenses/by/4.0/deed.en_US> ;
+  cc:attributionName "OpenLink Software" ;
+  cc:attributionURL <http://www.openlinksw.com/dataspace/organization/openlink#this> .
+
+<http://www.openlinksw.com/schemas/cert#>
+  a owl:Ontology ;
+  rdfs:label "OpenLink Identity and Certification Ontology" ;
+  rdfs:comment """Ontology that defines entity and relation types used to describe certificates and relations
+  for identifying Agents using different types of resolvable identifiers. Examples include WebID, NewID, public keys, issuers, fingerprint etc."""@en ;
+  owl:imports <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ,
+              <http://www.openlinksw.com/ontology/acl#> ,
+              <http://purl.org/dc/terms/> ,
+              <http://www.w3.org/ns/pim/space#> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  wdrs:describedby <http://www.openlinksw.com/schemas/cert> ;
+  dcterms:created "2014-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  dcterms:modified "2018-09-01T10:00:00-05:00"^^xsd:dateTime ;
+  owl:versionInfo "1.0.0"^^xsd:string ;
+  <http://open.vocab.org/terms/defines>
+             oplcert:Certificate ,
+             oplcert:SparqlNamedGraph ,
+             oplcert:hasCertificate ,
+             oplcert:hasPublicKey ,
+             oplcert:fingerprint ,
+             oplcert:hasPart ,
+             oplcert:fingerprint-digest ,
+             oplcert:subject ,
+             oplcert:issuer ,
+             oplcert:serial ,
+             oplcert:notBefore ,
+             oplcert:notAfter ,
+             oplcert:digestURI ,
+             oplcert:signatureAlgorithm ,
+             oplcert:signature ,
+             oplcert:IAN ,
+             oplcert:SAN ,
+             oplcert:statementSignature ,
+             oplcert:docSignature ,
+             oplcert:onBehalfOf ,
+             oplcert:hasDBStorage ,
+             oplcert:identifiedBy ,
+             oplcert:trustedOrigin ,
+             oplcert:WebID ,
+             oplcert:NetID ,
+             oplcert:hasWebID ,
+             oplcert:hasNetID  ;
+  schema:about
+             oplcert:Certificate ,
+             oplcert:SparqlNamedGraph ,
+             oplcert:hasCertificate ,
+             oplcert:hasPublicKey ,
+             oplcert:fingerprint ,
+             oplcert:hasPart ,
+             oplcert:fingerprint-digest ,
+             oplcert:subject ,
+             oplcert:issuer ,
+             oplcert:serial ,
+             oplcert:notBefore ,
+             oplcert:notAfter ,
+             oplcert:digestURI ,
+             oplcert:signatureAlgorithm ,
+             oplcert:signature ,
+             oplcert:IAN ,
+             oplcert:SAN ,
+             oplcert:statementSignature ,
+             oplcert:docSignature ,
+             oplcert:onBehalfOf ,
+             oplcert:hasDBStorage ,
+             oplcert:identifiedBy ,
+             oplcert:trustedOrigin ,
+             oplcert:WebID ,
+             oplcert:NetID ,
+             oplcert:hasWebID ,
+             oplcert:hasNetID  .
+
+<http://www.openlinksw.com/DAV/data/turtle/cert.ttl>
+  a foaf:Document , schema:TechArticle ;
+  rdfs:label "OpenLink Identity and Certification Ontology Description Document (Turtle)" ;
+  cc:License <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  rdfs:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink Identity & Certification Ontology"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/cert#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/cert> ;
+  xhv:describes <http://www.openlinksw.com/schemas/cert#> ;
+  schema:about <http://www.openlinksw.com/schemas/cert#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/cert#> .
+
+<http://www.openlinksw.com/data/turtle/cert.ttl>
+  a foaf:Document , schema:TechArticle ;
+  rdfs:label "OpenLink Identity and Certification Ontology Description Document (Turtle)" ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  rdfs:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink Identity and Certification ontology"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/cert#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/cert> ;
+  xhv:describes <http://www.openlinksw.com/schemas/cert#> ;
+  schema:about <http://www.openlinksw.com/schemas/cert#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/cert#> .
+
+<http://www.openlinksw.com/schemas/cert>
+  a foaf:Document , schema:TechArticle ;
+  rdfs:label """OpenLink Identity and Certification Ontology Description Document"""^^xsd:string ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  rdfs:comment """This is a document that uses Linked Data oriented content to describe OpenLink Identity and Certification Ontology."""@en ;
+  dcterms:subject <http://www.openlinksw.com/schemas/cert#> ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/cert#> ;
+  foaf:topic oplcert:Certificate ,
+             oplcert:SparqlNamedGraph ,
+             oplcert:hasCertificate ,
+             oplcert:hasPublicKey ,
+             oplcert:fingerprint ,
+             oplcert:hasPart ,
+             oplcert:fingerprint-digest ,
+             oplcert:subject ,
+             oplcert:issuer ,
+             oplcert:serial ,
+             oplcert:notBefore ,
+             oplcert:notAfter ,
+             oplcert:digestURI ,
+             oplcert:signatureAlgorithm ,
+             oplcert:signature ,
+             oplcert:IAN ,
+             oplcert:SAN ,
+             oplcert:statementSignature ,
+             oplcert:docSignature ,
+             oplcert:onBehalfOf ,
+             oplcert:hasDBStorage ,
+             oplcert:identifiedBy ,
+             oplcert:trustedOrigin ,
+             oplcert:WebID ,
+             oplcert:NetID ,
+             oplcert:hasWebID ,
+             oplcert:hasNetID  .
+
+# <-------------- Common Identity & Certification Classes --------------> #
+
+oplcert:Certificate
+  a owl:Class ;
+  rdfs:label "Certificate" ;
+  owl:equivalentClass cert:X509Certificate ;
+  owl:equivalentClass wot:PubKey ;
+  rdfs:subClassOf cert:Certificate ;
+  rdfs:isDefinedBy oplcert: .
+
+oplcert:WebID a owl:Class ;
+  rdfs:label "WebID" ;
+  rdfs:subClassOf oplcert:NetID ,
+                  <http://sw.opencyc.org/concept/Mx4rvViIrZwpEbGdrcN5Y29ycA> ;
+  skos:altLabel "WebID" ;
+  skos:related schema:identifier, dcterms:identifier ;
+  rdfs:comment """HTTP URI that denotes an agent on HTTP based networks."""@en ;
+  rdfs:isDefinedBy oplcert: .
+
+oplcert:NetID a owl:Class ;
+  rdfs:label "NetID" ;
+  rdfs:subClassOf <http://sw.opencyc.org/concept/Mx4rvViIrZwpEbGdrcN5Y29ycA> ;
+  skos:altLabel "NetID" ;
+  skos:related schema:identifier, dcterms:identifier ;
+  rdfs:comment """Network ID (NetID) -- personal, unique identifier."""@en ;
+  rdfs:isDefinedBy oplcert: .
+
+oplcert:SparqlNamedGraph a owl:Class ;
+  rdfs:subClassOf foaf:Document, <http://www.w3.org/ns/pim/space#ControlledStorage>, <http://rdfs.org/ns/void#Dataset> ;
+  rdfs:label "Named Graph";
+  rdfs:comment """A database document [dataset i.e., relations collection] managed by a SPARQL compliant RDBMS or Store"""@en ;
+  rdfs:isDefinedBy oplcert: .
+
+# <-------------- Common Identity & Certification Properties --------------> #
+
+oplcert:hasWebID
+  a owl:ObjectProperty, rdf:Property ;
+  rdfs:subPropertyOf dcterms:identifier, oplcert:hasNetID ;
+  rdfs:label "hasWebID" ;
+  rdfs:domain foaf:Agent ;
+  rdfs:range oplcert:WebID ;
+  rdfs:comment """Relation that associates a foaf:Agent with an HTTP URI (as opposed to a document URL) that
+  functions as its name (or identifier)."""@en ;
+  rdfs:isDefinedBy oplcert: .
+
+oplcert:hasNetID
+  a owl:ObjectProperty, rdf:Property ;
+  rdfs:subPropertyOf dcterms:identifier ;
+  rdfs:label "hasNetID" ;
+  rdfs:domain foaf:Agent ;
+  rdfs:range oplcert:NetID ;
+  rdfs:comment """Relation that associates a foaf:Agent with a URI (as opposed to a document URL) that
+  functions as its name (or idenitifer)."""@en ;
+  rdfs:isDefinedBy oplcert: .
+
+oplcert:hasCertificate
+  a owl:ObjectProperty , rdf:Property ;
+  rdfs:label "hasCertificate" ;
+  skos:altLabel "certificate";
+  rdfs:domain foaf:Agent ;
+  rdfs:range oplcert:Certificate ;
+  rdfs:isDefinedBy oplcert: .
+
+oplcert:hasPublicKey
+  a owl:ObjectProperty , rdf:Property ;
+  rdfs:label "hasPublicKey" ;
+  skos:altLabel "public key";
+  rdfs:domain oplcert:Certificate ;
+  rdfs:range cert:RSAPublicKey ;
+  rdfs:isDefinedBy oplcert: .
+
+oplcert:fingerprint
+  a owl:ObjectProperty , rdf:Property ;
+  a owl:inverseFunctionalProperty ;
+  rdfs:label "fingerprint" ;
+  skos:altLabel "fingerprint";
+  rdfs:domain oplcert:Certificate ;
+  rdfs:isDefinedBy oplcert: ;
+  rdfs:range cert:hex .
+
+oplcert:hasPart
+  a owl:ObjectProperty , rdf:Property ,
+     owl:inverseFunctionalProperty ;
+  rdfs:label "hasPart" ;
+  skos:altLabel "hasPart";
+  rdfs:isDefinedBy oplcert: ;
+  rdfs:domain oplcert:Certificate ;
+  rdfs:range cert:RSAPublicKey .
+
+oplcert:fingerprint-digest
+  a owl:DatatypeProperty , rdf:Property ;
+  rdfs:label "fingerprint-digest" ;
+  skos:altLabel "fingerprint digest";
+  rdfs:domain oplcert:Certificate ;
+  rdfs:range xsd:string ;
+  rdfs:isDefinedBy oplcert: .
+
+oplcert:subject
+  a owl:DatatypeProperty , rdf:Property ;
+  rdfs:label "subject" ;
+  skos:altLabel "subject";
+  rdfs:domain oplcert:Certificate ;
+  rdfs:isDefinedBy oplcert: ;
+  rdfs:range xsd:string .
+
+oplcert:issuer
+  a owl:DatatypeProperty , rdf:Property ;
+  rdfs:label "issuer" ;
+  skos:altLabel "issuer";
+  rdfs:domain oplcert:Certificate ;
+  rdfs:isDefinedBy oplcert: ;
+  rdfs:range xsd:string .
+
+oplcert:serial
+  a owl:DatatypeProperty , rdf:Property ;
+  rdfs:label "serial" ;
+  skos:altLabel "serial number";
+  rdfs:domain oplcert:Certificate ;
+  rdfs:isDefinedBy oplcert: ;
+  rdfs:range xsd:string .
+
+oplcert:notBefore
+  a owl:DatatypeProperty , rdf:Property ;
+  rdfs:label "notBefore" ;
+  skos:altLabel "not before";
+  rdfs:comment "Property for not before i.e. issue date"@en ;
+  rdfs:domain oplcert:Certificate ;
+  rdfs:isDefinedBy oplcert: ;
+  rdfs:range xsd:dateTime .
+
+oplcert:notAfter
+  a owl:DatatypeProperty , rdf:Property ;
+  rdfs:label "notAfter" ;
+  skos:altLabel "not after";
+  rdfs:comment "Property for not after i.e. expiry date"@en ;
+  rdfs:domain oplcert:Certificate ;
+  rdfs:isDefinedBy oplcert: ;
+  rdfs:range xsd:dateTime .
+
+oplcert:digestURI
+  a owl:ObjectProperty , rdf:Property ;
+  rdfs:label "digestURI" ;
+  skos:altLabel "digest uri";
+  rdfs:domain oplcert:Certificate ;
+  rdfs:isDefinedBy oplcert: ;
+  rdfs:range rdfs:Resource .
+
+oplcert:signatureAlgorithm
+  a owl:DatatypeProperty , rdf:Property ;
+  rdfs:label "signatureAlgorithm" ;
+  skos:altLabel "signature algorithm";
+  rdfs:domain oplcert:Certificate ;
+  rdfs:isDefinedBy oplcert: ;
+  rdfs:range xsd:integer .
+
+oplcert:signature
+  a owl:ObjectProperty , rdf:Property ;
+  rdfs:label "signature" ;
+  skos:altLabel "signature";
+  rdfs:domain oplcert:Certificate ;
+  rdfs:comment """A digital signature produced using a Private Key"""@en ;
+  dcterms:description  """A digital signature produced using a specific signature scheme (or algorithm)""" ;
+  rdfs:seeAlso <http://dbpedia.org/resource/Digital_signature> ;
+  rdfs:isDefinedBy oplcert: ;
+  rdfs:range cert:Signature .
+
+oplcert:IAN
+  a owl:ObjectProperty , rdf:Property ;
+  rdfs:label "IAN" ;
+  skos:altLabel "Certificate Issuer Alternative Name (IAN)";
+  rdfs:domain oplcert:Certificate ;
+  rdfs:isDefinedBy oplcert: ;
+  rdfs:range rdfs:Resource .
+
+oplcert:SAN
+  a owl:DatatypeProperty , rdf:Property ;
+  rdfs:label "subjectAlternativeName" ;
+  skos:altLabel "Certificate Subject Alternative Name (SAN)";
+  rdfs:domain oplcert:Certificate ;
+  rdfs:isDefinedBy oplcert: ;
+  skos:altLabel "SAN" ;
+  rdfs:comment """The object of this relation is an identifier that denotes (names) the certificate's subject. """@en ;
+  owl:equivalentProperty <http://schemas.microsoft.com/2012/12/certificatecontext/extension/san> ;
+  schema:rangeIncludes
+      oplcert:WebID,
+      oplcert:NetID.
+
+oplcert:WebID owl:disjointWith oplcert:NetID.
+
+oplcert:statementSignature
+  a owl:DatatypeProperty , rdf:Property ;
+  rdfs:domain rdfs:Statement ;
+  rdfs:range xsd:hexBinary ;
+  rdfs:label "statementSignature" ;
+  skos:altLabel "statement signature";
+  rdfs:isDefinedBy oplcert: ;
+  rdfs:comment """Digital Signature derived from an SHA hash of the Subject, Predicate, Objects components of a statement."""@en .
+
+oplcert:docSignature
+  a owl:DatatypeProperty , rdf:Property ;
+  rdfs:domain foaf:Document ;
+  rdfs:label "docSignature" ;
+  skos:altLabel "document signature";
+  rdfs:range xsd:hexBinary ;
+  rdfs:isDefinedBy oplcert: ;
+  rdfs:comment """Handles the digest of document content"""@en .
+
+oplcert:onBehalfOf
+  a rdf:Property, owl:ObjectProperty;
+  rdfs:label  "onBehalfOf" ;
+  owl:inverseOf oplacl:hasIdentityDelegate ;
+  rdfs:comment """This property associates a piece of Software with a Person who functions as its operator. Thus, at resource authorization time, it is the identity of the operator [not Software Agent] that's used in resource access tests.""" ;
+  rdfs:isDefinedBy oplcert: ;
+  schema:domainIncludes  schema:SoftwareApplication;
+  schema:rangeIncludes foaf:Person, schema:Person .
+
+oplcert:hasDBStorage
+  a rdf:Property, owl:ObjectProperty;
+  rdfs:subPropertyOf <http://www.w3.org/ns/pim/space#storage> ;
+  rdfs:label "hasDBStorage" ;
+  rdfs:isDefinedBy oplcert: ;
+  rdfs:domain foaf:Agent ;
+  rdfs:range <http://www.w3.org/ns/pim/space#Storage>;
+  rdfs:comment """Associates an Agent with document storage provided by an RDF RDBMS or store. The object of this relation identifies an internal document [in the case of an RDF RDBMS that supports SPARQL, this would be a Named Graph IRI]. """@en.
+
+oplcert:identifiedBy
+  a rdf:Property, owl:ObjectProperty;
+  owl:equivalentProperty schema:sameAs ;
+  rdfs:label "identifiedBy" ;
+  rdfs:isDefinedBy oplcert: ;
+  rdfs:comment """Associates an Agent with a Descriptor [document that specifically describes the agent]."""@en ;
+  schema:rangeIncludes schema:WebPage, foaf:Document ;
+  rdfs:domain foaf:Agent .
+
+
+oplcert:trustedOrigin
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "trustedOrigin";
+  rdfs:domain foaf:Agent  ;
+  rdfs:range schema:WebSite ;
+  rdfs:isDefinedBy oplcert: ;
+  rdfs:comment """Web Sites (javascript and other code) hosts deemed to be trusted in regards to HTTP user agent sandbox exclusion. This relation enables dynamic generation HTTP responses [by a server] following lookup of a WebID associated with a user agent document (resource) access request."""@en ;
+  xhv:related <https://www.w3.org/wiki/WebAccessControl#Cors_User_Agents> .
+

@@ -1,0 +1,444 @@
+#
+# An OpenLink ontology BestBuy
+#
+# See:
+# http://www.ebusiness-unibw.org/wiki/Own_GoodRelations_Vocabularies
+# http://remix.bestbuy.com
+# http://remix.bestbuy.com/documentation/Product_Data_Dictionary
+#
+
+@prefix schema:  <http://schema.org/> .
+@prefix skos:   <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix cvocab: <http://open-services.net/ns/core#> .
+@prefix gr:     <http://purl.org/goodrelations/v1#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix foaf:   <http://xmlns.com/foaf/0.1/> .
+@prefix wdrs:   <http://www.w3.org/2007/05/powder-s#> .
+@prefix cc:     <http://creativecommons.org/ns#> .
+@prefix oplfea: <http://www.openlinksw.com/data/turtle/features.ttl> .
+@prefix xhv:    <http://www.w3.org/1999/xhtml/vocab#> .
+
+@prefix oplbb: <http://www.openlinksw.com/schemas/bestbuy#> .
+
+<http://www.openlinksw.com/schemas/bestbuy#>
+  a owl:Ontology ;
+  schema:name "OpenLink BestBuy Ontology" ;
+  schema:comment """Ontology that defines entity and relation types used to describe BestBuy.
+  Examples include format, categories, features, sales, shipping details etc."""@en ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:dateCreated "2013-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  schema:dateModified "2015-04-22T13:38:00-05:00"^^xsd:dateTime ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  wdrs:describedby <http://www.openlinksw.com/schemas/bestbuy> ;
+  owl:versionInfo "1.0.0"^^xsd:string ;
+  owl:imports <http://www.w3.org/1999/02/22-rdf-syntax-ns#> , <http://purl.org/dc/terms/> , <http://purl.org/goodrelations/v1> ;
+  <http://open.vocab.org/terms/defines>
+    oplbb:Product ,
+    oplbb:ProductDetail ,
+    oplbb:hasProductID ,
+    oplbb:hasStockKeepingUnit ,
+    oplbb:hasProductFormat ,
+    oplbb:description ,
+    oplbb:longDescription ,
+    oplbb:color ,
+    oplbb:dateReleased ,
+    oplbb:onSale ,
+    oplbb:hasCategory ,
+    oplbb:hasFeature ,
+    oplbb:hasImage ,
+    oplbb:hasDepth ,
+    oplbb:hasHeight ,
+    oplbb:hasWidth ,
+    oplbb:hasWeight ,
+    oplbb:hasShippingWeight ,
+    oplbb:hasProductDetail ,
+    oplbb:hasProductDetailName ,
+    oplbb:hasProductDetailValue ,
+    oplbb:freeShipping ,
+    oplbb:dollarSaving ,
+    oplbb:onlineAvailability ,
+    oplbb:onlineAvailabilityText ,
+    oplbb:specialOrder ;
+  schema:about
+    oplbb:Product ,
+    oplbb:ProductDetail ,
+    oplbb:hasProductID ,
+    oplbb:hasStockKeepingUnit ,
+    oplbb:hasProductFormat ,
+    oplbb:description ,
+    oplbb:longDescription ,
+    oplbb:color ,
+    oplbb:dateReleased ,
+    oplbb:onSale ,
+    oplbb:hasCategory ,
+    oplbb:hasFeature ,
+    oplbb:hasImage ,
+    oplbb:hasDepth ,
+    oplbb:hasHeight ,
+    oplbb:hasWidth ,
+    oplbb:hasWeight ,
+    oplbb:hasShippingWeight ,
+    oplbb:hasProductDetail ,
+    oplbb:hasProductDetailName ,
+    oplbb:hasProductDetailValue ,
+    oplbb:freeShipping ,
+    oplbb:dollarSaving ,
+    oplbb:onlineAvailability ,
+    oplbb:onlineAvailabilityText ,
+    oplbb:specialOrder .
+
+<http://www.openlinksw.com/DAV/data/turtle/cartridge_ontologies/bestbuy.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink BestBuy Ontology Description Document (Turtle)" ;
+  cc:License <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for BestBuy"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/bestbuy#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/bestbuy> ;
+  xhv:describes <http://www.openlinksw.com/schemas/bestbuy#> ;
+  schema:about <http://www.openlinksw.com/schemas/bestbuy#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/bestbuy#> .
+
+<http://www.openlinksw.com/data/turtle/cartridge_ontologies/bestbuy.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink BestBuy Ontology Description Document (Turtle)" ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for BestBuy"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/bestbuy#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/bestbuy> ;
+  xhv:describes <http://www.openlinksw.com/schemas/bestbuy#> ;
+  schema:about <http://www.openlinksw.com/schemas/bestbuy#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/bestbuy#> .
+
+<http://www.openlinksw.com/schemas/bestbuy>
+  a foaf:Document ;
+  schema:name """OpenLink BestBuy Ontology Description Document"""^^xsd:string ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a document that uses Linked Data oriented content to describe OpenLink BestBuy Ontology."""@en ;
+  dcterms:subject <http://www.openlinksw.com/schemas/bestbuy#> ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/bestbuy#> ;
+  foaf:topic oplbb:Product ,
+             oplbb:ProductDetail ,
+             oplbb:hasProductID ,
+             oplbb:hasStockKeepingUnit ,
+             oplbb:hasProductFormat ,
+             oplbb:description ,
+             oplbb:longDescription ,
+             oplbb:color ,
+             oplbb:dateReleased ,
+             oplbb:onSale ,
+             oplbb:hasCategory ,
+             oplbb:hasFeature ,
+             oplbb:hasImage ,
+             oplbb:hasDepth ,
+             oplbb:hasHeight ,
+             oplbb:hasWidth ,
+             oplbb:hasWeight ,
+             oplbb:hasShippingWeight ,
+             oplbb:hasProductDetail ,
+             oplbb:hasProductDetailName ,
+             oplbb:hasProductDetailValue ,
+             oplbb:freeShipping ,
+             oplbb:dollarSaving ,
+             oplbb:onlineAvailability ,
+             oplbb:onlineAvailabilityText ,
+             oplbb:specialOrder .
+
+
+#
+# gr:Product specialization
+#
+
+oplbb:Product
+    a owl:Class ;
+    rdfs:subClassOf gr:ProductOrService ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/bestbuy#> ;
+    rdfs:label "Product" ;
+    rdfs:comment """A specialization of the GoodRelations ProductOrService class for describing BestBuy products"""@en .
+
+oplbb:ProductDetail
+    a owl:Class ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/bestbuy#> ;
+    rdfs:label "ProductDetail" ;
+    owl:equivalentClass oplfea:ProductFeature ;
+    rdfs:comment """A name/value pair describing a product detail or feature"""@en .
+
+oplbb:hasProductID
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/bestbuy#> ;
+    rdfs:label "hasProductID" ;
+    skos:altLabel "product id";
+    rdfs:comment """Product ID can be used to link SKUs that share information such as different versions"""@en ;
+    rdfs:domain oplbb:Product ;
+    rdfs:range xsd:string .
+
+oplbb:hasStockKeepingUnit
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/bestbuy#> ;
+    rdfs:label "sku" ;
+    skos:altLabel "sku";
+    rdfs:comment """Stock Keeping Unit number. Best Buy's Unique Product Identifier"""@en ;
+    rdfs:domain oplbb:Product ;
+    rdfs:range xsd:integer .
+
+oplbb:hasProductFormat
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/bestbuy#> ;
+    rdfs:label "hasProductFormat" ;
+    skos:altLabel "format";
+    rdfs:comment """Product format - for media products such as computer software"""@en ;
+    rdfs:domain oplbb:Product ;
+    rdfs:range xsd:string .
+
+oplbb:description
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/bestbuy#> ;
+    rdfs:label "description" ;
+    skos:altLabel "description";
+    rdfs:comment """Product description"""@en ;
+    rdfs:domain oplbb:Product ;
+    rdfs:range xsd:string .
+
+oplbb:longDescription
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/bestbuy#> ;
+    rdfs:label "longDescription" ;
+    skos:altLabel "long description";
+    rdfs:comment """Long product description"""@en ;
+    rdfs:domain oplbb:Product ;
+    rdfs:range xsd:string .
+
+oplbb:color
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/bestbuy#> ;
+    rdfs:label "color" ;
+    skos:altLabel "color";
+    rdfs:comment """Product color"""@en ;
+    rdfs:domain oplbb:Product ;
+    rdfs:range xsd:string .
+
+oplbb:dateReleased
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/bestbuy#> ;
+    rdfs:label "dateReleased" ;
+    skos:altLabel "date released";
+    rdfs:comment """Date the product was launched"""@en ;
+    rdfs:domain oplbb:Product ;
+    rdfs:range xsd:date .
+
+oplbb:onSale
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/bestbuy#> ;
+    rdfs:label "onSale" ;
+    skos:altLabel "on sale";
+    rdfs:comment """Is the product currently on sale"""@en ;
+    rdfs:domain oplbb:Product ;
+    rdfs:range xsd:boolean .
+
+oplbb:hasCategory
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/bestbuy#> ;
+    rdfs:label "hasCategory" ;
+    skos:altLabel "category";
+    rdfs:comment """Product categories to which the item belongs"""@en ;
+    rdfs:domain oplbb:Product ;
+    rdfs:range xsd:string .
+
+oplbb:hasFeature
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/bestbuy#> ;
+    rdfs:label "hasFeature" ;
+    skos:altLabel "feature";
+    rdfs:comment """Product feature"""@en ;
+    rdfs:domain oplbb:Product ;
+    rdfs:range xsd:string .
+
+oplbb:hasImage
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/bestbuy#> ;
+    rdfs:label "hasImage" ;
+    skos:altLabel "image";
+    rdfs:comment """Image of item"""@en ;
+    rdfs:domain oplbb:Product ;
+    rdfs:range xsd:string .
+
+oplbb:hasDepth
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:quantitativeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/bestbuy#> ;
+    rdfs:label "hasDepth" ;
+    skos:altLabel "depth";
+    rdfs:comment """Depth of item"""@en ;
+    rdfs:domain oplbb:Product ;
+    rdfs:range gr:QuantitativeValueFloat .
+
+oplbb:hasHeight
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:quantitativeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/bestbuy#> ;
+    rdfs:label "hasHeight" ;
+    skos:altLabel "height";
+    rdfs:comment """Height of item"""@en ;
+    rdfs:domain oplbb:Product ;
+    rdfs:range gr:QuantitativeValueFloat .
+
+oplbb:hasWidth
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:quantitativeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/bestbuy#> ;
+    rdfs:label "hasWidth" ;
+    skos:altLabel "width";
+    rdfs:comment """Width of item"""@en ;
+    rdfs:domain oplbb:Product ;
+    rdfs:range gr:QuantitativeValueFloat .
+
+oplbb:hasWeight
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:quantitativeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/bestbuy#> ;
+    rdfs:label "hasWeight" ;
+    skos:altLabel "weight";
+    rdfs:comment """Weight of item"""@en ;
+    rdfs:domain oplbb:Product ;
+    rdfs:range gr:QuantitativeValueFloat .
+
+oplbb:hasShippingWeight
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:quantitativeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/bestbuy#> ;
+    rdfs:label "hasShippingWeight" ;
+    skos:altLabel "shipping weight";
+    rdfs:comment """Shipping weight of item"""@en ;
+    rdfs:domain oplbb:Product ;
+    rdfs:range gr:QuantitativeValueFloat .
+
+oplbb:hasProductDetail
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/bestbuy#> ;
+    rdfs:label "detail" ;
+    skos:altLabel "hasProductDetail";
+    rdfs:comment """Detail - a name/value pair describing a product feature"""@en ;
+    rdfs:domain oplbb:Product ;
+    owl:equivalentProperty oplfea:hasFeature ;
+    rdfs:range oplbb:ProductDetail .
+
+oplbb:hasProductDetailName
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/bestbuy#> ;
+    rdfs:label "hasProductDetailName" ;
+    skos:altLabel "detail name";
+    rdfs:comment """Detail name"""@en ;
+    rdfs:domain oplbb:ProductDetail ;
+    rdfs:range xsd:string .
+
+oplbb:hasProductDetailValue
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/bestbuy#> ;
+    rdfs:label "hasProductDetailValue" ;
+    skos:altLabel "detail value";
+    rdfs:comment """Detail value"""@en ;
+    rdfs:domain oplbb:ProductDetail ;
+    rdfs:range xsd:string .
+
+#
+# gr:Offering specialization
+#
+
+oplbb:freeShipping
+    a owl:DatatypeProperty , rdf:Property ;
+#    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/bestbuy#> ;
+    rdfs:label "freeShipping" ;
+    skos:altLabel "free shipping";
+    rdfs:comment """Free shipping"""@en ;
+    rdfs:domain gr:Offering ;
+    rdfs:range xsd:boolean .
+
+oplbb:dollarSaving
+    a owl:ObjectProperty , rdf:Property ;
+#    rdfs:subPropertyOf gr:quantitativeProductOrServiceProperty .
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/bestbuy#> ;
+    rdfs:label "dollarSaving" ;
+    skos:altLabel "dollar saving";
+    rdfs:comment """Saving in dollars"""@en ;
+    rdfs:domain gr:Offering ;
+    rdfs:range gr:QuantitativeValueFloat .
+
+oplbb:onlineAvailability
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/bestbuy#> ;
+    rdfs:label "onlineAvailability" ;
+    skos:altLabel "online availability";
+    rdfs:comment """Available on-line"""@en ;
+    rdfs:domain gr:Offering ;
+    rdfs:range xsd:boolean .
+
+oplbb:onlineAvailabilityText
+    a owl:DatatypeProperty , rdf:Property ;
+#    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/bestbuy#> ;
+    rdfs:label "onlineAvailabilityText" ;
+    skos:altLabel "online availability text";
+    rdfs:comment """Notes relating to on-line availability"""@en ;
+    rdfs:domain gr:Offering ;
+    rdfs:range xsd:string .
+
+oplbb:specialOrder
+    a owl:DatatypeProperty , rdf:Property ;
+#    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/bestbuy#> ;
+    rdfs:label "specialOrder" ;
+    skos:altLabel "special order";
+    rdfs:comment """Special order"""@en ;
+    rdfs:domain gr:Offering ;
+    rdfs:range xsd:boolean .
+
+
+# The following properties are not currently used.
+# The Virtuoso Sponger does not currently use/map the corresponding BestBuy product attribute.
+
+# oplbb:inStoreAvailability
+#   a owl:DatatypeProperty , rdf:Property ;
+#   rdfs:isDefinedBy <http://www.openlinksw.com/schemas/bestbuy#> ;
+#   rdfs:label "inStoreAvailability" ;
+#   rdfs:comment """Available in store?"""@en ;
+#   rdfs:domain oplbb:Product ;
+#   rdfs:range xsd:boolean ;
+#   rdfs:subPropertyOf gr:datatypeProductOrServiceProperty .
+
+# oplbb:inStoreCollectionNotes
+#   a owl:DatatypeProperty , rdf:Property ;
+#   rdfs:isDefinedBy <http://www.openlinksw.com/schemas/bestbuy#> ;
+#   rdfs:label "inStoreCollectionNotes" ;
+#   rdfs:comment """In-store collection notes"""@en ;
+#   rdfs:domain oplbb:Product ;
+#   rdfs:range xsd:string ;
+#   rdfs:subPropertyOf gr:datatypeProductOrServiceProperty .
+
+# oplbb:shortDescription
+#   a owl:DatatypeProperty , rdf:Property ;
+#   rdfs:isDefinedBy <http://www.openlinksw.com/schemas/bestbuy#> ;
+#   rdfs:label "shortDescription" ;
+#   rdfs:comment """Short description"""@en ;
+#   rdfs:domain oplbb:Product ;
+#   rdfs:range xsd:string ;
+#   rdfs:subPropertyOf gr:datatypeProductOrServiceProperty .
+

@@ -1,0 +1,1131 @@
+@prefix schema:    <http://schema.org/> .
+@prefix cvocab:    <http://open-services.net/ns/core#> .
+@prefix dcterms:   <http://purl.org/dc/terms/> .
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix sioc:      <http://rdfs.org/sioc/ns#> .
+@prefix owl:       <http://www.w3.org/2002/07/owl#> .
+@prefix skos:      <http://www.w3.org/2004/02/skos/core#> .
+@prefix wdrs:      <http://www.w3.org/2007/05/powder-s#> .
+@prefix foaf:      <http://xmlns.com/foaf/0.1/> .
+@prefix xhv:       <http://www.w3.org/1999/xhtml/vocab#> .
+@prefix acl:       <http://www.w3.org/ns/auth/acl#> .
+@prefix oplacl:    <http://www.openlinksw.com/ontology/acl#> .
+@prefix oplcert:   <http://www.openlinksw.com/schemas/cert#> .
+@prefix cc:        <http://creativecommons.org/ns#> .
+@prefix wdrs:      <http://www.w3.org/2007/05/powder-s#> .
+@prefix oplwebsrv: <http://www.openlinksw.com/ontology/webservices#> .
+@prefix source:      <http://www.openlinksw.com/data/turtle/acl.ttl> .
+@prefix sourceDAV:   <http://www.openlinksw.com/DAV/data/turtle/acl.ttl> .
+@prefix :            <#> .
+@base              <http://www.w3.org/ns/auth/acl>
+
+
+sourceDAV:
+   a schema:CreativeWork ;
+   schema:name """About OpenLink ACL Ontology"""^^xsd:string ;
+   dcterms:format "text/turtle" ;
+   schema:dateCreated "2013-01-01T13:00:00-05:00"^^xsd:dateTime ;
+   schema:dateModified "2018-01-11T10:30:00-05:00"^^xsd:dateTime ;
+   schema:author <http://www.openlinksw.com/#this> ;
+   schema:license <http://creativecommons.org/licenses/by/4.0/deed.en_US> ;
+   cc:attributionName  "OpenLink Software" ;
+   owl:sameAs source: .
+
+source: 
+   a schema:CreativeWork ;
+   schema:name """OpenLink ACL Ontology"""^^xsd:string ;
+   schema:comment """This is a turtle document that uses Linked Data oriented content to describe OpenLink Operating System Families"""@en ;
+   schema:dateCreated "2013-01-01T13:00:00-05:00"^^xsd:dateTime ;
+   schema:dateModified "2018-01-11T10:30:00-05:00"^^xsd:dateTime ;
+   schema:author <http://www.openlinksw.com/#this> ;
+   schema:license <http://creativecommons.org/licenses/by/4.0/deed.en_US> ;
+   cc:attributionName  "OpenLink Software" ;
+   schema:about oplacl: .
+              
+
+oplacl:
+  a owl:Ontology ;
+  rdfs:label """OpenLink ACL Ontology"""^^xsd:string ;
+  rdfs:comment """Ontology that defines entity and relation types used to describe conditional ACL groups and application
+  realms. Examples include static group, contidional group, recursive authorization etc. """@en ;
+  wdrs:describedby <http://www.openlinksw.com/ontology/acl> ;
+  dcterms:created "2014-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  dcterms:modified "2015-03-20T13:38:00-05:00"^^xsd:dateTime ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  owl:versionInfo "1.8.0"^^xsd:string ;
+  owl:imports <http://www.w3.org/ns/auth/acl#> ,
+              <http://xmlns.com/foaf/0.1/> ,
+              <http://www.w3.org/2002/07/owl#> ,
+              <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ,
+              <http://purl.org/dc/terms/> ,
+              <http://rdfs.org/sioc/services#> ,
+              <http://www.openlinksw.com/ontology/webservices#> ;
+  <http://open.vocab.org/terms/defines>
+    oplacl:StaticGroup ,
+    oplacl:ConditionalGroup ,
+    oplacl:RecursiveAuthorization ,
+    oplacl:ApplicationRealm ,
+    oplacl:Condition ,
+    oplacl:QueryCondition ,
+    oplacl:GenericCondition ,
+    oplacl:TripletCondition ,
+    oplacl:IPAddressCondition ,
+    oplacl:Comparator ,
+    oplacl:Criteria ,
+    oplacl:Scope ,
+    oplacl:AccessMode ,
+    oplacl:GrantAccessMode ,
+    oplacl:AclCachingMode ,
+    oplacl:hasRealm ,
+    oplacl:hasIdentityDelegate ,
+    oplacl:hasCondition ,
+    oplacl:hasCriteria ,
+    oplacl:hasComparator ,
+    oplacl:hasComparatorPattern ,
+    oplacl:hasQuery ,
+    oplacl:hasProperty ,
+    oplacl:hasObject ,
+    oplacl:hasScope ,
+    oplacl:hasIPAddressPattern ,
+    oplacl:hasGrantAccessMode ,
+    oplacl:isGrantAccessModeOf ,
+    oplacl:hasApplicableAccess ,
+    oplacl:hasDefaultAccess ,
+    oplacl:hasEnabledAclScope ,
+    oplacl:hasDisabledAclScope ,
+    oplacl:hasAccessMode ,
+    oplacl:hasRuleDocument ,
+    oplacl:hasGroupDocument ,
+    oplacl:hasGraphAclCachingMode ,
+    oplacl:EqualTo ,
+    oplacl:NotEqualTo ,
+    oplacl:LessThan ,
+    oplacl:LessThanOrEqual ,
+    oplacl:GreaterThan ,
+    oplacl:GreaterThanOrEqual ,
+    oplacl:Contains ,
+    oplacl:NotContains ,
+    oplacl:StartsWith ,
+    oplacl:NotStartsWith ,
+    oplacl:EndsWith ,
+    oplacl:NotEndsWith ,
+    oplacl:Regexp ,
+    oplacl:NotRegexp ,
+    oplacl:IsNull ,
+    oplacl:IsNotNull ,
+    oplacl:WebIDVerified ,
+    oplacl:CertVerified ,
+    oplacl:CertExpiration ,
+    oplacl:CertSerial ,
+    oplacl:CertMail ,
+    oplacl:CertSubject ,
+    oplacl:CertIssuer ,
+    oplacl:CertIssuerSAN ,
+    oplacl:CertStartDate ,
+    oplacl:CertEndDate ,
+    oplacl:CertSignatureAlgorithm ,
+    oplacl:CertSignature ,
+    oplacl:CertDigest ,
+    oplacl:CertPKExponent ,
+    oplacl:CertPKModulus ,
+    oplacl:NetID,
+    oplacl:GrantRead ,
+    oplacl:GrantWrite ,
+    oplacl:GrantSponge ,
+    oplacl:GrantExecute ,
+    oplacl:Sponge ,
+    oplacl:Execute ,
+    oplacl:DefaultRealm ,
+    oplacl:SqlRealm ,
+    <urn:virtuoso:val:scopes:sponger:describe> ,
+    <urn:virtuoso:val:scopes:sponger:about> ,
+    <urn:virtuoso:val:scopes:pivotviewer> ,
+    oplacl:Dav ,
+    oplacl:Query ,
+    oplacl:PrivateGraphs ,
+    oplacl:SpongerCartridges ,
+    oplacl:OAuth ,
+    oplacl:ListGranted ,
+    oplacl:ListDenied ;
+  schema:about
+    oplacl:StaticGroup ,
+    oplacl:ConditionalGroup ,
+    oplacl:RecursiveAuthorization ,
+    oplacl:ApplicationRealm ,
+    oplacl:Condition ,
+    oplacl:QueryCondition ,
+    oplacl:GenericCondition ,
+    oplacl:TripletCondition ,
+    oplacl:IPAddressCondition ,
+    oplacl:Comparator ,
+    oplacl:Criteria ,
+    oplacl:Scope ,
+    oplacl:AccessMode ,
+    oplacl:GrantAccessMode ,
+    oplacl:AclCachingMode ,
+    oplacl:hasRealm ,
+    oplacl:hasIdentityDelegate ,
+    oplacl:hasCondition ,
+    oplacl:hasCriteria ,
+    oplacl:hasComparator ,
+    oplacl:hasComparatorPattern ,
+    oplacl:hasQuery ,
+    oplacl:hasProperty ,
+    oplacl:hasObject ,
+    oplacl:hasScope ,
+    oplacl:hasIPAddressPattern ,
+    oplacl:hasGrantAccessMode ,
+    oplacl:isGrantAccessModeOf ,
+    oplacl:hasApplicableAccess ,
+    oplacl:hasDefaultAccess ,
+    oplacl:hasEnabledAclScope ,
+    oplacl:hasDisabledAclScope ,
+    oplacl:hasAccessMode ,
+    oplacl:hasRuleDocument ,
+    oplacl:hasGroupDocument ,
+    oplacl:hasGraphAclCachingMode ,
+    oplacl:EqualTo ,
+    oplacl:NotEqualTo ,
+    oplacl:LessThan ,
+    oplacl:LessThanOrEqual ,
+    oplacl:GreaterThan ,
+    oplacl:GreaterThanOrEqual ,
+    oplacl:Contains ,
+    oplacl:NotContains ,
+    oplacl:StartsWith ,
+    oplacl:NotStartsWith ,
+    oplacl:EndsWith ,
+    oplacl:NotEndsWith ,
+    oplacl:Regexp ,
+    oplacl:NotRegexp ,
+    oplacl:IsNull ,
+    oplacl:IsNotNull ,
+    oplacl:WebIDVerified ,
+    oplacl:CertVerified ,
+    oplacl:CertExpiration ,
+    oplacl:CertSerial ,
+    oplacl:CertMail ,
+    oplacl:CertSubject ,
+    oplacl:CertIssuer ,
+    oplacl:CertIssuerSAN ,
+    oplacl:CertStartDate ,
+    oplacl:CertEndDate ,
+    oplacl:CertSignatureAlgorithm ,
+    oplacl:CertSignature ,
+    oplacl:CertDigest ,
+    oplacl:CertPKExponent ,
+    oplacl:CertPKModulus ,
+    oplacl:NetID,
+    oplacl:GrantRead ,
+    oplacl:GrantWrite ,
+    oplacl:GrantSponge ,
+    oplacl:GrantExecute ,
+    oplacl:Sponge ,
+    oplacl:Execute ,
+    oplacl:DefaultRealm ,
+    oplacl:SqlRealm ,
+    <urn:virtuoso:val:scopes:sponger:describe> ,
+    <urn:virtuoso:val:scopes:sponger:about> ,
+    <urn:virtuoso:val:scopes:pivotviewer> ,
+    oplacl:Dav ,
+    oplacl:Query ,
+    oplacl:PrivateGraphs ,
+    oplacl:SpongerCartridges ,
+    oplacl:OAuth ,
+    oplacl:ListGranted ,
+    oplacl:ListDenied .
+
+<http://www.openlinksw.com/DAV/data/turtle/acl.ttl>
+  a foaf:Document , schema:TechArticle ;
+  rdfs:label """OpenLink ACL Ontology Description Document (Turtle) """ ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  rdfs:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for ACL """@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/ontology/acl#> ;
+  dcterms:created "2014-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  dcterms:modified "2015-03-20T13:38:00-05:00"^^xsd:dateTime ;
+  xhv:canonical <http://www.openlinksw.com/ontology/acl> ;
+  xhv:describes <http://www.openlinksw.com/ontology/acl#> ;
+  schema:about <http://www.openlinksw.com/ontology/acl#> ;
+  dcterms:subject <http://www.openlinksw.com/ontology/acl#> .
+
+<http://www.openlinksw.com/data/turtle/acl.ttl>
+  a foaf:Document , schema:TechArticle ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  rdfs:label """OpenLink ACL Ontology Description Document (Turtle) """ ;
+  rdfs:comment """This is a turtle document that uses Linked Data oriented content to describe the OpenLink ACL Ontology. """@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/ontology/acl#> ;
+  dcterms:created "2014-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  dcterms:modified "2015-03-20T13:38:00-05:00"^^xsd:dateTime ;
+  xhv:canonical <http://www.openlinksw.com/ontology/acl> ;
+  xhv:describes <http://www.openlinksw.com/ontology/acl#> ;
+  schema:about <http://www.openlinksw.com/ontology/acl#> ;
+  dcterms:subject <http://www.openlinksw.com/ontology/acl#> .
+
+<http://www.openlinksw.com/ontology/acl>
+  a foaf:Document , schema:TechArticle ;
+  rdfs:label """OpenLink ACL Ontology Description Document"""^^xsd:string ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  dcterms:created "2014-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  dcterms:modified "2015-03-20T13:38:00-05:00"^^xsd:dateTime ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  rdfs:comment """This is a document that uses Linked Data oriented content to describe OpenLink ACL Ontology. """@en ;
+  dcterms:subject <http://www.openlinksw.com/ontology/acl#> ;
+  foaf:primaryTopic <http://www.openlinksw.com/ontology/acl#> ;
+  foaf:topic
+            oplacl:StaticGroup ,
+            oplacl:ConditionalGroup ,
+            oplacl:RecursiveAuthorization ,
+            oplacl:ApplicationRealm ,
+            oplacl:Condition ,
+            oplacl:QueryCondition ,
+            oplacl:GenericCondition ,
+            oplacl:TripletCondition ,
+            oplacl:IPAddressCondition ,
+            oplacl:Comparator ,
+            oplacl:Criteria ,
+            oplacl:Scope ,
+            oplacl:AccessMode ,
+            oplacl:GrantAccessMode ,
+            oplacl:AclCachingMode ,
+            oplacl:hasRealm ,
+            oplacl:hasIdentityDelegate ,
+            oplacl:hasCondition ,
+            oplacl:hasCriteria ,
+            oplacl:hasComparator ,
+            oplacl:hasComparatorPattern ,
+            oplacl:hasQuery ,
+            oplacl:hasProperty ,
+            oplacl:hasObject ,
+            oplacl:hasScope ,
+            oplacl:hasIPAddressPattern ,
+            oplacl:hasGrantAccessMode ,
+            oplacl:isGrantAccessModeOf ,
+            oplacl:hasApplicableAccess ,
+            oplacl:hasDefaultAccess ,
+            oplacl:hasEnabledAclScope ,
+            oplacl:hasDisabledAclScope ,
+            oplacl:hasAccessMode ,
+            oplacl:hasRuleDocument ,
+            oplacl:hasGroupDocument ,
+            oplacl:hasGraphAclCachingMode ,
+            oplacl:EqualTo ,
+            oplacl:NotEqualTo ,
+            oplacl:LessThan ,
+            oplacl:LessThanOrEqual ,
+            oplacl:GreaterThan ,
+            oplacl:GreaterThanOrEqual ,
+            oplacl:Contains ,
+            oplacl:NotContains ,
+            oplacl:StartsWith ,
+            oplacl:NotStartsWith ,
+            oplacl:EndsWith ,
+            oplacl:NotEndsWith ,
+            oplacl:Regexp ,
+            oplacl:NotRegexp ,
+            oplacl:IsNull ,
+            oplacl:IsNotNull ,
+            oplacl:WebIDVerified ,
+            oplacl:CertVerified ,
+            oplacl:CertExpiration ,
+            oplacl:CertSerial ,
+            oplacl:CertMail ,
+            oplacl:CertSubject ,
+            oplacl:CertIssuer ,
+            oplacl:CertIssuerSAN ,
+            oplacl:CertStartDate ,
+            oplacl:CertEndDate ,
+            oplacl:CertSignatureAlgorithm ,
+            oplacl:CertSignature ,
+            oplacl:CertDigest ,
+            oplacl:CertPKExponent ,
+            oplacl:CertPKModulus ,
+            oplacl:NetID,
+            oplacl:GrantRead ,
+            oplacl:GrantWrite ,
+            oplacl:GrantSponge ,
+            oplacl:GrantExecute ,
+            oplacl:Sponge ,
+            oplacl:Execute ,
+            oplacl:DefaultRealm ,
+            oplacl:SqlRealm ,
+            <urn:virtuoso:val:scopes:sponger:describe> ,
+            <urn:virtuoso:val:scopes:sponger:about>  ,
+            <urn:virtuoso:val:scopes:pivotviewer> ,
+            oplacl:Dav ,
+            oplacl:Query ,
+            oplacl:PrivateGraphs ,
+            oplacl:SpongerCartridges ,
+            oplacl:OAuth ,
+            oplacl:ListGranted ,
+            oplacl:ListDenied .
+
+# <-------------- Common ACL Classes --------------> #
+
+oplacl:StaticGroup a owl:Class ;
+  rdfs:label "Static Group" ;
+  skos:altLabel "Static Group" ;
+  rdfs:comment """Entity type of resources representing a Static Group, i.e. a classical group with a set of members (Class). """@en ;
+  rdfs:isDefinedBy oplacl: ;
+  rdfs:subClassOf foaf:Group .
+
+oplacl:ConditionalGroup a owl:Class ;
+  rdfs:label "Conditional Group" ;
+  skos:altLabel "Conditional Group" ;
+  rdfs:comment """Entity type of resources representing a Conditional Group, i.e. a group which includes a set of conditions to describe the members (Class). """@en ;
+  rdfs:isDefinedBy oplacl: ;
+  rdfs:subClassOf foaf:Group .
+
+oplacl:RecursiveAuthorization a owl:Class ;
+  rdfs:label "Recursive Authorization" ;
+  skos:altLabel "Recursive Authorization" ;
+  rdfs:comment """Entity type of resources representing a Recursive Authorization, i.e. an authorization resource which applies to all sub-resources recursively. (Class). """@en ;
+  rdfs:isDefinedBy oplacl: ;
+  rdfs:subClassOf acl:Authorization .
+
+oplacl:ApplicationRealm a owl:Class ;
+  rdfs:label "Application Realm" ;
+  skos:altLabel "Application Realm" ;
+  rdfs:comment """Entity type (class) that defines the nature of an access control (ACL) constrained functionality realm.
+  This kind of functionality realm is within the scope of restrictions described by the Virtuoso ABAC [Attribute Based
+  Access Control] System. """@en ;
+  rdfs:isDefinedBy oplacl: .
+
+oplacl:Condition a owl:Class ;
+  rdfs:label "Condition" ;
+  skos:altLabel "Condition" ;
+  rdfs:comment """Entity type of resources representing a Group Condition (Class). """@en ;
+  rdfs:isDefinedBy oplacl: .
+
+oplacl:QueryCondition a owl:Class ;
+  rdfs:label "Query Condition" ;
+  skos:altLabel "Query Condition" ;
+  rdfs:comment """Entity type of resources representing a Query Condition (Class). """@en ;
+  rdfs:isDefinedBy oplacl: ;
+  rdfs:subClassOf oplacl:Condition .
+
+oplacl:GenericCondition a owl:Class ;
+  rdfs:label "Generic Condition" ;
+  skos:altLabel "Generic Condition" ;
+  rdfs:comment """Entity type of resources representing a Generic Condition (Class). """@en ;
+  rdfs:isDefinedBy oplacl: ;
+  rdfs:subClassOf oplacl:Condition .
+
+oplacl:TripletCondition a owl:Class ;
+  rdfs:label "Triplet Condition" ;
+  skos:altLabel "Triplet Condition" ;
+  rdfs:comment """Entity type of resources representing a Triplet Condition (Class). """@en ;
+  rdfs:isDefinedBy oplacl: ;
+  rdfs:subClassOf oplacl:Condition .
+
+oplacl:IPAddressCondition a owl:Class ;
+  rdfs:label "IP Address Condition" ;
+  skos:altLabel "IP Address Condition" ;
+  rdfs:comment """Entity type of resources representing an IP address Condition (Class). """@en ;
+  rdfs:isDefinedBy oplacl: ;
+  rdfs:subClassOf oplacl:Condition .
+
+oplacl:Comparator a owl:Class ;
+  rdfs:label "Comparator" ;
+  skos:altLabel "Comparator" ;
+  rdfs:comment """Entity type of resources representing a Comparator (Class). """@en ;
+  rdfs:isDefinedBy oplacl: .
+
+oplacl:Criteria a owl:Class ;
+  rdfs:label "Criteria" ;
+  skos:altLabel "Criteria" ;
+  rdfs:comment """Entity type of resources representing a Criteria (Class). """@en ;
+  rdfs:isDefinedBy oplacl: .
+
+oplacl:GrantAccessMode a owl:Class ;
+  rdfs:subClassOf oplacl:AccessMode ;
+  rdfs:label "Grant Access" ;
+  rdfs:comment "Parent class for all Access operations that grant the right to grant access to resources. "@en ;
+  rdfs:isDefinedBy oplacl: .
+
+oplacl:Scope a owl:Class ;
+  schema:name "Scope" ;
+  rdfs:label "Scope" ;
+  skos:altLabel "ACL Scope" ;
+  rdfs:comment """Mechanism used to identify a functionality realm to which an Access Control applies. """@en ;
+  rdfs:isDefinedBy oplacl: .
+
+oplacl:AccessMode a owl:Class ;
+  rdfs:label "Access Mode" ;
+  rdfs:comment """An Access Mode represents a right someone is granted on a resource.
+    In other words a group of operations that person can perform on the resource. This sub-class was
+    introduced to stress the fact that OpenLink's own access mode instances in combiantion with the
+    new hasAccessMode property should be used instead of the broken sub-class approach in the W3c
+    ACL ontology. """@en ;
+  rdfs:isDefinedBy oplacl: ;
+  rdfs:subClassOf acl:Access .
+
+oplacl:AclCachingMode a owl:Class ;
+  rdfs:label "AclCachingMode" ;
+  skos:altLabel "ACL Caching Mode" ;
+  rdfs:comment """An ACL Caching mode defines how ACLs are cached. """@en ;
+  rdfs:isDefinedBy oplacl: .
+
+# <-------------- ACL Properties --------------> #
+
+oplacl:hasIdentityDelegate
+  a rdf:Property, owl:ObjectProperty;
+  rdfs:label  "hasIdentityDelegate" ;
+  rdfs:subPropertyOf foaf:knows , acl:delegates ;
+  owl:inverseOf oplcert:onBehalfOf ;
+  rdfs:comment """Inverse of onBehalfOf relation that enables an Identity Principal confirm delegation of Identity to an Agent. For example a software user would use this relation to indicate that a piece of software was acting on his/her behalf. """ ;
+  rdfs:isDefinedBy oplacl: ;
+  schema:domainIncludes foaf:Person, schema:Person ;
+  schema:rangeIncludes schema:SoftwareApplication .
+
+oplacl:hasRealm
+  a owl:ObjectProperty, rdf:Property ;
+  rdfs:label "hasRealm" ;
+  skos:altLabel "Realm" ;
+  rdfs:comment """Relates an Authorization or a group to an application realm. """@en ;
+  rdfs:isDefinedBy oplacl: ;
+  schema:domainIncludes
+     acl:Authorization,
+     foaf:Group ;
+  rdfs:range oplacl:ApplicationRealm .
+
+acl:Authorization owl:disjointWith foaf:Group .
+
+oplacl:hasCondition
+  a owl:ObjectProperty, rdf:Property ;
+  rdfs:label "hasCondition" ;
+  skos:altLabel "Condition" ;
+  rdfs:comment """Relates a conditional group to a condition. """@en ;
+  rdfs:isDefinedBy oplacl: ;
+  rdfs:domain oplacl:ConditionalGroup ;
+  rdfs:range oplacl:Condition .
+
+oplacl:hasCriteria
+  a owl:ObjectProperty, rdf:Property ;
+  rdfs:label "hasCriteria" ;
+  skos:altLabel "Criteria" ;
+  rdfs:comment """Relates a generic Condition to the used Criteria. """@en ;
+  rdfs:isDefinedBy oplacl: ;
+  rdfs:domain oplacl:GenericCondition ;
+  rdfs:range oplacl:Criteria .
+
+oplacl:hasComparator
+  a owl:ObjectProperty, rdf:Property ;
+  rdfs:label "hasComparator" ;
+  skos:altLabel "Comparator" ;
+  rdfs:comment """Relates a generic Condition to the used Comparator. """@en ;
+  rdfs:isDefinedBy oplacl: ;
+  schema:domainIncludes
+      oplacl:GenericCondition,
+      oplacl:TripletCondition ;
+  rdfs:range oplacl:Comparator .
+
+oplacl:GenericCondition owl:disjointWith oplacl:TripletCondition .
+
+oplacl:hasValue
+  a owl:DatatypeProperty, rdf:Property ;
+  rdfs:label "hasValue" ;
+  skos:altLabel "Value" ;
+  rdfs:comment """Relates a GenericCondition to the value the criteria should be compared to using the given Comparator. """@en ;
+  rdfs:isDefinedBy oplacl: ;
+  rdfs:domain  oplacl:GenericCondition ;
+  rdfs:range xsd:string .
+
+oplacl:hasQuery
+  a owl:DatatypeProperty, rdf:Property ;
+  rdfs:label "hasQuery" ;
+  skos:altLabel "Query" ;
+  rdfs:comment """Relates a QueryCondition to the actual SPARQL ASK query which defines the condition. """@en ;
+  rdfs:isDefinedBy oplacl: ;
+  rdfs:domain  oplacl:QueryCondition ;
+  rdfs:range xsd:string .
+
+oplacl:hasCriteriaDatatype
+  a owl:ObjectProperty, rdf:Property ;
+  rdfs:label "hasCriteriaDatatype" ;
+  skos:altLabel "Criteria Datatype" ;
+  rdfs:comment """Relates a Condition criteria to its datatype, i.e. the type of value that is compared. """@en ;
+  rdfs:isDefinedBy oplacl: ;
+  rdfs:domain oplacl:Criteria ;
+  rdfs:range xsd:simpleType .
+
+oplacl:hasComparatorPattern
+  a owl:DatatypeProperty, rdf:Property ;
+  rdfs:label "hasComparatorPattern" ;
+  skos:altLabel "Comparator Pattern" ;
+  rdfs:comment """Relates a Condition Comparator with the SQL pattern used for comparison. """@en ;
+  rdfs:isDefinedBy oplacl: ;
+  rdfs:domain  oplacl:Comparator ;
+  rdfs:range xsd:string .
+
+oplacl:hasSupportedDatatype
+  a owl:ObjectProperty, rdf:Property ;
+  rdfs:label "hasSupportedDatatype" ;
+  skos:altLabel "Supported Datatype" ;
+  rdfs:comment """Relates a Condition Comparator to the datatypes that can be compared with it. """@en ;
+  rdfs:isDefinedBy oplacl: ;
+  rdfs:domain oplacl:Comparator ;
+  rdfs:range xsd:simpleType .
+
+oplacl:hasProperty
+  a owl:ObjectProperty, rdf:Property ;
+  rdfs:label "hasProperty" ;
+  skos:altLabel "Property" ;
+  rdfs:comment """Relates a TripletCondition to the property used in the comparison. """@en ;
+  rdfs:isDefinedBy oplacl: ;
+  rdfs:domain oplacl:TripletCondition ;
+  rdfs:range rdf:Property .
+
+oplacl:hasObject
+  a rdf:Property ;
+  rdfs:label "hasObject" ;
+  skos:altLabel "Object" ;
+  rdfs:comment "Relates a TripletCondition to the object for comparison. This can be anything, an individual or a literal. "@en ;
+  rdfs:isDefinedBy oplacl: ;
+  rdfs:domain oplacl:TripletCondition .
+
+oplacl:hasScope
+  a owl:ObjectProperty, rdf:Property ;
+  rdfs:label "hasScope" ;
+  skos:altLabel "Scope" ;
+  rdfs:comment """Relates an Authorization to its Scope which defines the type of resource the rule applies to.
+    This is not modelled via rdf:type on the acl:accessTo resource of the rule to allow different scopes on the
+    same resource. """@en ;
+  rdfs:isDefinedBy oplacl: ;
+  rdfs:domain acl:Authorization ;
+  rdfs:range oplacl:Scope .
+
+oplacl:hasIPAddressPattern
+  a owl:DatatypeProperty, rdf:Property ;
+  rdfs:label "hasIPAddressPattern" ;
+  skos:altLabel "IP Address Pattern" ;
+  rdfs:comment """Relates an IPAddressCondition to a regular expression. Any IP Address matching this expression fulfills the condition. """@en ;
+  rdfs:isDefinedBy oplacl: ;
+  rdfs:domain oplacl:IPAddressCondition ;
+  rdfs:range xsd:string .
+
+oplacl:hasGrantAccessMode
+  a owl:ObjectProperty, rdf:Property ;
+  rdfs:label "hasGrantAccessMode" ;
+  skos:altLabel "Grant Access Mode" ;
+  rdfs:comment """Relates an Access mode to its corresponding Grant mode, i.e. the Access which allows to grant access to a resource. """@en ;
+  rdfs:isDefinedBy oplacl: ;
+  rdfs:domain oplacl:AccessMode ;
+  rdfs:range oplacl:GrantAccessMode ;
+  owl:inverseOf oplacl:isGrantAccessModeOf .
+
+oplacl:isGrantAccessModeOf
+  a owl:ObjectProperty, rdf:Property ;
+  rdfs:label "isGrantAccessModeOf" ;
+  skos:altLabel "Is Grant Access Mode Of" ;
+  rdfs:comment """Relates a Grant Access mode to the Access mode it grants. """@en ;
+  rdfs:isDefinedBy oplacl: ;
+  rdfs:domain oplacl:GrantAccessMode ;
+  rdfs:range oplacl:AccessMode ;
+  owl:inverseOf oplacl:hasGrantAccessMode .
+
+oplacl:hasApplicableAccess
+  a owl:ObjectProperty, rdf:Property ;
+  rdfs:label "hasApplicableAccess" ;
+  skos:altLabel "Applicable Access" ;
+  rdfs:comment """Denotes the access modes which are applicable to a certain Scope, ie. all access modes that are usable.
+    These access modes are useful for generic user interfaces or the generation of default permissions. """@en ;
+  rdfs:isDefinedBy oplacl: ;
+  rdfs:domain oplacl:Scope ;
+  rdfs:range acl:Access .
+
+oplacl:hasDefaultAccess
+  a owl:ObjectProperty, rdf:Property ;
+  rdfs:label "hasDefaultAccess" ;
+  skos:altLabel "Default Access" ;
+  rdfs:comment """Denotes the access modes which are granted if ACL rules on the scope have been disabled via oplacl:aclRulesEnabled.
+    Setting default modes is comparable to defining public ACL rules for all resources in the scope. It allows to configure Access
+    for all resources in the scope without the need to define individual rules. """@en ;
+  rdfs:isDefinedBy oplacl: ;
+  rdfs:domain oplacl:Scope ;
+  rdfs:range acl:Access .
+
+oplacl:hasEnabledAclScope
+  a owl:ObjectProperty, rdf:Property ;
+  rdfs:label "hasEnabledACLScope" ;
+  skos:altLabel "Enabled ACL Scope" ;
+  rdfs:comment """Lists the Scopes which are explicitely enabled in a given realm. Applications may use this information to determine
+    if certain sets of ACL rules should be applied or ignored. If a scope is neither enabled nor explicitely disabled (:hasDisabledAclScope)
+    then it is up to the application to decide whether to enfore the ACL rules or not. """@en ;
+  rdfs:isDefinedBy oplacl: ;
+  rdfs:domain oplacl:ApplicationRealm ;
+  rdfs:range oplacl:Scope .
+
+oplacl:hasDisabledAclScope
+  a owl:ObjectProperty, rdf:Property ;
+  rdfs:label "hasDisabledACLScope" ;
+  skos:altLabel "Disabled ACL Scope" ;
+  rdfs:comment """Lists the Scopes which are explicitely disabled in a given realm. Applications may use this information to determine
+    if certain sets of ACL rules should be applied or ignored. If a scope is neither enabled (:hasEnabledAclScope) nor explicitely disabled
+    then it is up to the application to decide whether to enfore the ACL rules or not. """@en ;
+  rdfs:isDefinedBy oplacl: ;
+  rdfs:domain oplacl:ApplicationRealm ;
+  rdfs:range oplacl:Scope .
+
+oplacl:hasAccessMode
+  a owl:ObjectProperty, rdf:Property ;
+  rdfs:label "hasAccessMode" ;
+  skos:altLabel "Access Mode" ;
+  rdfs:comment """The access mode a rule grants. This property replaces the "mode" property in the W3c ACL ontology which has a broken range.
+    In its stead this property should be used in combination with the pre-defined AccessMode instances like Read, Write, or Sponge. """@en ;
+  rdfs:isDefinedBy oplacl: ;
+  rdfs:domain acl:Authorization ;
+  rdfs:range oplacl:AccessMode .
+
+oplacl:hasRuleDocument
+  a owl:ObjectProperty, rdf:Property ;
+  rdfs:label "hasRuleDocument" ;
+  skos:altLabel "Rule Document" ;
+  rdfs:comment """The document in which the ACL rules (Authorization) resources for a specific application realm are stored. This typically
+    refers to a named graph in the triple store. """@en ;
+  rdfs:isDefinedBy oplacl: ;
+  rdfs:domain oplacl:ApplicationRealm ;
+  rdfs:range rdfs:Resource .
+
+oplacl:hasGroupDocument
+  a owl:ObjectProperty, rdf:Property ;
+  rdfs:label "hasGroupDocument" ;
+  skos:altLabel "Group Document" ;
+  rdfs:comment """The document in which the ACL group resources for a specific application realm are stored. This typically
+    refers to a named graph in the triple store. """@en ;
+  rdfs:isDefinedBy oplacl: ;
+  rdfs:domain oplacl:ApplicationRealm ;
+  rdfs:range rdfs:Resource .
+
+oplacl:hasGraphAclCachingMode
+  a owl:ObjectProperty, rdf:Property ;
+  rdfs:label "hasGraphAclCachingMode" ;
+  skos:altLabel "Graph ACL Caching Mode" ;
+  rdfs:comment """The mode which should be used for caching graph ACLs in this realm. """@en ;
+  rdfs:isDefinedBy oplacl: ;
+  rdfs:domain oplacl:ApplicationRealm ;
+  rdfs:range oplacl:AclCachingMode .
+
+# <-------------- Comparator Instances --------------> #
+
+oplacl:EqualTo a oplacl:Comparator ;
+  rdfs:label "Equal to" ;
+  rdfs:isDefinedBy oplacl: ;
+  oplacl:hasComparatorPattern """(^{value}^ = ^{pattern}^)"""^^xsd:string ;
+  oplacl:hasSupportedDatatype xsd:string ;
+  oplacl:hasSupportedDatatype xsd:integer ;
+  oplacl:hasSupportedDatatype xsd:boolean ;
+  oplacl:hasSupportedDatatype xsd:date .
+
+oplacl:NotEqualTo a oplacl:Comparator ;
+  rdfs:label "Not Equal to" ;
+  rdfs:isDefinedBy oplacl: ;
+  oplacl:hasComparatorPattern """(^{value}^ <> ^{pattern}^)"""^^xsd:string ;
+  oplacl:hasSupportedDatatype xsd:string ;
+  oplacl:hasSupportedDatatype xsd:integer ;
+  oplacl:hasSupportedDatatype xsd:boolean ;
+  oplacl:hasSupportedDatatype xsd:date .
+
+oplacl:LessThan a oplacl:Comparator ;
+  rdfs:label "Less Than" ;
+  rdfs:isDefinedBy oplacl: ;
+  oplacl:hasComparatorPattern """(^{value}^ < ^{pattern}^)"""^^xsd:string ;
+  oplacl:hasSupportedDatatype xsd:integer ;
+  oplacl:hasSupportedDatatype xsd:date .
+
+oplacl:LessThanOrEqual a oplacl:Comparator ;
+  rdfs:label "Less Than or Equal" ;
+  rdfs:isDefinedBy oplacl: ;
+  oplacl:hasComparatorPattern """(^{value}^ <= ^{pattern}^)"""^^xsd:string ;
+  oplacl:hasSupportedDatatype xsd:integer ;
+  oplacl:hasSupportedDatatype xsd:date .
+
+oplacl:GreaterThan a oplacl:Comparator ;
+  rdfs:label "Greater Than" ;
+  rdfs:isDefinedBy oplacl: ;
+  oplacl:hasComparatorPattern """(^{value}^ > ^{pattern}^)"""^^xsd:string ;
+  oplacl:hasSupportedDatatype xsd:integer ;
+  oplacl:hasSupportedDatatype xsd:date .
+
+oplacl:GreaterThanOrEqual a oplacl:Comparator ;
+  rdfs:label "Greater Than or Equal" ;
+  rdfs:isDefinedBy oplacl: ;
+  oplacl:hasComparatorPattern """(^{value}^ >= ^{pattern}^)"""^^xsd:string ;
+  oplacl:hasSupportedDatatype xsd:integer ;
+  oplacl:hasSupportedDatatype xsd:date .
+
+oplacl:Contains a oplacl:Comparator ;
+  rdfs:label "Contains" ;
+  rdfs:isDefinedBy oplacl: ;
+  oplacl:hasComparatorPattern """(bif:isnull (bif:strstr (bif:ucase (^{value}^), bif:ucase (^{pattern}^))) = 0)"""^^xsd:string ;
+  oplacl:hasSupportedDatatype xsd:string .
+
+oplacl:NotContains a oplacl:Comparator ;
+  rdfs:label "Does not Contain" ;
+  rdfs:isDefinedBy oplacl: ;
+  oplacl:hasComparatorPattern """(bif:isnull (bif:strstr (bif:ucase (^{value}^), bif:ucase (^{pattern}^))) = 1)"""^^xsd:string ;
+  oplacl:hasSupportedDatatype xsd:string .
+
+oplacl:StartsWith a oplacl:Comparator ;
+  rdfs:label "Starts With" ;
+  rdfs:isDefinedBy oplacl: ;
+  oplacl:hasComparatorPattern """(bif:starts_with (bif:ucase (^{value}^), bif:ucase (^{pattern}^)) = 1)"""^^xsd:string ;
+  oplacl:hasSupportedDatatype xsd:string .
+
+oplacl:NotStartsWith a oplacl:Comparator ;
+  rdfs:label "Does not Start With" ;
+  rdfs:isDefinedBy oplacl: ;
+  oplacl:hasComparatorPattern """(bif:starts_with (bif:ucase (^{value}^), bif:ucase (^{pattern}^)) = 0)"""^^xsd:string ;
+  oplacl:hasSupportedDatatype xsd:string .
+
+oplacl:EndsWith a oplacl:Comparator ;
+  rdfs:label "Ends With" ;
+  rdfs:isDefinedBy oplacl: ;
+  oplacl:hasComparatorPattern """(bif:ends_with (bif:ucase (^{value}^), bif:ucase (^{pattern}^)) = 1)"""^^xsd:string ;
+  oplacl:hasSupportedDatatype xsd:string .
+
+oplacl:NotEndsWith a oplacl:Comparator ;
+  rdfs:label "Does not End With" ;
+  rdfs:isDefinedBy oplacl: ;
+  oplacl:hasComparatorPattern """(bif:ends_with (bif:ucase (^{value}^), bif:ucase (^{pattern}^)) = 0)"""^^xsd:string ;
+  oplacl:hasSupportedDatatype xsd:string .
+
+oplacl:Regexp a oplacl:Comparator ;
+  rdfs:label "Matches Regexp" ;
+  rdfs:isDefinedBy oplacl: ;
+  oplacl:hasComparatorPattern """(bif:regexp_like(^{value}^, ^{pattern}^) = 1)"""^^xsd:string ;
+  oplacl:hasSupportedDatatype xsd:string .
+
+oplacl:NotRegexp a oplacl:Comparator ;
+  rdfs:label "Does not Match Regexp" ;
+  rdfs:isDefinedBy oplacl: ;
+  oplacl:hasComparatorPattern """(bif:regexp_like(^{value}^, ^{pattern}^) = 0)"""^^xsd:string ;
+  oplacl:hasSupportedDatatype xsd:string .
+
+oplacl:IsNull a oplacl:Comparator ;
+  rdfs:label "Is Null" ;
+  rdfs:isDefinedBy oplacl: ;
+  oplacl:hasComparatorPattern """(DB.DBA.is_empty_or_null (^{value}^) = 1)"""^^xsd:string ;
+  oplacl:hasSupportedDatatype xsd:string ;
+  oplacl:hasSupportedDatatype xsd:integer ;
+  oplacl:hasSupportedDatatype xsd:boolean ;
+  oplacl:hasSupportedDatatype xsd:date .
+
+oplacl:IsNotNull a oplacl:Comparator ;
+  rdfs:label "Is Not Null" ;
+  rdfs:isDefinedBy oplacl: ;
+  oplacl:hasComparatorPattern """(DB.DBA.is_empty_or_null (^{value}^) = 0)"""^^xsd:string ;
+  oplacl:hasSupportedDatatype xsd:string ;
+  oplacl:hasSupportedDatatype xsd:integer ;
+  oplacl:hasSupportedDatatype xsd:boolean ;
+  oplacl:hasSupportedDatatype xsd:date .
+
+# <-------------- Criteria Instances --------------> #
+
+oplacl:WebIDVerified a oplacl:Criteria ;
+  rdfs:label "WebID Verified Criterion" ;
+  rdfs:comment """Criterion used to evaluate the verification state of a WebID+TLS-enabled X.509 certificate. """@en ;
+  rdfs:isDefinedBy oplacl: ;
+  oplacl:hasCriteriaDatatype xsd:boolean .
+
+oplacl:CertVerified a oplacl:Criteria ;
+  rdfs:label "Certificate Verified Criterion" ;
+  rdfs:isDefinedBy oplacl: ;
+  oplacl:hasCriteriaDatatype xsd:boolean .
+
+oplacl:CertExpiration a oplacl:Criteria ;
+  rdfs:label "Valid Certificate Expiration Date Criterion" ;
+  rdfs:isDefinedBy oplacl: ;
+  oplacl:hasCriteriaDatatype xsd:boolean .
+
+oplacl:CertSerial a oplacl:Criteria ;
+  rdfs:label "Certificate Serial Number Criterion" ;
+  rdfs:isDefinedBy oplacl: ;
+  oplacl:hasCriteriaDatatype xsd:string .
+
+oplacl:CertMail a oplacl:Criteria ;
+  rdfs:label "Certificate EMail Address Criterion" ;
+  rdfs:isDefinedBy oplacl: ;
+  oplacl:hasCriteriaDatatype xsd:string .
+
+oplacl:CertSubject a oplacl:Criteria ;
+  rdfs:label "Certificate Subject Criterion" ;
+  rdfs:isDefinedBy oplacl: ;
+  oplacl:hasCriteriaDatatype xsd:string .
+
+oplacl:CertIssuer a oplacl:Criteria ;
+  rdfs:label "Certificate Issuer Criterion" ;
+  rdfs:isDefinedBy oplacl: ;
+  oplacl:hasCriteriaDatatype xsd:string .
+
+oplacl:CertIssuerSAN a oplacl:Criteria ;
+  rdfs:label "Certificate Issuer SAN Criterion" ;
+  rdfs:isDefinedBy oplacl: ;
+  oplacl:hasCriteriaDatatype xsd:string .
+
+oplacl:CertStartDate a oplacl:Criteria ;
+  rdfs:label "Certificate Start Date Criterion" ;
+  rdfs:isDefinedBy oplacl: ;
+  oplacl:hasCriteriaDatatype xsd:date .
+
+oplacl:CertEndDate a oplacl:Criteria ;
+  rdfs:label "Certificate End Date Criterion" ;
+  rdfs:isDefinedBy oplacl: ;
+  oplacl:hasCriteriaDatatype xsd:date .
+
+oplacl:CertSignatureAlgorithm a oplacl:Criteria ;
+  rdfs:label "Certificate Signature Algorithm Criterion" ;
+  rdfs:isDefinedBy oplacl: ;
+  oplacl:hasCriteriaDatatype xsd:string .
+
+oplacl:CertSignature a oplacl:Criteria ;
+  rdfs:label "Certificate Signature Criterion" ;
+  rdfs:isDefinedBy oplacl: ;
+  oplacl:hasCriteriaDatatype xsd:string .
+
+oplacl:CertDigest a oplacl:Criteria ;
+  rdfs:label "Certificate Digest Criterion" ;
+  rdfs:isDefinedBy oplacl: ;
+  oplacl:hasCriteriaDatatype xsd:string .
+
+oplacl:CertPKExponent a oplacl:Criteria ;
+  rdfs:label "Certificate PK Exponent Criterion" ;
+  rdfs:isDefinedBy oplacl: ;
+  oplacl:hasCriteriaDatatype xsd:integer .
+
+oplacl:CertPKModulus a oplacl:Criteria ;
+  rdfs:label "Certificate PK Modulus Criterion" ;
+  rdfs:isDefinedBy oplacl: ;
+  oplacl:hasCriteriaDatatype xsd:string .
+
+ oplacl:NetID a oplacl:Criteria ;
+  rdfs:label "NetID Criterion" ;
+  rdfs:comment "Criterion used to evaluate the value of a NetID, i.e. the personal IRI, as part of an Identity authentication (verification) workflow e.g., Virtuoso's multi-protocol authentication layer (aka. VAL) . "@en ;
+  rdfs:isDefinedBy oplacl: ;
+  oplacl:hasCriteriaDatatype xsd:string .
+
+
+# <-------------- Access Mode Instances --------------> #
+
+oplacl:Read a oplacl:AccessMode ;
+  rdfs:label "Read" ;
+  rdfs:comment "Represents Read Operations, i.e. allows agents to read a certain URI or to read the resource represented by the URI. "@en ;
+  oplacl:hasGrantAccessMode oplacl:GrantRead ;
+  rdfs:isDefinedBy oplacl: .
+
+oplacl:Write a oplacl:AccessMode ;
+  rdfs:label "Write" ;
+  rdfs:comment "Represents Write Operations, i.e. allows agents to write to a certain URI or to change the resource represented by the URI. "@en ;
+  oplacl:hasGrantAccessMode oplacl:GrantWrite ;
+  rdfs:isDefinedBy oplacl: .
+
+oplacl:Sponge a oplacl:AccessMode ;
+  rdfs:label "Sponge" ;
+  rdfs:comment "Represents Sponge Operations, i.e. allows agents to sponge a certain graph or into a certain graph. "@en ;
+  oplacl:hasGrantAccessMode oplacl:GrantSponge ;
+  rdfs:isDefinedBy oplacl: .
+
+oplacl:Execute a oplacl:AccessMode ;
+  rdfs:label "Execute" ;
+  rdfs:comment "Represents Execute Operations, i.e. allows agents to execute a certain resource. "@en ;
+  oplacl:hasGrantAccessMode oplacl:GrantExecute ;
+  rdfs:isDefinedBy oplacl: .
+
+oplacl:GrantRead a oplacl:GrantAccessMode ;
+  rdfs:label "Grant Read" ;
+  rdfs:comment "Represents operations that grant the permission to read something, i.e. the creation of ACL rules with mode acl:Read. "@en ;
+  oplacl:isGrantAccessModeOf oplacl:Read ;
+  rdfs:isDefinedBy oplacl: .
+
+oplacl:GrantWrite a oplacl:GrantAccessMode ;
+  rdfs:label "Grant Write" ;
+  rdfs:comment "Represents operations that grant the permission to write to something, i.e. the creation of ACL rules with mode acl:Write. "@en ;
+  oplacl:isGrantAccessModeOf oplacl:Write ;
+  rdfs:isDefinedBy oplacl: .
+
+oplacl:GrantSponge a oplacl:GrantAccessMode ;
+  rdfs:label "Grant Sponge" ;
+  rdfs:comment "Represents operations that grant the permission to sponge from or to a graph, i.e. the creation of ACL rules with mode oplacl:Sponge. "@en ;
+  oplacl:isGrantAccessModeOf oplacl:Sponge ;
+  rdfs:isDefinedBy oplacl: .
+
+oplacl:GrantExecute a oplacl:GrantAccessMode ;
+  rdfs:label "Grant Execute" ;
+  rdfs:comment "Represents operations that grant the permission to execute a resource, i.e. the creation of ACL rules with mode oplacl:Execute. "@en ;
+  oplacl:isGrantAccessModeOf oplacl:Execute ;
+  rdfs:isDefinedBy oplacl: .
+
+
+# <-------------- App Realm Instances --------------> #
+
+oplacl:DefaultRealm a oplacl:ApplicationRealm ;
+  rdfs:label "Default Realm" ;
+  rdfs:comment """The default application realm is used when no other realm has been specified. It is typically used
+    for HTTP applications like the sparql endpoint or the URI shortener. """@en ;
+  wdrs:describedBy <> .
+
+oplacl:SqlRealm a oplacl:ApplicationRealm ;
+  rdfs:label "SQL Realm" ;
+  rdfs:comment """SQL access control realm instance associated with client connectivity. This access control realm
+  is the target [scope] of Virtuoso ABAC [Attribute Based Access Controls] privilege grants that control SQL clients
+  which includes ODBC, JDBC, ADO.NET, OLE-DB, and XMLA connections. """@en ;
+  wdrs:describedBy <> .
+
+
+# <-------------- Scope Instances --------------> #
+
+# oplacl:Describe
+#   owl:sameAs <urn:virtuoso:val:scopes:sponger:describe> ;
+#   a oplacl:Scope, oplwebsrv:WebService ;
+#   rdfs:label "Faceted Browsing based Entity Description Service ACL Scope"@en ;
+#   dcterms:description """
+# 						Entity description page that enables flexible exploration of an entity description
+# 						via navigation over different entity relationship types [a/k/a deep follow-your-nose exploration].
+# 						The sophisticated interface provided by this service exposes instances of classes [or entity types].
+# 						It also provides the ability to perform inference and reasoning based on the semantics of different
+# 						entity relationship types [relations].
+# 					"""@en ;
+#   rdfs:comment  """
+# 				This class of service is endowed with properties that enable it to be constrained by fine-grained
+# 				access controls (ACLs) that cover identity-scoped privileges such as:  read, sponger middleware service controlled write,
+# 				and general write. By default all identity principals (users) are granted read access and sponger controlled write .
+# 			"""@en ;
+#   oplacl:hasApplicableAccess  oplacl:Read , oplacl:Sponge ;
+#   oplacl:hasDefaultAccess  oplacl:Read , oplacl:Sponge ;
+#   oplwebsrv:endpointURLString "http://{cname}/describe/" ;
+#   oplwebsrv:uriTemplate "/describe/?uri={entity-uri}",
+#                          "/describe/?uri={entity-uri}&sponger:get=add" ,
+# 	 				               "/describe/?uri={entity-uri}&sponger:get=replace" ;
+#   wdrs:describedBy <> .
+
+
+# VAL does not use owl:sameAs inferencing on scopes (c.f. oplacl:Describe).
+# <urn:virtuoso:val:scopes:sponger:describe> must be explicitly defined.
+
+<urn:virtuoso:val:scopes:sponger:describe>
+  a oplacl:Scope, oplwebsrv:WebService ;
+  rdfs:label "Faceted Browsing based Entity Description Service ACL Scope" ;
+  dcterms:description """Entity description page that enables flexible exploration of an entity description
+						via navigation over different entity relationship types [a/k/a deep follow-your-nose exploration].
+						The sophisticated interface provided by this service exposes instances of classes [or entity types].
+						It also provides the ability to perform inference and reasoning based on the semantics of different
+						entity relationship types [relations]. """@en ;
+  rdfs:comment  """This class of service is endowed with properties that enable it to be constrained by fine-grained
+				access controls (ACLs) that cover identity-scoped privileges such as:  read, sponger middleware service controlled write,
+				and general write. By default all identity principals (users) are granted read access and sponger controlled write ."""@en ;
+  oplacl:hasApplicableAccess oplacl:Read , oplacl:Sponge ;
+  oplacl:hasDefaultAccess oplacl:Read, oplacl:Sponge ;
+  oplwebsrv:endpointURLString "http://{cname}/describe/" ;
+  oplwebsrv:uriTemplate "/describe/?uri={entity-uri}",
+                        "/describe/?uri={entity-uri}&sponger:get=add" ,
+	 				              "/describe/?uri={entity-uri}&sponger:get=replace" ;
+  wdrs:describedBy <> .
+
+# oplacl:About
+#   owl:sameAs <urn:virtuoso:val:scopes:sponger:about> ;
+#   a oplacl:Scope, oplwebsrv:WebService ;
+#   rdfs:label "Basic Entity Description Service ACL Scope" ;
+#   dcterms:description  """Entity description page that enables basic exploration of an entity description
+# 						via navigation over different entity relationship types [a/k/a deep follow-your-nose exploration].
+# 						The simplified interface provided by this service doesn't expose instances of classes [or entity types] """@en ;
+#   rdfs:comment  """This class of service is endowed with properties that enable it to be constrained by fine-grained
+# 				access controls (ACLs) that cover identity-scoped privileges such as:  read, sponger middleware service controlled write,
+# 				and general write. By default all identity principals (users) are granted read access and sponger controlled write. """@en ;
+#   oplacl:hasApplicableAccess  oplacl:Read , oplacl:Sponge ;
+#   oplacl:hasDefaultAccess  oplacl:Read , oplacl:Sponge ;
+#   oplwebsrv:endpointURLString "http://{cname}/about/" ;
+#   oplwebsrv:uriTemplate "/about/html/{entity-uri}",
+#                          "/about/html/{uri-scheme}/{path}",
+# 					               "/about/html/{entity-uri}?@Lookup@=&refresh=clean",
+# 					               "/about/html/{uri-scheme}/{path}?@Lookup@=&refresh=add" ;
+#   wdrs:describedBy <> .
+
+# VAL does not use owl:sameAs inferencing on scopes (c.f. oplacl:About).
+# <urn:virtuoso:val:scopes:sponger:about> must be explicitly defined.
+
+<urn:virtuoso:val:scopes:sponger:about>
+  owl:sameAs <urn:virtuoso:val:scopes:sponger:about> ;
+  a oplacl:Scope, oplwebsrv:WebService ;
+  rdfs:label "Basic Entity Description Service ACL Scope" ;
+  dcterms:description  """Entity description page that enables basic exploration of an entity description
+						via navigation over different entity relationship types [a/k/a deep follow-your-nose exploration].
+						The simplified interface provided by this service doesn't expose instances of classes [or entity types] """@en ;
+  rdfs:comment  """This class of service is endowed with properties that enable it to be constrained by fine-grained
+				access controls (ACLs) that cover identity-scoped privileges such as:  read, sponger middleware service controlled write,
+				and general write. By default all identity principals (users) are granted read access and sponger controlled write. """@en ;
+  oplacl:hasApplicableAccess  oplacl:Read , oplacl:Sponge ;
+  oplacl:hasDefaultAccess  oplacl:Read , oplacl:Sponge ;
+  oplwebsrv:endpointURLString "http://{cname}/about/" ;
+  oplwebsrv:uriTemplate "/about/html/{entity-uri}",
+                         "/about/html/{uri-scheme}/{path}",
+					               "/about/html/{entity-uri}?@Lookup@=&refresh=clean",
+					               "/about/html/{uri-scheme}/{path}?@Lookup@=&refresh=add" ;
+  wdrs:describedBy <> .
+
+<urn:virtuoso:val:scopes:pivotviewer>
+  a oplacl:Scope ;
+  rdfs:label "HTML PivotViewer ACL Scope" ;
+  rdfs:comment	"PivotViewer ACL scope which contains all ACL rules granting permission to use the HTML PivotViewer to visualize collections." ;
+  oplacl:hasApplicableAccess oplacl:Read ;
+  oplacl:hasDefaultAccess oplacl:Read ;
+  wdrs:describedBy <> .
+
+oplacl:Dav a oplacl:Scope ;
+  rdfs:label "DAV ACL Scope" ;
+  rdfs:comment """DAV ACL scope which contains all ACL rules granting access to DAV resources and collections.
+    By default ACLs are enabled. There is no default access mode. """@en ;
+  oplacl:hasApplicableAccess oplacl:Read, oplacl:Write, oplacl:Execute ;
+  wdrs:describedBy <> .
+
+oplacl:Query a oplacl:Scope ;
+  rdfs:label "Query ACL Scope" ;
+  rdfs:comment """Query ACL scope which contains all ACL rules granting permission to perform SQL or SPARQL operations
+    in general. The latter is complemented by the private named graphs scope which contains rules for named graph access. """@en ;
+  oplacl:hasApplicableAccess oplacl:Read, oplacl:Write, oplacl:Sponge, oplacl:CreatePublicGraph, oplacl:CreatePrivateGraph ;
+  oplacl:hasDefaultAccess oplacl:Read, oplacl:Write, oplacl:Sponge ;
+  wdrs:describedBy <> .
+
+oplacl:PrivateGraphs a oplacl:Scope ;
+  rdfs:label "Private Named Graphs ACL Scope" ;
+  rdfs:comment """Sparql ACL scope which contains all ACL rules granting access to specific private named graphs.
+    By default ACLs are disabled. System admins can enabled ACLs. There are no default access modes since Virtuoso
+    only applies ACLs to private graphs which should remain private. """@en ;
+  oplacl:hasApplicableAccess oplacl:Read, oplacl:Write, oplacl:Sponge ;
+  wdrs:describedBy <> .
+
+oplacl:SpongerCartridges a oplacl:Scope ;
+  rdfs:label "Sponger Cartridges ACL Scope" ;
+  rdfs:comment """Cartridges ACL scope which contains all ACL rules granting access to specific Sponger Cartridges.
+    By default ACLs are disabled and anyone can use any cartridge. System admins can enabled ACLs. """@en ;
+  oplacl:hasApplicableAccess oplacl:Sponge ;
+  oplacl:hasDefaultAccess oplacl:Sponge ;
+  wdrs:describedBy <> .
+
+oplacl:OAuth a oplacl:Scope ;
+  rdfs:label "OAuth ACL Scope" ;
+  rdfs:comment """OAuth ACL scope which contains all ACL rules granting access to the OAuth server part of VAL. This includes
+    the creation of OAuth applications. By default anyone can write which means create OAuth applications. """@en ;
+  oplacl:hasApplicableAccess oplacl:Write ;
+  oplacl:hasDefaultAccess oplacl:Write ;
+  wdrs:describedBy <> .
+
+
+# <-------------- AclCachingMode Instances --------------> #
+
+oplacl:ListDenied a oplacl:AclCachingMode ;
+  rdfs:label "List Denied" ;
+  rdfs:comment """Cache ACLs by listing all denied resources, i.e. those the person in question does not have
+    access to. This mode is useful in situations where most resources are public. """@en ;
+  wdrs:describedBy <> .
+
+oplacl:ListGranted a oplacl:AclCachingMode ;
+  rdfs:label "List Granted" ;
+  rdfs:comment """Cache ACLs by listing all granted resources, i.e. those the person in question does have access to.
+    This mode is useful in situations where most resources are private. """@en ;
+  wdrs:describedBy <> .
+
+xhv:related owl:equivalentProperty rdfs:seeAlso .
+<http://open.vocab.org/terms/defines> owl:inverseOf <http://www.w3.org/2007/05/powder-s#describedby> .

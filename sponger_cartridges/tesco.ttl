@@ -1,0 +1,378 @@
+@prefix schema:  <http://schema.org/> .
+@prefix xhv:    <http://www.w3.org/1999/xhtml/vocab#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:  <http://purl.org/dc/terms/> .
+@prefix cvocab:   <http://open-services.net/ns/core#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix cc:       <http://creativecommons.org/ns#> .
+@prefix foaf:     <http://xmlns.com/foaf/0.1/> .
+@prefix gr:       <http://purl.org/goodrelations/v1#> .
+@prefix opltesco: <http://www.openlinksw.com/schemas/tesco#> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:	    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:	    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix wdrs:     <http://www.w3.org/2007/05/powder-s#> .
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.openlinksw.com/schemas/tesco#>
+  a owl:Ontology ;
+  schema:name "OpenLink Tesco Ontology" ;
+  schema:comment """Ontology that defines entity and relation types used to describe Tesco.
+  Examples include pages details, products, conditions etc."""@en ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  wdrs:describedby <http://www.openlinksw.com/schemas/tesco> ;
+  schema:dateCreated "2013-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  schema:dateModified "2015-04-22T13:38:00-05:00"^^xsd:dateTime ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  owl:versionInfo "1.0.0"^^xsd:string ;
+  owl:imports <http://www.w3.org/1999/02/22-rdf-syntax-ns#> , <http://purl.org/dc/terms/> , <http://purl.org/goodrelations/v1> ;
+  <http://open.vocab.org/terms/defines>
+    opltesco:hasASIN ,
+    opltesco:baseProductID ,
+    opltesco:detailPageURL ,
+    opltesco:hasEANBarcode ,
+    opltesco:imagePath ,
+    opltesco:Product ,
+    opltesco:hasProductID ,
+    opltesco:productType ,
+    opltesco:hasUnitPrice ,
+    opltesco:availability ,
+    opltesco:color ,
+    opltesco:condition ,
+    opltesco:conditionNote ,
+    opltesco:feature ,
+    opltesco:hasListPrice ,
+    opltesco:itemHeight ,
+    opltesco:itemLength ,
+    opltesco:itemWeight ,
+    opltesco:itemWidth ,
+    opltesco:merchantId ,
+    opltesco:offerListingId ,
+    opltesco:packageHeight ,
+    opltesco:packageLength ,
+    opltesco:packageWeight ,
+    opltesco:packageWidth ,
+    opltesco:productGroup ,
+    opltesco:vendorSynopsisUrl ;
+  schema:about
+    opltesco:hasASIN ,
+    opltesco:baseProductID ,
+    opltesco:detailPageURL ,
+    opltesco:hasEANBarcode ,
+    opltesco:imagePath ,
+    opltesco:Product ,
+    opltesco:hasProductID ,
+    opltesco:productType ,
+    opltesco:hasUnitPrice ,
+    opltesco:availability ,
+    opltesco:color ,
+    opltesco:condition ,
+    opltesco:conditionNote ,
+    opltesco:feature ,
+    opltesco:hasListPrice ,
+    opltesco:itemHeight ,
+    opltesco:itemLength ,
+    opltesco:itemWeight ,
+    opltesco:itemWidth ,
+    opltesco:merchantId ,
+    opltesco:offerListingId ,
+    opltesco:packageHeight ,
+    opltesco:packageLength ,
+    opltesco:packageWeight ,
+    opltesco:packageWidth ,
+    opltesco:productGroup ,
+    opltesco:vendorSynopsisUrl .
+
+<http://www.openlinksw.com/DAV/data/turtle/cartridge_ontologies/tesco.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink Tesco Ontology Description Document (Turtle)" ;
+  cc:License <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for Tesco"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/tesco#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/tesco> ;
+  xhv:describes <http://www.openlinksw.com/schemas/tesco#> ;
+  schema:about <http://www.openlinksw.com/schemas/tesco#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/tesco#> .
+
+<http://www.openlinksw.com/data/turtle/cartridge_ontologies/tesco.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink Tesco Ontology Description Document (Turtle)" ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for Tesco"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/tesco#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/tesco> ;
+  xhv:describes <http://www.openlinksw.com/schemas/tesco#> ;
+  schema:about <http://www.openlinksw.com/schemas/tesco#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/tesco#> .
+
+<http://www.openlinksw.com/schemas/tesco>
+  a foaf:Document ;
+  schema:name """OpenLink Tesco Ontology Description Document"""^^xsd:string ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a document that uses Linked Data oriented content to describe OpenLink Tesco Ontology."""@en ;
+  dcterms:subject <http://www.openlinksw.com/schemas/tesco#> ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/tesco#> ;
+  foaf:topic
+    opltesco:hasASIN ,
+    opltesco:baseProductID ,
+    opltesco:detailPageURL ,
+    opltesco:hasEANBarcode ,
+    opltesco:imagePath ,
+    opltesco:Product ,
+    opltesco:hasProductID ,
+    opltesco:productType ,
+    opltesco:hasUnitPrice ,
+    opltesco:availability ,
+    opltesco:color ,
+    opltesco:condition ,
+    opltesco:conditionNote ,
+    opltesco:feature ,
+    opltesco:hasListPrice ,
+    opltesco:itemHeight ,
+    opltesco:itemLength ,
+    opltesco:itemWeight ,
+    opltesco:itemWidth ,
+    opltesco:merchantId ,
+    opltesco:offerListingId ,
+    opltesco:packageHeight ,
+    opltesco:packageLength ,
+    opltesco:packageWeight ,
+    opltesco:packageWidth ,
+    opltesco:productGroup ,
+    opltesco:vendorSynopsisUrl .
+
+opltesco:hasASIN a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Tesco Standard Item Number - an alphanumeric token that uniquely identifies items in the tesco marketplace"""@en ;
+     rdfs:domain opltesco:Product;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/tesco#>;
+     rdfs:label "hasASIN";
+     skos:altLabel "asin" ;
+     rdfs:range xsd:string;
+     rdfs:subPropertyOf gr:datatypeProductOrServiceProperty .
+
+opltesco:baseProductID a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Tesco Base Product Id - an alphanumeric token that uniquely identifies items in the tesco marketplace"""@en ;
+     rdfs:domain opltesco:Product;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/tesco#>;
+     rdfs:label "baseProductID";
+     skos:altLabel "base product id" ;
+     rdfs:range xsd:string;
+     rdfs:subPropertyOf gr:hasStockKeepingUnit .
+
+opltesco:detailPageURL a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """detailPageURL"""@en ;
+     rdfs:domain opltesco:Product;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/tesco#>;
+     rdfs:label "detailPageURL";
+     skos:altLabel "detail page url" ;
+     rdfs:range xsd:anyURI;
+     rdfs:subPropertyOf gr:datatypeProductOrServiceProperty .
+
+opltesco:hasEANBarcode a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """hasEANBarcode"""@en ;
+     rdfs:domain opltesco:Product;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/tesco#>;
+     rdfs:label "eanBarcode";
+     skos:altLabel "ean barcode" ;
+     rdfs:range xsd:string;
+     rdfs:subPropertyOf gr:hasEAN_UCC-13 .
+
+opltesco:imagePath a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """imagePath"""@en ;
+     rdfs:domain opltesco:Product;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/tesco#>;
+     rdfs:label "imagePath";
+     skos:altLabel "image path" ;
+     rdfs:range xsd:string;
+     rdfs:subPropertyOf <http://xmlns.com/foaf/0.1/depiction> .
+
+opltesco:Product a owl:Class;
+     rdfs:comment """A specialization of the GoodRelations ProductOrService class for describing tesco products"""@en ;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/tesco#>;
+     rdfs:label "Product";
+     rdfs:subClassOf gr:ProductOrService .
+
+opltesco:hasProductID a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Tesco Product Id - an alphanumeric token that uniquely identifies items in the tesco marketplace"""@en ;
+     rdfs:domain opltesco:Product;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/tesco#>;
+     rdfs:label "hasProductID";
+     skos:altLabel "product id" ;
+     rdfs:range xsd:string;
+     rdfs:subPropertyOf gr:hasStockKeepingUnit .
+
+opltesco:productType a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Tesco Product Type"""@en ;
+     rdfs:domain opltesco:Product;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/tesco#>;
+     rdfs:label "productType";
+     skos:altLabel "product Type" ;
+     rdfs:range xsd:string .
+
+opltesco:hasUnitPrice a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """UnitPrice"""@en ;
+     rdfs:domain gr:Offering;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/tesco#>;
+     rdfs:label "hasUnitPrice";
+     skos:altLabel "unit price" ;
+     rdfs:range xsd:string .
+
+opltesco:availability a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """how soon is an item dispatched"""@en ;
+     rdfs:domain gr:Offering;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/tesco#>;
+     rdfs:label "availability";
+     skos:altLabel "availability" ;
+     rdfs:range xsd:string .
+
+opltesco:color a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """color"""@en ;
+     rdfs:domain opltesco:Product;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/tesco#>;
+     rdfs:label "color";
+     skos:altLabel "color" ;
+     rdfs:range xsd:string;
+     rdfs:subPropertyOf gr:datatypeProductOrServiceProperty .
+
+opltesco:condition a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """condition of the item - new/used/refurbished"""@en ;
+     rdfs:domain gr:Offering;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/tesco#>;
+     rdfs:label "condition";
+     skos:altLabel "condition" ;
+     rdfs:range xsd:string .
+
+opltesco:conditionNote a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """notes on the condition of the item"""@en ;
+     rdfs:domain gr:Offering;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/tesco#>;
+     rdfs:label "conditionNote";
+     skos:altLabel "condition note" ;
+     rdfs:range xsd:string .
+
+opltesco:feature a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """a description of a feature of the item"""@en ;
+     rdfs:domain opltesco:Product;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/tesco#>;
+     rdfs:label "feature";
+     skos:altLabel "feature" ;
+     rdfs:range xsd:string;
+     rdfs:subPropertyOf gr:datatypeProductOrServiceProperty .
+
+opltesco:hasListPrice a owl:ObjectProperty , rdf:Property ;
+     rdfs:comment """manufacturer's list price"""@en ;
+     rdfs:domain opltesco:Product;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/tesco#>;
+     rdfs:label "hasListPrice";
+     skos:altLabel "list price" ;
+     rdfs:range gr:UnitPriceSpecification;
+     rdfs:subPropertyOf gr:datatypeProductOrServiceProperty .
+
+opltesco:itemHeight a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """The item's height"""@en ;
+     rdfs:domain opltesco:Product;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/tesco#>;
+     rdfs:label "itemHeight";
+     skos:altLabel "item height" ;
+     rdfs:range gr:QuantitativeValueFloat;
+     rdfs:subPropertyOf gr:datatypeProductOrServiceProperty .
+
+opltesco:itemLength a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """The item's length"""@en ;
+     rdfs:domain opltesco:Product;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/tesco#>;
+     rdfs:label "itemLength";
+     skos:altLabel "item length" ;
+     rdfs:range gr:QuantitativeValueFloat;
+     rdfs:subPropertyOf gr:datatypeProductOrServiceProperty .
+
+opltesco:itemWeight a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """The item's weight"""@en ;
+     rdfs:domain opltesco:Product;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/tesco#>;
+     rdfs:label "itemWeight";
+     skos:altLabel "item weight" ;
+     rdfs:range gr:QuantitativeValueFloat;
+     rdfs:subPropertyOf gr:datatypeProductOrServiceProperty .
+
+opltesco:itemWidth a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """The item's width"""@en ;
+     rdfs:domain opltesco:Product;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/tesco#>;
+     rdfs:label "itemWidth";
+     skos:altLabel "item width" ;
+     rdfs:range gr:QuantitativeValueFloat;
+     rdfs:subPropertyOf gr:datatypeProductOrServiceProperty .
+
+opltesco:merchantId a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Tesco assigned MerchantID"""@en ;
+     rdfs:domain gr:Offering;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/tesco#>;
+     rdfs:label "merchantId";
+     skos:altLabel "merchant id" ;
+     rdfs:range xsd:string .
+
+opltesco:offerListingId a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """Tesco assigned offer listing ID"""@en ;
+     rdfs:domain gr:Offering;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/tesco#>;
+     rdfs:label "offerListingId";
+     skos:altLabel "offer listing id" ;
+     rdfs:range xsd:string .
+
+opltesco:packageHeight a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """The package's height"""@en ;
+     rdfs:domain opltesco:Product;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/tesco#>;
+     rdfs:label "packageHeight";
+     skos:altLabel "package height" ;
+     rdfs:range gr:QuantitativeValueFloat;
+     rdfs:subPropertyOf gr:datatypeProductOrServiceProperty .
+
+opltesco:packageLength a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """The package's length"""@en ;
+     rdfs:domain opltesco:Product;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/tesco#>;
+     rdfs:label "packageLength";
+     skos:altLabel "package length" ;
+     rdfs:range gr:QuantitativeValueFloat;
+     rdfs:subPropertyOf gr:datatypeProductOrServiceProperty .
+
+opltesco:packageWeight a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """The package's weight"""@en ;
+     rdfs:domain opltesco:Product;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/tesco#>;
+     rdfs:label "packageWeight";
+     skos:altLabel "package weight" ;
+     rdfs:range gr:QuantitativeValueFloat;
+     rdfs:subPropertyOf gr:datatypeProductOrServiceProperty .
+
+opltesco:packageWidth a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """The package's width"""@en ;
+     rdfs:domain opltesco:Product;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/tesco#>;
+     rdfs:label "packageWidth";
+     skos:altLabel "package width" ;
+     rdfs:range gr:QuantitativeValueFloat;
+     rdfs:subPropertyOf gr:datatypeProductOrServiceProperty .
+
+opltesco:productGroup a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """The product group to which the item belongs"""@en ;
+     rdfs:domain opltesco:Product;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/tesco#>;
+     rdfs:label "productGroup";
+     skos:altLabel "product group" ;
+     rdfs:range xsd:string;
+     rdfs:subPropertyOf gr:quantitativeProductOrServiceProperty .
+
+opltesco:vendorSynopsisUrl a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """URL of brief details of tesco merchant or seller"""@en ;
+     rdfs:domain opltesco:Product;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/tesco#>;
+     rdfs:label "vendorSynopsisUrl";
+     skos:altLabel "vendor synopsis url" ;
+     rdfs:range xsd:anyURI;
+     rdfs:subPropertyOf gr:quantitativeProductOrServiceProperty .

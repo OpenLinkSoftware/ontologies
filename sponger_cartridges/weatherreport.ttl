@@ -1,0 +1,192 @@
+@prefix schema:  <http://schema.org/> .
+@prefix xhv:    <http://www.w3.org/1999/xhtml/vocab#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix cvocab:  <http://open-services.net/ns/core#> .
+@prefix bibo:    <http://purl.org/ontology/bibo/> .
+@prefix cc:      <http://creativecommons.org/ns#> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix opl:     <http://www.openlinksw.com/schema/attribution#> .
+@prefix oplwthr: <http://www.openlinksw.com/schemas/weatherreport#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix wdrs:    <http://www.w3.org/2007/05/powder-s#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.openlinksw.com/schemas/weatherreport#>
+  a owl:Ontology ;
+  schema:name "OpenLink Weather Reports Ontology" ;
+  schema:comment """Ontology that defines entity and relation types used to describe weather reports.
+  Examples include forecasts, reports dates, temperatures etc."""@en ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:dateCreated "2013-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  schema:dateModified "2015-04-22T13:38:00-05:00"^^xsd:dateTime ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  wdrs:describedby <http://www.openlinksw.com/schemas/weatherreport> ;
+  owl:versionInfo "1.0.0"^^xsd:string ;
+  owl:imports <http://www.w3.org/1999/02/22-rdf-syntax-ns#> , <http://purl.org/dc/terms/> ;
+  <http://open.vocab.org/terms/defines>
+    oplwthr:Report ,
+    oplwthr:weatherForecast ,
+    oplwthr:reportDate ,
+    oplwthr:reportStart ,
+    oplwthr:reportEnd ,
+    oplwthr:tempHigh ,
+    oplwthr:tempLow ,
+    oplwthr:temperature ,
+    oplwthr:wind ,
+    oplwthr:atmosphere ,
+    oplwthr:astronomy ,
+    oplwthr:condition ,
+    oplwthr:forecast ;
+  schema:about
+    oplwthr:Report ,
+    oplwthr:weatherForecast ,
+    oplwthr:reportDate ,
+    oplwthr:reportStart ,
+    oplwthr:reportEnd ,
+    oplwthr:tempHigh ,
+    oplwthr:tempLow ,
+    oplwthr:temperature ,
+    oplwthr:wind ,
+    oplwthr:atmosphere ,
+    oplwthr:astronomy ,
+    oplwthr:condition ,
+    oplwthr:forecast  .
+
+
+<http://www.openlinksw.com/DAV/data/turtle/cartridge_ontologies/weatherreport.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink Weather Reports Ontology Description Document (Turtle)" ;
+  cc:License <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for weather reports"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/weatherreport#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/weatherreport> ;
+  xhv:describes <http://www.openlinksw.com/schemas/weatherreport#> ;
+  schema:about <http://www.openlinksw.com/schemas/weatherreport#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/weatherreport#> .
+
+<http://www.openlinksw.com/data/turtle/cartridge_ontologies/weatherreport.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink Weather Reports Ontology Description Document (Turtle)" ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for weather reports"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/weatherreport#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/weatherreport> ;
+  xhv:describes <http://www.openlinksw.com/schemas/weatherreport#> ;
+  schema:about <http://www.openlinksw.com/schemas/weatherreport#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/weatherreport#> .
+
+<http://www.openlinksw.com/schemas/weatherreport>
+  a foaf:Document ;
+  schema:name """OpenLink Weather Reports Ontology Description Document"""^^xsd:string ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a document that uses Linked Data oriented content to describe OpenLink Weather Reports Ontology."""@en ;
+  dcterms:subject <http://www.openlinksw.com/schemas/weatherreport#> ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/weatherreport#> ;
+  foaf:topic
+    oplwthr:Report ,
+    oplwthr:weatherForecast ,
+    oplwthr:reportDate ,
+    oplwthr:reportStart ,
+    oplwthr:reportEnd ,
+    oplwthr:tempHigh ,
+    oplwthr:tempLow ,
+    oplwthr:temperature ,
+    oplwthr:wind ,
+    oplwthr:atmosphere ,
+    oplwthr:astronomy ,
+    oplwthr:condition ,
+    oplwthr:forecast .
+
+oplwthr:Report a owl:Class ;
+ rdfs:label "Report" ;
+ rdfs:subClassOf foaf:Document ;
+ rdfs:isDefinedBy oplwthr: .
+
+oplwthr:weatherForecast a owl:Class ;
+ rdfs:label "Weather Forecast" ;
+ rdfs:subClassOf oplwthr:Report ;
+ rdfs:isDefinedBy oplwthr: .
+
+oplwthr:reportDate a owl:DatatypeProperty , rdf:Property ;
+ rdfs:label "reportDate" ;
+ skos:altLabel "report date" ;
+ rdfs:domain oplwthr:weatherForecast ;
+ rdfs:range xsd:dateTime .
+
+oplwthr:reportStart a owl:DatatypeProperty , rdf:Property ;
+ rdfs:label "reportStart" ;
+ skos:altLabel "start date of report" ;
+ rdfs:domain oplwthr:weatherForecast ;
+ rdfs:isDefinedBy oplwthr: ;
+ rdfs:range xsd:dateTime .
+
+oplwthr:reportEnd a owl:DatatypeProperty , rdf:Property ;
+ rdfs:label "reportEnd" ;
+ skos:altLabel "end date of report" ;
+ rdfs:domain oplwthr:weatherForecast ;
+ rdfs:isDefinedBy oplwthr: ;
+ rdfs:range xsd:dateTime .
+
+oplwthr:tempHigh a owl:DatatypeProperty , rdf:Property ;
+ rdfs:label "tempHigh" ;
+ skos:altLabel "high temperature" ;
+ rdfs:domain oplwthr:weatherForecast ;
+ rdfs:isDefinedBy oplwthr: ;
+ rdfs:range xsd:string .
+
+oplwthr:tempLow a owl:DatatypeProperty , rdf:Property ;
+ rdfs:label "tempLow" ;
+ skos:altLabel "low temperature" ;
+ rdfs:domain oplwthr:weatherForecast ;
+ rdfs:isDefinedBy oplwthr: ;
+ rdfs:range xsd:string .
+
+oplwthr:temperature a owl:DatatypeProperty , rdf:Property ;
+ rdfs:label "temperature" ;
+ skos:altLabel "temperature" ;
+ rdfs:domain oplwthr:weatherForecast ;
+ rdfs:isDefinedBy oplwthr: ;
+ rdfs:range xsd:string .
+
+oplwthr:wind a owl:DatatypeProperty , rdf:Property ;
+ rdfs:label "wind" ;
+ skos:altLabel "wind" ;
+ rdfs:domain oplwthr:weatherForecast ;
+ rdfs:isDefinedBy oplwthr: ;
+ rdfs:range xsd:string .
+
+oplwthr:atmosphere a owl:DatatypeProperty , rdf:Property ;
+ rdfs:label "atmosphere" ;
+ skos:altLabel "atmosphere" ;
+ rdfs:domain oplwthr:weatherForecast ;
+ rdfs:isDefinedBy oplwthr: ;
+ rdfs:range xsd:string .
+
+oplwthr:astronomy a owl:DatatypeProperty , rdf:Property ;
+ rdfs:label "astronomy" ;
+ skos:altLabel "astronomy" ;
+ rdfs:domain oplwthr:weatherForecast ;
+ rdfs:isDefinedBy oplwthr: ;
+ rdfs:range xsd:string .
+
+oplwthr:condition a owl:ObjectProperty , rdf:Property ;
+ rdfs:label "condition" ;
+ skos:altLabel "condition" ;
+ rdfs:domain bibo:Document ;
+ rdfs:isDefinedBy oplwthr: ;
+ rdfs:range oplwthr:weatherForecast .
+
+oplwthr:forecast a owl:ObjectProperty , rdf:Property ;
+ rdfs:label "forecast" ;
+ skos:altLabel "forecast" ;
+ rdfs:domain bibo:Document ;
+ rdfs:isDefinedBy oplwthr: ;
+ rdfs:range oplwthr:weatherForecast .
+

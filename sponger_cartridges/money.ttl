@@ -1,0 +1,96 @@
+@prefix schema:  <http://schema.org/> .
+@prefix skos:     <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:  <http://purl.org/dc/terms/> .
+@prefix cvocab:   <http://open-services.net/ns/core#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix cc:       <http://creativecommons.org/ns#> .
+@prefix foaf:     <http://xmlns.com/foaf/0.1/> .
+@prefix oplmoney: <http://www.openlinksw.com/schemas/money#> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix wdrs:     <http://www.w3.org/2007/05/powder-s#> .
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+@prefix xhv:    <http://www.w3.org/1999/xhtml/vocab#> .
+
+<http://www.openlinksw.com/schemas/money#>
+  a owl:Ontology ;
+  schema:name "OpenLink Money Ontology" ;
+  schema:comment """Ontology that defines entity and relation types used to describe Money.
+  Examples include monetary values, currency code etc."""@en ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  wdrs:describedby <http://www.openlinksw.com/schemas/money> ;
+  owl:versionInfo "1.0.0"^^xsd:string ;
+  schema:dateCreated "2013-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  schema:dateModified "2015-04-22T13:38:00-05:00"^^xsd:dateTime ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  owl:imports <http://www.w3.org/1999/02/22-rdf-syntax-ns#> , <http://purl.org/dc/terms/> ;
+  <http://open.vocab.org/terms/defines>
+    oplmoney:MonetaryValue ,
+    oplmoney:hasCurrencyCode ,
+    oplmoney:hasCurrencyValue ;
+  schema:about
+    oplmoney:MonetaryValue ,
+    oplmoney:hasCurrencyCode ,
+    oplmoney:hasCurrencyValue .
+
+<http://www.openlinksw.com/DAV/data/turtle/cartridge_ontologies/money.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink Money Ontology Description Document (Turtle)" ;
+  cc:License <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for money"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/money#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/money> ;
+  xhv:describes <http://www.openlinksw.com/schemas/money#> ;
+  schema:about <http://www.openlinksw.com/schemas/money#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/money#> .
+
+<http://www.openlinksw.com/data/turtle/cartridge_ontologies/money.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink Money Ontology Description Document (Turtle)" ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for money"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/money#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/money> ;
+  xhv:describes <http://www.openlinksw.com/schemas/money#> ;
+  schema:about <http://www.openlinksw.com/schemas/money#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/money#> .
+
+<http://www.openlinksw.com/schemas/money>
+  a foaf:Document ;
+  schema:name """OpenLink Money Ontology Description Document"""^^xsd:string ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a document that uses Linked Data oriented content to describe OpenLink Money Ontology."""@en ;
+  dcterms:subject <http://www.openlinksw.com/schemas/money#> ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/money#> ;
+  foaf:topic
+    oplmoney:MonetaryValue ,
+    oplmoney:hasCurrencyCode ,
+    oplmoney:hasCurrencyValue .
+
+oplmoney:MonetaryValue
+     a owl:Class;
+     rdfs:comment """A class representing a monetary value"""@en;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/money#>;
+     rdfs:label "monetary value"@en .
+
+oplmoney:hasCurrencyCode
+     a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """The ISO 4217 standard (3 character) currency code"""@en ;
+     rdfs:domain oplmoney:MonetaryValue;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/money#>;
+     rdfs:label "hasCurrencyCode";
+     skos:altLabel "iso-4127 currency code" ;
+     rdfs:range xsd:string .
+
+oplmoney:hasCurrencyValue
+     a owl:DatatypeProperty , rdf:Property ;
+     rdfs:comment """the amount of money"""@en ;
+     rdfs:domain oplmoney:MonetaryValue;
+     rdfs:isDefinedBy <http://www.openlinksw.com/schemas/money#>;
+     rdfs:label "hasCurrencyValue" ;
+     skos:altLabel "currency value" ;
+     rdfs:range xsd:decimal .

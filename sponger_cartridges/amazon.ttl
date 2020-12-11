@@ -1,0 +1,323 @@
+@prefix schema:  <http://schema.org/> .
+@prefix skos:   <http://www.w3.org/2004/02/skos/core#> .
+@prefix xhv:    <http://www.w3.org/1999/xhtml/vocab#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix cvocab: <http://open-services.net/ns/core#> .
+@prefix gr:     <http://purl.org/goodrelations/v1#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix foaf:   <http://xmlns.com/foaf/0.1/> .
+@prefix wdrs:   <http://www.w3.org/2007/05/powder-s#> .
+@prefix cc:     <http://creativecommons.org/ns#> .
+
+@prefix oplamz: <http://www.openlinksw.com/schemas/amazon#> .
+
+<http://www.openlinksw.com/schemas/amazon#>
+  a owl:Ontology ;
+  schema:name "OpenLink Amazon Ontology" ;
+  schema:comment """Ontology that defines entity and relation types used to describe Amazon. Examples include
+  products, items, packages etc."""@en ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:dateCreated "2013-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  schema:dateModified "2015-04-22T13:38:00-05:00"^^xsd:dateTime ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  wdrs:describedby <http://www.openlinksw.com/schemas/amazon> ;
+  owl:versionInfo "1.0.0"^^xsd:string ;
+  owl:imports <http://www.w3.org/1999/02/22-rdf-syntax-ns#> , <http://purl.org/dc/terms/> , <http://purl.org/goodrelations/v1> ;
+  <http://open.vocab.org/terms/defines>
+    oplamz:Product ,
+    oplamz:ASIN ,
+    oplamz:detailPageURL ,
+    oplamz:color ,
+    oplamz:feature ,
+    oplamz:hasListPrice ,
+    oplamz:itemHeight ,
+    oplamz:itemLength ,
+    oplamz:itemWeight ,
+    oplamz:itemWidth ,
+    oplamz:packageHeight ,
+    oplamz:packageLength ,
+    oplamz:packageWeight ,
+    oplamz:packageWidth ,
+    oplamz:productGroup ,
+    oplamz:vendorSynopsisUrl ,
+    oplamz:availability ,
+    oplamz:condition ,
+    oplamz:conditionNote ,
+    oplamz:merchantId ,
+    oplamz:offerListingId ;
+  schema:about
+    oplamz:Product ,
+    oplamz:ASIN ,
+    oplamz:detailPageURL ,
+    oplamz:color ,
+    oplamz:feature ,
+    oplamz:hasListPrice ,
+    oplamz:itemHeight ,
+    oplamz:itemLength ,
+    oplamz:itemWeight ,
+    oplamz:itemWidth ,
+    oplamz:packageHeight ,
+    oplamz:packageLength ,
+    oplamz:packageWeight ,
+    oplamz:packageWidth ,
+    oplamz:productGroup ,
+    oplamz:vendorSynopsisUrl ,
+    oplamz:availability ,
+    oplamz:condition ,
+    oplamz:conditionNote ,
+    oplamz:merchantId ,
+    oplamz:offerListingId .
+
+<http://www.openlinksw.com/DAV/data/turtle/cartridge_ontologies/amazon.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink Amazon Ontology Description Document (Turtle)" ;
+  cc:License <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for Amazon"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/amazon#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/amazon> ;
+  xhv:describes <http://www.openlinksw.com/schemas/amazon#> ;
+  schema:about <http://www.openlinksw.com/schemas/amazon#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/amazon#> .
+
+<http://www.openlinksw.com/data/turtle/cartridge_ontologies/amazon.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink Amazon Ontology Description Document (Turtle)" ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for Amazon"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/amazon#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/amazon> ;
+  xhv:describes <http://www.openlinksw.com/schemas/amazon#> ;
+  schema:about <http://www.openlinksw.com/schemas/amazon#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/amazon#> .
+
+<http://www.openlinksw.com/schemas/amazon>
+  a foaf:Document ;
+  schema:name """OpenLink Amazon Ontology Description Document"""^^xsd:string ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a document that uses Linked Data oriented content to describe OpenLink Amazon Ontology."""@en ;
+  dcterms:subject <http://www.openlinksw.com/schemas/amazon#> ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/amazon#> ;
+  foaf:topic oplamz:Product ,
+             oplamz:ASIN ,
+             oplamz:detailPageURL ,
+             oplamz:color ,
+             oplamz:feature ,
+             oplamz:hasListPrice ,
+             oplamz:itemHeight ,
+             oplamz:itemLength ,
+             oplamz:itemWeight ,
+             oplamz:itemWidth ,
+             oplamz:packageHeight ,
+             oplamz:packageLength ,
+             oplamz:packageWeight ,
+             oplamz:packageWidth ,
+             oplamz:productGroup ,
+             oplamz:vendorSynopsisUrl ,
+             oplamz:availability ,
+             oplamz:condition ,
+             oplamz:conditionNote ,
+             oplamz:merchantId ,
+             oplamz:offerListingId .
+
+oplamz:Product
+    a owl:Class ;
+    rdfs:subClassOf gr:ProductOrService ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/amazon#> ;
+    rdfs:label "Product" ;
+    rdfs:comment """A specialization of the GoodRelations ProductOrServiceescribing Amazon products"""@en .
+
+oplamz:ASIN
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/amazon#> ;
+    rdfs:label "ASIN" ;
+    skos:altLabel "asin";
+    rdfs:comment """Amazon Standard Item Number - an alphanumeric token that uniquely identifies items in the Amazon marketplace"""@en ;
+    rdfs:domain oplamz:Product ;
+    rdfs:range xsd:string .
+
+oplamz:detailPageURL
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/amazon#> ;
+    rdfs:label "detailPageURL" ;
+    skos:altLabel "detail page url";
+    rdfs:domain oplamz:Product ;
+    rdfs:range xsd:anyURI .
+
+oplamz:color
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/amazon#> ;
+    rdfs:label "color" ;
+    skos:altLabel "color";
+    rdfs:domain oplamz:Product ;
+    rdfs:range xsd:string .
+
+oplamz:feature
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/amazon#> ;
+    rdfs:label "feature";
+    skos:altLabel "feature";
+    rdfs:comment """A description of a feature of the item"""@en ;
+    rdfs:domain oplamz:Product ;
+    rdfs:range xsd:string .
+
+oplamz:hasListPrice
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/amazon#> ;
+    rdfs:label "hasListPrice" ;
+    skos:altLabel "list price";
+    rdfs:comment """Manufacturer's list price"""@en ;
+    rdfs:domain oplamz:Product ;
+    rdfs:range gr:UnitPriceSpecification .
+
+oplamz:itemHeight
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/amazon#> ;
+    rdfs:label "itemHeight" ;
+    skos:altLabel "item height";
+    rdfs:domain oplamz:Product ;
+    rdfs:range gr:QuantitativeValueFloat .
+
+oplamz:itemLength
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/amazon#> ;
+    rdfs:label "itemLength" ;
+    skos:altLabel "item length";
+    rdfs:domain oplamz:Product ;
+    rdfs:range gr:QuantitativeValueFloat .
+
+oplamz:itemWeight
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/amazon#> ;
+    rdfs:label "itemWeight" ;
+    skos:altLabel "item weight";
+    rdfs:domain oplamz:Product ;
+    rdfs:range gr:QuantitativeValueFloat .
+
+oplamz:itemWidth
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/amazon#> ;
+    rdfs:label "itemWidth" ;
+    skos:altLabel "item width";
+    rdfs:domain oplamz:Product ;
+    rdfs:range gr:QuantitativeValueFloat .
+
+oplamz:packageHeight
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/amazon#> ;
+    rdfs:label "packageHeight" ;
+    skos:altLabel "package height";
+    rdfs:domain oplamz:Product ;
+    rdfs:range gr:QuantitativeValueFloat .
+
+oplamz:packageLength
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/amazon#> ;
+    rdfs:label "packageLength" ;
+    skos:altLabel "package length";
+    rdfs:domain oplamz:Product ;
+    rdfs:range gr:QuantitativeValueFloat .
+
+oplamz:packageWeight
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/amazon#> ;
+    rdfs:label "packageWeight" ;
+    skos:altLabel "package weight";
+    rdfs:domain oplamz:Product ;
+    rdfs:range gr:QuantitativeValueFloat .
+
+oplamz:packageWidth
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/amazon#> ;
+    rdfs:label "packageWidth" ;
+    skos:altLabel "package width";
+    rdfs:domain oplamz:Product ;
+    rdfs:range gr:QuantitativeValueFloat .
+
+oplamz:productGroup
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:quantitativeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/amazon#> ;
+    rdfs:label "productGroup" ;
+    skos:altLabel "product group";
+    rdfs:comment """The product group to which the item belongs"""@en ;
+    rdfs:domain oplamz:Product ;
+    rdfs:range xsd:string .
+
+oplamz:vendorSynopsisUrl
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:quantitativeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/amazon#> ;
+    rdfs:label "vendorSynopsisUrl" ;
+    skos:altLabel "vendor synopsis URL";
+    rdfs:comment """URL of brief details of Amazon merchant or seller"""@en ;
+    rdfs:domain oplamz:Product ;
+    rdfs:range xsd:anyURI .
+
+#
+# gr:Offering specialization
+#
+
+oplamz:availability
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/amazon#> ;
+    rdfs:label "availability" ;
+    skos:altLabel "availability";
+    rdfs:comment """How soon is an item dispatched"""@en ;
+    rdfs:domain gr:Offering ;
+    rdfs:range xsd:string .
+
+oplamz:condition
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/amazon#> ;
+    rdfs:label "condition" ;
+    skos:altLabel "condition";
+    rdfs:comment """Condition of the item - new/used/refurbished"""@en ;
+    rdfs:domain gr:Offering ;
+    rdfs:range xsd:string .
+
+oplamz:conditionNote
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/amazon#> ;
+    rdfs:label "conditionNote" ;
+    skos:altLabel "condition note";
+    rdfs:comment """Notes on the condition of the item"""@en ;
+    rdfs:domain gr:Offering ;
+    rdfs:range xsd:string .
+
+oplamz:merchantId
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/amazon#> ;
+    rdfs:label "merchantId" ;
+    skos:altLabel "merchant id";
+    rdfs:comment """Amazon assigned MerchantID"""@en ;
+    rdfs:domain gr:Offering ;
+    rdfs:range xsd:string .
+
+oplamz:offerListingId
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/amazon#> ;
+    rdfs:label "offerListingId" ;
+    skos:altLabel "offer listing id";
+    rdfs:comment """Amazon assigned offer listing ID"""@en ;
+    rdfs:domain gr:Offering ;
+    rdfs:range xsd:string .
+

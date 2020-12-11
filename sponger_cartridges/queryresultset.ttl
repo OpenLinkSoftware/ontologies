@@ -1,0 +1,214 @@
+@prefix schema:  <http://schema.org/> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix cvocab:  <http://open-services.net/ns/core#> .
+@prefix cc:      <http://creativecommons.org/ns#> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix formats: <http://www.w3.org/ns/formats/> .
+@prefix gr:      <http://purl.org/goodrelations/v1#> .
+@prefix opl:     <http://www.openlinksw.com/schema/attribution#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix qrs:     <http://www.openlinksw.com/schemas/queryresultset#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sioc:    <http://rdfs.org/sioc/ns#> .
+@prefix wdrs:    <http://www.w3.org/2007/05/powder-s#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix xhv:    <http://www.w3.org/1999/xhtml/vocab#> .
+
+<http://www.openlinksw.com/schemas/queryresultset#>
+  a owl:Ontology ;
+  schema:name "OpenLink Web Query Services and Results Ontology" ;
+  schema:comment """Ontology that defines entity and relation types used to describe Web Service Queries and
+  Query Results. Examples include results, results sets, queries etc."""@en ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:dateCreated "2013-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  schema:dateModified "2015-04-22T13:38:00-05:00"^^xsd:dateTime ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  wdrs:describedby <http://www.openlinksw.com/schemas/queryresultset> ;
+  owl:versionInfo """1.0.0"""^^xsd:string ;
+  owl:imports <http://www.w3.org/1999/02/22-rdf-syntax-ns#> , <http://purl.org/dc/terms/> ;
+  <http://open.vocab.org/terms/defines>
+    qrs:ResultSet ,
+    qrs:Result ,
+    qrs:Query ,
+    qrs:contains ,
+    qrs:arisesFrom ,
+    qrs:fundamentalType ,
+    qrs:containedIn ,
+    qrs:queryResults ,
+    qrs:type ,
+    qrs:language ,
+    qrs:queryText ,
+    qrs:queryURL ;
+  schema:about
+    qrs:ResultSet ,
+    qrs:Result ,
+    qrs:Query ,
+    qrs:contains ,
+    qrs:arisesFrom ,
+    qrs:fundamentalType ,
+    qrs:containedIn ,
+    qrs:queryResults ,
+    qrs:type ,
+    qrs:language ,
+    qrs:queryText ,
+    qrs:queryURL .
+
+<http://www.openlinksw.com/DAV/data/turtle/cartridge_ontologies/queryresultset.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink Web Query Services and Results Ontology Description Document (Turtle)" ;
+  cc:License <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for Queries and ResultSets."""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/queryresultset#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/queryresultset> ;
+  xhv:describes <http://www.openlinksw.com/schemas/queryresultset#> ;
+  schema:about <http://www.openlinksw.com/schemas/queryresultset#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/queryresultset#> .
+
+<http://www.openlinksw.com/data/turtle/cartridge_ontologies/queryresultset.ttl>
+  a foaf:Document ;
+  schema:dateCreated	"""2014-09-26-04:00"""^^xsd:date ;
+  schema:name "OpenLink Web Query Services and Results Ontology Description Document (Turtle)" ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for Queries and ResultSets."""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/queryresultset#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/queryresultset> ;
+  xhv:describes <http://www.openlinksw.com/schemas/queryresultset#> ;
+  schema:about <http://www.openlinksw.com/schemas/queryresultset#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/queryresultset#> .
+
+<http://www.openlinksw.com/schemas/queryresultset>
+  a foaf:Document ;
+  schema:name """OpenLink Web Query Services and Results Ontology Description Document"""^^xsd:string ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a document that uses Linked Data oriented content to describe OpenLink Web Query Services and Results Ontology."""@en ;
+  dcterms:subject <http://www.openlinksw.com/schemas/queryresultset#> ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/queryresultset#> ;
+  foaf:topic qrs:ResultSet ,
+             qrs:Result ,
+             qrs:Query ,
+             qrs:contains ,
+             qrs:arisesFrom ,
+             qrs:fundamentalType ,
+             qrs:containedIn ,
+             qrs:queryResults ,
+             qrs:type ,
+             qrs:language ,
+             qrs:queryText ,
+             qrs:queryURL .
+
+# <-------------- Web Query Services and Results Classes --------------> #
+
+qrs:ResultSet
+	a owl:Class ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/queryresultset#> ;
+	rdfs:label "ResultSet" ;
+	rdfs:comment """A set of results arising from a query"""@en  .
+
+qrs:Result
+	a owl:Class ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/queryresultset#> ;
+	rdfs:label "Result" ;
+	rdfs:comment """An individual result in a ResultSet"""@en  .
+
+qrs:Query
+	a owl:Class ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/queryresultset#> ;
+	rdfs:label "Query" ;
+	rdfs:comment """A query giving rise to a resultset"""@en  .
+
+
+# <-------------- Web Query Services and Results Properties --------------> #
+
+qrs:contains
+	a rdf:Property, owl:ObjectProperty ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/queryresultset#> ;
+	rdfs:label "contains" ;
+	skos:altLabel "contains" ;
+	rdfs:comment """Relationship between a ResultSet and individual Result entities"""@en  ;
+	rdfs:seeAlso sioc:container_of ;
+	rdfs:domain qrs:ResultSet ;
+	rdfs:range qrs:Result ;
+	owl:inverseOf qrs:containedIn .
+
+qrs:arisesFrom
+	a rdf:Property, owl:ObjectProperty ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/queryresultset#> ;
+	skos:altLabel "arises from" ;
+	rdfs:label "arisingFrom" ;
+	rdfs:comment """Relationship between a ResultSet and a causal Query entity"""@en  ;
+	rdfs:domain qrs:ResultSet ;
+	rdfs:range qrs:Query .
+
+qrs:fundamentalType
+	a rdf:Property, owl:ObjectProperty ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/queryresultset#> ;
+	rdfs:label "fundamentalType" ;
+	skos:altLabel "fundamental type" ;
+	rdfs:comment """Datatype of the individual Results in a ResultSet"""@en  ;
+	rdfs:domain qrs:ResultSet ;
+	rdfs:range owl:Class ;
+	rdfs:subPropertyOf rdf:type .
+
+qrs:containedIn
+	a rdf:Property, owl:ObjectProperty ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/queryresultset#> ;
+	rdfs:label "containedIn" ;
+	skos:altLabel "contained In" ;
+	rdfs:comment """Relationship between a Result entity and its parent ResultSet"""@en  ;
+	rdfs:seeAlso sioc:has_container ;
+	rdfs:domain qrs:Result ;
+	rdfs:range qrs:ResultSet ;
+	owl:inverseOf qrs:contains .
+
+qrs:queryResults
+	a rdf:Property, owl:ObjectProperty ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/queryresultset#> ;
+	rdfs:label "queryResultSet" ;
+	skos:altLabel "query result set" ;
+	rdfs:comment """Relationship between a causal Query and a ResultSet entity"""@en  ;
+	rdfs:domain qrs:Query ;
+	rdfs:range qrs:ResultSet ;
+	owl:inverseOf qrs:arisesFrom .
+
+qrs:type
+	a rdf:Property, owl:DatatypeProperty ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/queryresultset#> ;
+	rdfs:label "queryType" ;
+	skos:altLabel "query type" ;
+	rdfs:comment """MIME-type pertinent to the query"""@en  ;
+	rdfs:domain qrs:Query ;
+	rdfs:range formats:media_type .
+
+qrs:language
+	a rdf:Property, owl:DatatypeProperty ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/queryresultset#> ;
+	rdfs:label "queryLanguage" ;
+	skos:altLabel "query language" ;
+	rdfs:comment """Language in which a Query is expressed"""@en  ;
+	rdfs:domain qrs:Query ;
+	rdfs:range xsd:string .
+
+qrs:queryText
+	a rdf:Property, owl:DatatypeProperty ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/queryresultset#> ;
+	rdfs:label "queryText" ;
+	skos:altLabel "query text" ;
+	rdfs:comment """Substantive text of a query (unencoded)"""@en  ;
+	rdfs:domain qrs:Query ;
+	rdfs:range xsd:string .
+
+qrs:queryURL
+	a rdf:Property, owl:DatatypeProperty ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/queryresultset#> ;
+	rdfs:label "queryURL" ;
+	skos:altLabel "query URL" ;
+	rdfs:comment """Definitive URL for the query"""@en  ;
+	rdfs:domain qrs:Query ;
+	rdfs:range xsd:anyURI ;
+	owl:equivalentProperty foaf:homepage .

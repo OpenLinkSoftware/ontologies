@@ -1,0 +1,281 @@
+# properties like angel:has_market should be angel:hasMarket
+
+@prefix schema:   <http://schema.org/> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix cvocab:  <http://open-services.net/ns/core#> .
+@prefix gr:      <http://purl.org/goodrelations/v1#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix wdrs:    <http://www.w3.org/2007/05/powder-s#> .
+@prefix cc:      <http://creativecommons.org/ns#> .
+@prefix angel:   <http://www.openlinksw.com/schemas/angel#> .
+@prefix opl:     <http://www.openlinksw.com/schema/attribution#> .
+@prefix oplmark: <http://www.openlinksw.com/ontology/market#> .
+@prefix xhv:    <http://www.w3.org/1999/xhtml/vocab#> .
+
+@prefix oplstocks: <http://www.openlinksw.com/schemas/stocks#> .
+
+<http://www.openlinksw.com/schemas/stocks#>
+  a owl:Ontology ;
+  schema:name "OpenLink Stock Prices Ontology" ;
+  schema:comment """Ontology that defines entity and relation types used to describe Stock Price related data sources.
+  Examples include tichker symbols, prices, quotes etc."""@en ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:dateCreated "2013-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  schema:dateModified "2015-04-22T13:38:00-05:00"^^xsd:dateTime ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  wdrs:describedby <http://www.openlinksw.com/schemas/stocks> ;
+  owl:versionInfo "1.0.0"^^xsd:string ;
+  owl:imports <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ,
+              <http://purl.org/dc/terms/> ,
+              <http://purl.org/goodrelations/v1> ,
+              <http://www.openlinksw.com/schemas/crunchbase#>  ;
+  <http://open.vocab.org/terms/defines>
+    oplstocks:StockPrice ,
+    oplstocks:MarketCapSpecification ,
+    oplstocks:hasApproxMarketCapValue ,
+    oplstocks:hasMarketCap ,
+    oplstocks:hasTickerSymbol,
+    oplstocks:hasPrice,
+    oplstocks:hasPriceCurrency,
+    oplstocks:hasPriceChange,
+    oplstocks:hasPriceChangePercent,
+    oplstocks:hasQuoteTime ,
+    oplstocks:exchange ,
+    oplstocks:isAfterHours ,
+    oplstocks:afterHoursPrice ,
+    oplstocks:afterHoursPriceChange  ,
+    oplstocks:afterHoursPriceChangePercent  ,
+    oplstocks:afterHoursQuoteTime  ,
+    oplstocks:exchangeTimezone ;
+  schema:about
+    oplstocks:StockPrice ,
+    oplstocks:MarketCapSpecification ,
+    oplstocks:hasApproxMarketCapValue ,
+    oplstocks:hasMarketCap ,
+    oplstocks:hasTickerSymbol,
+    oplstocks:hasPrice,
+    oplstocks:hasPriceCurrency,
+    oplstocks:hasPriceChange,
+    oplstocks:hasPriceChangePercent,
+    oplstocks:hasQuoteTime ,
+    oplstocks:exchange ,
+    oplstocks:isAfterHours ,
+    oplstocks:afterHoursPrice ,
+    oplstocks:afterHoursPriceChange  ,
+    oplstocks:afterHoursPriceChangePercent  ,
+    oplstocks:afterHoursQuoteTime  ,
+    oplstocks:exchangeTimezone .
+
+<http://www.openlinksw.com/DAV/data/turtle/cartridge_ontologies/stocks.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink Stock Prices Ontology Description Document (Turtle)" ;
+  cc:License <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for Stock Prices"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/stocks#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/stocks> ;
+  xhv:describes <http://www.openlinksw.com/schemas/stocks#> ;
+  schema:about <http://www.openlinksw.com/schemas/stocks#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/stocks#> .
+
+<http://www.openlinksw.com/data/turtle/cartridge_ontologies/stocks.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink Stock Prices Ontology Description Document (Turtle)" ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for Stock Prices"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/stocks#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/stocks> ;
+  xhv:describes <http://www.openlinksw.com/schemas/stocks#> ;
+  schema:about <http://www.openlinksw.com/schemas/stocks#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/stocks#> .
+
+<http://www.openlinksw.com/schemas/stocks>
+  a foaf:Document ;
+  schema:name """OpenLink Stock Prices Ontology Description Document"""^^xsd:string ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a document that uses Linked Data oriented content to describe OpenLink Stock Prices Ontology."""@en ;
+  dcterms:subject <http://www.openlinksw.com/schemas/stocks#> ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/stocks#> ;
+  foaf:topic
+    oplstocks:StockPrice ,
+    oplstocks:MarketCapSpecification ,
+    oplstocks:hasApproxMarketCapValue ,
+    oplstocks:hasMarketCap ,
+    oplstocks:hasTickerSymbol,
+    oplstocks:hasPrice,
+    oplstocks:hasPriceCurrency,
+    oplstocks:hasPriceChange,
+    oplstocks:hasPriceChangePercent,
+    oplstocks:hasQuoteTime ,
+    oplstocks:exchange ,
+    oplstocks:isAfterHours ,
+    oplstocks:afterHoursPrice ,
+    oplstocks:afterHoursPriceChange  ,
+    oplstocks:afterHoursPriceChangePercent  ,
+    oplstocks:afterHoursQuoteTime  ,
+    oplstocks:exchangeTimezone .
+
+
+# <-------------- Stocks Prices Classes -------------->
+oplstocks:StockPrice
+    a owl:Class ;
+    rdfs:label "Stock Price";
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/stocks#> ;
+    skos:altLabel "Stock Price"  .
+
+oplstocks:MarketCapSpecification
+    a owl:Class ;
+    rdfs:label "MarketCapSpecification";
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/stocks#> .
+
+
+# <-------------- Stocks Prices Properties -------------->
+oplstocks:hasTickerSymbol
+    a rdf:Property, owl:DatatypeProperty ;
+    rdfs:label "hasTickerSymbol" ;
+    skos:altLabel "Ticker Symbol" ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/stocks#> ;
+    rdfs:domain oplstocks:StockPrice ;
+    owl:equivalentProperty schema:tickerSymbol ;
+    rdfs:range xsd:string .
+
+oplstocks:hasPrice
+    a rdf:Property, owl:DatatypeProperty ;
+    rdfs:label "hasPrice" ;
+    skos:altLabel "price" ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/stocks#> ;
+    rdfs:domain oplstocks:StockPrice ;
+    owl:equivalentProperty schema:price ;
+    rdfs:range xsd:decimal .
+
+oplstocks:hasPriceCurrency
+    a rdf:Property, owl:DatatypeProperty ;
+    rdfs:label "hasPriceCurrency" ;
+    skos:altLabel "price currency" ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/stocks#> ;
+    rdfs:domain oplstocks:StockPrice ;
+    owl:equivalentProperty schema:priceCurrency ;
+    rdfs:range xsd:string .
+
+oplstocks:hasPriceChange
+    a rdf:Property, owl:DatatypeProperty ;
+    rdfs:label "hasPriceChange" ;
+    skos:altLabel "price change" ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/stocks#> ;
+    rdfs:domain oplstocks:StockPrice ;
+    owl:equivalentProperty schema:priceChange ;
+    rdfs:range xsd:string .
+
+oplstocks:hasPriceChangePercent
+    a rdf:Property, owl:DatatypeProperty ;
+    rdfs:label "hasPriceChangePercent" ;
+    skos:altLabel "price change percent" ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/stocks#> ;
+    rdfs:domain oplstocks:StockPrice ;
+    owl:equivalentProperty schema:priceChangePercent ;
+    rdfs:range xsd:decimal .
+
+oplstocks:hasQuoteTime
+    a rdf:Property, owl:DatatypeProperty ;
+    rdfs:label "hasQuoteTime" ;
+    skos:altLabel "quote time" ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/stocks#> ;
+    rdfs:domain oplstocks:StockPrice ;
+    owl:equivalentProperty schema:quoteTime ;
+    rdfs:range xsd:datetime .
+
+oplstocks:hasMarketCap
+    a rdf:Property, owl:ObjectProperty;
+    rdfs:label "hasMarketCap";
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/stocks#> ;
+    rdfs:comment """Associates a Company with its Market Capitalization."""@en  ;
+    rdfs:domain foaf:Organization,
+        gr:BusinessEntity;
+    schema:domainIncludes
+        oplmark:MarketSellerEntity,
+        oplmark:MarketBuyerEntity;
+    rdfs:range oplstocks:MarketCapSpecification .
+
+oplmark:MarketSellerEntity owl:disjointWith oplmark:MarketBuyerEntity .
+
+oplstocks:hasApproxMarketCapValue
+    a rdf:Property, owl:DatatypeProperty ;
+    rdfs:label "hasApproxmarketCapValue" ;
+    skos:altLabel "approximate market capitalization value" ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/stocks#> ;
+    rdfs:comment """Associates a business related entity with its approximate market capitalization. Naturally,
+    this is subject to date, time, and unit prices, on relevant public stock market"""@en  ;
+    rdfs:domain oplstocks:MarketCapSpecification ;
+    rdfs:range xsd:decimal .
+
+oplstocks:exchange
+    a rdf:Property, owl:DataTypeProperty ;
+    rdfs:label "exchange" ;
+    skos:altLabel "exchange";
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/stocks#> ;
+    rdfs:comment """exchange on which stock is traded."""@en  ;
+    rdfs:domain oplstocks:StockPrice ;
+    owl:equivalentProperty schema:exchange ;
+    rdfs:range xsd:string .
+
+oplstocks:isAfterHours
+    a rdf:Property, owl:DataTypeProperty ;
+    rdfs:label "isAfterHours" ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/stocks#> ;
+    rdfs:comment """Determines quote context is during or after hours or trading."""@en  ;
+    rdfs:domain oplstocks:StockPrice ;
+    rdfs:range xsd:boolean .
+
+oplstocks:afterHoursPrice
+    a rdf:Property, owl:DatatypeProperty ;
+    rdfs:label "afterHoursPrice" ;
+    skos:altLabel "after hours price" ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/stocks#> ;
+    rdfs:domain oplstocks:StockPrice ;
+    owl:equivalentProperty schema:afterHoursPrice;
+    rdfs:range xsd:decimal .
+
+oplstocks:afterHoursPriceChange
+    a rdf:Property, owl:DatatypeProperty ;
+    rdfs:label "afterHoursPriceChange" ;
+    skos:altLabel "after hours price change" ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/stocks#> ;
+    owl:equivalentProperty schema:afterHoursPriceChange ;
+    rdfs:domain oplstocks:StockPrice ;
+    rdfs:range xsd:string .
+
+oplstocks:afterHoursPriceChangePercent
+    a rdf:Property, owl:DatatypeProperty ;
+    rdfs:label "afterHoursPriceChangePercent" ;
+    skos:altLabel "after hours price change percent" ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/stocks#> ;
+    rdfs:domain oplstocks:StockPrice ;
+    owl:equivalentProperty schema:afterHoursPriceChangePercent;
+    rdfs:range xsd:decimal .
+
+oplstocks:afterHoursQuoteTime
+    a rdf:Property, owl:DatatypeProperty ;
+    rdfs:label "afterHoursQuoteTime" ;
+    skos:altLabel "after hours quote time" ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/stocks#> ;
+    rdfs:domain oplstocks:StockPrice ;
+    owl:equivalentProperty schema:afterHoursQuoteTime ;
+    rdfs:range xsd:datetime .
+
+oplstocks:exchangeTimezone
+    a rdf:Property, owl:DatatypeProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/stocks#> ;
+    rdfs:label "exchangeTimezone" ;
+    skos:altLabel "exchange time zone" ;
+    rdfs:domain oplstocks:StockPrice ;
+    owl:equivalentProperty schema:exchangeTimezone ;
+    rdfs:range xsd:string .
+

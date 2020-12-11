@@ -1,0 +1,591 @@
+@prefix cc:           <http://creativecommons.org/ns#> .
+@prefix dcterms:      <http://purl.org/dc/terms/> .
+@prefix foaf:         <http://xmlns.com/foaf/0.1/> .
+@prefix oplacl:       <http://www.openlinksw.com/ontology/acl#> .
+@prefix oplsec:	      <http://www.openlinksw.com/ontology/securityschemes#> .
+@prefix oplwebsrv:    <http://www.openlinksw.com/ontology/webservices#> .
+@prefix owl:          <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:          <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:         <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:       <http://schema.org/> .
+@prefix skos:         <http://www.w3.org/2004/02/skos/core#> .
+@prefix wdrs:         <http://www.w3.org/2007/05/powder-s#> .
+@prefix xhv:          <http://www.w3.org/1999/xhtml/vocab#> .
+@prefix xsd:          <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.openlinksw.com/ontology/securityschemes#>  a owl:Ontology ;
+  rdfs:label """OpenLink Security Schemes Ontology"""^^xsd:string ;
+  rdfs:comment """
+    An ontology that defines HTTP security schemes used by web services, including: 
+    WebID, OAuth2, HTTP (Basic and Digest) and OpenID Connect.
+    """@en ;
+  dcterms:created "2017-09-25T13:00:00-05:00"^^xsd:dateTime ;
+# dcterms:modified "2017-09-28T13:00:00-05:00"^^xsd:dateTime ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  wdrs:describedby <http://www.openlinksw.com/ontology/securityservices> ;
+  owl:versionInfo "1.0.0"^^xsd:string ;
+  owl:imports 
+    <http://www.openlinksw.com/ontology/webservices#> ;
+  <http://open.vocab.org/terms/defines>
+    oplsec:SecurityScheme ,
+    oplsec:WebIdSecurityScheme ,
+    oplsec:HttpSecurityScheme ,
+    oplsec:ApiKeySecurityScheme ,
+    oplsec:OpenIdConnectSecurityScheme ,
+    oplsec:OAuth2SecurityScheme ,
+    oplsec:OAuthFlows ,
+    oplsec:OAuthFlow ,
+    oplsec:OAuth2Scope ,
+    oplsec:securityScheme ,
+    oplsec:apiKeyName ,
+    oplsec:apiKeyLocation ,
+    oplsec:httpAuthSchemeName ,
+    oplsec:bearerFormat ,
+    oplsec:oAuth2Flows ,
+    oplsec:openIdConnectUrl ,
+    oplsec:oauthFlow ,
+    oplsec:authorizationUrl ,
+    oplsec:tokenUrl ,
+    oplsec:refreshUrl ,
+    oplsec:hasOAuth2Scopes ,
+    oplsec:scopeName ,
+    oplsec:scopeDescription ,
+    oplsec:clientCertificateFile ,
+    oplsec:clientCertificateFileType ,
+    oplsec:clientKeyFile ,
+    oplsec:clientKeyFileType ,
+    oplsec:pkcs12Password ,
+    oplsec:caCertificateFile ,
+    oplsec:delegationHeader ,
+    oplsec:delegatingAgent ,
+    oplsec:sessionAuthorizationUrl ,
+    oplsec:sessionReleaseUrl ,
+    oplsec:sessionKeyLocation ,
+    oplsec:sessionKeyName ,
+    oplsec:sessionKeyReceiptLocation ,
+    oplsec:sessionKeyReceiptName ;
+  schema:about
+    oplsec:SecurityScheme ,
+    oplsec:WebIdSecurityScheme ,
+    oplsec:HttpSecurityScheme ,
+    oplsec:ApiKeySecurityScheme ,
+    oplsec:OpenIdConnectSecurityScheme ,
+    oplsec:OAuth2SecurityScheme ,
+    oplsec:OAuthFlows ,
+    oplsec:OAuthFlow ,
+    oplsec:OAuth2Scope ,
+    oplsec:securityScheme ,
+    oplsec:apiKeyName ,
+    oplsec:apiKeyLocation ,
+    oplsec:httpAuthSchemeName ,
+    oplsec:bearerFormat ,
+    oplsec:oAuth2Flows ,
+    oplsec:openIdConnectUrl ,
+    oplsec:oauthFlow ,
+    oplsec:authorizationUrl ,
+    oplsec:tokenUrl ,
+    oplsec:refreshUrl ,
+    oplsec:hasOAuth2Scopes ,
+    oplsec:scopeName ,
+    oplsec:scopeDescription ,
+    oplsec:clientCertificateFile ,
+    oplsec:clientCertificateFileType ,
+    oplsec:clientKeyFile ,
+    oplsec:clientKeyFileType ,
+    oplsec:pkcs12Password ,
+    oplsec:caCertificateFile ,
+    oplsec:delegationHeader ,
+    oplsec:delegatingAgent ,
+    oplsec:sessionAuthorizationUrl ,
+    oplsec:sessionReleaseUrl ,
+    oplsec:sessionKeyLocation ,
+    oplsec:sessionKeyName ,
+    oplsec:sessionKeyReceiptLocation ,
+    oplsec:sessionKeyReceiptName .
+
+<http://www.openlinksw.com/data/turtle/securityschemes.ttl>
+  a foaf:Document , schema:TechArticle ;
+  rdfs:label """OpenLink Security Schemes Ontology Description Document (Turtle)"""^^xsd:string ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  rdfs:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for HTTP security schemes"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/ontology/securityschemes#> ;
+  xhv:canonical <http://www.openlinksw.com/ontology/securityservices> ;
+  dcterms:created "2017-09-25T13:00:00-05:00"^^xsd:dateTime ;
+# dcterms:modified "2017-09-25T13:00:00-05:00"^^xsd:dateTime ;
+  xhv:describes <http://www.openlinksw.com/ontology/securityschemes#> ;
+  schema:about <http://www.openlinksw.com/ontology/securityschemes#> ;
+  dcterms:subject <http://www.openlinksw.com/ontology/securityschemes#> .
+
+<http://www.openlinksw.com/DAV/data/turtle/securityschemes.ttl>
+  a foaf:Document , schema:TechArticle ;
+  rdfs:label """OpenLink Security Schemes Ontology Description Document (Turtle)"""^^xsd:string ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  rdfs:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for HTTP security schemes"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/ontology/securityschemes#> ;
+  xhv:canonical <http://www.openlinksw.com/ontology/securityservices> ;
+  dcterms:created "2017-09-25T13:00:00-05:00"^^xsd:dateTime ;
+# dcterms:modified "2017-09-25T13:00:00-05:00"^^xsd:dateTime ;
+  xhv:describes <http://www.openlinksw.com/ontology/securityschemes#> ;
+  schema:about <http://www.openlinksw.com/ontology/securityschemes#> ;
+  dcterms:subject <http://www.openlinksw.com/ontology/securityschemes#> .
+
+<http://www.openlinksw.com/ontology/securityservices>
+  a foaf:Document , schema:TechArticle ;
+  rdfs:label """OpenLink Security Schemes Ontology Description Document (Turtle)"""^^xsd:string ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  rdfs:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for HTTP security schemes"""@en ;
+  dcterms:subject <http://www.openlinksw.com/ontology/securityschemes#> ;
+  dcterms:created "2017-09-25T13:00:00-05:00"^^xsd:dateTime ;
+# dcterms:modified "2017-09-25T13:00:00-05:00"^^xsd:dateTime ;
+  foaf:primaryTopic <http://www.openlinksw.com/ontology/securityschemes#> ;
+  foaf:topic 
+    oplsec:SecurityScheme ,
+    oplsec:WebIdSecurityScheme ,
+    oplsec:HttpSecurityScheme ,
+    oplsec:ApiKeySecurityScheme ,
+    oplsec:OpenIdConnectSecurityScheme ,
+    oplsec:OAuth2SecurityScheme ,
+    oplsec:OAuthFlows ,
+    oplsec:OAuthFlow ,
+    oplsec:OAuth2Scope ,
+    oplsec:securityScheme ,
+    oplsec:apiKeyName ,
+    oplsec:apiKeyLocation ,
+    oplsec:httpAuthSchemeName ,
+    oplsec:bearerFormat ,
+    oplsec:oAuth2Flows ,
+    oplsec:openIdConnectUrl ,
+    oplsec:oauthFlow ,
+    oplsec:authorizationUrl ,
+    oplsec:tokenUrl ,
+    oplsec:refreshUrl ,
+    oplsec:hasOAuth2Scopes ,
+    oplsec:scopeName ,
+    oplsec:scopeDescription ,
+    oplsec:clientCertificateFile ,
+    oplsec:clientCertificateFileType ,
+    oplsec:clientKeyFile ,
+    oplsec:clientKeyFileType ,
+    oplsec:pkcs12Password ,
+    oplsec:caCertificateFile ,
+    oplsec:delegationHeader ,
+    oplsec:delegatingAgent ,
+    oplsec:sessionAuthorizationUrl ,
+    oplsec:sessionReleaseUrl ,
+    oplsec:sessionKeyLocation ,
+    oplsec:sessionKeyName ,
+    oplsec:sessionKeyReceiptLocation ,
+    oplsec:sessionKeyReceiptName .
+
+# <-------------- Security Scheme Classes --------------> #
+
+# Partly modelled on http://swagger.io/specification/#securitySchemeObject
+# See also: https://swagger.io/docs/specification/authentication/
+
+oplsec:SecurityScheme
+  a owl:Class ;
+  rdfs:label "SecurityScheme" ;
+  skos:altLabel "Security Scheme" ;
+  rdfs:comment """Allows the definition of a security scheme that can be used by an EntryPoint's Actions. 
+    The term 'security scheme' encompasses both authentication and authorization schemes.
+    Supported schemes are: 
+      * WebID, 
+      * HTTP (Basic and Bearer authentication, using the Authorization header)
+      * API keys (in headers, query strings or cookies)
+      * OAuth2 (covering common flows: implicit, password, clientCredentials and authorizationCode)
+      * OpenID Connect
+    """@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/securityschemes#> .
+
+oplsec:WebIdSecurityScheme
+  a owl:Class ;
+  rdfs:subClassOf oplsec:SecurityScheme ;
+  rdfs:label "WebIdSecurityScheme" ;
+  skos:altLabel "WebID Security Scheme" ;
+  rdfs:comment "A security scheme using WebID authentication" ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/securityschemes#> .
+
+oplsec:HttpSecurityScheme
+  a owl:Class ;
+  rdfs:subClassOf oplsec:SecurityScheme ;
+  rdfs:label "HttpSecurityScheme" ;
+  skos:altLabel "HTTP Security Scheme" ;
+  rdfs:comment "A security scheme using HTTP (Basic or Bearer) authentication" ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/securityschemes#> .
+
+oplsec:ApiKeySecurityScheme
+  a owl:Class ;
+  rdfs:subClassOf oplsec:SecurityScheme ;
+  rdfs:label "ApiKeySecurityScheme" ;
+  skos:altLabel "API Key Security Scheme" ;
+  rdfs:comment "A security scheme using API keys or cookie authentication." ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/securityschemes#> .
+
+oplsec:OAuth2SecurityScheme
+  a owl:Class ;
+  rdfs:subClassOf oplsec:SecurityScheme ;
+  rdfs:label "OAuth2SecurityScheme" ;
+  skos:altLabel "OAuth2 Security Scheme" ;
+  rdfs:comment """
+    A security scheme using OAuth2.
+    It is assumed that bearer access tokens accompanying authenticated requests are sent in an
+    Authorization request header. The other methods of sending bearer access tokens described by 
+    RFC 6750 (form-encoded body parameter or URI query parameter) are not supported because of 
+    the security risks.
+    """ ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/securityschemes#> .
+
+oplsec:OpenIdConnectSecurityScheme
+  a owl:Class ;
+  rdfs:subClassOf oplsec:SecurityScheme ;
+  rdfs:label "OpenIdConnectSecurityScheme" ;
+  skos:altLabel "OpenID Connect Security Scheme" ;
+  rdfs:comment """
+    A security scheme using OpenID Connect.
+    It is assumed that bearer access tokens accompanying authenticated requests are sent in an
+    Authorization request header. The other methods of sending bearer access tokens described by 
+    RFC 6750 (form-encoded body parameter or URI query parameter) are not supported because of 
+    the security risks.
+    """ ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/securityschemes#> .
+
+oplsec:OAuthFlows
+  a owl:Class ;
+  rdfs:label "OAuthFlows" ;
+  skos:altLabel "OAuth Flows" ;
+  rdfs:comment """Allows configuration of the supported OAuth Flows"""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/securityschemes#> .
+
+oplsec:OAuthFlow
+  a owl:Class ;
+  rdfs:label "OAuthFlow" ;
+  skos:altLabel "OAuth Flow" ;
+  rdfs:comment """Configuration details for a supported OAuth Flow"""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/securityschemes#> .
+
+oplsec:OAuth2Scope
+  a owl:Class ;
+  rdfs:label "OAuth2Scope" ;
+  skos:altLabel "OAuth2 Scope" ;
+  rdfs:comment """An available scope for an OAuth2 security scheme."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/securityschemes#> .
+
+# <-------------- Security Scheme Properties --------------> #
+
+oplsec:securityScheme
+  a rdf:Property, owl:ObjectProperty  ;
+  rdfs:label "securityScheme" ;
+  skos:altLabel "security scheme" ;
+  rdfs:domain schema:EntryPoint ;
+  rdfs:range oplsec:SecurityScheme;
+  rdfs:comment """
+    Associates a SecurityScheme object with an EntryPoint. The requirements described by the 
+    SecurityScheme must be satisfied to authorize a request to the EntryPoint and execute an operation.
+    """@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/securityschemes#> .
+
+oplsec:apiKeyName
+  a rdf:Property, owl:DatatypeProperty  ;
+  rdfs:label "apiKeyName" ;
+  skos:altLabel "API key name" ;
+  rdfs:domain oplsec:ApiKeySecurityScheme ;
+  rdfs:range xsd:literal ;
+  rdfs:comment """The name of the header, cookie or query parameter to be used for sending the API key."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/securityschemes#> .
+
+oplsec:apiKeyLocation
+  a rdf:Property, owl:DatatypeProperty  ;
+  rdfs:label "apiKeyLocation" ;
+  skos:altLabel "API key location" ;
+  rdfs:domain oplsec:ApiKeySecurityScheme ;
+  rdfs:range xsd:literal ;
+  rdfs:comment """The location of the API key. Valid values are 'query', 'header' or 'cookie'."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/securityschemes#> .
+
+oplsec:httpAuthSchemeName
+  a rdf:Property, owl:DatatypeProperty  ;
+  rdfs:label "httpAuthSchemeName" ;
+  skos:altLabel "HTTP authorization scheme name" ;
+  rdfs:domain oplsec:HttpSecurityScheme ;
+  rdfs:range xsd:literal ;
+  rdfs:comment """
+    The name of the HTTP Authorization scheme to be used in the Authorization header as defined in RFC7235.
+    Valid values are 'basic' or 'bearer'.
+    """@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/securityschemes#> .
+
+oplsec:bearerFormat
+  a rdf:Property, owl:DatatypeProperty  ;
+  rdfs:label "bearerFormat" ;
+  skos:altLabel "bearer format" ;
+  rdfs:domain [ a owl:Class ; owl:unionOf ( oplsec:HttpSecurityScheme oplsec:OAuth2SecurityScheme oplsec:OpenIdConnectSecurityScheme ) ] ;
+  rdfs:range xsd:literal ;
+  rdfs:comment """
+    An optional hint to the client to identify how the bearer token is formatted.
+    Bearer tokens are usually generated by an authorization server, so this information is primarily for documentation purposes.
+    The Bearer authentication scheme was originally created as part of OAuth 2.0 in RFC 6750, but is sometimes also used on its own.
+    """@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/securityschemes#> .
+
+oplsec:oAuth2Flows
+  a rdf:Property, owl:ObjectProperty  ;
+  rdfs:label "oAuth2Flows" ;
+  skos:altLabel "OAuth2 flows" ;
+  rdfs:domain oplsec:OAuth2SecurityScheme ;
+  rdfs:range oplsec:OAuthFlows ;
+  rdfs:comment """Links to an OAuthFlows object containing configuration information for the flow types supported."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/securityschemes#> .
+
+oplsec:openIdConnectUrl
+  a rdf:Property, owl:DatatypeProperty  ;
+  rdfs:label "openIdConnectUrl" ;
+  skos:altLabel "has OpenId Connect URL" ;
+  rdfs:domain oplsec:OpenIdConnectSecurityScheme ;
+  rdfs:range xsd:anyURI ;
+  rdfs:comment """OpenId Connect URL to discover OAuth2 configuration values."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/securityschemes#> .
+
+oplsec:oauthFlow
+  a rdf:Property, owl:ObjectProperty  ;
+  rdfs:label "oauthFlow" ;
+  skos:altLabel "OAuth flow" ;
+  rdfs:domain oplsec:OAuthFlows ;
+  rdfs:range oplsec:OAuthFlow ;
+  rdfs:comment """Configuration for an OAuth flow."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/securityschemes#> .
+
+oplsec:flowType
+  a rdf:Property, owl:DatatypeProperty  ;
+  rdfs:label "flowType" ;
+  skos:altLabel "flow type" ;
+  rdfs:domain oplsec:OAuthFlow;
+  rdfs:range xsd:literal ;
+  rdfs:comment """The type of the OAuth flow. Valid values are: 'implicit', 'password', 'clientCredentials' and 'authorizationCode'"""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/securityschemes#> .
+
+oplsec:authorizationUrl
+  a rdf:Property, owl:DatatypeProperty  ;
+  rdfs:label "authorizationUrl" ;
+  skos:altLabel "authorization URL" ;
+  rdfs:domain oplsec:OAuthFlow ;
+  rdfs:range xsd:anyURI ;
+  rdfs:comment """The authorization URL to be used for the OAuth2 flow.
+    Required for OAuth2 'implicit' and 'authorizationCode' flows.
+    """@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/securityschemes#> .
+
+oplsec:tokenUrl
+  a rdf:Property, owl:DatatypeProperty  ;
+  rdfs:label "tokenUrl" ;
+  skos:altLabel "token URL" ;
+  rdfs:domain oplsec:OAuthFlow ;
+  rdfs:range xsd:anyURI ;
+  rdfs:comment """The token URL to be used for this flow.
+    Required for OAuth2 'password', 'clientCredentials' and 'authorizationCode' flows.
+    """@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/securityschemes#> .
+
+oplsec:refreshUrl
+  a rdf:Property, owl:DatatypeProperty  ;
+  rdfs:label "refreshUrl" ;
+  skos:altLabel "refresh URL" ;
+  rdfs:domain oplsec:OAuthFlow ;
+  rdfs:range xsd:anyURI ;
+  rdfs:comment """The URL to be used for obtaining OAuth2 refresh tokens."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/securityschemes#> .
+
+oplsec:hasOAuth2Scopes
+  a rdf:Property, owl:ObjectProperty  ;
+  rdfs:label "hasOAuth2Scopes" ;
+  skos:altLabel "has OAuth2 scopes" ;
+  rdfs:domain [ a owl:Class ; owl:unionOf ( oplsec:OAuth2SecurityScheme oplsec:OpenIdConnectSecurityScheme ) ] ;
+  rdfs:range oplsec:OAuth2Scope ;
+  rdfs:comment """Lists the available scopes for an OAuth2 security scheme."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/securityschemes#> .
+
+oplsec:scopeName
+  a rdf:Property, owl:DatatypeProperty  ;
+  rdfs:label "scopeName" ;
+  skos:altLabel "scope name" ;
+  rdfs:domain oplsec:OAuth2Scope ;
+  rdfs:range xsd:literal ;
+  rdfs:comment """A string defining a permitted scope name"""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/securityschemes#> .
+
+oplsec:scopeDescription
+  a rdf:Property, owl:DatatypeProperty  ;
+  rdfs:label "scopeDescription" ;
+  skos:altLabel "scope description" ;
+  rdfs:domain oplsec:OAuth2Scope ;
+  rdfs:range xsd:literal ;
+  rdfs:comment """A short description of a scope name"""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/securityschemes#> .
+
+# <-------------- WebID Security Scheme Properties --------------> #
+
+oplsec:clientCertificateFile
+  a rdf:Property, owl:DatatypeProperty  ;
+  rdfs:label "clientCertificateFile" ;
+  skos:altLabel "client certificate file" ;
+  rdfs:domain oplsec:WebIdSecurityScheme ;
+  rdfs:range xsd:literal ;
+  rdfs:comment """
+    The file name, including a path if necessary, of the client certificate file.
+    The certificate file may be in PEM or PKCS#12 format, as indicated by clientCertificateFileType.
+    clientCertificateFile may refer to the same file as clientKeyFile if supported by the file (container) format.
+  """@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/securityschemes#> .
+
+oplsec:clientCertificateFileType
+  a rdf:Property, owl:DatatypeProperty  ;
+  rdfs:label "clientCertificateFileType" ;
+  skos:altLabel "client certificate file type" ;
+  rdfs:domain oplsec:WebIdSecurityScheme ;
+  rdfs:range xsd:literal ;
+  rdfs:comment """The type of certificate file provided by the client. Valid values are 'pkcs12' or 'pem'."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/securityschemes#> .
+
+oplsec:clientKeyFile
+  a rdf:Property, owl:DatatypeProperty  ;
+  rdfs:label "clientKeyFile" ;
+  skos:altLabel "client key file" ;
+  rdfs:domain oplsec:WebIdSecurityScheme ;
+  rdfs:range xsd:literal ;
+  rdfs:comment """
+    The file name, including a path if necessary, of the client key file.
+    The key file may be in PEM or PKCS#12 format, as indicated by clientKeyFileType.
+    clientKeyFile may refer to the same file as clientCertificateFile if supported by the file (container) format.
+  """@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/securityschemes#> .
+
+oplsec:clientKeyFileType
+  a rdf:Property, owl:DatatypeProperty  ;
+  rdfs:label "clientKeyFileType" ;
+  skos:altLabel "client key file type" ;
+  rdfs:domain oplsec:WebIdSecurityScheme ;
+  rdfs:range xsd:literal ;
+  rdfs:comment """The type of key file provided by the client. Valid values are 'pkcs12' or 'pem'."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/securityschemes#> .
+
+oplsec:pkcs12Password
+  a rdf:Property, owl:DatatypeProperty  ;
+  rdfs:label "pkcs12Password" ;
+  skos:altLabel "pkcs12 password" ;
+  rdfs:domain oplsec:WebIdSecurityScheme ;
+  rdfs:range xsd:literal ;
+  rdfs:comment """
+    The password protecting the PKCS#12 file(s) holding clientKeyFile and/or clientCertificateFile.
+    The client agent using the EndPoint is responsible for prompting for and retrieving the password.
+    It is assumed that any RDF graph holding this property is a temporary or in-memory graph and either
+    the graph or this property will be cleared as soon as practicable after use.
+    Required only for PKCS#12 files, not PEM files.
+  """@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/securityschemes#> .
+
+oplsec:caCertificateFile
+  a rdf:Property, owl:DatatypeProperty  ;
+  rdfs:label "caCertificateFile" ;
+  skos:altLabel "ca certificate file" ;
+  rdfs:domain oplsec:WebIdSecurityScheme ;
+  rdfs:range xsd:literal ;
+  rdfs:comment """
+    The file name, including a path if necessary, of an optional CA certificate file.
+    The CA certificate file is used to verify the server, for instance if the server uses a self-signed certificate. 
+    The file may contain multiple CA certificates. The certificate(s) must be in PEM format.
+  """@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/securityschemes#> .
+
+oplsec:delegationHeader
+  a rdf:Property, owl:DatatypeProperty  ;
+  rdfs:label "delegationHeader" ;
+  skos:altLabel "delegation header" ;
+  rdfs:domain oplsec:WebIdSecurityScheme ;
+  rdfs:range xsd:literal ;
+  rdfs:comment """The name of the HTTP header used to identify the delegating user or agent. e.g. 'OnBehalfOf'."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/securityschemes#> .
+
+oplsec:delegatingAgent
+  a rdf:Property, owl:DatatypeProperty  ;
+  rdfs:label "delegatingAgent" ;
+  skos:altLabel "delegating agent" ;
+  rdfs:domain oplsec:WebIdSecurityScheme ;
+  rdfs:range xsd:literal ;
+  rdfs:comment """
+    The WebID of the delegator user or agent on whose behalf a software agent is authenticating.
+    delegatingAgent provides the value for the delegationHeader HTTP header.
+    Required if using WebID delegation.
+  """@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/securityschemes#> .
+
+oplsec:sessionAuthorizationUrl
+  a rdf:Property, owl:DatatypeProperty  ;
+  rdfs:label "sessionAuthorizationUrl" ;
+  skos:altLabel "session authorization URL" ;
+  rdfs:domain oplsec:SecurityScheme ;
+  rdfs:range xsd:anyURI ;
+  rdfs:comment """
+    The URL of an API endpoint which establishes a client session on successful authentication.
+    Authentication methods supported with this property are WebID, HTTP Basic and HTTP Digest.
+    The endpoint is expected to return a session key as described by sessionKeyName and sessionKeyReceiptLocation.
+    Calls to the service endpoint protected by the security scheme should include the session key if required in
+    the HTTP request location stipulated by sessionKeyLocation. Support for session keys is optional with the
+    above authentication schemes. A service endpoint description need not include this and related properties.
+    e.g. A service may use WebID authentication without session creation by presenting a client certificate
+    to the service endpoint directly without prior login via {sessionAuthorizationUrl}.
+    The API endpoint must support GET.
+  """@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/securityschemes#> .
+
+oplsec:sessionReleaseUrl
+  a rdf:Property, owl:DatatypeProperty  ;
+  rdfs:label "sessionReleaseUrl" ;
+  skos:altLabel "session release URL" ;
+  rdfs:domain oplsec:SecurityScheme ;
+  rdfs:range xsd:anyURI ;
+  rdfs:comment """
+    The URL of an API endpoint which releases a client session.
+    Authentication methods supported with this property are WebID, HTTP Basic and HTTP Digest.
+    The endpoint is expected to accept a session key as described by sessionKeyName and sessionKeyLocation.
+    The API endpoint must support GET.
+  """@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/securityschemes#> .
+
+oplsec:sessionKeyLocation
+  a rdf:Property, owl:DatatypeProperty  ;
+  rdfs:label "sessionKeyLocation" ;
+  skos:altLabel "session key location" ;
+  rdfs:domain oplsec:SecurityScheme ;
+  rdfs:range xsd:literal ;
+  rdfs:comment """The location of the session key if supplied with a web service request. Valid values are 'query', 'header' or 'cookie'."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/securityschemes#> .
+
+oplsec:sessionKeyName
+  a rdf:Property, owl:DatatypeProperty  ;
+  rdfs:label "sessionKeyName" ;
+  skos:altLabel "session key name" ;
+  rdfs:domain oplsec:SecurityScheme ;
+  rdfs:range xsd:literal ;
+  rdfs:comment """The name of the header, cookie or query parameter to be used for supplying a session key with a web service request."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/securityschemes#> .
+
+oplsec:sessionKeyReceiptLocation
+  a rdf:Property, owl:DatatypeProperty  ;
+  rdfs:label "sessionKeyReceiptLocation" ;
+  skos:altLabel "session key receipt location" ;
+  rdfs:domain oplsec:SecurityScheme ;
+  rdfs:range xsd:literal ;
+  rdfs:comment """The location of a new session key returned by {sessionAuthorizationUrl}. Valid values are 'header' or 'cookie'."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/securityschemes#> .
+
+oplsec:sessionKeyReceiptName
+  a rdf:Property, owl:DatatypeProperty  ;
+  rdfs:label "sessionKeyReceiptName" ;
+  skos:altLabel "session key receipt name" ;
+  rdfs:domain oplsec:SecurityScheme ;
+  rdfs:range xsd:literal ;
+  rdfs:comment """The name of the header or cookie containing the new session key returned by {sessionAuthorizationUrl}."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/securityschemes#> .
+

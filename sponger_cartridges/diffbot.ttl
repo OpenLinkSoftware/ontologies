@@ -1,0 +1,168 @@
+#
+# An OpenLink ontology for the Diffbot Natural Language API
+#
+@prefix opldb: <http://www.openlinksw.com/schemas/diffbot#> .
+
+@prefix oa: <http://www.w3.org/ns/oa#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ovt: <http://open.vocab.org/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix wdrs: <http://www.w3.org/2007/05/powder-s#> .
+@prefix xhv: <http://www.w3.org/1999/xhtml/vocab#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.openlinksw.com/schemas/diffbot#>
+  a owl:Ontology ;
+  rdfs:label "OpenLink Ontology for Diffbot" ;
+  schema:description"""An ontology that defines entity and relation types used to generate RDF based Linked Data from 
+  the Diffbot Natural Language API."""@en ;
+  rdfs:commnet """The OpenLink Diffbot ontology provides types and relations to fill gaps not covered by other ontologies, e.g. schema.org,
+  when mapping the Diffbot Natural Language API output to RDF. This ontology alone does not aim provide complete coverage of the Natural Language API."""@en ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:dateCreated "2020-10-09T09:00:00-00:00"^^xsd:dateTime ;
+  schema:dateModified "2020-10-09T09:00:00-00:00"^^xsd:dateTime ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  wdrs:describedby <http://www.openlinksw.com/schemas/diffbot> ;
+  owl:versionInfo "1.0.0"^^xsd:string ;
+
+  ovt:defines 
+    opldb:EntityType ,
+    opldb:Fact ,
+    opldb:OpenFact ,
+    opldb:entityType ,
+    opldb:fact ,
+    opldb:openFact ,
+    opldb:salience ,
+    opldb:sentiment ,
+    opldb:factSubject ,
+    opldb:factPredicate ,
+    opldb:factObject ;
+
+  schema:about
+    opldb:EntityType ,
+    opldb:Fact ,
+    opldb:OpenFact ,
+    opldb:entityType ,
+    opldb:fact ,
+    opldb:openFact ,
+    opldb:salience ,
+    opldb:sentiment ,
+    opldb:factSubject ,
+    opldb:factPredicate ,
+    opldb:factObject .
+
+<http://www.openlinksw.com/data/turtle/cartridge_ontologies/diffbot.ttl>
+  a foaf:Document , schema:TechArticle ;
+  rdfs:label "OpenLink Ontology for Diffbot Natural Language API (Turtle)"^^xsd:string ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  rdfs:commnet """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for the Diffbot Natural Language API"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/diffbot#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/diffbot> ;
+  xhv:describes <http://www.openlinksw.com/schemas/diffbot#> ;
+  schema:about <http://www.openlinksw.com/schemas/diffbot#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/diffbot#> ;
+  foaf:topic
+    opldb:EntityType ,
+    opldb:Fact ,
+    opldb:OpenFact ,
+    opldb:entityType ,
+    opldb:fact ,
+    opldb:openFact ,
+    opldb:salience ,
+    opldb:sentiment ,
+    opldb:factSubject ,
+    opldb:factPredicate ,
+    opldb:factObject .
+
+opldb:EntityType
+  a owl:Class ;
+  rdfs:label "EntityType" ;
+  rdfs:comment """The type of an extracted entity. Example: organization, person."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/diffbot#> .
+
+opldb:Fact
+  a owl:Class ;
+  rdfs:label "Fact" ;
+  rdfs:comment """A fact whose properties have been pre-defined in the Diffbot schema.
+    A fact defines a relationship between entities (Apple Inc; founder; Steve Jobs) or an entity and a literal (Apple Inc; number of employees; 137,000)
+  """@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/diffbot#> .
+
+opldb:OpenFact
+  a owl:Class ;
+  rdfs:label "OpenFact" ;
+  rdfs:comment """An open-domain fact whose description has been extracted from the text alone. 
+    Rather than following a particular schema, these facts enable new properties to be discovered."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/diffbot#> .
+
+opldb:entityType
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "entityType" ;
+  rdfs:comment """Points to an EntityType identified by text analysis."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/diffbot#> ;
+  rdfs:range opldb:EntityType ;
+  rdfs:domain oa:Annotation .
+
+opldb:fact
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "fact" ;
+  rdfs:comment """Points to a Fact identified by text analysis."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/diffbot#> ;
+  rdfs:range opldb:Fact ;
+  rdfs:domain oa:Annotation .
+
+opldb:openFact
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "openFact" ;
+  rdfs:comment """Points to an OpenFact identified by text analysis."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/diffbot#> ;
+  rdfs:range opldb:OpenFact ;
+  rdfs:domain oa:Annotation .
+
+opldb:salience
+  a rdf:Property, owl:DatatypeProperty ;
+  rdfs:label "salience" ;
+  rdfs:comment """This value helps answer the question: 'What is this text mainly about?'. 
+    Salience of 1.0 means the entity is the main topic of the document, while salience of 0.0 means that the entity is unnecessary to understand the document."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/diffbot#> ;
+  rdfs:range xsd:decimal ;
+  rdfs:domain oa:Annotation .
+
+opldb:sentiment
+  a rdf:Property, owl:DatatypeProperty ;
+  rdfs:label "sentiment" ;
+  rdfs:comment """A value representing the overall sentiment of the text relating to an entity or the document text itself. 
+    It ranges from -1.0 (very negative) to 1.0 (very positive). Sentiment around 0.0 is considered neutral."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/diffbot#> ;
+  rdfs:range xsd:decimal ;
+  rdfs:domain oa:Annotation .
+
+opldb:factSubject
+  a rdf:Property, owl:DatatypeProperty ;
+  rdfs:label "factSubject" ;
+  rdfs:comment """States the subject of a Diffbot Fact or OpenFact."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/diffbot#> ;
+  rdfs:range rdfs:Literal ;
+  rdfs:domain opldb:Fact, opldb:OpenFact .
+
+opldb:factPredicate
+  a rdf:Property, owl:DatatypeProperty ;
+  rdfs:label "factPredicate" ;
+  rdfs:comment """States the predicate of a Diffbot Fact or OpenFact."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/diffbot#> ;
+  rdfs:range rdfs:Literal ;
+  rdfs:domain opldb:Fact, opldb:OpenFact .
+
+opldb:factObject
+  a rdf:Property, owl:DatatypeProperty ;
+  rdfs:label "factObject" ;
+  rdfs:comment """States the object of a Diffbot Fact or OpenFact."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/diffbot#> ;
+  rdfs:range rdfs:Literal ;
+  rdfs:domain opldb:Fact, opldb:OpenFact .

@@ -1,0 +1,534 @@
+@prefix schema:  <http://schema.org/> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix cvocab:  <http://open-services.net/ns/core#> .
+@prefix cc:      <http://creativecommons.org/ns#> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix doap:    <http://usefulinc.com/ns/doap#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sioc:    <http://rdfs.org/sioc/ns#> .
+@prefix wdrs:    <http://www.w3.org/2007/05/powder-s#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix wf:      <http://www.w3.org/2005/01/wf/flow#> .
+@prefix gh:      <http://www.openlinksw.com/schemas/github#> .
+@prefix xhv:    <http://www.w3.org/1999/xhtml/vocab#> .
+
+<http://www.openlinksw.com/schemas/github#>
+  a owl:Ontology ;
+  schema:name "OpenLink Github Ontology" ;
+  schema:comment """Ontology that defines entity and relation types used to describe Github.
+  Examples include tasks, projects, usernames etc."""@en  ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  wdrs:describedby <http://www.openlinksw.com/schemas/github> ;
+  schema:dateCreated "2013-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  schema:dateModified "2020-11-20T13:38:00-05:00"^^xsd:dateTime ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  owl:versionInfo "1.0.0"^^xsd:string ;
+  owl:imports <http://www.w3.org/1999/02/22-rdf-syntax-ns#> , <http://purl.org/dc/terms/> ;
+  <http://open.vocab.org/terms/defines>
+    gh:Comment ,
+    gh:Gist ,
+    gh:Pull ,
+    gh:Task ,
+    gh:additions ,
+    gh:changeFiles ,
+    gh:closedAt ,
+    gh:comments ,
+    gh:commits ,
+    gh:deletions ,
+    gh:forkOf ,
+    gh:hasComment ,
+    gh:hasDownloads ,
+    gh:hasFollowers ,
+    gh:hasFollowing ,
+    gh:hasForks ,
+    gh:hasGists ,
+    gh:hasIssue,
+    gh:hasIssues ,
+    gh:hasLocation ,
+    gh:hasOpenIssues ,
+    gh:hasProject ,
+    gh:hasProjectID ,
+    gh:hasPublicRepoCount ,
+    gh:hasPull ,
+    gh:hasSize ,
+    gh:hasUID ,
+    gh:hasUserName ,
+    gh:hasWatchers ,
+    gh:hasWiki ,
+    gh:isHireable ,
+    gh:issues,
+    gh:mergeableState ,
+    gh:merged ,
+    gh:mergedAt ,
+    gh:mergedBy ,
+    gh:project ,
+    gh:reviewComments ,
+    gh:topic ;
+  schema:about
+    gh:Comment ,
+    gh:Gist ,
+    gh:Pull ,
+    gh:Task ,
+    gh:additions ,
+    gh:changeFiles ,
+    gh:closedAt ,
+    gh:comments ,
+    gh:commits ,
+    gh:deletions ,
+    gh:forkOf ,
+    gh:hasComment ,
+    gh:hasDownloads ,
+    gh:hasFollowers ,
+    gh:hasFollowing ,
+    gh:hasForks ,
+    gh:hasGists ,
+    gh:hasIssue,
+    gh:hasIssues ,
+    gh:hasLocation ,
+    gh:hasOpenIssues ,
+    gh:hasProject ,
+    gh:hasProjectID ,
+    gh:hasPublicRepoCount ,
+    gh:hasPull ,
+    gh:hasSize ,
+    gh:hasUID ,
+    gh:hasUserName ,
+    gh:hasWatchers ,
+    gh:hasWiki ,
+    gh:isHireable ,
+    gh:issues,
+    gh:mergeableState ,
+    gh:merged ,
+    gh:mergedAt ,
+    gh:mergedBy ,
+    gh:project ,
+    gh:reviewComments ,
+    gh:topic .
+
+
+<http://www.openlinksw.com/DAV/data/turtle/cartridge_ontologies/github.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink Github Ontology Description Document (Turtle)" ;
+  cc:License <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for Github"""@en  ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/github#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/github> ;
+  xhv:describes <http://www.openlinksw.com/schemas/github#> ;
+  schema:about <http://www.openlinksw.com/schemas/github#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/github#> .
+
+<http://www.openlinksw.com/data/turtle/cartridge_ontologies/github.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink Github Ontology Description Document (Turtle)" ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for Github"""@en  ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/github#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/github> ;
+  xhv:describes <http://www.openlinksw.com/schemas/github#> ;
+  schema:about <http://www.openlinksw.com/schemas/github#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/github#> .
+
+<http://www.openlinksw.com/schemas/github>
+  a foaf:Document ;
+  schema:name """OpenLink Github Ontology Description Document"""^^xsd:string ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a document that uses Linked Data oriented content to describe OpenLink Github Ontology."""@en  ;
+  dcterms:subject <http://www.openlinksw.com/schemas/github#> ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/github#> ;
+  foaf:topic
+    gh:Comment ,
+    gh:Gist ,
+    gh:Pull ,
+    gh:Task ,
+    gh:additions ,
+    gh:changeFiles ,
+    gh:closedAt ,
+    gh:comments ,
+    gh:commits ,
+    gh:deletions ,
+    gh:forkOf ,
+    gh:hasComment ,
+    gh:hasDownloads ,
+    gh:hasFollowers ,
+    gh:hasFollowing ,
+    gh:hasForks ,
+    gh:hasGists ,
+    gh:hasIssue,
+    gh:hasIssues ,
+    gh:hasLocation ,
+    gh:hasOpenIssues ,
+    gh:hasProject ,
+    gh:hasProjectID ,
+    gh:hasPublicRepoCount ,
+    gh:hasPull ,
+    gh:hasSize ,
+    gh:hasUID ,
+    gh:hasUserName ,
+    gh:hasWatchers ,
+    gh:hasWiki ,
+    gh:isHireable ,
+    gh:issues,
+    gh:mergeableState ,
+    gh:merged ,
+    gh:mergedAt ,
+    gh:mergedBy ,
+    gh:project ,
+    gh:reviewComments ,
+    gh:topic .
+
+# < ------------------- Classes ------------------------>
+
+gh:Comment
+    a owl:Class ;
+    rdfs:subClassOf schema:Comment ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/github#> ;
+    rdfs:label "Comment" ;
+    rdfs:comment """A class for comments"""@en .
+
+gh:Gist
+    a owl:Class ;
+    rdfs:subClassOf foaf:Document ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/github#> ;
+    rdfs:label "GitHub Gist" ;
+    rdfs:comment """Gist is a simple way to share snippets and pastes with others. All gists are Git repositories, so they are automatically versioned, forkable and usable from Git."""@en .
+
+gh:Pull
+    a owl:Class ;
+    rdfs:subClassOf foaf:Document ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/github#> ;
+    rdfs:label "GitHub Pull" ;
+    rdfs:comment """A class for describing pull requests"""@en .
+
+gh:Task
+    a owl:Class ;
+    rdfs:subClassOf wf:Task ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/github#> ;
+    rdfs:label "Task" ;
+    rdfs:comment """A class for describing tasks"""@en .
+
+# < ------------------- Properties ------------------------>
+
+gh:additions
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/github#> ;
+    rdfs:label "additions" ;
+    skos:altLabel "additions" ;
+    rdfs:comment """The number of additions associated with a pull request"""@en ;
+    rdfs:domain gh:Pull ;
+    rdfs:range xsd:integer .
+
+gh:changedFiles
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/github#> ;
+    rdfs:label "changedFiles" ;
+    skos:altLabel "changedFiles" ;
+    rdfs:comment """The number of changed files associated with a pull request"""@en ;
+    rdfs:domain foaf:Agent ;
+    rdfs:range xsd:integer .
+
+gh:closedAt
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/github#> ;
+    rdfs:label "closedAt" ;
+    skos:altLabel "closedAt" ;
+    rdfs:comment """The date a pull request was closed"""@en ;
+    rdfs:domain gh:Pull ;
+    rdfs:range xsd:integer .
+
+gh:comments
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/github#> ;
+    rdfs:label "comments" ;
+    skos:altLabel "comments" ;
+    rdfs:comment """The number of comments associated with a pull request"""@en ;
+    rdfs:domain gh:Pull ;
+    rdfs:range xsd:integer .
+
+gh:commits
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/github#> ;
+    rdfs:label "commits" ;
+    skos:altLabel "commits" ;
+    rdfs:comment """The number of commits associated with a pull request"""@en ;
+    rdfs:domain gh:Pull ;
+    rdfs:range xsd:integer .
+
+gh:deletions
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/github#> ;
+    rdfs:label "deletions" ;
+    skos:altLabel "deletions" ;
+    rdfs:comment """The number of deletions associated with a pull request"""@en ;
+    rdfs:domain gh:Pull ;
+    rdfs:range xsd:integer .
+
+gh:forkOf
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/github#> ;
+    rdfs:label "forkOf" ;
+    skos:altLabel "fork of" ;
+    rdfs:comment """The repository from which this one was forked"""@en ;
+    rdfs:domain doap:Project ;
+    rdfs:range doap:Project .
+
+gh:hasComment
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/github#> ;
+    rdfs:label "hasComment" ;
+    skos:altLabel "comment" ;
+    rdfs:comment """Comments associated with a Gist or Task (aka issue)"""@en ;
+    rdfs:domain gh:Gist, gh:Task ;
+    rdfs:range gh:Comment .
+
+gh:hasDownloads
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/github#> ;
+    rdfs:label "hasDownloads" ;
+    skos:altLabel "downloads" ;
+    rdfs:comment """Whether the current project has been downloaded"""@en ;
+    rdfs:domain doap:Project ;
+    rdfs:range xsd:boolean .
+
+gh:hasFollowers
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/github#> ;
+    rdfs:label "hasFollowers" ;
+    skos:altLabel "followers" ;
+    rdfs:comment """Number of this user's followers"""@en ;
+    rdfs:domain foaf:Agent ;
+    rdfs:range xsd:integer .
+
+gh:hasFollowing
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/github#> ;
+    rdfs:label "hasFollowing" ;
+    skos:altLabel "following" ;
+    rdfs:comment """Number of users being followed"""@en ;
+    rdfs:domain foaf:Agent ;
+    rdfs:range xsd:integer .
+
+gh:hasForks
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/github#> ;
+    rdfs:label "hasForks" ;
+    skos:altLabel "forks" ;
+    rdfs:comment """Number of forks"""@en ;
+    rdfs:domain doap:Project ;
+    rdfs:range xsd:integer .
+
+gh:hasGists
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/github#> ;
+    rdfs:label "hasGists" ;
+    skos:altLabel "gists" ;
+    rdfs:comment """Number of public gists"""@en ;
+    rdfs:domain foaf:Agent ;
+    rdfs:range xsd:integer .
+
+gh:hasIssue
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/github#> ;
+    rdfs:label "hasIssue" ;
+    skos:altLabel "issue" ;
+    rdfs:comment """Issues (tasks) associated with a project"""@en ;
+    rdfs:domain sioc:Container ;
+    rdfs:range gh:Task .
+
+gh:hasIssues
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/github#> ;
+    rdfs:label "hasIssues" ;
+    skos:altLabel "has issues" ;
+    rdfs:comment """Whether there are bugs reported against the project"""@en ;
+    rdfs:domain doap:Project ;
+    rdfs:range xsd:boolean .
+
+gh:hasLocation
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/github#> ;
+    rdfs:label "hasLocation" ;
+    skos:altLabel "location" ;
+    rdfs:comment """Github user's normative location"""@en ;
+    rdfs:domain foaf:Agent ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf geo:name .
+
+gh:hasOpenIssues
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/github#> ;
+    rdfs:label "hasOpenIssues" ;
+    skos:altLabel "open issues" ;
+    rdfs:comment """Number of unresolved issues"""@en ;
+    rdfs:domain doap:Project ;
+    rdfs:range xsd:integer .
+
+gh:hasProject
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/github#> ;
+    rdfs:label "hasProject" ;
+    skos:altLabel "owns project" ;
+    rdfs:comment """Relates a Github user to a DOAP project"""@en ;
+    rdfs:domain foaf:Agent ;
+    rdfs:range doap:Project .
+
+gh:hasProjectID
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/github#> ;
+    rdfs:label "hasProjectID" ;
+    skos:altLabel "Github project ID" ;
+    rdfs:comment """Github project ID"""@en ;
+    rdfs:domain doap:Project ;
+    rdfs:range xsd:integer .
+
+gh:hasPublicRepoCount
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/github#> ;
+    rdfs:label "hasPublicRepoCount" ;
+    skos:altLabel "repositories count" ;
+    rdfs:comment """Number of public repositories"""@en ;
+    rdfs:domain foaf:Agent ;
+    rdfs:range xsd:integer .
+
+gh:hasPull
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/github#> ;
+    rdfs:label "hasPull" ;
+    skos:altLabel "pull" ;
+    rdfs:comment """Pull requests associated with a project"""@en ;
+    rdfs:domain sioc:Container ;
+    rdfs:range gh:Pull .
+
+gh:hasSize
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/github#> ;
+    rdfs:label "hasSize" ;
+    skos:altLabel "size" ;
+    rdfs:comment """A measure of the size of a project"""@en ;
+    rdfs:domain doap:Project ;
+    rdfs:range xsd:integer .
+
+gh:hasUID
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/github#> ;
+    rdfs:label "hasUID" ;
+    skos:altLabel "uid" ;
+    rdfs:comment """Github UserID"""@en ;
+    rdfs:domain foaf:Agent ;
+    rdfs:range xsd:integer .
+
+gh:hasUserName
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/github#> ;
+    rdfs:label "hasUserName" ;
+    skos:altLabel "username" ;
+    rdfs:comment """Github username"""@en ;
+    rdfs:domain foaf:Agent ;
+    rdfs:range xsd:string .
+
+gh:hasWatchers
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/github#> ;
+    rdfs:label "hasWatchers" ;
+    skos:altLabel "watchers" ;
+    rdfs:comment """Number of users watching the project"""@en ;
+    rdfs:domain doap:Project ;
+    rdfs:range xsd:integer .
+
+gh:hasWiki
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/github#> ;
+    rdfs:label "hasWiki" ;
+    skos:altLabel "wiki" ;
+    rdfs:comment """Whether the project has a wiki"""@en ;
+    rdfs:domain doap:Project ;
+    rdfs:range xsd:boolean .
+
+gh:isHireable
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/github#> ;
+    rdfs:label "isHireable" ;
+    skos:altLabel "hireable" ;
+    rdfs:comment """Whether the current user is hireable"""@en ;
+    rdfs:domain foaf:Agent ;
+    rdfs:range xsd:boolean .
+
+gh:issues
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/github#> ;
+    rdfs:label "issues" ;
+    skos:altLabel "issues" ;
+    rdfs:comment """Issues associated with a project"""@en ;
+    rdfs:domain doap:Project ;
+    rdfs:range sioc:Container .
+
+gh:mergeableState
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/github#> ;
+    rdfs:label "mergeableState" ;
+    skos:altLabel "mergeable state" ;
+    rdfs:comment """Is the pull request mergeable?"""@en ;
+    rdfs:domain gh:Pull ;
+    rdfs:range xsd:boolean .
+
+gh:merged
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/github#> ;
+    rdfs:label "merged" ;
+    skos:altLabel "merged" ;
+    rdfs:comment """Has the pull request been merged?"""@en ;
+    rdfs:domain gh:Pull ;
+    rdfs:range xsd:boolean .
+
+gh:mergedAt
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/github#> ;
+    rdfs:label "mergedAt" ;
+    skos:altLabel "merged at" ;
+    rdfs:comment """Date and time a pull request was merged"""@en ;
+    rdfs:domain gh:Pull ;
+    rdfs:range xsd:dateTime .
+
+gh:mergedBy
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/github#> ;
+    rdfs:label "mergedBy" ;
+    skos:altLabel "merged by" ;
+    rdfs:comment """The user who merged a pull request"""@en ;
+    rdfs:domain gh:Pull ;
+    rdfs:range foaf:Agent .
+
+gh:project
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/github#> ;
+    rdfs:label "project" ;
+    skos:altLabel "project" ;
+    rdfs:comment """The project to which an entity belongs."""@en ;
+    rdfs:domain gh:Comment, gh:Pull, gh:Task ;
+    rdfs:range doap:Project .
+
+gh:reviewComments
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/github#> ;
+    rdfs:label "reviewComments" ;
+    skos:altLabel "review comments" ;
+    rdfs:comment """The number of review comments associated with a pull request"""@en ;
+    rdfs:domain gh:Pull ;
+    rdfs:range xsd:integer .
+
+gh:topic
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/github#> ;
+    rdfs:label "topic" ;
+    skos:altLabel "topic" ;
+    rdfs:comment """The project a comment relates to"""@en ;
+    rdfs:domain gh:Comment ;
+    rdfs:range doap:Project .
+

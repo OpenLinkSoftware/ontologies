@@ -1,0 +1,322 @@
+#
+# An OpenLink ontology for StackOverflow (https://api.stackexchange.com/docs)
+#
+
+@prefix schema:  <http://schema.org/> .
+@prefix skos:       <http://www.w3.org/2004/02/skos/core#> .
+@prefix cvocab:     <http://open-services.net/ns/core#> .
+@prefix awol:       <http://bblfish.net/work/atom-owl/2006-06-06/#> .
+@prefix cc:         <http://creativecommons.org/ns#> .
+@prefix dc:         <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms:    <http://purl.org/dc/terms/> .
+@prefix foaf:       <http://xmlns.com/foaf/0.1/> .
+@prefix geo:        <http://www.geonames.org/ontology#> .
+@prefix opl:        <http://www.openlinksw.com/schema/attribution#> .
+@prefix owl:        <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:        <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:       <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sioc:       <http://rdfs.org/sioc/ns#> .
+@prefix sioct:      <http://rdfs.org/sioc/types#> .
+@prefix so:         <http://www.openlinksw.com/schemas/stackoverflow#> .
+@prefix virtrdfmec: <http://www.openlinksw.com/schemas/virtrdf-meta-entity-class#> .
+@prefix wdrs:       <http://www.w3.org/2007/05/powder-s#> .
+@prefix xsd:        <http://www.w3.org/2001/XMLSchema#> .
+@prefix oplfaq:     <http://www.openlinksw.com/ontology/faq#> .
+@prefix xhv:    <http://www.w3.org/1999/xhtml/vocab#> .
+
+<http://www.openlinksw.com/schemas/stackoverflow#>
+  a owl:Ontology ;
+  schema:name "OpenLink StackOverflow Ontology" ;
+  schema:comment """Ontology that defines entity and relation types used to describe StackOverflow.
+  Examples include accepted answers, questions, agents etc."""@en ;
+  owl:imports <http://www.w3.org/1999/02/22-rdf-syntax-ns#> , <http://purl.org/dc/terms/> , <http://www.openlinksw.com/ontology/faq#> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:dateCreated "2013-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  schema:dateModified "2015-04-22T13:38:00-05:00"^^xsd:dateTime ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  wdrs:describedby <http://www.openlinksw.com/schemas/stackoverflow> ;
+  owl:versionInfo "1.0.0"^^xsd:string ;
+  <http://open.vocab.org/terms/defines>
+     so:User ,
+     so:Agent ,
+     so:Question ,
+     so:Answer ,
+     so:Entity ,
+     so:acceptedAnswerID ,
+     so:isAccepted ,
+     so:answerCount ,
+     so:employee ,
+     so:location ,
+     so:quotaMax ,
+     so:quotaRemaining ,
+     so:reputation ,
+     so:reputationChangeDay ,
+     so:reputationChangeMonth ,
+     so:reputationChangeWeek ,
+     so:reputationChangeYear ,
+     so:score ,
+     so:userType ,
+     so:viewCount ;
+  schema:about
+     so:User ,
+     so:Agent ,
+     so:Question ,
+     so:Answer ,
+     so:Entity ,
+     so:acceptedAnswerID ,
+     so:isAccepted ,
+     so:answerCount ,
+     so:employee ,
+     so:location ,
+     so:quotaMax ,
+     so:quotaRemaining ,
+     so:reputation ,
+     so:reputationChangeDay ,
+     so:reputationChangeMonth ,
+     so:reputationChangeWeek ,
+     so:reputationChangeYear ,
+     so:score ,
+     so:userType ,
+     so:viewCount .
+
+<http://www.openlinksw.com/DAV/data/turtle/cartridge_ontologies/stackoverflow.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink StackOverflow Ontology Description Document (Turtle)" ;
+  cc:License <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for StackOverflow"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/stackoverflow#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/stackoverflow> ;
+  xhv:describes <http://www.openlinksw.com/schemas/stackoverflow#> ;
+  schema:about <http://www.openlinksw.com/schemas/stackoverflow#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/stackoverflow#> .
+
+<http://www.openlinksw.com/data/turtle/cartridge_ontologies/stackoverflow.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink StackOverflow Ontology Description Document (Turtle)" ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for StackOverflow"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/stackoverflow#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/stackoverflow> ;
+  xhv:describes <http://www.openlinksw.com/schemas/stackoverflow#> ;
+  schema:about <http://www.openlinksw.com/schemas/stackoverflow#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/stackoverflow#> .
+
+<http://www.openlinksw.com/schemas/stackoverflow>
+  a foaf:Document ;
+  schema:name """OpenLink StackOverflow Ontology Description Document"""^^xsd:string ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a document that uses Linked Data oriented content to describe OpenLink StackOverflow Ontology."""@en ;
+  dcterms:subject <http://www.openlinksw.com/schemas/stackoverflow#> ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/stackoverflow#> ;
+  foaf:topic
+     so:User ,
+     so:Agent ,
+     so:Question ,
+     so:Answer ,
+     so:Entity ,
+     so:acceptedAnswerID ,
+     so:isAccepted ,
+     so:answerCount ,
+     so:employee ,
+     so:location ,
+     so:quotaMax ,
+     so:quotaRemaining ,
+     so:reputation ,
+     so:reputationChangeDay ,
+     so:reputationChangeMonth ,
+     so:reputationChangeWeek ,
+     so:reputationChangeYear ,
+     so:score ,
+     so:userType ,
+     so:viewCount .
+
+#
+# Classes
+#
+
+so:User
+	a owl:Class ;
+	rdfs:subClassOf oplfaq:User ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/stackoverflow#> ;
+	rdfs:label "StackOverflow User" ;
+	rdfs:comment """A StackOverflow user"""@en  .
+
+so:Agent
+	a owl:Class ;
+	rdfs:subClassOf oplfaq:Agent ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/stackoverflow#> ;
+	rdfs:label "StackOverflow Agent" ;
+	rdfs:comment """A StackOverflow agent"""@en  .
+
+so:Question
+	a owl:Class ;
+	rdfs:subClassOf oplfaq:Question ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/stackoverflow#> ;
+	rdfs:label "StackOverflow Question" ;
+	rdfs:comment """A StackOverflow question thread"""@en  .
+
+so:Answer
+	a owl:Class ;
+	rdfs:subClassOf oplfaq:Answer ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/stackoverflow#> ;
+	rdfs:label "StackOverflow Answer" ;
+	rdfs:comment """An answer in a StackOverflow question thread"""@en  .
+
+so:Entity
+	a owl:Class ;
+	rdfs:subClassOf oplfaq:Entity ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/stackoverflow#> ;
+	rdfs:label "StackOverflow Entity" ;
+	rdfs:comment """An entity in the StackOverflow world"""@en  .
+
+#
+# properties
+#
+
+so:acceptedAnswerID
+  a owl:ObjectProperty , rdf:Property ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/schemas/stackoverflow#> ;
+	rdfs:label "acceptedAnswerID" ;
+	skos:altLabel "accepted answer" ;
+	rdfs:comment """An answer accepted by the original user"""@en  ;
+	rdfs:domain so:Question ;
+	rdfs:range sioct:Answer .
+
+so:isAccepted
+  a owl:DatatypeProperty , rdf:Property ;
+  rdfs:subPropertyOf oplfaq:answerType ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/schemas/stackoverflow#> ;
+	rdfs:label "isAccepted" ;
+	skos:altLabel "is accepted" ;
+	rdfs:comment """Whether the answer has been accepted by original poster"""@en  ;
+	rdfs:domain so:Answer ;
+	rdfs:range xsd:boolean .
+
+so:answerCount
+  a owl:DatatypeProperty , rdf:Property ;
+  rdfs:subPropertyOf oplfaq:count ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/schemas/stackoverflow#> ;
+	rdfs:label "answerCount" ;
+	skos:altLabel "answer count" ;
+	rdfs:comment """Number of answers provided for a Question"""@en  ;
+	rdfs:domain so:Question ;
+	rdfs:range xsd:integer .
+
+so:employee
+  a owl:DatatypeProperty , rdf:Property ;
+  rdfs:subPropertyOf oplfaq:questionType ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/schemas/stackoverflow#> ;
+	rdfs:label "employee" ;
+	skos:altLabel "employee" ;
+	rdfs:comment """Whether a StackOverflow User is an employee or not"""@en  ;
+	rdfs:domain so:Question ;
+	rdfs:range xsd:boolean .
+
+so:location
+  a owl:DatatypeProperty , rdf:Property ;
+  rdfs:subPropertyOf oplfaq:location ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/schemas/stackoverflow#> ;
+	rdfs:label "location" ;
+	skos:altLabel "location" ;
+	rdfs:comment """StackOverflow user's general location"""@en  ;
+	rdfs:domain so:User ;
+  rdfs:range xsd:string .
+
+so:quotaMax
+  a owl:DatatypeProperty , rdf:Property ;
+  rdfs:subPropertyOf oplfaq:quota ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/schemas/stackoverflow#> ;
+	rdfs:label "quotaMax" ;
+	skos:altLabel "quota max" ;
+	rdfs:domain so:Agent ;
+	rdfs:range xsd:integer .
+
+so:quotaRemaining
+  a owl:DatatypeProperty , rdf:Property ;
+  rdfs:subPropertyOf oplfaq:quota ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/schemas/stackoverflow#> ;
+	rdfs:label "quotaRemaining" ;
+	skos:altLabel "quota remaining" ;
+	rdfs:domain so:Agent ;
+	rdfs:range xsd:integer .
+
+so:reputation
+  a owl:DatatypeProperty , rdf:Property ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/schemas/stackoverflow#> ;
+	rdfs:label "reputation" ;
+	skos:altLabel "reputation" ;
+	rdfs:comment """A StackOverflow User's reputation (karma)"""@en  ;
+	rdfs:domain so:User ;
+	rdfs:range xsd:integer .
+
+so:reputationChangeDay
+  a owl:DatatypeProperty , rdf:Property ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/schemas/stackoverflow#> ;
+	rdfs:label "reputationChangeDay" ;
+	skos:altLabel "reputation change day" ;
+	rdfs:domain so:User ;
+	rdfs:range xsd:integer .
+
+so:reputationChangeMonth
+  a owl:DatatypeProperty , rdf:Property ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/schemas/stackoverflow#> ;
+	rdfs:label "reputationChangeMonth" ;
+	skos:altLabel "reputation change month" ;
+	rdfs:domain so:User ;
+	rdfs:range xsd:integer .
+
+so:reputationChangeWeek
+  a owl:DatatypeProperty , rdf:Property ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/schemas/stackoverflow#> ;
+	rdfs:label "reputationChangeWeek" ;
+	skos:altLabel "reputation change week" ;
+	rdfs:domain so:User ;
+	rdfs:range xsd:integer .
+
+so:reputationChangeYear
+  a owl:DatatypeProperty , rdf:Property ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/schemas/stackoverflow#> ;
+	rdfs:label "reputationChangeYear" ;
+	skos:altLabel "reputation change year" ;
+	rdfs:domain so:User ;
+	rdfs:range xsd:integer .
+
+so:score
+  a owl:DatatypeProperty , rdf:Property ;
+  rdfs:subPropertyOf oplfaq:score ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/schemas/stackoverflow#> ;
+	rdfs:label "score" ;
+	skos:altLabel "score" ;
+	rdfs:comment """A StackOverflow Entity's score"""@en  ;
+	rdfs:domain so:Entity ;
+	rdfs:range xsd:integer .
+
+so:userType
+  a owl:DatatypeProperty , rdf:Property ;
+  rdfs:subPropertyOf oplfaq:userType ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/schemas/stackoverflow#> ;
+	rdfs:label "userType" ;
+	skos:altLabel "user type" ;
+	rdfs:comment """Whether the user is registered or not"""@en  ;
+	rdfs:domain so:User ;
+	rdfs:range xsd:string .
+
+so:viewCount
+  a owl:DatatypeProperty , rdf:Property ;
+  rdfs:subPropertyOf oplfaq:count ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/schemas/stackoverflow#> ;
+	rdfs:label "viewCount" ;
+	skos:altLabel "view count" ;
+	rdfs:comment """Number of times a StackOverflow question has been viewed"""@en  ;
+	rdfs:domain so:Question ;
+	rdfs:range xsd:integer .
+
+#
+# T-Box mappings
+#
+
+so:location
+  rdfs:subPropertyOf geo:name .

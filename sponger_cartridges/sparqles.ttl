@@ -1,0 +1,108 @@
+@prefix schema:  <http://schema.org/> .
+@prefix xhv:    <http://www.w3.org/1999/xhtml/vocab#> .
+@prefix skos:   <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix cvocab: <http://open-services.net/ns/core#> .
+@prefix gr:     <http://purl.org/goodrelations/v1#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix sioc:   <http://rdfs.org/sioc/ns#> .
+@prefix opl:    <http://www.openlinksw.com/schema/attribution#> .
+@prefix foaf:   <http://xmlns.com/foaf/0.1/> .
+@prefix dc:     <http://purl.org/dc/elements/1.1/> .
+@prefix gn:     <http://www.geonames.org/ontology#> .
+@prefix wdrs:   <http://www.w3.org/2007/05/powder-s#> .
+@prefix cc:     <http://creativecommons.org/ns#> .
+@prefix oplsparqles:  <http://www.openlinksw.com/schemas/sparqles#> .
+@prefix oplwebsrv:    <http://www.openlinksw.com/ontology/webservices#> .
+
+<http://www.openlinksw.com/schemas/sparqles#>
+  a owl:Ontology ;
+  schema:name "OpenLink SPARQL Endpoint Monitor Cartridge Ontology" ;
+  schema:comment """Ontology that defines entity and relation types used to describe SPARQL Endpoint Monitor Cartridge Ontology.
+  Examples include services, endpoint urls etc."""@en ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:dateCreated "2013-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  schema:dateModified "2015-04-22T13:38:00-05:00"^^xsd:dateTime ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  wdrs:describedby <http://www.openlinksw.com/schemas/sparqles> ;
+  owl:versionInfo "1.0.0"^^xsd:string ;
+  owl:imports <http://www.w3.org/ns/sparql-service-description#>,
+              <http://rdfs.org/ns/void#> ,
+              <http://www.openlinksw.com/ontology/webservices#> ;
+  <http://open.vocab.org/terms/defines>
+    oplsparqles:SparqlMonitorService ,
+    oplsparqles:hasEndpointURL ,
+    oplsparqles:hasDataSetFocus ;
+  schema:about
+    oplsparqles:SparqlMonitorService ,
+    oplsparqles:hasEndpointURL ,
+    oplsparqles:hasDataSetFocus .
+
+<http://www.openlinksw.com/DAV/data/turtle/cartridge_ontologies/sparqles.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink SPARQL Endpoint Monitor Cartridge Ontology Description Document (Turtle)" ;
+  cc:License <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for SPARQL Endpoint Monitor"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/sparqles#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/sparqles> ;
+  xhv:describes <http://www.openlinksw.com/schemas/sparqles#> ;
+  schema:about <http://www.openlinksw.com/schemas/sparqles#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/sparqles#> .
+
+<http://www.openlinksw.com/data/turtle/cartridge_ontologies/sparqles.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink SPARQL Endpoint Monitor Cartridge Ontology Description Document (Turtle)" ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for SPARQL Endpoint Monitor"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/sparqles#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/sparqles> ;
+  xhv:describes <http://www.openlinksw.com/schemas/sparqles#> ;
+  schema:about <http://www.openlinksw.com/schemas/sparqles#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/sparqles#> .
+
+<http://www.openlinksw.com/schemas/sparqles>
+  a foaf:Document ;
+  schema:name """OpenLink SPARQL Endpoint Monitor Cartridge Ontology Description Document"""^^xsd:string ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a document that uses Linked Data oriented content to describe OpenLink SPARQL Endpoint Monitor Cartridge Ontology."""@en ;
+  dcterms:subject <http://www.openlinksw.com/schemas/sparqles#> ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/sparqles#> ;
+  foaf:topic
+    oplsparqles:SparqlMonitorService ,
+    oplsparqles:hasEndpointURL ,
+    oplsparqles:hasDataSetFocus .
+
+# Classes
+
+oplsparqles:SparqlMonitorService
+    a owl:Class, oplwebsrv:WebService ;
+    rdfs:subClassOf <http://www.w3.org/ns/sparql-service-description#Service> ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/sparqles#> ;
+    rdfs:label "SparqlMonitorService";
+    skos:altLabel "SPARQL Monitor Service" .
+
+# Properties
+
+oplsparqles:hasEndpointURL
+    a rdf:Property , owl:DatatypeProperty ;
+    rdfs:subPropertyOf <http://www.w3.org/ns/sparql-service-description#endpoint> , oplwebsrv:endpointURL ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/sparqles#> ;
+    rdfs:label "hasEndpointURL" ;
+    skos:altLabel "Endpoint URL" ;
+    rdfs:domain oplsparqles:SparqlMonitorService ;
+    rdfs:range xsd:anyURI .
+
+oplsparqles:hasDataSetFocus
+    a rdf:Property, owl:ObjectProperty;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/sparqles#> ;
+    rdfs:label "hasDataSetFocus" ;
+    skos:altLabel "Data Set Focus" ;
+    rdfs:domain oplsparqles:SparqlMonitorService ;
+    rdfs:range <http://rdfs.org/ns/void#Dataset> .
+

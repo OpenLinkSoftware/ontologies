@@ -1,0 +1,220 @@
+@prefix schema:  <http://schema.org/> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix cvocab:  <http://open-services.net/ns/core#> .
+@prefix cc:      <http://creativecommons.org/ns#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix gr:      <http://purl.org/goodrelations/v1#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix wdrs:    <http://www.w3.org/2007/05/powder-s#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix xhv:     <http://www.w3.org/1999/xhtml/vocab#> .
+@prefix oplamz:  <http://www.openlinksw.com/schemas/amazon#> .
+@prefix oplebay: <http://www.openlinksw.com/schemas/ebay#> .
+
+<http://www.openlinksw.com/schemas/ebay#>
+  a owl:Ontology ;
+  schema:name "OpenLink eBay Ontology" ;
+  schema:comment """Ontology that defines entity and relation types used to describe eBay.
+  Examples include products, categories, formats, images etc."""@en  ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  wdrs:describedby <http://www.openlinksw.com/schemas/ebay> ;
+  schema:dateCreated "2013-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  schema:dateModified "2015-04-22T13:38:00-05:00"^^xsd:dateTime ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  owl:versionInfo "1.0.0"^^xsd:string ;
+  owl:imports <http://www.w3.org/1999/02/22-rdf-syntax-ns#> , <http://purl.org/dc/terms/> , <http://purl.org/goodrelations/v1> ;
+  <http://open.vocab.org/terms/defines>
+    oplebay:Product ,
+    oplebay:ProductDetail ,
+    oplebay:description ,
+    oplebay:longDescription ,
+    oplebay:hasProductID ,
+    oplebay:hasCategory ,
+    oplebay:hasFormat ,
+    oplebay:hasImage ,
+    oplebay:hasProductDetail ,
+    oplebay:hasProductDetailName ,
+    oplebay:hasProductDetailValue ,
+    oplebay:eBayStoreURL ;
+  schema:about
+    oplebay:Product ,
+    oplebay:ProductDetail ,
+    oplebay:description ,
+    oplebay:longDescription ,
+    oplebay:hasProductID ,
+    oplebay:hasCategory ,
+    oplebay:hasFormat ,
+    oplebay:hasImage ,
+    oplebay:hasProductDetail ,
+    oplebay:hasProductDetailName ,
+    oplebay:hasProductDetailValue ,
+    oplebay:eBayStoreURL .
+
+
+<http://www.openlinksw.com/DAV/data/turtle/cartridge_ontologies/ebay.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink eBay Ontology Description Document (Turtle)" ;
+  cc:License <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for eBay"""@en  ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/ebay#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/ebay> ;
+  xhv:describes <http://www.openlinksw.com/schemas/ebay#> ;
+  schema:about <http://www.openlinksw.com/schemas/ebay#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/ebay#> .
+
+<http://www.openlinksw.com/data/turtle/cartridge_ontologies/ebay.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink eBay Ontology Description Document (Turtle)" ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for eBay"""@en  ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/ebay#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/ebay> ;
+  xhv:describes <http://www.openlinksw.com/schemas/ebay#> ;
+  schema:about <http://www.openlinksw.com/schemas/ebay#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/ebay#> .
+
+<http://www.openlinksw.com/schemas/ebay>
+  a foaf:Document ;
+  schema:name """OpenLink eBay Ontology Description Document"""^^xsd:string ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a document that uses Linked Data oriented content to describe OpenLink eBay Ontology."""@en  ;
+  dcterms:subject <http://www.openlinksw.com/schemas/ebay#> ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/ebay#> ;
+  foaf:topic
+    oplebay:Product ,
+    oplebay:ProductDetail ,
+    oplebay:description ,
+    oplebay:longDescription ,
+    oplebay:hasProductID ,
+    oplebay:hasCategory ,
+    oplebay:hasFormat ,
+    oplebay:hasImage ,
+    oplebay:hasProductDetail ,
+    oplebay:hasProductDetailName ,
+    oplebay:hasProductDetailValue ,
+    oplebay:eBayStoreURL .
+
+#
+# gr:Product specialization
+#
+
+oplebay:Product
+    a owl:Class ;
+    rdfs:subClassOf gr:ProductOrService ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/ebay#> ;
+    rdfs:label "Product" ;
+    rdfs:comment """A specialization of the GoodRelations ProductOrService class for describing eBay products"""@en  .
+
+oplebay:ProductDetail
+    a owl:Class ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/ebay#> ;
+    rdfs:label "ProductDetail" ;
+    rdfs:comment """A name/value pair describing a product detail or feature"""@en  .
+
+#
+# Product properties
+#
+
+oplebay:description
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/ebay#> ;
+    rdfs:label "description" ;
+    skos:altLabel "description" ;
+    rdfs:comment """Product description"""@en  ;
+    rdfs:domain oplebay:Product ;
+    rdfs:range xsd:string .
+
+oplebay:longDescription
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/ebay#> ;
+    rdfs:label "longDescription" ;
+    skos:altLabel "long description" ;
+    rdfs:comment """Long product description"""@en  ;
+    rdfs:domain oplebay:Product ;
+    rdfs:range xsd:string .
+
+oplebay:hasProductID
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/ebay#> ;
+    rdfs:label "hasProductID" ;
+    skos:altLabel "product id" ;
+    rdfs:comment """Product ID"""@en  ;
+    rdfs:domain oplebay:Product ;
+    rdfs:range xsd:string .
+
+oplebay:hasCategory
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/ebay#> ;
+    rdfs:label "category" ;
+    skos:altLabel "category" ;
+    rdfs:comment """Product categories to which the item belongs"""@en  ;
+    rdfs:domain oplebay:Product ;
+    rdfs:range xsd:string .
+
+oplebay:hasFormat
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/ebay#> ;
+    rdfs:label "hasFormat" ;
+    skos:altLabel "format" ;
+    rdfs:comment """Product format - for media products such as computer software"""@en  ;
+    rdfs:domain oplebay:Product ;
+    rdfs:range xsd:string .
+
+oplebay:hasImage
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/ebay#> ;
+    rdfs:label "hasImage" ;
+    skos:altLabel "image" ;
+    rdfs:comment """Image of item"""@en  ;
+    rdfs:domain oplebay:Product ;
+    rdfs:range xsd:string .
+
+oplebay:hasProductDetail
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/ebay#> ;
+    rdfs:label "detail" ;
+    skos:altLabel "detail" ;
+    rdfs:comment """Detail - a name/value pair describing a product feature"""@en  ;
+    rdfs:domain oplebay:Product ;
+    rdfs:range oplebay:ProductDetail .
+
+oplebay:hasProductDetailName
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/ebay#> ;
+    rdfs:label "hasProductDetailName" ;
+    skos:altLabel "detail name" ;
+    rdfs:comment """Detail name"""@en  ;
+    rdfs:domain oplebay:ProductDetail ;
+    rdfs:range xsd:string .
+
+oplebay:hasProductDetailValue
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/ebay#> ;
+    rdfs:label "hasProductDetailValue" ;
+    skos:altLabel "detail value" ;
+    rdfs:comment """Detail value"""@en  ;
+    rdfs:domain oplebay:ProductDetail ;
+    rdfs:range xsd:string .
+
+oplebay:eBayStoreURL
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/ebay#> ;
+    rdfs:label "eBayStoreURL" ;
+    skos:altLabel "ebay store url" ;
+    rdfs:comment """seller's eBay store URL"""@en  ;
+    rdfs:domain oplebay:Product ;
+    rdfs:range xsd:anyURI .
+

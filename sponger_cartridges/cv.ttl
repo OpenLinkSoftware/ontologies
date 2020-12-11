@@ -1,0 +1,1538 @@
+
+#
+# An OpenLink ontology for CVs and resumes
+#
+# A derivative of the CV ontology of Uldis Bojars
+# See:
+# http://captsolo.net/semweb/resume/0.2/cv.rdf
+# http://captsolo.net/semweb/resume/0.2/base.rdf
+#
+
+@prefix schema:  <http://schema.org/> .
+@prefix xhv:    <http://www.w3.org/1999/xhtml/vocab#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix cvocab:  <http://open-services.net/ns/core#> .
+@prefix bibo:    <http://purl.org/ontology/bibo/> .
+@prefix cc:      <http://creativecommons.org/ns#> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix gr:      <http://purl.org/goodrelations/v1#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix wdrs:    <http://www.w3.org/2007/05/powder-s#> .
+
+@prefix cv: <http://www.openlinksw.com/schemas/cv#> .
+
+<http://www.openlinksw.com/schemas/cv#>
+  a owl:Ontology ;
+  schema:name "OpenLink CVs/Resumes Ontology" ;
+  owl:imports <http://www.w3.org/1999/02/22-rdf-syntax-ns#> , <http://purl.org/dc/terms/> ;
+  schema:comment """Ontology that defines entity and relation types used to describe CVs/Resumes.
+  Examples include skills, targets, companies etc."""@en ;
+  skos:related <http://captsolo.net/semweb/resume/0.2/cv.rdf>;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:dateCreated "2013-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  schema:dateModified "2015-04-22T13:38:00-05:00"^^xsd:dateTime ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  wdrs:describedby <http://www.openlinksw.com/schemas/cv> ;
+  owl:versionInfo "1.0.0"^^xsd:string ;
+  <http://open.vocab.org/terms/defines>
+    cv:CV ,
+    cv:hasCV ,
+    cv:CVEntry ,
+    cv:Company ,
+    cv:hasCountry ,
+    cv:Course ,
+    cv:Education ,
+    cv:EducationalOrg ,
+    cv:hasIndustry ,
+    cv:JobTitle ,
+    cv:LanguageSkill ,
+    cv:hasLocality ,
+    cv:hasOrganizationName ,
+    cv:notes ,
+    cv:Organization ,
+    cv:OtherInfo ,
+    cv:Person ,
+    cv:PersonalReference ,
+    cv:ProfessionalReference ,
+    cv:Reference ,
+    cv:Skill ,
+    cv:Target ,
+    cv:URL ,
+    cv:WorkHistory ,
+    cv:aboutPerson ,
+    cv:birthPlace ,
+    cv:careerLevel ,
+    cv:conditionWillRelocate ,
+    cv:conditionWillTravel ,
+    cv:courseDescription ,
+    cv:courseFinishDate ,
+    cv:courseStartDate ,
+    cv:courseTitle ,
+    cv:courseURL ,
+    cv:cvCopyright ,
+    cv:cvDescription ,
+    cv:cvIsActive ,
+    cv:cvIsConfidential ,
+    cv:cvTitle ,
+    cv:degreeType ,
+    cv:eduDescription ,
+    cv:eduGradDate ,
+    cv:eduMajor ,
+    cv:eduMinor ,
+    cv:eduStartDate ,
+    cv:employedIn ,
+    cv:endDate ,
+    cv:gender ,
+    cv:hasCitizenship ,
+    cv:hasCourse ,
+    cv:hasDriversLicence ,
+    cv:hasEducation ,
+    cv:hasNationality ,
+    cv:hasOtherInfo ,
+    cv:hasReference ,
+    cv:hasSkill ,
+    cv:hasTarget ,
+    cv:hasWorkHistory ,
+    cv:isCertification ,
+    cv:isCurrent ,
+    cv:jobDescription ,
+    cv:hasJob ,
+    cv:hasJobTitle ,
+    cv:jobType ,
+    cv:lastUpdate ,
+    cv:lngSkillLevelReading ,
+    cv:lngSkillLevelWriting ,
+    cv:maritalStatus ,
+    cv:noOfChildren ,
+    cv:numSubordinates ,
+    cv:organizedBy ,
+    cv:otherInfoDescription ,
+    cv:otherInfoType ,
+    cv:referenceBy ,
+    cv:skillLastUsed ,
+    cv:skillLevel ,
+    cv:skillName ,
+    cv:skillYearsExperience ,
+    cv:startDate ,
+    cv:studiedIn ,
+    cv:targetCareerLevel ,
+    cv:targetCompanyDescription ,
+    cv:targetCompanyIndustry ,
+    cv:targetCompanySize ,
+    cv:targetCountry ,
+    cv:targetJobDescription ,
+    cv:targetJobMode ,
+    cv:targetJobType ,
+    cv:targetSalary ,
+    cv:targetSalaryCurrency ,
+    cv:weeksNoticePeriod ,
+    cv:CVCareerLevel ,
+    cv:CVJobMode ,
+    cv:CVJobType ,
+    cv:EduDegree ,
+    cv:MaritalStatus ,
+    cv:OtherCVInfoType ,
+    cv:Gender ,
+    cv:EntryLvl ,
+    cv:Executive ,
+    cv:HighSchool ,
+    cv:Management ,
+    cv:MidCareer ,
+    cv:SeniorExecutive ,
+    cv:Student ,
+    cv:FullTimeJob ,
+    cv:PartTimeJob ,
+    cv:Contractor ,
+    cv:Employee ,
+    cv:Intern ,
+    cv:EduAssociate ,
+    cv:EduBachelor ,
+    cv:EduCollegeCoursework ,
+    cv:EduDoctorate ,
+    cv:EduHighSchool ,
+    cv:EduMaster ,
+    cv:EduProfessional ,
+    cv:EduVocational ,
+    cv:Divorced ,
+    cv:Married ,
+    cv:Single ,
+    cv:Widowed ,
+    cv:Accomplishments ,
+    cv:Awards ,
+    cv:Interests ,
+    cv:Membership ,
+    cv:Other ,
+    cv:PointOfView ,
+    cv:Publications ,
+    cv:SocialActivities ,
+    cv:Female ,
+    cv:Male ,
+    cv:Company ,
+    cv:CV ,
+    cv:Organization ,
+    cv:Person ;
+  schema:about
+    cv:CV ,
+    cv:hasCV ,
+    cv:CVEntry ,
+    cv:Company ,
+    cv:hasCountry ,
+    cv:Course ,
+    cv:Education ,
+    cv:EducationalOrg ,
+    cv:hasIndustry ,
+    cv:JobTitle ,
+    cv:LanguageSkill ,
+    cv:hasLocality ,
+    cv:hasOrganizationName ,
+    cv:notes ,
+    cv:Organization ,
+    cv:OtherInfo ,
+    cv:Person ,
+    cv:PersonalReference ,
+    cv:ProfessionalReference ,
+    cv:Reference ,
+    cv:Skill ,
+    cv:Target ,
+    cv:URL ,
+    cv:WorkHistory ,
+    cv:aboutPerson ,
+    cv:birthPlace ,
+    cv:careerLevel ,
+    cv:conditionWillRelocate ,
+    cv:conditionWillTravel ,
+    cv:courseDescription ,
+    cv:courseFinishDate ,
+    cv:courseStartDate ,
+    cv:courseTitle ,
+    cv:courseURL ,
+    cv:cvCopyright ,
+    cv:cvDescription ,
+    cv:cvIsActive ,
+    cv:cvIsConfidential ,
+    cv:cvTitle ,
+    cv:degreeType ,
+    cv:eduDescription ,
+    cv:eduGradDate ,
+    cv:eduMajor ,
+    cv:eduMinor ,
+    cv:eduStartDate ,
+    cv:employedIn ,
+    cv:endDate ,
+    cv:gender ,
+    cv:hasCitizenship ,
+    cv:hasCourse ,
+    cv:hasDriversLicence ,
+    cv:hasEducation ,
+    cv:hasNationality ,
+    cv:hasOtherInfo ,
+    cv:hasReference ,
+    cv:hasSkill ,
+    cv:hasTarget ,
+    cv:hasWorkHistory ,
+    cv:isCertification ,
+    cv:isCurrent ,
+    cv:jobDescription ,
+    cv:hasJob ,
+    cv:hasJobTitle ,
+    cv:jobType ,
+    cv:lastUpdate ,
+    cv:lngSkillLevelReading ,
+    cv:lngSkillLevelWriting ,
+    cv:maritalStatus ,
+    cv:noOfChildren ,
+    cv:numSubordinates ,
+    cv:organizedBy ,
+    cv:otherInfoDescription ,
+    cv:otherInfoType ,
+    cv:referenceBy ,
+    cv:skillLastUsed ,
+    cv:skillLevel ,
+    cv:skillName ,
+    cv:skillYearsExperience ,
+    cv:startDate ,
+    cv:studiedIn ,
+    cv:targetCareerLevel ,
+    cv:targetCompanyDescription ,
+    cv:targetCompanyIndustry ,
+    cv:targetCompanySize ,
+    cv:targetCountry ,
+    cv:targetJobDescription ,
+    cv:targetJobMode ,
+    cv:targetJobType ,
+    cv:targetSalary ,
+    cv:targetSalaryCurrency ,
+    cv:weeksNoticePeriod ,
+    cv:CVCareerLevel ,
+    cv:CVJobMode ,
+    cv:CVJobType ,
+    cv:EduDegree ,
+    cv:MaritalStatus ,
+    cv:OtherCVInfoType ,
+    cv:Gender ,
+    cv:EntryLvl ,
+    cv:Executive ,
+    cv:HighSchool ,
+    cv:Management ,
+    cv:MidCareer ,
+    cv:SeniorExecutive ,
+    cv:Student ,
+    cv:FullTimeJob ,
+    cv:PartTimeJob ,
+    cv:Contractor ,
+    cv:Employee ,
+    cv:Intern ,
+    cv:EduAssociate ,
+    cv:EduBachelor ,
+    cv:EduCollegeCoursework ,
+    cv:EduDoctorate ,
+    cv:EduHighSchool ,
+    cv:EduMaster ,
+    cv:EduProfessional ,
+    cv:EduVocational ,
+    cv:Divorced ,
+    cv:Married ,
+    cv:Single ,
+    cv:Widowed ,
+    cv:Accomplishments ,
+    cv:Awards ,
+    cv:Interests ,
+    cv:Membership ,
+    cv:Other ,
+    cv:PointOfView ,
+    cv:Publications ,
+    cv:SocialActivities ,
+    cv:Female ,
+    cv:Male ,
+    cv:Company ,
+    cv:CV ,
+    cv:Organization ,
+    cv:Person .
+
+<http://www.openlinksw.com/DAV/data/turtle/cartridge_ontologies/cv.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink CVs/Resumes Ontology Description Document (Turtle)" ;
+  cc:License <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for CVs/resumes"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/cv#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/cv> ;
+  xhv:describes <http://www.openlinksw.com/schemas/cv#> ;
+  schema:about <http://www.openlinksw.com/schemas/cv#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/cv#> .
+
+<http://www.openlinksw.com/data/turtle/cartridge_ontologies/cv.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink CVs/Resumes Ontology Description Document (Turtle)" ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for CVs/resumes"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/cv#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/cv> ;
+  xhv:describes <http://www.openlinksw.com/schemas/cv#> ;
+  schema:about <http://www.openlinksw.com/schemas/cv#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/cv#> .
+
+<http://www.openlinksw.com/schemas/cv>
+  a foaf:Document ;
+  schema:name """OpenLink CVs/Resumes Ontology Description Document"""^^xsd:string ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a document that uses Linked Data oriented content to describe OpenLink CVs/Resumes Ontology."""@en ;
+  dcterms:subject <http://www.openlinksw.com/schemas/cv#> ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/cv#> ;
+  foaf:topic
+    cv:CV ,
+    cv:hasCV ,
+    cv:CVEntry ,
+    cv:Company ,
+    cv:hasCountry ,
+    cv:Course ,
+    cv:Education ,
+    cv:EducationalOrg ,
+    cv:hasIndustry ,
+    cv:JobTitle ,
+    cv:LanguageSkill ,
+    cv:hasLocality ,
+    cv:hasOrganizationName ,
+    cv:notes ,
+    cv:Organization ,
+    cv:OtherInfo ,
+    cv:Person ,
+    cv:PersonalReference ,
+    cv:ProfessionalReference ,
+    cv:Reference ,
+    cv:Skill ,
+    cv:Target ,
+    cv:URL ,
+    cv:WorkHistory ,
+    cv:aboutPerson ,
+    cv:birthPlace ,
+    cv:careerLevel ,
+    cv:conditionWillRelocate ,
+    cv:conditionWillTravel ,
+    cv:courseDescription ,
+    cv:courseFinishDate ,
+    cv:courseStartDate ,
+    cv:courseTitle ,
+    cv:courseURL ,
+    cv:cvCopyright ,
+    cv:cvDescription ,
+    cv:cvIsActive ,
+    cv:cvIsConfidential ,
+    cv:cvTitle ,
+    cv:degreeType ,
+    cv:eduDescription ,
+    cv:eduGradDate ,
+    cv:eduMajor ,
+    cv:eduMinor ,
+    cv:eduStartDate ,
+    cv:employedIn ,
+    cv:endDate ,
+    cv:gender ,
+    cv:hasCitizenship ,
+    cv:hasCourse ,
+    cv:hasDriversLicence ,
+    cv:hasEducation ,
+    cv:hasNationality ,
+    cv:hasOtherInfo ,
+    cv:hasReference ,
+    cv:hasSkill ,
+    cv:hasTarget ,
+    cv:hasWorkHistory ,
+    cv:isCertification ,
+    cv:isCurrent ,
+    cv:jobDescription ,
+    cv:hasJob ,
+    cv:hasJobTitle ,
+    cv:jobType ,
+    cv:lastUpdate ,
+    cv:lngSkillLevelReading ,
+    cv:lngSkillLevelWriting ,
+    cv:maritalStatus ,
+    cv:noOfChildren ,
+    cv:numSubordinates ,
+    cv:organizedBy ,
+    cv:otherInfoDescription ,
+    cv:otherInfoType ,
+    cv:referenceBy ,
+    cv:skillLastUsed ,
+    cv:skillLevel ,
+    cv:skillName ,
+    cv:skillYearsExperience ,
+    cv:startDate ,
+    cv:studiedIn ,
+    cv:targetCareerLevel ,
+    cv:targetCompanyDescription ,
+    cv:targetCompanyIndustry ,
+    cv:targetCompanySize ,
+    cv:targetCountry ,
+    cv:targetJobDescription ,
+    cv:targetJobMode ,
+    cv:targetJobType ,
+    cv:targetSalary ,
+    cv:targetSalaryCurrency ,
+    cv:weeksNoticePeriod ,
+    cv:CVCareerLevel ,
+    cv:CVJobMode ,
+    cv:CVJobType ,
+    cv:EduDegree ,
+    cv:MaritalStatus ,
+    cv:OtherCVInfoType ,
+    cv:Gender ,
+    cv:EntryLvl ,
+    cv:Executive ,
+    cv:HighSchool ,
+    cv:Management ,
+    cv:MidCareer ,
+    cv:SeniorExecutive ,
+    cv:Student ,
+    cv:FullTimeJob ,
+    cv:PartTimeJob ,
+    cv:Contractor ,
+    cv:Employee ,
+    cv:Intern ,
+    cv:EduAssociate ,
+    cv:EduBachelor ,
+    cv:EduCollegeCoursework ,
+    cv:EduDoctorate ,
+    cv:EduHighSchool ,
+    cv:EduMaster ,
+    cv:EduProfessional ,
+    cv:EduVocational ,
+    cv:Divorced ,
+    cv:Married ,
+    cv:Single ,
+    cv:Widowed ,
+    cv:Accomplishments ,
+    cv:Awards ,
+    cv:Interests ,
+    cv:Membership ,
+    cv:Other ,
+    cv:PointOfView ,
+    cv:Publications ,
+    cv:SocialActivities ,
+    cv:Female ,
+    cv:Male ,
+    cv:Company ,
+    cv:CV ,
+    cv:Organization ,
+    cv:Person .
+
+
+
+# < -------------------- Classes ------------------- >
+
+cv:CV
+    a owl:Class;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:comment """A class representing a Curriculum Vitae"""@en;
+    rdfs:label "CV".
+
+cv:CVEntry
+    a owl:Class;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "CVEntry";
+    rdfs:comment """A single entry of CV information. The type of CV information contained in the entry is specified in subclasses/individuals"""@en;
+    rdfs:subClassOf rdfs:Resource .
+
+cv:Company
+    a owl:Class;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "Company";
+    rdfs:comment """A class for company information"""@en;
+    rdfs:subClassOf cv:Organization .
+
+cv:Course
+    a owl:Class;
+    rdfs:label "Course";
+    rdfs:comment """CV entry detailing a course taken"""@en;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:subClassOf cv:CVEntry .
+
+cv:Education
+    a owl:Class;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "Education";
+    rdfs:comment """CV entry detailing education"""@en;
+    rdfs:subClassOf cv:CVEntry .
+
+cv:EducationalOrg
+    a owl:Class;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "EducationalOrg";
+    rdfs:comment """Educational organization"""@en;
+    rdfs:subClassOf cv:Organization .
+
+cv:JobTitle
+    a owl:Class;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "JobTitle";
+    rdfs:comment """The job title associated with a position"""@en .
+
+cv:LanguageSkill
+    a owl:Class;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "language skill";
+    rdfs:comment """Language skill (spoken, written, reading)"""@en ;
+    rdfs:subClassOf cv:Skill .
+
+cv:Organization
+    a owl:Class;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "Organization";
+    rdfs:comment """General class for organizations"""@en ;
+    rdfs:subClassOf rdfs:Resource .
+
+cv:OtherInfo
+    a owl:Class;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "Other Info";
+    rdfs:comment """Other information in CV"""@en ;
+    rdfs:subClassOf cv:CVEntry .
+
+cv:Person
+    a owl:Class;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "Person" ;
+    rdfs:comment """A Person a CV relates to"""@en .
+
+cv:PersonalReference
+    a owl:Class;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "Personal Reference";
+    rdfs:comment """Personal reference"""@en ;
+    rdfs:subClassOf cv:Reference .
+
+cv:ProfessionalReference
+    a owl:Class;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "Professional Reference";
+    rdfs:comment """Professional reference"""@en ;
+    rdfs:subClassOf cv:Reference .
+
+cv:Reference
+    a owl:Class;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "Reference";
+    rdfs:comment """CV entry for references"""@en ;
+    rdfs:subClassOf cv:CVEntry .
+
+cv:Skill
+    a owl:Class;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "Skill";
+    rdfs:comment """CV entry for description of skills"""@en ;
+    rdfs:subClassOf cv:CVEntry .
+
+cv:Target
+    a owl:Class;
+    rdfs:label "Target";
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:comment """CV information for target of job application. (Single entry per CV. May be defined in the properties of CV class instead)."""@en;
+    rdfs:subClassOf cv:CVEntry .
+
+cv:WorkHistory
+    a owl:Class;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "Work History";
+    rdfs:comment """CV entry for work history"""@en;
+    rdfs:subClassOf cv:CVEntry .
+
+# =================================================================
+# Base definitions
+#
+cv:CVCareerLevel
+    a owl:Class;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "CV career level" .
+
+cv:CVJobMode
+    a owl:Class;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "CV job mode (full/part - time)" .
+
+cv:CVJobType
+    a owl:Class;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "CV job type (employee/contractor/intern)" .
+
+cv:EduDegree
+    a owl:Class;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "Degrees" .
+
+cv:MaritalStatus
+    a owl:Class;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "Marital Status" .
+
+cv:OtherCVInfoType
+    a owl:Class;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "Type of misc information added to a CV." .
+
+cv:Gender
+    a owl:Class;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "Gender" .
+
+
+# A-Box Classes:
+# ---------------------------
+# Individuals
+#
+
+#
+# CVCareerLevel individuals
+#
+cv:EntryLvl
+    a cv:CVCareerLevel;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "Entry level (less than 2 years of experience)" .
+
+cv:Executive
+    a cv:CVCareerLevel;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "Executive (SVP, EVP, VP)" .
+
+cv:HighSchool
+    a cv:CVCareerLevel;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "Student (high school)" .
+
+cv:Management
+    a cv:CVCareerLevel;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "Management (manager/director of staff)" .
+
+cv:MidCareer
+    a cv:CVCareerLevel;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "Mid-career (2+ years of experience)" .
+
+cv:SeniorExecutive
+    a cv:CVCareerLevel;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "Senior Executive (president / CEO)" .
+
+cv:Student
+    a cv:CVCareerLevel;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "Student (graduate/undergraduate)" .
+
+#
+# CVJobMode individuals
+#
+cv:FullTimeJob
+    a cv:CVJobMode ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "FullTimeJob" .
+
+cv:PartTimeJob
+    a cv:CVJobMode ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "PartTimeJob" .
+
+#
+# CVJobType individuals
+#
+cv:Contractor
+    a cv:CVJobType ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "contractor" .
+
+cv:Employee
+    a cv:CVJobType ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "employee" .
+
+cv:Intern
+    a cv:CVJobType ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "internship" .
+
+#
+# EduDegree individuals
+#
+cv:EduAssociate
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    a cv:EduDegree;
+    rdfs:label "Associate degree" .
+
+cv:EduBachelor
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    a cv:EduDegree;
+    rdfs:label "Bachelor's degree" .
+
+cv:EduCollegeCoursework
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    a cv:EduDegree;
+    rdfs:label "Some college coursework completed." .
+
+cv:EduDoctorate
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    a cv:EduDegree;
+    rdfs:label "Doctorate" .
+
+cv:EduHighSchool
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    a cv:EduDegree;
+    rdfs:label "High school or equivalent." .
+
+cv:EduMaster
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    a cv:EduDegree;
+    rdfs:label "Master's degree" .
+
+cv:EduProfessional
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    a cv:EduDegree;
+    rdfs:label "Professional" .
+
+cv:EduVocational
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    a cv:EduDegree;
+    rdfs:label "Vocational" .
+
+#
+# MaritalStatus individuals
+#
+cv:Divorced
+    a cv:MaritalStatus ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "divorced" ;
+    rdfs:comment """Marital status - divorced"""@en .
+
+cv:Married
+    a cv:MaritalStatus ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "married" ;
+    rdfs:comment """Marital status - married"""@en .
+
+cv:Single
+    a cv:MaritalStatus ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "single" ;
+    rdfs:comment """Marital status - single"""@en .
+
+cv:Widowed
+    a cv:MaritalStatus ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "widowed" ;
+    rdfs:comment """Marital status - widowed"""@en .
+
+#
+# OtherCVInfoType individuals
+#
+cv:Accomplishments
+    a cv:OtherCVInfoType ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "Other info - accomplishments" ;
+    rdfs:comment """Additional CV information - accomplishments"""@en .
+
+cv:Awards
+    a cv:OtherCVInfoType ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "Other info - awards" ;
+    rdfs:comment """Additional CV information - awards"""@en .
+
+cv:Interests
+    a cv:OtherCVInfoType ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "Other info - interests" ;
+    rdfs:comment """Additional CV information - interests"""@en .
+
+cv:Membership
+    a cv:OtherCVInfoType ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "Other info - membership" ;
+    rdfs:comment """Additional CV information - membership"""@en .
+
+cv:Other
+    a cv:OtherCVInfoType ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "Other info - other" ;
+    rdfs:comment """Additional CV information - miscellaneous"""@en .
+
+cv:PointOfView
+    a cv:OtherCVInfoType ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "Other info - point of view" ;
+    rdfs:comment """Additional CV information - point of view"""@en .
+
+cv:Publications
+    a cv:OtherCVInfoType ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "Other info - publications" ;
+    rdfs:comment """Additional CV information - publications"""@en .
+
+cv:SocialActivities
+    a cv:OtherCVInfoType ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "Other info - social activities" ;
+    rdfs:comment """Additional CV information - social activities"""@en .
+
+#
+# Gender individuals
+#
+cv:Female
+    a cv:Gender;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "Female" .
+
+cv:Male
+    a cv:Gender;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "Male" .
+
+# ---------------------------------------------------------------------------
+# Equivalences
+#
+cv:Company
+    owl:equivalentClass gr:BusinessEntity .
+
+cv:CV
+    rdfs:subClassOf bibo:Document .
+
+cv:Organization
+    rdfs:subClassOf foaf:Organization .
+
+cv:Person
+	owl:equivalentClass foaf:Person .
+
+
+# < -------------------- Properties ------------------- >
+
+cv:hasCV
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "hasCV" ;
+    skos:altLabel "cv";
+    rdfs:comment """A CV of this person"""@en;
+    rdfs:domain cv:Person ;
+    rdfs:range cv:CV .
+
+cv:hasCountry
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "hasCountry" ;
+    skos:altLabel "country";
+    rdfs:comment """Country where an organization is located"""@en;
+    rdfs:domain cv:Organization;
+    rdfs:range xsd:string .
+
+cv:hasIndustry
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:comment """Industry a company operates in"""@en ;
+    rdfs:label "hasIndustry" ;
+    skos:altLabel "industry";
+    rdfs:domain cv:Company;
+    rdfs:range xsd:string .
+
+cv:hasLocality
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "hasLocality" ;
+    skos:altLabel "locality";
+    rdfs:comment """Region / state of the company"""@en ;
+    rdfs:domain cv:Organization;
+    rdfs:range xsd:string .
+
+cv:hasOrganizationName
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "hasOrganizationName" ;
+    skos:altLabel "organization name";
+    rdfs:comment """Name of an organization"""@en ;
+    rdfs:domain cv:Organization;
+    rdfs:range xsd:string .
+
+cv:notes
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "notes" ;
+    skos:altLabel "notes";
+    rdfs:comment """Notes about an organization"""@en ;
+    rdfs:domain cv:Organization;
+    rdfs:range xsd:string .
+
+cv:URL
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "url" ;
+    skos:altLabel "home page url";
+    rdfs:comment """Company home page"""@en ;
+    rdfs:domain cv:Organization;
+    rdfs:range rdfs:Resource .
+
+cv:aboutPerson
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "aboutPerson" ;
+    skos:altLabel "about person";
+    rdfs:comment """The person the CV describes"""@en ;
+    rdfs:domain cv:CV;
+    rdfs:range cv:Person .
+
+cv:birthPlace
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "birthPlace" ;
+    skos:altLabel "birth place";
+    rdfs:comment """Place of birth"""@en ;
+    rdfs:domain cv:Person;
+    rdfs:range xsd:string .
+
+cv:careerLevel
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:comment """Career level for the position in company"""@en ;
+    rdfs:label "careerLevel" ;
+    skos:altLabel "career level";
+    rdfs:domain cv:WorkHistory;
+    rdfs:range cv:CVCareerLevel .
+
+cv:conditionWillRelocate
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "conditionWillRelocate" ;
+    skos:altLabel "willing to relocate";
+    rdfs:comment """Is the candidate willing to relocate?"""@en ;
+    rdfs:domain cv:Target;
+    rdfs:range xsd:boolean .
+
+cv:conditionWillTravel
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "conditionWillTravel" ;
+    skos:altLabel "willing to travel";
+    rdfs:comment """Is the candidate willing to travel?"""@en ;
+    rdfs:domain cv:Target;
+    rdfs:range xsd:boolean .
+
+cv:courseDescription
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "courseDescription" ;
+    skos:altLabel "course description";
+    rdfs:comment """Description of the course / certification"""@en ;
+    rdfs:domain cv:Course;
+    rdfs:range xsd:string .
+
+cv:courseFinishDate
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "courseFinishDate" ;
+    skos:altLabel "course finish date";
+    rdfs:comment """Date when course was finished / certification acquired"""@en ;
+    rdfs:domain cv:Course;
+    rdfs:range xsd:date .
+
+cv:courseStartDate
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "courseStartDate" ;
+    skos:altLabel "course start date";
+    rdfs:comment """Start date of the course taken"""@en ;
+    rdfs:domain cv:Course;
+    rdfs:range xsd:date .
+
+cv:courseTitle
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "courseTitle" ;
+    skos:altLabel "course title";
+    rdfs:comment """Title of the course taken or certification acquired"""@en ;
+    rdfs:domain cv:Course;
+    rdfs:range xsd:string .
+
+cv:courseURL
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "courseURL" ;
+    skos:altLabel "course URL";
+    rdfs:comment """Web page of a course taken or certification acquired"""@en ;
+    rdfs:domain cv:Course;
+    rdfs:range rdfs:Resource .
+
+cv:cvCopyright
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "cvCopyright" ;
+    skos:altLabel "cv copyright";
+    rdfs:comment """Copyright notice - who owns rights to CV, how may it be used, other legal info."""@en ;
+    rdfs:domain cv:CV;
+    rdfs:range xsd:string .
+
+cv:cvDescription
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "cvDescription" ;
+    skos:altLabel "cv description";
+    rdfs:comment """Text describing what the person wants to accomplish by this CV; what is they are looking for etc"""@en ;
+    rdfs:domain cv:CV;
+    rdfs:range xsd:string .
+
+cv:cvIsActive
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "cvIsActive" ;
+    skos:altLabel "cv is active";
+    rdfs:comment """If the CV is active and the person is actively looking for job opportunities."""@en ;
+    rdfs:domain cv:CV;
+    rdfs:range xsd:boolean .
+
+cv:cvIsConfidential
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "cvIsConfidential" ;
+    skos:altLabel "cv is confidential";
+    rdfs:comment """If the CV is confidential and may be used by receiving party only"""@en ;
+    rdfs:domain cv:CV;
+    rdfs:range xsd:boolean .
+
+cv:cvTitle
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:comment """CV title."""@en ;
+    rdfs:domain cv:CV;
+    rdfs:label "cvTitle" ;
+    skos:altLabel "cv title";
+    rdfs:range xsd:string .
+
+cv:degreeType
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "degreeType" ;
+    skos:altLabel "degree type";
+    rdfs:comment """Type (title) of the degree"""@en ;
+    rdfs:domain cv:Education;
+    rdfs:range cv:EduDegree .
+
+cv:eduDescription
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "eduDescription" ;
+    skos:altLabel "education description";
+    rdfs:comment """Description of the education info"""@en ;
+    rdfs:domain cv:Education;
+    rdfs:range xsd:string .
+
+cv:eduGradDate
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "eduGradDate" ;
+    skos:altLabel "graduation date";
+    rdfs:comment """Education end date"""@en ;
+    rdfs:domain cv:Education;
+    rdfs:range xsd:date .
+
+cv:eduMajor
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "eduMajor" ;
+    skos:altLabel "education major";
+    rdfs:comment """Major speciality graduated in"""@en ;
+    rdfs:domain cv:Education;
+    rdfs:range xsd:string .
+
+cv:eduMinor
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "eduMinor" ;
+    skos:altLabel "education minor";
+    rdfs:comment """Minor specialities graduated in"""@en ;
+    rdfs:domain cv:Education;
+    rdfs:range xsd:string .
+
+cv:eduStartDate
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "eduStartDate" ;
+    skos:altLabel "education start date";
+    rdfs:comment """Education start date"""@en ;
+    rdfs:domain cv:Education;
+    rdfs:range xsd:date .
+
+cv:employedIn
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "employedIn" ;
+    skos:altLabel "employed in";
+    rdfs:comment """The company where the person is/was employed"""@en ;
+    rdfs:domain cv:WorkHistory;
+    rdfs:range cv:Company .
+
+cv:endDate
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "endDate" ;
+    skos:altLabel "end date";
+    rdfs:comment """End date of employment"""@en ;
+    rdfs:domain cv:WorkHistory;
+    rdfs:range xsd:date .
+
+cv:gender
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "gender" ;
+    skos:altLabel "gender";
+    rdfs:comment """The person's gender"""@en ;
+    rdfs:domain cv:Person;
+    rdfs:range cv:Gender .
+
+cv:hasCitizenship
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "hasCitizenship" ;
+    skos:altLabel "citizenship";
+    rdfs:comment """Country in which a person has citizenship"""@en ;
+    rdfs:domain cv:Person;
+    rdfs:range xsd:string .
+
+cv:hasCourse
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "hasCourse" ;
+    skos:altLabel "course";
+    rdfs:comment """Details of a course attended by the person"""@en ;
+    rdfs:domain cv:CV;
+    rdfs:range cv:Course .
+
+cv:hasDriversLicence
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "hasDriversLicence" ;
+    skos:altLabel "drivers licence";
+    rdfs:comment """Indicates if the person holds a driver's licence (for regular cars)"""@en ;
+    rdfs:domain cv:Person;
+    rdfs:range xsd:boolean .
+
+cv:hasEducation
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "hasEducation" ;
+    skos:altLabel "education";
+    rdfs:comment """Details of a person's education"""@en ;
+    rdfs:domain cv:CV;
+    rdfs:range cv:Education .
+
+cv:hasNationality
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:comment """The person's nationality."""@en ;
+    rdfs:label "hasNationality" ;
+    skos:altLabel "nationality";
+    rdfs:domain cv:Person;
+    rdfs:range xsd:string .
+
+cv:hasOtherInfo
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "hasOtherInfo" ;
+    skos:altLabel "other info";
+    rdfs:comment """Miscellaneous additional information included in the CV"""@en ;
+    rdfs:domain cv:CV;
+    rdfs:range cv:OtherInfo .
+
+cv:hasReference
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "hasReference" ;
+    skos:altLabel "reference";
+    rdfs:comment """A work reference"""@en ;
+    rdfs:domain cv:CV;
+    rdfs:range cv:Reference .
+
+cv:hasSkill
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:domain cv:CV;
+    rdfs:label "hasSkill" ;
+    skos:altLabel "skill";
+    rdfs:range cv:Skill .
+
+cv:hasTarget
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "hasTarget" ;
+    skos:altLabel "target";
+    rdfs:comment """The person's target job"""@en ;
+    rdfs:domain cv:CV;
+    rdfs:range cv:Target .
+
+cv:hasWorkHistory
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "hasWorkHistory" ;
+    skos:altLabel "work history";
+    rdfs:comment """The person's employment history"""@en ;
+    rdfs:domain cv:CV;
+    rdfs:range cv:WorkHistory .
+
+cv:isCertification
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "isCertification" ;
+    skos:altLabel "is certification";
+    rdfs:comment """Does this course entry include certification?"""@en ;
+    rdfs:domain cv:Course;
+    rdfs:range xsd:boolean .
+
+cv:isCurrent
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "isCurrent" ;
+    skos:altLabel "is current";
+    rdfs:comment """Indicates if the person currently holds this position"""@en ;
+    rdfs:domain cv:WorkHistory;
+    rdfs:range xsd:boolean .
+
+cv:jobDescription
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "jobDescription" ;
+    skos:altLabel "job description";
+    rdfs:comment """Description of the job in the company"""@en ;
+    rdfs:domain cv:WorkHistory;
+    rdfs:range xsd:string .
+
+cv:hasJob
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "hasJob" ;
+    skos:altLabel "job title";
+    rdfs:comment """Title in the company"""@en ;
+    rdfs:domain cv:WorkHistory;
+    rdfs:range cv:JobTitle .
+
+cv:hasJobTitle
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "hasJobTitle" ;
+    skos:altLabel "job title";
+    rdfs:comment """Title in the company"""@en ;
+    rdfs:domain cv:JobTitle;
+    rdfs:range xsd:string .
+
+cv:jobType
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "jobType" ;
+    skos:altLabel "job type";
+    rdfs:comment """Type of the job: employee / contractor / intern"""@en ;
+    rdfs:domain cv:WorkHistory;
+    rdfs:range cv:CVJobType .
+
+cv:lastUpdate
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "lastUpdate" ;
+    skos:altLabel "last update";
+    rdfs:comment """Date when the information in CV was last updated"""@en ;
+    rdfs:domain cv:CV;
+    rdfs:range xsd:date .
+
+cv:lngSkillLevelReading
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "lngSkillLevelReading" ;
+    skos:altLabel "language reading level";
+    rdfs:comment """Level of reading skills in a language skill (0..5)"""@en ;
+    rdfs:domain cv:languageSkill;
+    rdfs:range xsd:integer .
+
+cv:lngSkillLevelWriting
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "lngSkillLevelWriting" ;
+    skos:altLabel "language writing level";
+    rdfs:comment """Level of writing skills in a language (0..5)"""@en ;
+    rdfs:domain cv:languageSkill;
+    rdfs:range xsd:integer .
+
+cv:maritalStatus
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "maritalStatus" ;
+    skos:altLabel "marital status";
+    rdfs:comment """The person's marital status"""@en ;
+    rdfs:domain cv:Person;
+    rdfs:range cv:MaritalStatus .
+
+cv:noOfChildren
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "noOfChildren" ;
+    skos:altLabel "number of children";
+    rdfs:comment """Number of children the person has"""@en ;
+    rdfs:domain cv:Person;
+    rdfs:range xsd:integer .
+
+cv:numSubordinates
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "numSubordinates" ;
+    skos:altLabel "number of subordinates";
+    rdfs:comment """Number of subordinates reporting to the person"""@en ;
+    rdfs:domain cv:WorkHistory;
+    rdfs:range xsd:integer .
+
+cv:organizedBy
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "organizedBy" ;
+    skos:altLabel "organized by";
+    rdfs:comment """Organization that organized courses and/or provided certification"""@en ;
+    rdfs:domain cv:Course;
+    rdfs:range cv:Organization .
+
+cv:otherInfoDescription
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "otherInfoDescription" ;
+    skos:altLabel "other info description";
+    rdfs:comment """Description - content of miscellaneous CV information"""@en ;
+    rdfs:domain cv:OtherInfo;
+    rdfs:range xsd:string .
+
+cv:otherInfoType
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "otherInfoType" ;
+    skos:altLabel "other info type";
+    rdfs:comment """Type of other CV information (interests / awards / accomplishments / point of view / membership / social activities / other)"""@en ;
+    rdfs:domain cv:OtherInfo;
+    rdfs:range cv:OtherCVInfoType .
+
+cv:referenceBy
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "referenceBy" ;
+    skos:altLabel "reference by";
+    rdfs:comment """Points to a person who provides the reference"""@en ;
+    rdfs:domain cv:Reference;
+    rdfs:range cv:Person .
+
+cv:skillLastUsed
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "skillLastUsed" ;
+    skos:altLabel "skill last used";
+    rdfs:comment """Date when skill was last used."""@en ;
+    rdfs:domain cv:Skill;
+    rdfs:range xsd:date .
+
+cv:skillLevel
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "skillLevel" ;
+    skos:altLabel "skill level";
+    rdfs:comment """Level of accomplishment in the skill (0..5)"""@en ;
+    rdfs:domain cv:Skill;
+    rdfs:range xsd:integer .
+
+cv:skillName
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "skillName" ;
+    skos:altLabel "skill name";
+    rdfs:comment """Name of the skill"""@en ;
+    rdfs:domain cv:Skill;
+    rdfs:range xsd:string .
+
+cv:skillYearsExperience
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "skillYearsExperience" ;
+    skos:altLabel "skill years experience";
+    rdfs:comment """Years of experience in this skill"""@en ;
+    rdfs:domain cv:Skill;
+    rdfs:range xsd:integer .
+
+cv:startDate
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "startDate" ;
+    skos:altLabel "start date";
+    rdfs:comment """Start date of employment"""@en  ;
+    rdfs:domain cv:WorkHistory;
+    rdfs:range xsd:date .
+
+cv:studiedIn
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "studiedIn" ;
+    skos:altLabel "studied in";
+    rdfs:comment """Educational organization where person studied"""@en ;
+    rdfs:domain cv:Education;
+    rdfs:range cv:EducationalOrg .
+
+cv:targetCareerLevel
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "targetCareerLevel" ;
+    skos:altLabel "target career level";
+    rdfs:comment """Target career level."""@en ;
+    rdfs:domain cv:Target;
+    rdfs:range cv:CVCareerLevel .
+
+cv:targetCompanyDescription
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "targetCompanyDescription" ;
+    skos:altLabel "target company description";
+    rdfs:comment """Description on the company where the candidate would like to work"""@en ;
+    rdfs:domain cv:Target;
+    rdfs:range xsd:string .
+
+cv:targetCompanyIndustry
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "targetCompanyIndustry" ;
+    skos:altLabel "target company industry";
+    rdfs:comment """Industry of the company where the candidate would like to work"""@en ;
+    rdfs:domain cv:Target;
+    rdfs:range xsd:string .
+
+cv:targetCompanySize
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "targetCompanySize" ;
+    skos:altLabel "target company size";
+    rdfs:comment """Size of the target company"""@en ;
+    rdfs:domain cv:Target;
+    rdfs:range xsd:string .
+
+cv:targetCountry
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "targetCountry" ;
+    skos:altLabel "target country";
+    rdfs:comment """Country where job applicant would like to work"""@en ;
+    rdfs:domain cv:Target;
+    rdfs:range xsd:string .
+
+cv:targetJobDescription
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "targetJobDescription" ;
+    skos:altLabel "target job description";
+    rdfs:comment """Description of the job applicant is seeking"""@en ;
+    rdfs:domain cv:Target;
+    rdfs:range xsd:string .
+
+cv:targetJobMode
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "targetJobMode" ;
+    skos:altLabel "target job mode";
+    rdfs:comment """Job mode: full-time / part-time"""@en ;
+    rdfs:domain cv:Target;
+    rdfs:range cv:CVJobMode .
+
+cv:targetJobType
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "targetJobType" ;
+    skos:altLabel "target job type";
+    rdfs:comment """Target job type"""@en ;
+    rdfs:domain cv:Target;
+    rdfs:range cv:CVJobType .
+
+cv:targetSalary
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "targetSalary" ;
+    skos:altLabel "target salary";
+    rdfs:comment """Target salary"""@en ;
+    owl:maxCardinality "1";
+    rdfs:domain cv:Target;
+    rdfs:range xsd:integer .
+
+cv:targetSalaryCurrency
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "targetSalaryCurrency" ;
+    skos:altLabel "target salary currency";
+    rdfs:comment """Currency for target salary."""@en ;
+    owl:maxCardinality "1";
+    rdfs:domain cv:Target;
+    rdfs:range xsd:string .
+
+cv:weeksNoticePeriod
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cv#> ;
+    rdfs:label "weeksNoticePeriod" ;
+    skos:altLabel "notice period (weeks)";
+    rdfs:comment """Notice period (weeks) required before starting new position."""@en ;
+    rdfs:domain cv:Target;
+    rdfs:range xsd:integer .
+

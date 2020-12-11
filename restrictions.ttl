@@ -1,0 +1,208 @@
+@prefix schema:    <http://schema.org/> .
+@prefix cvocab:    <http://open-services.net/ns/core#> .
+@prefix dcterms:   <http://purl.org/dc/terms/> .
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix gr:        <http://purl.org/goodrelations/v1#> .
+@prefix sioc:      <http://rdfs.org/sioc/ns#> .
+@prefix owl:       <http://www.w3.org/2002/07/owl#> .
+@prefix siocs:     <http://rdfs.org/sioc/services#> .
+@prefix skos:      <http://www.w3.org/2004/02/skos/core#> .
+@prefix wdrs:      <http://www.w3.org/2007/05/powder-s#> .
+@prefix foaf:      <http://xmlns.com/foaf/0.1/> .
+@prefix xhv:       <http://www.w3.org/1999/xhtml/vocab#> .
+@prefix acl:       <http://www.w3.org/ns/auth/acl#> .
+@prefix oplacl:    <http://www.openlinksw.com/ontology/acl#> .
+@prefix oplres:    <http://www.openlinksw.com/ontology/restrictions#> .
+@prefix cc:        <http://creativecommons.org/ns#> .
+
+oplres:
+  a owl:Ontology ;
+  rdfs:label """OpenLink Restrictions Ontology"""^^xsd:string ;
+  rdfs:comment """Ontology that defines entity and relation types used to describe restrictions scoped to individuals, groups,
+  or the whole system. Examples include the maximum number of result rows for queries or the maximum number of times a
+  certain action can be performed."""@en ;
+  wdrs:describedby <http://www.openlinksw.com/ontology/restrictions> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  dcterms:created "2014-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  dcterms:modified "2015-03-20T13:38:00-05:00"^^xsd:dateTime ;
+  owl:versionInfo "1.3.0"^^xsd:string ;
+  owl:imports <http://www.w3.org/ns/auth/acl#> ,
+              <http://xmlns.com/foaf/0.1/> ,
+              oplacl: ,
+              <http://www.w3.org/2002/07/owl#> ,
+              <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ,
+              <http://purl.org/dc/terms/> ;
+  <http://open.vocab.org/terms/defines> oplres:Restriction ,
+                                        oplres:Restrict ,
+                                        oplres:hasAgent ,
+                                        oplres:hasAgentClass ,
+                                        oplres:hasMinValue ,
+                                        oplres:hasMaxValue ,
+                                        oplres:hasRealm ,
+                                        oplres:hasRestrictedResource ,
+                                        oplres:hasRestrictedParameter ,
+                                        oplres:hasRestrictionDocument ,
+                                        oplres:Restrictions ;
+  schema:about oplres:Restriction ,
+                                        oplres:Restrict ,
+                                        oplres:hasAgent ,
+                                        oplres:hasAgentClass ,
+                                        oplres:hasMinValue ,
+                                        oplres:hasMaxValue ,
+                                        oplres:hasRealm ,
+                                        oplres:hasRestrictedResource ,
+                                        oplres:hasRestrictedParameter ,
+                                        oplres:hasRestrictionDocument ,
+                                        oplres:Restrictions .
+
+<http://www.openlinksw.com/DAV/data/turtle/restrictions.ttl>
+  a foaf:Document , schema:TechArticle ;
+  rdfs:label """OpenLink Restrictions Ontology Description Document (Turtle)"""^^xsd:string ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  rdfs:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for Restrictions."""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/ontology/restrictions#> ;
+  dcterms:created "2014-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  dcterms:modified "2015-03-20T13:38:00-05:00"^^xsd:dateTime ;
+  xhv:canonical <http://www.openlinksw.com/ontology/restrictions> ;
+  xhv:describes <http://www.openlinksw.com/ontology/restrictions#> ;
+  schema:about <http://www.openlinksw.com/ontology/restrictions#> ;
+  dcterms:subject <http://www.openlinksw.com/ontology/restrictions#> .
+
+<http://www.openlinksw.com/data/turtle/restrictions.ttl>
+  a foaf:Document , schema:TechArticle ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  rdfs:label """OpenLink Restrictions Ontology Description Document (Turtle)"""^^xsd:string ;
+  rdfs:comment """This is a turtle document that uses Linked Data oriented content to describe the OpenLink Restrictions Ontology."""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/ontology/restrictions#> ;
+  xhv:canonical <http://www.openlinksw.com/ontology/restrictions> ;
+  dcterms:created "2014-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  dcterms:modified "2015-03-20T13:38:00-05:00"^^xsd:dateTime ;
+  xhv:describes <http://www.openlinksw.com/ontology/restrictions#> ;
+  schema:about <http://www.openlinksw.com/ontology/restrictions#> ;
+  dcterms:subject <http://www.openlinksw.com/ontology/restrictions#> .
+
+<http://www.openlinksw.com/ontology/restrictions>
+  a foaf:Document , schema:TechArticle ;
+  rdfs:label """OpenLink Restrictions Ontology Description Document"""^^xsd:string ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  rdfs:comment """This is a document that uses Linked Data oriented content to describe OpenLink Restrictions Ontology."""@en ;
+  dcterms:subject <http://www.openlinksw.com/ontology/restrictions#> ;
+  dcterms:created "2014-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  dcterms:modified "2015-03-20T13:38:00-05:00"^^xsd:dateTime ;
+  foaf:primaryTopic <http://www.openlinksw.com/ontology/restrictions#> ;
+  foaf:topic oplres:Restriction ,
+            oplres:Restrict ,
+            oplres:hasAgent ,
+            oplres:hasAgentClass ,
+            oplres:hasMinValue ,
+            oplres:hasMaxValue ,
+            oplres:hasRealm ,
+            oplres:hasRestrictedResource ,
+            oplres:hasRestrictedParameter ,
+            oplres:hasRestrictionDocument ,
+            oplres:Restrictions .
+
+# <-------------- Classes --------------> #
+
+oplres:Restriction a owl:Class ;
+  rdfs:label "Restriction" ;
+  rdfs:comment "A restriction defines boundaries on values that can be scoped to users, groups, or the whole system."@en ;
+  rdfs:isDefinedBy oplres: .
+
+oplres:Restrict a owl:Class ;
+  rdfs:subClassOf acl:Access ;
+  rdfs:label "Restrict" ;
+  rdfs:comment "Represents operations that restrict certain parameters, the creation of ACL restrictions on a specific resource."@en ;
+  rdfs:isDefinedBy oplacl: .
+
+# <-------------- Properties --------------> #
+
+oplres:hasAgent
+  a owl:ObjectProperty, rdf:Property ;
+  rdfs:label "hasAgent" ;
+  skos:altLabel "Agent"^^xsd:string ;
+  rdfs:comment "The agent (can be an individual or a group) to which a Restriction applies."@en ;
+  rdfs:domain oplres:Restriction ;
+  rdfs:range foaf:Agent ;
+  rdfs:isDefinedBy oplres: .
+
+oplres:hasAgentClass
+  a owl:ObjectProperty, rdf:Property ;
+  rdfs:label "hasAgentClass" ;
+  skos:altLabel "Agent Class"^^xsd:string ;
+  rdfs:comment "The agent class to which a Restriction applies. The typical use case is foaf:Person which makes the restriction a universally applicable one."@en ;
+  rdfs:domain oplres:Restriction ;
+  rdfs:range owl:Class ;
+  rdfs:isDefinedBy oplres: .
+
+oplres:hasMinValue
+  a owl:DatatypeProperty, rdf:Property ;
+  rdfs:label "hasMinValue" ;
+  skos:altLabel "Minimum Value"^^xsd:string ;
+  rdfs:comment "The optional lower restriction on a decimal value."@en ;
+  rdfs:domain oplres:Restriction ;
+  rdfs:range xsd:decimal ;
+  rdfs:isDefinedBy oplres: .
+
+oplres:hasMaxValue
+  a owl:DatatypeProperty, rdf:Property ;
+  rdfs:label "hasMaxValue" ;
+  skos:altLabel "Maximum Value"^^xsd:string ;
+  rdfs:comment "The optional upper restriction on a decimal value."@en ;
+  rdfs:domain oplres:Restriction ;
+  rdfs:range xsd:decimal ;
+  rdfs:isDefinedBy oplres: .
+
+oplres:hasRealm
+  a owl:ObjectProperty, rdf:Property ;
+  rdfs:label "hasRealm" ;
+  skos:altLabel "Realm"^^xsd:string ;
+  rdfs:comment "Relates a Restriction to an application realm."@en ;
+  rdfs:domain oplres:Restriction ;
+  rdfs:range oplacl:ApplicationRealm ;
+  rdfs:isDefinedBy oplres: .
+
+oplres:hasRestrictedResource
+  a owl:ObjectProperty, rdf:Property ;
+  rdfs:label "hasRestrictedResource" ;
+  skos:altLabel "Restricted Resource"^^xsd:string ;
+  rdfs:comment "Relates a Restriction to the subject of its restriction. It is up to the application to define this thing. The addtional property hasRestrictedParameter allows to further divide one resource into different restrictions."@en ;
+  rdfs:domain oplres:Restriction ;
+  rdfs:range rdfs:Resource ;
+  rdfs:isDefinedBy oplres: .
+
+oplres:hasRestrictedParameter
+  a owl:ObjectProperty, rdf:Property ;
+  rdfs:label "hasRestrictedParameter" ;
+  skos:altLabel "Restricted Parameter"^^xsd:string ;
+  rdfs:comment "Relates a Restriction to the parameter of restriction. A restriction parameter allows to define a set of restrictions on one resource. This is useful for restrictions on existing resources like files or web pages."@en ;
+  rdfs:domain oplres:Restriction ;
+  rdfs:range rdfs:Resource ;
+  rdfs:isDefinedBy oplres: .
+
+oplres:hasRestrictionDocument
+  a owl:ObjectProperty, rdf:Property ;
+  rdfs:label "hasRestrictionDocument" ;
+  skos:altLabel "Restriction Document" ;
+  rdfs:comment """The document in which the ACL restriction resources for a specific application realm are stored. This typically
+    refers to a named graph in the triple store."""@en ;
+  rdfs:isDefinedBy oplacl: ;
+  rdfs:domain oplacl:ApplicationRealm ;
+  rdfs:range rdfs:Resource .
+
+
+# <-------------- Instances --------------> #
+
+oplres:Restrictions a oplacl:Scope ;
+    rdfs:label "Restrictions ACL Scope" ;
+    rdfs:comment """ACL scope which contains all ACL rules granting the right to create restrictions for a specific resource."""@en ;
+    oplacl:hasApplicableAccess oplres:Restrict .
+
+
+xhv:related owl:equivalentProperty rdfs:seeAlso .
+<http://open.vocab.org/terms/defines> owl:inverseOf <http://www.w3.org/2007/05/powder-s#describedby> .

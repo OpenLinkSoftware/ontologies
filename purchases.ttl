@@ -1,0 +1,571 @@
+@prefix schema:    <http://schema.org/> .
+@prefix cvocab:    <http://open-services.net/ns/core#> .
+@prefix dcterms:   <http://purl.org/dc/terms/> .
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix gr:        <http://purl.org/goodrelations/v1#> .
+@prefix sioc:      <http://rdfs.org/sioc/ns#> .
+@prefix owl:       <http://www.w3.org/2002/07/owl#> .
+@prefix siocs:     <http://rdfs.org/sioc/services#> .
+@prefix skos:      <http://www.w3.org/2004/02/skos/core#> .
+@prefix wdrs:      <http://www.w3.org/2007/05/powder-s#> .
+@prefix foaf:      <http://xmlns.com/foaf/0.1/> .
+@prefix xhv:       <http://www.w3.org/1999/xhtml/vocab#> .
+@prefix oplprchs:  <http://www.openlinksw.com/ontology/purchases#> .
+@prefix payment:   <http://reference.data.gov.uk/def/payment#> .
+@prefix vcard:     <http://www.w3.org/2006/vcard/> .
+@prefix cc:        <http://creativecommons.org/ns#> .
+@prefix oplcc:     <http://www.openlinksw.com/ontology/creditcards#> .
+
+<http://www.openlinksw.com/ontology/purchases#>
+  a owl:Ontology ;
+  rdfs:label """OpenLink Purchases Ontology"""^^xsd:string ;
+  rdfs:comment """Ontology that defines entity and relation types used to describe purchases. Examples include states,
+  licenses files, purchase date etc."""@en ;
+  wdrs:describedby <http://www.openlinksw.com/ontology/purchases> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  dcterms:created "2014-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  dcterms:modified "2015-03-20T13:38:00-05:00"^^xsd:dateTime ;
+  owl:versionInfo "1.4.0"^^xsd:string ;
+  owl:imports <http://purl.org/goodrelations/v1> ,
+              <http://www.w3.org/2006/vcard/> ,
+              <http://www.w3.org/2002/07/owl#> ,
+              <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ,
+              <http://purl.org/dc/terms/> ;
+  <http://open.vocab.org/terms/defines>
+     oplprchs:Purchase ,
+     oplprchs:PurchasedItem ,
+     oplprchs:PurchaseState ,
+     oplprchs:PurchaseEndState ,
+     oplprchs:CreditCardPayment ,
+     oplprchs:FailedPayment ,
+     oplprchs:PurchasedFile ,
+     oplprchs:LicenseFile ,
+     oplprchs:SupportCertificateFile ,
+     oplprchs:ClientAccessCertificateFile ,
+     oplprchs:contains ,
+     oplprchs:hasOffering ,
+     oplprchs:purchaseDate ,
+     oplprchs:madePurchase ,
+     oplprchs:purchaseNumber ,
+     oplprchs:serialNumber ,
+     oplprchs:purchaseState ,
+     oplprchs:usedCreditCard ,
+     oplprchs:paymentDetails ,
+     oplprchs:transactionId ,
+     oplprchs:customerPurchaseId ,
+     oplprchs:usedBillingAgent ,
+     oplprchs:usedShippingAgent ,
+     oplprchs:usedCustomerAgent ,
+     oplprchs:hasInvoice ,
+     oplprchs:hasTotalPrice ,
+     oplprchs:containsFile ,
+     oplprchs:hasSource ,
+     oplprchs:lastUsedBillingAgent ,
+     oplprchs:lastUsedShippingAgent ,
+     oplprchs:lastUsedCustomerAgent ,
+     oplprchs:hasPreceedingState ,
+     oplprchs:hasFollowingState ,
+     oplprchs:hasProcessMessage ,
+     oplprchs:PaymentPending ,
+     oplprchs:PaymentCompleted ,
+     oplprchs:PaymentFailed ,
+     oplprchs:LicencesGenerated,
+     oplprchs:InvoiceGenerated ,
+     oplprchs:CopiedToUserStorage ,
+     oplprchs:PurchaseCompleted ;
+  schema:about
+     oplprchs:Purchase ,
+     oplprchs:PurchasedItem ,
+     oplprchs:PurchaseState ,
+     oplprchs:PurchaseEndState ,
+     oplprchs:CreditCardPayment ,
+     oplprchs:FailedPayment ,
+     oplprchs:PurchasedFile ,
+     oplprchs:LicenseFile ,
+     oplprchs:SupportCertificateFile ,
+     oplprchs:ClientAccessCertificateFile ,
+     oplprchs:contains ,
+     oplprchs:hasOffering ,
+     oplprchs:purchaseDate ,
+     oplprchs:madePurchase ,
+     oplprchs:purchaseNumber ,
+     oplprchs:serialNumber ,
+     oplprchs:purchaseState ,
+     oplprchs:usedCreditCard ,
+     oplprchs:paymentDetails ,
+     oplprchs:transactionId ,
+     oplprchs:customerPurchaseId ,
+     oplprchs:usedBillingAgent ,
+     oplprchs:usedShippingAgent ,
+     oplprchs:usedCustomerAgent ,
+     oplprchs:hasInvoice ,
+     oplprchs:hasTotalPrice ,
+     oplprchs:containsFile ,
+     oplprchs:hasSource ,
+     oplprchs:lastUsedBillingAgent ,
+     oplprchs:lastUsedShippingAgent ,
+     oplprchs:lastUsedCustomerAgent ,
+     oplprchs:hasPreceedingState ,
+     oplprchs:hasFollowingState ,
+     oplprchs:hasProcessMessage ,
+     oplprchs:PaymentPending ,
+     oplprchs:PaymentCompleted ,
+     oplprchs:PaymentFailed ,
+     oplprchs:LicencesGenerated,
+     oplprchs:InvoiceGenerated ,
+     oplprchs:CopiedToUserStorage ,
+     oplprchs:PurchaseCompleted .
+
+<http://www.openlinksw.com/DAV/data/turtle/purchases.ttl>
+  a foaf:Document , schema:TechArticle ;
+  rdfs:label """OpenLink Purchases Ontology Description Document (Turtle)"""^^xsd:string ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  rdfs:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for Purchases."""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/ontology/purchases#> ;
+  dcterms:created "2014-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  dcterms:modified "2015-03-20T13:38:00-05:00"^^xsd:dateTime ;
+  xhv:canonical <http://www.openlinksw.com/ontology/purchases> ;
+  xhv:describes <http://www.openlinksw.com/ontology/purchases#> ;
+  schema:about <http://www.openlinksw.com/ontology/purchases#> ;
+  dcterms:subject <http://www.openlinksw.com/ontology/purchases#> .
+
+<http://www.openlinksw.com/data/turtle/purchases.ttl>
+  a foaf:Document , schema:TechArticle ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  rdfs:label """OpenLink Purchases Ontology Description Document (Turtle)"""^^xsd:string ;
+  rdfs:comment """This is a turtle document that uses Linked Data oriented content to describe the OpenLink Purchases Ontology."""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/ontology/purchases#> ;
+  dcterms:created "2014-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  dcterms:modified "2015-03-20T13:38:00-05:00"^^xsd:dateTime ;
+  xhv:canonical <http://www.openlinksw.com/ontology/purchases> ;
+  xhv:describes <http://www.openlinksw.com/ontology/purchases#> ;
+  schema:about <http://www.openlinksw.com/ontology/purchases#> ;
+  dcterms:subject <http://www.openlinksw.com/ontology/purchases#> .
+
+<http://www.openlinksw.com/ontology/purchases>
+  a foaf:Document , schema:TechArticle ;
+  rdfs:label """OpenLink Purchases Ontology Description Document"""^^xsd:string ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  dcterms:created "2014-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  dcterms:modified "2015-03-20T13:38:00-05:00"^^xsd:dateTime ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  rdfs:comment """This is a document that uses Linked Data oriented content to describe OpenLink Purchases Ontology."""@en ;
+  dcterms:subject <http://www.openlinksw.com/ontology/purchases#> ;
+  foaf:primaryTopic <http://www.openlinksw.com/ontology/purchases#> ;
+  foaf:topic oplprchs:Purchase ,
+             oplprchs:PurchasedItem ,
+             oplprchs:PurchaseState ,
+             oplprchs:PurchaseEndState ,
+             oplprchs:CreditCardPayment ,
+             oplprchs:FailedPayment ,
+             oplprchs:PurchasedFile ,
+             oplprchs:LicenseFile ,
+             oplprchs:SupportCertificateFile ,
+             oplprchs:ClientAccessCertificateFile ,
+             oplprchs:contains ,
+             oplprchs:hasOffering ,
+             oplprchs:purchaseDate ,
+             oplprchs:madePurchase ,
+             oplprchs:purchaseNumber ,
+             oplprchs:serialNumber ,
+             oplprchs:purchaseState ,
+             oplprchs:usedCreditCard ,
+             oplprchs:paymentDetails ,
+             oplprchs:transactionId ,
+             oplprchs:customerPurchaseId ,
+             oplprchs:usedBillingAgent ,
+             oplprchs:usedShippingAgent ,
+             oplprchs:usedCustomerAgent ,
+             oplprchs:hasInvoice ,
+             oplprchs:hasTotalPrice ,
+             oplprchs:containsFile ,
+             oplprchs:hasSource ,
+             oplprchs:lastUsedBillingAgent ,
+             oplprchs:lastUsedShippingAgent ,
+             oplprchs:lastUsedCustomerAgent ,
+             oplprchs:hasPreceedingState ,
+             oplprchs:hasFollowingState ,
+             oplprchs:hasProcessMessage ,
+             oplprchs:PaymentPending ,
+             oplprchs:PaymentCompleted ,
+             oplprchs:PaymentFailed ,
+             oplprchs:LicencesGenerated,
+             oplprchs:InvoiceGenerated ,
+             oplprchs:CopiedToUserStorage ,
+             oplprchs:PurchaseCompleted.
+
+<http://www.openlinksw.com/data/turtle/purchases.ttl>
+  rdfs:seeAlso <http://virtuoso.openlinksw.com/offers/> ,
+               <http://uda.openlinksw.com/offers/> ,
+               <http://www.openlinksw.com/data/turtle/shop.ttl> ,
+               <http://www.openlinksw.com/data/turtle/offers.ttl> ,
+               <http://www.openlinksw.com/data/turtle/products.ttl> ,
+               <http://www.openlinksw.com/data/turtle/contracts.ttl> ,
+               <http://www.openlinksw.com/data/turtle/software.ttl> ,
+               <http://www.openlinksw.com/data/turtle/machines.ttl> ,
+               <http://www.openlinksw.com/data/turtle/vendors.ttl> ,
+               <http://www.openlinksw.com/data/turtle/features.ttl> ,
+               <http://www.openlinksw.com/data/turtle/payments.ttl> ,
+               <http://www.openlinksw.com/data/turtle/licenses.ttl> .
+
+# <-------------- Classes --------------> #
+
+oplprchs:Purchase a owl:Class ;
+  rdfs:label "Purchase" ;
+  skos:altLabel "Purchase"^^xsd:string ;
+  rdfs:comment """Entity type of resources representing a Purchase (Class)."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/purchases#> ;
+  rdfs:subClassOf sioc:Container , payment:Purchase .
+
+oplprchs:PurchasedItem a owl:Class ;
+  rdfs:label "Purchased Item" ;
+  skos:altLabel "Purchased Item"^^xsd:string ;
+  rdfs:comment """Entity type of resources representing a purchased item (Class)."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/purchases#> ;
+  rdfs:subClassOf sioc:Item .
+
+oplprchs:PurchaseState a owl:Class ;
+  rdfs:label "Purchase state" ;
+  skos:label "Purchase state" ;
+  rdfs:comment "Entity type of resources representing the state of a purchase (Class)."@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/purchases#> .
+
+oplprchs:PurchaseEndState a owl:Class ;
+  rdfs:label "PurchaseEndState state" ;
+  skos:label "Purchase end state" ;
+  rdfs:comment "A purchase end state marks a purchase as finsished, either successful or not."@en ;
+  rdfs:subClassOf oplprchs:PurchaseState ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/purchases#> .
+
+oplprchs:CreditCardPayment a owl:Class ;
+  rdfs:label "Credit card payment" ;
+  skos:altLabel "Credit card payment" ;
+  rdfs:comment "Entity type of resource representing credit card payments (Class)."@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/purchases#> ;
+  rdfs:subClassOf payment:Payment .
+
+oplprchs:FailedPayment a owl:Class ;
+  rdfs:label "Failed payment" ;
+  skos:altLabel "Failed payment" ;
+  rdfs:comment "Entity type of resource representing failed payments (Class). This is typically used as a marker class, i.e. in combination with other Payment sub-classes like CreditCardPayment."@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/purchases#> ;
+  rdfs:subClassOf payment:Payment .
+
+oplprchs:PurchasedFile a owl:Class ;
+  rdfs:label "Purchased File" ;
+  skos:altLabel "Purchased File" ;
+  rdfs:comment "Entity type of resource representing purchased files (Class). Typically more specific sub-classes are used."@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/purchases#> .
+
+oplprchs:LicenseFile a owl:Class ;
+  rdfs:label "License" ;
+  skos:altLabel "License" ;
+  rdfs:comment "Entity type of resource representing purchased license files (Class)."@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/purchases#> ;
+  rdfs:subClassOf oplprchs:PurchasedFile .
+
+oplprchs:SupportCertificateFile a owl:Class ;
+  rdfs:label "Support Certificate" ;
+  skos:altLabel "Support Certificate" ;
+  rdfs:comment "Entity type of resource representing purchased support certificate files (Class)."@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/purchases#> ;
+  rdfs:subClassOf oplprchs:PurchasedFile .
+
+oplprchs:ClientAccessCertificateFile a owl:Class ;
+  rdfs:label "Client Access Certificate" ;
+  skos:altLabel "Client Access Certificate" ;
+  rdfs:comment "Entity type of resource representing purchased client access certificate files (Class)."@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/purchases#> ;
+  rdfs:subClassOf oplprchs:PurchasedFile .
+
+# <-------------- Properties --------------> #
+
+oplprchs:contains
+  a owl:ObjectProperty, rdf:Property ;
+  rdfs:label "contains" ;
+  skos:altLabel "Contains"^^xsd:string ;
+  rdfs:comment """Associates a Purchase with one or more Purchased Items."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/purchases#> ;
+  rdfs:domain oplprchs:Purchase ;
+  rdfs:range oplprchs:PurchasedItem ;
+  rdfs:subPropertyOf sioc:container_of .
+
+oplprchs:hasOffering
+  a owl:ObjectProperty, rdf:Property ;
+  rdfs:label "hasOffering" ;
+  skos:altLabel "Offering"^^xsd:string ;
+  rdfs:comment """Associates a PurchasedItem with the schema:Offer that has been purchased."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/purchases#> ;
+  rdfs:domain oplprchs:PurchasedItem ;
+  rdfs:range schema:Offer .
+
+oplprchs:purchaseDate
+  a owl:DatatypeProperty, rdf:Property ;
+  rdfs:label "purchaseDate" ;
+  skos:altLabel "Purchase Date"^^xsd:string ;
+  rdfs:comment """The date and time the Purchase was completed."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/purchases#> ;
+  rdfs:domain oplprchs:Purchase ;
+  rdfs:range xsd:dateTime .
+
+oplprchs:madePurchase
+  a owl:ObjectProperty, rdf:Property ;
+  rdfs:label "madePurchase" ;
+  skos:altLabel "Made Purchase"^^xsd:string ;
+  rdfs:comment """Associates a Purchase with the agent (Organization, Person or Bot) that actually made the Purchase, i.e. the owner of the purchased items."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/purchases#> ;
+  rdfs:domain oplprchs:Purchase ;
+  rdfs:range foaf:Agent .
+
+oplprchs:purchaseNumber
+  a owl:DatatypeProperty, rdf:Property ;
+  rdfs:label "purchaseNumber" ;
+  skos:altLabel "Purchase Number"^^xsd:string ;
+  rdfs:comment """The Purchase number, an internal identifier for the purchase."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/purchases#> ;
+  rdfs:domain oplprchs:Purchase ;
+  rdfs:range xsd:string .
+
+oplprchs:serialNumber
+  a owl:DatatypeProperty, rdf:Property, owl:InverseFunctionalProperty ;
+  rdfs:label "serialNumber" ;
+  skos:altLabel "Serial Number"^^xsd:string ;
+  rdfs:comment """The serial number, an internal identifier for the purchased item, also used for license file creation."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/purchases#> ;
+  rdfs:domain oplprchs:PurchasedItem ;
+  rdfs:range xsd:string .
+
+oplprchs:purchaseState
+  a owl:ObjectProperty, rdf:Property ;
+  rdfs:label "purchaseState" ;
+  skos:altLabel "Purchase state" ;
+  rdfs:comment """The state of a purchase indicates the processing step it is currently in."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/purchases#> ;
+  rdfs:domain oplprchs:Purchase ;
+  rdfs:range oplprchs:PurchaseState .
+
+oplprchs:usedCreditCard
+  a owl:ObjectProperty, rdf:Property ;
+  rdfs:label "usedCreditCard" ;
+  skos:altLabel "Used Credit card"^^xsd:string ;
+  rdfs:comment """Associates a CreditCardPayment with the used credit card."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/purchases#> ;
+  rdfs:domain oplprchs:CreditCardPayment ;
+  rdfs:range oplcc:CreditCard .
+
+oplprchs:paymentDetails
+  a owl:ObjectProperty, rdf:Property ;
+  rdfs:label "paymentDetails" ;
+  skos:altLabel "Payment details"^^xsd:string ;
+  rdfs:comment """Associates a Purchase with its payment details."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/purchases#> ;
+  rdfs:domain oplprchs:Purchase ;
+  rdfs:range payment:Payment ;
+  owl:inverseOf payment:purchase .
+
+oplprchs:transactionId
+  a owl:DatatypeProperty, rdf:Property ;
+  rdfs:label "transactionId" ;
+  skos:altLabel "Transaction ID" ;
+  rdfs:comment """The transaction ID of a credit card payment."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/purchases#> ;
+  rdfs:domain oplprchs:CreditCardPayment ;
+  rdfs:range xsd:string .
+
+oplprchs:customerPurchaseId
+  a owl:DatatypeProperty, rdf:Property ;
+  rdfs:label "customerPurchaseId" ;
+  skos:altLabel "Customer Purchase ID" ;
+  rdfs:comment """An optional purchase order ID provided by the customer and printed on the invoice. It allows the customer to easier map the invoice."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/purchases#> ;
+  rdfs:domain oplprchs:Purchase ;
+  rdfs:range xsd:string .
+
+oplprchs:usedBillingAgent
+  a owl:ObjectProperty, rdf:Property ;
+  rdfs:label "usedBillingAgent" ;
+  skos:altLabel "Used Billing Agent"^^xsd:string ;
+  rdfs:comment """The billing agent used for a particular purchase."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/purchases#> ;
+  rdfs:domain oplprchs:Purchase ;
+  rdfs:range foaf:Agent .
+
+oplprchs:usedShippingAgent
+  a owl:ObjectProperty, rdf:Property ;
+  rdfs:label "usedShippingAgent" ;
+  skos:altLabel "Used Shipping Agent"^^xsd:string ;
+  rdfs:comment """The shipping agent used for a particular purchase."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/purchases#> ;
+  rdfs:domain oplprchs:Purchase ;
+  rdfs:range foaf:Agent .
+
+oplprchs:usedCustomerAgent
+  a owl:ObjectProperty, rdf:Property ;
+  rdfs:label "usedCustomerAgent" ;
+  skos:altLabel "Used Customer Agent"^^xsd:string ;
+  rdfs:comment """The customer agent (the person initiating the purchase) used for a particular purchase."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/purchases#> ;
+  rdfs:domain oplprchs:Purchase ;
+  rdfs:range foaf:Agent .
+
+oplprchs:hasInvoice
+  a owl:ObjectProperty, rdf:Property ;
+  rdfs:label "hasInvoice" ;
+  skos:altLabel "Invoice"^^xsd:string ;
+  rdfs:comment """Associates a Purchase with the invoice file."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/purchases#> ;
+  rdfs:domain oplprchs:Purchase ;
+  rdfs:range rdfs:Resource .
+
+oplprchs:hasTotalPrice
+  a owl:DatatypeProperty, rdf:Property ;
+  rdfs:label "hasTotalPrice" ;
+  skos:altLabel "TotalPrice"^^xsd:string ;
+  rdfs:comment """Associates a Purchase with total price."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/purchases#> ;
+  rdfs:domain oplprchs:Purchase ;
+  rdfs:range xsd:decimal .
+
+
+oplprchs:containsFile
+  a owl:ObjectProperty, rdf:Property ;
+  rdfs:label "containsFile" ;
+  skos:altLabel "Contains File"^^xsd:string ;
+  rdfs:comment """The files that are contained in a purchase, i.e. the files the customer purchased."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/purchases#> ;
+  rdfs:domain oplprchs:PurchasedItem ;
+  rdfs:range oplprchs:PurchasedFile .
+
+oplprchs:hasSource
+  a owl:ObjectProperty, rdf:Property ;
+  rdfs:label "hasSource" ;
+  skos:altLabel "Source"^^xsd:string ;
+  rdfs:comment """The Resource a purchased file is based on. This can be for example the license description used to generate a license file."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/purchases#> ;
+  rdfs:domain oplprchs:PurchasedFile ;
+  rdfs:range rdfs:Resource .
+
+oplprchs:lastUsedBillingAgent
+  a owl:ObjectProperty, rdf:Property ;
+  rdfs:label "lastUsedBillingAgent" ;
+  skos:altLabel "Last Used Billing Agent"^^xsd:string ;
+  rdfs:comment """Relates the user account with the last used billing agent, i.e. the default billing address."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/purchases#> ;
+  rdfs:domain foaf:Agent ;
+  rdfs:range foaf:Agent .
+
+oplprchs:lastUsedShippingAgent
+  a owl:ObjectProperty, rdf:Property ;
+  rdfs:label "lastUsedShippingAgent" ;
+  skos:altLabel "Last Used Shipping Agent"^^xsd:string ;
+  rdfs:comment """Relates the user account with the last used shipping agent, i.e. the default shipping address."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/purchases#> ;
+  rdfs:domain foaf:Agent ;
+  rdfs:range foaf:Agent .
+
+oplprchs:lastUsedCustomerAgent
+  a owl:ObjectProperty, rdf:Property ;
+  rdfs:label "lastUsedCustomerAgent" ;
+  skos:altLabel "Last Used Customer Agent"^^xsd:string ;
+  rdfs:comment """Relates the user account with the last used customer agent, i.e. the default customer address that will actually get the purchased items."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/purchases#> ;
+  rdfs:domain foaf:Agent ;
+  rdfs:range foaf:Agent .
+
+oplprchs:hasPreceedingState
+  a owl:ObjectProperty, rdf:Property ;
+  rdfs:label "hasPreceedingState" ;
+  skos:altLabel "Preceeding State"^^xsd:string ;
+  rdfs:comment """Identified the valid states a purchase can be in before entering this state."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/purchases#> ;
+  rdfs:domain oplprchs:PurchaseState ;
+  rdfs:range oplprchs:PurchaseState ;
+  owl:inverseOf oplprchs:hasFollowingState .
+
+oplprchs:hasFollowingState
+  a owl:ObjectProperty, rdf:Property ;
+  rdfs:label "hasFollowingState" ;
+  skos:altLabel "Following State"^^xsd:string ;
+  rdfs:comment """Identified the valid states a purchase can be in after this state."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/purchases#> ;
+  rdfs:domain oplprchs:PurchaseState ;
+  rdfs:range oplprchs:PurchaseState ;
+  owl:inverseOf oplprchs:hasPreceedingState .
+
+oplprchs:hasProcessMessage
+  a owl:DatatypeProperty, rdf:Property ;
+  rdfs:label "hasProcessMessage" ;
+  skos:altLabel "Process message" ;
+  rdfs:comment """A message that can be shown to the user while a shop system processes a purchase in the given state."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/purchases#> ;
+  rdfs:domain oplprchs:PurchaseState ;
+  rdfs:range xsd:string .
+
+# <-------------- Instances --------------> #
+
+oplprchs:PaymentPending a oplprchs:PurchaseState ;
+  rdfs:label "Payment pending" ;
+  skos:altLabel "Payment pending" ;
+  rdfs:comment "This purchase has not been completed yet, the payment is still pending."@en ;
+  rdfs:isDefinedBy oplprchs: ;
+  oplprchs:hasFollowingState oplprchs:PaymentCompleted , oplprchs:PaymentFailed ;
+  oplprchs:hasProcessMessage """The payment is being processed.""" .
+
+oplprchs:PaymentCompleted a oplprchs:PurchaseState ;
+  rdfs:label "Payment completed" ;
+  skos:altLabel "Payment completed" ;
+  rdfs:comment "This purchase has already been payed for. Post-processing like license generation is still pending."@en ;
+  rdfs:isDefinedBy oplprchs: ;
+  oplprchs:hasPreceedingState oplprchs:PaymentPending ;
+  oplprchs:hasFollowingState oplprchs:InvoiceGenerated ;
+  oplprchs:hasProcessMessage """Your invoice is being generated and saved.""" .
+
+oplprchs:PaymentFailed a oplprchs:PurchaseState , oplprchs:PurchaseEndState ;
+  rdfs:label "Payment failed" ;
+  skos:altLabel "Payment failed" ;
+  rdfs:comment "This purchase has not been completed, the payment has failed."@en ;
+  rdfs:isDefinedBy oplprchs: ;
+  oplprchs:hasPreceedingState oplprchs:PaymentPending ;
+  oplprchs:hasProcessMessage """The payment failed.""" .
+
+oplprchs:InvoiceGenerated a oplprchs:PurchaseState ;
+  rdfs:label "InvoiceGenerated" ;
+  skos:altLabel "Invoice Generated" ;
+  rdfs:comment """The purchase invoice has been created and stored in the customer's storage space."""@en ;
+  rdfs:isDefinedBy oplprchs: ;
+  oplprchs:hasPreceedingState oplprchs:PaymentCompleted ;
+  oplprchs:hasFollowingState oplprchs:LicensesGenerated ;
+  oplprchs:hasProcessMessage """The Licenses are being generated and saved.""" .
+
+oplprchs:LicensesGenerated a oplprchs:PurchaseState ;
+  rdfs:label "LicencesGenerated" ;
+  skos:altLabel "Licences Generated" ;
+  rdfs:comment """The purchased licenses have been generated and stored in the customer's storage space."""@en ;
+  rdfs:isDefinedBy oplprchs: ;
+  oplprchs:hasPreceedingState oplprchs:InvoiceGenerated ;
+  oplprchs:hasFollowingState oplprchs:CopiedToUserStorage ;
+  oplprchs:hasProcessMessage """Your purchase is being copied into your ODS profile.""" .
+
+oplprchs:CopiedToUserStorage a oplprchs:PurchaseState ;
+  rdfs:label "CopiedToUserStorage" ;
+  skos:altLabel "Copied to User Storage" ;
+  rdfs:comment """The purchase details have been written to the user's storage space."""@en ;
+  rdfs:isDefinedBy oplprchs: ;
+  oplprchs:hasPreceedingState oplprchs:LicencesGenerated ;
+  oplprchs:hasFollowingState oplprchs:PurchaseCompleted ;
+  oplprchs:hasProcessMessage """Your Purchase is being completed.""" .
+
+oplprchs:PurchaseCompleted a oplprchs:PurchaseState , oplprchs:PurchaseEndState ;
+  rdfs:label "Purchase completed" ;
+  skos:altLabel "Purchase completed" ;
+  rdfs:comment "This purchase has been completed, all license files have been generated, notification have been sent, etc.."@en ;
+  rdfs:isDefinedBy oplprchs: ;
+  oplprchs:hasPreceedingState oplprchs:CopiedToUserStorage ;
+  oplprchs:hasProcessMessage """Your purchase is complete.""" .
+
+
+xhv:related owl:equivalentProperty rdfs:seeAlso .

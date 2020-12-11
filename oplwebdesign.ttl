@@ -1,0 +1,596 @@
+@prefix schema:       <http://schema.org/> .
+@prefix cvocab:       <http://open-services.net/ns/core#> .
+@prefix geo:          <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix awol:         <http://bblfish.net/work/atom-owl/2006-06-06/#> .
+@prefix sioc:         <http://rdfs.org/sioc/ns#> .
+@prefix sioct:        <http://rdfs.org/sioc/types#> .
+@prefix oplweb:       <http://www.openlinksw.com/schemas/oplweb#> .
+@prefix rdfs:         <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf:          <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:          <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:          <http://www.w3.org/2001/XMLSchema#> .
+@prefix gr:           <http://purl.org/goodrelations/v1#> .
+@prefix siocs:        <http://rdfs.org/sioc/services#> .
+@prefix foaf:         <http://xmlns.com/foaf/0.1/> .
+@prefix wdrs:         <http://www.w3.org/2007/05/powder-s#> .
+@prefix prodont:      <http://www.productontology.org/id/> .
+@prefix xhv:          <http://www.w3.org/1999/xhtml/vocab#> .
+@prefix skos:         <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:      <http://purl.org/dc/terms/> .
+@prefix cc:           <http://creativecommons.org/ns#> .
+@prefix gc:           <http://www.oegov.org/core/owl/gc> .
+@prefix fresnel:      <http://www.w3.org/2004/09/fresnel#> .
+@prefix atomowl:      <http://bblfish.net/work/atom-owl/2006-06-06/AtomOwl.html#> .
+@prefix dc:           <http://purl.org/dc/elements/1.1/> .
+@prefix oplwebdesign: <http://www.openlinksw.com/ontology/oplwebdesign#> .
+
+<http://www.openlinksw.com/ontology/oplwebdesign#> a owl:Ontology  ;
+  rdfs:label """OpenLink Web Design Ontology"""^^xsd:string ;
+  rdfs:comment """Ontology that defines entity and relation types used to describe OpenLink Web Design."""@en ;
+  wdrs:describedby <http://www.openlinksw.com/ontology/oplwebdesign> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  dcterms:created "2014-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  dcterms:modified "2015-03-20T13:38:00-05:00"^^xsd:dateTime ;
+  owl:versionInfo "1.0.0"^^xsd:string  ;
+  owl:imports <http://purl.org/goodrelations/v1>  ,
+              <http://xmlns.com/foaf/0.1/> ,
+              <http://www.w3.org/2002/07/owl#> ,
+              <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ,
+              <http://purl.org/dc/terms/> ,
+              <http://www.w3.org/2004/09/fresnel#> ;
+  <http://open.vocab.org/terms/defines>
+              oplwebdesign:AdvertisingBlock,
+              oplwebdesign:Audio,
+              oplwebdesign:ColumnContentBlock,
+              oplwebdesign:ContentBlock,
+              oplwebdesign:DesignElement,
+              oplwebdesign:DocumentationLink,
+              oplwebdesign:Footer,
+              oplwebdesign:Header,
+              oplwebdesign:HorizNavBar,
+              oplwebdesign:Image,
+              oplwebdesign:Layout,
+              oplwebdesign:MediaElement,
+              oplwebdesign:Menu,
+              oplwebdesign:MenuItem,
+              oplwebdesign:MultiScaleImage,
+              oplwebdesign:Navbar,
+              oplwebdesign:Page,
+              oplwebdesign:PageDecoration,
+              oplwebdesign:Related,
+              oplwebdesign:Site,
+              oplwebdesign:SocialSection,
+              oplwebdesign:TrackingBlock,
+              oplwebdesign:VerticalNavBar,
+              oplwebdesign:Video,
+              oplwebdesign:WebThing,
+              oplwebdesign:WebmasterBlock ,
+              oplwebdesign:isAutoplayEnabled,
+              oplwebdesign:hasCaption,
+              oplwebdesign:contains,
+              oplwebdesign:hasCSSRequirement,
+              oplwebdesign:hasDisplayHeight,
+              oplwebdesign:hasDisplayWidth,
+              oplwebdesign:hasContent,
+              oplwebdesign:hasHTMLFormatString,
+              oplwebdesign:hasHTMLFragment,
+              oplwebdesign:hasReferenceImage,
+              oplwebdesign:hasImageFile,
+              oplwebdesign:hasJavaScriptRequirement,
+              oplwebdesign:hasLayout,
+              oplwebdesign:isLinkTo,
+              oplwebdesign:hasMediaURL,
+              oplwebdesign:hasProvider,
+              oplwebdesign:hasServiceIdentifier,
+              oplwebdesign:hasSocialPurpose,
+              oplwebdesign:hasThumbnailFile,
+              oplwebdesign:hasThumbnailHeight,
+              oplwebdesign:hasThumbnailWidth,
+              oplwebdesign:has,
+              oplwebdesign:includes ;
+  schema:about
+              oplwebdesign:AdvertisingBlock,
+              oplwebdesign:Audio,
+              oplwebdesign:ColumnContentBlock,
+              oplwebdesign:ContentBlock,
+              oplwebdesign:DesignElement,
+              oplwebdesign:DocumentationLink,
+              oplwebdesign:Footer,
+              oplwebdesign:Header,
+              oplwebdesign:HorizNavBar,
+              oplwebdesign:Image,
+              oplwebdesign:Layout,
+              oplwebdesign:MediaElement,
+              oplwebdesign:Menu,
+              oplwebdesign:MenuItem,
+              oplwebdesign:MultiScaleImage,
+              oplwebdesign:Navbar,
+              oplwebdesign:Page,
+              oplwebdesign:PageDecoration,
+              oplwebdesign:Related,
+              oplwebdesign:Site,
+              oplwebdesign:SocialSection,
+              oplwebdesign:TrackingBlock,
+              oplwebdesign:VerticalNavBar,
+              oplwebdesign:Video,
+              oplwebdesign:WebThing,
+              oplwebdesign:WebmasterBlock ,
+              oplwebdesign:isAutoplayEnabled,
+              oplwebdesign:hasCaption,
+              oplwebdesign:contains,
+              oplwebdesign:hasCSSRequirement,
+              oplwebdesign:hasDisplayHeight,
+              oplwebdesign:hasDisplayWidth,
+              oplwebdesign:hasContent,
+              oplwebdesign:hasHTMLFormatString,
+              oplwebdesign:hasHTMLFragment,
+              oplwebdesign:hasReferenceImage,
+              oplwebdesign:hasImageFile,
+              oplwebdesign:hasJavaScriptRequirement,
+              oplwebdesign:hasLayout,
+              oplwebdesign:isLinkTo,
+              oplwebdesign:hasMediaURL,
+              oplwebdesign:hasProvider,
+              oplwebdesign:hasServiceIdentifier,
+              oplwebdesign:hasSocialPurpose,
+              oplwebdesign:hasThumbnailFile,
+              oplwebdesign:hasThumbnailHeight,
+              oplwebdesign:hasThumbnailWidth,
+              oplwebdesign:has,
+              oplwebdesign:includes .
+
+
+<http://www.openlinksw.com/DAV/data/turtle/oplwebdesign.ttl>
+  a foaf:Document , schema:TechArticle ;
+  rdfs:label "OpenLink Web Design Ontology Description Document (Turtle)" ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  rdfs:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for Web Design."""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/ontology/oplwebdesign#> ;
+  dcterms:created "2014-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  dcterms:modified "2015-03-20T13:38:00-05:00"^^xsd:dateTime ;
+  xhv:canonical <http://www.openlinksw.com/ontology/oplwebdesign> ;
+  xhv:describes <http://www.openlinksw.com/ontology/oplwebdesign#> ;
+  schema:about <http://www.openlinksw.com/ontology/oplwebdesign#> ;
+  dcterms:subject <http://www.openlinksw.com/ontology/oplwebdesign#> .
+
+<http://www.openlinksw.com/data/turtle/oplwebdesign.ttl>
+  a foaf:Document  ;
+  rdfs:label "OpenLink Web Design Ontology Description Document (Turtle)" ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/>  ;
+  schema:creator <http://www.openlinksw.com/#this>  ;
+  rdfs:comment """This is a turtle document that uses Linked Data oriented content to describe Web Design Ontology."""@en  ;
+  foaf:primaryTopic <http://www.openlinksw.com/ontology/oplwebdesign#> ;
+  dcterms:created "2014-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  dcterms:modified "2015-03-20T13:38:00-05:00"^^xsd:dateTime ;
+  xhv:canonical <http://www.openlinksw.com/ontology/oplwebdesign> ;
+  xhv:describes <http://www.openlinksw.com/ontology/oplwebdesign#> ;
+  schema:about <http://www.openlinksw.com/ontology/oplwebdesign#> ;
+  dcterms:subject <http://www.openlinksw.com/ontology/oplwebdesign#> .
+
+<http://www.openlinksw.com/ontology/oplwebdesign>
+  a foaf:Document , schema:TechArticle ;
+  rdfs:label """OpenLink Web Design Ontology Description Document"""^^xsd:string ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  rdfs:comment """This is a document that uses Linked Data oriented content to describe OpenLink Web Design Ontology."""@en ;
+  dcterms:subject <http://www.openlinksw.com/ontology/oplwebdesign#> ;
+  dcterms:created "2014-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  dcterms:modified "2015-03-20T13:38:00-05:00"^^xsd:dateTime ;
+  foaf:primaryTopic <http://www.openlinksw.com/ontology/oplwebdesign#> ;
+  foaf:topic  oplwebdesign:AdvertisingBlock,
+              oplwebdesign:Audio,
+              oplwebdesign:ColumnContentBlock,
+              oplwebdesign:ContentBlock,
+              oplwebdesign:DesignElement,
+              oplwebdesign:DocumentationLink,
+              oplwebdesign:Footer,
+              oplwebdesign:Header,
+              oplwebdesign:HorizNavBar,
+              oplwebdesign:Image,
+              oplwebdesign:Layout,
+              oplwebdesign:MediaElement,
+              oplwebdesign:Menu,
+              oplwebdesign:MenuItem,
+              oplwebdesign:MultiScaleImage,
+              oplwebdesign:Navbar,
+              oplwebdesign:Page,
+              oplwebdesign:PageDecoration,
+              oplwebdesign:Related,
+              oplwebdesign:Site,
+              oplwebdesign:SocialSection,
+              oplwebdesign:TrackingBlock,
+              oplwebdesign:VerticalNavBar,
+              oplwebdesign:Video,
+              oplwebdesign:WebThing,
+              oplwebdesign:WebmasterBlock ,
+              oplwebdesign:isAutoplayEnabled,
+              oplwebdesign:hasCaption,
+              oplwebdesign:contains,
+              oplwebdesign:hasCSSRequirement,
+              oplwebdesign:hasDisplayHeight,
+              oplwebdesign:hasDisplayWidth,
+              oplwebdesign:hasContent,
+              oplwebdesign:hasHTMLFormatString,
+              oplwebdesign:hasHTMLFragment,
+              oplwebdesign:hasReferenceImage,
+              oplwebdesign:hasImageFile,
+              oplwebdesign:hasJavaScriptRequirement,
+              oplwebdesign:hasLayout,
+              oplwebdesign:isLinkTo,
+              oplwebdesign:hasMediaURL,
+              oplwebdesign:hasProvider,
+              oplwebdesign:hasServiceIdentifier,
+              oplwebdesign:hasSocialPurpose,
+              oplwebdesign:hasThumbnailFile,
+              oplwebdesign:hasThumbnailHeight,
+              oplwebdesign:hasThumbnailWidth,
+              oplwebdesign:has,
+              oplwebdesign:includes .
+
+
+# <-------------- Web Design --------------> #
+
+# <-------------- Web Design Classes --------------> #
+
+oplwebdesign:AdvertisingBlock
+    a owl:Class ;
+    rdfs:label "Advertising Block"^^xsd:string  ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/oplwebdesign#> ;
+    rdfs:subClassOf oplwebdesign:WebmasterBlock .
+
+oplwebdesign:Audio
+    a owl:Class ;
+    rdfs:comment "Audio element (music, speech, etc)"@en ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/oplwebdesign#> ;
+    rdfs:label "Audio element" ;
+    rdfs:subClassOf oplwebdesign:MediaElement .
+
+oplwebdesign:ColumnContentBlock
+    a owl:Class ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/oplwebdesign#> ;
+    rdfs:label "Content-block for columnar display" ;
+    rdfs:subClassOf oplwebdesign:ContentBlock .
+
+oplwebdesign:ContentBlock
+    a owl:Class ;
+    rdfs:comment "Superclass for various types of content block"@en ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/oplwebdesign#> ;
+    rdfs:label "Generic content block" ;
+    rdfs:subClassOf oplwebdesign:DesignElement .
+
+oplwebdesign:DesignElement
+    a owl:Class ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/oplwebdesign#> ;
+    rdfs:label "Web Design Element" ;
+    rdfs:subClassOf oplwebdesign:WebThing .
+
+oplwebdesign:DocumentationLink
+    a owl:Class ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/oplwebdesign#> ;
+    rdfs:label "Block for links to documentation" ;
+    rdfs:subClassOf oplwebdesign:Related .
+
+oplwebdesign:Footer
+    a owl:Class ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/oplwebdesign#> ;
+    rdfs:label "Page footer" ;
+    rdfs:subClassOf oplwebdesign:PageDecoration .
+
+oplwebdesign:Header
+    a owl:Class ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/oplwebdesign#> ;
+    rdfs:label "Page header" ;
+    rdfs:subClassOf oplwebdesign:PageDecoration .
+
+oplwebdesign:HorizNavBar
+    a owl:Class ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/oplwebdesign#> ;
+    rdfs:label "Horizontal navigation menu" ;
+    rdfs:subClassOf oplwebdesign:Navbar .
+
+oplwebdesign:Image
+    a owl:Class ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/oplwebdesign#> ;
+    rdfs:label "Image" ;
+    rdfs:subClassOf oplwebdesign:MediaElement .
+
+oplwebdesign:Layout
+    a owl:Class ;
+    rdfs:label "Layout"^^xsd:string  ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/oplwebdesign#> ;
+    rdfs:subClassOf oplwebdesign:WebThing .
+
+oplwebdesign:MediaElement
+    a owl:Class ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/oplwebdesign#> ;
+    rdfs:label "Media element (audio/visual)" ;
+    rdfs:subClassOf oplwebdesign:DesignElement, [
+        a owl:Class ;
+        owl:unionOf (oplwebdesign:Audio
+            oplwebdesign:Image
+            oplwebdesign:Video
+        )
+    ] .
+
+oplwebdesign:Menu
+    a owl:Class ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/oplwebdesign#> ;
+    rdfs:label "Menu (generic)" ;
+    rdfs:subClassOf oplwebdesign:DesignElement .
+
+oplwebdesign:MenuItem
+    a owl:Class ;
+    rdfs:label "Menu Item"^^xsd:string  ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/oplwebdesign#> ;
+    rdfs:subClassOf oplwebdesign:Navbar .
+
+oplwebdesign:MultiScaleImage
+    a owl:Class ;
+    rdfs:comment "An image for display at multiple sizes e.g. thumbnail+popup"@en ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/oplwebdesign#> ;
+    rdfs:label "Multi-scale image" ;
+    rdfs:subClassOf oplwebdesign:Image .
+
+oplwebdesign:Navbar
+    a owl:Class ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/oplwebdesign#> ;
+    rdfs:label "Navigation menu (generic)" ;
+    rdfs:subClassOf oplwebdesign:Menu .
+
+oplwebdesign:Page
+    a owl:Class ;
+    rdfs:label "Page"^^xsd:string  ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/oplwebdesign#> ;
+    rdfs:subClassOf oplwebdesign:WebThing .
+
+oplwebdesign:PageDecoration
+    a owl:Class ;
+    rdfs:comment "General decorative features in a page"@en ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/oplwebdesign#> ;
+    rdfs:label "Page Decoration" ;
+    rdfs:subClassOf oplwebdesign:DesignElement, [
+        a owl:Class ;
+        owl:unionOf (oplwebdesign:Footer
+            oplwebdesign:Header
+            oplwebdesign:SocialSection
+        )
+    ] .
+
+oplwebdesign:Related
+    a owl:Class ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/oplwebdesign#> ;
+    rdfs:label "Related content block" ;
+    rdfs:subClassOf oplwebdesign:ContentBlock .
+
+oplwebdesign:Site
+    a owl:Class ;
+    rdfs:label "Site"^^xsd:string  ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/oplwebdesign#> ;
+    rdfs:subClassOf oplwebdesign:WebThing .
+
+oplwebdesign:SocialSection
+    a owl:Class ;
+    rdfs:comment "Section for social media interaction - like, share, follow in various domains"@en ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/oplwebdesign#> ;
+    rdfs:label "Social section" ;
+    rdfs:subClassOf oplwebdesign:PageDecoration .
+
+oplwebdesign:TrackingBlock
+    a owl:Class ;
+    rdfs:label "Tracking Block"^^xsd:string  ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/oplwebdesign#> ;
+    rdfs:subClassOf oplwebdesign:WebmasterBlock .
+
+oplwebdesign:VerticalNavBar
+    a owl:Class ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/oplwebdesign#> ;
+    rdfs:label "Vertical navigation menu" ;
+    rdfs:subClassOf oplwebdesign:Navbar .
+
+oplwebdesign:Video
+    a owl:Class ;
+    rdfs:comment "A video element"@en ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/oplwebdesign#> ;
+    rdfs:label "Video element" ;
+    rdfs:subClassOf oplwebdesign:MediaElement .
+
+oplwebdesign:WebThing
+    a owl:Class ;
+    rdfs:label "Web Thing"^^xsd:string  ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/oplwebdesign#> .
+
+oplwebdesign:WebmasterBlock
+    a owl:Class ;
+    rdfs:comment "A superclass for various webmaster-related classes such as advertising blocks, adsense and tracking details, etc"@en ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/oplwebdesign#> ;
+    rdfs:label "webmaster block" ;
+    rdfs:subClassOf oplwebdesign:WebThing, [
+        a owl:Class ;
+        owl:unionOf (oplwebdesign:AdvertisingBlock
+            oplwebdesign:TrackingBlock
+        )
+    ] .
+
+
+# <-------------- Web Design Properties --------------> #
+
+oplwebdesign:isAutoplayEnabled
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:comment "Whether a MediaElement (video or audio) should automatically play"@en ;
+    rdfs:domain oplwebdesign:MediaElement ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/oplwebdesign#> ;
+    rdfs:label "isAutoplayEnabled" ;
+    rdfs:range xsd:boolean .
+
+oplwebdesign:hasCaption
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:comment "Caption or title"@en ;
+    rdfs:domain oplwebdesign:DesignElement ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/oplwebdesign#> ;
+    rdfs:label "hasCaption" ;
+    rdfs:range xsd:string ;
+    owl:equivalentProperty dc:title .
+
+oplwebdesign:contains
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:comment "generic containment relations between any Web Thing subclasses"@en ;
+    rdfs:domain oplwebdesign:WebThing ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/oplwebdesign#> ;
+    rdfs:label "contains" ;
+    rdfs:range oplwebdesign:WebThing ;
+    owl:subPropertyOf sioc:container_of .
+
+oplwebdesign:hasCSSRequirement
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:comment "Path to a required CSS library or stylesheet"@en ;
+    rdfs:domain oplwebdesign:DesignElement ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/oplwebdesign#> ;
+    rdfs:label "hasCSSRequirement" ;
+    rdfs:range rdfs:Resource .
+
+oplwebdesign:hasDisplayHeight
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:comment "height to display an image"@en ;
+    rdfs:domain oplwebdesign:MediaElement ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/oplwebdesign#> ;
+    rdfs:label "hasDisplayHeight" ;
+    rdfs:range xsd:integer .
+
+oplwebdesign:hasDisplayWidth
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:comment "width to display an image"@en ;
+    rdfs:domain oplwebdesign:MediaElement ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/oplwebdesign#> ;
+    rdfs:label "hasDisplayWidth" ;
+    rdfs:range xsd:integer .
+
+oplwebdesign:hasContent
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:comment "Mapping from a container to literal content"@en ;
+    rdfs:domain oplwebdesign:DesignElement ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/oplwebdesign#> ;
+    rdfs:label "hasContent" ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf atomowl:content .
+
+oplwebdesign:hasHTMLFormatString
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:comment "An HTML fragment with %s placeholders and parameters to implement a DesignElement"@en ;
+    rdfs:domain oplwebdesign:DesignElement ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/oplwebdesign#> ;
+    rdfs:label "hasHTMLFormatString" ;
+    rdfs:range xsd:string .
+
+oplwebdesign:hasHTMLFragment
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:comment "HTML fragment required to implement a DesignElement"@en ;
+    rdfs:domain oplwebdesign:DesignElement ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/oplwebdesign#> ;
+    rdfs:label "hasHTMLFragment" ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf atomowl:content .
+
+oplwebdesign:hasReferenceImage
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:comment "Link a DesignElement to an Image it uses or references"@en ;
+    rdfs:domain oplwebdesign:DesignElement ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/oplwebdesign#> ;
+    rdfs:label "hasReferenceImage" ;
+    rdfs:range oplwebdesign:Image ;
+    owl:equivalentProperty foaf:depiction .
+
+oplwebdesign:hasImageFile
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:comment "An image used as part of a DesignElement (by filename)"@en ;
+    rdfs:domain oplwebdesign:Image ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/oplwebdesign#> ;
+    rdfs:label "hasImageFile" ;
+    rdfs:range xsd:string ;
+    owl:equivalentProperty foaf:depiction .
+
+oplwebdesign:hasJavaScriptRequirement
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:comment "Name of a required Javascript library (filename)"@en ;
+    rdfs:domain oplwebdesign:DesignElement ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/oplwebdesign#> ;
+    rdfs:label "hasJavaScriptRequirement" ;
+    rdfs:range xsd:string .
+
+oplwebdesign:hasLayout
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:comment "Mapping between a Site or Page and a Layout"@en ;
+    rdfs:domain oplwebdesign:WebThing ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/oplwebdesign#> ;
+    rdfs:label "hasLayout" ;
+    rdfs:range oplwebdesign:Layout .
+
+oplwebdesign:isLinkTo
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:comment "destination of a MenuItem link"@en ;
+    rdfs:domain oplwebdesign:MenuItem ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/oplwebdesign#> ;
+    rdfs:label "isLinkTo" ;
+    rdfs:range rdfs:Resource ;
+    owl:equivalentProperty sioc:links_to .
+
+oplwebdesign:hasMediaURL
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:comment "Link from MediaElements to the actual media file used"@en ;
+    rdfs:domain oplwebdesign:MediaElement ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/oplwebdesign#> ;
+    rdfs:label "hasMediaURL" ;
+    rdfs:range rdfs:Resource .
+
+oplwebdesign:hasProvider
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:comment "Name of a provider for a WebmasterBlock (e.g. Google)"@en ;
+    rdfs:domain oplwebdesign:WebmasterBlock ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/oplwebdesign#> ;
+    rdfs:label "hasProvider" ;
+    rdfs:range xsd:string .
+
+oplwebdesign:hasServiceIdentifier
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:comment "Identifier in an upstream service (e.g. site code for analytics)"@en ;
+    rdfs:domain oplwebdesign:WebmasterBlock ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/oplwebdesign#> ;
+    rdfs:label "hasServiceIdentifier" ;
+    rdfs:range xsd:string .
+
+oplwebdesign:hasSocialPurpose
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:comment "Purpose of a SocialSection block - follow, share, contact"@en ;
+    rdfs:domain oplwebdesign:SocialSection ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/oplwebdesign#> ;
+    rdfs:label "hasSocialPurpose" ;
+    rdfs:range xsd:string .
+
+oplwebdesign:hasThumbnailFile
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:comment "An image used as part of a DesignElement (by filename)"@en ;
+    rdfs:domain oplwebdesign:Image ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/oplwebdesign#> ;
+    rdfs:label "hasThumbnailFile" ;
+    rdfs:range xsd:string ;
+    owl:equivalentProperty foaf:depiction .
+
+oplwebdesign:hasThumbnailHeight
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:comment "height to display an thumbnail"@en ;
+    rdfs:domain oplwebdesign:MediaElement ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/oplwebdesign#> ;
+    rdfs:label "hasThumbnailHeight" ;
+    rdfs:range xsd:integer .
+
+oplwebdesign:hasThumbnailWidth
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:comment "width to display an thumbnail"@en ;
+    rdfs:domain oplwebdesign:MediaElement ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/ontology/oplwebdesign#> ;
+    rdfs:label "hasThumbnailWidth" ;
+    rdfs:range xsd:integer .
+
+# ?
+oplwebdesign:has owl:equivalentProperty oplwebdesign:contains .
+oplwebdesign:includes owl:equivalentProperty oplwebdesign:contains .

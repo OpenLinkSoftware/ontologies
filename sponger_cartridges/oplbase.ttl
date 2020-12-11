@@ -1,0 +1,297 @@
+# oplbase:IsContainerOfThread should be oplbase:containerOfThread
+@prefix schema:  <http://schema.org/> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix cvocab:  <http://open-services.net/ns/core#> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sioc:    <http://rdfs.org/sioc/ns#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix wdrs:    <http://www.w3.org/2007/05/powder-s#> .
+@prefix cc:      <http://creativecommons.org/ns#> .
+@prefix xhv:    <http://www.w3.org/1999/xhtml/vocab#> .
+
+@prefix oplbase: <http://www.openlinksw.com/schemas/oplbase#> .
+
+<http://www.openlinksw.com/schemas/oplbase#>
+  a owl:Ontology ;
+  schema:name "OpenLink Base Schema Ontology" ;
+  schema:comment """Ontology that defines entity and relation types used to describe base schema for collecting together
+  similar classes and properties from other OpenLink ontologies - see also ruleset virtrdf-label. Examples include
+  likes, comments, threads etc."""@en ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:dateCreated "2013-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  schema:dateModified "2015-04-22T13:38:00-05:00"^^xsd:dateTime ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  owl:imports <http://www.w3.org/1999/02/22-rdf-syntax-ns#> , <http://purl.org/dc/terms/> ;
+  wdrs:describedby <http://www.openlinksw.com/schemas/oplbase> ;
+  owl:versionInfo "1.0.0"^^xsd:string ;
+  <http://open.vocab.org/terms/defines> oplbase:hasID ,
+     oplbase:hasBlogURL ,
+     oplbase:containedInForum ,
+     oplbase:containedInThread ,
+     oplbase:isContainerOfPost ,
+     oplbase:IsContainerOfThread ,
+     oplbase:follows ,
+     oplbase:isFollowedBy ,
+     oplbase:hasFollowersCount ,
+     oplbase:hasFollowingCount ,
+     oplbase:hasLikesReceived ,
+     oplbase:hasComments ,
+     oplbase:hasNativeEntityType ,
+     oplbase:hasLikes ,
+     oplbase:isLikedBy ,
+     oplbase:hasRelevanceScore ,
+     oplbase:hasSocialProfileURL ,
+     oplbase:isThreadClosed ,
+     oplbase:isThreadDeleted ,
+     oplbase:hasThreadsParticipatedIn ;
+  schema:about
+     oplbase:hasBlogURL ,
+     oplbase:containedInForum ,
+     oplbase:containedInThread ,
+     oplbase:isContainerOfPost ,
+     oplbase:IsContainerOfThread ,
+     oplbase:follows ,
+     oplbase:isFollowedBy ,
+     oplbase:hasFollowersCount ,
+     oplbase:hasFollowingCount ,
+     oplbase:hasLikesReceived ,
+     oplbase:hasComments ,
+     oplbase:hasNativeEntityType ,
+     oplbase:hasLikes ,
+     oplbase:isLikedBy ,
+     oplbase:hasRelevanceScore ,
+     oplbase:hasSocialProfileURL ,
+     oplbase:isThreadClosed ,
+     oplbase:isThreadDeleted ,
+     oplbase:hasThreadsParticipatedIn .
+
+<http://www.openlinksw.com/DAV/data/turtle/cartridge_ontologies/oplbase.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink Base Schema Ontology Description Document (Turtle)" ;
+  cc:License <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for collecting together similar classes and properties from other OpenLink ontologies"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/oplbase#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/oplbase> ;
+  xhv:describes <http://www.openlinksw.com/schemas/oplbase#> ;
+  schema:about <http://www.openlinksw.com/schemas/oplbase#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/oplbase#> .
+
+<http://www.openlinksw.com/data/turtle/cartridge_ontologies/oplbase.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink Base Schema Ontology Description Document (Turtle)" ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink base schema"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/oplbase#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/oplbase> ;
+  xhv:describes <http://www.openlinksw.com/schemas/oplbase#> ;
+  schema:about <http://www.openlinksw.com/schemas/oplbase#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/oplbase#> .
+
+<http://www.openlinksw.com/schemas/oplbase>
+  a foaf:Document ;
+  schema:name """OpenLink Base Schema Ontology Description Document"""^^xsd:string ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a document that uses Linked Data oriented content to describe OpenLink Base Schema Ontology."""@en ;
+  dcterms:subject <http://www.openlinksw.com/schemas/oplbase#> ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/oplbase#> ;
+  foaf:topic oplbase:hasID ,
+             oplbase:hasBlogURL ,
+             oplbase:containedInForum ,
+             oplbase:containedInThread ,
+             oplbase:isContainerOfPost ,
+             oplbase:IsContainerOfThread ,
+             oplbase:follows ,
+             oplbase:isFollowedBy ,
+             oplbase:hasFollowersCount ,
+             oplbase:hasFollowingCount ,
+             oplbase:hasLikesReceived ,
+             oplbase:hasComments ,
+             oplbase:hasNativeEntityType ,
+             oplbase:hasLikes ,
+             oplbase:isLikedBy ,
+             oplbase:hasRelevanceScore ,
+             oplbase:hasSocialProfileURL ,
+             oplbase:isThreadClosed ,
+             oplbase:isThreadDeleted ,
+             oplbase:hasThreadsParticipatedIn .
+
+oplbase:hasID
+    a owl:DatatypeProperty , rdf:Property , owl:InverseFunctionalProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/oplbase#> ;
+    rdfs:label "hasID" ;
+    skos:altLabel "id" ;
+    rdfs:comment """A data-source specific ID uniquely identifying a resource on that site"""@en ;
+    rdfs:range xsd:string .
+
+oplbase:hasBlogURL
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/oplbase#> ;
+    rdfs:label "hasBlogURL" ;
+    skos:altLabel "blog url" ;
+    rdfs:comment """A generic blog as a social profile URL. e.g. pointing to Blogger, Blogspot, Wordpress, etc."""@en ;
+    rdfs:range xsd:anyURI ;
+    rdfs:subPropertyOf oplbase:hasSocialProfileURL .
+
+oplbase:containedInForum
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/oplbase#> ;
+    rdfs:label "containedInForum" ;
+    skos:altLabel "contained in forum" ;
+    rdfs:comment """The forum to which this thread belongs"""@en ;
+    rdfs:domain sioc:Thread ;
+    rdfs:range sioc:Forum ;
+    rdfs:subPropertyOf sioc:has_container .
+
+oplbase:containedInThread
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/oplbase#> ;
+    rdfs:label "containedInThread" ;
+    skos:altLabel "contained in thread" ;
+    rdfs:comment """The thread to which this post belongs"""@en ;
+    rdfs:domain sioc:Post ;
+    rdfs:range sioc:Thread ;
+    rdfs:subPropertyOf sioc:has_container .
+
+oplbase:isContainerOfPost
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/oplbase#> ;
+    rdfs:label "isContainerOfPost" ;
+    skos:altLabel "container of post" ;
+    rdfs:comment """A post that this container contains"""@en ;
+    rdfs:range sioc:Post ;
+    rdfs:subPropertyOf sioc:container_of .
+
+oplbase:IsContainerOfThread
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/oplbase#> ;
+    rdfs:label "IsContainerOfThread" ;
+    skos:altLabel "container of thread" ;
+    rdfs:comment """A thread that this container contains"""@en ;
+    rdfs:domain sioc:Container ;
+    rdfs:range sioc:Thread ;
+    rdfs:subPropertyOf sioc:container_of .
+
+oplbase:follows
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/oplbase#> ;
+    rdfs:label "follows" ;
+    skos:altLabel "follows" ;
+    rdfs:comment """An account this user follows"""@en ;
+    rdfs:range sioc:UserAccount .
+
+oplbase:isFollowedBy
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/oplbase#> ;
+    rdfs:label "isFollowedBy" ;
+    skos:altLabel "followed by" ;
+    rdfs:comment """An account who follows this user"""@en ;
+    rdfs:range sioc:UserAccount .
+
+oplbase:hasFollowersCount
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/oplbase#> ;
+    rdfs:label "hasFollowersCount" ;
+    skos:altLabel "followers count" ;
+    rdfs:comment """The number of followers a person has"""@en ;
+    rdfs:range xsd:integer .
+
+oplbase:hasFollowingCount
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/oplbase#> ;
+    rdfs:label "hasFollowingCount" ;
+    skos:altLabel "following count" ;
+    rdfs:comment """The number of people a person is following"""@en ;
+    rdfs:range xsd:integer .
+
+oplbase:hasLikesReceived
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/oplbase#> ;
+    rdfs:label "hasLikesReceived" ;
+    skos:altLabel "likes received count" ;
+    rdfs:comment """The number of 'likes' a person has received"""@en ;
+    rdfs:range xsd:integer .
+
+oplbase:hasComments
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/oplbase#> ;
+    rdfs:label "hasComments" ;
+    skos:altLabel "comments count" ;
+    rdfs:comment """The number of comments on a social-media item"""@en ;
+    rdfs:range xsd:integer .
+
+oplbase:hasNativeEntityType
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/oplbase#> ;
+    rdfs:label "hasNativeEntityType" ;
+    skos:altLabel "native entity type" ;
+    rdfs:comment """An entity type classifier returned by an entity extraction service"""@en ;
+    rdfs:range xsd:string .
+
+oplbase:hasLikes
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/oplbase#> ;
+    rdfs:label "hasLikes" ;
+    skos:altLabel "number of likes" ;
+    rdfs:comment """The number of 'likes' a post, thread or forum has received"""@en ;
+    rdfs:range xsd:integer .
+
+oplbase:isLikedBy
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/oplbase#> ;
+    rdfs:label "isLikedBy" ;
+    skos:altLabel "liked by" ;
+    rdfs:comment """A user who likes this post"""@en ;
+    rdfs:range sioc:UserAccount .
+
+oplbase:hasRelevanceScore
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/oplbase#> ;
+    rdfs:label "hasRelevanceScore" ;
+    skos:altLabel "relevance score" ;
+    rdfs:comment """A relevance score returned by an entity extraction service"""@en ;
+    rdfs:range xsd:decimal .
+
+oplbase:hasSocialProfileURL
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/oplbase#> ;
+    rdfs:label "hasSocialProfileURL" ;
+    skos:altLabel "social profile url" ;
+    rdfs:comment """A generic property for holding a social profile URL. e.g. from Twitter, Facebook, LinkedIn etc."""@en ;
+    rdfs:domain foaf:Person ;
+    rdfs:range xsd:anyURI .
+
+oplbase:isThreadClosed
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/oplbase#> ;
+    rdfs:label "isThreadClosed" ;
+    skos:altLabel "thread closed" ;
+    rdfs:comment """Indicates if this thread has been closed"""@en ;
+    rdfs:domain sioc:Thread ;
+    rdfs:range xsd:boolean .
+
+oplbase:isThreadDeleted
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/oplbase#> ;
+    rdfs:label "isThreadDeleted" ;
+    skos:altLabel "thread deleted" ;
+    rdfs:comment """Indicates if this thread has been removed from public view"""@en ;
+    rdfs:domain sioc:Thread ;
+    rdfs:range xsd:boolean .
+
+oplbase:hasThreadsParticipatedIn
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/oplbase#> ;
+    rdfs:label "hasThreadsParticipatedIn" ;
+    skos:altLabel "threads participated in" ;
+    rdfs:comment """Discussion threads a person has participated in"""@en ;
+    rdfs:domain foaf:Person ;
+    rdfs:range sioc:Thread .
+

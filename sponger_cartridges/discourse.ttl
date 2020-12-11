@@ -1,0 +1,307 @@
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix xhv:      <http://www.w3.org/1999/xhtml/vocab#> .
+@prefix acco:    <http://purl.org/acco/ns#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix cc:      <http://creativecommons.org/ns#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml:     <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix sioc:    <http://rdfs.org/sioc/ns#>.
+
+@prefix discourse: <http://www.openlinksw.com/schemas/discourse#> .
+
+discourse: a owl:Ontology ;
+    rdfs:label "OpenLink Discourse Ontology"@en ;
+    dcterms:creator "OpenLink Software"@en ;
+    cc:License <http://creativecommons.org/licenses/by-sa/3.0/> ;
+    dcterms:rights """The OpenLink Discourse Ontology is available under the Creative Commons Attribution 3.0 Unported license; see http://creativecommons.org/licenses/by/3.0/.
+In a nutshell, you are free to copy, distribute and transmit the work; to remix/adapt the work (e.g. to import the ontology and create specializations of its elements),
+as long as you attribute the work in the manner specified by the author or licensor (but not in any way that suggests that they endorse you or your use of the work)."""@en ;
+    dcterms:subject "data, RDF, structured data, communication, discussion, Ontology"@en ;
+    dcterms:title "Discourse: the OpenLink Software ontology for Discourse instances"@en ;
+    owl:imports <http://purl.org/goodrelations/v1> ;
+    owl:versionInfo "V 1.0, Release 2018-11-07" .
+
+
+discourse:moderator a owl:ObjectProperty;
+  rdfs:label "moderator"@en;
+  rdfs:comment "whether a given user is a moderator"@en;
+  rdfs:domain foaf:Agent;
+  rdfs:range xsd:boolean;
+  rdfs:isDefinedBy discourse: .
+
+discourse:admin a owl:ObjectProperty;
+  rdfs:label "admin"@en;
+  rdfs:comment "whether a given user is an administrator"@en;
+  rdfs:domain foaf:Agent;
+  rdfs:range xsd:boolean;
+  rdfs:isDefinedBy discourse: .
+
+discourse:badge_count a owl:ObjectProperty;
+  rdfs:label "badge count"@en;
+  rdfs:comment "Number of badges granted to a user"@en;
+  rdfs:domain foaf:Agent;
+  rdfs:range xsd:integer;
+  rdfs:isDefinedBy discourse: .
+
+discourse:can_send_private_messages a owl:ObjectProperty;
+  rdfs:label "can send private messages"@en;
+  rdfs:comment "whether a user can send private messages"@en;
+  rdfs:domain foaf:Agent;;
+  rdfs:range xsd:boolean;
+  rdfs:isDefinedBy discourse: .
+
+discourse:trust_level a owl:ObjectProperty;
+  rdfs:label "trust level"@en;
+  rdfs:comment "A user's trust level"@en;
+  rdfs:domain foaf:Agent;
+  rdfs:range xsd:integer;
+  rdfs:isDefinedBy discourse: .
+
+discourse:post_number a owl:ObjectProperty;
+  rdfs:label "post number"@en;
+  rdfs:comment "Number of posts in a topic"@en;
+  rdfs:domain sioc:Item;
+  rdfs:range xsd:integer;
+  rdfs:isDefinedBy discourse: .
+
+discourse:reply_count a owl:ObjectProperty;
+  rdfs:label "reply count"@en;
+  rdfs:comment "Number of replies to a post"@en;
+  rdfs:domain sioc:Post;
+  rdfs:range xsd:integer;
+  rdfs:isDefinedBy discourse: .
+
+discourse:quote_count a owl:ObjectProperty;
+  rdfs:label "quote count"@en;
+  rdfs:comment "number of times a post has been quoted"@en;
+  rdfs:domain sioc:Post;
+  rdfs:range xsd:integer;
+  rdfs:isDefinedBy discourse: .
+
+discourse:incoming_link_count a owl:ObjectProperty;
+  rdfs:label "incoming link count"@en;
+  rdfs:comment "number of links referencing a post"@en;
+  rdfs:domain sioc:Post;
+  rdfs:range xsd:integer;
+  rdfs:isDefinedBy discourse: .
+
+discourse:score a owl:ObjectProperty;
+  rdfs:label "score"@en;
+  rdfs:comment "a post's score"@en;
+  rdfs:domain sioc:Post;
+  rdfs:range xsd:integer;
+  rdfs:isDefinedBy discourse: .
+
+discourse:topic_id a owl:ObjectProperty;
+  rdfs:label "topic id"@en;
+  rdfs:comment "id to identify a given topic"@en;
+  rdfs:domain sioc:Post;
+  rdfs:range xsd:integer;
+  rdfs:isDefinedBy discourse: .
+
+discourse:topic_slug a owl:ObjectProperty;
+  rdfs:label "topic slug"@en;
+  rdfs:comment "URL-fragment to identify a topic"@en;
+  rdfs:domain sioc:Item;
+  rdfs:range xsd:anyURI;
+  rdfs:isDefinedBy discourse: .
+
+discourse:views a owl:ObjectProperty;
+  rdfs:label "views"@en;
+  rdfs:comment "number of views/impressions on a post"@en;
+  rdfs:domain sioc:Post;
+  rdfs:range xsd:integer;
+  rdfs:isDefinedBy discourse: .
+
+discourse:word_count a owl:ObjectProperty;
+  rdfs:label "word count"@en;
+  rdfs:comment "number of words in a post"@en;
+  rdfs:domain sioc:Post;
+  rdfs:range xsd:integer;
+  rdfs:isDefinedBy discourse: .
+
+discourse:archived a owl:ObjectProperty;
+  rdfs:label "archived"@en;
+  rdfs:comment "whether a post has been archived"@en;
+  rdfs:domain sioc:Post;
+  rdfs:range xsd:boolean;
+  rdfs:isDefinedBy discourse: .
+
+discourse:bumped a owl:ObjectProperty;
+  rdfs:label "bumped"@en;
+  rdfs:comment "whether a post has been bumped"@en;
+  rdfs:domain sioc:Post;
+  rdfs:range xsd:boolean;
+  rdfs:isDefinedBy discourse: .
+
+discourse:bumped_at a owl:ObjectProperty;
+  rdfs:label "bumped at"@en;
+  rdfs:comment "when a post was bumped"@en;
+  rdfs:domain sioc:Post;
+  rdfs:range xsd:dateTime;
+  rdfs:isDefinedBy discourse: .
+
+discourse:closed a owl:ObjectProperty;
+  rdfs:label "closed"@en;
+  rdfs:comment "whether a post is closed to comments"@en;
+  rdfs:domain sioc:Post;
+  rdfs:range xsd:boolean;
+  rdfs:isDefinedBy discourse: .
+
+discourse:draft a owl:ObjectProperty;
+  rdfs:label "draft"@en;
+  rdfs:comment "whether a post is a draft"@en;
+  rdfs:domain sioc:Post;
+  rdfs:range xsd:boolean;
+  rdfs:isDefinedBy discourse: .
+
+discourse:has_accepted_answer a owl:ObjectProperty;
+  rdfs:label "has accepted answer"@en;
+  rdfs:comment "whether a post has an accepted answer"@en;
+  rdfs:domain sioc:Post;
+  rdfs:range xsd:boolean;
+  rdfs:isDefinedBy discourse: .
+
+discourse:has_children a owl:ObjectProperty;
+  rdfs:label "has children"@en;
+  rdfs:comment "whether a category has children"@en;
+  rdfs:domain sioc:Forum;
+  rdfs:range xsd:boolean;
+  rdfs:isDefinedBy discourse: .
+
+discourse:highest_post_number a owl:ObjectProperty;
+  rdfs:label "highest post number"@en;
+  rdfs:comment "the highest post number in a category"@en;
+  rdfs:domain sioc:Post;
+  rdfs:range xsd:integer;
+  rdfs:isDefinedBy discourse: .
+
+discourse:link_count a owl:ObjectProperty;
+  rdfs:label "link count"@en;
+  rdfs:comment "number of links to a post"@en;
+  rdfs:domain sioc:Post;
+  rdfs:range xsd:integer;
+  rdfs:isDefinedBy discourse: .
+
+discourse:linked a owl:ObjectProperty;
+  rdfs:label "linked"@en;
+  rdfs:comment "whether a post has external link references"@en;
+  rdfs:domain sioc:Post;
+  rdfs:range xsd:boolean;
+  rdfs:isDefinedBy discourse: .
+
+discourse:pinned a owl:ObjectProperty;
+  rdfs:label "pinned"@en;
+  rdfs:comment "whether a category has been pinned"@en;
+  rdfs:domain sioc:Forum;
+  rdfs:range xsd:boolean;
+  rdfs:isDefinedBy discourse: .
+
+discourse:pinned_globally a owl:ObjectProperty;
+  rdfs:label "pinned globally"@en;
+  rdfs:comment "whether a category has been pinned globally"@en;
+  rdfs:domain sioc:Forum;
+  rdfs:range xsd:boolean;
+  rdfs:isDefinedBy discourse: .
+
+discourse:position a owl:ObjectProperty;
+  rdfs:label "position"@en;
+  rdfs:comment "position of a category within the site"@en;
+  rdfs:domain sioc:Forum;
+  rdfs:range xsd:integer;
+  rdfs:isDefinedBy discourse: .
+
+discourse:post_count a owl:ObjectProperty;
+  rdfs:label "post count"@en;
+  rdfs:comment ""@en;
+  rdfs:domain sioc:Thread;
+  rdfs:range xsd:integer;
+  rdfs:isDefinedBy discourse: .
+
+discourse:posts_count a owl:ObjectProperty;
+  rdfs:label "posts count"@en;
+  rdfs:comment ""@en;
+  rdfs:domain sioc:Thread;
+  rdfs:range xsd:integer;
+  rdfs:isDefinedBy discourse: .
+
+discourse:read_restricted a owl:ObjectProperty;
+  rdfs:label "read restricted"@en;
+  rdfs:comment ""@en;
+  rdfs:domain sioc:Item;
+  rdfs:range xsd:boolean;
+  rdfs:isDefinedBy discourse: .
+
+discourse:reply_count a owl:ObjectProperty;
+  rdfs:label "reply count"@en;
+  rdfs:comment ""@en;
+  rdfs:domain sioc:Thread;
+  rdfs:range xsd:integer;
+  rdfs:isDefinedBy discourse: .
+
+discourse:topic_count a owl:ObjectProperty;
+  rdfs:label "topic count"@en;
+  rdfs:comment ""@en;
+  rdfs:domain sioc:Site;
+  rdfs:range xsd:integer;
+  rdfs:isDefinedBy discourse: .
+
+discourse:topics_all_time a owl:ObjectProperty;
+  rdfs:label "topics all time"@en;
+  rdfs:comment ""@en;
+  rdfs:domain sioc:Forum;
+  rdfs:range xsd:integer;
+  rdfs:isDefinedBy discourse: .
+
+discourse:topics_day a owl:ObjectProperty;
+  rdfs:label "topics day"@en;
+  rdfs:comment ""@en;
+  rdfs:domain sioc:Forum;
+  rdfs:range xsd:integer;
+  rdfs:isDefinedBy discourse: .
+
+discourse:topics_month a owl:ObjectProperty;
+  rdfs:label "topics month"@en;
+  rdfs:comment ""@en;
+  rdfs:domain sioc:Forum;
+  rdfs:range xsd:integer;
+  rdfs:isDefinedBy discourse: .
+
+discourse:topics_week a owl:ObjectProperty;
+  rdfs:label "topics week"@en;
+  rdfs:comment ""@en;
+  rdfs:domain sioc:Forum;
+  rdfs:range xsd:integer;
+  rdfs:isDefinedBy discourse: .
+
+discourse:topics_year a owl:ObjectProperty;
+  rdfs:label "topics year"@en;
+  rdfs:comment ""@en;
+  rdfs:domain sioc:Forum;
+  rdfs:range xsd:integer;
+  rdfs:isDefinedBy discourse: .
+
+discourse:useen a owl:ObjectProperty;
+  rdfs:label "useen"@en;
+  rdfs:comment ""@en;
+  rdfs:domain sioc:Item;
+  rdfs:range xsd:boolean;
+  rdfs:isDefinedBy discourse: .
+
+discourse:views a owl:ObjectProperty;
+  rdfs:label "views"@en;
+  rdfs:comment ""@en;
+  rdfs:domain sioc:Forum;
+  rdfs:range xsd:integer;
+  rdfs:isDefinedBy discourse: .
+
+discourse:visible a owl:ObjectProperty;
+  rdfs:label "visible"@en;
+  rdfs:comment ""@en;
+  rdfs:domain sioc:Forum;
+  rdfs:range xsd:boolean;
+  rdfs:isDefinedBy discourse: .

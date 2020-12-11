@@ -1,0 +1,387 @@
+@prefix schema:    <http://schema.org/> .
+@prefix cvocab:    <http://open-services.net/ns/core#> .
+@prefix dcterms:   <http://purl.org/dc/terms/> .
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix gr:        <http://purl.org/goodrelations/v1#> .
+@prefix sioc:      <http://rdfs.org/sioc/ns#> .
+@prefix owl:       <http://www.w3.org/2002/07/owl#> .
+@prefix siocs:     <http://rdfs.org/sioc/services#> .
+@prefix skos:      <http://www.w3.org/2004/02/skos/core#> .
+@prefix wdrs:      <http://www.w3.org/2007/05/powder-s#> .
+@prefix foaf:      <http://xmlns.com/foaf/0.1/> .
+@prefix xhv:       <http://www.w3.org/1999/xhtml/vocab#> .
+@prefix oplprchs:  <http://www.openlinksw.com/ontology/purchases#> .
+@prefix oplcc:     <http://www.openlinksw.com/ontology/creditcards#> .
+@prefix foaf:      <http://xmlns.com/foaf/0.1/> .
+@prefix cc:        <http://creativecommons.org/ns#> .
+
+<http://www.openlinksw.com/ontology/creditcards#>
+  a owl:Ontology ;
+  rdfs:label """OpenLink Credit Card Ontology"""^^xsd:string ;
+  rdfs:comment """Ontology that defines entity and relation types used to describe credit cards. Examples
+  include card types, security properties etc."""@en ;
+  wdrs:describedby <http://www.openlinksw.com/ontology/creditcards> ;
+  dcterms:created "2014-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  dcterms:modified "2015-03-20T13:38:00-05:00"^^xsd:dateTime ;
+  owl:versionInfo "1.1.0"^^xsd:string ;
+  owl:imports <http://www.w3.org/2002/07/owl#> ,
+              <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ,
+              <http://purl.org/dc/terms/> ;
+  <http://open.vocab.org/terms/defines>
+    oplcc:CreditCard ,
+    oplcc:hasCreditCardHolder ,
+    oplcc:hasCreditCardNumber ,
+    oplcc:hasExpiryMonth ,
+    oplcc:hasExpiryYear ,
+    oplcc:hasCreditCardType ,
+    oplcc:hasSecurityCodeLabel ,
+    oplcc:hasSecurityCodeComment ,
+    oplcc:hasSecurityCodeHelpText ,
+    oplcc:hasSecurityCodeHelpDepiction ,
+    oplcc:hasLogo ,
+    oplcc:hasFrontDepiction ,
+    oplcc:hasBackDepiction ,
+    oplcc:hasPayPalCode ,
+    oplcc:VISA ,
+    oplcc:MasterCard ,
+    oplcc:DinersClub ,
+    oplcc:Discover ,
+    oplcc:JCB ,
+    oplcc:AmericanExpress ;
+  schema:about
+    oplcc:CreditCard ,
+    oplcc:hasCreditCardHolder ,
+    oplcc:hasCreditCardNumber ,
+    oplcc:hasExpiryMonth ,
+    oplcc:hasExpiryYear ,
+    oplcc:hasCreditCardType ,
+    oplcc:hasSecurityCodeLabel ,
+    oplcc:hasSecurityCodeComment ,
+    oplcc:hasSecurityCodeHelpText ,
+    oplcc:hasSecurityCodeHelpDepiction ,
+    oplcc:hasLogo ,
+    oplcc:hasFrontDepiction ,
+    oplcc:hasBackDepiction ,
+    oplcc:hasPayPalCode ,
+    oplcc:VISA ,
+    oplcc:MasterCard ,
+    oplcc:DinersClub ,
+    oplcc:Discover ,
+    oplcc:JCB ,
+    oplcc:AmericanExpress .
+
+<http://www.openlinksw.com/DAV/data/turtle/creditcards.ttl>
+  a foaf:Document , schema:TechArticle ;
+  rdfs:label "OpenLink Credit Card Ontology Description Document (Turtle)" ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  rdfs:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for Credit Card."""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/ontology/creditcards#> ;
+  dcterms:created "2014-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  dcterms:modified "2015-03-20T13:38:00-05:00"^^xsd:dateTime ;
+  xhv:canonical <http://www.openlinksw.com/ontology/creditcards> ;
+  xhv:describes <http://www.openlinksw.com/ontology/creditcards#> ;
+  schema:about <http://www.openlinksw.com/ontology/creditcards#> ;
+  dcterms:subject <http://www.openlinksw.com/ontology/creditcards#> .
+
+<http://www.openlinksw.com/data/turtle/creditcards.ttl>
+  a foaf:Document , schema:TechArticle ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  rdfs:label "OpenLink Credit Card Ontology Description Document (Turtle)" ;
+  rdfs:comment """This is a turtle document that uses Linked Data oriented content to describe the OpenLink Credit Card Ontology."""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/ontology/creditcards#> ;
+  xhv:canonical <http://www.openlinksw.com/ontology/creditcards> ;
+  dcterms:created "2014-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  dcterms:modified "2015-03-20T13:38:00-05:00"^^xsd:dateTime ;
+  xhv:describes <http://www.openlinksw.com/ontology/creditcards#> ;
+  schema:about <http://www.openlinksw.com/ontology/creditcards#> ;
+  dcterms:subject <http://www.openlinksw.com/ontology/creditcards#> .
+
+<http://www.openlinksw.com/ontology/creditcards>
+  a foaf:Document , schema:TechArticle ;
+  rdfs:label """OpenLink Credit Card Ontology Description Document"""^^xsd:string ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  rdfs:comment """This is a document that uses Linked Data oriented content to describe OpenLink Credit Card Ontology."""@en ;
+  dcterms:subject <http://www.openlinksw.com/ontology/creditcards#> ;
+  dcterms:created "2014-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  dcterms:modified "2015-03-20T13:38:00-05:00"^^xsd:dateTime ;
+  foaf:primaryTopic <http://www.openlinksw.com/ontology/creditcards#> ;
+  foaf:topic oplcc:CreditCard ,
+             oplcc:hasCreditCardHolder ,
+             oplcc:hasCreditCardNumber ,
+             oplcc:hasExpiryMonth ,
+             oplcc:hasExpiryYear ,
+             oplcc:hasCreditCardType ,
+             oplcc:hasSecurityCodeLabel ,
+             oplcc:hasSecurityCodeComment ,
+             oplcc:hasSecurityCodeHelpText ,
+             oplcc:hasSecurityCodeHelpDepiction ,
+             oplcc:hasLogo ,
+             oplcc:hasFrontDepiction ,
+             oplcc:hasBackDepiction ,
+             oplcc:hasPayPalCode ,
+             oplcc:VISA ,
+             oplcc:MasterCard ,
+             oplcc:DinersClub ,
+             oplcc:Discover ,
+             oplcc:JCB ,
+             oplcc:AmericanExpress .
+
+<http://www.openlinksw.com/data/turtle/creditcards.ttl>
+  rdfs:seeAlso <http://virtuoso.openlinksw.com/offers/> ,
+               <http://uda.openlinksw.com/offers/> ,
+               <http://www.openlinksw.com/data/turtle/shop.ttl> ,
+               <http://www.openlinksw.com/data/turtle/offers.ttl> ,
+               <http://www.openlinksw.com/data/turtle/features.ttl> ,
+               <http://www.openlinksw.com/data/turtle/payments.ttl> ,
+               <http://www.openlinksw.com/data/turtle/licenses.ttl> .
+
+# <-------------- Classes --------------> #
+
+oplcc:CreditCard a owl:Class ;
+  rdfs:label "Credit card" ;
+  skos:altLabel "Credit card" ;
+  rdfs:comment "Entity type of resource representing credit cards (Class). Each credit card resource has an owner and a credit card number."@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/creditcards#> .
+
+oplcc:CreditCardType a owl:Class ;
+  rdfs:label "Credit Card Type" ;
+  skos:altLabel "Credit Card Type" ;
+  rdfs:comment "Entity type of resources representing a type of credit card like American Express or VISA."@en ;
+  owl:equivalentClass <http://schema.org/CreditCard> ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/creditcards#> .
+
+# <-------------- Properties --------------> #
+
+oplcc:hasCreditCardHolder
+  a owl:DatatypeProperty, rdf:Property ;
+  rdfs:label "hasCreditCardHolder" ;
+  skos:altLabel "Credit card holder" ;
+  rdfs:comment """The name of the holder of a credit card."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/creditcards#> ;
+  rdfs:domain oplcc:CreditCard ;
+  rdfs:range xsd:string .
+
+oplcc:hasCreditCardNumber
+  a owl:DatatypeProperty, rdf:Property ;
+  rdfs:label "hasCreditCardNumber" ;
+  skos:altLabel "Credit card number" ;
+  rdfs:comment """The credit card number. This can be obfuscated for privacy reasons like "****-****-****-1234"."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/creditcards#> ;
+  rdfs:domain oplcc:CreditCard ;
+  rdfs:range xsd:string .
+
+oplcc:hasExpiryMonth
+  a owl:DatatypeProperty, rdf:Property ;
+  rdfs:label "hasExpiryMonth" ;
+  skos:altLabel "Credit card expiry month" ;
+  rdfs:comment """The expiration month of a credit card. This is the month the credit card will expire in the given expiry year."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/creditcards#> ;
+  rdfs:domain oplcc:CreditCard ;
+  rdfs:range xsd:integer .
+
+oplcc:hasExpiryYear
+  a owl:DatatypeProperty, rdf:Property ;
+  rdfs:label "hasExpiryYear" ;
+  skos:altLabel "Credit card expiry year" ;
+  rdfs:comment """The expiration year of a credit card. This is the year the credit card will expire."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/creditcards#> ;
+  rdfs:domain oplcc:CreditCard ;
+  rdfs:range xsd:integer .
+
+oplcc:hasCreditCardType
+  a owl:ObjectProperty, rdf:Property ;
+  rdfs:label "hasCreditCardType" ;
+  skos:altLabel "Credit Card Type"^^xsd:string ;
+  rdfs:comment """Accociates a credit card with a credit card type."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/creditcards#> ;
+  rdfs:domain oplcc:CreditCard ;
+  rdfs:range oplcc:CreditCardType .
+
+oplcc:hasNumberPattern
+  a owl:DatatypeProperty, rdf:Property ;
+  rdfs:label "hasNumberPattern" ;
+  skos:altLabel "Number Pattern" ;
+  rdfs:comment """Each credit card institut has specific credit card number ranges. This property defines regular expressions which allow to map a credit card number to a credit card type."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/creditcards#> ;
+  rdfs:domain oplcc:CreditCardType ;
+  rdfs:range xsd:string .
+
+oplcc:hasPayPalCode
+  a owl:DatatypeProperty, rdf:Property ;
+  rdfs:label "hasPayPalCode" ;
+  skos:altLabel "PayPal Code" ;
+  rdfs:comment """PayPal only supports MasterCard, VISA, Discover, and American Express. These card types are identified by a lower-case string."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/creditcards#> ;
+  rdfs:domain oplcc:CreditCardType ;
+  rdfs:range xsd:string .
+
+# <-------------- Instances --------------> #
+oplcc:hasSecurityCodeLabel
+  a owl:DatatypeProperty, rdf:Property ;
+  rdfs:label "hasSecurityCodeLabel" ;
+  skos:altLabel "Security Code Label" ;
+  rdfs:comment """A label for the security code on a credit card."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/creditcards#> ;
+  rdfs:domain oplcc:CreditCardType ;
+  rdfs:range xsd:string .
+
+oplcc:hasSecurityCodeComment
+  a owl:DatatypeProperty, rdf:Property ;
+  rdfs:label "hasSecurityCodeComment" ;
+  skos:altLabel "Security Code Comment" ;
+  rdfs:comment """A short description for the security code on a credit card."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/creditcards#> ;
+  rdfs:domain oplcc:CreditCardType ;
+  rdfs:range xsd:string .
+
+oplcc:hasSecurityCodeHelpText
+  a owl:DatatypeProperty, rdf:Property ;
+  rdfs:label "hasSecurityCodeHelpText" ;
+  skos:altLabel "Security Code Help Text" ;
+  rdfs:comment """A human-readable description of where the security code can be found on the credit card."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/creditcards#> ;
+  rdfs:domain oplcc:CreditCardType ;
+  rdfs:range xsd:string .
+
+oplcc:hasSecurityCodeHelpDepiction
+  a owl:ObjectProperty, rdf:Property ;
+  rdfs:label "hasSecurityCodeHelpDepiction" ;
+  skos:altLabel "Security Code Help Depiction"^^xsd:string ;
+  rdfs:comment """The URL to an image which shows where to find the security code on a type of credit card."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/creditcards#> ;
+  rdfs:domain oplcc:CreditCardType ;
+  rdfs:range rdfs:Resource .
+
+oplcc:hasLogo
+  a owl:ObjectProperty, rdf:Property ;
+  rdfs:label "hasLogo" ;
+  skos:altLabel "Logo"^^xsd:string ;
+  rdfs:comment """The URL to a small representation of the credit card company logo."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/creditcards#> ;
+  rdfs:domain oplcc:CreditCardType ;
+  rdfs:range rdfs:Resource .
+
+oplcc:hasFrontDepiction
+  a owl:ObjectProperty, rdf:Property ;
+  rdfs:label "hasFrontDepiction" ;
+  skos:altLabel "Front Depiction"^^xsd:string ;
+  rdfs:comment """The URL to a depiction of the front of credit card type."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/creditcards#> ;
+  rdfs:domain oplcc:CreditCardType ;
+  rdfs:range rdfs:Resource ;
+  rdfs:subPropertyOf foaf:depiction .
+
+oplcc:hasBackDepiction
+  a owl:ObjectProperty, rdf:Property ;
+  rdfs:label "hasBackDepiction" ;
+  skos:altLabel "Back Depiction"^^xsd:string ;
+  rdfs:comment """The URL to a depiction of the back of credit card type."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/creditcards#> ;
+  rdfs:domain oplcc:CreditCardType ;
+  rdfs:range rdfs:Resource ;
+  rdfs:subPropertyOf foaf:depiction .
+
+
+oplcc:VISA a oplcc:CreditCardType ;
+  rdfs:label "VISA" ;
+  skos:altLabel "VISA" ;
+  rdfs:comment "A VISA credit card"@en ;
+  oplcc:hasPayPalCode "visa"^^xsd:string ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/creditcards#> ;
+  owl:sameAs gr:VISA ;
+  oplcc:hasNumberPattern "^4"^^xsd:string ;
+  oplcc:hasSecurityCodeLabel "CVV2" ;
+  oplcc:hasSecurityCodeComment "Card Verification Value" ;
+  oplcc:hasSecurityCodeHelpText "The Card Verification Value (CVV2) is a three-digit number that can be found on the back of the card as the last three digits within the signature field." ;
+  oplcc:hasSecurityCodeHelpDepiction <../img/visa-cc-back-140.png> ;
+  oplcc:hasLogo <../img/visa_48.png> ;
+  oplcc:hasFrontDepiction <../img/visa-cc-front-140.png> ;
+  oplcc:hasBackDepiction <../img/visa-cc-back-140.png> .
+
+oplcc:MasterCard a oplcc:CreditCardType ;
+  rdfs:label "MasterCard" ;
+  skos:altLabel "MasterCard" ;
+  rdfs:comment "A MasterCard credit card"@en ;
+  oplcc:hasPayPalCode "mastercard"^^xsd:string ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/creditcards#> ;
+  owl:sameAs gr:MasterCard ;
+  oplcc:hasNumberPattern "^5[1-5]"^^xsd:string ;
+  oplcc:hasSecurityCodeLabel "CVC2" ;
+  oplcc:hasSecurityCodeComment "Card Validation Code" ;
+  oplcc:hasSecurityCodeHelpText "The Card Validation Code (CVC2) is a three-digit number that can be found on the back of the card as the last three digits within the signature field." ;
+  oplcc:hasSecurityCodeHelpDepiction <../img/mastercard-cc-back-140.png> ;
+  oplcc:hasLogo <../img/mastercard_48.png> ;
+  oplcc:hasFrontDepiction <../img/mastercard-cc-front-140.png> ;
+  oplcc:hasBackDepiction <../img/mastercard-cc-back-140.png> .
+
+oplcc:DinersClub a oplcc:CreditCardType ;
+  rdfs:label "Diners Club" ;
+  skos:altLabel "Diners Club" ;
+  rdfs:comment "A Diners Club credit card"@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/creditcards#> ;
+  owl:sameAs gr:DinersClub ;
+  oplcc:hasNumberPattern "^2014"^^xsd:string ;
+  oplcc:hasNumberPattern "^2149"^^xsd:string ;
+  oplcc:hasNumberPattern "^30[0-5]"^^xsd:string ;
+  oplcc:hasNumberPattern "^36"^^xsd:string ;
+  oplcc:hasNumberPattern "^38"^^xsd:string ;
+  oplcc:hasSecurityCodeLabel "Security Code" ;
+  oplcc:hasSecurityCodeComment "Security Code" ;
+  oplcc:hasSecurityCodeHelpText "The Security Code is a three-digit number that can be found on the back of the card as the last three digits within the signature field." ;
+  oplcc:hasSecurityCodeHelpDepiction <../img/diners-cc-back-140.png> ;
+  oplcc:hasLogo <../img/diners_club_48.png> ;
+  oplcc:hasFrontDepiction <../img/diners-cc-front-140.png> ;
+  oplcc:hasBackDepiction <../img/diners-cc-back-140.png> .
+
+oplcc:Discover a oplcc:CreditCardType ;
+  rdfs:label "Discover" ;
+  skos:altLabel "Discover" ;
+  rdfs:comment "A Discover Network credit card"@en ;
+  oplcc:hasPayPalCode "discover"^^xsd:string ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/creditcards#> ;
+  owl:sameAs gr:Discover ;
+  oplcc:hasNumberPattern "^6011"^^xsd:string ;
+  oplcc:hasSecurityCodeLabel "CID" ;
+  oplcc:hasSecurityCodeComment "Card Identification Number" ;
+  oplcc:hasSecurityCodeHelpText "The Card Identification Number (CID) can be found on the back of the card as the last three digits within the signature field." ;
+  oplcc:hasSecurityCodeHelpDepiction <../img/discover-cc-back-140.png> ;
+  oplcc:hasLogo <../img/discover_48.png> ;
+  oplcc:hasFrontDepiction <../img/> ;
+  oplcc:hasBackDepiction <../img/> .
+
+oplcc:JCB a oplcc:CreditCardType ;
+  rdfs:label "JCB" ;
+  skos:altLabel "JCB" ;
+  rdfs:comment "A JCB credit card"@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/creditcards#> ;
+  owl:sameAs gr:JCB ;
+  oplcc:hasNumberPattern "^3[12359]"^^xsd:string ;
+  oplcc:hasSecurityCodeLabel "Security Code" ;
+  oplcc:hasSecurityCodeComment "Security Code" ;
+  oplcc:hasSecurityCodeHelpText "The Security Code is a three-digit number that can be found on the back of the card as the last three digits within the signature field." ;
+  oplcc:hasSecurityCodeHelpDepiction <../img/jcb-cc-back-140.png> ;
+  oplcc:hasLogo <../img/jcb_48.gif> ;
+  oplcc:hasFrontDepiction <../img/jcb-cc-front-140.png> ;
+  oplcc:hasBackDepiction <../img/jcb-cc-back-140.png> .
+
+oplcc:AmericanExpress a oplcc:CreditCardType ;
+  rdfs:label "AmEx" ;
+  skos:altLabel "American Express" ;
+  rdfs:comment "An American Express credit card"@en ;
+  oplcc:hasPayPalCode "amex"^^xsd:string ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/creditcards#> ;
+  owl:sameAs gr:AmericanExpress ;
+  oplcc:hasNumberPattern "^34"^^xsd:string ;
+  oplcc:hasNumberPattern "^37"^^xsd:string ;
+  oplcc:hasSecurityCodeLabel "Unique Card Code or CID" ;
+  oplcc:hasSecurityCodeComment "Unique Card Code or CID" ;
+  oplcc:hasSecurityCodeHelpText "The Unique Card Code or CID is a four-digit number located on the front of the card, in the right-hand corner above the card number." ;
+  oplcc:hasSecurityCodeHelpDepiction <../img/amex-cc-front-140.png> ;
+  oplcc:hasLogo <../img/amex_48.png> ;
+  oplcc:hasFrontDepiction <../img/amex-cc-back-140.png> ;
+  oplcc:hasBackDepiction <../img/amex-cc-front-140.png> .

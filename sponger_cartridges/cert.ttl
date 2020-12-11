@@ -1,0 +1,273 @@
+@prefix schema:  <http://schema.org/> .
+@prefix xhv:    <http://www.w3.org/1999/xhtml/vocab#> .
+@prefix cvocab:  <http://open-services.net/ns/core#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix cert:    <http://www.w3.org/ns/auth/cert#> .
+@prefix oplc:    <http://www.openlinksw.com/schemas/cert#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix wot:     <http://xmlns.com/wot/0.1/> .
+@prefix wdrs:    <http://www.w3.org/2007/05/powder-s#> .
+@prefix cc:      <http://creativecommons.org/ns#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xhv:     <http://www.w3.org/1999/xhtml/vocab#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+
+<http://www.openlinksw.com/schemas/cert#>
+  a owl:Ontology ;
+  schema:name "OpenLink Certificates Ontology" ;
+  schema:comment """Ontology that defines entity and relation types used to describe certificates.
+  Examples include public keys, issuers, fingerprint etc."""@en ;
+  owl:imports <http://www.w3.org/1999/02/22-rdf-syntax-ns#> , <http://purl.org/dc/terms/> ;
+  schema:dateCreated "2013-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  schema:dateModified "2015-04-22T13:38:00-05:00"^^xsd:dateTime ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  wdrs:describedby <http://www.openlinksw.com/schemas/cert> ;
+  owl:versionInfo "1.0.0"^^xsd:string ;
+  <http://open.vocab.org/terms/defines>
+             oplc:Certificate ,
+             oplc:hasCertificate ,
+             oplc:hasPublicKey ,
+             oplc:fingerprint ,
+             oplc:owns ,
+             oplc:fingerprint-digest ,
+             oplc:subject ,
+             oplc:issuer ,
+             oplc:serial ,
+             oplc:notBefore ,
+             oplc:notAfter ,
+             oplc:digestURI ,
+             oplc:signatureAlgorithm ,
+             oplc:signature ,
+             oplc:IAN ,
+             oplc:SAN ,
+             oplc:statementSignature ,
+             oplc:docSignature ;
+  schema:about
+             oplc:Certificate ,
+             oplc:hasCertificate ,
+             oplc:hasPublicKey ,
+             oplc:fingerprint ,
+             oplc:owns ,
+             oplc:fingerprint-digest ,
+             oplc:subject ,
+             oplc:issuer ,
+             oplc:serial ,
+             oplc:notBefore ,
+             oplc:notAfter ,
+             oplc:digestURI ,
+             oplc:signatureAlgorithm ,
+             oplc:signature ,
+             oplc:IAN ,
+             oplc:SAN ,
+             oplc:statementSignature ,
+             oplc:docSignature .
+
+<http://www.openlinksw.com/DAV/data/turtle/cert.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink Certificates Ontology Description Document (Turtle)" ;
+  cc:License <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for certificates"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/cert#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/cert> ;
+  xhv:describes <http://www.openlinksw.com/schemas/cert#> ;
+  schema:about <http://www.openlinksw.com/schemas/cert#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/cert#> .
+
+
+<http://www.openlinksw.com/data/turtle/cert.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink Certificates Ontology Description Document (Turtle)" ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for certificates"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/cert#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/cert> ;
+  xhv:describes <http://www.openlinksw.com/schemas/cert#> ;
+  schema:about <http://www.openlinksw.com/schemas/cert#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/cert#> .
+
+<http://www.openlinksw.com/schemas/cert>
+  a foaf:Document ;
+  schema:name """OpenLink Certificates Ontology Description Document"""^^xsd:string ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a document that uses Linked Data oriented content to describe OpenLink Certificates Ontology."""@en ;
+  dcterms:subject <http://www.openlinksw.com/schemas/cert#> ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/cert#> ;
+  foaf:topic oplc:Certificate ,
+             oplc:hasCertificate ,
+             oplc:hasPublicKey ,
+             oplc:fingerprint ,
+             oplc:owns ,
+             oplc:fingerprint-digest ,
+             oplc:subject ,
+             oplc:issuer ,
+             oplc:serial ,
+             oplc:notBefore ,
+             oplc:notAfter ,
+             oplc:digestURI ,
+             oplc:signatureAlgorithm ,
+             oplc:signature ,
+             oplc:IAN ,
+             oplc:SAN ,
+             oplc:statementSignature ,
+             oplc:docSignature .
+
+oplc:Certificate a owl:Class ;
+ rdfs:label "Certificate" ;
+ owl:equivalentClass cert:X509Certificate ;
+ owl:equivalentClass wot:PubKey ;
+ rdfs:subClassOf cert:Certificate ;
+ rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cert#> .
+
+oplc:hasCertificate
+ a owl:ObjectProperty , rdf:Property ;
+ rdfs:label "hasCertificate" ;
+ skos:altLabel "certificate";
+ rdfs:domain foaf:Agent ;
+ rdfs:range oplc:Certificate ;
+ rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cert#> .
+
+oplc:hasPublicKey
+ a owl:ObjectProperty , rdf:Property ;
+ rdfs:label "hasPublicKey" ;
+ skos:altLabel "public key";
+ rdfs:domain oplc:Certificate ;
+ rdfs:range cert:RSAPublicKey ;
+ rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cert#> .
+
+oplc:fingerprint
+ a owl:ObjectProperty , rdf:Property ;
+ a owl:inverseFunctionalProperty ;
+ rdfs:label "fingerprint" ;
+ skos:altLabel "fingerprint";
+ rdfs:domain oplc:Certificate ;
+ rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cert#> ;
+ rdfs:range cert:hex .
+
+oplc:owns
+ a owl:ObjectProperty , rdf:Property ;
+ a owl:inverseFunctionalProperty ;
+ rdfs:label "owns" ;
+ skos:altLabel "owns";
+ rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cert#> ;
+ rdfs:domain oplc:Certificate ;
+ rdfs:range cert:RSAPublicKey .
+
+oplc:fingerprint-digest
+ a owl:DatatypeProperty , rdf:Property ;
+ rdfs:label "fingerprint-digest" ;
+ skos:altLabel "fingerprint digest";
+ rdfs:domain oplc:Certificate ;
+ rdfs:range xsd:string ;
+ rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cert#> .
+
+oplc:subject
+ a owl:DatatypeProperty , rdf:Property ;
+ rdfs:label "subject" ;
+ skos:altLabel "subject";
+ rdfs:domain oplc:Certificate ;
+ rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cert#> ;
+ rdfs:range xsd:string .
+
+oplc:issuer
+ a owl:DatatypeProperty , rdf:Property ;
+ rdfs:label "issuer" ;
+ skos:altLabel "issuer";
+ rdfs:domain oplc:Certificate ;
+ rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cert#> ;
+ rdfs:range xsd:string .
+
+oplc:serial
+ a owl:DatatypeProperty , rdf:Property ;
+ rdfs:label "serial" ;
+ skos:altLabel "serial number";
+ rdfs:domain oplc:Certificate ;
+ rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cert#> ;
+ rdfs:range xsd:string .
+
+oplc:notBefore
+ a owl:DatatypeProperty , rdf:Property ;
+ rdfs:label "notBefore" ;
+ skos:altLabel "not before";
+ rdfs:comment """Property for not before i.e. issue date"""@en ;
+ rdfs:domain oplc:Certificate ;
+ rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cert#> ;
+ rdfs:range xsd:dateTime .
+
+oplc:notAfter
+ a owl:DatatypeProperty , rdf:Property ;
+ rdfs:label "notAfter" ;
+ skos:altLabel "not after";
+ rdfs:comment """Property for not after i.e. expiry date"""@en;
+ rdfs:domain oplc:Certificate ;
+ rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cert#> ;
+ rdfs:range xsd:dateTime .
+
+oplc:digestURI
+ a owl:DatatypeProperty , rdf:Property ;
+ rdfs:label "digestURI" ;
+ skos:altLabel "digest uri";
+ rdfs:domain oplc:Certificate ;
+ rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cert#> ;
+ rdfs:range rdfs:Resource .
+
+oplc:signatureAlgorithm
+ a owl:DatatypeProperty , rdf:Property ;
+ rdfs:label "signatureAlgorithm" ;
+ skos:altLabel "signature algorithm";
+ rdfs:domain oplc:Certificate ;
+ rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cert#> ;
+ rdfs:range xsd:integer .
+
+oplc:signature
+ a owl:ObjectProperty , rdf:Property ;
+ rdfs:label "signature" ;
+ skos:altLabel "signature";
+ rdfs:domain oplc:Certificate ;
+ rdfs:comment """A digital signature produced using a Private Key"""@en ;
+ dcterms:description  """A digital signature produced using a specific signature scheme (or algorithm)""" ;
+ rdfs:seeAlso <http://dbpedia.org/resource/Digital_signature> ;
+ rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cert#> ;
+ rdfs:range cert:Signature .
+
+oplc:IAN
+ a owl:DatatypeProperty , rdf:Property ;
+ rdfs:label "IAN" ;
+ skos:altLabel "Certificate Issuer Alternative Name (IAN)";
+ rdfs:domain oplc:Certificate ;
+ rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cert#> ;
+ rdfs:range rdfs:Resource .
+
+oplc:SAN
+ a owl:DatatypeProperty , rdf:Property ;
+ rdfs:label "SAN" ;
+ skos:altLabel "Certificate Subject Alternative Name (SAN)";
+ rdfs:domain oplc:Certificate ;
+ rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cert#> ;
+ skos:altLabel "SAN" ;
+ rdfs:comment """The object of this relation is an identifier that denotes (names) the certificate's subject. """@en ;
+ owl:equivalentProperty <http://schemas.microsoft.com/2012/12/certificatecontext/extension/san> ;
+ rdfs:range xsd:anyURI .
+
+oplc:statementSignature a owl:DatatypeProperty , rdf:Property ;
+ rdfs:domain rdfs:Statement ;
+ rdfs:range xsd:hexBinary ;
+ rdfs:label "statementSignature" ;
+ skos:altLabel "statement signature";
+ rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cert#> ;
+ rdfs:comment """Digital Signature derived from an SHA hash of the Subject, Predicate, Objects components of a statement."""@en .
+
+oplc:docSignature a owl:DatatypeProperty , rdf:Property ;
+ rdfs:domain foaf:Document ;
+ rdfs:label "docSignature" ;
+ skos:altLabel "document signature";
+ rdfs:range xsd:hexBinary ;
+ rdfs:isDefinedBy <http://www.openlinksw.com/schemas/cert#> ;
+ rdfs:comment """Handles the digest of document content"""@en .
+

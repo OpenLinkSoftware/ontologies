@@ -1,0 +1,668 @@
+@prefix schema:  <http://schema.org/> .
+@prefix xhv:    <http://www.w3.org/1999/xhtml/vocab#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix cvocab: <http://open-services.net/ns/core#> .
+@prefix cc:     <http://creativecommons.org/ns#> .
+@prefix dc:     <http://purl.org/dc/elements/1.1/> .
+@prefix foaf:   <http://xmlns.com/foaf/0.1/> .
+@prefix geo:    <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix gr:     <http://purl.org/goodrelations/v1#> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix wdrs:   <http://www.w3.org/2007/05/powder-s#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:   <http://www.w3.org/2004/02/skos/core#> .
+
+@prefix oplzllw: <http://www.openlinksw.com/schemas/zillow#> .
+
+<http://www.openlinksw.com/schemas/zillow#>
+  a owl:Ontology ;
+  schema:name "OpenLink Zillow Ontology" ;
+  schema:comment """Ontology that defines entity and relation types used to describe Zillow. Examples include
+  taxes, states, home type etc."""@en ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:dateCreated "2013-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  schema:dateModified "2015-04-22T13:38:00-05:00"^^xsd:dateTime ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  wdrs:describedby <http://www.openlinksw.com/schemas/zillow> ;
+  owl:versionInfo "1.0.0"^^xsd:string ;
+  owl:imports <http://www.w3.org/1999/02/22-rdf-syntax-ns#> , <http://purl.org/dc/terms/> ;
+  <http://open.vocab.org/terms/defines>
+    oplzllw:Product ,
+    oplzllw:zpid ,
+    oplzllw:taxAssessmentYear ,
+    oplzllw:homeType ,
+    oplzllw:lastSoldDate ,
+    oplzllw:yearUpdated ,
+    oplzllw:numFloors ,
+    oplzllw:numRooms ,
+    oplzllw:homeDescription ,
+    oplzllw:whatOwnerLoves ,
+    oplzllw:roof ,
+    oplzllw:exteriorMaterial ,
+    oplzllw:parkingType ,
+    oplzllw:heatingSystem ,
+    oplzllw:heatingSources ,
+    oplzllw:appliances ,
+    oplzllw:floorCovering ,
+    oplzllw:rooms ,
+    oplzllw:listingStatus ,
+    oplzllw:listingType ,
+    oplzllw:listingLastUpdated ,
+    oplzllw:bedrooms ,
+    oplzllw:bathrooms ,
+    oplzllw:squareFeet ,
+    oplzllw:price ,
+    oplzllw:lotSize ,
+    oplzllw:yearBuilt ,
+    oplzllw:garages ,
+    oplzllw:pool ,
+    oplzllw:taxes ,
+    oplzllw:mortgage ,
+    oplzllw:rent ,
+    oplzllw:country ,
+    oplzllw:state ,
+    oplzllw:city ,
+    oplzllw:street ,
+    oplzllw:postalCode ,
+    oplzllw:latitude ,
+    oplzllw:longitude ,
+    oplzllw:altitude ,
+    oplzllw:image ,
+    oplzllw:audio ,
+    oplzllw:video ,
+    oplzllw:document ;
+  schema:about
+    oplzllw:Product ,
+    oplzllw:zpid ,
+    oplzllw:taxAssessmentYear ,
+    oplzllw:homeType ,
+    oplzllw:lastSoldDate ,
+    oplzllw:yearUpdated ,
+    oplzllw:numFloors ,
+    oplzllw:numRooms ,
+    oplzllw:homeDescription ,
+    oplzllw:whatOwnerLoves ,
+    oplzllw:roof ,
+    oplzllw:exteriorMaterial ,
+    oplzllw:parkingType ,
+    oplzllw:heatingSystem ,
+    oplzllw:heatingSources ,
+    oplzllw:appliances ,
+    oplzllw:floorCovering ,
+    oplzllw:rooms ,
+    oplzllw:listingStatus ,
+    oplzllw:listingType ,
+    oplzllw:listingLastUpdated ,
+    oplzllw:bedrooms ,
+    oplzllw:bathrooms ,
+    oplzllw:squareFeet ,
+    oplzllw:price ,
+    oplzllw:lotSize ,
+    oplzllw:yearBuilt ,
+    oplzllw:garages ,
+    oplzllw:pool ,
+    oplzllw:taxes ,
+    oplzllw:mortgage ,
+    oplzllw:rent ,
+    oplzllw:country ,
+    oplzllw:state ,
+    oplzllw:city ,
+    oplzllw:street ,
+    oplzllw:postalCode ,
+    oplzllw:latitude ,
+    oplzllw:longitude ,
+    oplzllw:altitude ,
+    oplzllw:image ,
+    oplzllw:audio ,
+    oplzllw:video ,
+    oplzllw:document .
+
+<http://www.openlinksw.com/DAV/data/turtle/cartridge_ontologies/zillow.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink Zillow Ontology Description Document (Turtle)" ;
+  cc:License <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for Zillow"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/zillow#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/zillow> ;
+  xhv:describes <http://www.openlinksw.com/schemas/zillow#> ;
+  schema:about <http://www.openlinksw.com/schemas/zillow#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/zillow#> .
+
+<http://www.openlinksw.com/data/turtle/cartridge_ontologies/zillow.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink Zillow Ontology Description Document (Turtle)" ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for Zillow"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/zillow#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/zillow> ;
+  xhv:describes <http://www.openlinksw.com/schemas/zillow#> ;
+  schema:about <http://www.openlinksw.com/schemas/zillow#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/zillow#> .
+
+<http://www.openlinksw.com/schemas/zillow>
+  a foaf:Document ;
+  schema:name """OpenLink Zillow Ontology Description Document"""^^xsd:string ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a document that uses Linked Data oriented content to describe OpenLink Zillow Ontology."""@en ;
+  dcterms:subject <http://www.openlinksw.com/schemas/zillow#> ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/zillow#> ;
+  foaf:topic
+    oplzllw:Product ,
+    oplzllw:zpid ,
+    oplzllw:taxAssessmentYear ,
+    oplzllw:homeType ,
+    oplzllw:lastSoldDate ,
+    oplzllw:yearUpdated ,
+    oplzllw:numFloors ,
+    oplzllw:numRooms ,
+    oplzllw:homeDescription ,
+    oplzllw:whatOwnerLoves ,
+    oplzllw:roof ,
+    oplzllw:exteriorMaterial ,
+    oplzllw:parkingType ,
+    oplzllw:heatingSystem ,
+    oplzllw:heatingSources ,
+    oplzllw:appliances ,
+    oplzllw:floorCovering ,
+    oplzllw:rooms ,
+    oplzllw:listingStatus ,
+    oplzllw:listingType ,
+    oplzllw:listingLastUpdated ,
+    oplzllw:bedrooms ,
+    oplzllw:bathrooms ,
+    oplzllw:squareFeet ,
+    oplzllw:price ,
+    oplzllw:lotSize ,
+    oplzllw:yearBuilt ,
+    oplzllw:garages ,
+    oplzllw:pool ,
+    oplzllw:taxes ,
+    oplzllw:mortgage ,
+    oplzllw:rent ,
+    oplzllw:country ,
+    oplzllw:state ,
+    oplzllw:city ,
+    oplzllw:street ,
+    oplzllw:postalCode ,
+    oplzllw:latitude ,
+    oplzllw:longitude ,
+    oplzllw:altitude ,
+    oplzllw:image ,
+    oplzllw:audio ,
+    oplzllw:video ,
+    oplzllw:document .
+
+
+#
+# gr:Product specialization
+#
+
+oplzllw:Product
+    a owl:Class ;
+    rdfs:subClassOf gr:ProductOrService ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/zillow#> ;
+    rdfs:label "Product" ;
+    rdfs:comment """A specialization of the GoodRelations ProductOrService class for describing Zillow properties"""@en  .
+
+#
+# Product properties
+#
+
+oplzllw:zpid
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/zillow#> ;
+    rdfs:label "zpid" ;
+    skos:altLabel "Zillow assigned property id" ;
+    rdfs:comment """Zillow assigned property ID"""@en  ;
+    rdfs:domain oplzllw:Product ;
+    rdfs:range xsd:string .
+
+oplzllw:taxAssessmentYear
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/zillow#> ;
+    rdfs:label "taxAssessmentYear" ;
+    skos:altLabel "tax assessment year" ;
+    rdfs:comment """tax assessment year"""@en  ;
+    rdfs:domain oplzllw:Product ;
+    rdfs:range xsd:string .
+
+oplzllw:homeType
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/zillow#> ;
+    rdfs:label "homeType" ;
+    skos:altLabel "home type" ;
+    rdfs:comment """home type"""@en  ;
+    rdfs:domain oplzllw:Product ;
+    rdfs:range xsd:string .
+
+oplzllw:lastSoldDate
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/zillow#> ;
+    rdfs:label "lastSoldDate" ;
+    skos:altLabel "last sold date" ;
+    rdfs:comment """Date the property was last sold"""@en  ;
+    rdfs:domain oplzllw:Product ;
+    rdfs:range xsd:string .
+
+oplzllw:yearUpdated
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/zillow#> ;
+    rdfs:label "yearUpdated" ;
+    skos:altLabel "year updated" ;
+    rdfs:comment """Year the property was last updated"""@en  ;
+    rdfs:domain oplzllw:Product ;
+    rdfs:range xsd:string .
+
+oplzllw:numFloors
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/zillow#> ;
+    rdfs:label "numFloors" ;
+    skos:altLabel "number of floors" ;
+    rdfs:comment """number of floors"""@en  ;
+    rdfs:domain oplzllw:Product ;
+    rdfs:range xsd:integer .
+
+oplzllw:numRooms
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/zillow#> ;
+    rdfs:label "numRooms" ;
+    skos:altLabel "number of rooms" ;
+    rdfs:comment """number of rooms"""@en  ;
+    rdfs:domain oplzllw:Product ;
+    rdfs:range xsd:integer .
+
+oplzllw:homeDescription
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/zillow#> ;
+    rdfs:label "homeDescription" ;
+    skos:altLabel "home description" ;
+    rdfs:comment """A brief description of the property"""@en  ;
+    rdfs:domain oplzllw:Product ;
+    rdfs:range xsd:string .
+
+oplzllw:whatOwnerLoves
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/zillow#> ;
+    rdfs:label "whatOwnerLoves" ;
+    skos:altLabel "what owner loves" ;
+    rdfs:comment """What the owner likes about the property"""@en  ;
+    rdfs:domain oplzllw:Product ;
+    rdfs:range xsd:string .
+
+oplzllw:roof
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/zillow#> ;
+    rdfs:label "roof" ;
+    skos:altLabel "roof material" ;
+    rdfs:comment """Roof material"""@en  ;
+    rdfs:domain oplzllw:Product ;
+    rdfs:range xsd:string .
+
+oplzllw:exteriorMaterial
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/zillow#> ;
+    rdfs:label "exteriorMaterial" ;
+    skos:altLabel "exterior material" ;
+    rdfs:comment """Exterior material"""@en  ;
+    rdfs:domain oplzllw:Product ;
+    rdfs:range xsd:string .
+
+oplzllw:parkingType
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/zillow#> ;
+    rdfs:label "parkingType" ;
+    skos:altLabel "parking type" ;
+    rdfs:comment """Parking type"""@en  ;
+    rdfs:domain oplzllw:Product ;
+    rdfs:range xsd:string .
+
+oplzllw:heatingSystem
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/zillow#> ;
+    rdfs:label "heatingSystem" ;
+    skos:altLabel "heating system" ;
+    rdfs:comment """Heating system"""@en ;
+    rdfs:domain oplzllw:Product ;
+    rdfs:range xsd:string .
+
+oplzllw:heatingSources
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/zillow#> ;
+    rdfs:label "heatingSources" ;
+    skos:altLabel "heating sources" ;
+    rdfs:comment """Heating sources"""@en  ;
+    rdfs:domain oplzllw:Product ;
+    rdfs:range xsd:string .
+
+oplzllw:appliances
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/zillow#> ;
+    rdfs:label "appliances" ;
+    skos:altLabel "appliances" ;
+    rdfs:comment """Appliances"""@en  ;
+    rdfs:domain oplzllw:Product ;
+    rdfs:range xsd:string .
+
+oplzllw:floorCovering
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/zillow#> ;
+    rdfs:label "floorCovering" ;
+    skos:altLabel "floor covering" ;
+    rdfs:comment """Floor covering"""@en  ;
+    rdfs:domain oplzllw:Product ;
+    rdfs:range xsd:string .
+
+oplzllw:rooms
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/zillow#> ;
+    rdfs:label "rooms" ;
+    skos:altLabel "rooms" ;
+    rdfs:comment """Main rooms"""@en  ;
+    rdfs:domain oplzllw:Product ;
+    rdfs:range xsd:string .
+
+oplzllw:listingStatus
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/zillow#> ;
+    rdfs:label "listingStatus" ;
+    skos:altLabel "listing status" ;
+    rdfs:comment """Property listing status"""@en  ;
+    rdfs:domain oplzllw:Product ;
+    rdfs:range xsd:string .
+
+oplzllw:listingType
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/zillow#> ;
+    rdfs:label "listingType" ;
+    skos:altLabel "listing type" ;
+    rdfs:comment """Listing type"""@en  ;
+    rdfs:domain oplzllw:Product ;
+    rdfs:range xsd:string .
+
+oplzllw:listingLastUpdated
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/zillow#> ;
+    rdfs:label "listingLastUpdated" ;
+    skos:altLabel "listing last updated" ;
+    rdfs:comment """Date property listing was last updated"""@en  ;
+    rdfs:domain oplzllw:Product ;
+    rdfs:range xsd:string .
+
+#
+# Equivalents of RealDF properties
+#
+# See: http://gr8c.org/specs/realdf/080515-realdf-spec/
+#
+# owl:equivalentProperty hasn't been used to link the oplzillow and realdf properties
+# because equivalentProperty requires that two properties have the same property
+# extension (i.e. potential set of values). However, realdf specifies the rdfs:range
+# of its properties very loosely as rdfs:Literal or rdfs:Range. oplzillow uses more
+# specific data types (e.g. xsd:int) for the range of similarly named properties.
+#
+# Also, the RealDF ontology isn't available at http://gr8c.org/realdf/ns, contrary
+# to the spec.
+#
+
+oplzllw:bedrooms
+	a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/zillow#> ;
+    rdfs:label "bedrooms" ;
+    skos:altLabel "bedrooms" ;
+    rdfs:comment """Number of bedrooms"""@en  ;
+    rdfs:domain oplzllw:Product ;
+    rdfs:range xsd:int .
+
+oplzllw:bathrooms
+	a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/zillow#> ;
+    rdfs:label "bathrooms" ;
+    skos:altLabel "bathrooms" ;
+    rdfs:comment """Number of bathrooms"""@en  ;
+    rdfs:domain oplzllw:Product ;
+    rdfs:range xsd:int .
+
+oplzllw:squareFeet
+	a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/zillow#> ;
+    rdfs:label "squareFeet" ;
+    skos:altLabel "size (sq. feet)" ;
+    rdfs:comment """Property size in square feet"""@en  ;
+    rdfs:domain oplzllw:Product ;
+    rdfs:range xsd:decimal .
+
+oplzllw:price
+	a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/zillow#> ;
+    rdfs:label "price" ;
+    skos:altLabel "price (USD)" ;
+    rdfs:comment """Property price in US dollars"""@en  ;
+    rdfs:domain oplzllw:Product ;
+    rdfs:range xsd:decimal .
+
+oplzllw:lotSize
+	a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/zillow#> ;
+    rdfs:label "lotSize" ;
+    skos:altLabel "lot size (sq. feet)" ;
+    rdfs:comment """Property price in US dollars"""@en  ;
+    rdfs:domain oplzllw:Product ;
+    rdfs:range xsd:decimal .
+
+oplzllw:yearBuilt
+	a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/zillow#> ;
+    rdfs:label "yearBuilt" ;
+    skos:altLabel "year built" ;
+    rdfs:comment """Year the property was built"""@en  ;
+    rdfs:domain oplzllw:Product ;
+    rdfs:range xsd:gYear .
+
+oplzllw:garages
+	a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/zillow#> ;
+    rdfs:label "garages" ;
+    skos:altLabel "garages" ;
+    rdfs:comment """Number of garages"""@en  ;
+    rdfs:domain oplzllw:Product ;
+    rdfs:range xsd:int .
+
+oplzllw:pool
+	a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/zillow#> ;
+    rdfs:label "pool" ;
+    skos:altLabel "pool" ;
+    rdfs:comment """Property has a pool?"""@en  ;
+    rdfs:domain oplzllw:Product ;
+    rdfs:range xsd:boolean .
+
+oplzllw:taxes
+	a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/zillow#> ;
+    rdfs:label "taxes" ;
+    skos:altLabel "taxes" ;
+    rdfs:comment """Annual property taxes (US dollars)"""@en  ;
+    rdfs:domain oplzllw:Product ;
+    rdfs:range xsd:decimal .
+
+oplzllw:mortgage
+	a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/zillow#> ;
+    rdfs:label "mortgage" ;
+    skos:altLabel "monthly mortgage payment (USD)" ;
+    rdfs:comment """Monthly mortgage payment (US dollars)"""@en  ;
+    rdfs:domain oplzllw:Product ;
+    rdfs:range xsd:decimal .
+
+oplzllw:rent
+	a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/zillow#> ;
+    rdfs:label "rent" ;
+    skos:altLabel "monthly rent payment (USD)" ;
+    rdfs:comment """Monthly rent payment (US dollars)"""@en  ;
+    rdfs:domain oplzllw:Product ;
+    rdfs:range xsd:decimal .
+
+oplzllw:country
+	a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/zillow#> ;
+    rdfs:label "country" ;
+    skos:altLabel "country" ;
+    rdfs:comment """Name of ountry"""@en  ;
+    rdfs:domain oplzllw:Product ;
+    rdfs:range xsd:string .
+
+oplzllw:state
+	a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/zillow#> ;
+    rdfs:label "state" ;
+    skos:altLabel "state" ;
+    rdfs:comment """Name of state"""@en  ;
+    rdfs:domain oplzllw:Product ;
+    rdfs:range xsd:string .
+
+oplzllw:city
+	a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/zillow#> ;
+    rdfs:label "city" ;
+    skos:altLabel "city" ;
+    rdfs:comment """Name of city"""@en  ;
+    rdfs:domain oplzllw:Product ;
+    rdfs:range xsd:string .
+
+oplzllw:street
+	a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/zillow#> ;
+    rdfs:label "street" ;
+    skos:altLabel "street" ;
+    rdfs:comment """Name of street"""@en  ;
+    rdfs:domain oplzllw:Product ;
+    rdfs:range xsd:string .
+
+oplzllw:postalCode
+	a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/zillow#> ;
+    rdfs:label "postalCode" ;
+    skos:altLabel "postal code" ;
+    rdfs:comment """Zip or postal code"""@en  ;
+    rdfs:domain oplzllw:Product ;
+    rdfs:range xsd:string .
+
+# No range is specified for latitude/longitude/altitude because they've
+# deliberately been made equivalent to the wgs84_pos properties lat/long/alt.
+# The latter don't specify a range, since this would require each occurrence
+# of the property to mention the datatype.
+
+oplzllw:latitude
+	a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/zillow#> ;
+    rdfs:label "latitude" ;
+    skos:altLabel "latitude" ;
+    rdfs:comment """WGS84 latitude (decimal degrees)"""@en  ;
+    rdfs:domain oplzllw:Product ;
+#   rdfs:range xsd:string ;
+	owl:equivalentProperty geo:lat .
+
+oplzllw:longitude
+	a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/zillow#> ;
+    rdfs:label "longitude" ;
+    skos:altLabel "longitude" ;
+    rdfs:comment """WGS84 longitude (decimal degrees)"""@en  ;
+    rdfs:domain oplzllw:Product ;
+#   rdfs:range xsd:string ;
+	  owl:equivalentProperty geo:long .
+
+oplzllw:altitude
+	a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/zillow#> ;
+    rdfs:label "altitude" ;
+    skos:altLabel "altitude" ;
+    rdfs:comment """ WGS84 altitude (decimal meters)"""@en  ;
+    rdfs:domain oplzllw:Product ;
+#   rdfs:range xsd:string ;
+	  owl:equivalentProperty geo:alt .
+
+oplzllw:image
+	a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/zillow#> ;
+    rdfs:label "image" ;
+    skos:altLabel "image" ;
+    rdfs:comment """Image of the property"""@en  ;
+    rdfs:domain oplzllw:Product ;
+    rdfs:range xsd:anyURI .
+
+oplzllw:audio
+	a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/zillow#> ;
+    rdfs:label "audio" ;
+    skos:altLabel "audio" ;
+    rdfs:comment """Audio file"""@en  ;
+    rdfs:domain oplzllw:Product ;
+    rdfs:range xsd:anyURI .
+
+oplzllw:video
+	a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/zillow#> ;
+    rdfs:label "video" ;
+    skos:altLabel "video" ;
+    rdfs:comment """Video file"""@en  ;
+    rdfs:domain oplzllw:Product ;
+    rdfs:range xsd:anyURI .
+
+oplzllw:document
+	a owl:DatatypeProperty , rdf:Property ;
+    rdfs:subPropertyOf gr:datatypeProductOrServiceProperty ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/zillow#> ;
+    rdfs:label "document" ;
+    skos:altLabel "document" ;
+    rdfs:comment """Document file such as PDF, text, Word or Writer."""@en  ;
+    rdfs:domain oplzllw:Product ;
+    rdfs:range xsd:anyURI .
+

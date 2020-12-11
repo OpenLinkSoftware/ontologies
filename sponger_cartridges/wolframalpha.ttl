@@ -1,0 +1,151 @@
+#
+# An OpenLink ontology for WolframAlpha (http://products.wolframalpha.com/developers/)
+#
+@prefix schema:  <http://schema.org/> .
+@prefix xhv:    <http://www.w3.org/1999/xhtml/vocab#> .
+@prefix skos:       <http://www.w3.org/2004/02/skos/core#> .
+@prefix cvocab:     <http://open-services.net/ns/core#> .
+@prefix awol:       <http://bblfish.net/work/atom-owl/2006-06-06/#> .
+@prefix cc:         <http://creativecommons.org/ns#> .
+@prefix dc:         <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms:    <http://purl.org/dc/terms/> .
+@prefix foaf:       <http://xmlns.com/foaf/0.1/> .
+@prefix opl:        <http://www.openlinksw.com/schema/attribution#> .
+@prefix owl:        <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:        <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:       <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix wa:         <http://www.openlinksw.com/schemas/wolframalpha#> .
+@prefix wdrs:       <http://www.w3.org/2007/05/powder-s#> .
+@prefix xsd:        <http://www.w3.org/2001/XMLSchema#> .
+@prefix oplfaq:     <http://www.openlinksw.com/ontology/faq#> .
+
+<http://www.openlinksw.com/schemas/wolframalpha#>
+  a owl:Ontology ;
+  schema:name "OpenLink WolframAlpha Ontology" ;
+  schema:comment """Ontology that defines entity and relation types used to describe WolframAlpha.
+  Examples include queries, answers, scores etc."""@en ;
+  owl:imports <http://www.w3.org/1999/02/22-rdf-syntax-ns#> , <http://purl.org/dc/terms/> , <http://www.openlinksw.com/ontology/faq#> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:dateCreated "2013-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  schema:dateModified "2015-04-22T13:38:00-05:00"^^xsd:dateTime ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  wdrs:describedby <http://www.openlinksw.com/schemas/wolframalpha> ;
+  owl:versionInfo "1.0.0"^^xsd:string ;
+  <http://open.vocab.org/terms/defines>
+    wa:Query ,
+    wa:Answer  ,
+    wa:Source  ,
+    wa:primaryAnswer  ,
+    wa:score  ,
+    wa:normativeQuery ;
+  schema:about
+    wa:Query ,
+    wa:Answer  ,
+    wa:Source  ,
+    wa:primaryAnswer  ,
+    wa:score  ,
+    wa:normativeQuery .
+
+<http://www.openlinksw.com/DAV/data/turtle/cartridge_ontologies/wolframalpha.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink WolframAlpha Ontology Description Document (Turtle)" ;
+  cc:License <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for WolframAlpha"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/wolframalpha#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/wolframalpha> ;
+  xhv:describes <http://www.openlinksw.com/schemas/wolframalpha#> ;
+  schema:about <http://www.openlinksw.com/schemas/wolframalpha#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/wolframalpha#> .
+
+<http://www.openlinksw.com/data/turtle/cartridge_ontologies/wolframalpha.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink WolframAlpha Ontology Description Document (Turtle)" ;
+  owl:sameAs <http://www.openlinksw.com/DAV/data/turtle/cartridge_ontologies/wolframalpha.ttl> ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for WolframAlpha"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/wolframalpha#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/wolframalpha> ;
+  schema:about <http://www.openlinksw.com/schemas/wolframalpha#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/wolframalpha#> .
+
+<http://www.openlinksw.com/schemas/wolframalpha>
+  a foaf:Document ;
+  schema:name """OpenLink WolframAlpha Ontology Description Document"""^^xsd:string ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a document that uses Linked Data oriented content to describe OpenLink WolframAlpha Ontology."""@en ;
+  dcterms:subject <http://www.openlinksw.com/schemas/wolframalpha#> ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/wolframalpha#> ;
+  foaf:topic
+    wa:Query ,
+    wa:Answer  ,
+    wa:Source  ,
+    wa:primaryAnswer  ,
+    wa:score  ,
+    wa:normativeQuery .
+
+#
+# Classes
+#
+
+wa:Query
+	a owl:Class ;
+	rdfs:subClassOf oplfaq:Query ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/stackoverflow#> ;
+	rdfs:label "WolframAlpha Query" ;
+	rdfs:comment """A Wolfram|Alpha Query"""@en  .
+
+wa:Answer
+	a owl:Class ;
+	rdfs:subClassOf oplfaq:Answer ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/stackoverflow#> ;
+	rdfs:label "WolframAlpha Answer" ;
+	rdfs:comment """Answer that Wolfram|Alpha considers authoritative"""@en  .
+
+wa:Source
+	a owl:Class ;
+	rdfs:subClassOf oplfaq:Source ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/stackoverflow#> ;
+	rdfs:label "WolframAlpha Source" ;
+	rdfs:comment """Attributed source for a Wolfram|Alpha Query"""@en  .
+
+#
+# Predicates
+#
+
+wa:primaryAnswer
+  a owl:ObjectProperty , rdf:Property ;
+  rdfs:subPropertyOf oplfaq:answer ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/schemas/stackoverflow#> ;
+	rdfs:label "primaryAnswer" ;
+	skos:altLabel "answer" ;
+	rdfs:comment """Primary answer from Wolfram|Alpha"""@en  ;
+	rdfs:domain wa:Query ;
+	rdfs:range wa:Answer .
+
+wa:score
+  a owl:DatatypeProperty , rdf:Property ;
+  rdfs:subPropertyOf oplfaq:score ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/schemas/stackoverflow#> ;
+	rdfs:label "score" ;
+	skos:altLabel "score" ;
+	rdfs:comment """(Computed) measure of a Wolfram|Alpha query result's relevance"""@en  ;
+	rdfs:domain wa:Query ;
+	rdfs:range xsd:integer .
+
+wa:normativeQuery
+  a owl:DatatypeProperty , rdf:Property ;
+  rdfs:subPropertyOf oplfaq:query ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/schemas/stackoverflow#> ;
+	rdfs:label "normativeQuery" ;
+	skos:altLabel "normalised query" ;
+	rdfs:comment """How Wolfram|Alpha resolved the query"""@en  ;
+	rdfs:domain wa:Query ;
+	rdfs:range xsd:string .
+
+#
+# T-Box mappings
+#
+

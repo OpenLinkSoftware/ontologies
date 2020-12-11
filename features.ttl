@@ -1,0 +1,314 @@
+@prefix schema:  <http://schema.org/> .
+@prefix cvocab:  <http://open-services.net/ns/core#> .
+@prefix sioc:    <http://rdfs.org/sioc/ns#> .
+@prefix oplweb:  <http://www.openlinksw.com/schemas/oplweb#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix gr:      <http://purl.org/goodrelations/v1#> .
+@prefix siocs:   <http://rdfs.org/sioc/services#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix wdrs:    <http://www.w3.org/2007/05/powder-s#> .
+@prefix prodont: <http://www.productontology.org/id/> .
+@prefix xhv:     <http://www.w3.org/1999/xhtml/vocab#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix oplfea:  <http://www.openlinksw.com/ontology/features#> .
+@prefix oplpro:  <http://www.openlinksw.com/ontology/products#> .
+@prefix opllic:  <http://www.openlinksw.com/ontology/licenses#> .
+@prefix oplben:  <http://www.openlinksw.com/ontology/benefits#> .
+@prefix opl:     <http://www.openlinksw.com/schema/attribution#> .
+@prefix cc:      <http://creativecommons.org/ns#> .
+
+<http://www.openlinksw.com/ontology/features#> a owl:Ontology ;
+  rdfs:label """OpenLink Product Features Ontology"""^^xsd:string ;
+  rdfs:comment """Ontology that defines entity and relation types used to describe product features. Examples include
+  features, categories, scopes etc."""@en ;
+  wdrs:describedby <http://www.openlinksw.com/ontology/features> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  dcterms:created "2014-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  dcterms:modified "2019-08-06T13:38:00-05:00"^^xsd:dateTime ;
+  owl:versionInfo "1.0.0"^^xsd:string ;
+  owl:imports <http://purl.org/goodrelations/v1> ,
+              <http://www.openlinksw.com/ontology/licenses#>  ,
+              <http://www.w3.org/2002/07/owl#> ,
+              <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ,
+              <http://purl.org/dc/terms/> ;
+  <http://open.vocab.org/terms/defines>
+      oplfea:ProductFeature ,
+      oplfea:ProductFeatureCategory ,
+      oplfea:ProductFormatFeature ,
+      oplfea:ProductCategoryFeature ,
+      oplfea:ProductFamilyFeature ,
+      oplfea:Category ,
+      oplfea:VirtuosoProductFunctionalityRealm ,
+      oplfea:hasScope ,
+      oplfea:isScopeOf ,
+      oplfea:hasFeature ,
+      oplfea:isFeatureOf ,
+      oplfea:PartnerProgramFeature ,
+      oplfea:VARPartnerFeature ,
+      oplfea:ISVPartnerFeature ,
+      oplfea:OEMPartnerFeature ,
+      oplfea:SystemsIntegratorPartnerFeature ;
+   schema:about
+      oplfea:ProductFeature ,
+      oplfea:ProductFeatureCategory ,
+      oplfea:ProductFormatFeature ,
+      oplfea:ProductCategoryFeature ,
+      oplfea:ProductFamilyFeature ,
+      oplfea:Category ,
+      oplfea:VirtuosoProductFunctionalityRealm ,
+      oplfea:hasScope ,
+      oplfea:isScopeOf ,
+      oplfea:hasFeature ,
+      oplfea:isFeatureOf ,
+      oplfea:PartnerProgramFeature ,
+      oplfea:VARPartnerFeature ,
+      oplfea:ISVPartnerFeature ,
+      oplfea:OEMPartnerFeature ,
+      oplfea:SystemsIntegratorPartnerFeature .
+
+<http://open.vocab.org/terms/defines> owl:inverseOf <http://www.w3.org/2007/05/powder-s#describedby> .
+
+<http://www.openlinksw.com/DAV/data/turtle/features.ttl>
+  a foaf:Document , schema:TechArticle ;
+  rdfs:label """OpenLink Product Features Ontology Description Document (Turtle)"""^^xsd:string ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  rdfs:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for Product Features."""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/ontology/features#> ;
+  dcterms:created "2014-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  dcterms:modified "2019-08-06T13:38:00-05:00"^^xsd:dateTime ;
+  xhv:canonical <http://www.openlinksw.com/ontology/features> ;
+  xhv:describes <http://www.openlinksw.com/ontology/features#> ;
+  schema:about <http://www.openlinksw.com/ontology/features#> ;
+  dcterms:subject <http://www.openlinksw.com/ontology/features#> .
+
+<http://www.openlinksw.com/data/turtle/features.ttl>
+  a foaf:Document , schema:TechArticle ;
+  rdfs:label """OpenLink Product Features Ontology Description Document (Turtle)"""^^xsd:string ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  dcterms:created "2014-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  dcterms:modified "2019-08-06T13:38:00-05:00"^^xsd:dateTime ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  rdfs:comment """This is a turtle document that uses Linked Data oriented content to describe OpenLink Product Features Ontology."""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/ontology/features#> ;
+  xhv:canonical <http://www.openlinksw.com/ontology/features> ;
+  xhv:describes <http://www.openlinksw.com/ontology/features#> ;
+  schema:about <http://www.openlinksw.com/ontology/features#> ;
+  dcterms:subject <http://www.openlinksw.com/ontology/features#> .
+
+<http://www.openlinksw.com/ontology/features>
+  a foaf:Document , schema:TechArticle ;
+  rdfs:label """OpenLink Product Features Ontology Description Document"""^^xsd:string ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  dcterms:created "2014-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  dcterms:modified "2019-08-06T13:38:00-05:00"^^xsd:dateTime ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  rdfs:comment """This is a document that uses Linked Data oriented content to describe OpenLink Product Features Ontology."""@en ;
+  dcterms:subject <http://www.openlinksw.com/ontology/features#> ;
+  foaf:primaryTopic <http://www.openlinksw.com/ontology/features#> ;
+  foaf:topic
+      oplfea:ProductFeature ,
+      oplfea:ProductFeatureCategory ,
+      oplfea:ProductFormatFeature ,
+      oplfea:ProductCategoryFeature ,
+      oplfea:ProductFamilyFeature ,
+      oplfea:Category ,
+      oplfea:VirtuosoProductFunctionalityRealm ,
+      oplfea:hasScope ,
+      oplfea:isScopeOf ,
+      oplfea:hasFeature ,
+      oplfea:isFeatureOf ,
+      oplfea:PartnerProgramFeature ,
+      oplfea:VARPartnerFeature ,
+      oplfea:ISVPartnerFeature ,
+      oplfea:OEMPartnerFeature ,
+      oplfea:SystemsIntegratorPartnerFeature .
+
+<http://www.openlinksw.com/data/turtle/features.ttl>
+  rdfs:seeAlso <http://virtuoso.openlinksw.com/offers/> ,
+               <http://uda.openlinksw.com/offers/> ,
+               <http://www.openlinksw.com/data/turtle/shop.ttl> ,
+               <http://www.openlinksw.com/data/turtle/offers.ttl> ,
+               <http://www.openlinksw.com/data/turtle/contracts.ttl> ,
+               <http://www.openlinksw.com/data/turtle/benefits.ttl> ,
+               <http://www.openlinksw.com/data/turtle/products.ttl> ,
+               <http://www.openlinksw.com/data/turtle/vendors.ttl> ,
+               <http://www.openlinksw.com/data/turtle/software.ttl> ,
+               <http://www.openlinksw.com/data/turtle/machines.ttl> ,
+               <http://www.openlinksw.com/data/turtle/purchases.ttl> ,
+               <http://www.openlinksw.com/data/turtle/payments.ttl> ,
+               <http://www.openlinksw.com/data/turtle/licenses.ttl> .
+
+
+# <-------------- Products Feature Classes --------------> #
+
+oplfea:ProductFeature a owl:Class ;
+      rdfs:label "Product Feature"^^xsd:string ;
+      skos:altLabel "Product Features"^^xsd:string ;
+      dcterms:description "Features associated with Product Benefits"^^xsd:string ;
+      rdfs:subClassOf oplfea:ProductCategoryFeature ,
+                      oplfea:ProductFamilyFeature ;
+      owl:equivalentClass <http://www.openlinksw.com/schemas/oplweb#ProductFeature> ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/features#> .
+
+# oplfea:ProductReleaseFeature a owl:Class ;
+#       rdfs:label "Product Feature Release"^^xsd:string ;
+#       rdfs:isDefinedBy <http://www.openlinksw.com/ontology/features#> ;
+#       owl:equivalentClass <http://www.openlinksw.com/schemas/oplweb#ProductReleaseFeature> ;
+#       rdfs:subClassOf oplfea:ProductFeature ,
+#                       oplfea:ProductFormatFeature .
+
+oplfea:ProductFormatFeature a owl:Class ;
+      rdfs:label "Product Feature Format"^^xsd:string ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/features#> ;
+      owl:equivalentClass <http://www.openlinksw.com/schemas/oplweb#ProductFormatFeature> ;
+      rdfs:subClassOf oplfea:ProductFamilyFeature .
+
+
+oplfea:ProductFeatureCategory a owl:Class ;
+      rdfs:label "Product Feature Category"^^xsd:string ;
+      rdfs:subClassOf oplfea:Category , oplpro:ProductCategory ;
+      owl:equivalentClass <http://www.openlinksw.com/schemas/oplweb#ProductFeatureCategory> ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/features#> .
+
+oplfea:ProductCategoryFeature a owl:Class ;
+      rdfs:label "Product Category Feature"^^xsd:string ;
+      rdfs:subClassOf oplfea:Category , oplfea:ProductFeatureCategory , oplpro:ProductCategory ;
+      rdfs:comment """Feature scoped specifically to a product category"""@en ;
+      owl:equivalentClass <http://www.openlinksw.com/schemas/oplweb#ProductCategoryFeature> ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/features#> .
+
+oplfea:ProductFamilyFeature a owl:Class ;
+      rdfs:label "Product Family Feature"^^xsd:string ;
+      owl:equivalentClass <http://www.openlinksw.com/schemas/oplweb#ProductFamilyFeature> ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/features#> .
+
+oplfea:Category a owl:Class ;
+      rdfs:label "Category"^^xsd:string ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/features#> ;
+      rdfs:subClassOf oplfea:VirtuosoProductFunctionalityRealm .
+
+## Functionality Realm Sub-Category Definition
+oplfea:VirtuosoProductFunctionalityRealm a owl:Class ;
+      rdfs:label "Functionality Realm"^^xsd:string ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/features#> ;
+      rdfs:comment """A specific functionality sub-category used scope product functionality to a specific realm."""@en ;
+      foaf:depiction <http://media-cache-ak0.pinimg.com/originals/f5/8a/2e/f58a2ea40fdb9fc2ca08976b4cb26750.jpg> ;
+      rdfs:subClassOf oplfea:Category .
+
+<http://media-cache-ak0.pinimg.com/originals/f5/8a/2e/f58a2ea40fdb9fc2ca08976b4cb26750.jpg>
+  rdfs:label "Functionality Realm Diagram & Illustration";
+  rdfs:comment """Virtuoso's varied functionality delivered as part of an open standards compliant hybrid server to data management, integration, and publication."""@en .
+
+oplfea:PartnerProgramFeature a owl:Class ;
+      rdfs:subClassOf oplfea:Feature ;
+      rdfs:label "Partner Program Feature" ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/features#> .
+
+oplfea:VARPartnerFeature a owl:Class ;
+      rdfs:subClassOf oplfea:Feature, oplfea:PartnerProgramFeature ;
+      rdfs:label "Value Added Reseller Partner Feature" ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/features#> .
+
+oplfea:ISVPartnerFeature a owl:Class ;
+      rdfs:subClassOf oplfea:Feature, oplfea:PartnerProgramFeature ;
+      rdfs:label "Independent Software Vendor Partner Feature" ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/features#> .
+
+oplfea:OEMPartnerFeature a owl:Class ;
+      rdfs:subClassOf oplfea:Feature, oplfea:PartnerProgramFeature ;
+      owl:equivalentClass oplfea:ISVPartnerFeature;
+      rdfs:label "Original Equipment Manufacturer Partner Feature" ;
+      skos:altLabel "OEM Partner Feature" ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/features#> .
+
+oplfea:SystemsIntegratorPartnerFeature a owl:Class ;
+      rdfs:subClassOf oplfea:Feature, oplfea:PartnerProgramFeature ;
+      rdfs:label "Systems Integrator Partner Feature" ;
+      rdfs:altLabel "SI Partner Feature" ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/features#> .
+
+# <-------------- Products Feature Properties --------------> #
+
+oplfea:hasScope a owl:ObjectProperty, rdf:Property ;
+      rdfs:label "hasScope"^^xsd:string ;
+      skos:altLabel "Scope"^^xsd:string ;
+      rdfs:comment """This relation sets the scope of a feature. For instance, indicating that a feature is specific to a functionality realm within a product"""@en ;
+      dcterms:description """Has Scope."""@en ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/features#> ;
+      rdfs:domain oplfea:ProductFeature,
+         oplfea:ProductFormatFeature ,
+         oplfea:ProductCategoryFeature ;
+      rdfs:range
+         oplfea:VirtuosoProductFunctionalityRealm ,
+         oplpro:ProductFormat ,
+         oplpro:ProductCategory ,
+         oplpro:ProductFamily ,
+         oplpro:ProductRelease .
+
+oplfea:isScopeOf a owl:ObjectProperty, rdf:Property ;
+      rdfs:label "isScopeOf"^^xsd:string ;
+      skos:altLabel "Is Scope Of"^^xsd:string ;
+      rdfs:comment """Associates a Product Format, Product Family and Product Release with Product Feature, Product Format Feature, Product Category Feature"""@en ;
+      dcterms:description """Has Scope."""@en ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/features#> ;
+      rdfs:domain oplpro:ProductFormat ,
+          oplpro:ProductCategory ;
+      schema:domainIncludes
+          oplpro:ProductFamily ,
+          oplpro:ProductRelease ;
+      rdfs:range
+          oplfea:ProductFeature,
+          oplfea:ProductFormatFeature ,
+          oplfea:ProductCategoryFeature .
+
+# oplpro:ProductFamily owl:disjointWith oplpro:ProductRelease .
+
+oplfea:hasFeature a owl:ObjectProperty, rdf:Property ;
+      rdfs:label "hasFeature"^^xsd:string ;
+      skos:altLabel "Feature"^^xsd:string ;
+      rdfs:subPropertyOf schema:featureList ;
+      rdfs:comment """Associates a Product Release with its Features."""@en ;
+      dcterms:description """Has Feature."""@en ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/features#> ;
+      rdfs:domain oplfea:VirtuosoProductFunctionalityRealm ,
+                  oplpro:ProductCategory ,
+                  oplpro:Product ;
+      schema:domainIncludes oplben:ProductBenefit , oplpro:ProductRelease, oplpro:Product, schema:Product ;
+      rdfs:range oplfea:ProductFeature ;
+      owl:inverseOf oplfea:isFeatureOf .
+
+oplben:ProductBenefit owl:disjointWith oplpro:ProductRelease .
+
+      # old domain values: rdfs:domain oplfea:VirtuosoProductFunctionalityRealm , oplben:ProductBenefit , oplpro:ProductRelease , oplpro:Product , oplpro:ProductFamily , oplpro:ProductCategory ;
+
+oplfea:isFeatureOf a owl:ObjectProperty, rdf:Property ;
+      rdfs:label "isFeatureOf"^^xsd:string ;
+      skos:altLabel "Is Feature Of"^^xsd:string ;
+      rdfs:comment """Associates a Product Feature with Product Benefit, Product Release, Product Family and Product Category"""@en ;
+      dcterms:description """Is Feature Of"""@en ;
+      rdfs:subPropertyOf oplfea:hasScope ;
+      rdfs:isDefinedBy <http://www.openlinksw.com/ontology/features#> ;
+      rdfs:domain oplfea:ProductFeature , oplpro:ProductFormatFeature ;
+      rdfs:range gr:ProductOrServiceModel ,
+          oplpro:ProductRelease ,
+          oplpro:Product ;
+      schema:rangeIncludes
+          oplben:ProductBenefit ,
+          oplpro:ProductCategory ;
+      owl:inverseOf oplfea:hasFeature .
+
+oplben:ProductBenefit owl:disjointWith oplpro:ProductCategory .
+
+xhv:related owl:equivalentProperty rdfs:seeAlso .
+
+foaf:primaryTopic owl:inverseOf xhv:describedby , wdrs:describedby .
+
+wdrs:describedby owl:equivalentProperty xhv:describedby .
+
+rdfs:subClassOf a owl:TransitiveProperty .
+

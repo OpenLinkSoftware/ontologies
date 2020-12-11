@@ -1,0 +1,1717 @@
+#
+# An OpenLink ontology for Professional Network Profiles
+#
+# See:
+# http://developer.linkedin.com/docs/DOC-1258 (LinkedIn API Resource Map)
+# http://developer.linkedin.com/docs/DOC-1061 (Profile Fields)
+#
+
+@prefix xhv:    <http://www.w3.org/1999/xhtml/vocab#> .
+@prefix schema:  <http://schema.org/> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix cvocab:  <http://open-services.net/ns/core#> .
+@prefix bibo:    <http://purl.org/ontology/bibo/> .
+@prefix cc:      <http://creativecommons.org/ns#> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix gr:      <http://purl.org/goodrelations/v1#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix umbelrc: <http://umbel.org/umbel/rc/> .
+@prefix vcard:   <http://www.w3.org/2006/vcard/ns#> .
+@prefix wdrs:    <http://www.w3.org/2007/05/powder-s#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix oplli: <http://www.openlinksw.com/schemas/linkedin#> .
+
+<http://www.openlinksw.com/schemas/linkedin#>
+  a owl:Ontology ;
+  schema:name "OpenLink Ontology for Professional Network Profiles" ;
+  schema:comment """Ontology that defines entity and relation types used to generate RDF based Linked Data from professional
+  networks such as LinkedIn, Xing, etc. Examples include objects, companies, accounts etc."""@en ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:dateCreated "2013-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  schema:dateModified "2015-04-22T13:38:00-05:00"^^xsd:dateTime ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  owl:imports <http://www.w3.org/1999/02/22-rdf-syntax-ns#> , <http://purl.org/dc/terms/> ;
+  wdrs:describedby <http://www.openlinksw.com/schemas/linkedin> ;
+  owl:versionInfo "1.0.0"^^xsd:string ;
+  <http://open.vocab.org/terms/defines>
+    oplli:Object ,
+    oplli:Person ,
+    oplli:JobPosting ,
+    oplli:Certification ,
+    oplli:Company ,
+    oplli:CompanySynopsis ,
+    oplli:Education ,
+    oplli:InstantMessagingAccount ,
+    oplli:JobTitle ,
+    oplli:Language ,
+    oplli:MemberURLResource ,
+    oplli:Patent ,
+    oplli:Position ,
+    oplli:PhoneNumber ,
+    oplli:Publication ,
+    oplli:Recommendation ,
+    oplli:Skill ,
+    oplli:TwitterAccount ,
+    oplli:id ,
+    oplli:companyName ,
+    oplli:countryCode ,
+    oplli:industry ,
+    oplli:isCurrent ,
+    oplli:locationName ,
+    oplli:vcard ,
+    oplli:associations ,
+    oplli:certification ,
+    oplli:companyURL ,
+    oplli:connection ,
+    oplli:dateOfBirth ,
+    oplli:education ,
+    oplli:firstName ,
+    oplli:distance ,
+    oplli:fullProfile ,
+    oplli:hasPhoneNumber ,
+    oplli:hasImAccount ,
+    oplli:hasTwitterAccount ,
+    oplli:headline ,
+    oplli:honors ,
+    oplli:interests ,
+    oplli:language ,
+    oplli:lastName ,
+    oplli:mainAddress ,
+    oplli:memberURLResource ,
+    oplli:numConnections ,
+    oplli:numRecommenders ,
+    oplli:patent ,
+    oplli:pictureURL ,
+    oplli:position ,
+    oplli:proposalComments ,
+    oplli:publication ,
+    oplli:publicProfileURL ,
+    oplli:recommendationsReceived ,
+    oplli:skill ,
+    oplli:specialties ,
+    oplli:summary ,
+    oplli:certificationName ,
+    oplli:certificationAuthority ,
+    oplli:certificationNumber ,
+    oplli:certificationStartDate ,
+    oplli:certificationEndDate ,
+    oplli:companyIndustry ,
+    oplli:companySize ,
+    oplli:companyStatus ,
+    oplli:companyType ,
+    oplli:emailDomain ,
+    oplli:employeeCountRange ,
+    oplli:employs ,
+    oplli:foundedYear ,
+    oplli:isHeadquarters ,
+    oplli:jobVacancies ,
+    oplli:logoURL ,
+    oplli:numFollowers ,
+    oplli:stockExchangeCode ,
+    oplli:stockExchangeName ,
+    oplli:ticker ,
+    oplli:universalName ,
+    oplli:schoolName ,
+    oplli:fieldOfStudy ,
+    oplli:educationStartDate ,
+    oplli:educationEndDate ,
+    oplli:educationDegree ,
+    oplli:educationActivities ,
+    oplli:educationNotes ,
+    oplli:imAccountName ,
+    oplli:imAccountType ,
+    oplli:experienceLevel ,
+    oplli:expirationDate ,
+    oplli:jobFunction ,
+    oplli:jobType ,
+    oplli:postingDate ,
+    oplli:referralBonus ,
+    oplli:salary ,
+    oplli:skillsAndExperience ,
+    oplli:languageName ,
+    oplli:languageProficiency ,
+    oplli:memberSharedResourceURL ,
+    oplli:memberSharedResourceName ,
+    oplli:patentTitle ,
+    oplli:patentSummary ,
+    oplli:patentNumber ,
+    oplli:patentStatusId ,
+    oplli:patentStatus ,
+    oplli:patentOffice ,
+    oplli:inventorId ,
+    oplli:inventorPerson ,
+    oplli:patentDate ,
+    oplli:patentURL ,
+    oplli:company ,
+    oplli:companySynopsis ,
+    oplli:endDate ,
+    oplli:jobTitle ,
+    oplli:positionSummary ,
+    oplli:startDate ,
+    oplli:title ,
+    oplli:phoneNumber ,
+    oplli:phoneNumberType ,
+    oplli:publicationTitle ,
+    oplli:publisherName ,
+    oplli:authorId ,
+    oplli:authorName ,
+    oplli:authorPerson ,
+    oplli:publicationDate ,
+    oplli:publicationURL ,
+    oplli:publicationSummary ,
+    oplli:recommendationType ,
+    oplli:recommender ,
+    oplli:skillName ,
+    oplli:skillProficiency ,
+    oplli:skillYearsOfExperience ,
+    oplli:providerAccountId ,
+    oplli:providerAccountName ;
+  schema:about
+    oplli:Object ,
+    oplli:Person ,
+    oplli:JobPosting ,
+    oplli:Certification ,
+    oplli:Company ,
+    oplli:CompanySynopsis ,
+    oplli:Education ,
+    oplli:InstantMessagingAccount ,
+    oplli:JobTitle ,
+    oplli:Language ,
+    oplli:MemberURLResource ,
+    oplli:Patent ,
+    oplli:Position ,
+    oplli:PhoneNumber ,
+    oplli:Publication ,
+    oplli:Recommendation ,
+    oplli:Skill ,
+    oplli:TwitterAccount ,
+    oplli:id ,
+    oplli:companyName ,
+    oplli:countryCode ,
+    oplli:industry ,
+    oplli:isCurrent ,
+    oplli:locationName ,
+    oplli:vcard ,
+    oplli:associations ,
+    oplli:certification ,
+    oplli:companyURL ,
+    oplli:connection ,
+    oplli:dateOfBirth ,
+    oplli:education ,
+    oplli:firstName ,
+    oplli:distance ,
+    oplli:fullProfile ,
+    oplli:hasPhoneNumber ,
+    oplli:hasImAccount ,
+    oplli:hasTwitterAccount ,
+    oplli:headline ,
+    oplli:honors ,
+    oplli:interests ,
+    oplli:language ,
+    oplli:lastName ,
+    oplli:mainAddress ,
+    oplli:memberURLResource ,
+    oplli:numConnections ,
+    oplli:numRecommenders ,
+    oplli:patent ,
+    oplli:pictureURL ,
+    oplli:position ,
+    oplli:proposalComments ,
+    oplli:publication ,
+    oplli:publicProfileURL ,
+    oplli:recommendationsReceived ,
+    oplli:skill ,
+    oplli:specialties ,
+    oplli:summary ,
+    oplli:certificationName ,
+    oplli:certificationAuthority ,
+    oplli:certificationNumber ,
+    oplli:certificationStartDate ,
+    oplli:certificationEndDate ,
+    oplli:companyIndustry ,
+    oplli:companySize ,
+    oplli:companyStatus ,
+    oplli:companyType ,
+    oplli:emailDomain ,
+    oplli:employeeCountRange ,
+    oplli:employs ,
+    oplli:foundedYear ,
+    oplli:isHeadquarters ,
+    oplli:jobVacancies ,
+    oplli:logoURL ,
+    oplli:numFollowers ,
+    oplli:stockExchangeCode ,
+    oplli:stockExchangeName ,
+    oplli:ticker ,
+    oplli:universalName ,
+    oplli:schoolName ,
+    oplli:fieldOfStudy ,
+    oplli:educationStartDate ,
+    oplli:educationEndDate ,
+    oplli:educationDegree ,
+    oplli:educationActivities ,
+    oplli:educationNotes ,
+    oplli:imAccountName ,
+    oplli:imAccountType ,
+    oplli:experienceLevel ,
+    oplli:expirationDate ,
+    oplli:jobFunction ,
+    oplli:jobType ,
+    oplli:postingDate ,
+    oplli:referralBonus ,
+    oplli:salary ,
+    oplli:skillsAndExperience ,
+    oplli:languageName ,
+    oplli:languageProficiency ,
+    oplli:memberSharedResourceURL ,
+    oplli:memberSharedResourceName ,
+    oplli:patentTitle ,
+    oplli:patentSummary ,
+    oplli:patentNumber ,
+    oplli:patentStatusId ,
+    oplli:patentStatus ,
+    oplli:patentOffice ,
+    oplli:inventorId ,
+    oplli:inventorPerson ,
+    oplli:patentDate ,
+    oplli:patentURL ,
+    oplli:company ,
+    oplli:companySynopsis ,
+    oplli:endDate ,
+    oplli:jobTitle ,
+    oplli:positionSummary ,
+    oplli:startDate ,
+    oplli:title ,
+    oplli:phoneNumber ,
+    oplli:phoneNumberType ,
+    oplli:publicationTitle ,
+    oplli:publisherName ,
+    oplli:authorId ,
+    oplli:authorName ,
+    oplli:authorPerson ,
+    oplli:publicationDate ,
+    oplli:publicationURL ,
+    oplli:publicationSummary ,
+    oplli:recommendationType ,
+    oplli:recommender ,
+    oplli:skillName ,
+    oplli:skillProficiency ,
+    oplli:skillYearsOfExperience ,
+    oplli:providerAccountId ,
+    oplli:providerAccountName .
+
+
+<http://www.openlinksw.com/DAV/data/turtle/cartridge_ontologies/linkedin.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink Ontology for Professional Network Profiles Description Document (Turtle)" ;
+  cc:License <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for Professional Network Profiles"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/linkedin#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/linkedin> ;
+  xhv:describes <http://www.openlinksw.com/schemas/linkedin#> ;
+  schema:about <http://www.openlinksw.com/schemas/linkedin#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/linkedin#> .
+
+<http://www.openlinksw.com/data/turtle/cartridge_ontologies/linkedin.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink Ontology for Professional Network Profiles Description Document (Turtle)" ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for Professional Network Profiles"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/linkedin#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/linkedin> ;
+  xhv:describes <http://www.openlinksw.com/schemas/linkedin#> ;
+  schema:about <http://www.openlinksw.com/schemas/linkedin#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/linkedin#> .
+
+<http://www.openlinksw.com/schemas/linkedin>
+  a foaf:Document ;
+  schema:name """OpenLink Ontology for Professional Network Profiles Description Document"""^^xsd:string ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a document that uses Linked Data oriented content to describe OpenLink Ontology for Professional Network Profiles."""@en ;
+  dcterms:subject <http://www.openlinksw.com/schemas/linkedin#> ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/linkedin#> ;
+  foaf:topic
+    oplli:Object ,
+    oplli:Person ,
+    oplli:JobPosting ,
+    oplli:Certification ,
+    oplli:Company ,
+    oplli:CompanySynopsis ,
+    oplli:Education ,
+    oplli:InstantMessagingAccount ,
+    oplli:JobTitle ,
+    oplli:Language ,
+    oplli:MemberURLResource ,
+    oplli:Patent ,
+    oplli:Position ,
+    oplli:PhoneNumber ,
+    oplli:Publication ,
+    oplli:Recommendation ,
+    oplli:Skill ,
+    oplli:TwitterAccount ,
+    oplli:id ,
+    oplli:companyName ,
+    oplli:countryCode ,
+    oplli:industry ,
+    oplli:isCurrent ,
+    oplli:locationName ,
+    oplli:vcard ,
+    oplli:associations ,
+    oplli:certification ,
+    oplli:companyURL ,
+    oplli:connection ,
+    oplli:dateOfBirth ,
+    oplli:education ,
+    oplli:firstName ,
+    oplli:distance ,
+    oplli:fullProfile ,
+    oplli:hasPhoneNumber ,
+    oplli:hasImAccount ,
+    oplli:hasTwitterAccount ,
+    oplli:headline ,
+    oplli:honors ,
+    oplli:interests ,
+    oplli:language ,
+    oplli:lastName ,
+    oplli:mainAddress ,
+    oplli:memberURLResource ,
+    oplli:numConnections ,
+    oplli:numRecommenders ,
+    oplli:patent ,
+    oplli:pictureURL ,
+    oplli:position ,
+    oplli:proposalComments ,
+    oplli:publication ,
+    oplli:publicProfileURL ,
+    oplli:recommendationsReceived ,
+    oplli:skill ,
+    oplli:specialties ,
+    oplli:summary ,
+    oplli:certificationName ,
+    oplli:certificationAuthority ,
+    oplli:certificationNumber ,
+    oplli:certificationStartDate ,
+    oplli:certificationEndDate ,
+    oplli:companyIndustry ,
+    oplli:companySize ,
+    oplli:companyStatus ,
+    oplli:companyType ,
+    oplli:emailDomain ,
+    oplli:employeeCountRange ,
+    oplli:employs ,
+    oplli:foundedYear ,
+    oplli:isHeadquarters ,
+    oplli:jobVacancies ,
+    oplli:logoURL ,
+    oplli:numFollowers ,
+    oplli:stockExchangeCode ,
+    oplli:stockExchangeName ,
+    oplli:ticker ,
+    oplli:universalName ,
+    oplli:schoolName ,
+    oplli:fieldOfStudy ,
+    oplli:educationStartDate ,
+    oplli:educationEndDate ,
+    oplli:educationDegree ,
+    oplli:educationActivities ,
+    oplli:educationNotes ,
+    oplli:imAccountName ,
+    oplli:imAccountType ,
+    oplli:experienceLevel ,
+    oplli:expirationDate ,
+    oplli:jobFunction ,
+    oplli:jobType ,
+    oplli:postingDate ,
+    oplli:referralBonus ,
+    oplli:salary ,
+    oplli:skillsAndExperience ,
+    oplli:languageName ,
+    oplli:languageProficiency ,
+    oplli:memberSharedResourceURL ,
+    oplli:memberSharedResourceName ,
+    oplli:patentTitle ,
+    oplli:patentSummary ,
+    oplli:patentNumber ,
+    oplli:patentStatusId ,
+    oplli:patentStatus ,
+    oplli:patentOffice ,
+    oplli:inventorId ,
+    oplli:inventorPerson ,
+    oplli:patentDate ,
+    oplli:patentURL ,
+    oplli:company ,
+    oplli:companySynopsis ,
+    oplli:endDate ,
+    oplli:jobTitle ,
+    oplli:positionSummary ,
+    oplli:startDate ,
+    oplli:title ,
+    oplli:phoneNumber ,
+    oplli:phoneNumberType ,
+    oplli:publicationTitle ,
+    oplli:publisherName ,
+    oplli:authorId ,
+    oplli:authorName ,
+    oplli:authorPerson ,
+    oplli:publicationDate ,
+    oplli:publicationURL ,
+    oplli:publicationSummary ,
+    oplli:recommendationType ,
+    oplli:recommender ,
+    oplli:skillName ,
+    oplli:skillProficiency ,
+    oplli:skillYearsOfExperience ,
+    oplli:providerAccountId ,
+    oplli:providerAccountName .
+
+
+
+# ---------------------------------------------------------------------------
+# Professional Network Profiles classes
+#
+
+oplli:Object
+    a owl:Class;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    rdfs:label "Professional Network Profiles object" ;
+    rdfs:comment """A base class representing all Professional Network Profiles objects"""@en .
+
+oplli:Person
+    a owl:Class ;
+    rdfs:subClassOf oplli:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    rdfs:label "Person" ;
+    rdfs:comment """A Professional Network Profiles member"""@en .
+
+oplli:JobPosting
+    a owl:Class ;
+    rdfs:subClassOf oplli:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    rdfs:label "Job Posting" ;
+    rdfs:comment """A Professional Network Profiles job posting"""@en .
+
+# ---------------------------------------------------------------------------
+# All the following classes describe properties of the Person class
+
+oplli:Certification
+    a owl:Class ;
+    rdfs:subClassOf oplli:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    rdfs:label "Certification" ;
+    rdfs:comment """A certification held by a Professional Network Profiles member"""@en .
+
+oplli:Company
+    a owl:Class ;
+    rdfs:subClassOf oplli:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    rdfs:label "Company" ;
+    rdfs:comment """A Professional Network Profiles full profile of a company"""@en .
+
+oplli:CompanySynopsis
+    a owl:Class ;
+    rdfs:subClassOf oplli:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    rdfs:label "CompanySynopsis" ;
+    rdfs:comment """A Professional Network Profiles short profile of a company"""@en .
+
+oplli:Education
+    a owl:Class ;
+    rdfs:subClassOf oplli:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    rdfs:label "Education" ;
+    rdfs:comment """An education course undertaken by a Professional Network Profiles member"""@en .
+
+oplli:InstantMessagingAccount
+    a owl:Class ;
+    rdfs:subClassOf oplli:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    rdfs:label "Instant messaging account" ;
+    rdfs:comment """An instant messaging account belonging to a Professional Network Profiles member"""@en .
+
+oplli:JobTitle
+    a owl:Class ;
+    rdfs:subClassOf oplli:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    rdfs:label "JobTitle" ;
+    rdfs:comment """The job title of a position held by a Professional Network Profiles member"""@en .
+
+oplli:Language
+    a owl:Class ;
+    rdfs:subClassOf oplli:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    rdfs:label "Language" ;
+    rdfs:comment """A language spoken by a Professional Network Profiles member"""@en .
+
+oplli:MemberURLResource
+    a owl:Class ;
+    rdfs:subClassOf oplli:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    rdfs:label "Member URL resource" ;
+    rdfs:comment """A URL a member has chosen to share in their Professional Network Profiles profile"""@en .
+
+oplli:Patent
+    a owl:Class ;
+    rdfs:subClassOf oplli:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    rdfs:label "Patent" ;
+    rdfs:comment """A patent authored by a Professional Network Profiles member"""@en .
+
+oplli:Position
+    a owl:Class ;
+    rdfs:subClassOf oplli:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    rdfs:label "Position" ;
+    rdfs:comment """A position held by a Professional Network Profiles member"""@en .
+
+oplli:PhoneNumber
+    a owl:Class ;
+    rdfs:subClassOf oplli:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    rdfs:label "Phone number" ;
+    rdfs:comment """A phone number belonging to a Professional Network Profiles member"""@en .
+
+oplli:Publication
+    a owl:Class ;
+    rdfs:subClassOf oplli:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    rdfs:label "Publication" ;
+    rdfs:comment """A publication authored by a Professional Network Profiles member"""@en .
+
+oplli:Recommendation
+    a owl:Class ;
+    rdfs:subClassOf oplli:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    rdfs:label "Recommendation" ;
+    rdfs:comment """A recommendation of one Professional Network Profiles member by another"""@en .
+
+oplli:Skill
+    a owl:Class ;
+    rdfs:subClassOf oplli:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    rdfs:label "Skill" ;
+    rdfs:comment """A particular skill of a Professional Network Profiles member"""@en .
+
+oplli:TwitterAccount
+    a owl:Class ;
+    rdfs:subClassOf oplli:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    rdfs:label "Twitter account" ;
+    rdfs:comment """A Twitter account belonging to a Professional Network Profiles member"""@en .
+
+# ---------------------------------------------------------------------------
+# Professional Network Profiles Profile fields
+#
+
+#
+# Object properties
+#
+oplli:id
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "id" ;
+    rdfs:label "id" ;
+    rdfs:comment """A Professional Network Profiles object ID"""@en ;
+    rdfs:domain oplli:Object;
+    rdfs:range xsd:string .
+
+#
+# Shared properties
+#
+oplli:companyName
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "company name" ;
+    rdfs:label "companyName" ;
+    rdfs:comment """The name of a company"""@en ;
+    schema:domainIncludes
+       oplli:Company ,
+       oplli:JobPosting ;
+    rdfs:range xsd:string .
+
+oplli:Company owl:disjointWith oplli:JobPosting .
+
+oplli:countryCode
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "country code" ;
+    rdfs:label "countryCode" ;
+    rdfs:comment """Country code for a Professional Network Profiles member or job location (ISO 3166-1 alpha-2 standard)"""@en ;
+    schema:domainIncludes
+       oplli:Person ,
+       oplli:JobPosting ;
+    rdfs:range xsd:string .
+
+oplli:Person owl:disjointWith oplli:JobPosting .
+
+oplli:industry
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "industry" ;
+    rdfs:label "industry" ;
+    rdfs:comment """The industry a Professional Network Profiles member works in or a job posting relates to"""@en ;
+    schema:domainIncludes
+       oplli:Person ,
+       oplli:JobPosting ;
+    rdfs:range xsd:string .
+
+oplli:isCurrent
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "is current" ;
+    rdfs:label "isCurrent" ;
+    rdfs:comment """Indicates whether a position, company location (described by a VCard) or job posting is current"""@en ;
+    rdfs:domain
+       oplli:Position ,
+       oplli:JobPosting ,
+       vcard:VCard ;
+    rdfs:range xsd:boolean .
+
+oplli:locationName
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "location name" ;
+    rdfs:label "locationName" ;
+    rdfs:comment """Generic name of the location of a Professional Network Profiles member or advertised job"""@en ;
+    rdfs:domain
+       oplli:Person ,
+       oplli:JobPosting ;
+    rdfs:range xsd:string .
+
+oplli:vcard
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "vcard" ;
+    rdfs:label "vcard" ;
+    rdfs:comment """A VCard for a Professional Network Profiles individual or company"""@en ;
+    schema:domainIncludes
+       oplli:Person ,
+       oplli:Company ;
+    rdfs:range vcard:VCard .
+
+oplli:Person owl:disjointWith oplli:Company .
+#
+# Person (profile) properties
+#
+oplli:associations
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "associations" ;
+    rdfs:label "associations" ;
+    rdfs:comment """A list of the associations a member has"""@en ;
+    rdfs:domain oplli:Person ;
+    rdfs:range xsd:string .
+
+oplli:certification
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "certification" ;
+    rdfs:label "certification" ;
+    rdfs:comment """A certification held by a member"""@en ;
+    rdfs:domain oplli:Person ;
+    rdfs:range oplli:Certification .
+
+oplli:companyURL
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "company url" ;
+    rdfs:label "companyURL" ;
+    rdfs:comment """URL to a company site"""@en ;
+    schema:domainIncludes
+       oplli:Person ,
+       oplli:Company ;
+    rdfs:range rdfs:Resource .
+
+oplli:connection
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "connection" ;
+    rdfs:label "connection" ;
+    rdfs:comment """A Professional Network Profiles member connected to the current member"""@en ;
+    rdfs:domain oplli:Person ;
+    rdfs:range oplli:Person .
+
+oplli:dateOfBirth
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "date of birth" ;
+    rdfs:label "dateOfBirth" ;
+    rdfs:comment """A member's date of birth"""@en ;
+    rdfs:domain oplli:Person ;
+    rdfs:range xsd:date .
+
+oplli:education
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "education" ;
+    rdfs:label "education" ;
+    rdfs:comment """A course of education followed by a member"""@en ;
+    rdfs:domain oplli:Person ;
+    rdfs:range oplli:Education .
+
+oplli:firstName
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "first name" ;
+    rdfs:label "firstName" ;
+    rdfs:comment """A member's first name"""@en ;
+    rdfs:domain oplli:Person ;
+    rdfs:range xsd:string .
+
+oplli:distance
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "distance" ;
+    rdfs:label "distance" ;
+    rdfs:comment """The degree of separation of this member from the member who fetched the profile"""@en ;
+    rdfs:domain oplli:Person;
+    rdfs:range xsd:integer.
+
+oplli:fullProfile
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "full profile" ;
+    rdfs:label "fullProfile" ;
+    rdfs:comment """URL to the full profile of a Professional Network Profiles member or company"""@en;
+    rdfs:domain oplli:Person ;
+    rdfs:range rdfs:Resource .
+
+
+oplli:hasPhoneNumber
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "phone number" ;
+    rdfs:label "hasPhoneNumber" ;
+    rdfs:comment """A member's phone number"""@en ;
+    rdfs:domain oplli:Person ;
+    rdfs:range oplli:PhoneNumber .
+
+oplli:hasImAccount
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "im account" ;
+    rdfs:label "hasImAccount" ;
+    rdfs:comment """An instant messaging account belonging to a member"""@en ;
+    rdfs:domain oplli:Person ;
+    rdfs:range oplli:InstantMessagingAccount .
+
+oplli:hasTwitterAccount
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "twitter account" ;
+    rdfs:label "hasTwitterAccount" ;
+    rdfs:comment """A Twitter account belonging to a member"""@en ;
+    rdfs:domain oplli:Person ;
+    rdfs:range oplli:TwitterAccount .
+
+oplli:headline
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "headline" ;
+    rdfs:label "headline" ;
+    rdfs:comment """A member's headline (often their job title)"""@en ;
+    rdfs:domain oplli:Person;
+    rdfs:range xsd:string .
+
+oplli:honors
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "honors" ;
+    rdfs:label "honors" ;
+    rdfs:comment """A list of any honors a member may have"""@en ;
+    rdfs:domain oplli:Person ;
+    rdfs:range xsd:string .
+
+oplli:interests
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "interests" ;
+    rdfs:label "interests" ;
+    rdfs:comment """A description of the member's interests"""@en ;
+    rdfs:domain oplli:Person ;
+    rdfs:range xsd:string .
+
+oplli:language
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "language" ;
+    rdfs:label "language" ;
+    rdfs:comment """A language spoken by a member"""@en ;
+    rdfs:domain oplli:Person ;
+    rdfs:range oplli:Language .
+
+oplli:lastName
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "last name" ;
+    rdfs:label "lastName" ;
+    rdfs:comment """A member's last name"""@en ;
+    rdfs:domain oplli:Person ;
+    rdfs:range xsd:string .
+
+oplli:mainAddress
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "main address" ;
+    rdfs:label "mainAddress" ;
+    rdfs:comment """A member's main address (could be home or work etc.)"""@en ;
+    rdfs:domain oplli:Person ;
+    rdfs:range xsd:string .
+
+oplli:memberURLResource
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "member url resource" ;
+    rdfs:label "memberURLResource" ;
+    rdfs:comment """A URL a member has chosen to share in their Professional Network Profiles profile"""@en ;
+    rdfs:domain oplli:Person ;
+    rdfs:range oplli:MemberURLResource .
+
+oplli:numConnections
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "number of connections" ;
+    rdfs:label "numConnections" ;
+    rdfs:comment """Number of connections the member has"""@en ;
+    rdfs:domain oplli:Person ;
+    rdfs:range xsd:integer .
+
+oplli:numRecommenders
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "number of recommendations" ;
+    rdfs:label "numRecommenders" ;
+    rdfs:comment """Number of recommendations a member has"""@en ;
+    rdfs:domain oplli:Person ;
+    rdfs:range xsd:integer .
+
+oplli:patent
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "patent" ;
+    rdfs:label "patent" ;
+    rdfs:comment """A patent authored by a member"""@en ;
+    rdfs:domain oplli:Person ;
+    rdfs:range oplli:Patent .
+
+oplli:pictureURL
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "profile picture URL" ;
+    rdfs:label "pictureURL" ;
+    rdfs:comment """URL of a member's photograph displayed in their Professional Network Profiles profile"""@en ;
+    rdfs:domain oplli:Person ;
+    rdfs:range rdfs:Resource .
+
+oplli:position
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "position" ;
+    rdfs:label "position" ;
+    rdfs:comment """A position the member holds or has had"""@en ;
+    rdfs:domain oplli:Person ;
+    rdfs:range oplli:Position .
+
+oplli:proposalComments
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "proposal comments" ;
+    rdfs:label "proposalComments" ;
+    rdfs:comment """A member's description of how they approach proposals"""@en ;
+    rdfs:domain oplli:Person ;
+    rdfs:range xsd:string .
+
+oplli:publication
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "publication" ;
+    rdfs:label "publication" ;
+    rdfs:comment """A publication authored by a member"""@en ;
+    rdfs:domain oplli:Person ;
+    rdfs:range oplli:Publication .
+
+oplli:publicProfileURL
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "linkedIn/xing profile url" ;
+    rdfs:label "hasProfileURL" ;
+    rdfs:comment """URL to a Professional Network Profiles member's public profile"""@en ;
+    rdfs:domain oplli:Person ;
+    rdfs:range rdfs:Resource .
+
+oplli:recommendationsReceived
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "received recommendation" ;
+    rdfs:label "recommendationsReceived" ;
+    rdfs:comment """A recommendation of a member"""@en ;
+    rdfs:domain oplli:Person ;
+    rdfs:range oplli:Recommendation .
+
+oplli:skill
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "skill" ;
+    rdfs:label "skill" ;
+    rdfs:comment """A skill possessed by a member"""@en ;
+    rdfs:domain oplli:Person ;
+    rdfs:range oplli:Skill .
+
+oplli:specialties
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "specialties" ;
+    rdfs:label "specialties" ;
+    rdfs:comment """A member's description of their professional specialties"""@en ;
+    rdfs:domain oplli:Person ;
+    rdfs:range xsd:string .
+
+oplli:summary
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "summary" ;
+    rdfs:label "summary" ;
+    rdfs:comment """A member's description of their professional profile"""@en ;
+    rdfs:domain oplli:Person ;
+    rdfs:range xsd:string .
+
+# ---------------------------------------------------------------------------
+# All the following properties belong to classes which are themselves
+# properties of the Person class
+
+#
+# Certification properties
+#
+oplli:certificationName
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "certification name" ;
+    rdfs:label "certificationName" ;
+    rdfs:comment """The name of a certification"""@en ;
+    rdfs:domain oplli:Certification ;
+    rdfs:range xsd:string .
+
+oplli:certificationAuthority
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "certification authority" ;
+    rdfs:label "certificationAuthority" ;
+    rdfs:comment """The name of a certification's issuing body"""@en ;
+    rdfs:domain oplli:Certification ;
+    rdfs:range xsd:string .
+
+oplli:certificationNumber
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "certification number" ;
+    rdfs:label "certificationNumber" ;
+    rdfs:comment """The licence number for a certification"""@en ;
+    rdfs:domain oplli:Certification ;
+    rdfs:range xsd:string .
+
+oplli:certificationStartDate
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "certification start date" ;
+    rdfs:label "certificationStartDate" ;
+    rdfs:comment """The certification start date"""@en ;
+    rdfs:domain oplli:Certification ;
+    rdfs:range xsd:date .
+
+oplli:certificationEndDate
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "certification end date" ;
+    rdfs:label "certificationEndDate" ;
+    rdfs:comment """The certification end date"""@en ;
+    rdfs:domain oplli:Certification ;
+    rdfs:range xsd:date .
+
+#
+# Company properties
+#
+oplli:companyIndustry
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "industry" ;
+    rdfs:label "companyIndustry" ;
+    rdfs:comment """The industry in which the company operates"""@en ;
+    rdfs:domain oplli:Company ;
+    rdfs:range xsd:string .
+
+oplli:companySize
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "company size" ;
+    rdfs:label "companySize" ;
+    rdfs:comment """Number of employees at the company"""@en ;
+    rdfs:domain oplli:Company ;
+    rdfs:range xsd:string .
+
+oplli:companyStatus
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "company status" ;
+    rdfs:label "companyStatus" ;
+    rdfs:comment """Company operating status"""@en ;
+    rdfs:domain oplli:Company ;
+    rdfs:range xsd:string .
+
+oplli:companyType
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "company type" ;
+    rdfs:label "companyType" ;
+    rdfs:comment """Indicates if the company is public or private"""@en ;
+    rdfs:domain oplli:Company ;
+    rdfs:range xsd:string .
+
+oplli:emailDomain
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "email domain" ;
+    rdfs:label "emailDomain" ;
+    rdfs:comment """Company email domains"""@en ;
+    rdfs:domain oplli:Company ;
+    rdfs:range xsd:string .
+
+oplli:employeeCountRange
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "employee count range" ;
+    rdfs:label "employeeCountRange" ;
+    rdfs:comment """Number of employees at the company (expressed as a range code and number range)"""@en ;
+    rdfs:domain oplli:Company ;
+    rdfs:range xsd:string .
+
+oplli:employs
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "employs" ;
+    rdfs:label "employs" ;
+    rdfs:comment """Company employees"""@en ;
+    rdfs:domain oplli:Company ;
+    rdfs:range oplli:Person .
+
+oplli:foundedYear
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "founded year" ;
+    rdfs:label "foundedYear" ;
+    rdfs:comment """Year listed for the company's founding"""@en ;
+    rdfs:domain oplli:Company ;
+    rdfs:range xsd:string .
+
+oplli:isHeadquarters
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "is headquarters" ;
+    rdfs:label "isHeadquarters" ;
+    rdfs:comment """Indicates whether a company location (described by a VCard) is the company headquarters"""@en ;
+    rdfs:domain vcard:VCard ;
+    rdfs:range xsd:boolean .
+
+oplli:jobVacancies
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "job vacancies" ;
+    rdfs:label "jobVacancies" ;
+    rdfs:comment """Company job vacancies posted on Professional Network Profiles"""@en ;
+    rdfs:domain oplli:Company ;
+    rdfs:range oplli:JobPosting .
+
+oplli:logoURL
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "company logo URL" ;
+    rdfs:label "logoURL" ;
+    rdfs:comment """URL for the company logo in JPG format"""@en ;
+    rdfs:domain oplli:Company ;
+    rdfs:range rdfs:Resource .
+
+oplli:numFollowers
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/twitter> ;
+    skos:altLabel "number of followers" ;
+    rdfs:label "numFollowers" ;
+    rdfs:comment """The number of followers for the company's profile"""@en ;
+    rdfs:domain oplli:Company ;
+    rdfs:range xsd:integer .
+
+oplli:stockExchangeCode
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "stock exchange code" ;
+    rdfs:label "stockExchangeCode" ;
+    rdfs:comment """Code identifying the stock exchange the company is in"""@en ;
+    rdfs:domain oplli:Company ;
+    rdfs:range xsd:string .
+
+oplli:stockExchangeName
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "stock exchange name" ;
+    rdfs:label "stockExchangeName" ;
+    rdfs:comment """Stock exchange the company is in"""@en ;
+    rdfs:domain oplli:Company ;
+    rdfs:range xsd:string .
+
+oplli:ticker
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "ticker" ;
+    rdfs:label "ticker" ;
+    rdfs:comment """The stock market name for the company"""@en ;
+    rdfs:domain oplli:Company ;
+    rdfs:range xsd:string .
+
+oplli:universalName
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "universal name" ;
+    rdfs:label "universalName" ;
+    rdfs:comment """The unique string identifier used by Professional Network Profiles for a company"""@en ;
+    rdfs:domain oplli:Company ;
+    rdfs:range xsd:string .
+
+#
+# Education properties
+#
+oplli:schoolName
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "school name" ;
+    rdfs:label "schoolName" ;
+    rdfs:comment """The name of an educational establishment attended by a Professional Network Profiles member"""@en ;
+    rdfs:domain oplli:Education ;
+    rdfs:range xsd:string .
+
+oplli:fieldOfStudy
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "field of study" ;
+    rdfs:label "fieldOfStudy" ;
+    rdfs:comment """The field of study at the school"""@en ;
+    rdfs:domain oplli:Education ;
+    rdfs:range xsd:string .
+
+oplli:educationStartDate
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "education start date" ;
+    rdfs:label "educationStartDate" ;
+    rdfs:comment """Start date at the school"""@en ;
+    rdfs:domain oplli:Education ;
+    rdfs:range xsd:date .
+
+oplli:educationEndDate
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "educationEndDate" ;
+    rdfs:label "educationEndDate" ;
+    rdfs:comment """End date at the school"""@en ;
+    rdfs:domain oplli:Education ;
+    rdfs:range xsd:date .
+
+oplli:educationDegree
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "education degree" ;
+    rdfs:label "educationDegree" ;
+    rdfs:comment """The degree received at this institution"""@en ;
+    rdfs:domain oplli:Education ;
+    rdfs:range xsd:string .
+
+oplli:educationActivities
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "education activities" ;
+    rdfs:label "educationActivities" ;
+    rdfs:comment """The activities the member was involved in while a student at this institution"""@en ;
+    rdfs:domain oplli:Education ;
+    rdfs:range xsd:string .
+
+oplli:educationNotes
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "education notes" ;
+    rdfs:label "educationNotes" ;
+    rdfs:comment """Additional details about the member's studies"""@en ;
+    rdfs:domain oplli:Education ;
+    rdfs:range xsd:string .
+
+#
+# InstantMessagingAccount properties
+#
+oplli:imAccountName
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "im account name" ;
+    rdfs:label "imAccountName" ;
+    rdfs:comment """The name of an instant messaging account"""@en ;
+    rdfs:domain oplli:InstantMessagingAccount ;
+    rdfs:range xsd:string .
+
+oplli:imAccountType
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "im account type" ;
+    rdfs:label "imAccountType" ;
+    rdfs:comment """The type of an instant messaging account (msn, yahoo, skype etc)"""@en ;
+    rdfs:domain oplli:InstantMessagingAccount ;
+    rdfs:range xsd:string .
+
+#
+# JobPosting properties
+#
+oplli:experienceLevel
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "experience level" ;
+    rdfs:label "experienceLevel" ;
+    rdfs:comment """Experience level required for a posted position"""@en ;
+    rdfs:domain oplli:JobPosting ;
+    rdfs:range xsd:string .
+
+oplli:expirationDate
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "expiration date" ;
+    rdfs:label "expirationDate" ;
+    rdfs:comment """The expiry date of a job posting"""@en ;
+    rdfs:domain oplli:JobPosting ;
+    rdfs:range xsd:date .
+
+oplli:jobFunction
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "job function" ;
+    rdfs:label "jobFunction" ;
+    rdfs:comment """The job function of a posted position"""@en ;
+    rdfs:domain oplli:JobPosting ;
+    rdfs:range xsd:string .
+
+oplli:jobType
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "job type" ;
+    rdfs:label "jobType" ;
+    rdfs:comment """Job type for a posted position"""@en ;
+    rdfs:domain oplli:JobPosting ;
+    rdfs:range xsd:string .
+
+oplli:postingDate
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "job posting date" ;
+    rdfs:label "postingDate" ;
+    rdfs:comment """Date a position was posted"""@en ;
+    rdfs:domain oplli:JobPosting ;
+    rdfs:range xsd:date .
+
+oplli:referralBonus
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "job referral bonus" ;
+    rdfs:label "referralBonus" ;
+    rdfs:comment """Information about any referral bonus"""@en ;
+    rdfs:domain oplli:JobPosting ;
+    rdfs:range xsd:string .
+
+oplli:salary
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "salary" ;
+    rdfs:label "salary" ;
+    rdfs:comment """The salary listed for a posted job"""@en ;
+    rdfs:domain oplli:JobPosting ;
+    rdfs:range xsd:string .
+
+oplli:skillsAndExperience
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "skills and experience" ;
+    rdfs:label "skillsAndExperience" ;
+    rdfs:comment """Description of the skills and experience needed for the posted position"""@en ;
+    rdfs:domain oplli:JobPosting ;
+    rdfs:range xsd:string .
+
+#
+# Language properties
+#
+oplli:languageName
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "language name" ;
+    rdfs:label "languageName" ;
+    rdfs:comment """The name of a language spoken by a Professional Network Profiles member"""@en ;
+    rdfs:domain oplli:Language ;
+    rdfs:range xsd:string .
+
+oplli:languageProficiency
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "language proficiency" ;
+    rdfs:label "languageProficiency" ;
+    rdfs:comment """An indication of a Professional Network Profiles member's fluency in a language"""@en ;
+    rdfs:domain oplli:Language ;
+    rdfs:range xsd:string .
+
+#
+# MemberURLResource properties
+#
+oplli:memberSharedResourceURL
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "shared resource url" ;
+    rdfs:label "memberSharedResourceURL" ;
+    rdfs:comment """URL of resource being shared by a Professional Network Profiles member"""@en ;
+    rdfs:domain oplli:MemberURLResource ;
+    rdfs:range rdfs:Resource .
+
+oplli:memberSharedResourceName
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "shared resource name" ;
+    rdfs:label "memberSharedResourceName" ;
+    rdfs:comment """Label given to a shared resource URL by the member"""@en ;
+    rdfs:domain oplli:MemberURLResource ;
+    rdfs:range xsd:string .
+
+#
+# Patent properties
+#
+oplli:patentTitle
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "patent title" ;
+    rdfs:label "patentTitlet" ;
+    rdfs:comment """The patent title"""@en ;
+    rdfs:domain oplli:Patent ;
+    rdfs:range xsd:string .
+
+oplli:patentSummary
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "patent summary" ;
+    rdfs:label "patentSummary" ;
+    rdfs:comment """The short summary of a patent"""@en ;
+    rdfs:domain oplli:Patent ;
+    rdfs:range xsd:string .
+
+oplli:patentNumber
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "patent number" ;
+    rdfs:label "patentNumber" ;
+    rdfs:comment """Patent or application number"""@en ;
+    rdfs:domain oplli:Patent ;
+    rdfs:range xsd:string .
+
+oplli:patentStatusId
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "patent status id" ;
+    rdfs:label "patentStatusId" ;
+    rdfs:comment """An ID indicating whether this is a granted patent(1) or a patent application(0)"""@en ;
+    rdfs:domain oplli:Patent ;
+    rdfs:range xsd:integer .
+
+oplli:patentStatus
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "patent status" ;
+    rdfs:label "patentStatus" ;
+    rdfs:comment """A string ('Application' or 'Patent') indicating whether this is a granted patent or a patent application"""@en ;
+    rdfs:domain oplli:Patent ;
+    rdfs:range xsd:integer .
+
+oplli:patentOffice
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "patent office" ;
+    rdfs:label "patentOffice" ;
+    rdfs:comment """The patent issuing body"""@en ;
+    rdfs:domain oplli:Patent ;
+    rdfs:range xsd:string .
+
+oplli:inventorId
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "inventor id" ;
+    rdfs:label "inventorId" ;
+    rdfs:comment """The ID of an inventor associated with this patent"""@en ;
+    rdfs:domain oplli:Patent ;
+    rdfs:range xsd:string .
+
+oplli:inventorPerson
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "inventor person" ;
+    rdfs:label "inventorPerson" ;
+    rdfs:comment """The Professional Network Profiles profile of an inventor associated with this patent"""@en ;
+    rdfs:domain oplli:Patent ;
+    rdfs:range oplli:Person .
+
+oplli:patentDate
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "patent date" ;
+    rdfs:label "patentDate" ;
+    rdfs:comment """Date when the patent application was filed or the patent was granted"""@en ;
+    rdfs:domain oplli:Patent ;
+    rdfs:range xsd:date .
+
+oplli:patentURL
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "patent url" ;
+    rdfs:label "patentURL" ;
+    rdfs:comment """URL to the patent"""@en ;
+    rdfs:domain oplli:Patent ;
+    rdfs:range rdfs:Resource .
+
+#
+# Position properties
+#
+oplli:company
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "company" ;
+    rdfs:label "company" ;
+    rdfs:comment """Full profile of the company a Professional Network Profiles member works for"""@en ;
+    rdfs:domain oplli:Position ;
+    rdfs:range oplli:Company .
+
+oplli:companySynopsis
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "company synopsis" ;
+    rdfs:label "companySynopsis" ;
+    rdfs:comment """Short profile of the company a Professional Network Profiles member works for"""@en ;
+    rdfs:domain oplli:Position ;
+    rdfs:range oplli:CompanySynopsis .
+
+oplli:endDate
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "end date" ;
+    rdfs:label "endDate" ;
+    rdfs:comment """Date when a member left a position"""@en ;
+    rdfs:domain oplli:Position ;
+    rdfs:range xsd:date .
+
+oplli:jobTitle
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "job title" ;
+    rdfs:label "jobTitle" ;
+    rdfs:comment """The job title of a position held by a Professional Network Profiles member"""@en ;
+    rdfs:domain oplli:Position ;
+    rdfs:range oplli:JobTitle .
+
+oplli:positionSummary
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "position summary" ;
+    rdfs:label "positionSummary" ;
+    rdfs:comment """A summary of a member's position or an advertised position"""@en ;
+    rdfs:domain
+       oplli:Position ,
+       oplli:JobPosting ;
+    rdfs:range xsd:string .
+
+oplli:startDate
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "start date" ;
+    rdfs:label "startDate" ;
+    rdfs:comment """Date when a member started a position"""@en ;
+    rdfs:domain oplli:Position ;
+    rdfs:range xsd:date .
+
+oplli:title
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "title" ;
+    rdfs:label "title" ;
+    rdfs:comment """Title of a position held by a Professional Network Profiles member or described in a job posting"""@en ;
+    rdfs:domain
+       oplli:JobPosting ,
+       oplli:JobTitle ;
+    rdfs:range xsd:string .
+
+#
+# PhoneNumber properties
+#
+oplli:phoneNumber
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "phone number" ;
+    rdfs:label "phoneNumber" ;
+    rdfs:comment """Phone number"""@en ;
+    rdfs:domain oplli:PhoneNumber ;
+    rdfs:range xsd:string .
+
+oplli:phoneNumberType
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "phone number type" ;
+    rdfs:label "phoneNumberType" ;
+    rdfs:comment """Phone number type (home, work, mobile)"""@en ;
+    rdfs:domain oplli:PhoneNumber ;
+    rdfs:range xsd:string .
+
+#
+# Publication properties
+#
+oplli:publicationTitle
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "publication title" ;
+    rdfs:label "publicationTitle" ;
+    rdfs:comment """The title of a publication listed in Professional Network Profiles"""@en ;
+    rdfs:domain oplli:Publication;
+    rdfs:range xsd:string .
+
+oplli:publisherName
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "publisher name" ;
+    rdfs:label "publisherName" ;
+    rdfs:comment """The name of the publisher of a publication"""@en ;
+    rdfs:domain oplli:Publication;
+    rdfs:range xsd:string .
+
+oplli:authorId
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "author id" ;
+    rdfs:label "authorId" ;
+    rdfs:comment """The Professional Network Profiles ID of an author of a publication"""@en ;
+    rdfs:domain oplli:Publication;
+    rdfs:range xsd:string .
+
+oplli:authorName
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "author name" ;
+    rdfs:label "authorName" ;
+    rdfs:comment """The name of an author of a publication"""@en ;
+    rdfs:domain oplli:Publication;
+    rdfs:range xsd:string .
+
+oplli:authorPerson
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "author Professional Network Profiles name" ;
+    rdfs:label "authorPerson" ;
+    rdfs:comment """The Professional Network Profiles member name of an author of a publication"""@en ;
+    rdfs:domain oplli:Publication;
+    rdfs:range xsd:string .
+
+oplli:publicationDate
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "publication date" ;
+    rdfs:label "publicationDate" ;
+    rdfs:comment """The date when a publication was published"""@en ;
+    rdfs:domain oplli:Publication;
+    rdfs:range xsd:date .
+
+oplli:publicationURL
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "publication url" ;
+    rdfs:label "publicationURL" ;
+    rdfs:comment """URL of a publication"""@en ;
+    rdfs:domain oplli:Publication;
+    rdfs:range rdfs:Resource .
+
+oplli:publicationSummary
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "publication summary" ;
+    rdfs:label "publicationSummary" ;
+    rdfs:comment """A summary of a publication"""@en ;
+    rdfs:domain oplli:Publication;
+    rdfs:range xsd:string .
+
+#
+# Recommendation properties
+#
+oplli:recommendationType
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "recommendation type" ;
+    rdfs:label "recommendationType" ;
+    rdfs:comment """The type of a recommendation"""@en ;
+    rdfs:domain oplli:Recommendation ;
+    rdfs:range xsd:string .
+
+oplli:recommender
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "recommender" ;
+    rdfs:label "recommender" ;
+    rdfs:comment """The person who made the recommendation"""@en ;
+    rdfs:domain oplli:Recommendation ;
+    rdfs:range xsd:string .
+
+#
+# Skill properties
+#
+oplli:skillName
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "skill name" ;
+    rdfs:label "skillName" ;
+    rdfs:comment """The name of the skill"""@en ;
+    rdfs:domain oplli:Skill ;
+    rdfs:range xsd:string .
+
+oplli:skillProficiency
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "skill proficiency" ;
+    rdfs:label "skillProficiency" ;
+    rdfs:comment """An indication of a member's skill level in a particular skill"""@en ;
+    rdfs:domain oplli:Skill ;
+    rdfs:range xsd:string .
+
+oplli:skillYearsOfExperience
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "skill years of experience" ;
+    rdfs:label "skillYearsOfExperience" ;
+    rdfs:comment """An indication of the number of years of experience a member has in a particular skill"""@en ;
+    rdfs:domain oplli:Skill ;
+    rdfs:range xsd:string .
+
+#
+# TwitterAccount properties
+#
+oplli:providerAccountId
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "provider account id" ;
+    rdfs:label "providerAccountId" ;
+    rdfs:comment """Twitter account provider id"""@en;
+    rdfs:domain oplli:TwitterAccount ;
+    rdfs:range xsd:string .
+
+oplli:providerAccountName
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/linkedin#> ;
+    skos:altLabel "provider account name" ;
+    rdfs:label "providerAccountName" ;
+    rdfs:comment """Twitter account provider name"""@en ;
+    rdfs:domain oplli:TwitterAccount ;
+    rdfs:range xsd:string .

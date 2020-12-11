@@ -1,0 +1,87 @@
+#
+# An OpenLink misc ontology
+#
+# for predicates that don't fit elsewhere but don't
+# justify creating their own ontology
+#
+
+@prefix schema:  <http://schema.org/> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix cvocab:  <http://open-services.net/ns/core#> .
+@prefix cc:      <http://creativecommons.org/ns#> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix oplbase: <http://www.openlinksw.com/schemas/oplbase#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sioc:    <http://rdfs.org/sioc/ns#> .
+@prefix wdrs:    <http://www.w3.org/2007/05/powder-s#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix xhv:    <http://www.w3.org/1999/xhtml/vocab#> .
+
+@prefix oplmisc: <http://www.openlinksw.com/schemas/oplmisc#> .
+
+<http://www.openlinksw.com/schemas/oplmisc#>
+  a owl:Ontology ;
+  schema:name "OpenLink Miscellaneous Predicates Ontology" ;
+  schema:comment """Ontology that defines entity and relation types used to describe miscellaneous predicates.
+  Examples include instagram filters."""@en ;
+  schema:dateCreated "2013-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  schema:dateModified "2015-04-22T13:38:00-05:00"^^xsd:dateTime ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  wdrs:describedby <http://www.openlinksw.com/schemas/oplmisc> ;
+  owl:versionInfo "1.0.0"^^xsd:string ;
+  owl:imports <http://www.w3.org/1999/02/22-rdf-syntax-ns#> , <http://purl.org/dc/terms/> ;
+  <http://open.vocab.org/terms/defines> oplmisc:instagramFilter ;
+  schema:about oplmisc:instagramFilter .
+
+<http://www.openlinksw.com/DAV/data/turtle/cartridge_ontologies/misc.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink Miscellaneous Predicates Ontology Description Document (Turtle)" ;
+  cc:License <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for miscellaneous predicates"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/oplmisc#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/oplmisc> ;
+  xhv:describes <http://www.openlinksw.com/schemas/oplmisc#> ;
+  schema:about <http://www.openlinksw.com/schemas/oplmisc#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/oplmisc#> .
+
+<http://www.openlinksw.com/data/turtle/cartridge_ontologies/misc.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink Miscellaneous Predicates Ontology Description Document (Turtle)" ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for miscellaneous predicates"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/oplmisc#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/oplmisc> ;
+  xhv:describes <http://www.openlinksw.com/schemas/oplmisc#> ;
+  schema:about <http://www.openlinksw.com/schemas/oplmisc#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/oplmisc#> .
+
+<http://www.openlinksw.com/schemas/oplmisc>
+  a foaf:Document ;
+  schema:name """OpenLink Miscellaneous Predicates Ontology Description Document"""^^xsd:string ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a document that uses Linked Data oriented content to describe OpenLink Miscellaneous Predicates Ontology."""@en ;
+  dcterms:subject <http://www.openlinksw.com/schemas/oplmisc#> ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/oplmisc#> ;
+  foaf:primaryTopic oplmisc:instagramFilter .
+
+
+#
+# Predicates
+#
+
+oplmisc:instagramFilter
+		a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/oplmisc#> ;
+    rdfs:label "instagramFilter" ;
+    skos:altLabel "instagram filter" ;
+    rdfs:comment """Name of a filter used on the current image"""@en ;
+    rdfs:domain foaf:Image ;
+    rdfs:range xsd:string .

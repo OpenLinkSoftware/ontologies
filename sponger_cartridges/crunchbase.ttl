@@ -1,0 +1,1104 @@
+@prefix gr:         <http://purl.org/goodrelations/v1#> .
+@prefix schema:  <https://schema.org/> .
+@prefix xhv:      <http://www.w3.org/1999/xhtml/vocab#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix cvocab:  <http://open-services.net/ns/core#> .
+@prefix cc:      <http://creativecommons.org/ns#> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix wdrs:    <http://www.w3.org/2007/05/powder-s#> .
+@prefix olo:	   <http://purl.org/ontology/olo/core#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix oplcb: <http://www.openlinksw.com/schemas/crunchbase#> .
+
+<http://www.openlinksw.com/schemas/crunchbase#>
+  a owl:Ontology ;
+  schema:name "OpenLink Crunchbase Ontology" ;
+  schema:comment """Ontology that defines entity and relation types used to describe Crunchbase.
+  Examples include providerships, investments, number of employees etc."""@en ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  wdrs:describedby <http://www.openlinksw.com/schemas/crunchbase> ;
+  schema:dateCreated "2013-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  schema:dateModified "2015-04-22T13:38:00-05:00"^^xsd:dateTime ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  owl:versionInfo "1.0.0"^^xsd:string ;
+  owl:imports <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ,
+              <http://purl.org/dc/terms/> ,
+              <http://purl.org/ontology/olo/core#> ;
+  <http://open.vocab.org/terms/defines>
+    oplcb:hasAcquiredDay ,
+    oplcb:hasAcquiredMonth ,
+    oplcb:hasAcquiredYear ,
+    oplcb:hasAcquiredCompany ,
+    oplcb:hasAcquisition ,
+    oplcb:Acquisition ,
+    oplcb:hasFundingRound ,
+    oplcb:FundingRound ,
+    oplcb:hasInvestment ,
+    oplcb:Investment ,
+    oplcb:Milestone ,
+    oplcb:hasMilestone ,
+    oplcb:hasOffice ,
+    oplcb:Office ,
+    oplcb:hasProduct ,
+    oplcb:Product ,
+    oplcb:Providership ,
+    oplcb:hasProvidership ,
+    oplcb:Relationship ,
+    oplcb:hasRelationship ,
+    oplcb:Screenshot ,
+    oplcb:hasScreenshot ,
+    oplcb:hasOwnerID ,
+    oplcb:VideoEmbed ,
+    oplcb:hasVideoEmbed ,
+    oplcb:hasAddress1 ,
+    oplcb:hasAddress2 ,
+    oplcb:hasAffiliationName ,
+    oplcb:hasAvailableSize ,
+    oplcb:hasBirthplace ,
+    oplcb:hasBlogFeedURL ,
+    oplcb:hasBlogURL ,
+    oplcb:hasBirthDay ,
+    oplcb:hasBirthMonth ,
+    oplcb:hasBirthYear ,
+    oplcb:hasCategoryCode ,
+    oplcb:hasCity ,
+    oplcb:hasCompany ,
+    oplcb:hasCompetitor ,
+    oplcb:hasCountryCode ,
+    oplcb:createdAt ,
+    oplcb:hasCrunchbaseURL ,
+    oplcb:description ,
+    oplcb:hasEmbedCode ,
+    oplcb:hasExternalLink ,
+    oplcb:hasExternalURL ,
+    oplcb:hasFinancialOrganization ,
+    oplcb:hasFirm ,
+    oplcb:hasFoundedDay ,
+    oplcb:hasFoundedMonth ,
+    oplcb:hasFoundedYear ,
+    oplcb:hasFundingDay ,
+    oplcb:hasFundingMonth ,
+    oplcb:hasFundingYear ,
+    oplcb:hasIPO ,
+    oplcb:isPast ,
+    oplcb:hasLastName ,
+    oplcb:hasNumberOfEmployees ,
+    oplcb:hasPermalink ,
+    oplcb:person ,
+    oplcb:hasPhoneNumber ,
+    oplcb:hasPriceAmount ,
+    oplcb:hasPriceCurrencyCode ,
+    oplcb:Provider ,
+    oplcb:hasRaisedAmount ,
+    oplcb:hasRaisedCurrencyCode ,
+    oplcb:hasRoundCode ,
+    oplcb:hasSourceDescription ,
+    oplcb:hasSourceUrl ,
+    oplcb:hasStateCode ,
+    oplcb:hasStockSymbol ,
+    oplcb:stoneable ,
+    oplcb:hasStoneType ,
+    oplcb:hasStonedDay ,
+    oplcb:hasStonedMonth ,
+    oplcb:hasStonedYear ,
+    oplcb:hasTotalMoneyRaised ,
+    oplcb:hasTwitterUsername ,
+    oplcb:updatedAt ,
+    oplcb:hasValuationCurrencyCode ,
+    oplcb:hasZipCode ;
+  schema:about
+    oplcb:hasAcquiredDay ,
+    oplcb:hasAcquiredMonth ,
+    oplcb:hasAcquiredYear ,
+    oplcb:hasAcquiredCompany ,
+    oplcb:hasAcquisition ,
+    oplcb:Acquisition ,
+    oplcb:hasFundingRound ,
+    oplcb:FundingRound ,
+    oplcb:hasInvestment ,
+    oplcb:Investment ,
+    oplcb:Milestone ,
+    oplcb:hasMilestone ,
+    oplcb:hasOffice ,
+    oplcb:Office ,
+    oplcb:hasProduct ,
+    oplcb:Product ,
+    oplcb:Providership ,
+    oplcb:hasProvidership ,
+    oplcb:Relationship ,
+    oplcb:hasRelationship ,
+    oplcb:Screenshot ,
+    oplcb:hasScreenshot ,
+    oplcb:hasOwnerID ,
+    oplcb:VideoEmbed ,
+    oplcb:hasVideoEmbed ,
+    oplcb:hasAddress1 ,
+    oplcb:hasAddress2 ,
+    oplcb:hasAffiliationName ,
+    oplcb:hasAvailableSize ,
+    oplcb:hasBirthplace ,
+    oplcb:hasBlogFeedURL ,
+    oplcb:hasBlogURL ,
+    oplcb:hasBirthDay ,
+    oplcb:hasBirthMonth ,
+    oplcb:hasBirthYear ,
+    oplcb:hasCategoryCode ,
+    oplcb:hasCity ,
+    oplcb:hasCompany ,
+    oplcb:hasCompetitor ,
+    oplcb:hasCountryCode ,
+    oplcb:createdAt ,
+    oplcb:hasCrunchbaseURL ,
+    oplcb:description ,
+    oplcb:hasEmbedCode ,
+    oplcb:hasExternalLink ,
+    oplcb:hasExternalURL ,
+    oplcb:hasFinancialOrganization ,
+    oplcb:hasFirm ,
+    oplcb:hasFoundedDay ,
+    oplcb:hasFoundedMonth ,
+    oplcb:hasFoundedYear ,
+    oplcb:hasFundingDay ,
+    oplcb:hasFundingMonth ,
+    oplcb:hasFundingYear ,
+    oplcb:hasIPO ,
+    oplcb:isPast ,
+    oplcb:hasLastName ,
+    oplcb:hasNumberOfEmployees ,
+    oplcb:hasPermalink ,
+    oplcb:person ,
+    oplcb:hasPhoneNumber ,
+    oplcb:hasPriceAmount ,
+    oplcb:hasPriceCurrencyCode ,
+    oplcb:Provider ,
+    oplcb:hasRaisedAmount ,
+    oplcb:hasRaisedCurrencyCode ,
+    oplcb:hasRoundCode ,
+    oplcb:hasSourceDescription ,
+    oplcb:hasSourceUrl ,
+    oplcb:hasStateCode ,
+    oplcb:hasStockSymbol ,
+    oplcb:stoneable ,
+    oplcb:hasStoneType ,
+    oplcb:hasStonedDay ,
+    oplcb:hasStonedMonth ,
+    oplcb:hasStonedYear ,
+    oplcb:hasTotalMoneyRaised ,
+    oplcb:hasTwitterUsername ,
+    oplcb:updatedAt ,
+    oplcb:hasValuationCurrencyCode ,
+    oplcb:hasZipCode .
+
+<http://www.openlinksw.com/DAV/data/turtle/cartridge_ontologies/crunchbase.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink Crunchbase Ontology Description Document (Turtle)" ;
+  cc:License <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for Crunchbase"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/crunchbase#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/crunchbase> ;
+  xhv:describes <http://www.openlinksw.com/schemas/crunchbase#> ;
+  schema:about <http://www.openlinksw.com/schemas/crunchbase#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/crunchbase#> .
+
+<http://www.openlinksw.com/data/turtle/cartridge_ontologies/crunchbase.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink Crunchbase Ontology Description Document (Turtle)" ;
+  owl:sameAs <http://www.openlinksw.com/DAV/data/turtle/cartridge_ontologies/crunchbase.ttl> ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for Crunchbase"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/crunchbase#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/crunchbase> ;
+  xhv:describes <http://www.openlinksw.com/schemas/crunchbase#> ;
+  schema:about <http://www.openlinksw.com/schemas/crunchbase#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/crunchbase#> .
+
+<http://www.openlinksw.com/schemas/crunchbase>
+  a foaf:Document ;
+  schema:name """OpenLink Crunchbase Ontology Description Document"""^^xsd:string ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a document that uses Linked Data oriented content to describe OpenLink Crunchbase Ontology."""@en ;
+  dcterms:subject <http://www.openlinksw.com/schemas/crunchbase#> ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/crunchbase#> ;
+  foaf:topic
+    oplcb:hasAcquiredDay ,
+    oplcb:hasAcquiredMonth ,
+    oplcb:hasAcquiredYear ,
+    oplcb:hasAcquiredCompany ,
+    oplcb:hasAcquisition ,
+    oplcb:Acquisition ,
+    oplcb:hasFundingRound ,
+    oplcb:FundingRound ,
+    oplcb:hasInvestment ,
+    oplcb:Investment ,
+    oplcb:Milestone ,
+    oplcb:hasMilestone ,
+    oplcb:hasOffice ,
+    oplcb:Office ,
+    oplcb:hasProduct ,
+    oplcb:Product ,
+    oplcb:Providership ,
+    oplcb:hasProvidership ,
+    oplcb:Relationship ,
+    oplcb:hasRelationship ,
+    oplcb:Screenshot ,
+    oplcb:hasScreenshot ,
+    oplcb:hasOwnerID ,
+    oplcb:VideoEmbed ,
+    oplcb:hasVideoEmbed ,
+    oplcb:hasAddress1 ,
+    oplcb:hasAddress2 ,
+    oplcb:hasAffiliationName ,
+    oplcb:hasAvailableSize ,
+    oplcb:hasBirthplace ,
+    oplcb:hasBlogFeedURL ,
+    oplcb:hasBlogURL ,
+    oplcb:hasBirthDay ,
+    oplcb:hasBirthMonth ,
+    oplcb:hasBirthYear ,
+    oplcb:hasCategoryCode ,
+    oplcb:hasCity ,
+    oplcb:hasCompany ,
+    oplcb:hasCompetitor ,
+    oplcb:hasCountryCode ,
+    oplcb:createdAt ,
+    oplcb:hasCrunchbaseURL ,
+    oplcb:description ,
+    oplcb:hasEmbedCode ,
+    oplcb:hasExternalLink ,
+    oplcb:hasExternalURL ,
+    oplcb:hasFinancialOrganization ,
+    oplcb:hasFirm ,
+    oplcb:hasFoundedDay ,
+    oplcb:hasFoundedMonth ,
+    oplcb:hasFoundedYear ,
+    oplcb:hasFundingDay ,
+    oplcb:hasFundingMonth ,
+    oplcb:hasFundingYear ,
+    oplcb:hasIPO ,
+    oplcb:isPast ,
+    oplcb:hasLastName ,
+    oplcb:hasNumberOfEmployees ,
+    oplcb:hasPermalink ,
+    oplcb:person ,
+    oplcb:hasPhoneNumber ,
+    oplcb:hasPriceAmount ,
+    oplcb:hasPriceCurrencyCode ,
+    oplcb:Provider ,
+    oplcb:hasRaisedAmount ,
+    oplcb:hasRaisedCurrencyCode ,
+    oplcb:hasRoundCode ,
+    oplcb:hasSourceDescription ,
+    oplcb:hasSourceUrl ,
+    oplcb:hasStateCode ,
+    oplcb:hasStockSymbol ,
+    oplcb:stoneable ,
+    oplcb:hasStoneType ,
+    oplcb:hasStonedDay ,
+    oplcb:hasStonedMonth ,
+    oplcb:hasStonedYear ,
+    oplcb:hasTotalMoneyRaised ,
+    oplcb:hasTwitterUsername ,
+    oplcb:updatedAt ,
+    oplcb:hasValuationCurrencyCode .
+
+
+# <-------------- Crunchbase --------------> #
+
+# <-------------- Crunchbase Classes --------------> #
+
+oplcb:Acquisition
+    a owl:Class ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    rdfs:subClassOf olo:OrderedList ;
+    rdfs:label "Acquisition" ;
+    rdfs:comment "Acquisition"@en .
+
+oplcb:FundingRound
+    a owl:Class ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    rdfs:label "Funding round" ;
+    rdfs:comment "Funding round"@en .
+
+oplcb:Investment
+    a owl:Class ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    rdfs:label "Investment" ;
+    rdfs:comment "Investment"@en .
+
+oplcb:Milestone
+    a owl:Class ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    rdfs:label "Milestone" ;
+    rdfs:comment "Milestone"@en .
+
+oplcb:Office
+    a owl:Class ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    rdfs:label "Office" ;
+    rdfs:comment "Office"@en .
+
+oplcb:Product
+    a owl:Class ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    rdfs:label "Product" ;
+    rdfs:comment "Product"@en .
+
+oplcb:Providership
+    a owl:Class ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    rdfs:label "Providership" ;
+    rdfs:comment "Providership"@en .
+
+oplcb:Relationship
+    a owl:Class ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    rdfs:label "Relationship" ;
+    rdfs:comment "Relationship"@en .
+
+oplcb:Screenshot
+    a owl:Class ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    rdfs:label "Screenshot" ;
+    rdfs:comment "Screenshot"@en .
+
+oplcb:VideoEmbed
+    a owl:Class ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    rdfs:label "Video embed" ;
+    rdfs:comment "Video embed"@en .
+
+oplcb:Provider
+    a owl:Class ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    rdfs:label "Provider" ;
+    rdfs:comment """A legal, PR & marketing firms that provides services to this company"""@en .
+
+oplcb:Investor
+	a owl:Class , foaf:Agent;
+	rdfs:label "Investor" ;
+	rdfs:comment "Participant in an investment that provides capital to a company"@en ;
+	is rdfs:range of oplcb:investor .
+
+# <-------------- Crunchbase Properties --------------> #
+
+oplcb:hasAcquiredDay
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "acquired day" ;
+    rdfs:label "hasAcquiredDay" ;
+    rdfs:comment "The day of an acquistion"@en ;
+    rdfs:range xsd:integer;
+    rdfs:domain oplcb:Acquisition .
+
+oplcb:hasAcquiredMonth
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "acquired month" ;
+    rdfs:label "hasAcquiredMonth" ;
+    rdfs:comment "The month of an acquisition"@en ;
+    rdfs:domain oplcb:Acquisition ;
+    rdfs:range xsd:integer .
+
+oplcb:hasAcquiredYear
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "acquired year" ;
+    rdfs:label "hasAcquiredYear" ;
+    rdfs:comment "The year of an acquistion"@en ;
+    rdfs:range xsd:integer ;
+    rdfs:domain oplcb:Acquisition .
+
+oplcb:hasAcquiredCompany
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "acquiring company" ;
+    rdfs:label "hasAcquiredCompany" ;
+    rdfs:comment "The company acquiring this one"@en ;
+    rdfs:domain oplcb:Acquisition ;
+    rdfs:range foaf:Organization .
+
+oplcb:hasAcquisition
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    rdfs:label "hasAcquisition" ;
+    rdfs:comment """Associates a Business Entity with its acquisitions collection"""@en ;
+    rdfs:range oplcb:Acquisition;
+    rdfs:domain foaf:Organization, gr:BusinessEntity .
+
+oplcb:hasFundingRound
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "funding round" ;
+    rdfs:label "hasFundingRound" ;
+    rdfs:comment "Details of a company funding round"@en ;
+    rdfs:range oplcb:FundingRound ;
+    rdfs:domain foaf:Organization .
+
+oplcb:hasInvestment
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "investment" ;
+    rdfs:label "hasInvestment" ;
+    rdfs:comment "Details of an investment in the company"@en ;
+    rdfs:range oplcb:Investment ;
+    rdfs:domain foaf:Organization .
+
+oplcb:hasMilestone
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "milestone" ;
+    rdfs:label "hasMilestone" ;
+    rdfs:comment """Milestone in a company's history"""@en ;
+    rdfs:range oplcb:Milestone ;
+    rdfs:domain foaf:Organization .
+
+oplcb:hasOffice
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "office" ;
+    rdfs:label "hasOffice" ;
+    rdfs:comment "Details of a company office"@en ;
+    rdfs:range oplcb:Office ;
+    rdfs:domain foaf:Organization .
+
+oplcb:hasProduct
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    rdfs:label "hasProduct" ;
+    rdfs:comment """Company's product"""@en ;
+    rdfs:range oplcb:Product ;
+    rdfs:domain foaf:Organization .
+
+oplcb:hasProvidership
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "providership" ;
+    rdfs:label "hasProvidership" ;
+    rdfs:comment """Providers - legal, PR & marketing firms that provide services to this company"""@en ;
+    rdfs:range oplcb:Providership ;
+    rdfs:domain foaf:Organization  .
+
+oplcb:hasRelationship
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    rdfs:label "hasRelationship" ;
+    rdfs:comment "Details of a person associated with a company"@en ;
+    rdfs:range oplcb:Relationship ;
+    rdfs:domain foaf:Agent .
+
+oplcb:hasScreenshot
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    rdfs:label "hasScreenshot" ;
+    rdfs:comment "Screenshot linked to a company profile - typically company logos"@en ;
+    rdfs:range oplcb:Screenshot ;
+    rdfs:domain foaf:Organization .
+
+oplcb:hasOwnerID
+    a owl:InverseFunctionalProperty , owl:DatatypeProperty, rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    rdfs:label "hasOwnerID" ;
+    rdfs:comment "Owner ID"@en ;
+    rdfs:range xsd:string ;
+    rdfs:domain foaf:Agent .
+
+oplcb:hasVideoEmbed
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    rdfs:label "hasVideoEmbed" ;
+    rdfs:comment "An embedded video about a company or individual"@en ;
+    rdfs:range oplcb:VideoEmbed ;
+    rdfs:domain foaf:Agent .
+
+oplcb:hasAddress1
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "address1" ;
+    rdfs:label "hasAddress1" ;
+    rdfs:comment "1st line of a company address"@en ;
+    rdfs:range xsd:string ;
+    rdfs:domain oplcb:Office .
+
+oplcb:hasAddress2
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "address2" ;
+    rdfs:label "hasAddress2" ;
+    rdfs:comment "2nd line of a company address"@en ;
+    rdfs:range xsd:string ;
+    rdfs:domain oplcb:Office .
+
+oplcb:hasAffiliationName
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    rdfs:label "hasAffiliationName" ;
+    rdfs:comment "A company with which an individual is associated"@en ;
+    rdfs:range xsd:string ;
+    rdfs:domain foaf:Organization .
+
+oplcb:hasAvailableSize
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    rdfs:label "hasAvailableSize" ;
+    rdfs:comment "The available size of screenshot"@en ;
+    rdfs:range xsd:string ;
+    rdfs:domain oplcb:Screenshot .
+
+oplcb:hasBirthplace
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "birth place" ;
+    rdfs:label "hasBirthplace" ;
+    rdfs:comment """A person's birthplace"""@en ;
+    rdfs:range xsd:string ;
+    rdfs:domain foaf:Agent .
+
+oplcb:hasBlogFeedURL
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    rdfs:label "hasBlogFeedURL" ;
+    rdfs:comment "The blog feed of a person known to Crunchbase"@en ;
+    rdfs:range rdfs:Resource ;
+    rdfs:domain foaf:Agent .
+
+oplcb:hasBlogURL
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    rdfs:label "hasBlogURL" ;
+    rdfs:comment "The blog of a person known to Crunchbase"@en ;
+    rdfs:range rdfs:Resource ;
+    rdfs:domain foaf:Agent .
+
+oplcb:hasBirthDay
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    rdfs:label "hasBirthDay" ;
+    rdfs:comment """The day of the month of a person's DOB"""@en ;
+    rdfs:range xsd:integer ;
+    rdfs:domain foaf:Agent .
+
+oplcb:hasBirthMonth
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    rdfs:label "hasBirthMonth" ;
+    rdfs:comment """The month of a person's DOB"""@en ;
+    rdfs:range xsd:integer ;
+    rdfs:domain foaf:Agent .
+
+oplcb:hasBirthYear
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    rdfs:label "hasBirthYear" ;
+    rdfs:comment """The year of a person's DOB""" ;
+    rdfs:range xsd:integer ;
+    rdfs:domain foaf:Agent .
+
+oplcb:hasCategoryCode
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    rdfs:label "hasCategoryCode" ;
+    rdfs:comment "A code representing the business category a company operates in"@en ;
+    rdfs:range xsd:string ;
+    rdfs:domain foaf:Organization .
+
+oplcb:hasCity
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "city" ;
+    rdfs:label "hasCity" ;
+    rdfs:comment "City in which a company office is located"@en ;
+    rdfs:range xsd:string ;
+    rdfs:domain oplcb:Office .
+
+oplcb:hasCompany
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "company" ;
+    rdfs:label "hasCompany" ;
+    rdfs:comment "A company. The focus of an investment, funding round or acquisition."@en ;
+    rdfs:range xsd:string ;
+    rdfs:domain foaf:Organization .
+
+oplcb:hasCompetitor
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "competitor" ;
+    rdfs:label "competitor" ;
+    rdfs:comment "A company in competition with this one."@en ;
+    rdfs:range foaf:Organization ;
+    rdfs:domain foaf:Organization .
+
+oplcb:hasCountryCode
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "country code" ;
+    rdfs:label "hasCountryCode" ;
+    rdfs:comment "A country code. e.g. of an office location."@en ;
+    rdfs:range xsd:string ;
+    rdfs:domain oplcb:Office .
+
+oplcb:createdAt
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "created at" ;
+    rdfs:label "createdAt" ;
+    rdfs:comment "The creation date of a Crunchbase entry"@en ;
+    rdfs:range xsd:date .
+
+oplcb:hasCrunchbaseURL
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "crunchbase url" ;
+    rdfs:label "hasCrunchbaseURL" ;
+    rdfs:range rdfs:Resource .
+
+oplcb:description
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "description" ;
+    rdfs:label "description" ;
+    rdfs:comment """A description of a milestone event in a company's history."""@en ;
+    rdfs:range xsd:string .
+
+oplcb:permalink
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "permalink" ;
+    rdfs:label "permalink" ;
+    rdfs:comment """A permalink of a cb item."""@en ;
+    rdfs:range xsd:string .
+
+oplcb:api_path
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "api_path" ;
+    rdfs:label "api_path" ;
+    rdfs:comment """A api_path of a cb item."""@en ;
+    rdfs:range xsd:string .
+
+oplcb:web_path
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "web_path" ;
+    rdfs:label "web_path" ;
+    rdfs:comment """A web_path of a cb item."""@en ;
+    rdfs:range xsd:string .
+
+oplcb:organization_permalink
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "organization_permalink" ;
+    rdfs:label "organization_permalink" ;
+    rdfs:comment """A organization_permalink of a cb item."""@en ;
+    rdfs:range xsd:string .
+
+oplcb:organization_api_path
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "organization_api_path" ;
+    rdfs:label "organization_api_path" ;
+    rdfs:comment """A organization_api_path of a cb item."""@en ;
+    rdfs:range xsd:string .
+
+oplcb:organization_web_path
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "organization_web_path" ;
+    rdfs:label "Organization Web Path" ;
+    rdfs:comment """A web path of an organization."""@en ;
+    rdfs:range rdfs:Resource .
+
+oplcb:organization_name
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "organization_name" ;
+    rdfs:label "Organization Name" ;
+    rdfs:comment """A name of an organization."""@en ;
+    rdfs:range xsd:string .
+
+oplcb:facebook_url
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "facebook_url" ;
+    rdfs:label "Facebook URL" ;
+    rdfs:comment "A facebook url to a Crunchbase profile of a company or person"@en ;
+    rdfs:range rdfs:Resource ;
+    rdfs:domain foaf:Agent .
+
+oplcb:twitter_url
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "twitter_url" ;
+    rdfs:label "twitter URL" ;
+    rdfs:comment "A twitter url to a Crunchbase profile of a company or person"@en ;
+    rdfs:range rdfs:Resource ;
+    rdfs:domain foaf:Agent .
+
+oplcb:linkedin_url
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "linkedin_url" ;
+    rdfs:label "linkedin URL" ;
+    rdfs:comment "A linkedin url to a Crunchbase profile of a company or person"@en ;
+    rdfs:range rdfs:Resource ;
+    rdfs:domain foaf:Agent .
+
+oplcb:hasEmbedCode
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "embed code" ;
+    rdfs:label "hasEmbedCode" ;
+    rdfs:comment "An HTML snippet to embed a video about the company."@en ;
+    rdfs:range xsd:string .
+
+oplcb:hasExternalLink
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    rdfs:label "hasExternalLink" ;
+    rdfs:comment "An external link to other sites with resources relating to this company."@en ;
+    rdfs:range rdfs:Resource ;
+    rdfs:domain foaf:Organization .
+
+oplcb:hasExternalURL
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "external url" ;
+    rdfs:label "hasExternalURL" ;
+    rdfs:comment "A link to another site with resources relating to this company."@en ;
+    rdfs:range rdfs:Resource ;
+    rdfs:domain foaf:Organization .
+
+oplcb:hasFinancialOrganization
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "financial organization" ;
+    rdfs:label "hasFinancialOrganization" ;
+    rdfs:comment "A financial organization behind an investment"@en ;
+    rdfs:range foaf:Organization ;
+    rdfs:domain oplcb:Investment .
+
+oplcb:hasFirm
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "firm" ;
+    rdfs:label "hasFirm" ;
+    rdfs:comment "A firm with which an individual is or has been related."@en ;
+    rdfs:range foaf:Organization ;
+    rdfs:domain foaf:Person .
+
+oplcb:hasFoundedDay
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "founded day" ;
+    rdfs:label "hasFoundedDay" ;
+    rdfs:comment "The day of the month a company was founded"@en ;
+    rdfs:range xsd:integer ;
+    rdfs:domain foaf:Organization .
+
+oplcb:hasFoundedMonth
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "founded month" ;
+    rdfs:label "hasFoundedMonth" ;
+    rdfs:comment "The month a company was founded"@en ;
+    rdfs:range xsd:integer ;
+    rdfs:domain foaf:Organization .
+
+oplcb:hasFoundedYear
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "founded year" ;
+    rdfs:label "hasFoundedYear" ;
+    rdfs:comment "The year a company was founded"@en ;
+    rdfs:range xsd:integer ;
+    rdfs:domain foaf:Organization .
+
+oplcb:hasFundingDay
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "funded day" ;
+    rdfs:label "hasFundingDay" ;
+    rdfs:comment "The day of the month a funding round was received"@en ;
+    rdfs:range xsd:integer ;
+    rdfs:domain oplcb:FundingRound .
+
+oplcb:hasFundingMonth
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "funded month" ;
+    rdfs:label "hasFundingMonth" ;
+    rdfs:comment "The month a funding round was received"@en ;
+    rdfs:range xsd:integer ;
+    rdfs:domain oplcb:FundingRound .
+
+oplcb:hasFundingYear
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "funded year" ;
+    rdfs:label "hasFundingYear" ;
+    rdfs:comment "The year a funding round was received"@en ;
+    rdfs:range xsd:integer ;
+    rdfs:domain oplcb:FundingRound .
+
+oplcb:hasIPO
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "ipo" ;
+    rdfs:label "hasIPO" ;
+    rdfs:comment """Details of a company's IPO. e.g. Stock symbol, valuation etc."""@en ;
+    rdfs:range xsd:string ;
+    rdfs:domain foaf:Organization .
+
+oplcb:isPast
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "is past" ;
+    rdfs:label "isPast" ;
+    rdfs:comment """Whether this is a person's current or a previous position"""@en ;
+    rdfs:range xsd:boolean ;
+    rdfs:domain foaf:Person .
+
+oplcb:hasLastName
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "last name" ;
+    rdfs:label "hasLastName" ;
+    rdfs:comment """A person's last name"""@en ;
+    rdfs:range xsd:string ;
+    rdfs:domain foaf:Person .
+
+oplcb:hasNumberOfEmployees
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "number of employees" ;
+    rdfs:label "hasNumberOfEmployees" ;
+    rdfs:comment "The number of employees in a company"@en ;
+    rdfs:range xsd:integer ;
+    rdfs:domain foaf:Organization .
+
+oplcb:hasPermalink
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "permalink" ;
+    rdfs:label "hasPermalink" ;
+    rdfs:comment "A permalink to a Crunchbase profile of a company or person"@en ;
+    rdfs:range rdfs:Resource ;
+    rdfs:domain foaf:Agent .
+
+oplcb:person
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "person" ;
+    rdfs:label "person" ;
+    rdfs:comment "A person known to Crunchbase"@en ;
+    rdfs:range foaf:Person ;
+    rdfs:domain foaf:Organization .
+
+oplcb:hasPhoneNumber
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "phone number" ;
+    rdfs:label "hasPhoneNumber" ;
+    rdfs:comment "A company phone number"@en ;
+    rdfs:range xsd:string ;
+    rdfs:domain  oplcb:Office , foaf:Organization .
+
+oplcb:hasPriceAmount
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "price amount" ;
+    rdfs:label "hasPriceAmount" ;
+    rdfs:comment "The price paid for an acquisition"@en ;
+    rdfs:range xsd:integer ;
+    rdfs:domian oplcb:Acquisition .
+
+oplcb:hasPriceCurrencyCode
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "price currency code" ;
+    rdfs:label "hasPriceCurrencyCode" ;
+    rdfs:comment "The currency of hasPriceAmount"@en ;
+    rdfs:range xsd:string ;
+    rdfs:domain oplcb:Acquisition  .
+
+oplcb:hasRaisedAmount
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "raised amount" ;
+    rdfs:label "hasRaisedAmount" ;
+    rdfs:comment "The amount raised by a funding round"@en ;
+    rdfs:range xsd:integer ;
+    rdfs:domain oplcb:FundingRound .
+
+oplcb:hasRaisedCurrencyCode
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "raised currency code" ;
+    rdfs:label "hasRaisedCurrencyCode" ;
+    rdfs:comment "The currency of hasRaisedAmount"@en ;
+    rdfs:range xsd:string ;
+    rdfs:domain oplcb:FundingRound .
+
+oplcb:hasRoundCode
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "round code" ;
+    rdfs:label "hasRoundCode" ;
+    rdfs:comment "A code describing the type of funding associated with a funding round: angel, seed ..."@en ;
+    rdfs:range xsd:string ;
+    rdfs:domain oplcb:FundingRound .
+
+oplcb:hasSourceDescription
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "source description" ;
+    rdfs:label "hasSourceDescription" ;
+    rdfs:comment """A description of a milestone event in a company's history."""@en ;
+    rdfs:range xsd:string ;
+    rdfs:domain oplcb:Milestone .
+
+oplcb:hasSourceUrl
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "source url" ;
+    rdfs:label "hasSourceUrl" ;
+    rdfs:comment "A news source reporting a company milestone or funding round"@en ;
+    rdfs:range rdfs:Resource ;
+    rdfs:domain oplcb:Milestone .
+
+oplcb:hasStateCode
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "state code" ;
+    rdfs:label "hasStateCode" ;
+    rdfs:comment "Company address - state code"@en ;
+    rdfs:range xsd:string ;
+    rdfs:domain oplcb:Office , foaf:Organization .
+
+oplcb:hasStockSymbol
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "stock symbol" ;
+    rdfs:label "hasStockSymbol" ;
+    rdfs:comment "Company stock symbol"@en ;
+    rdfs:range xsd:string ;
+    rdfs:domain foaf:Organization .
+
+oplcb:stoneable
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "stoneable" ;
+    rdfs:label "stoneable" ;
+    rdfs:comment "The Crunchbase entity to which a milestone relates"@en ;
+    rdfs:range xsd:string ;
+    rdfs:domain oplcb:Milestone .
+
+oplcb:hasStoneType
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    rdfs:label "hasStoneType" ;
+    rdfs:comment "The type of Crunchbase entity to which a milestone relates"@en ;
+    rdfs:range xsd:string ;
+    rdfs:domain oplcb:Milestone .
+
+oplcb:hasStonedDay
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "stoned day" ;
+    rdfs:label "hasStonedDay" ;
+    rdfs:comment "The day of the month a milestone occurred"@en ;
+    rdfs:range xsd:integer ;
+    rdfs:domain oplcb:Milestone .
+
+oplcb:hasStonedMonth
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "stoned month" ;
+    rdfs:label "hasStonedMonth" ;
+    rdfs:comment "The month a milestone occurred"@en ;
+    rdfs:range xsd:integer ;
+    rdfs:domain oplcb:Milestone .
+
+oplcb:hasStonedYear
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "stoned year" ;
+    rdfs:label "hasStonedYear" ;
+    rdfs:comment "The year a milestone occurred"@en ;
+    rdfs:range xsd:integer .
+
+oplcb:hasTotalMoneyRaised
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "total money raised" ;
+    rdfs:label "hasTotalMoneyRaised" ;
+    rdfs:comment "Total money raised by a company"@en ;
+    rdfs:range xsd:integer ;
+    rdfs:domain foaf:Organization .
+
+oplcb:hasTwitterUsername
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "twitter username" ;
+    rdfs:label "hasTwitterUsername" ;
+    rdfs:comment """A company's or individual's Twitter username"""@en ;
+    rdfs:range xsd:string ;
+    schema:domainIncludes foaf:Organization , foaf:Agent .
+
+foaf:Organization owl:disjointWith foaf:Agent .
+
+oplcb:updatedAt
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "updated at" ;
+    rdfs:label "updatedAt" ;
+    rdfs:comment "The date a Crunchbase entry was last updated"@en ;
+    rdfs:range xsd:date .
+
+oplcb:hasValuationCurrencyCode
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "valuation currency code" ;
+    rdfs:label "hasValuationCurrencyCode" ;
+    rdfs:comment "The currency of a company valuation"@en ;
+    rdfs:range xsd:string ;
+    rdfs:domain foaf:Organization .
+
+oplcb:hasZipCode
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/crunchbase#> ;
+    skos:altLabel "zip code" ;
+    rdfs:label "hasZipCode" ;
+    rdfs:comment "Company address - zip code"@en ;
+    rdfs:range xsd:string ;
+    rdfs:domain oplcb:Office , foaf:Organization .
+
+oplcb:hasInvestee
+	a owl:ObjectProperty ;
+	rdfs:label "hasInvestee" ;
+	rdfs:domain oplcb:FundingRound ;
+	rdfs:range oplcb:Investee ;
+	rdfs:comment """Relation that associates a company receiving an investment with investors [those making the investment] participating in a rounding of investment (or funding)."""@en .
+
+oplcb:hasInvestor
+	a owl:ObjectProperty ;
+	rdfs:label "hasInvestor" ;
+	rdfs:domain oplcb:FundingRound ;
+	rdfs:range oplcb:Investor ;
+	rdfs:comment "Relation that associates an investor participating in a round of funding that provides a company with capital."@en .
+
+oplcb:hasFundingRound
+	a owl:ObjectProperty ;
+	rdfs:label "hasFundingRound" ;
+	rdfs:domain foaf:Organization, gr:BusinessEntity ;
+	rdfs:range oplcb:FundingRound ;
+	rdfs:comment "Relation that associates an organization with a round of funding"@en .

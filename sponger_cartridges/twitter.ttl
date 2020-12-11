@@ -1,0 +1,334 @@
+#
+# An OpenLink ontology for Twitter
+#
+# See:
+# https://dev.twitter.com/docs/api (Twitter REST API resources)
+#
+
+@prefix schema:  <http://schema.org/> .
+@prefix xhv:    <http://www.w3.org/1999/xhtml/vocab#> .
+@prefix skos:       <http://www.w3.org/2004/02/skos/core#> .
+@prefix cvocab:     <http://open-services.net/ns/core#> .
+@prefix cc:         <http://creativecommons.org/ns#> .
+@prefix dc:         <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms:    <http://purl.org/dc/terms/> .
+@prefix foaf:       <http://xmlns.com/foaf/0.1/> .
+@prefix owl:        <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:        <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:       <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sioc:       <http://rdfs.org/sioc/ns#>.
+@prefix sioct:      <http://rdfs.org/sioc/types#> .
+@prefix virtrdfmec: <http://www.openlinksw.com/schemas/virtrdf-meta-entity-class#> .
+@prefix wdrs:       <http://www.w3.org/2007/05/powder-s#> .
+@prefix xsd:        <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix opltw: <http://www.openlinksw.com/schemas/twitter#> .
+
+<http://www.openlinksw.com/schemas/twitter#>
+  a owl:Ontology ;
+  schema:name "OpenLink Twitter Ontology" ;
+  schema:comment """Ontology that defines entity and relation types used to describe Twitter.
+  Examples include tweets, cards, users etc."""@en ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  wdrs:describedby <http://www.openlinksw.com/schemas/twitter> ;
+  schema:dateCreated "2013-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  schema:dateModified "2015-04-22T13:38:00-05:00"^^xsd:dateTime ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  owl:versionInfo "1.0.0"^^xsd:string ;
+  owl:imports <http://www.w3.org/1999/02/22-rdf-syntax-ns#> , <http://purl.org/dc/terms/> ;
+  <http://open.vocab.org/terms/defines>
+    opltw:Object ,
+    opltw:Card ,
+    opltw:SummaryCard ,
+    opltw:PhotoCard ,
+    opltw:PlayerCard ,
+    opltw:Tweet ,
+    opltw:User ,
+    opltw:Application ,
+    opltw:id ,
+    opltw:screenName ,
+    opltw:publicProfileURL ,
+    opltw:favoritesCount ,
+    opltw:followedBy ,
+    opltw:followersCount ,
+    opltw:follows ,
+    opltw:friendsCount ,
+    opltw:hasFavorite ,
+    opltw:madeTweet ,
+    opltw:statusesCount ,
+    opltw:via ,
+    opltw:appLink ,
+    opltw:hasCard ;
+  schema:about
+    opltw:Object ,
+    opltw:Card ,
+    opltw:SummaryCard ,
+    opltw:PhotoCard ,
+    opltw:PlayerCard ,
+    opltw:Tweet ,
+    opltw:User ,
+    opltw:Application ,
+    opltw:id ,
+    opltw:screenName ,
+    opltw:publicProfileURL ,
+    opltw:favoritesCount ,
+    opltw:followedBy ,
+    opltw:followersCount ,
+    opltw:follows ,
+    opltw:friendsCount ,
+    opltw:hasFavorite ,
+    opltw:madeTweet ,
+    opltw:statusesCount ,
+    opltw:via ,
+    opltw:appLink ,
+    opltw:hasCard .
+
+<http://www.openlinksw.com/DAV/data/turtle/cartridge_ontologies/twitter.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink Twitter Ontology Description Document (Turtle)" ;
+  cc:License <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for Twitter"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/twitter#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/twitter> ;
+  xhv:describes <http://www.openlinksw.com/schemas/twitter#> ;
+  schema:about <http://www.openlinksw.com/schemas/twitter#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/twitter#> .
+
+<http://www.openlinksw.com/data/turtle/cartridge_ontologies/twitter.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink Twitter Ontology Description Document (Turtle)" ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for Twitter"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/twitter#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/twitter> ;
+  xhv:describes <http://www.openlinksw.com/schemas/twitter#> ;
+    schema:about <http://www.openlinksw.com/schemas/twitter#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/twitter#> .
+
+<http://www.openlinksw.com/schemas/twitter>
+  a foaf:Document ;
+  schema:name """OpenLink Twitter Ontology Description Document"""^^xsd:string ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a document that uses Linked Data oriented content to describe OpenLink Twitter Ontology."""@en ;
+  dcterms:subject <http://www.openlinksw.com/schemas/twitter#> ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/twitter#> ;
+  foaf:topic
+    opltw:Object ,
+    opltw:Card ,
+    opltw:SummaryCard ,
+    opltw:PhotoCard ,
+    opltw:PlayerCard ,
+    opltw:Tweet ,
+    opltw:User ,
+    opltw:Application ,
+    opltw:id ,
+    opltw:screenName ,
+    opltw:publicProfileURL ,
+    opltw:favoritesCount ,
+    opltw:followedBy ,
+    opltw:followersCount ,
+    opltw:follows ,
+    opltw:friendsCount ,
+    opltw:hasFavorite ,
+    opltw:madeTweet ,
+    opltw:statusesCount ,
+    opltw:via ,
+    opltw:appLink ,
+    opltw:hasCard .
+
+
+# ---------------------------------------------------------------------------
+# Twitter classes
+#
+
+opltw:Object
+    a owl:Class;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/twitter#> ;
+    rdfs:label "Twitter object" ;
+    rdfs:comment """A base class representing all Twitter objects"""@en  .
+
+opltw:Card
+    a owl:Class;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/twitter#> ;
+    rdfs:subClassOf opltw:Object ;
+    rdfs:label "Twitter Card" ;
+    rdfs:comment """Meta-class for all kinds of Twitter card resources found on a webpage"""@en  .
+
+opltw:SummaryCard
+    a owl:Class;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/twitter#> ;
+    rdfs:subClassOf opltw:Card;
+    rdfs:label "Twitter Summary Card" ;
+    rdfs:comment """A summary card for a Twitter resource found on a webpage"""@en  .
+
+opltw:PhotoCard
+    a owl:Class;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/twitter#> ;
+    rdfs:subClassOf opltw:Card;
+    rdfs:label "Twitter Photo Card" ;
+    rdfs:comment """A photo card for a Twitter resource found on a webpage"""@en  .
+
+opltw:PlayerCard
+    a owl:Class;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/twitter#> ;
+    rdfs:subClassOf opltw:Card;
+    rdfs:label "Twitter Media Player Card" ;
+    rdfs:comment """A media player card for a Twitter resource found on a webpage"""@en  .
+
+opltw:Tweet
+    a owl:Class ;
+    rdfs:subClassOf opltw:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/twitter#> ;
+    rdfs:label "Tweet" ;
+    rdfs:comment """Tweets are the atomic building blocks of Twitter, 140-character status updates with additional associated metadata"""@en  .
+
+opltw:User
+    a owl:Class ;
+    rdfs:subClassOf opltw:Object ;
+    rdfs:subClassOf sioc:UserAccount;
+    rdfs:subClassOf foaf:Agent;
+    rdfs:subClassOf virtrdfmec:Person ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/twitter#> ;
+    rdfs:label "Twitter user" ;
+    rdfs:comment """A Twitter user"""@en  .
+
+opltw:Application
+    a owl:Class ;
+    rdfs:subClassOf opltw:Object ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/twitter#> ;
+    rdfs:label "Twitter application" ;
+    rdfs:comment """Application used to generate tweets"""@en  .
+
+# ---------------------------------------------------------------------------
+# Twitter properties
+#
+
+opltw:id
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/twitter#> ;
+    rdfs:label "id" ;
+    skos:altLabel "id" ;
+    rdfs:comment """A Twitter object ID"""@en  ;
+    rdfs:domain opltw:Object ;
+    rdfs:range xsd:string .
+
+opltw:screenName
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/twitter#> ;
+    rdfs:label "screenName" ;
+    skos:altLabel "screen name" ;
+    rdfs:comment """Twitter account name"""@en  ;
+    rdfs:domain opltw:User ;
+    rdfs:range xsd:string .
+
+opltw:publicProfileURL
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/twitter#> ;
+    rdfs:label "publicProfileURL" ;
+    skos:altLabel "twitter profile url" ;
+    rdfs:comment """URL to a Twitter user's public profile / home page"""@en  ;
+    rdfs:domain opltw:User ;
+    rdfs:range xsd:anyURI .
+
+opltw:favoritesCount
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/twitter#> ;
+    rdfs:label "favoritesCount" ;
+    skos:altLabel "favorites count" ;
+    rdfs:comment """The number of tweets (statuses) tagged by this user as being a favorite"""@en  ;
+    rdfs:domain opltw:User ;
+    rdfs:range xsd:integer .
+
+opltw:followedBy
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/twitter#> ;
+    rdfs:label "followedBy" ;
+    skos:altLabel "followed by" ;
+    rdfs:comment """A user following this Twitter user"""@en  ;
+    rdfs:domain opltw:User ;
+    rdfs:range opltw:User .
+
+opltw:followersCount
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/twitter#> ;
+    rdfs:label "followersCount" ;
+    skos:altLabel "followers count" ;
+    rdfs:comment """The number of followers a Twitter user has"""@en  ;
+    rdfs:domain opltw:User ;
+    rdfs:range xsd:integer .
+
+opltw:follows
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/twitter#> ;
+    rdfs:label "follows" ;
+    skos:altLabel "follows" ;
+    rdfs:comment """A user followed by this Twitter user"""@en  ;
+    rdfs:domain opltw:User ;
+    rdfs:range opltw:User .
+
+opltw:friendsCount
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/twitter#> ;
+    rdfs:label "friendsCount" ;
+    skos:altLabel "friends count" ;
+    rdfs:comment """The number of people who follow this Twitter user"""@en  ;
+    rdfs:domain opltw:User ;
+    rdfs:range xsd:integer .
+
+opltw:hasFavorite
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/twitter#> ;
+    rdfs:label "hasFavorite" ;
+    skos:altLabel "favorite" ;
+    rdfs:comment """Identifies a tweet marked as being amongst a user's favorites"""@en  ;
+    rdfs:domain opltw:User ;
+    rdfs:range opltw:Tweet .
+
+opltw:madeTweet
+    a owl:ObjectProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/twitter#> ;
+    rdfs:label "madeTweet" ;
+    skos:altLabel "made tweet" ;
+    rdfs:comment """A tweet created by this Twitter user"""@en ;
+    rdfs:domain opltw:User ;
+    rdfs:range opltw:Tweet .
+
+opltw:statusesCount
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/twitter#> ;
+    rdfs:label "statusesCount" ;
+    skos:altLabel "statuses count" ;
+    rdfs:comment """The number of tweets (statuses) posted by this user"""@en  ;
+    rdfs:domain opltw:User ;
+    rdfs:range xsd:integer .
+
+opltw:via
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/twitter#> ;
+    rdfs:label "via" ;
+    skos:altLabel "via" ;
+    rdfs:comment """Agent used for posting the tweet"""@en  ;
+    rdfs:domain opltw:Tweet ;
+    rdfs:range opltw:Application .
+
+opltw:appLink
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/twitter#> ;
+    rdfs:label "appLink" ;
+    skos:altLabel "application link" ;
+    rdfs:comment """Resource for the agent used to post the tweet"""@en  ;
+    rdfs:domain opltw:Application ;
+    rdfs:range xsd:anyURI .
+
+opltw:hasCard
+    a owl:DatatypeProperty , rdf:Property ;
+    rdfs:isDefinedBy <http://www.openlinksw.com/schemas/twitter#> ;
+    rdfs:label "hasCard" ;
+    skos:altLabel "twitter card" ;
+    rdfs:comment """Link to a Twitter card summarizing the current resource"""@en  ;
+    rdfs:domain xsd:anyURI ;
+    rdfs:range opltw:Card .
+

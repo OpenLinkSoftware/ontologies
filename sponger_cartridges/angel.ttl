@@ -1,0 +1,709 @@
+# properties like angel:hasMarket should be angel:hasMarket
+
+@prefix schema:  <http://schema.org/> .
+@prefix xhv:    <http://www.w3.org/1999/xhtml/vocab#> .
+@prefix skos:   <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix cvocab: <http://open-services.net/ns/core#> .
+@prefix gr:     <http://purl.org/goodrelations/v1#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix sioc:   <http://rdfs.org/sioc/ns#> .
+@prefix angel:  <http://www.openlinksw.com/schemas/angel#> .
+@prefix opl:    <http://www.openlinksw.com/schema/attribution#> .
+@prefix foaf:   <http://xmlns.com/foaf/0.1/> .
+@prefix dc:     <http://purl.org/dc/elements/1.1/> .
+@prefix gn:     <http://www.geonames.org/ontology#> .
+@prefix wdrs:   <http://www.w3.org/2007/05/powder-s#> .
+@prefix cc:     <http://creativecommons.org/ns#> .
+@prefix xhv:    <http://www.w3.org/1999/xhtml/vocab#> .
+
+<http://www.openlinksw.com/schemas/angel#>
+  a owl:Ontology ;
+  schema:name "OpenLink AngelList Ontology" ;
+  schema:comment """Ontology that defines entity and relation types used to describe AngelList.
+  Examples include markets, locations, agents etc."""@en ;
+  owl:imports <http://www.w3.org/1999/02/22-rdf-syntax-ns#> , <http://purl.org/dc/terms/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:dateCreated "2013-05-18T13:00:00-05:00"^^xsd:dateTime ;
+  schema:dateModified "2015-04-22T13:38:00-05:00"^^xsd:dateTime ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  wdrs:describedby <http://www.openlinksw.com/schemas/angel> ;
+  owl:versionInfo "1.0.0"^^xsd:string ;
+  <http://open.vocab.org/terms/defines>
+    angel:Agent ,
+    angel:User ,
+    angel:Role ,
+    angel:Startup ,
+    angel:Syndicate ,
+    angel:Market ,
+    angel:Location ,
+    angel:name ,
+    angel:id ,
+    angel:followers ,
+    angel:bio ,
+    angel:hasHighConcept ,
+    angel:hasStatus ,
+    angel:hasProductDesc ,
+    angel:hasLogoURL ,
+    angel:hasThumbURL ,
+    angel:hasImage ,
+    angel:hasURL ,
+    angel:behance_url ,
+    angel:hasCompanyURL ,
+    angel:hasVideoURL ,
+    angel:hasLocation ,
+    angel:hasRole ,
+    angel:hasMarket ,
+    angel:hasMarketName ,
+    angel:hasMarketURL ,
+    angel:hasLocationID ,
+    angel:hasLocationMame ,
+    angel:hasLocationURL ,
+    angel:hasStartupsPerYear ,
+    angel:hasAverageAmount ,
+    angel:isAccredited ,
+    angel:hasInvestorIN ,
+    angel:hasMade ,
+    angel:hasMember ,
+    angel:hasStatsAllFollowers ,
+    angel:hasStatsAllInvestorFollowers ,
+    angel:hasStatsStartups ,
+    angel:hasStatsUsers ,
+    angel:hasStatsDirectFollowers ,
+    angel:hasStatsDirectInvestorFollowers ,
+    angel:hasStatsDirectStartups ,
+    angel:hasStatsDirectUsers ,
+    angel:hasActivity ;
+  schema:about
+    angel:Agent ,
+    angel:User ,
+    angel:Role ,
+    angel:Startup ,
+    angel:Syndicate ,
+    angel:Market ,
+    angel:Location ,
+    angel:name ,
+    angel:id ,
+    angel:followers ,
+    angel:bio ,
+    angel:hasHighConcept ,
+    angel:hasStatus ,
+    angel:hasProductDesc ,
+    angel:hasLogoURL ,
+    angel:hasThumbURL ,
+    angel:hasImage ,
+    angel:hasURL ,
+    angel:behance_url ,
+    angel:hasCompanyURL ,
+    angel:hasVideoURL ,
+    angel:hasLocation ,
+    angel:hasRole ,
+    angel:hasMarket ,
+    angel:hasMarketName ,
+    angel:hasMarketURL ,
+    angel:hasLocationID ,
+    angel:hasLocationMame ,
+    angel:hasLocationURL ,
+    angel:hasStartupsPerYear ,
+    angel:hasAverageAmount ,
+    angel:isAccredited ,
+    angel:hasInvestorIN ,
+    angel:hasMade ,
+    angel:hasMember ,
+    angel:hasStatsAllFollowers ,
+    angel:hasStatsAllInvestorFollowers ,
+    angel:hasStatsStartups ,
+    angel:hasStatsUsers ,
+    angel:hasStatsDirectFollowers ,
+    angel:hasStatsDirectInvestorFollowers ,
+    angel:hasStatsDirectStartups ,
+    angel:hasStatsDirectUsers ,
+    angel:hasActivity .
+
+<http://www.openlinksw.com/DAV/data/turtle/cartridge_ontologies/angel.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink AngelList Ontology Description Document (Turtle)" ;
+  cc:License <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for AngelList"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/angel#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/angel> ;
+  xhv:describes <http://www.openlinksw.com/schemas/angel#> ;
+  schema:about <http://www.openlinksw.com/schemas/angel#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/angel#> .
+
+<http://www.openlinksw.com/data/turtle/cartridge_ontologies/angel.ttl>
+  a foaf:Document ;
+  schema:name "OpenLink AngelList Ontology Description Document (Turtle)" ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for AngelList"""@en ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/angel#> ;
+  xhv:canonical <http://www.openlinksw.com/schemas/angel> ;
+  xhv:describes <http://www.openlinksw.com/schemas/angel#> ;
+  schema:about <http://www.openlinksw.com/schemas/angel#> ;
+  dcterms:subject <http://www.openlinksw.com/schemas/angel#> .
+
+<http://www.openlinksw.com/schemas/angel>
+  a foaf:Document ;
+  schema:name """OpenLink AngelList Ontology Description Document"""^^xsd:string ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  schema:creator <http://www.openlinksw.com/#this> ;
+  schema:comment """This is a document that uses Linked Data oriented content to describe OpenLink AngelList Ontology."""@en ;
+  dcterms:subject <http://www.openlinksw.com/schemas/angel#> ;
+  foaf:primaryTopic <http://www.openlinksw.com/schemas/angel#> ;
+  foaf:topic
+    angel:Agent ,
+    angel:User ,
+    angel:Startup ,
+    angel:Market ,
+    angel:Location ,
+    angel:name ,
+    angel:id ,
+    angel:followers ,
+    angel:bio ,
+    angel:hasHighConcept ,
+    angel:hasStatus ,
+    angel:hasProductDesc ,
+    angel:hasLogoURL ,
+    angel:hasThumbURL ,
+    angel:hasImage ,
+    angel:hasURL ,
+    angel:hasCompanyURL ,
+    angel:hasVideoURL ,
+    angel:hasLocation ,
+    angel:hasRole ,
+    angel:hasMarket ,
+    angel:hasMarketName ,
+    angel:hasMarketURL ,
+    angel:hasLocationID ,
+    angel:hasLocationMame ,
+    angel:hasLocationURL ,
+    angel:hasStartupsPerYear ,
+    angel:hasAverageAmount ,
+    angel:isAccredited ,
+    angel:hasInvestorIN ,
+    angel:hasMember .
+
+#
+# Classes
+#
+
+angel:Agent
+	a owl:Class ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+	rdfs:label "Angel Agent" ;
+	rdfs:comment """An AngelList Entity"""@en .
+
+angel:User
+	a owl:Class ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+	rdfs:label "Person" ;
+	rdfs:comment """An Angel-List user (investor or other)"""@en .
+
+angel:Role
+	a owl:Class ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+	rdfs:label "Angel Role" ;
+	rdfs:comment "A bridge class representing a role held by an Angel User in an Angel Startup" .
+
+angel:Startup
+	a owl:Class ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+	rdfs:label "Startup" ;
+	rdfs:comment """An Angel-List startup (company)"""@en .
+
+angel:Syndicate
+	a owl:Class ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+	rdfs:label "Syndicate" ;
+	rdfs:comment "A syndicate of Angel-List investors" .
+
+angel:Market
+	a owl:Class ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+	rdfs:label "Angel Market" ;
+	rdfs:comment """An Angel-List Marketplace"""@en .
+
+angel:Location
+	a owl:Class ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+	rdfs:label "Angel Location" ;
+	rdfs:comment """An Angel-List Entity Location"""@en .
+
+
+#
+# properties
+#
+
+angel:name
+	a rdf:Property, owl:DatatypeProperty ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+	rdfs:label "name";
+	skos:altLabel "angel agent name" ;
+	rdfs:domain angel:Agent ;
+	rdfs:range xsd:string .
+
+angel:id
+	a rdf:Property, owl:DatatypeProperty , owl:InverseFunctionalProperty  ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+	rdfs:label "id";
+	skos:altLabel "angel id" ;
+	rdfs:domain owl:Thing ;
+	rdfs:range xsd:integer .
+
+angel:followers
+	a rdf:Property, owl:DatatypeProperty ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+	rdfs:label "followers";
+	skos:altLabel "followers" ;
+	rdfs:domain angel:Agent ;
+	rdfs:range xsd:integer .
+
+angel:behance_url
+	a rdf:Property, owl:DatatypeProperty ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+	rdfs:label "Behance URL";
+	skos:altLabel "Behance" ;
+	rdfs:domain angel:User ;
+	rdfs:range xsd:anyURI .
+
+angel:bio
+	a rdf:Property, owl:DatatypeProperty ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+	rdfs:label "bio";
+	skos:altLabel "biography" ;
+	rdfs:domain angel:User ;
+	rdfs:range xsd:string .
+
+angel:biography_url
+	a rdf:Property, owl:DatatypeProperty ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+	rdfs:label "biography URL";
+	skos:altLabel "biography URL" ;
+	rdfs:domain angel:User ;
+	rdfs:range xsd:anyURI .
+
+angel:blog_url
+	a rdf:Property, owl:DatatypeProperty ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+	rdfs:label "blog URL";
+	skos:altLabel "Blog URL" ;
+	rdfs:domain angel:Agent ;
+	rdfs:range xsd:anyURI .
+
+angel:crunchbase_url
+	a rdf:Property, owl:DatatypeProperty ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+	rdfs:label "crunchbase URL";
+	skos:altLabel "Crunchbase URL" ;
+	rdfs:domain angel:Agent ;
+	rdfs:range xsd:anyURI .
+
+angel:github_url
+	a rdf:Property, owl:DatatypeProperty ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+	rdfs:label "Github URL";
+	skos:altLabel "Github URL" ;
+	rdfs:domain angel:Agent ;
+	rdfs:range xsd:anyURI .
+
+angel:criteria
+	a rdf:Property, owl:DatatypeProperty ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+	rdfs:label "criteria";
+	skos:altLabel "Investment criteria" ;
+	rdfs:domain angel:User ;
+	rdfs:range xsd:string .
+
+angel:hasMade
+	a rdf:Property, owl:DatatypeProperty ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+	rdfs:label "hasMade";
+	rdfs:comment "Description of entities an Angel User has made" ;
+	rdfs:domain angel:User ;
+	rdfs:range xsd:string .
+
+angel:hasHighConcept
+	a rdf:Property, owl:DatatypeProperty ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+	rdfs:label "hasHighConcept";
+	skos:altLabel "high level concept" ;
+	rdfs:domain angel:Startup ;
+	rdfs:range xsd:string .
+
+angel:hasStatus
+	a rdf:Property, owl:DatatypeProperty ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+	rdfs:label "status";
+	skos:altLabel "current status" ;
+	rdfs:domain angel:Startup ;
+	rdfs:range xsd:string .
+
+angel:hasProductDesc
+	a rdf:Property, owl:DatatypeProperty ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+	rdfs:label "hasProductDesc";
+	skos:altLabel "product description" ;
+	rdfs:domain angel:Startup ;
+	rdfs:range xsd:string .
+
+angel:hasLogoURL
+	a rdf:Property, owl:DatatypeProperty ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+	rdfs:label "hasLogoURL";
+	skos:altLabel "logo url" ;
+	rdfs:domain angel:Startup ;
+	rdfs:range xsd:anyURI .
+
+angel:hasThumbURL
+	a rdf:Property, owl:DatatypeProperty ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+	rdfs:label "hasThumbURL";
+	skos:altLabel "thumbnail url" ;
+	rdfs:domain angel:Startup ;
+	rdfs:range xsd:anyURI .
+
+angel:hasImage
+	a rdf:Property, owl:DatatypeProperty ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+	rdfs:label "hasImage";
+	skos:altLabel "image" ;
+	rdfs:domain angel:User ;
+	rdfs:range xsd:anyURI .
+
+angel:hasURL
+	a rdf:Property, owl:DatatypeProperty ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+	rdfs:label "hasURL";
+	skos:altLabel "angel url" ;
+	rdfs:domain angel:Agent ;
+	rdfs:range xsd:anyURI .
+
+angel:hasCompanyURL
+	a rdf:Property, owl:DatatypeProperty ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+	rdfs:label "hasCompanyURL";
+	skos:altLabel "company url" ;
+	rdfs:domain angel:Startup ;
+	rdfs:range xsd:anyURI .
+
+angel:hasCompanySize
+	a rdf:Property, owl:DatatypeProperty ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+	rdfs:label "hasCompanySize";
+	skos:altLabel "Company Size" ;
+	rdfs:domain angel:Startup ;
+	rdfs:range xsd:string .
+
+angel:hasStatus
+	a rdf:Property, owl:DatatypeProperty ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+	rdfs:label "hasStatus";
+	skos:altLabel "Corporate status update" ;
+	rdfs:domain angel:Agent ;
+	rdfs:range xsd:string .
+
+angel:hasVideoURL
+	a rdf:Property, owl:DatatypeProperty ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+	rdfs:label "hasVideoURL";
+	skos:altLabel "corporate video" ;
+	rdfs:domain angel:Startup ;
+	rdfs:range xsd:anyURI .
+
+angel:hasLocation
+	a rdf:Property, owl:ObjectProperty ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+	rdfs:label "hasLocation";
+	skos:altLabel "location" ;
+	rdfs:domain angel:Agent ;
+	rdfs:range angel:Location .
+
+angel:hasRelatedStartup
+	a rdf:Property, owl:ObjectProperty ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+	rdfs:label "hasRelatedStartup";
+	skos:altLabel "related startup" ;
+	rdfs:domain angel:Location, angel:Market ;
+	rdfs:range angel:Startup .
+
+#angel:role
+#	a rdf:Property, owl:DatatypeProperty ;
+#	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+#	rdfs:label "role";
+#	skos:altLabel "role" ;
+#	rdfs:domain angel:User ;
+#	rdfs:range xsd:string .
+
+angel:hasSkill
+	a rdf:Property, owl:DatatypeProperty ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+	rdfs:label "hasSkill";
+	skos:altLabel "has skill" ;
+	rdfs:domain angel:User ;
+	rdfs:range xsd:string .
+
+angel:hasRole
+	a rdf:Property, owl:ObjectProperty ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+	rdfs:label "hasRole";
+	skos:altLabel "has role" ;
+	rdfs:comment "Mapping from an angel User to an angel Role entity (bridge between users and startups)";
+	rdfs:domain angel:User ;
+	rdfs:range angel:Role .
+
+angel:hasRoleAngel
+	a rdf:Property, owl:ObjectProperty ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+	rdfs:label "hasRoleAngel";
+	skos:altLabel "role angel" ;
+	rdfs:comment "Mapping from an angel Role to the angel User involved";
+	rdfs:domain angel:Role ;
+	rdfs:range angel:User .
+
+angel:hasRoleCompany
+	a rdf:Property, owl:ObjectProperty ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+	rdfs:label "hasRoleCompany";
+	skos:altLabel "role startup" ;
+	rdfs:comment "Mapping from an angel Role to the angel Startup involved";
+	rdfs:domain angel:Role ;
+	rdfs:range angel:Startup .
+
+angel:hasMarket
+	a rdf:Property, owl:ObjectProperty ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+	rdfs:label "hasMarket";
+	skos:altLabel "market" ;
+	rdfs:domain angel:Startup ;
+	rdfs:range angel:Market .
+
+angel:hasMarketName
+	a rdf:Property, owl:DatatypeProperty ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+	rdfs:label "hasMarketName";
+	skos:altLabel "market name" ;
+	rdfs:domain angel:Market ;
+	rdfs:range xsd:string .
+
+angel:hasMarketURL
+	a rdf:Property, owl:DatatypeProperty , owl:InverseFunctionalProperty ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+	rdfs:label "hasMarketURL";
+	skos:altLabel "market url" ;
+	rdfs:domain angel:Market ;
+	rdfs:range xsd:anyURI .
+
+angel:hasLocationID
+	a rdf:Property, owl:DatatypeProperty ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+	rdfs:label "hasLocationID";
+	skos:altLabel "location id" ;
+	rdfs:domain angel:Location ;
+	rdfs:range xsd:integer .
+
+angel:hasLocationMame
+	a rdf:Property, owl:DatatypeProperty ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+	rdfs:label "hasLocationMame";
+	skos:altLabel "location name" ;
+	rdfs:domain angel:Location ;
+	rdfs:range xsd:string .
+
+angel:hasLocationURL
+	a rdf:Property, owl:DatatypeProperty ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+	rdfs:label "location url";
+	skos:altLabel "location url" ;
+	rdfs:domain angel:Location ;
+	rdfs:range xsd:anyURI .
+
+angel:hasStartupsPerYear
+	a rdf:Property, owl:DatatypeProperty ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+	rdfs:label "hasStartupsPerYear";
+	skos:altLabel "startups per year" ;
+	rdfs:domain angel:User ;
+	rdfs:range xsd:integer .
+
+angel:hasAverageAmount
+	a rdf:Property, owl:DatatypeProperty ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+	rdfs:label "hasAverageAmount";
+	skos:altLabel "average amount" ;
+	rdfs:domain angel:User ;
+	rdfs:range xsd:string .
+
+angel:isAccredited
+	a rdf:Property, owl:DatatypeProperty ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+	rdfs:label "isAccredited";
+	skos:altLabel "angel accredited" ;
+	rdfs:domain angel:User ;
+	rdfs:range xsd:Boolean .
+
+angel:hasInvestorIN
+	a rdf:Property, owl:ObjectProperty ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+	rdfs:label "hasInvestorIN";
+	skos:altLabel "investor in" ;
+	rdfs:domain angel:User ;
+	rdfs:range angel:Startup .
+
+angel:isInvestor
+	a rdf:Property, owl:DatatypeProperty ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+	rdfs:label "isInvestor" ;
+	skos:altLabel "is investor" ;
+	rdfs:domain angel:User ;
+	rdfs:range xsd:boolean .
+
+angel:hasInvestmentQuality
+	a rdf:Property, owl:DatatypeProperty ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+	rdfs:label "investment quality";
+	skos:altLabel "investment quality" ;
+	rdfs:domain angel:User ;
+	rdfs:range xsd:int .
+
+angel:hasMember
+	a rdf:Property, owl:ObjectProperty ;
+	rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+	rdfs:label "hasMember";
+	rdfs:comment """interaction between a startup and users, be they investors or employees etc"""@en ;
+	skos:altLabel "member" ;
+	rdfs:domain angel:Startup;
+	rdfs:range angel:User .
+
+angel:hasStatsAllFollowers
+  a rdf:Property, owl:DatatypeProperty ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+  rdfs:label "hasStatsAllFollowers" ;
+  skos:altLabel "angel statistics: all followers";
+  rdfs:domain angel:Agent ;
+  rdfs:range xsd:integer .
+
+angel:hasStatsAllInvestorFollowers
+  a rdf:Property, owl:DatatypeProperty ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+  rdfs:label "hasStatsAllInvestorFollowers" ;
+  skos:altLabel "angel statistics: all investor followers";
+  rdfs:domain angel:Agent ;
+  rdfs:range xsd:integer .
+
+angel:hasStatsStartups
+  a rdf:Property, owl:DatatypeProperty ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+  rdfs:label "hasStatsStartups" ;
+  skos:altLabel "angel statistics: all startups";
+  rdfs:domain angel:Agent ;
+  rdfs:range xsd:integer .
+
+angel:hasStatsUsers
+  a rdf:Property, owl:DatatypeProperty ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+  rdfs:label "hasStatsUsers" ;
+  skos:altLabel "angel statistics: all users";
+  rdfs:domain angel:Agent ;
+  rdfs:range xsd:integer .
+
+angel:hasStatsDirectFollowers
+  a rdf:Property, owl:DatatypeProperty ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+  rdfs:label "hasStatsDirectFollowers" ;
+  skos:altLabel "angel statistics: direct followers";
+  rdfs:domain angel:Agent ;
+  rdfs:range xsd:integer .
+
+angel:hasStatsDirectInvestorFollowers
+  a rdf:Property, owl:DatatypeProperty ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+  rdfs:label "angel:hasStatsDirectInvestorFollowers" ;
+  skos:altLabel "angel statistics: direct investor followers";
+  rdfs:domain angel:Agent ;
+  rdfs:range xsd:integer .
+
+angel:hasStatsDirectStartups
+  a rdf:Property, owl:DatatypeProperty ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+  rdfs:label "hasStatsDirectStartups" ;
+  skos:altLabel "angel statistics: direct startups";
+  rdfs:domain angel:Agent ;
+  rdfs:range xsd:integer .
+
+angel:hasStatsDirectUsers
+  a rdf:Property, owl:DatatypeProperty ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+  rdfs:label "hasStatsDirectUsers" ;
+  skos:altLabel "angel statistics: direct users";
+  rdfs:domain angel:Agent ;
+  rdfs:range xsd:integer .
+
+angel:hasActivity
+  a rdf:Property, owl:DatatypeProperty ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/schemas/angel#> ;
+  rdfs:label "activities" ;
+  skos:altLabel "An Angel user's description of their activities";
+  rdfs:domain angel:User ;
+  rdfs:range xsd:string .
+
+
+
+
+#
+# T-Box mappings
+#
+
+angel:User
+  rdfs:subClassOf foaf:Person ;
+  rdfs:subClassOf angel:Agent .
+
+angel:Startup
+  rdfs:subClassOf foaf:Organization ;
+  rdfs:subClassOf angel:Agent .
+
+angel:Syndicate
+  rdfs:subClassOf foaf:Organization ;
+  rdfs:subClassOf angel:Agent ;
+  rdfs:subClassOf gr:BusinessEntity .
+
+angel:Market
+  rdfs:subClassOf angel:Agent .
+
+angel:name
+  rdfs:subPropertyOf skos:altLabel ;
+  owl:sameAs foaf:name .
+
+angel:bio
+  rdfs:subPropertyOf dc:description .
+
+angel:hasHighConcept
+  rdfs:subPropertyOf dc:description .
+
+angel:hasProductDesc
+  rdfs:subPropertyOf dc:description .
+
+angel:hasURL
+  rdfs:subPropertyOf rdfs:seeAlso ;
+  rdfs:subPropertyOf foaf:homepage .
+
+angel:hasCompanyURL
+  rdfs:subPropertyOf angel:hasURL .
+
+angel:hasVideoURL
+  rdfs:subPropertyOf angel:hasURL .
+
+angel:hasMarketURL
+  rdfs:subPropertyOf angel:hasURL .
+
+angel:hasMarketName
+  rdfs:subPropertyOf angel:name .
+
+angel:hasLocationMame
+  rdfs:subPropertyOf gn:name .
+
+
