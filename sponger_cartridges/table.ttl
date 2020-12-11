@@ -52,6 +52,7 @@
   a foaf:Document ;
   schema:name "OpenLink Tabular Data Ontology Description Document (Turtle)" ;
   cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  dcterms:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
   schema:creator <http://www.openlinksw.com/#this> ;
   schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for tabular data (CSV, HTML tables)"""@en ;
   foaf:primaryTopic <http://www.openlinksw.com/schemas/opltable#> ;

@@ -15,6 +15,7 @@ acco: a owl:Ontology ;
     dcterms:contributor "Michael Fried, Birgit Leiter, and Dieter Fensel. Some class and property definitions are inspired by or based on abstracts from Wikipedia, the free encyclopedia."@en ;
     dcterms:creator "Martin Hepp (Hepp Research GmbH)"@en ;
     cc:License <http://creativecommons.org/licenses/by-sa/3.0/> ;
+    dcterms:License <http://creativecommons.org/licenses/by-sa/3.0/> ;
     dcterms:rights """The Accommodation Ontology ontology is available under the Creative Commons Attribution 3.0 Unported license; see http://creativecommons.org/licenses/by/3.0/.
 In a nutshell, you are free to copy, distribute and transmit the work; to remix/adapt the work (e.g. to import the ontology and create specializations of its elements),
 as long as you attribute the work in the manner specified by the author or licensor (but not in any way that suggests that they endorse you or your use of the work)."""@en ;

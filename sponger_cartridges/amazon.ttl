@@ -71,22 +71,11 @@
     oplamz:merchantId ,
     oplamz:offerListingId .
 
-<http://www.openlinksw.com/DAV/data/turtle/cartridge_ontologies/amazon.ttl>
-  a foaf:Document ;
-  schema:name "OpenLink Amazon Ontology Description Document (Turtle)" ;
-  cc:License <http://creativecommons.org/licenses/by-sa/3.0/> ;
-  schema:creator <http://www.openlinksw.com/#this> ;
-  schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for Amazon"""@en ;
-  foaf:primaryTopic <http://www.openlinksw.com/schemas/amazon#> ;
-  xhv:canonical <http://www.openlinksw.com/schemas/amazon> ;
-  xhv:describes <http://www.openlinksw.com/schemas/amazon#> ;
-  schema:about <http://www.openlinksw.com/schemas/amazon#> ;
-  dcterms:subject <http://www.openlinksw.com/schemas/amazon#> .
-
 <http://www.openlinksw.com/data/turtle/cartridge_ontologies/amazon.ttl>
   a foaf:Document ;
   schema:name "OpenLink Amazon Ontology Description Document (Turtle)" ;
   cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  dcterms:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
   schema:creator <http://www.openlinksw.com/#this> ;
   schema:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for Amazon"""@en ;
   foaf:primaryTopic <http://www.openlinksw.com/schemas/amazon#> ;

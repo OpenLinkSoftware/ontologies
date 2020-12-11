@@ -58,6 +58,8 @@ sourceDAV:
     a schema:CreativeWork ;
     schema:author <http://www.openlinksw.com/#this> ;
     xhv:license <http://creativecommons.org/licenses/by/4.0/deed.en_US> ;
+    cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+    dcterms:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
     cc:attributionName "OpenLink Software" ;
     cc:attributionURL <http://www.openlinksw.com/dataspace/organization/openlink#this> ;
     schema:datePublished "2019-04-18T13:00:00-05:00"^^xsd:dateTime ;

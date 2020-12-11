@@ -102,6 +102,7 @@
   a foaf:Document , schema:TechArticle ;
   rdfs:label """OpenLink Market Segment Ontology Description Document (Turtle)"""^^xsd:string ;
   cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  dcterms:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
   schema:creator <http://www.openlinksw.com/#this> ;
   rdfs:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for Market Segment."""@en ;
   foaf:primaryTopic <http://www.openlinksw.com/ontology/market#> ;

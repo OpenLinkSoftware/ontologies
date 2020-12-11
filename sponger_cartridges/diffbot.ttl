@@ -60,6 +60,7 @@
   a foaf:Document , schema:TechArticle ;
   rdfs:label "OpenLink Ontology for Diffbot Natural Language API (Turtle)"^^xsd:string ;
   cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  dcterms:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
   schema:creator <http://www.openlinksw.com/#this> ;
   rdfs:commnet """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for the Diffbot Natural Language API"""@en ;
   foaf:primaryTopic <http://www.openlinksw.com/schemas/diffbot#> ;

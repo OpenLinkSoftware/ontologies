@@ -59,6 +59,7 @@
   a foaf:Document , schema:TechArticle ;
   rdfs:label "OpenLink Press Release Ontology Description Document (Turtle)" ;
   cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  dcterms:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
   dcterms:created "2014-05-18T13:00:00-05:00"^^xsd:dateTime ;
   dcterms:modified "2015-03-20T13:38:00-05:00"^^xsd:dateTime ;
   schema:creator <http://www.openlinksw.com/#this> ;
