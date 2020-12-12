@@ -26,7 +26,7 @@
   dcterms:title """OpenLink Benefits Ontology"""^^xsd:string ;
   wdrs:describedby <http://www.openlinksw.com/ontology/benefits> ;
   dcterms:created "2014-05-18T13:00:00-05:00"^^xsd:dateTime ;
-  dcterms:modified "2019-08-06T13:38:00-05:00"^^xsd:dateTime ;
+  dcterms:modified "2020-12-12T14:15:00-05:00"^^xsd:dateTime ;
   dcterms:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
   schema:creator <http://www.openlinksw.com/#this> ;
   rdfs:comment """Ontology that defines entity and relation types used to describe benefits."""@en ;
