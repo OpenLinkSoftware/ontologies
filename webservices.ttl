@@ -69,7 +69,8 @@
               oplwebsrv:exampleValue ,
               oplwebsrv:endpointURLString ,
               oplwebsrv:endpointURL,
-              oplwebsrv:hasActionWord ;
+              oplwebsrv:hasActionWord,
+              oplwebsrv:invokedBy ;
   schema:about
               sparqldescr:Service ,
               oplwebsrv:WebService ,
@@ -99,7 +100,8 @@
               oplwebsrv:exampleValue ,
               oplwebsrv:endpointURLString ,
               oplwebsrv:endpointURL,
-              oplwebsrv:hasActionWord .
+              oplwebsrv:hasActionWord ,
+              oplwebsrv:invokedBy .
 
               # oplwebsrv:serviceContext ,
               # oplwebsrv:serviceType ,
@@ -112,7 +114,6 @@
   a foaf:Document , schema:TechArticle ;
   rdfs:label """OpenLink Web Services Ontology Description Document (Turtle)"""^^xsd:string ;
   cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
-  dcterms:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
   schema:creator <http://www.openlinksw.com/#this> ;
   rdfs:comment """This is a turtle document that uses Linked Data oriented content to describe an OpenLink ontology for Web Services"""@en ;
   foaf:primaryTopic <http://www.openlinksw.com/ontology/webservices#> ;
@@ -175,7 +176,8 @@
               oplwebsrv:uriTemplate ,
               oplwebsrv:exampleValue ,
               oplwebsrv:endpointURLString ,
-              oplwebsrv:endpointURL .
+              oplwebsrv:endpointURL ,
+              oplwebsrv:invokedBy . 
 
 
               # oplwebsrv:serviceContext ,
@@ -483,6 +485,17 @@ oplwebsrv:parameterExampleValue
   schema:comment """A display string which can be used for prepopulating an input field with an example value of the parameter."""@en ;
   rdfs:isDefinedBy <http://www.openlinksw.com/ontology/webservices#> .
 
+oplwebsrv:invokedBy
+a rdf:Property, owl:DatatypeProperty ;
+  rdfs:label "invokedBy" ;
+  skos:altLabel "Agent that Invoked Web Service" ;
+  rdfs:domain oplwebsrv:WebService ;
+  schema:rangeIncludes foaf:Agent ;
+  schema:comment """Agent that invoked a Web Service. This property provides granuality for tracking Web Services invocations in situations
+                    involking multiple agents e.g., a Twingle Action by on Agent targeting a Tweet created by another Agent."""@en ;
+  rdfs:isDefinedBy <http://www.openlinksw.com/ontology/webservices#> .
+
+
 oplwebsrv:exampleValue
   a rdf:Property , owl:DatatypeProperty ;
   rdfs:label "exampleValue"^^xsd:string ;
@@ -559,5 +572,3 @@ hydracore:template rdfs:subPropertyOf oplwebsrv:uriTemplate .
 #   rdfs:isDefinedBy <http://www.openlinksw.com/ontology/webservices#> ;
 #   skos:altLabel "Web Service Potential Action Query Input"^^xsd:string .
 #
-#
-
